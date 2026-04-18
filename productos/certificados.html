@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificación de Pureza — PEPTIQ MX</title>
+  <meta name="description" content="Centro de verificación de certificados Janoshik para PEPTIQ MX. Transparencia total en cada lote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --black: #0F0F0F;
+      --white: #FFFFFF;
+      --beige: #B8A99A;
+      --mid-gray: #1A1A1A;
+      --text-secondary: #888;
+      --serif: 'Playfair Display', serif;
+      --sans: 'Inter', sans-serif;
+    }
+    body { font-family:var(--sans); color:var(--white); background:var(--black); line-height:1.6; }
+    
+    .nav { padding:40px; border-bottom:1px solid var(--mid-gray); display:flex; justify-content:space-between; align-items:center; }
+    .nav-logo img { height:50px; filter: brightness(0) invert(1); }
+
+    .hero { max-width:800px; margin:0 auto; padding:100px 40px; text-align:center; }
+    .hero h1 { font-family:var(--serif); font-size:48px; font-weight:400; margin-bottom:20px; }
+    .hero p { color:var(--text-secondary); font-size:16px; max-width:600px; margin:0 auto; }
+
+    .batch-grid { max-width:1000px; margin:0 auto; padding:0 40px 100px; display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:30px; }
+    .batch-card { background:var(--mid-gray); padding:30px; border:1px solid rgba(255,255,255,0.05); }
+    .batch-id { font-size:10px; letter-spacing:2px; color:var(--beige); margin-bottom:15px; text-transform:uppercase; }
+    .batch-name { font-family:var(--serif); font-size:24px; margin-bottom:5px; }
+    .batch-purity { font-size:13px; color:#22C55E; font-weight:600; margin-bottom:20px; }
+    .batch-link { display:inline-block; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--white); border-bottom:1px solid var(--beige); text-decoration:none; padding-bottom:4px; }
+    
+    .verification-footer { max-width:800px; margin:0 auto; padding:60px 40px; border-top:1px solid var(--mid-gray); text-align:center; color:var(--text-secondary); font-size:12px; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo"><img src="../img/logo-peptiqmx.svg" alt="PEPTIQ MX"></a>
+    <a href="../index.html" style="color:var(--white); font-size:12px; letter-spacing:1px; text-transform:uppercase; text-decoration:none;">&larr; Volver</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Centro de Verificación</h1>
+    <p>La transparencia es nuestro estándar. Cada péptido PeptiqMX es analizado individualmente mediante HPLC por laboratorios externos acreditados.</p>
+  </section>
+
+  <div class="batch-grid">
+    <div class="batch-card">
+      <div class="batch-id">Batch #HX5K-2026</div>
+      <div class="batch-name">BPC-157 10mg</div>
+      <div class="batch-purity">99.654% Purity</div>
+      <a href="https://janoshik.com/verify/" target="_blank" class="batch-link">Ver en Janoshik</a>
+    </div>
+    
+    <div class="batch-card">
+      <div class="batch-id">Batch #TB99-2026</div>
+      <div class="batch-name">TB-500 10mg</div>
+      <div class="batch-purity">99.328% Purity</div>
+      <a href="https://janoshik.com/verify/" target="_blank" class="batch-link">Ver en Janoshik</a>
+    </div>
+
+    <div class="batch-card">
+      <div class="batch-id">Batch #ND-1000</div>
+      <div class="batch-name">NAD+ 1000mg</div>
+      <div class="batch-purity">99.120% Purity</div>
+      <a href="https://janoshik.com/verify/" target="_blank" class="batch-link">Ver en Janoshik</a>
+    </div>
+
+    <div class="batch-card">
+      <div class="batch-id">Batch #RT-ELITE</div>
+      <div class="batch-name">Retatrutide 30mg</div>
+      <div class="batch-purity">99.810% Purity</div>
+      <a href="https://janoshik.com/verify/" target="_blank" class="batch-link">Ver en Janoshik</a>
+    </div>
+  </div>
+
+  <footer class="verification-footer">
+    <p>Todos los certificados son propiedad de PeptiqMX y están vinculados a los lotes físicos mediante códigos QR de seguridad únicos.</p>
+  </footer>
+
+</body>
+</html>

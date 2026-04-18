@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Reconstitución — PEPTIQ MX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--black:#1A1A1A;--white:#FFF;--beige:#B8A99A;--light-gray:#F5F3F0;--mid-gray:#E8E4E0;--text-secondary:#6B6B6B;--gold:#C4A265;--green:#22C55E;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+    body{font-family:var(--sans);color:var(--black);background:var(--white);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--mid-gray);padding:18px 40px;display:flex;justify-content:space-between;align-items:center}
+    .nav-logo img{height:50px;width:auto}
+    .nav-back{font-size:13px;color:var(--text-secondary)}
+    .hero{padding:50px 24px 20px;text-align:center}
+    .hero h1{font-family:var(--serif);font-size:28px;font-weight:500;margin-bottom:6px}
+    .hero p{font-size:14px;color:var(--text-secondary);max-width:460px;margin:0 auto}
+    .container{max-width:560px;margin:0 auto;padding:0 24px 40px}
+
+    .medical-warning{background:#FFF3CD;border:1px solid #F59E0B;padding:14px 18px;margin-bottom:20px;font-size:12px;color:#92400E;line-height:1.6;display:flex;gap:10px;align-items:flex-start}
+    .medical-warning span{font-size:18px}
+
+    .step{background:var(--light-gray);padding:24px;margin-bottom:2px}
+    .step-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .step-num{width:28px;height:28px;background:var(--gold);color:#fff;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .step-title{font-size:15px;font-weight:600}
+    .step select{width:100%;padding:14px 16px;border:1px solid var(--mid-gray);background:var(--white);font-size:15px;font-family:var(--sans);appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B6B6B' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+    .step-info{font-size:12px;color:var(--text-secondary);margin-top:8px}
+
+    /* SYRINGE VISUAL */
+    .result-card{background:var(--black);color:var(--white);padding:32px;margin-top:16px;display:none}
+    .result-header{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;text-align:center}
+
+    .syringe-visual{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:24px}
+    .syringe{width:60px;background:#222;border-radius:4px;position:relative;border:1px solid #444}
+    .syringe-fill{background:var(--green);width:100%;position:absolute;bottom:0;border-radius:0 0 3px 3px;transition:height 0.3s}
+    .syringe-marks{position:absolute;left:-30px;top:0;height:100%;display:flex;flex-direction:column-reverse;justify-content:space-between}
+    .syringe-mark{font-size:9px;color:#666;display:flex;align-items:center;gap:4px}
+    .syringe-mark.active{color:var(--green);font-weight:700;font-size:11px}
+    .syringe-mark::after{content:'';width:8px;height:1px;background:#444}
+    .syringe-mark.active::after{background:var(--green);width:12px;height:2px}
+
+    .dose-text{text-align:left}
+    .dose-big{font-family:var(--serif);font-size:52px;color:var(--green);line-height:1}
+    .dose-label{font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px}
+    .dose-detail{font-size:12px;color:rgba(255,255,255,0.3);margin-top:2px}
+
+    .info-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,0.1);margin:20px 0}
+    .info-cell{background:var(--black);padding:16px;text-align:center}
+    .info-val{font-family:var(--serif);font-size:22px;color:var(--gold)}
+    .info-lbl{font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px}
+
+    .result-summary{background:rgba(255,255,255,0.05);padding:16px;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8}
+    .result-summary strong{color:var(--green)}
+
+    .result-medical{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);padding:12px 16px;margin-top:16px;font-size:11px;color:#F59E0B;text-align:center;line-height:1.5}
+
+    .howto{max-width:560px;margin:24px auto 60px;padding:0 24px}
+    .howto h3{font-family:var(--serif);font-size:18px;margin-bottom:14px}
+    .howto-step{display:flex;gap:10px;margin-bottom:12px}
+    .howto-num{min-width:22px;height:22px;background:var(--light-gray);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--gold)}
+    .howto-text{font-size:13px;color:var(--text-secondary);line-height:1.5}
+    .howto-text strong{color:var(--black)}
+    footer{background:var(--black);color:rgba(255,255,255,0.6);padding:40px;text-align:center;font-size:12px}
+    @media(max-width:600px){.syringe-visual{flex-direction:column}.nav{padding:14px 20px}.info-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><img src="img/logo-peptiqmx.png" alt="PEPTIQ MX" style="height:50px;width:auto;"></a>
+  <a href="index.html" class="nav-back">&larr; Inicio</a>
+</nav>
+
+<div class="hero">
+  <h1>Calculadora de Reconstituci&oacute;n</h1>
+  <p>Calcula hasta qu&eacute; marca de la jeringa llenar para tu dosis</p>
+</div>
+
+<div class="container">
+
+  <div class="medical-warning">
+    <span>&#9888;&#65039;</span>
+    <div><strong>IMPORTANTE:</strong> Esta calculadora es solo informativa. Consulta siempre a un m&eacute;dico antes de iniciar cualquier protocolo de investigaci&oacute;n. Las dosis sugeridas son referencias de la literatura cient&iacute;fica, NO recomendaciones m&eacute;dicas.</div>
+  </div>
+
+  <!-- PASO 1 -->
+  <div class="step">
+    <div class="step-head"><span class="step-num">1</span><span class="step-title">Selecciona tu p&eacute;ptido</span></div>
+    <select id="peptide" onchange="updateCalc()">
+      <option value="">-- Elige --</option>
+      <option value="10" data-name="BPC-157" data-dose="300" data-water="2" data-freq="1x al d&iacute;a (subcutanea)" data-use="Recuperaci&oacute;n de tendones, ligamentos, articulaciones, protecci&oacute;n g&aacute;strica" data-weeks="4-8 semanas on, 2-4 semanas descanso" data-protocol="Dosis: 250-500mcg/d&iacute;a. Inyecci&oacute;n cerca del &aacute;rea de lesi&oacute;n si es posible. Lunes a viernes, descanso fin de semana. Ciclo: 6-8 semanas, luego 2-4 semanas off.">BPC-157 (10mg)</option>
+      <option value="10" data-name="TB-500" data-dose="2500" data-water="1" data-freq="2x por semana (lun y jue)" data-use="Reparaci&oacute;n muscular profunda, movilidad articular, cardioprotector" data-weeks="Carga: 4-6 sem (2x/sem) &rarr; Mantenimiento: 4-6 sem (1x/sem) &rarr; 4 sem descanso" data-protocol="FASE CARGA: 2.5mg 2x/semana por 4-6 semanas. FASE MANTENIMIENTO: 2.5mg 1x/semana por 4-6 semanas. Descanso: 4 semanas antes de repetir.">TB-500 (10mg)</option>
+      <option value="1000" data-name="NAD+" data-dose="200000" data-water="4" data-freq="1x al d&iacute;a (subcutanea)" data-use="Longevidad celular, energ&iacute;a mitocondrial, reparaci&oacute;n de ADN, sirtuinas" data-weeks="8-12 semanas on, 4 semanas descanso" data-protocol="Dosis: 100-250mg/d&iacute;a. Comenzar con 100mg e ir subiendo. Aplicar por la ma&ntilde;ana. Puede causar enrojecimiento temporal en sitio de inyecci&oacute;n.">NAD+ (1000mg)</option>
+      <option value="100" data-name="GHK-Cu" data-dose="1000" data-water="2" data-freq="1x al d&iacute;a (antes de dormir)" data-use="Rejuvenecimiento d&eacute;rmico, s&iacute;ntesis de col&aacute;geno, crecimiento capilar" data-weeks="30 d&iacute;as on, 30 d&iacute;as off. Repetir 2-3 ciclos/a&ntilde;o" data-protocol="Semanas 1-2: 1mg/d&iacute;a. Semanas 3-4: 2mg/d&iacute;a. 5 d&iacute;as on, 2 off (fin de semana descanso). Ciclo de 30 d&iacute;as, luego 30 d&iacute;as off.">GHK-Cu (100mg)</option>
+      <option value="10" data-name="Semax" data-dose="600" data-water="2" data-freq="1x por la ma&ntilde;ana (intranasal o subcut)" data-use="Concentraci&oacute;n, memoria, BDNF, neuroplasticidad, neuropretecci&oacute;n" data-weeks="4-8 semanas on, 2-4 semanas descanso" data-protocol="Dosis: 300-600mcg/d&iacute;a. Preferiblemente por la ma&ntilde;ana. Puede aplicarse intranasal o subcutanea. 5 d&iacute;as on, 2 off.">Semax (10mg)</option>
+      <option value="50" data-name="Epithalon" data-dose="5000" data-water="2" data-freq="1x al d&iacute;a (antes de dormir)" data-use="Activaci&oacute;n de telomerasa, protecci&oacute;n telom&eacute;rica, melatonina natural" data-weeks="10 d&iacute;as on &rarr; descanso 4-6 meses &rarr; repetir 2-3x al a&ntilde;o" data-protocol="Protocolo Khavinson: 5-10mg/d&iacute;a por 10-20 d&iacute;as. Total por ciclo: 50-100mg. Repetir 2-3 veces al a&ntilde;o. Aplicar antes de dormir (estimula melatonina).">Epithalon (50mg)</option>
+      <option value="10" data-name="KPV" data-dose="500" data-water="2" data-freq="1x al d&iacute;a (subcutanea)" data-use="Antiinflamatorio intestinal, reparaci&oacute;n de uni&oacute;n estrecha, gut health" data-weeks="4-8 semanas on, 2-4 semanas descanso" data-protocol="Dosis: 200-500mcg/d&iacute;a. Puede tomarse oral en c&aacute;psula o subcut&aacute;nea. Lunes a viernes, descanso fin de semana.">KPV (10mg)</option>
+      <option value="10" data-name="CJC+Ipa" data-dose="300" data-water="2" data-freq="1x antes de dormir (subcutanea)" data-use="Liberaci&oacute;n de GH, sue&ntilde;o profundo, lip&oacute;lisis, recuperaci&oacute;n" data-weeks="8-12 semanas on, 4 semanas descanso" data-protocol="Dosis: 100-300mcg de cada uno antes de dormir. NO comer 2h antes ni 1h despu&eacute;s. 5 d&iacute;as on, 2 off (fines de semana descanso).">CJC-1295 + Ipamorelin (10mg)</option>
+      <option value="30" data-name="Retatrutide" data-dose="500" data-water="2" data-freq="1x por semana (subcutanea)" data-use="Triple agonista GLP-1/GIP/Glucag&oacute;n, composici&oacute;n corporal" data-weeks="12-24 semanas. Rampa gradual de dosis" data-protocol="RAMPA: Sem 1-4: 0.5mg/sem. Sem 5-8: 1mg/sem. Sem 9-12: 2mg/sem. Sem 13+: hasta 4mg/sem seg&uacute;n tolerancia. 1 inyecci&oacute;n semanal, mismo d&iacute;a cada semana.">Retatrutide (30mg)</option>
+      <option value="70" data-name="GLOW" data-dose="2000" data-water="2" data-freq="1x al d&iacute;a (subcutanea)" data-use="Luminosidad, col&aacute;geno, tono de piel, hidrataci&oacute;n" data-weeks="8-12 semanas on, 4 semanas descanso" data-protocol="Dosis: 1-2mg/d&iacute;a. Blend de 3 p&eacute;ptidos d&eacute;rmicos. 5 d&iacute;as on, 2 off. Resultados visibles desde semana 4-6.">GLOW (70mg)</option>
+      <option value="10" data-name="Tesamorelin" data-dose="2000" data-water="2" data-freq="1x al d&iacute;a (subcutanea abdominal)" data-use="Reducci&oacute;n grasa visceral, GH puls&aacute;til, aprobado FDA (Egrifta)" data-weeks="8-12 semanas on, 4 semanas descanso" data-protocol="Dosis: 2mg/d&iacute;a subcutanea en abdomen. Aplicar a la misma hora cada d&iacute;a. 5 d&iacute;as on, 2 off. Resultados medibles desde semana 6-8.">Tesamorelin (10mg)</option>
+      <option value="10" data-name="Ipamorelin" data-dose="300" data-water="2" data-freq="1x antes de dormir (subcutanea)" data-use="GH selectiva sin cortisol ni prolactina, ideal principiantes" data-weeks="8-12 semanas on, 4 semanas descanso" data-protocol="Dosis: 200-300mcg antes de dormir. NO comer 2h antes. Ideal como primer p&eacute;ptido de GH. 5 d&iacute;as on, 2 off.">Ipamorelin (10mg)</option>
+    </select>
+    <div class="step-info" id="useInfo" style="display:none">
+      <strong>Objetivo:</strong> <span id="useText"></span><br>
+      <strong>Ciclo:</strong> <span id="weeksText"></span><br>
+      <div id="protocolText" style="margin-top:8px;padding:10px;background:rgba(196,162,101,0.08);border-left:3px solid #C4A265;font-size:11px;line-height:1.6;color:#666;"></div>
+    </div>
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="step">
+    <div class="step-head"><span class="step-num">2</span><span class="step-title">&iquest;Cu&aacute;nta agua agregas al vial?</span></div>
+    <select id="water" onchange="updateCalc()">
+      <option value="1">1 ml</option>
+      <option value="1.5">1.5 ml</option>
+      <option value="2" selected>2 ml (recomendado)</option>
+      <option value="2.5">2.5 ml</option>
+      <option value="3">3 ml</option>
+      <option value="5">5 ml</option>
+    </select>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="result-card" id="results">
+    <div class="result-header">Tu dosis en la jeringa</div>
+
+    <div class="syringe-visual">
+      <!-- Syringe drawing -->
+      <div style="position:relative;height:220px;width:80px;">
+        <div class="syringe" style="height:200px;width:50px;margin:0 auto;">
+          <div class="syringe-fill" id="syringeFill" style="height:0%"></div>
+        </div>
+        <div style="position:absolute;right:-5px;top:0;height:200px;display:flex;flex-direction:column;justify-content:space-between;">
+          <span class="syringe-mark" id="m100" style="font-size:9px;color:#555">100</span>
+          <span class="syringe-mark" id="m90" style="font-size:9px;color:#555">90</span>
+          <span class="syringe-mark" id="m80" style="font-size:9px;color:#555">80</span>
+          <span class="syringe-mark" id="m70" style="font-size:9px;color:#555">70</span>
+          <span class="syringe-mark" id="m60" style="font-size:9px;color:#555">60</span>
+          <span class="syringe-mark" id="m50" style="font-size:9px;color:#555">50</span>
+          <span class="syringe-mark" id="m40" style="font-size:9px;color:#555">40</span>
+          <span class="syringe-mark" id="m30" style="font-size:9px;color:#555">30</span>
+          <span class="syringe-mark" id="m20" style="font-size:9px;color:#555">20</span>
+          <span class="syringe-mark" id="m10" style="font-size:9px;color:#555">10</span>
+          <span style="font-size:9px;color:#555">0</span>
+        </div>
+      </div>
+
+      <div class="dose-text">
+        <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:4px;">Llena hasta la marca</div>
+        <div class="dose-big" id="markNum">—</div>
+        <div class="dose-label">en jeringa de insulina</div>
+        <div class="dose-detail" id="doseDetail"></div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-cell"><div class="info-val" id="rDoses">—</div><div class="info-lbl">dosis por vial</div></div>
+      <div class="info-cell"><div class="info-val" id="rDays">—</div><div class="info-lbl">d&iacute;as de uso</div></div>
+      <div class="info-cell"><div class="info-val" id="rFreq">—</div><div class="info-lbl">frecuencia</div></div>
+    </div>
+
+    <div class="result-summary" id="rSummary"></div>
+
+    <div class="result-medical">&#9888; Esta informaci&oacute;n es solo con fines informativos de investigaci&oacute;n. <strong>Consulta siempre a un m&eacute;dico</strong> antes de cualquier protocolo. PEPTIQ MX no recomienda ni respalda el uso en humanos.</div>
+  </div>
+</div>
+
+<!-- HOW TO -->
+<div style="max-width:560px;margin:0 auto;padding:0 24px 20px;">
+  <div style="background:#F9F8F6;border:1px solid #E8E4E0;padding:20px;">
+    <h3 style="font-family:var(--serif);font-size:16px;margin-bottom:12px;">Fuentes y referencias</h3>
+    <p style="font-size:11px;color:#999;margin-bottom:12px;">Los protocolos de dosificaci&oacute;n est&aacute;n basados en la siguiente literatura cient&iacute;fica publicada:</p>
+    <ul style="font-size:11px;color:#666;line-height:2;padding-left:16px;">
+      <li><strong>BPC-157:</strong> "Emerging Use of BPC-157 in Orthopaedic Sports Medicine" — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12313605/" target="_blank" style="color:#C4A265">PubMed PMC12313605</a>. Dosis: 2.5-3.75 mcg/kg, extrapolado a 250-500mcg/d&iacute;a.</li>
+      <li><strong>BPC-157:</strong> "Pharmacokinetics, distribution, metabolism of BPC-157 in rats and dogs" — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9794587/" target="_blank" style="color:#C4A265">PubMed PMC9794587</a></li>
+      <li><strong>TB-500:</strong> Protocolo de carga/mantenimiento basado en revisiones de Thymosin Beta-4. Carga: 4-8mg/sem x 4-6 sem. Mantenimiento: 2-4mg/sem.</li>
+      <li><strong>GHK-Cu:</strong> "GHK-Cu 30-Day Cycle Protocol" — <a href="https://www.perfectb.com/ghk-cu-dosage-protocol/" target="_blank" style="color:#C4A265">Perfect B Medical</a>. 1mg/d&iacute;a sem 1-2, 2mg/d&iacute;a sem 3-4.</li>
+      <li><strong>Epithalon:</strong> Protocolo original del Prof. Vladimir Khavinson. 5-10mg/d&iacute;a x 10-20 d&iacute;as, 2-3 ciclos/a&ntilde;o. — <a href="https://peptidewiki.co/guides/dosage-guides/epitalon-dosage-guide" target="_blank" style="color:#C4A265">PeptideWiki</a></li>
+      <li><strong>CJC-1295 + Ipamorelin:</strong> Protocolos cl&iacute;nicos de medicina anti-aging. 100-300mcg antes de dormir. Ayuno de 2h pre-inyecci&oacute;n por interacci&oacute;n insulina-GH.</li>
+      <li><strong>Retatrutide:</strong> Basado en dise&ntilde;o de ensayo cl&iacute;nico Eli Lilly fase 2. Rampa: 0.5&rarr;1&rarr;2&rarr;4mg/semana. — <a href="https://www.nejm.org" target="_blank" style="color:#C4A265">NEJM</a></li>
+      <li><strong>Tesamorelin:</strong> Aprobado FDA como Egrifta. 2mg/d&iacute;a subcutanea abdominal.</li>
+    </ul>
+    <div style="margin-top:12px;padding:10px;background:#FFF3CD;border:1px solid #F59E0B;font-size:10px;color:#92400E;line-height:1.6;">
+      <strong>AVISO:</strong> Las dosis y protocolos listados provienen de literatura cient&iacute;fica publicada y son solo con fines informativos de investigaci&oacute;n. NO constituyen recomendaciones m&eacute;dicas. Ning&uacute;n p&eacute;ptido listado (excepto Tesamorelin/Egrifta) tiene aprobaci&oacute;n FDA para uso humano. <strong>Consulte siempre a un m&eacute;dico calificado antes de cualquier protocolo.</strong> PEPTIQ MX no respalda el uso en humanos.
+    </div>
+  </div>
+</div>
+
+<div class="howto">
+  <h3>C&oacute;mo reconstituir</h3>
+  <div class="howto-step"><div class="howto-num">1</div><div class="howto-text"><strong>Limpia</strong> los sellos de goma con algod&oacute;n y alcohol</div></div>
+  <div class="howto-step"><div class="howto-num">2</div><div class="howto-text"><strong>Extrae el agua</strong> con la jeringa — la cantidad que elegiste arriba</div></div>
+  <div class="howto-step"><div class="howto-num">3</div><div class="howto-text"><strong>Inyecta por la pared</strong> del vial. Lentamente. NO directo al polvo</div></div>
+  <div class="howto-step"><div class="howto-num">4</div><div class="howto-text"><strong>Gira suavemente</strong> hasta disolver. NUNCA agitar</div></div>
+  <div class="howto-step"><div class="howto-num">5</div><div class="howto-text"><strong>Refrigera</strong> 2-8&deg;C. Usar en m&aacute;ximo 28 d&iacute;as</div></div>
+</div>
+
+<footer>
+  <img src="img/logo-peptiqmx.png" alt="PEPTIQ MX" style="height:36px;width:auto;filter:brightness(0) invert(1);margin:0 auto 12px;">
+  <p>Solo para fines de investigaci&oacute;n. Consulte a un profesional de salud.</p>
+</footer>
+
+<script>
+function updateCalc() {
+  const sel = document.getElementById('peptide');
+  const opt = sel.options[sel.selectedIndex];
+  if (!opt.value) {
+    document.getElementById('results').style.display = 'none';
+    document.getElementById('useInfo').style.display = 'none';
+    return;
+  }
+
+  const totalMg = parseFloat(opt.value);
+  const totalMcg = totalMg * 1000;
+  const dose = parseFloat(opt.getAttribute('data-dose'));
+  const name = opt.getAttribute('data-name');
+  const freq = opt.getAttribute('data-freq');
+  const use = opt.getAttribute('data-use');
+  const weeks = opt.getAttribute('data-weeks');
+  const water = parseFloat(document.getElementById('water').value) || 2;
+
+  // Show use info
+  document.getElementById('useInfo').style.display = 'block';
+  document.getElementById('useText').textContent = use;
+      const protocol = opt.getAttribute('data-protocol') || '';
+      document.getElementById('protocolText').innerHTML = protocol;
+  document.getElementById('weeksText').textContent = weeks;
+
+  // Calculate units on insulin syringe (100 unit syringe = 1ml)
+  const concPerUnit = totalMcg / (water * 100);
+  const unitsPerDose = dose / concPerUnit;
+  const dosesPerVial = Math.floor(totalMcg / dose);
+
+  // Round to nearest 5 for syringe mark
+  const rawMark = Math.round(unitsPerDose / 5) * 5; const mark = rawMark < 5 ? Math.max(1, Math.round(unitsPerDose)) : rawMark;
+  const exactMark = unitsPerDose.toFixed(1);
+
+  // Display
+  document.getElementById('markNum').textContent = mark;
+  const doseDisplay = dose >= 1000 ? (dose/1000) + 'mg' : dose + 'mcg';
+  document.getElementById('doseDetail').textContent = '(' + exactMark + ' UI exactas = ' + doseDisplay + ')';
+  document.getElementById('rDoses').textContent = dosesPerVial;
+  document.getElementById('rDays').textContent = dosesPerVial;
+  document.getElementById('rFreq').textContent = freq;
+
+  // Syringe fill
+  const fillPct = Math.max(Math.min(unitsPerDose, 100), 8);
+  document.getElementById('syringeFill').style.height = fillPct + '%';
+
+  // Highlight correct mark
+  for (let i = 10; i <= 100; i += 10) {
+    const el = document.getElementById('m' + i);
+    if (el) {
+      if (Math.abs(i - mark) <= 5) {
+        el.style.color = '#22C55E';
+        el.style.fontWeight = '700';
+        el.style.fontSize = '14px';
+        el.style.textShadow = '0 0 8px rgba(34,197,94,0.5)';
+        el.innerHTML = '&#9658; ' + i;
+      } else {
+        el.style.color = '#555';
+        el.style.fontWeight = '400';
+        el.style.fontSize = '9px';
+        el.style.textShadow = 'none';
+        el.textContent = i;
+      }
+    }
+  }
+
+  document.getElementById('rSummary').innerHTML =
+    '<strong>' + name + '</strong> (' + totalMg + 'mg) + ' + water + 'ml agua<br>' +
+    'Dosis: ' + doseDisplay + ' = llena hasta <strong>marca ' + mark + '</strong> en la jeringa<br>' +
+    'El vial te rinde <strong>' + dosesPerVial + ' dosis</strong> (' + freq + ')';
+
+  document.getElementById('results').style.display = 'block';
+}
+</script>
+</body>
+</html>

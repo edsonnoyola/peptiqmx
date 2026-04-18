@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- V6: Stacked/Apilado — para favicon, redes sociales, cuadrado -->
+  <rect width="400" height="300" fill="#1A1A1A"/>
+
+  <!-- X molecular grande de fondo -->
+  <line x1="120" y1="40" x2="280" y2="200" stroke="#C4A265" stroke-width="1" opacity="0.15"/>
+  <line x1="280" y1="40" x2="120" y2="200" stroke="#C4A265" stroke-width="1" opacity="0.15"/>
+
+  <!-- PEPTIQ centrado -->
+  <text x="200" y="120" font-family="Georgia, 'Playfair Display', serif" font-size="62" font-weight="400" fill="#FFFFFF" letter-spacing="10" text-anchor="middle">PEPTIQ</text>
+
+  <!-- Línea gold -->
+  <line x1="120" y1="140" x2="280" y2="140" stroke="#C4A265" stroke-width="1"/>
+
+  <!-- MX grande -->
+  <text x="175" y="195" font-family="Georgia, 'Playfair Display', serif" font-size="48" font-weight="300" fill="#6B6B6B">M</text>
+  <text x="222" y="195" font-family="Georgia, 'Playfair Display', serif" font-size="52" font-weight="700" fill="#C4A265">X</text>
+
+  <!-- Tagline -->
+  <text x="200" y="240" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="8" fill="#6B6B6B" letter-spacing="3" text-anchor="middle">ADVANCED SCIENCE FOR LIMITLESS LIVING</text>
+
+  <!-- Línea inferior -->
+  <line x1="140" y1="255" x2="260" y2="255" stroke="#C4A265" stroke-width="0.5" opacity="0.3"/>
+</svg>

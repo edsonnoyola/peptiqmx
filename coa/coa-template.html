@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>COA — PEPTIQ MX</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @media print { body { margin: 0; } .no-print { display: none; } @page { margin: 15mm; } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1A1A1A; background: #fff; }
+  .page { max-width: 700px; margin: 0 auto; padding: 40px; }
+  .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; border-bottom: 2px solid #C4A265; padding-bottom: 20px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; }
+  .logo sup { font-size: 12px; color: #C4A265; font-weight: 500; }
+  .logo-sub { font-size: 9px; letter-spacing: 3px; color: #999; margin-top: 2px; }
+  .doc-title { text-align: right; }
+  .doc-title h1 { font-size: 14px; letter-spacing: 3px; color: #C4A265; font-weight: 600; }
+  .doc-title p { font-size: 11px; color: #999; margin-top: 4px; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 30px; }
+  .info-box { background: #F9F8F6; padding: 16px; border-left: 3px solid #C4A265; }
+  .info-label { font-size: 9px; letter-spacing: 2px; color: #999; text-transform: uppercase; margin-bottom: 4px; }
+  .info-value { font-size: 15px; font-weight: 600; }
+  .results { margin-bottom: 30px; }
+  .results h2 { font-size: 11px; letter-spacing: 2px; color: #C4A265; margin-bottom: 12px; text-transform: uppercase; }
+  .results-table { width: 100%; border-collapse: collapse; }
+  .results-table th { text-align: left; font-size: 10px; letter-spacing: 1px; color: #999; text-transform: uppercase; padding: 8px 12px; border-bottom: 1px solid #E8E4E0; }
+  .results-table td { padding: 12px; font-size: 14px; border-bottom: 1px solid #F0EDE8; }
+  .results-table .highlight { font-size: 24px; font-weight: 700; color: #22C55E; font-family: 'Playfair Display', serif; }
+  .lab-section { background: #F9F8F6; padding: 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; }
+  .lab-info h3 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .lab-info p { font-size: 11px; color: #666; }
+  .lab-badge { background: #22C55E; color: #fff; padding: 6px 16px; font-size: 10px; letter-spacing: 2px; font-weight: 700; }
+  .disclaimer { font-size: 9px; color: #999; line-height: 1.6; padding-top: 20px; border-top: 1px solid #E8E4E0; margin-top: 20px; }
+  .footer { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding-top: 16px; border-top: 2px solid #C4A265; }
+  .footer-left { font-size: 10px; color: #999; }
+  .footer-right { font-family: 'Playfair Display', serif; font-size: 14px; color: #C4A265; }
+  .seal { width: 70px; height: 70px; border: 2px solid #C4A265; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .seal-text { font-size: 8px; letter-spacing: 1px; color: #C4A265; }
+  .seal-main { font-family: 'Playfair Display', serif; font-size: 16px; color: #C4A265; font-weight: 700; }
+  .nav-btns { text-align: center; padding: 20px; background: #f5f3f0; }
+  .nav-btns button { padding: 10px 24px; margin: 0 8px; font-size: 13px; cursor: pointer; border: 1px solid #C4A265; background: #fff; color: #1A1A1A; font-family: Inter, sans-serif; }
+  .nav-btns button:hover { background: #C4A265; color: #fff; }
+  .nav-btns button.active { background: #1A1A1A; color: #fff; border-color: #1A1A1A; }
+</style>
+</head>
+<body>
+
+<div class="nav-btns no-print">
+  <button onclick="showCOA('bpc157')" class="active">BPC-157</button>
+  <button onclick="showCOA('tb500')">TB-500</button>
+  <button onclick="showCOA('ghkcu')">GHK-Cu</button>
+  <button onclick="showCOA('retatrutide')">Retatrutide</button>
+  <button onclick="showCOA('tesamorelin')">Tesamorelin</button>
+  <button onclick="showCOA('motsc')">MOTS-C</button>
+  <button onclick="showCOA('tirzepatide')">Tirzepatide</button>
+  <button onclick="window.print()" style="background:#C4A265;color:#fff;border-color:#C4A265;">Imprimir / PDF</button>
+</div>
+
+<!-- BPC-157 -->
+<div class="page coa-page" id="bpc157">
+  <div class="header">
+    <div><div class="logo">PEPTIQ<sup>MX</sup></div><div class="logo-sub">PREMIUM WELLNESS</div></div>
+    <div class="doc-title"><h1>CERTIFICADO DE AN&Aacute;LISIS</h1><p>Certificate of Analysis (COA)</p></div>
+  </div>
+  <div class="info-grid">
+    <div class="info-box"><div class="info-label">Producto</div><div class="info-value">BPC-157</div></div>
+    <div class="info-box"><div class="info-label">Cantidad etiquetada</div><div class="info-value">10mg / vial</div></div>
+    <div class="info-box"><div class="info-label">Cantidad real medida</div><div class="info-value">10.35mg</div></div>
+    <div class="info-box"><div class="info-label">Forma</div><div class="info-value">Polvo liofilizado</div></div>
+  </div>
+  <div class="results">
+    <h2>Resultados del an&aacute;lisis</h2>
+    <table class="results-table">
+      <tr><th>Par&aacute;metro</th><th>M&eacute;todo</th><th>Resultado</th></tr>
+      <tr><td>Identificaci&oacute;n</td><td>HPLC / MS</td><td>Confirmado: BPC-157</td></tr>
+      <tr><td>Contenido</td><td>HPLC</td><td>10.35 mg</td></tr>
+      <tr><td><strong>Pureza</strong></td><td>HPLC</td><td class="highlight">99.654%</td></tr>
+    </table>
+  </div>
+  <div class="lab-section">
+    <div class="lab-info">
+      <h3>Janoshik Analytical</h3>
+      <p>Laboratorio independiente — Praga, Rep&uacute;blica Checa</p>
+      <p>Fecha de an&aacute;lisis: 18 diciembre 2025</p>
+    </div>
+    <div class="lab-badge">VERIFICADO</div>
+  </div>
+  <div class="seal"><div class="seal-text">PEPTIQ</div><div class="seal-main">COA</div><div class="seal-text">VERIFIED</div></div>
+  <div class="disclaimer">Este certificado confirma que el producto fue analizado por un laboratorio independiente de terceros. PEPTIQ MX no es un laboratorio de an&aacute;lisis. Los resultados reflejan las condiciones de la muestra al momento del an&aacute;lisis. Este producto es exclusivamente para investigaci&oacute;n de laboratorio. NO es apto para el consumo ni la aplicaci&oacute;n humana o animal.</div>
+  <div class="footer"><div class="footer-left">peptiqmx.com | contacto@peptiqmx.com</div><div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div></div>
+</div>
+
+<!-- TB-500 -->
+<div class="page coa-page" id="tb500" style="display:none;">
+  <div class="header">
+    <div><div class="logo">PEPTIQ<sup>MX</sup></div><div class="logo-sub">PREMIUM WELLNESS</div></div>
+    <div class="doc-title"><h1>CERTIFICADO DE AN&Aacute;LISIS</h1><p>Certificate of Analysis (COA)</p></div>
+  </div>
+  <div class="info-grid">
+    <div class="info-box"><div class="info-label">Producto</div><div class="info-value">TB-500</div></div>
+    <div class="info-box"><div class="info-label">Cantidad etiquetada</div><div class="info-value">10mg / vial</div></div>
+    <div class="info-box"><div class="info-label">Cantidad real medida</div><div class="info-value">10.67mg</div></div>
+    <div class="info-box"><div class="info-label">Forma</div><div class="info-value">Polvo liofilizado</div></div>
+  </div>
+  <div class="results">
+    <h2>Resultados del an&aacute;lisis</h2>
+    <table class="results-table">
+      <tr><th>Par&aacute;metro</th><th>M&eacute;todo</th><th>Resultado</th></tr>
+      <tr><td>Identificaci&oacute;n</td><td>HPLC / MS</td><td>Confirmado: TB-500 (TB4)</td></tr>
+      <tr><td>Contenido</td><td>HPLC</td><td>10.67 mg</td></tr>
+      <tr><td><strong>Pureza</strong></td><td>HPLC</td><td class="highlight">99.328%</td></tr>
+    </table>
+  </div>
+  <div class="lab-section"><div class="lab-info"><h3>Janoshik Analytical</h3><p>Laboratorio independiente — Praga, Rep&uacute;blica Checa</p><p>Fecha de an&aacute;lisis: 18 diciembre 2025</p></div><div class="lab-badge">VERIFICADO</div></div>
+  <div class="seal"><div class="seal-text">PEPTIQ</div><div class="seal-main">COA</div><div class="seal-text">VERIFIED</div></div>
+  <div class="disclaimer">Este certificado confirma que el producto fue analizado por un laboratorio independiente de terceros. PEPTIQ MX no es un laboratorio de an&aacute;lisis. Los resultados reflejan las condiciones de la muestra al momento del an&aacute;lisis. Este producto es exclusivamente para investigaci&oacute;n de laboratorio. NO es apto para el consumo ni la aplicaci&oacute;n humana o animal.</div>
+  <div class="footer"><div class="footer-left">peptiqmx.com | contacto@peptiqmx.com</div><div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div></div>
+</div>
+
+<!-- GHK-Cu -->
+<div class="page coa-page" id="ghkcu" style="display:none;">
+  <div class="header"><div><div class="logo">PEPTIQ<sup>MX</sup></div><div class="logo-sub">PREMIUM WELLNESS</div></div><div class="doc-title"><h1>CERTIFICADO DE AN&Aacute;LISIS</h1><p>Certificate of Analysis (COA)</p></div></div>
+  <div class="info-grid">
+    <div class="info-box"><div class="info-label">Producto</div><div class="info-value">GHK-Cu</div></div>
+    <div class="info-box"><div class="info-label">Cantidad etiquetada</div><div class="info-value">100mg / vial</div></div>
+    <div class="info-box"><div class="info-label">Cantidad real medida</div><div class="info-value">95.02mg</div></div>
+    <div class="info-box"><div class="info-label">Forma</div><div class="info-value">Polvo liofilizado</div></div>
+  </div>
+  <div class="results"><h2>Resultados del an&aacute;lisis</h2><table class="results-table"><tr><th>Par&aacute;metro</th><th>M&eacute;todo</th><th>Resultado</th></tr><tr><td>Identificaci&oacute;n</td><td>HPLC / MS</td><td>Confirmado: GHK-Cu</td></tr><tr><td>Contenido</td><td>HPLC</td><td>95.02 mg</td></tr><tr><td><strong>Pureza</strong></td><td>HPLC</td><td class="highlight">99.508%</td></tr></table></div>
+  <div class="lab-section"><div class="lab-info"><h3>Janoshik Analytical</h3><p>Laboratorio independiente — Praga, Rep&uacute;blica Checa</p><p>Fecha de an&aacute;lisis: 18 diciembre 2025</p></div><div class="lab-badge">VERIFICADO</div></div>
+  <div class="seal"><div class="seal-text">PEPTIQ</div><div class="seal-main">COA</div><div class="seal-text">VERIFIED</div></div>
+  <div class="disclaimer">Este certificado confirma que el producto fue analizado por un laboratorio independiente de terceros. PEPTIQ MX no es un laboratorio de an&aacute;lisis. Este producto es exclusivamente para investigaci&oacute;n de laboratorio. NO es apto para el consumo ni la aplicaci&oacute;n humana o animal.</div>
+  <div class="footer"><div class="footer-left">peptiqmx.com | contacto@peptiqmx.com</div><div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div></div>
+</div>
+
+<!-- Retatrutide -->
+<div class="page coa-page" id="retatrutide" style="display:none;">
+  <div class="header"><div><div class="logo">PEPTIQ<sup>MX</sup></div><div class="logo-sub">PREMIUM WELLNESS</div></div><div class="doc-title"><h1>CERTIFICADO DE AN&Aacute;LISIS</h1><p>Certificate of Analysis (COA)</p></div></div>
+  <div class="info-grid">
+    <div class="info-box"><div class="info-label">Producto</div><div class="info-value">Retatrutide</div></div>
+    <div class="info-box"><div class="info-label">Cantidad etiquetada</div><div class="info-value">30mg / vial</div></div>
+    <div class="info-box"><div class="info-label">Cantidad real medida</div><div class="info-value">31.82mg</div></div>
+    <div class="info-box"><div class="info-label">Forma</div><div class="info-value">Polvo liofilizado</div></div>
+  </div>
+  <div class="results"><h2>Resultados del an&aacute;lisis</h2><table class="results-table"><tr><th>Par&aacute;metro</th><th>M&eacute;todo</th><th>Resultado</th></tr><tr><td>Identificaci&oacute;n</td><td>HPLC / MS</td><td>Confirmado: Retatrutide</td></tr><tr><td>Contenido</td><td>HPLC</td><td>31.82 mg</td></tr><tr><td><strong>Pureza</strong></td><td>HPLC</td><td class="highlight">99.080%</td></tr></table></div>
+  <div class="lab-section"><div class="lab-info"><h3>Janoshik Analytical</h3><p>Laboratorio independiente — Praga, Rep&uacute;blica Checa</p><p>Fecha de an&aacute;lisis: 18 diciembre 2025</p></div><div class="lab-badge">VERIFICADO</div></div>
+  <div class="seal"><div class="seal-text">PEPTIQ</div><div class="seal-main">COA</div><div class="seal-text">VERIFIED</div></div>
+  <div class="disclaimer">Este certificado confirma que el producto fue analizado por un laboratorio independiente de terceros. PEPTIQ MX no es un laboratorio de an&aacute;lisis. Este producto es exclusivamente para investigaci&oacute;n de laboratorio. NO es apto para el consumo ni la aplicaci&oacute;n humana o animal.</div>
+  <div class="footer"><div class="footer-left">peptiqmx.com | contacto@peptiqmx.com</div><div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div></div>
+</div>
+
+<!-- Tesamorelin -->
+<div class="page coa-page" id="tesamorelin" style="display:none;">
+  <div class="header"><div><div class="logo">PEPTIQ<sup>MX</sup></div><div class="logo-sub">PREMIUM WELLNESS</div></div><div class="doc-title"><h1>CERTIFICADO DE AN&Aacute;LISIS</h1><p>Certificate of Analysis (COA)</p></div></div>
+  <div class="info-grid">
+    <div class="info-box"><div class="info-label">Producto</div><div class="info-value">Tesamorelin</div></div>
+    <div class="info-box"><div class="info-label">Cantidad etiquetada</div><div class="info-value">10mg / vial</div></div>
+    <div class="info-box"><div class="info-label">Cantidad real medida</div><div class="info-value">10.55mg</div></div>
+    <div class="info-box"><div class="info-label">Forma</div><div class="info-value">Polvo liofilizado</div></div>
+  </div>
+  <div class="results"><h2>Resultados del an&aacute;lisis</h2><table class="results-table"><tr><th>Par&aacute;metro</th><th>M&eacute;todo</th><th>Resultado</th></tr><tr><td>Identificaci&oacute;n</td><td>HPLC / MS</td><td>Confirmado: Tesamorelin</td></tr><tr><td>Contenido</td><td>HPLC</td><td>10.55 mg</td></tr><tr><td><strong>Pureza</strong></td><td>HPLC</td><td class="highlight">99.062%</td></tr></table></div>
+  <div class="lab-section"><div class="lab-info"><h3>Janoshik Analytical</h3><p>Laboratorio independiente — Praga, Rep&uacute;blica Checa</p><p>Fecha de an&aacute;lisis: 18 diciembre 2025</p></div><div class="lab-badge">VERIFICADO</div></div>
+  <div class="seal"><div class="seal-text">PEPTIQ</div><div class="seal-main">COA</div><div class="seal-text">VERIFIED</div></div>
+  <div class="disclaimer">Este certificado confirma que el producto fue analizado por un laboratorio independiente de terceros. Este producto es exclusivamente para investigaci&oacute;n de laboratorio. NO es apto para el consumo ni la aplicaci&oacute;n humana o animal.</div>
+  <div class="footer"><div class="footer-left">peptiqmx.com | contacto@peptiqmx.com</div><div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div></div>
+</div>
+
+<!-- MOTS-C -->
+<div class="page coa-page" id="motsc" style="display:none;">
+  <div class="header"><div><div class="logo">PEPTIQ<sup>MX</sup></div><div class="logo-sub">PREMIUM WELLNESS</div></div><div class="doc-title"><h1>CERTIFICADO DE AN&Aacute;LISIS</h1><p>Certificate of Analysis (COA)</p></div></div>
+  <div class="info-grid">
+    <div class="info-box"><div class="info-label">Producto</div><div class="info-value">MOTS-C</div></div>
+    <div class="info-box"><div class="info-label">Cantidad etiquetada</div><div class="info-value">40mg / vial</div></div>
+    <div class="info-box"><div class="info-label">Cantidad real medida</div><div class="info-value">44.13mg</div></div>
+    <div class="info-box"><div class="info-label">Forma</div><div class="info-value">Polvo liofilizado</div></div>
+  </div>
+  <div class="results"><h2>Resultados del an&aacute;lisis</h2><table class="results-table"><tr><th>Par&aacute;metro</th><th>M&eacute;todo</th><th>Resultado</th></tr><tr><td>Identificaci&oacute;n</td><td>HPLC / MS</td><td>Confirmado: MOTS-C</td></tr><tr><td>Contenido</td><td>HPLC</td><td>44.13 mg</td></tr><tr><td><strong>Pureza</strong></td><td>HPLC</td><td class="highlight">99.664%</td></tr></table></div>
+  <div class="lab-section"><div class="lab-info"><h3>Janoshik Analytical</h3><p>Laboratorio independiente — Praga, Rep&uacute;blica Checa</p><p>Fecha de an&aacute;lisis: 18 diciembre 2025</p></div><div class="lab-badge">VERIFICADO</div></div>
+  <div class="seal"><div class="seal-text">PEPTIQ</div><div class="seal-main">COA</div><div class="seal-text">VERIFIED</div></div>
+  <div class="disclaimer">Este certificado confirma que el producto fue analizado por un laboratorio independiente de terceros. Este producto es exclusivamente para investigaci&oacute;n de laboratorio. NO es apto para el consumo ni la aplicaci&oacute;n humana o animal.</div>
+  <div class="footer"><div class="footer-left">peptiqmx.com | contacto@peptiqmx.com</div><div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div></div>
+</div>
+
+<!-- Tirzepatide -->
+<div class="page coa-page" id="tirzepatide" style="display:none;">
+  <div class="header"><div><div class="logo">PEPTIQ<sup>MX</sup></div><div class="logo-sub">PREMIUM WELLNESS</div></div><div class="doc-title"><h1>CERTIFICADO DE AN&Aacute;LISIS</h1><p>Certificate of Analysis (COA)</p></div></div>
+  <div class="info-grid">
+    <div class="info-box"><div class="info-label">Producto</div><div class="info-value">Tirzepatide</div></div>
+    <div class="info-box"><div class="info-label">Cantidad etiquetada</div><div class="info-value">30mg / vial</div></div>
+    <div class="info-box"><div class="info-label">Cantidad real medida</div><div class="info-value">33.25mg</div></div>
+    <div class="info-box"><div class="info-label">Forma</div><div class="info-value">Polvo liofilizado</div></div>
+  </div>
+  <div class="results"><h2>Resultados del an&aacute;lisis</h2><table class="results-table"><tr><th>Par&aacute;metro</th><th>M&eacute;todo</th><th>Resultado</th></tr><tr><td>Identificaci&oacute;n</td><td>HPLC / MS</td><td>Confirmado: Tirzepatide</td></tr><tr><td>Contenido</td><td>HPLC</td><td>33.25 mg</td></tr><tr><td><strong>Pureza</strong></td><td>HPLC</td><td class="highlight">99.645%</td></tr></table></div>
+  <div class="lab-section"><div class="lab-info"><h3>Janoshik Analytical</h3><p>Laboratorio independiente — Praga, Rep&uacute;blica Checa</p><p>Fecha de an&aacute;lisis: 18 diciembre 2025</p></div><div class="lab-badge">VERIFICADO</div></div>
+  <div class="seal"><div class="seal-text">PEPTIQ</div><div class="seal-main">COA</div><div class="seal-text">VERIFIED</div></div>
+  <div class="disclaimer">Este certificado confirma que el producto fue analizado por un laboratorio independiente de terceros. Este producto es exclusivamente para investigaci&oacute;n de laboratorio. NO es apto para el consumo ni la aplicaci&oacute;n humana o animal.</div>
+  <div class="footer"><div class="footer-left">peptiqmx.com | contacto@peptiqmx.com</div><div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div></div>
+</div>
+
+<script>
+function showCOA(id) {
+  document.querySelectorAll('.coa-page').forEach(p => p.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+  document.querySelectorAll('.nav-btns button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

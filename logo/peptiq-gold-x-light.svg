@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 80" width="480" height="80">
+  <!-- PEPTIQ MX — X dorada sutil, fondo blanco -->
+  <rect width="480" height="80" fill="#FFFFFF"/>
+  <text x="20" y="52" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="600" fill="#1A1A1A" letter-spacing="5">PEPTIQ</text>
+  <text x="270" y="52" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="300" fill="#1A1A1A" opacity="0.4" letter-spacing="3">M</text>
+  <text x="310" y="52" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="600" fill="#B8933E" letter-spacing="3">X</text>
+</svg>

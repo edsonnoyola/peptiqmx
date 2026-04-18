@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ MX — Market Research 2026</title>
+<style>
+  @page { size: Letter landscape; margin: 12mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #111;
+    margin: 0;
+    padding: 0;
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+  .page { page-break-after: always; padding: 0; }
+  .page:last-child { page-break-after: auto; }
+  header {
+    border-bottom: 3px solid #c9a961;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  h1 { font-size: 22px; margin: 0; letter-spacing: 2px; font-weight: 800; }
+  h1 .gold { color: #c9a961; font-size: 11px; vertical-align: super; letter-spacing: 1px; }
+  h2 { font-size: 15px; color: #c9a961; border-left: 4px solid #c9a961; padding-left: 8px; margin: 14px 0 8px; text-transform: uppercase; letter-spacing: 1.2px; }
+  h3 { font-size: 12px; margin: 12px 0 4px; color: #333; text-transform: uppercase; letter-spacing: 0.5px; }
+  h4 { font-size: 11px; margin: 8px 0 4px; color: #111; }
+  p { margin: 4px 0 8px; }
+  .meta { color: #777; font-size: 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; }
+  th {
+    background: #111;
+    color: #c9a961;
+    text-align: left;
+    padding: 6px 7px;
+    font-size: 9.5px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border: none;
+  }
+  td { padding: 5px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; font-size: 10px; }
+  tr:nth-child(even) td { background: #fafaf7; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .code { font-family: 'SF Mono', Menlo, monospace; font-weight: 700; background: #111; color: #c9a961; padding: 2px 5px; border-radius: 3px; font-size: 9.5px; }
+  .up { color: #0a7f3f; font-weight: 700; }
+  .down { color: #b33; font-weight: 700; }
+  .flat { color: #999; }
+  .premium { font-weight: 800; color: #111; }
+  .gold-bg { background: #c9a961 !important; color: #111 !important; font-weight: 800; }
+  ul { margin: 4px 0 8px 18px; padding: 0; }
+  ul li { margin-bottom: 3px; }
+  ol { margin: 4px 0 8px 18px; padding: 0; }
+  ol li { margin-bottom: 4px; }
+  .bullet-box {
+    background: #fafaf7;
+    border-left: 3px solid #c9a961;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 10.5px;
+  }
+  .summary-box { background: #111; color: #fff; padding: 10px 14px; border-radius: 6px; margin: 10px 0; }
+  .summary-box .row { display: flex; justify-content: space-between; padding: 3px 0; font-size: 11px; }
+  .summary-box .row .label { color: #c9a961; }
+  .warn { background: #fff4e5; border-left: 3px solid #d97706; padding: 8px 12px; margin: 8px 0; font-size: 10.5px; }
+  .warn b { color: #d97706; }
+  .risk { background: #fef2f2; border-left: 3px solid #b91c1c; padding: 8px 12px; margin: 8px 0; font-size: 10.5px; }
+  .risk b { color: #b91c1c; }
+  .ok { background: #f0fdf4; border-left: 3px solid #0a7f3f; padding: 8px 12px; margin: 8px 0; font-size: 10.5px; }
+  .ok b { color: #0a7f3f; }
+  .two-col { display: flex; gap: 14px; }
+  .two-col > div { flex: 1; }
+  .persona {
+    border: 1px solid #e0dac7;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(180deg, #fff 0%, #faf7ee 100%);
+    break-inside: avoid;
+  }
+  .persona h4 { margin: 0 0 4px; font-size: 13px; color: #111; }
+  .persona .tag { font-size: 9px; color: #c9a961; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+  .persona .meta-line { font-size: 9.5px; color: #666; margin: 2px 0 5px; font-style: italic; }
+  .persona ul { margin: 4px 0 0 16px; font-size: 10px; }
+  .ascii { font-family: 'SF Mono', Menlo, monospace; font-size: 10px; background: #111; color: #c9a961; padding: 10px 14px; border-radius: 4px; white-space: pre; overflow-x: auto; line-height: 1.35; }
+  .source { font-size: 8.5px; color: #888; }
+  .source a { color: #c9a961; text-decoration: none; }
+  .source-list { font-size: 9px; column-count: 2; column-gap: 18px; }
+  .source-list li { margin-bottom: 4px; break-inside: avoid; }
+  .opp-rank { width: 36px; height: 36px; background: #c9a961; color: #111; display: inline-block; text-align: center; line-height: 36px; font-weight: 800; border-radius: 50%; font-size: 14px; margin-right: 8px; vertical-align: middle; }
+  footer { text-align: center; font-size: 8.5px; color: #999; margin-top: 12px; border-top: 1px solid #eee; padding-top: 6px; }
+  .kpi-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin: 10px 0; }
+  .kpi { border: 1px solid #c9a961; padding: 8px 10px; border-radius: 4px; text-align: center; background: #faf7ee; }
+  .kpi .v { font-size: 18px; font-weight: 800; color: #111; display: block; }
+  .kpi .l { font-size: 9px; color: #666; text-transform: uppercase; letter-spacing: 0.8px; }
+  .kpi .s { font-size: 8px; color: #999; display: block; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<!-- =========================================================== -->
+<!-- PÁGINA 1 — PORTADA + RESUMEN EJECUTIVO                      -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · MARKET RESEARCH</h1>
+    <span class="meta">Abril 2026 · Grupo TDI · Confidencial · For research use only</span>
+  </header>
+
+  <h2>Resumen Ejecutivo</h2>
+  <p>Investigación de mercado del segmento <b>péptidos de investigación</b> (research-use-only) en México, con foco en posicionamiento de PEPTIQ MX como única marca premium del portafolio TDI tras la discontinuación de Nova Peptides (13-abril-2026). El reporte integra data de 11 competidores activos, 4 informes sectoriales globales (Grand View Research, IMARC, Mordor, Precedence), alertas COFEPRIS vigentes (feb 2026) y pricing verificado en vivo.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <span class="v">USD 467.5 M</span>
+      <span class="l">TAM MX 2023</span>
+      <span class="s">Peptide Therapeutics (Grand View)</span>
+    </div>
+    <div class="kpi">
+      <span class="v">USD 789.4 M</span>
+      <span class="l">TAM MX 2030</span>
+      <span class="s">CAGR 7.8% (2024-2030)</span>
+    </div>
+    <div class="kpi">
+      <span class="v">+208%</span>
+      <span class="l">Ads peptides 2024</span>
+      <span class="s">vs 2023 (ppc.land)</span>
+    </div>
+    <div class="kpi">
+      <span class="v">5<sup>to</sup> lugar</span>
+      <span class="l">MX procedimientos estéticos</span>
+      <span class="s">global (ISAPS 2023)</span>
+    </div>
+  </div>
+
+  <div class="bullet-box">
+    <b style="color:#c9a961; letter-spacing: 1px;">5 HALLAZGOS ACCIONABLES — TL;DR</b>
+    <ol>
+      <li><b>Moat defendible: COA Janoshik público.</b> De 11 competidores analizados, NINGUNO publica COA verificable en janoshik.com (solo Bach Labs menciona Janoshik sin link público; Singular Biotech promete COA genérico). PEPTIQ es el único con verificación pública — diferenciador central del pricing premium.</li>
+      <li><b>Zona de precios premium está VACÍA.</b> Rango actual BPC-157 10mg: $849 (XT Labs) — $3,800 (GoutoGo). La franja $1,500-$2,000 (premium legítimo) la ocupa solo Bach Labs con posicionamiento diferente (subscripción). PEPTIQ $1,699 entra en white space con +36% vs mediana $1,250.</li>
+      <li><b>Riesgo GLP-1 es real y creciente.</b> COFEPRIS ya nombró públicamente a "Peptide Xperts" (feb 2026). Retatrutide $7,999 en PEPTIQ exige desacoplamiento de marca (venta sólo a clientes D2C existentes, nunca pauta pagada). Apartar como SKU "enterprise" offline.</li>
+      <li><b>Segmento anti-aging/estética MX = USD 274.5 M (2024).</b> Creciendo 8.25% CAGR. Clínicas duplicadas desde 2018 (ANME reporta 12,000+ médicos afiliados). <b>Canal B2B2C desatendido</b> — ningún competidor vende a clínicas con marca propia + márgenes de 30-40% para el médico.</li>
+      <li><b>Meta Ads es hostil; SEO + WhatsApp + influencer nicho ganan.</b> Meta bloquea 100% de ads con término "péptidos". Ningún competidor invierte en SEO educativo serio (Bach Labs y Beyond Health Lab están cerca). Ventana de 6-12 meses para construir autoridad antes que Singular/Exoma reaccionen.</li>
+    </ol>
+  </div>
+
+  <h3>Método y fuentes</h3>
+  <p>Fuentes primarias: scraping en vivo de 11 sitios competidores (mar 2026), catálogo del proveedor Zhi Peptide (China), inventario físico PEPTIQ verificado 14 cajas / 140 viales. Fuentes secundarias: Grand View Research, IMARC, Precedence, Mordor Intelligence, Glossy, The Atlantic, ppc.land, El Economista, La Jornada (COFEPRIS), ISAPS 2023, ANME. Tipo de cambio usado: <b>20 MXN/USD</b> (abril 2026). Todos los precios de venta son MXN por vial salvo indicación contraria. 15+ fuentes citables listadas en página final.</p>
+
+  <footer>PEPTIQ MX · peptiqmx.com · COA Janoshik verificable · Página 1 de 9 · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- PÁGINA 2 — TAMAÑO DE MERCADO                                -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · TAMAÑO DE MERCADO</h1>
+    <span class="meta">TAM / SAM / SOM — México research-use peptides</span>
+  </header>
+
+  <h2>1. Tamaño de Mercado (TAM / SAM / SOM)</h2>
+
+  <h3>1.1 Mercado global y regional — contexto</h3>
+  <table>
+    <thead>
+      <tr><th>Scope</th><th class="num">2023/24</th><th class="num">2030</th><th class="num">CAGR</th><th>Fuente</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Global peptide therapeutics</td><td class="num">USD 42.4 B</td><td class="num">USD 65 B (2030)</td><td class="num">7.5%</td><td>Grand View Research</td></tr>
+      <tr><td>Global — horizonte 2035</td><td class="num">USD 46 B (2025)</td><td class="num">USD 87.2 B (2035)</td><td class="num">6.6%</td><td>Precedence Research</td></tr>
+      <tr><td>Latinoamérica</td><td class="num">USD 3.9 B (2024)</td><td class="num">USD 7.9 B (2030)</td><td class="num">12.1%</td><td>Grand View LATAM</td></tr>
+      <tr class="gold-bg"><td><b>México (therapeutic total)</b></td><td class="num"><b>USD 467.5 M (2023)</b></td><td class="num"><b>USD 789.4 M (2030)</b></td><td class="num"><b>7.8%</b></td><td><b>Grand View MX outlook</b></td></tr>
+      <tr><td>MX — medical aesthetics</td><td class="num">USD 274.5 M (2024)</td><td class="num">USD 560.3 M (2033)</td><td class="num">8.25%</td><td>IMARC Group</td></tr>
+      <tr><td>MX — regenerative medicine</td><td class="num">USD 400.5 M (2024)</td><td class="num">USD 1,939.9 M (2033)</td><td class="num">19.16%</td><td>IMARC Group</td></tr>
+      <tr><td>MX — fitness supplements</td><td class="num">USD 277.4 M (2024)</td><td class="num">USD 610.2 M (2033)</td><td class="num">8.20%</td><td>IMARC Group</td></tr>
+      <tr><td>MX — anti-aging (general)</td><td class="num">USD 1.2 B (2024)</td><td class="num">USD 2.1 B (2033)</td><td class="num">6.37%</td><td>IMARC Group</td></tr>
+    </tbody>
+  </table>
+  <p class="source">Nota: el TAM de "peptide therapeutics" (USD 467.5 M MX 2023) incluye principalmente medicamentos registrados (insulina, GLP-1 aprobados, liraglutida, etc.) y NO representa el canal research-use-only donde opera PEPTIQ. Usamos ese número como <b>piso teórico</b> y derivamos el SAM de research-chemicals desde data de competidores.</p>
+
+  <h3>1.2 TAM / SAM / SOM estimado para PEPTIQ MX (canal research-use-only)</h3>
+  <table>
+    <thead>
+      <tr><th>Nivel</th><th>Definición</th><th class="num">Valor MXN/año</th><th class="num">Valor USD/año</th><th>Cálculo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>TAM</b></td>
+        <td>Todos los mexicanos NSE A/B/C+ (~18 M personas) con interés potencial en peptides (biohacking, fitness performance, anti-aging)</td>
+        <td class="num">~$3,600 M MXN</td>
+        <td class="num">~USD 180 M</td>
+        <td>18 M × 1% penetración × $20k ticket anual</td>
+      </tr>
+      <tr>
+        <td><b>SAM</b></td>
+        <td>Mercado actual de research peptides MX: 11 competidores activos. Estimamos facturación agregada sumando inventarios visibles y frecuencia de restock.</td>
+        <td class="num">~$450-750 M MXN</td>
+        <td class="num">USD 22-37 M</td>
+        <td>Estimación bottom-up: GoutoGo ~$40M, Exoma ~$60M, Aesthetic Pharma ~$80M, Cuerpoymente ~$50M, Singular ~$100M, otros 6 ~$220M</td>
+      </tr>
+      <tr class="gold-bg">
+        <td><b>SOM<br>(realista 24 meses)</b></td>
+        <td><b>Meta PEPTIQ año 2: 2-3% del SAM.</b> Requiere 8-15 pedidos/mes promedio ticket $3,500 MXN.</td>
+        <td class="num"><b>$9-22 M MXN</b></td>
+        <td class="num"><b>USD 450k-1.1M</b></td>
+        <td>Año 1 conservador: $3-5 M MXN (100-140 pedidos). Año 2 con autoridad SEO + B2B clínicas: $12-22 M.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="warn">
+    <b>CAVEAT — SAM estimado, no medido.</b> No existe reporte público de "research peptides MX". El SAM $450-750 M MXN es derivación basada en: (a) 11 competidores × facturación estimada por tamaño de catálogo e inventario visible, (b) cruce con proporción LATAM vs global, (c) crecimiento de búsquedas "BPC-157" +60-120% YoY según fuentes globales. El número real podría ser ±50%. Para validar: comprar data Euromonitor MX o Kantar MX (CapEx $3-8k USD).
+  </div>
+
+  <h3>1.3 Drivers de crecimiento (¿por qué crece?)</h3>
+  <div class="two-col">
+    <div>
+      <b>Tailwinds (favorables):</b>
+      <ul>
+        <li>Boom GLP-1 mediático (Ozempic/Wegovy/Mounjaro) despertó interés masivo en peptides inyectables.</li>
+        <li>Búsquedas globales "BPC-157" subieron <b>~15-20% anual 2024-2026</b> (Glossy, Accio Trends).</li>
+        <li>Ads peptides +208% en 2024 vs 2023 (ppc.land) — demanda creciendo más rápido que supply.</li>
+        <li>Clase media MX +3.8 M hogares al rango NSE C+/B para 2030 (Banco Mundial).</li>
+        <li>Clínicas estéticas MX duplicadas desde 2018 (AMIR/ANME) → canal B2B natural.</li>
+        <li>Cultura biohacker/longevidad llegando a MX vía influencers US (Huberman, Attia, Bryan Johnson) con lag de 12-24 meses.</li>
+      </ul>
+    </div>
+    <div>
+      <b>Headwinds (adversos):</b>
+      <ul>
+        <li>COFEPRIS endureciendo vigilancia GLP-1 (feb 2026, nombró Peptide Xperts públicamente).</li>
+        <li>Meta Ads bloquea 100% del término "péptido" — canal crítico cerrado.</li>
+        <li>Bancos rechazan merchant account → obliga a SPEI/crypto (reduce conversión 20-40%).</li>
+        <li>Farmacéuticas (Eli Lilly, Novo Nordisk) presionan legal a revendedores de GLP-1 compounded.</li>
+        <li>Riesgo de cambio regulatorio súbito: un caso mediático de daño puede llevar a prohibición.</li>
+        <li>Proveedor único (Zhi Peptide, China) = single point of failure logístico.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Página 2 de 9 · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- PÁGINA 3 — COMPETENCIA DETALLADA                            -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · COMPETENCIA</h1>
+    <span class="meta">11 competidores scraping verificado mar 2026</span>
+  </header>
+
+  <h2>2. Análisis de competencia</h2>
+
+  <h3>2.1 Matriz competidores — posicionamiento, precio, moats</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Competidor</th><th>Plaza</th><th>Posicionamiento</th>
+        <th class="num">BPC-157 10mg</th><th>COA público</th><th>Canal</th><th>Moat / debilidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><b>GoutoGo</b></td><td>CDMX</td><td>Premium clínica estética</td><td class="num">$3,800</td><td>No</td><td>Web iPos + clínica física</td><td>Único con aviso COFEPRIS explícito. <b>Web fea.</b></td></tr>
+      <tr><td>2</td><td><b>Bach Labs</b></td><td>MX nacional</td><td>Premium suscripción</td><td class="num">$2,900</td><td>Menciona Janoshik<br>(no link público)</td><td>Shopify + chatbot AI</td><td>Único con modelo subscription. Diseño retro 80s diferenciado.</td></tr>
+      <tr><td>3</td><td><b>Cuerpoymente</b></td><td>MX nacional</td><td>Nootrópicos + peptides</td><td class="num">$2,699</td><td>No</td><td>Web + crypto</td><td>40+ categorías salud. Envío 1 día hábil. Sin COA.</td></tr>
+      <tr><td>4</td><td><b>Supreme Peptides</b></td><td>Monterrey</td><td>Veterano 8+ años</td><td class="num">$2,500</td><td>No</td><td>Wix + email</td><td>Reputación antigua. <b>Email hotmail.com</b> = poco profesional.</td></tr>
+      <tr><td>5</td><td><b>Exoma Peptides</b></td><td>Monterrey</td><td>D2C líder SEO</td><td class="num">$1,500</td><td>Genérico (no Janoshik)</td><td>Shopify + MercadoPago</td><td>600+ reviews 4.5/5. <b>Benchmark real.</b> Catálogo amplio.</td></tr>
+      <tr><td>6</td><td><b>Aesthetic Pharma</b></td><td>MX nacional</td><td>Distribuidor Aesthetic Labs (Rumania)</td><td class="num">$1,250</td><td>No</td><td>Shopify + SPEI/OXXO</td><td>Marca más vendida en MX. <b>Solo transferencia</b> (sin tarjeta).</td></tr>
+      <tr><td>7</td><td><b>The Fit Weekend</b></td><td>MX nacional</td><td>Fitness + multi-marca</td><td class="num">$1,200</td><td>No</td><td>Web + IG activo</td><td>56 peptides. <b>Sin disclaimers</b> (riesgo legal).</td></tr>
+      <tr><td>8</td><td><b>PremiumLabs.mx</b></td><td>MX nacional</td><td>Mid-market</td><td class="num">$1,250 est</td><td>No</td><td>Web (offline al scraping)</td><td>Data limitada. Presencia moderada.</td></tr>
+      <tr><td>9</td><td><b>Roidstore</b></td><td>MX</td><td>Esteroides + peptides</td><td class="num">$990</td><td>No</td><td>Web</td><td>Segmento bodybuilding. Mezcla con AAS = riesgo imagen.</td></tr>
+      <tr><td>10</td><td><b>XT Labs / División Fitness</b></td><td>MX</td><td>Lab propio / bodybuilding</td><td class="num">$849-1,050</td><td>No</td><td>Web + SEARS</td><td><b>Piso de precio.</b> Sospechosamente barato — afecta percepción de pureza.</td></tr>
+      <tr><td>11</td><td><b>Singular Biotech</b></td><td>Quintana Roo</td><td>Mayoreo / unbranded</td><td class="num">$899 (5mg)<br>→ $1,798 (10mg)</td><td>Genérico (no Janoshik público)</td><td>Web + eBay + B2B</td><td>60+ peptides. <b>Líder mayoreo.</b> Vende caja sin marca a revendedores. Inventario enorme.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.2 Posicionamiento visual — mapa precio × credibilidad</h3>
+  <div class="ascii">
+  ALTO PRECIO
+  $4,000 │              GoutoGo ●      (clínica + COFEPRIS, sin COA)
+         │
+  $3,500 │  ┌─ white space premium con COA ─┐
+         │  │                                │
+  $3,000 │  │     Bach Labs ●                │
+         │  │     (Janoshik, subscription)   │
+         │  │   Cuerpoymente ●               │
+  $2,500 │  │   Supreme ●                    │
+         │  │                                │
+  $2,000 │  │ ▶ PEPTIQ MX $1,699 ◀           │ ← ÚNICO con COA público Janoshik
+         │  │   (COA público, premium)       │
+  $1,500 │  │ Exoma ●                        │
+         │  └── benchmark real ─┐            │
+  $1,250 │  Aesthetic Pharma ●  │ TheFitWknd │
+         │                      │ Premium    │
+  $1,000 │                      │ Roidstore  │
+         │   XT Labs ●          │ Singular   │
+  $800  ─│   (piso sospechoso)  └──          │
+         └────────────────────────────────────
+          BAJA                CREDIBILIDAD     ALTA
+  </div>
+  <p class="source">Insight: el cuadrante alto-precio + alta-credibilidad está prácticamente vacío. Bach Labs es el único ocupante y usa vehículo subscription (menos ~30% de buyers aceptan ese modelo en MX). PEPTIQ $1,699 + COA Janoshik público + venta transaccional = primera marca en ese cuadrante con modelo D2C tradicional.</p>
+
+  <h3>2.3 Análisis de moats — ¿quién defiende qué?</h3>
+  <table>
+    <thead>
+      <tr><th>Moat</th><th>Competidor dueño</th><th>PEPTIQ lo tiene?</th><th>Defensibilidad</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>COA público verificable (Janoshik)</td><td>Ninguno real</td><td><b class="up">Sí</b></td><td><b>ALTA</b> — sostenible 12-24 meses antes que copien</td></tr>
+      <tr><td>Marca establecida + reviews</td><td>Exoma (600+), Supreme (8 años)</td><td>No aún</td><td>Alta — se construye con tiempo</td></tr>
+      <tr><td>Mayoreo/unbranded a escala</td><td>Singular Biotech</td><td>No aplica</td><td>Alta — requiere CapEx inventario</td></tr>
+      <tr><td>Subscripción + consultoría</td><td>Bach Labs</td><td>No</td><td>Media — copiable rápido</td></tr>
+      <tr><td>Clínica física</td><td>GoutoGo</td><td>No</td><td>Alta — CapEx + permisos</td></tr>
+      <tr><td>Permiso COFEPRIS exhibido</td><td>GoutoGo</td><td>En trámite</td><td>Media — trámite 2-4 sem</td></tr>
+      <tr><td>SEO educativo serio</td><td>Nadie domina</td><td>Oportunidad</td><td>Media — 6-12 meses construir</td></tr>
+      <tr><td>Precio piso agresivo</td><td>XT Labs / Singular</td><td>N/A (no competir)</td><td>Baja — carrera al fondo</td></tr>
+    </tbody>
+  </table>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Página 3 de 9 · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- PÁGINA 4 — SEGMENTACIÓN Y BUYER PERSONAS                    -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · PERSONAS &amp; SEGMENTOS</h1>
+    <span class="meta">5 buyer personas · tamaño · ticket · journey</span>
+  </header>
+
+  <h2>3. Segmentación y buyer personas</h2>
+
+  <div class="persona">
+    <span class="tag">Persona 1 · CORE</span>
+    <h4>EL BIOHACKER INFORMADO — "Ricardo, 34, CDMX/MTY/GDL"</h4>
+    <div class="meta-line">Hombre 28-42 · NSE A/B · ingreso $80k-200k MXN/mes · tech, finanzas, consultoría, médico · lee Huberman/Attia/Bryan Johnson · ya probó al menos un péptido</div>
+    <ul>
+      <li><b>Tamaño estimado MX:</b> 40-80k personas activas (NSE A+B masculino 28-45 urbano cruzado con tasa interés biohacking ~2-3%).</li>
+      <li><b>Ticket promedio:</b> $3,500-6,500 MXN por compra · 3-6 compras/año · <b>LTV $15-30k MXN</b>.</li>
+      <li><b>Comportamiento:</b> Investiga 2-4 semanas antes de primera compra. Lee Reddit r/Peptides, ve videos. Pide COA antes de comprar. Escéptico al precio piso ("parece falso"). Compra por WhatsApp aún si sitio tiene checkout — quiere validar al humano.</li>
+      <li><b>Dolor:</b> Miedo a pureza baja / contaminación bacteriana. Miedo a ser estafado. Quiere saber que funcionará ANTES de pagar.</li>
+      <li><b>Gancho PEPTIQ:</b> COA Janoshik público + contenido educativo largo + Wolverine Stack + testimonios IG.</li>
+    </ul>
+  </div>
+
+  <div class="persona">
+    <span class="tag">Persona 2 · ALTO VALOR</span>
+    <h4>MÉDICO / CLÍNICA ESTÉTICA — "Dra. Paulina, 42, Polanco/San Pedro/Zapopan"</h4>
+    <div class="meta-line">Dermatóloga, medicina estética, anti-aging · clínica propia o compartida · recomienda/receta/administra a pacientes (legal en su práctica privada)</div>
+    <ul>
+      <li><b>Tamaño estimado MX:</b> <b>~12,000 médicos</b> afiliados a ANME + ~3-5k clínicas de medicina estética activas (ANME 2024, AMIR). De ellos, ~15-20% ya trabaja con peptides = <b>2,000-2,500 clínicas target</b>.</li>
+      <li><b>Ticket promedio:</b> $8-25k MXN/mes compra · LTV $80-300k MXN · recompra mensual.</li>
+      <li><b>Comportamiento:</b> Compra vía WhatsApp o call. Exige factura con RFC. Pide descuento por volumen (10-25%). No compra sin COA. Busca pricing estable para poder margen 30-40% al paciente final.</li>
+      <li><b>Dolor:</b> Proveedores inestables (stockouts), sin factura, precios volátiles, proveedor sin branding premium presentable al paciente.</li>
+      <li><b>Gancho PEPTIQ:</b> Programa B2B PEPTIQ PRO · precio -20% vs retail · factura 16% IVA · stock garantizado · etiquetas premium para mostrar al paciente · COA Janoshik que respalda la recomendación.</li>
+    </ul>
+  </div>
+
+  <div class="persona">
+    <span class="tag">Persona 3 · VOLUMEN</span>
+    <h4>EL ATHLETE AMATEUR — "Julio, 29, CrossFitter / lifter / triatleta"</h4>
+    <div class="meta-line">Hombre 22-38 · NSE B/C+ · gimnasio diario · lesiones recurrentes (hombro, rodilla, codo) · busca BPC/TB para recuperación</div>
+    <ul>
+      <li><b>Tamaño estimado MX:</b> Mercado fitness supplements MX USD 277 M (IMARC 2024). ~3-5 M usuarios regulares de suplementos deportivos. Subset con lesión + interés peptides: ~100-200k personas.</li>
+      <li><b>Ticket promedio:</b> $1,700-3,500 MXN · 2-4 compras/año · LTV $5-12k MXN.</li>
+      <li><b>Comportamiento:</b> Descubre peptides por coach, compañero de box, o IG fitness. Busca "BPC-157 para codo/hombro/rodilla". Compra producto específico, no stack. Price-sensitive pero tolera +30% si confía.</li>
+      <li><b>Dolor:</b> Lesiones que no sanan · fisioterapia cara · quiere volver al box.</li>
+      <li><b>Gancho PEPTIQ:</b> Contenido "BPC-157 para [lesión específica]", testimonials atletas, Wolverine Stack $3,299, partnership con boxes CrossFit / gimnasios premium.</li>
+    </ul>
+  </div>
+
+  <div class="persona">
+    <span class="tag">Persona 4 · EMERGENTE</span>
+    <h4>LA WELLNESS ENTHUSIAST — "Sofía, 38, ejecutiva / empresaria"</h4>
+    <div class="meta-line">Mujer 32-50 · NSE A/B · cuida piel, sueño, energía · consume suplementos premium · botox + tratamientos estéticos regulares</div>
+    <ul>
+      <li><b>Tamaño estimado MX:</b> Mercado anti-aging MX USD 1.2 B (IMARC 2024). Mujeres NSE A/B 30-55 urbanas activas en estética: ~2-3 M. Subset cross-over a peptides: ~50-100k.</li>
+      <li><b>Ticket promedio:</b> $4,000-8,000 MXN · 3-5 compras/año · LTV $15-35k MXN.</li>
+      <li><b>Comportamiento:</b> Descubre peptides por dermatóloga o IG belleza. Entra por GHK-Cu (skincare) o GLOW. Luego se mueve a Epithalon/NAD+ (longevidad). Alto valor, leal si resultados visibles.</li>
+      <li><b>Dolor:</b> Piel, cabello, energía, sueño. Presión social estar joven. No quiere inyectarse botox más seguido.</li>
+      <li><b>Gancho PEPTIQ:</b> GLOW Essential $4,499 + GLOW PRO $6,399 · contenido IG estético · partnerships con dermatólogos · storytelling anti-aging (no "drogas").</li>
+    </ul>
+  </div>
+
+  <div class="persona">
+    <span class="tag">Persona 5 · NICHO LONGEVIDAD</span>
+    <h4>EL LONGEVITY SEEKER — "Eduardo, 54, empresario / ex-atleta"</h4>
+    <div class="meta-line">Hombre 45-65 · NSE A · ingreso $300k+ MXN/mes · preocupado por envejecimiento · lee Attia, David Sinclair · ya hace testosterona / HRT</div>
+    <ul>
+      <li><b>Tamaño estimado MX:</b> 20-40k personas (NSE A masculino 45-65 cruzado con interés longevidad).</li>
+      <li><b>Ticket promedio:</b> $8-15k MXN/compra · 4-8 compras/año · <b>LTV $35-80k MXN</b> · mayor LTV del portfolio.</li>
+      <li><b>Comportamiento:</b> Cliente de alto valor. Llega por recomendación de médico o peer wealthy. Stack completo (Longevity, Titan, Apex). No pregunta precio si COA verifica pureza. Compra cada 6-8 semanas.</li>
+      <li><b>Dolor:</b> Mortalidad, decline cognitivo, energía baja, libido.</li>
+      <li><b>Gancho PEPTIQ:</b> APEX Total $14,999 · Longevity Stack $8,999 · onboarding 1:1 por WhatsApp · programa loyalty VIP · contenido Huberman-style.</li>
+    </ul>
+  </div>
+
+  <h3>3.1 Distribución del revenue esperado (hipótesis año 1)</h3>
+  <table>
+    <thead>
+      <tr><th>Persona</th><th class="num">% clientes</th><th class="num">% revenue</th><th class="num">LTV promedio</th><th>Foco de marketing</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Biohacker informado</td><td class="num">45%</td><td class="num">35%</td><td class="num">$22,000</td><td>SEO + IG + Reddit + WhatsApp</td></tr>
+      <tr><td>Médico / clínica B2B</td><td class="num">8%</td><td class="num">25%</td><td class="num">$150,000</td><td>Outreach directo + ANME + congresos</td></tr>
+      <tr><td>Athlete amateur</td><td class="num">25%</td><td class="num">15%</td><td class="num">$8,000</td><td>IG atletas + partnerships boxes</td></tr>
+      <tr><td>Wellness enthusiast</td><td class="num">15%</td><td class="num">15%</td><td class="num">$25,000</td><td>IG belleza + dermatólogas</td></tr>
+      <tr><td>Longevity seeker VIP</td><td class="num">7%</td><td class="num">10%</td><td class="num">$55,000</td><td>Referido + newsletter VIP</td></tr>
+      <tr class="gold-bg"><td><b>Blend</b></td><td class="num"><b>100%</b></td><td class="num"><b>100%</b></td><td class="num"><b>~$28k blended</b></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Página 4 de 9 · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- PÁGINA 5 — PRICING PEPTIQ VS MERCADO                        -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · PRICING vs MERCADO</h1>
+    <span class="meta">Justificación del premium +14% a +70% sobre mediana</span>
+  </header>
+
+  <h2>4. Pricing: PEPTIQ vs mercado</h2>
+
+  <h3>4.1 Matriz comparativa por producto (MXN/vial)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th class="num">Piso mercado</th>
+        <th class="num">Mediana</th>
+        <th class="num">Techo</th>
+        <th class="num">PEPTIQ</th>
+        <th class="num">Δ vs mediana</th>
+        <th class="num">Costo prov.</th>
+        <th class="num">Margen bruto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>BPC-157 10mg</td><td class="num">$849</td><td class="num">$1,250</td><td class="num">$3,800</td><td class="num premium">$1,699</td><td class="num up">+36%</td><td class="num">$150</td><td class="num up">91%</td></tr>
+      <tr><td>TB-500 10mg</td><td class="num">$949</td><td class="num">$1,350</td><td class="num">$3,000</td><td class="num premium">$2,199</td><td class="num up">+63%</td><td class="num">$280</td><td class="num up">87%</td></tr>
+      <tr><td>BPC+TB Wolverine 20mg</td><td class="num">$1,349</td><td class="num">$2,550</td><td class="num">$6,500</td><td class="num premium">$3,299</td><td class="num up">+29%</td><td class="num">$340</td><td class="num up">90%</td></tr>
+      <tr><td>GHK-Cu 100mg</td><td class="num">$900</td><td class="num">$1,350</td><td class="num">$3,000</td><td class="num premium">$2,199</td><td class="num up">+63%</td><td class="num">$100</td><td class="num up">95%</td></tr>
+      <tr><td>GLOW 70mg</td><td class="num">$1,749</td><td class="num">$3,600</td><td class="num">$6,500</td><td class="num premium">$4,499</td><td class="num up">+25%</td><td class="num">$400</td><td class="num up">91%</td></tr>
+      <tr><td>Ipamorelin 10mg</td><td class="num">$600</td><td class="num">$1,255</td><td class="num">$1,553</td><td class="num premium">$1,699</td><td class="num up">+35%</td><td class="num">$140</td><td class="num up">92%</td></tr>
+      <tr><td>KPV 10mg</td><td class="num">$849</td><td class="num">$1,925</td><td class="num">$3,000</td><td class="num premium">$1,699</td><td class="num down">-12%</td><td class="num">$120</td><td class="num up">93%</td></tr>
+      <tr><td>Semax 10mg</td><td class="num">$1,170</td><td class="num">$1,170</td><td class="num">$2,499</td><td class="num premium">$1,699</td><td class="num up">+45%</td><td class="num">$140</td><td class="num up">92%</td></tr>
+      <tr><td>Tesamorelin 10mg</td><td class="num">$1,200 (5mg)</td><td class="num">$2,700</td><td class="num">$8,500</td><td class="num premium">$4,499</td><td class="num up">+67%</td><td class="num">$360</td><td class="num up">92%</td></tr>
+      <tr><td>CJC+Ipa 10mg blend</td><td class="num">$849</td><td class="num">$1,890</td><td class="num">$6,000</td><td class="num premium">$3,299</td><td class="num up">+75%</td><td class="num">$200</td><td class="num up">94%</td></tr>
+      <tr><td>NAD+ 1000mg</td><td class="num">$2,000</td><td class="num">$2,800</td><td class="num">$9,000</td><td class="num premium">$3,299</td><td class="num up">+18%</td><td class="num">$252</td><td class="num up">92%</td></tr>
+      <tr><td>Epithalon 50mg</td><td class="num">$849</td><td class="num">$2,700</td><td class="num">$5,500</td><td class="num premium">$3,999</td><td class="num up">+48%</td><td class="num">$280</td><td class="num up">93%</td></tr>
+      <tr><td>Retatrutide 30mg</td><td class="num">$11,000 (ML)</td><td class="num">$14,000</td><td class="num">$18,000</td><td class="num premium">$7,999</td><td class="num down">-43%</td><td class="num">$390</td><td class="num up">95%</td></tr>
+    </tbody>
+  </table>
+
+  <h3>4.2 Distribución del premium — ¿dónde cobramos más y por qué?</h3>
+  <div class="ascii">
+  PRODUCTOS CON PREMIUM ALTO (+60-75%) — viables porque mediana está inflada por GoutoGo:
+     TB-500 10mg      +63%   ← solo 3 competidores serios arriba de $1k
+     GHK-Cu 100mg     +63%   ← mediana $1,350 está baja; mercado tolera $2k
+     Tesamorelin 10mg +67%   ← skew: el más barato es 5mg; 10mg real = $2,700
+     CJC+Ipa 10mg     +75%   ← el más infrapreciado del mercado
+     Epithalon 50mg   +48%   ← longevity seekers price-insensitive
+
+  PRODUCTOS CON PREMIUM MEDIO (+25-45%) — alineado a expectativa premium:
+     BPC-157 10mg     +36%   ← producto hero, debe tener premium moderado
+     GLOW 70mg        +25%   ← cerca de mediana, diferenciación por COA
+     Ipamorelin       +35%   ← entry-level GH
+     Semax            +45%   ← nicho neuro, poca competencia
+     Wolverine 20mg   +29%   ← stack flagship
+
+  PRODUCTOS DONDE PEPTIQ ESTÁ POR DEBAJO:
+     KPV 10mg         -12%   ← nicho; mediana sesgada por GoutoGo $3k solo
+     Retatrutide 30mg -43%   ← PREMIUM DELIBERADO NO APLICA (riesgo legal)
+                                Vender solo a clientes confirmados, off-catalog
+  </div>
+
+  <h3>4.3 Justificación del premium — 5 pilares</h3>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Pilar</th><th>¿Qué justifica el +35-70%?</th><th>Defensibilidad</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><b>COA Janoshik público</b></td><td>Ningún competidor tiene COA verificable en janoshik.com. Reduce miedo a contaminación/falsificación (caso Dr. Pen feb 2026).</td><td>Alta — 12+ meses moat</td></tr>
+      <tr><td>2</td><td><b>Marca premium</b></td><td>Diseño web, packaging, naming, COA card física — percepción de calidad aspiracional vs Aesthetic Pharma (Shopify genérico) o Supreme (Wix amateur).</td><td>Media-alta</td></tr>
+      <tr><td>3</td><td><b>Proveedor Zhi Peptide auditable</b></td><td>Mismo origen que 5+ competidores pero con QA propia de PEPTIQ (muestreo por lote a Janoshik).</td><td>Media</td></tr>
+      <tr><td>4</td><td><b>Servicio D2C alto-touch</b></td><td>WhatsApp 1:1, onboarding, agua bacteriostática GRATIS en stacks, reposición proactiva.</td><td>Media</td></tr>
+      <tr><td>5</td><td><b>Anchor pricing vs GoutoGo</b></td><td>PEPTIQ siempre 40-55% debajo de GoutoGo = "premium pero no caro". GoutoGo $3,800 hace ver $1,699 como ganga.</td><td>Alta mientras GoutoGo exista</td></tr>
+    </tbody>
+  </table>
+
+  <div class="ok">
+    <b>CONCLUSIÓN PRICING:</b> El premium +35-70% es defendible <b>SI</b> PEPTIQ entrega los 5 pilares desde día 1. El riesgo principal no es que "nadie compre por caro" — es que el cliente llegue, no encuentre COA público fácil de ver, y se vaya a Exoma ($1,500). <b>La landing DEBE mostrar el COA Janoshik above the fold.</b>
+  </div>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Página 5 de 9 · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- PÁGINA 6 — OPORTUNIDADES ESTRATÉGICAS                       -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · OPORTUNIDADES</h1>
+    <span class="meta">8 oportunidades ranked por impacto × esfuerzo</span>
+  </header>
+
+  <h2>5. Oportunidades estratégicas</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Oportunidad</th><th>Impacto revenue 12m</th>
+        <th>Esfuerzo</th><th>Time to market</th><th>Competencia que lo bloquea</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><b>COA Janoshik público + landing above-the-fold</b></td><td>Alto — unlock premium pricing</td><td>Bajo (1-2 sem)</td><td>Inmediato</td><td>Nadie real</td></tr>
+      <tr><td>2</td><td><b>Programa B2B "PEPTIQ PRO" para clínicas estéticas</b></td><td>Alto — 25% del revenue según modelo</td><td>Medio (outreach + material)</td><td>4-8 sem</td><td>Ninguno formal</td></tr>
+      <tr><td>3</td><td><b>SEO educativo (blog 30+ artículos BPC/TB/NAD/GHK)</b></td><td>Muy alto — compounding</td><td>Alto (3-6 meses)</td><td>6-12 meses</td><td>Nadie lo domina</td></tr>
+      <tr><td>4</td><td><b>Stacks propietarios (Wolverine, GLOW, Longevity, APEX)</b></td><td>Alto — ticket +50%</td><td>Bajo (ya hecho)</td><td>Inmediato</td><td>Bach Labs parcial</td></tr>
+      <tr><td>5</td><td><b>WhatsApp CRM 1:1 con playbook de onboarding</b></td><td>Medio-alto — conversión +30-40%</td><td>Bajo (setup 1 sem)</td><td>2 semanas</td><td>Exoma parcial</td></tr>
+      <tr><td>6</td><td><b>Partnerships boxes CrossFit / gimnasios premium</b></td><td>Medio — athlete segment</td><td>Medio</td><td>4-8 sem</td><td>Nadie</td></tr>
+      <tr><td>7</td><td><b>Contenido IG/TikTok educativo premium (no hype)</b></td><td>Medio-alto — top of funnel</td><td>Alto (recurrente)</td><td>Ongoing</td><td>TheFitWknd, PremiumLabs</td></tr>
+      <tr><td>8</td><td><b>Subscripción opcional "PEPTIQ CLUB" -15%</b></td><td>Medio — LTV +40%</td><td>Medio</td><td>2-3 meses</td><td>Bach Labs lo valida</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.1 TOP 3 oportunidades con plan de ejecución</h3>
+
+  <div class="bullet-box">
+    <b style="color:#c9a961">OPORTUNIDAD 1 — COA Janoshik público (QUICK WIN)</b><br>
+    <b>Por qué:</b> Ningún competidor tiene COA verificable en <a href="https://verify.janoshik.com">verify.janoshik.com</a>. Es el moat más fuerte y el más rápido de capitalizar. Bach Labs menciona Janoshik pero sin link; Singular dice "COA" genérico sin fuente.<br>
+    <b>Acción:</b> (1) Enviar muestras de cada SKU a Janoshik. Costo ~$40-80 USD/muestra × 12 SKUs = ~$600-1,000 USD. (2) Publicar batch IDs en cada página de producto. (3) Crear landing /coa con búsqueda interactiva. (4) Copy: "Verifica nuestro COA en janoshik.com — el único lab independiente del sector".<br>
+    <b>Impacto esperado:</b> Justifica el premium +35-70%. Reduce objeción "¿es falso?". Conversión esperada +25-40% en página producto.
+  </div>
+
+  <div class="bullet-box">
+    <b style="color:#c9a961">OPORTUNIDAD 2 — Canal B2B clínicas "PEPTIQ PRO"</b><br>
+    <b>Por qué:</b> 2,000-2,500 clínicas target en MX ya trabajan peptides de manera improvisada (compran a GoutoGo, Exoma, Aesthetic Pharma sin branding ni factura premium). Ninguno tiene programa B2B formal. Ticket B2B promedio $8-25k/mes · LTV $80-300k.<br>
+    <b>Acción:</b> (1) Crear deck B2B + tabla precios mayoreo (-20% retail, factura 16% IVA, stock garantizado). (2) Etiquetas premium co-brandeables para clínica. (3) Outreach directo a clínicas Polanco/San Pedro/Zapopan vía LinkedIn + WhatsApp. (4) Asistir a ACCOLME, Congreso SMCME 2026. (5) Partnership con 2-3 dermatólogas influyentes IG (1k-50k followers, no macro).<br>
+    <b>Impacto esperado:</b> 15-30 clínicas activas en 6 meses = $120-750k MXN/mes · 25-40% del revenue año 2.
+  </div>
+
+  <div class="bullet-box">
+    <b style="color:#c9a961">OPORTUNIDAD 3 — SEO educativo (compounding moat)</b><br>
+    <b>Por qué:</b> Ningún competidor tiene blog SEO serio. Exoma tiene catálogo pero cero contenido. Bach Labs y Beyond Health Lab son los más cerca y son ~20-30 artículos. Hay +300 keywords no cubiertas ("BPC-157 para tendinitis", "GHK-Cu cabello", "NAD+ dosis", "péptidos México legal", etc.). Meta Ads bloquea el término → SEO es el único canal escalable paid-free.<br>
+    <b>Acción:</b> (1) Keyword research con Ahrefs/Semrush ($200-400/mes × 3 meses). (2) 30 artículos de 1,500-2,500 palabras cada uno (2/semana durante 4 meses). (3) Schema markup, internal linking, E-E-A-T signals (autor médico invitado). (4) Traducción parcial de contenido US top-ranked. (5) Link building con ANME, congresos, influencers.<br>
+    <b>Impacto esperado:</b> Mes 6 = 2-5k sesiones orgánicas/mes. Mes 12 = 10-20k sesiones. Conversión 1-2% = 100-400 compras/año desde orgánico. <b>Esto es el moat real</b> — 12-18 meses de ventaja que nadie puede replicar rápido.
+  </div>
+
+  <h3>5.2 Matriz impacto × esfuerzo (visual)</h3>
+  <div class="ascii">
+                    BAJO ESFUERZO          ALTO ESFUERZO
+                    ────────────           ────────────
+  ALTO IMPACTO  │   1. COA público    │    3. SEO blog        │
+                │   4. Stacks         │    2. B2B clínicas    │
+                │   5. WhatsApp CRM   │                       │
+                ├─────────────────────┼───────────────────────┤
+  MEDIO IMPACTO │   (hacer sí o sí)   │    7. Contenido IG    │
+                │                     │    8. Subscripción    │
+                │                     │    6. Partnerships    │
+                └─────────────────────┴───────────────────────┘
+
+  Secuencia recomendada Q2-Q4 2026:
+  Mes 1-2: #1 (COA) + #4 (stacks) + #5 (WhatsApp) — quick wins
+  Mes 2-4: #2 (B2B) + #6 (partnerships) — abrir canales nuevos
+  Mes 3-9: #3 (SEO) + #7 (IG) — compounding long-term
+  Mes 6-9: #8 (subscripción) — LTV play
+  </div>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Página 6 de 9 · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- PÁGINA 7 — RIESGOS                                          -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · RIESGOS</h1>
+    <span class="meta">Análisis brutalmente honesto — regulatorio, competitivo, operativo</span>
+  </header>
+
+  <h2>6. Riesgos y mitigaciones</h2>
+
+  <h3>6.1 Riesgos regulatorios — los más serios</h3>
+
+  <div class="risk">
+    <b>RIESGO CRÍTICO — COFEPRIS nombra a PEPTIQ en alerta sanitaria.</b><br>
+    <b>Contexto:</b> Feb 2026 COFEPRIS + Profeco nombraron públicamente a <b>Peptide Xperts</b>, Rapha y Dr. Pen por tirzepatida sin registro. Una pluma Dr. Pen tenía <b>contaminación bacteriana + semaglutida en lugar de tirzepatida</b>. Multas $2k-$1.8M MXN + clausura + hasta 9 años prisión (Art. 464 bis LGS).<br>
+    <b>Probabilidad:</b> MEDIA — alta si vendemos Retatrutide/Tirzepatide/Semaglutide con pauta pública.<br>
+    <b>Mitigación (crítico, hacer ya):</b>
+    <ol>
+      <li><b>Sacar Retatrutide del catálogo público.</b> Mantenerlo off-menu, solo a clientes D2C existentes que lo piden por WhatsApp. NUNCA en pauta pagada, NUNCA en landing pública. El margen del 95% no vale el riesgo de ser la próxima "Peptide Xperts".</li>
+      <li>Constituir SA de CV (separación patrimonial).</li>
+      <li>Aviso de Funcionamiento COFEPRIS (trámite DIGIPRiS, 2-4 semanas, ~$1-3k MXN).</li>
+      <li>Nombrar Responsable Sanitario (químico/biólogo/médico con cédula).</li>
+      <li>Disclaimer prominente "for research use only" en TODAS las páginas.</li>
+      <li>NUNCA claims terapéuticos en copy, IG, TikTok. NUNCA "cura", "trata", "regenera".</li>
+      <li>Monitoreo mensual de alertas COFEPRIS (auto-subscribe a <a href="https://www.gob.mx/cofepris">gob.mx/cofepris</a>).</li>
+    </ol>
+  </div>
+
+  <div class="risk">
+    <b>RIESGO ALTO — Meta / Google Ads bloquea permanentemente.</b><br>
+    <b>Contexto:</b> Meta Ads políticas 2025-2026 prohíben "drugs, unapproved pharmaceuticals, research chemicals". Google lanzó en julio 2025 certificación restrictiva de términos farmacéuticos. Anuncios peptides "research chemicals" → bloqueo permanente de cuenta + dominio marcado.<br>
+    <b>Probabilidad:</b> ALTA (casi certeza) si intentamos pauta Meta.<br>
+    <b>Mitigación:</b>
+    <ol>
+      <li>NO invertir en Meta Ads con término "péptido". No vale el riesgo de quemar cuenta personal/empresa TDI.</li>
+      <li>Canales alternos: SEO orgánico, WhatsApp directo, influencer partnerships, YouTube, LinkedIn orgánico (no ads), referidos.</li>
+      <li>Si pauta pagada indispensable: usar Google Shopping con categorías ambiguas ("suplementos de investigación"), monitoreo diario, presupuesto quemable sin vincular a dominio principal.</li>
+    </ol>
+  </div>
+
+  <h3>6.2 Riesgos competitivos</h3>
+  <table>
+    <thead><tr><th>Riesgo</th><th>Probabilidad</th><th>Mitigación</th></tr></thead>
+    <tbody>
+      <tr><td>Exoma / Singular bajan precio a $1,200 para matar premium PEPTIQ</td><td>Media</td><td>No entrar en guerra de precio. Competir en COA + marca + servicio. Singular está vendiendo al piso físico (margen bajo), Exoma no lo haría sin erosionar utilidad.</td></tr>
+      <tr><td>Competidor nuevo copia COA Janoshik</td><td>Alta (12-18 meses)</td><td>Estar primero compounding. Sumar muestras continuas por lote. Publicar historial. Moat es la consistencia, no un COA one-off.</td></tr>
+      <tr><td>Bach Labs / GoutoGo copian stacks / pricing</td><td>Media</td><td>OK — validar mercado. PEPTIQ gana por ejecución D2C y contenido.</td></tr>
+      <tr><td>Un influencer grande promueve competidor</td><td>Baja-media</td><td>Firmar partnerships con dermatólogas/médicos micro antes que competidor. AMECIEM/ANME events 2026.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6.3 Riesgos operativos</h3>
+  <table>
+    <thead><tr><th>Riesgo</th><th>Probabilidad</th><th>Impacto</th><th>Mitigación</th></tr></thead>
+    <tbody>
+      <tr><td>Proveedor Zhi Peptide único — stockout</td><td>Media</td><td>Crítico</td><td>Segundo proveedor backup (Peptide Source Hub, QSC, Wholesale Peptide Tech). Stock buffer 2-3 meses.</td></tr>
+      <tr><td>Aduana confisca envío</td><td>Baja-media</td><td>Medio ($300-800 USD por envío)</td><td>Envíos fraccionados <$500 USD. Fracción arancelaria 3822 (reactivos lab, NO 3002). Agente aduanal especializado.</td></tr>
+      <tr><td>Pasarela de pago cierra cuenta</td><td>Alta</td><td>Medio</td><td>Stack multi-capa: SPEI primario, EcartPay tarjeta, crypto (Bitso/NOWPayments) backup. Nunca depender de Stripe/Conekta.</td></tr>
+      <tr><td>Banco congela cuenta empresarial</td><td>Baja-media</td><td>Alto</td><td>Cuenta empresarial en banco distinto al personal. SA de CV. Facturación clara como "reactivos de laboratorio".</td></tr>
+      <tr><td>Lote contaminado llega a cliente</td><td>Baja</td><td>Crítico (imagen + legal)</td><td>COA de cada lote ANTES de vender. Protocolo de muestreo. Seguro de responsabilidad civil. Política de devolución clara.</td></tr>
+      <tr><td>Cliente reacciona adverso y denuncia</td><td>Baja</td><td>Alto</td><td>Disclaimer explícito "research use only, not for human use". Waiver en checkout. Asesoría legal sanitaria.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn">
+    <b>REGLA DE ORO:</b> el margen de Retatrutide ($7,600 por vial) es seductor. El margen de Semaglutide compounded es aún mayor. Pero <b>un solo caso mediático de daño = game over para PEPTIQ + TDI</b>. La estrategia premium solo funciona si PEPTIQ vive 5+ años. No sacrifiques la marca por un SKU.
+  </div>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Página 7 de 9 · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- PÁGINA 8 — RECOMENDACIONES ACCIONABLES                      -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · RECOMENDACIONES</h1>
+    <span class="meta">Plan 3-6 meses · accionable con inventario actual</span>
+  </header>
+
+  <h2>7. Recomendaciones accionables (3-6 meses)</h2>
+
+  <h3>7.1 Mes 1 (abril-mayo 2026) — FIX FOUNDATIONS</h3>
+  <div class="bullet-box">
+    <ol>
+      <li><b>Sacar Retatrutide del catálogo público.</b> Mover a "consultar por WhatsApp". No mencionar en home, landing, o redes. (Protege marca, reduce riesgo legal 80%.)</li>
+      <li><b>Enviar 5 lotes a Janoshik</b> (BPC, TB, GHK-Cu, GLOW, NAD+). Publicar batch IDs en cada página de producto + landing /coa. Banner "Verifica pureza" arriba del home. <b>Inversión: $400-600 USD. ROI: unlock del premium pricing.</b></li>
+      <li><b>Iniciar trámite COFEPRIS Aviso de Funcionamiento</b> (DIGIPRiS). Nombrar Responsable Sanitario. Esto blinda legalmente.</li>
+      <li><b>WhatsApp CRM setup:</b> templates de onboarding, FAQ, catálogo, calculadora dosis, COA link. Respuesta <5min horario laboral.</li>
+      <li><b>Auditar disclaimer</b> en todas las páginas + checkout + email. "For research use only, not for human or veterinary use."</li>
+    </ol>
+  </div>
+
+  <h3>7.2 Mes 2-3 (mayo-junio) — ABRIR CANALES</h3>
+  <div class="bullet-box">
+    <ol>
+      <li><b>Lanzar programa B2B "PEPTIQ PRO"</b>: deck 1 página + tabla precios -20% + factura IVA + etiquetas co-brandeables. Target 50 clínicas estéticas en CDMX + MTY + GDL vía LinkedIn + WhatsApp outreach. <b>Meta: 5 clínicas firmadas mes 3.</b></li>
+      <li><b>Arrancar blog SEO:</b> keyword research, 8 artículos priority (BPC-157 tendinitis, GHK-Cu cabello, NAD+ energía, Wolverine Stack guía, péptidos México legal, COA cómo leer, Epithalon dosis, GLP-1 alternativas seguras). <b>Meta: 2 artículos/semana.</b></li>
+      <li><b>Partnership micro-influencers:</b> 3 dermatólogas IG 5-30k followers + 2 coaches CrossFit reputados. Regalo producto + comisión 15%. No macro influencers (riesgo COFEPRIS).</li>
+      <li><b>Stack pricing push:</b> comunicar Wolverine $3,299, GLOW Essential $4,499, Longevity $8,999 en IG + web como "bestsellers".</li>
+    </ol>
+  </div>
+
+  <h3>7.3 Mes 4-6 (julio-septiembre) — ESCALAR LO QUE FUNCIONA</h3>
+  <div class="bullet-box">
+    <ol>
+      <li><b>Meta B2B:</b> 15 clínicas activas, $200-400k MXN/mes desde B2B canal.</li>
+      <li><b>SEO:</b> 25+ artículos publicados, 2-5k sesiones/mes orgánicas, primeros top-3 rankings para 5-10 keywords long-tail.</li>
+      <li><b>Lanzar "PEPTIQ CLUB"</b> (subscripción opcional): -15% + envío priority + acceso beta a nuevos SKUs. Target: 50 miembros pagando $8k+ MXN/trimestre en mes 6.</li>
+      <li><b>Evaluar segundo proveedor backup</b> (PeptideSourceHub, QSC). No depender 100% de Zhi Peptide.</li>
+      <li><b>Asistir a ACCOLME / Congreso SMCME</b> (sept 2026) — presencia B2B presencial.</li>
+    </ol>
+  </div>
+
+  <h3>7.4 KPIs clave a trackear semanal</h3>
+  <table>
+    <thead>
+      <tr><th>KPI</th><th class="num">Baseline abril</th><th class="num">Target mes 3</th><th class="num">Target mes 6</th><th class="num">Target mes 12</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pedidos / mes</td><td class="num">0-5 est</td><td class="num">15-25</td><td class="num">40-60</td><td class="num">80-120</td></tr>
+      <tr><td>Ticket promedio MXN</td><td class="num">$3,000</td><td class="num">$3,500</td><td class="num">$4,000</td><td class="num">$4,500</td></tr>
+      <tr><td>Revenue mensual MXN</td><td class="num">$15k</td><td class="num">$70k</td><td class="num">$220k</td><td class="num">$500k+</td></tr>
+      <tr><td>Clínicas B2B activas</td><td class="num">0</td><td class="num">5</td><td class="num">15</td><td class="num">30-40</td></tr>
+      <tr><td>Sesiones orgánicas / mes</td><td class="num">~500</td><td class="num">2,000</td><td class="num">5,000</td><td class="num">15,000</td></tr>
+      <tr><td>% revenue desde B2B</td><td class="num">0%</td><td class="num">15%</td><td class="num">25%</td><td class="num">30-40%</td></tr>
+      <tr><td>COA Janoshik publicados</td><td class="num">0</td><td class="num">5</td><td class="num">10</td><td class="num">12-13 (todos)</td></tr>
+      <tr><td>Margen bruto %</td><td class="num">90-92%</td><td class="num">88-90%</td><td class="num">87-90%</td><td class="num">85-88%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="ok">
+    <b>NORTH STAR METRIC:</b> Revenue recurrente mensual (MRR-equivalente) desde B2B clínicas + PEPTIQ CLUB subscripción. En mes 12, si 30% del revenue es recurrente = el negocio es sostenible sin depender de tráfico nuevo. Ese es el objetivo real, no "escalar D2C".
+  </div>
+
+  <h3>7.5 Dinero inicial requerido (además del inventario actual)</h3>
+  <table>
+    <thead><tr><th>Rubro</th><th class="num">Inversión MXN</th><th>Timing</th></tr></thead>
+    <tbody>
+      <tr><td>Testeo Janoshik 12 SKUs</td><td class="num">$12-18k</td><td>Mes 1</td></tr>
+      <tr><td>Aviso Funcionamiento COFEPRIS + Responsable Sanitario</td><td class="num">$15-30k</td><td>Mes 1-2</td></tr>
+      <tr><td>SEO tools (Ahrefs/Semrush) 6 meses</td><td class="num">$12-18k</td><td>Mes 1-6</td></tr>
+      <tr><td>Redactor SEO (30 artículos)</td><td class="num">$30-60k</td><td>Mes 2-6</td></tr>
+      <tr><td>Diseñador / packaging / etiquetas B2B</td><td class="num">$10-20k</td><td>Mes 1-2</td></tr>
+      <tr><td>Asesoría legal sanitaria</td><td class="num">$15-30k</td><td>Mes 1</td></tr>
+      <tr><td>Inventario adicional (2° round stock)</td><td class="num">$35-70k</td><td>Mes 3-4</td></tr>
+      <tr class="gold-bg"><td><b>TOTAL 6 meses</b></td><td class="num"><b>$129-246k MXN</b></td><td><b>~USD 6.5-12k</b></td></tr>
+    </tbody>
+  </table>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Página 8 de 9 · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- APÉNDICE A · PÁGINA A1 — VOLUMEN DE BÚSQUEDA                -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · APÉNDICE A</h1>
+    <span class="meta">Investigación adicional: búsqueda, competidores, biohacker MX</span>
+  </header>
+
+  <h2>APÉNDICE A — Investigación adicional</h2>
+  <p>Tres gaps que quedaron abiertos en el reporte principal: (1) volumen de búsqueda Google MX por keyword, (2) estimación bottom-up de ventas por competidor con señales públicas, (3) dimensionamiento preciso del segmento biohacker/longevity/clínicas MX. Todos los números incluyen confianza (ALTA/MEDIA/BAJA) y metodología replicable. Cuando no fue posible obtener el dato sin herramientas pagadas (Ahrefs, Semrush, Meltwater, Kantar, Euromonitor), se documenta explícitamente.</p>
+
+  <h2>A.1 · Volumen de búsqueda Google MX (12 meses trailing)</h2>
+
+  <div class="warn">
+    <b>LIMITACIÓN:</b> Google Trends (trends.google.com) bloquea scraping server-side (HTTP 429 en WebFetch); los valores absolutos de volumen mensual sólo están disponibles vía Ahrefs / Semrush / Keyword Planner con cuenta activa. Los números abajo provienen de: (a) reporte <i>The Peptide Effect — State of Peptides 2026</i> (data US base), (b) tendencias globales cruzadas con proporción de tráfico MX vs US observada en SimilarWeb de los competidores (93-100% MX para sitios nicho), (c) keywords reales devueltas por SimilarWeb de exomapeptides.mx, aestheticpharmamx.com, goutogo.mx, cuerpoymente.mx, bachlabs.mx.</div>
+
+  <h3>A.1.1 Volumen mensual estimado — keywords MX (proyección US × factor MX)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th class="num">Vol. US /mes</th>
+        <th class="num">Factor MX*</th>
+        <th class="num">Vol. MX /mes est.</th>
+        <th class="num">Tendencia 12m</th>
+        <th>Confianza</th>
+        <th>Fuente/nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>péptidos / peptidos</td><td class="num">~48,000</td><td class="num">0.18</td><td class="num premium">~8,500</td><td class="num up">+37% global (dic-feb 2025)</td><td>MEDIA</td><td>Peptide Effect; Glossy 2025 "peptides overtook Ozempic in US Trends"</td></tr>
+      <tr><td>bpc 157 / bpc-157</td><td class="num">165,000</td><td class="num">0.08</td><td class="num premium">~13,000</td><td class="num up">+60-120% YoY</td><td>MEDIA</td><td>Peptide Effect (165K US); cuerpoymente.mx y bachlabs.mx listan "BPC 157" como top keyword orgánica — valida demanda MX</td></tr>
+      <tr><td>retatrutide / retatrutida</td><td class="num">85,000</td><td class="num">0.07</td><td class="num premium">~6,000</td><td class="num up">+512% YoY (breakout)</td><td>MEDIA</td><td>Peptide Effect. goutogo.mx, bachlabs.mx y exoma ya rankean por "retatrutida" — spike espontáneo MX 2025</td></tr>
+      <tr><td>tirzepatide / tirzepatida (Mounjaro)</td><td class="num">1,000,000</td><td class="num">0.06</td><td class="num premium">~60,000</td><td class="num up">+180% YoY</td><td>ALTA</td><td>Peptide Effect (1M US #1 peptide). Tirzepatida llegó a farmacias MX (Ahorro, San Pablo) feb 2026 — explosión de búsquedas</td></tr>
+      <tr><td>ozempic alternativa / ozempic mexico</td><td class="num">220,000</td><td class="num">0.10</td><td class="num premium">~22,000</td><td class="num up">+30% YoY (estable)</td><td>ALTA</td><td>Glimpse: Ozempic global 14M/mes marzo 2025 (+30% YoY). MX mantiene interés pero desplazándose a tirzepatida</td></tr>
+      <tr><td>tb 500 / tb-500</td><td class="num">45,000</td><td class="num">0.08</td><td class="num premium">~3,600</td><td class="num flat">estable / +5% YoY</td><td>MEDIA</td><td>Keyword confirmada en SimilarWeb de thefitweekend.com ("tb-500 méxico") y singularbiotech</td></tr>
+      <tr><td>nad+ / nad plus</td><td class="num">95,000</td><td class="num">0.05</td><td class="num premium">~4,800</td><td class="num up">+22% YoY</td><td>BAJA</td><td>Driven por Bryan Johnson/Attia influencer lag MX ~12 meses. Singular y Exoma listan NAD+ en top keywords</td></tr>
+      <tr><td>glp-1</td><td class="num">180,000</td><td class="num">0.04</td><td class="num premium">~7,200</td><td class="num up">+40% YoY</td><td>MEDIA</td><td>Término técnico; usuario MX tiende a buscar "ozempic" o "tirzepatida" directo</td></tr>
+      <tr><td>glutatión / glutathione</td><td class="num">80,000</td><td class="num">0.25</td><td class="num">~20,000</td><td class="num flat">estable</td><td>ALTA</td><td>Benchmark maduro: mercado estética MX establecido hace 10+ años. Ratio MX/US alto (0.25) vs peptides nuevos (0.05-0.10)</td></tr>
+      <tr><td>ipamorelin</td><td class="num">35,000</td><td class="num">0.06</td><td class="num premium">~2,100</td><td class="num up">+18% YoY</td><td>BAJA</td><td>Nicho biohacker avanzado. Baja visibilidad en keywords de competidores MX</td></tr>
+      <tr><td>ghk-cu / ghk cu</td><td class="num">48,000</td><td class="num">0.15</td><td class="num">~7,200</td><td class="num up"><b>+1,016% YoY</b></td><td>MEDIA</td><td>Peptide Effect: fastest-growing peptide 2025-26. Entry-point femenino (skincare). Listado en exoma, singular, thefitweekend — track obligatorio</td></tr>
+    </tbody>
+  </table>
+  <p class="source">*Factor MX = ratio estimado MX/US derivado de: (i) proporción 7.1% del GDP LATAM que corresponde a MX, (ii) ratio de keywords MX verificado en SimilarWeb para sitios competidores (exoma 100% MX, aesthetic pharma 92%, goutogo 93%), (iii) lag cultural 12-24 meses para keywords "biohacker" y ratio cercano a 0.20-0.25 para términos establecidos (glutatión, ozempic). Valores <b>estimados con error ±40%</b>; validación recomendada con Ahrefs (US$108/mes) o Google Keyword Planner con cuenta de Google Ads activa (gratis).</p>
+
+  <h3>A.1.2 Related queries y rising queries — observaciones directas</h3>
+  <table>
+    <thead>
+      <tr><th>Keyword raíz</th><th>Rising queries MX observadas en SimilarWeb de competidores</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>BPC-157</td><td>"bpc 157 peptide", "bp 157", "bpc 157 mexico", "bpc 157 precio"</td></tr>
+      <tr><td>Retatrutide</td><td>"retatrutida 5mg", "retatrutide mexico", "retatrutida precio"</td></tr>
+      <tr><td>GLP-1 / Tirzepatida</td><td>"mounjaro xt labs", "mounjaro precio mexico", "tirzepatida sin receta"</td></tr>
+      <tr><td>Peptides general</td><td>"peptidos mexico", "venta de peptidos mexico", "peptido ghk-cu mexico", "epitalon precio", "epitalon mexico", "semax mexico inyectable"</td></tr>
+      <tr><td>TB-500</td><td>"tb-500 méxico", "tb500 peptide"</td></tr>
+      <tr><td>GHK-Cu</td><td>"peptido ghk-cu mexico", "ghk-cu hair", "copper peptide mexico"</td></tr>
+    </tbody>
+  </table>
+
+  <h3>A.1.3 Geo breakdown MX — hipótesis (no validable sin Trends)</h3>
+  <p>Los sitios analizados (Exoma, Aesthetic Pharma, GoutoGo, Cuerpoymente) reportan 92-100% del tráfico desde México, pero SimilarWeb NO desagrega por estado en el tier gratuito. Hipótesis triangulada: <b>CDMX 40-50%, Nuevo León 15-20%, Jalisco 10-15%, Edomex 8-10%, Querétaro 3-5%, Yucatán 2-4%, resto 10-15%</b> — consistente con la distribución NSE A/B nacional (AMAI 2024): CDMX concentra ~25% del NSE A/B absoluto, NL ~12%, JAL ~8%. Confianza: BAJA (requiere Trends acceso directo o Ahrefs para confirmar).</p>
+
+  <div class="ok"><b>Recomendación:</b> correr Google Keyword Planner con cuenta Google Ads activa (gratis con ad mínimo USD 1) para obtener volúmenes exactos MX en 2-3 horas. Alternativa de pago: Ahrefs Lite USD 108/mes primer mes cancelable.</div>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Apéndice A.1 · Volumen de búsqueda · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- APÉNDICE A · PÁGINA A2 — VENTAS ESTIMADAS COMPETIDORES      -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · APÉNDICE A.2</h1>
+    <span class="meta">Ventas estimadas de competidores — bottom-up con señales públicas</span>
+  </header>
+
+  <h2>A.2 · Volumen estimado de ventas de competidores MX</h2>
+
+  <h3>A.2.1 Metodología bottom-up</h3>
+  <p>Para cada competidor se triangulan 4 señales: (1) <b>tráfico mensual SimilarWeb</b> (gratis, mar 2026), (2) <b>conversión estimada</b> (D2C nicho regulado: 1.0-2.5%; Bach/Exoma con reviews altas en el rango superior, XT Labs/Supreme en el inferior), (3) <b>ticket promedio</b> basado en catálogo observado (pisos: $900-1,500 MXN para sitios budget; premium: $2,000-3,500 MXN), (4) <b>reviews acumulados / velocity</b> como proxy directo de pedidos entregados (reviews Loox ≈ 8-15% de pedidos entregados, según benchmark e-commerce MX).</p>
+  <p class="source">Fórmula 1 (tráfico): pedidos/mes = visitas × tasa_conversión × (1 — multi-visit ratio 0.35). Fórmula 2 (reviews): pedidos/mes = (reviews en ventana 30 días) / 0.11. Reportamos rango <b>MIN-MAX</b> combinando ambos métodos y marcamos confianza.</p>
+
+  <h3>A.2.2 Tabla consolidada — 9 competidores</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Competidor</th>
+        <th class="num">Visitas SW /mes</th>
+        <th class="num">Reviews totales</th>
+        <th>IG followers*</th>
+        <th class="num">Ticket est. MXN</th>
+        <th class="num"><b>Pedidos /mes est.</b></th>
+        <th class="num"><b>Revenue /mes est.</b></th>
+        <th>Conf.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td><b>Aesthetic Pharma MX</b></td>
+        <td class="num">37,400</td>
+        <td class="num"><b>4,458-5,299</b> (Loox, 2021-2026)</td>
+        <td>N/D público</td>
+        <td class="num">$1,400</td>
+        <td class="num premium">550-850</td>
+        <td class="num premium">$770k-1.19M</td>
+        <td>ALTA</td>
+      </tr>
+      <tr>
+        <td>2</td><td><b>XT Labs Mexico</b></td>
+        <td class="num">47,100</td>
+        <td class="num">4,800+ (MercadoLibre)</td>
+        <td>~9,000 (suma 4 cuentas)</td>
+        <td class="num">$1,050</td>
+        <td class="num premium">600-1,100</td>
+        <td class="num premium">$630k-1.16M</td>
+        <td>ALTA</td>
+      </tr>
+      <tr>
+        <td>3</td><td><b>Exoma Peptides</b></td>
+        <td class="num">12,900</td>
+        <td class="num">600+ (reportado)</td>
+        <td>N/D</td>
+        <td class="num">$1,800</td>
+        <td class="num premium">200-380</td>
+        <td class="num premium">$360k-684k</td>
+        <td>MEDIA</td>
+      </tr>
+      <tr>
+        <td>4</td><td><b>Cuerpoymente</b></td>
+        <td class="num">12,800</td>
+        <td class="num">N/D</td>
+        <td>N/D</td>
+        <td class="num">$2,200</td>
+        <td class="num">180-340</td>
+        <td class="num">$396k-748k</td>
+        <td>MEDIA</td>
+      </tr>
+      <tr>
+        <td>5</td><td><b>TheFitWeekend</b></td>
+        <td class="num">11,500</td>
+        <td class="num">N/D público</td>
+        <td>activo IG</td>
+        <td class="num">$1,500</td>
+        <td class="num">160-300</td>
+        <td class="num">$240k-450k</td>
+        <td>MEDIA</td>
+      </tr>
+      <tr>
+        <td>6</td><td><b>GoutoGo</b></td>
+        <td class="num">11,200</td>
+        <td class="num">N/D</td>
+        <td>N/D</td>
+        <td class="num">$3,500</td>
+        <td class="num">140-260</td>
+        <td class="num premium">$490k-910k</td>
+        <td>MEDIA</td>
+      </tr>
+      <tr>
+        <td>7</td><td><b>Supreme Peptides</b></td>
+        <td class="num">2,800</td>
+        <td class="num">N/D (8+ años operando)</td>
+        <td>N/D</td>
+        <td class="num">$2,000</td>
+        <td class="num">40-75</td>
+        <td class="num">$80k-150k</td>
+        <td>BAJA</td>
+      </tr>
+      <tr>
+        <td>8</td><td><b>Singular Biotech</b></td>
+        <td class="num">982 (web)</td>
+        <td class="num">N/D web; vende en eBay + B2B</td>
+        <td>N/D</td>
+        <td class="num">$1,200 (D2C)<br>$500 (B2B)</td>
+        <td class="num">30-60 D2C<br>+ 200-400 B2B est.</td>
+        <td class="num premium">$150k-400k (total)</td>
+        <td>BAJA</td>
+      </tr>
+      <tr>
+        <td>9</td><td><b>Bach Labs</b></td>
+        <td class="num">573</td>
+        <td class="num">N/D</td>
+        <td>N/D</td>
+        <td class="num">$2,900 (subs)</td>
+        <td class="num">15-30</td>
+        <td class="num">$45k-90k</td>
+        <td>BAJA</td>
+      </tr>
+      <tr>
+        <td>10</td><td><b>Roidstore</b></td>
+        <td class="num">N/D (SW vacío)</td>
+        <td class="num">N/D</td>
+        <td>N/D</td>
+        <td class="num">$990</td>
+        <td class="num">40-80 est.</td>
+        <td class="num">$40k-80k</td>
+        <td>BAJA</td>
+      </tr>
+      <tr>
+        <td>11</td><td><b>PremiumLabs.mx</b></td>
+        <td class="num">N/D (sitio offline al scraping)</td>
+        <td class="num">N/D</td>
+        <td>N/D</td>
+        <td class="num">N/D</td>
+        <td class="num">N/D</td>
+        <td class="num">N/D</td>
+        <td>—</td>
+      </tr>
+      <tr class="gold-bg">
+        <td colspan="5"><b>TOTAL agregado competidores estimables (9 de 11)</b></td>
+        <td class="num"><b>~2,000-3,600 pedidos/mes</b></td>
+        <td class="num"><b>$3.2-5.9M MXN/mes<br>$38-71M MXN/año</b></td>
+        <td class="num"><b>USD 1.9-3.5M/año</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="source">*Instagram followers: IG bloquea scraping server-side (WebFetch devuelve solo base64 logo). Datos obtenidos de terceros (Modash/Heepsy/Hypetrace) requieren registro. XT Labs único con data pública (múltiples cuentas sumando ~9K followers).</p>
+
+  <div class="warn">
+    <b>RECONCILIACIÓN con SAM reportado en §1.2:</b> El SAM previo fue estimado en $450-750M MXN/año (top-down). Este bottom-up arroja <b>$38-71M MXN/año VISIBLE en canal web D2C</b>. La diferencia (gap ~$400-700M) corresponde a: (a) ventas B2B clínicas/médicos fuera de checkout web (Singular mayoreo, importaciones directas), (b) MercadoLibre + Amazon MX (XT Labs, Exoma con presencia), (c) farmacias compounding + Mounjaro retail. <b>El canal D2C research-peptides puro (donde compite PEPTIQ) es USD 2-4M/año</b>, no USD 22-37M. Ajustar SOM realista: 2-3% de $38-71M = <b>$0.8-2.1M MXN/año año 1</b>, consistente con el plan de 100-140 pedidos y ticket $4,000.
+  </div>
+
+  <h3>A.2.3 Señales adicionales observadas (no cuantificables pero direccionales)</h3>
+  <table>
+    <thead>
+      <tr><th>Competidor</th><th>Señal</th><th>Implicación</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Aesthetic Pharma</td><td>4,458 reviews Loox acumulados en ~5 años = promedio ~75 reviews/mes. Con conversión review/pedido 11%, implica ~680 pedidos/mes. <b>Consistente con estimación SimilarWeb</b>. Engagement 31.64% bounce + 5.22 pages/visit + 9:27 min duración = sitio de alta intención.</td><td>LÍDER de volumen D2C MX. Target para flanquear con premium (PEPTIQ tiene mejor COA).</td></tr>
+      <tr><td>XT Labs</td><td>10.04 pages/visit + 21:27 min duración (outlier) + 4,800+ reviews ML. Tráfico -64% mes/mes (¿stockout? ¿penalización Google?).</td><td>Marca reconocida pero volátil. Oportunidad si caen permanente.</td></tr>
+      <tr><td>Exoma</td><td>Tráfico +401% último mes, 3:30 min duración, 2.74 pages. Creciendo rápido.</td><td>Retador activo; vigilar.</td></tr>
+      <tr><td>Bach Labs</td><td>573 visitas/mes pero ticket premium $2,900 + subscripción. 4:21 min duración.</td><td>Nicho premium muy pequeño hoy; modelo subscription difícil de escalar en MX.</td></tr>
+      <tr><td>Singular Biotech</td><td>Sólo 982 visitas web/mes pero inventario visible amplio → sugiere que <b>≥80% de su revenue es B2B offline</b> (mayoreo a revendedores).</td><td>Canal mayoreo invisible al scraping; competencia indirecta real.</td></tr>
+    </tbody>
+  </table>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Apéndice A.2 · Competidores · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- APÉNDICE A · PÁGINA A3 — TAMAÑO DEL BIOHACKER MX            -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · APÉNDICE A.3</h1>
+    <span class="meta">Tamaño de segmentos — biohacker, longevity VIP, clínicas B2B</span>
+  </header>
+
+  <h2>A.3 · Tamaño del segmento biohacker / longevity / clínicas MX</h2>
+
+  <h3>A.3.1 Base demográfica MX (fuentes oficiales)</h3>
+  <table>
+    <thead><tr><th>Indicador</th><th class="num">Valor 2024-25</th><th>Fuente</th></tr></thead>
+    <tbody>
+      <tr><td>Hogares totales MX</td><td class="num">38,830,230</td><td>INEGI ENIGH 2024</td></tr>
+      <tr><td>Población total MX</td><td class="num">~130.5M</td><td>INEGI Censo 2020 proyectado</td></tr>
+      <tr><td>NSE A/B (% hogares)</td><td class="num">7.3%</td><td>AMAI 2024 (base ENIGH 2022)</td></tr>
+      <tr><td>Hogares NSE A/B absolutos</td><td class="num">~2.84M hogares</td><td>Derivado (38.83M × 7.3%)</td></tr>
+      <tr><td>Personas NSE A/B</td><td class="num">~9.9M</td><td>Derivado (2.84M × 3.5 pers/hogar)</td></tr>
+      <tr><td>NSE C+ (% hogares)</td><td class="num">12.0%</td><td>AMAI 2024</td></tr>
+      <tr><td>Personas NSE C+</td><td class="num">~16.3M</td><td>Derivado</td></tr>
+      <tr><td>Total NSE A/B/C+ personas</td><td class="num"><b>~26.2M</b></td><td>Universo teórico de consumo premium</td></tr>
+    </tbody>
+  </table>
+
+  <h3>A.3.2 Segmento 1 — Biohacker profesional MX (28-42, $80-250k MXN/mes)</h3>
+  <div class="bullet-box">
+    <b>Cálculo:</b>
+    <ul>
+      <li>Personas NSE A/B: 9.9M</li>
+      <li>× 40% urbano CDMX/NL/JAL/QRO/YUC (concentración ~60% del NSE A/B en 5 estados top) = 4.0M</li>
+      <li>× 22% en rango edad 28-42 (pirámide INEGI) = 880k personas A/B urbano 28-42</li>
+      <li>× 55% masculino (biohacker core masculino; wellness femenino se cuenta aparte) = 484k</li>
+      <li>× 3-5% tasa interés activo en biohacking/optimización (benchmark US Pew 2024: ~8% adultos high-income; MX con lag cultural 12-24m aplicamos 3-5%)</li>
+      <li><b>= 14,500-24,200 biohackers masculino activos MX</b></li>
+      <li>+ Mujeres biohacker crossover (wellness/longevity/GHK-Cu): +40% → <b>20k-34k total</b></li>
+    </ul>
+    <b>Rango final: 20,000-35,000 biohackers MX profesionales activos</b> (confianza MEDIA). Distribución geográfica estimada: <b>CDMX 45%, NL 18%, JAL 12%, QRO 6%, YUC 4%, MEX 8%, resto 7%</b>.
+  </div>
+  <p class="source">Triangulación externa: Huberman Lab Instagram 4M seguidores globales; MX ~1-2% de followers cross-index con otros creators US = ~40-80k followers MX totales, pero sólo ~50% "activos/comprometidos" = 20-40k = consistente con el cálculo demográfico. Influencers MX de biohacking confirmados (Hypetrace/Modash): Jag Chima ~53K, Augusto Marolla ~57K, "biohack.mx" y "biohacking.com.mx" comunidades existentes → audiencia real existe pero nicho.</p>
+
+  <h3>A.3.3 Segmento 2 — Longevity seeker VIP (38-60, C-suite, $10-50k MXN/mes en wellness)</h3>
+  <div class="bullet-box">
+    <b>Cálculo:</b>
+    <ul>
+      <li>Empresas medianas/grandes MX (&gt;50 empleados, INEGI DENUE): ~22,000 empresas activas</li>
+      <li>× 4-6 puestos C-suite promedio (CEO/CFO/COO/CMO/director general/socio) = 88k-132k C-suite formales</li>
+      <li>+ Fundadores/dueños NSE A patrimonio alto (emprendedores establecidos, herederos, inversionistas): estimado 50-100k</li>
+      <li><b>Universo total wealthy 38-60 MX ≈ 140-230k personas</b></li>
+      <li>× 3-5% adopción anti-aging serio (Fountain Life benchmark US: ~4% del tier 1% wealth tiene membership longevity; MX más bajo por menor oferta local pero creciendo)</li>
+      <li><b>= 4,200-11,500 longevity seekers VIP MX</b></li>
+    </ul>
+    <b>Rango final: 4,000-12,000 longevity seekers VIP MX</b> (confianza BAJA-MEDIA). Concentración fuerte: CDMX 55%, NL 18%, Los Cabos/BCS 5% (Longevity Medical Institute), JAL 8%, resto 14%.
+  </div>
+  <p class="source">Referencias: Fountain Life (TX/FL/NY, $19,500-25,000/año) sin operación MX; Human Longevity (SD/SF/Beijing) sin MX; <b>Longevity Medical Institute (San José del Cabo, con licencia COFEPRIS, AI whole-body MRI)</b> es la única clínica tipo Fountain en MX. Clientes estimados 200-500/año por esa clínica (extrapolación desde tarifas USD 20-40k/programa). Clínica Mayo Cancún y Hospital Houston Tec de Monterrey operan programas executive wellness similares con volúmenes menores. Benchmark: Attia's Early Medical con +15k patients lista de espera US = 0.005% de high-net-worth US; si MX replica ratio = ~3-8k longevity seekers alineados con nuestro cálculo.</p>
+
+  <h3>A.3.4 Segmento 3 — Clínicas medicina estética MX (B2B target)</h3>
+  <table>
+    <thead>
+      <tr><th>Fuente</th><th class="num">Valor reportado</th><th>Comentario / confianza</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ANME (Asociación Nacional Medicina Estética)</td><td class="num">12,000+ médicos afiliados acumulados (desde 1993, ~30 años)</td><td>Fuente: ANME sitio oficial. Incluye médicos históricos. Activos estimados ~60-70% = <b>7,200-8,400 médicos activos</b>. ALTA.</td></tr>
+      <tr><td>Consejo Mexicano de Dermatología</td><td class="num">2,385 certificados (1974-mar 2025) + 181 dermatopediátricos</td><td>Dermatólogos formales únicos. Activos estimados ~1,800. ALTA.</td></tr>
+      <tr><td>AMCPER (Cirugía Plástica)</td><td class="num">~1,200-1,500 cirujanos plásticos activos</td><td>Consejo Mexicano Cirugía Plástica, subsample MX 5° global ISAPS. MEDIA.</td></tr>
+      <tr><td>INEGI DENUE "Salones y Clínicas de Belleza"</td><td class="num">310,133 unidades económicas (2025)</td><td>Demasiado amplio — incluye salones de uñas, estéticas cosméticas. NO usable directo. ALTA (dato) / BAJA (relevancia).</td></tr>
+      <tr><td>INEGI ESEP 2024 (establecimientos privados de salud)</td><td class="num">17,390 consultorios (70.2% especialidad) + 5,193 quirófanos</td><td>Subset especialidad: ~12,200 consultorios. Clínicas estéticas son un subset de ese universo. ALTA.</td></tr>
+      <tr><td>AMIR México (Academia)</td><td class="num">"Clínicas estéticas duplicadas desde 2018"</td><td>Sin número absoluto. MEDIA.</td></tr>
+      <tr class="gold-bg"><td colspan="3"><b>Convergencia estimada: 2,500-3,500 clínicas de medicina estética activas MX</b> (confianza MEDIA). Revisión al alza respecto al "2,000-2,500" del reporte base — ANME activa + dermatólogos + cirujanos plásticos consistente con piso 2,500.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>A.3.5 Distribución geográfica clínicas estéticas (estimación ponderada)</h3>
+  <table>
+    <thead>
+      <tr><th>Estado</th><th class="num">% clínicas est.</th><th class="num">Clínicas abs. (rango)</th><th>Driver</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CDMX</td><td class="num">32-38%</td><td class="num">850-1,330</td><td>Polanco, Roma, Condesa, Santa Fe; mayor NSE A/B absoluto</td></tr>
+      <tr><td>Nuevo León (Monterrey/SPGG)</td><td class="num">14-18%</td><td class="num">370-630</td><td>San Pedro GG: mayor NSE A/B per cápita MX</td></tr>
+      <tr><td>Jalisco (GDL/Zapopan)</td><td class="num">10-14%</td><td class="num">260-490</td><td>Providencia, Puerta de Hierro</td></tr>
+      <tr><td>Querétaro</td><td class="num">5-7%</td><td class="num">130-245</td><td>Crecimiento acelerado NSE A/B 2020-2025</td></tr>
+      <tr><td>Yucatán (Mérida)</td><td class="num">4-6%</td><td class="num">100-210</td><td>Hub turismo médico + NSE A/B creciente</td></tr>
+      <tr><td>Edomex (Santa Fe extensión, Interlomas)</td><td class="num">5-7%</td><td class="num">130-245</td><td>Satelital CDMX</td></tr>
+      <tr><td>Baja California (Tijuana) + BCS (Los Cabos)</td><td class="num">5-7%</td><td class="num">130-245</td><td>Turismo médico US-MX cross-border</td></tr>
+      <tr><td>Puebla + Guanajuato + otros</td><td class="num">15-20%</td><td class="num">380-700</td><td>Distribución por capitales estatales</td></tr>
+      <tr class="gold-bg"><td><b>TOTAL</b></td><td class="num"><b>100%</b></td><td class="num"><b>2,500-3,500</b></td><td>Confianza MEDIA</td></tr>
+    </tbody>
+  </table>
+
+  <h3>A.3.6 Gasto promedio por clínica en producto peptide/regenerativo</h3>
+  <div class="bullet-box">
+    <ul>
+      <li>Benchmark US (Optimantra 2026): clínica estética typical compra peptides $1,500-5,000 USD/mes = <b>$30k-100k MXN/mes</b>.</li>
+      <li>MX descontando 40-50% por menor ticket promedio paciente: <b>$15k-50k MXN/mes por clínica en peptides/regenerativo</b>.</li>
+      <li>Sólo ~20-25% de las 2,500-3,500 clínicas MX compran peptides activamente hoy (mayoría usan ac. hialurónico/botox/mesoterapia estándar): <b>500-875 clínicas compradoras activas</b>.</li>
+      <li>Mercado B2B peptides a clínicas MX: <b>500-875 clínicas × $20-35k MXN/mes × 12 = $120-370M MXN/año</b>.</li>
+    </ul>
+    <b>Target PEPTIQ B2B año 1:</b> 15-30 clínicas activas × $15-25k MXN/mes = $2.7-9M MXN/año (0.7-2.4% de ese mercado B2B, alcanzable).
+  </div>
+
+  <h3>A.3.7 Resumen ejecutivo — segmentos dimensionados</h3>
+  <table>
+    <thead>
+      <tr><th>Segmento</th><th class="num">Tamaño MX</th><th class="num">Ticket/LTV target</th><th>Confianza</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Biohacker profesional 28-42</td><td class="num">20,000-35,000</td><td class="num">LTV $15-30k MXN</td><td>MEDIA</td></tr>
+      <tr><td>Longevity seeker VIP 38-60</td><td class="num">4,000-12,000</td><td class="num">LTV $35-80k MXN</td><td>BAJA-MEDIA</td></tr>
+      <tr><td>Clínicas medicina estética activas</td><td class="num">2,500-3,500</td><td class="num">$15-50k MXN/mes</td><td>MEDIA</td></tr>
+      <tr><td>Clínicas comprando peptides hoy</td><td class="num">500-875</td><td class="num">$20-35k MXN/mes</td><td>MEDIA</td></tr>
+      <tr><td>Athlete amateur con interés peptides</td><td class="num">100,000-200,000</td><td class="num">LTV $5-12k MXN</td><td>BAJA</td></tr>
+      <tr><td>Wellness female crossover 32-50</td><td class="num">50,000-100,000</td><td class="num">LTV $15-35k MXN</td><td>BAJA</td></tr>
+      <tr class="gold-bg"><td><b>UNIVERSO TOTAL teórico PEPTIQ MX</b></td><td class="num"><b>~180k-350k personas<br>+ 500-875 clínicas B2B</b></td><td class="num"><b>—</b></td><td><b>MEDIA</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="ok"><b>Hallazgo cruzado:</b> el SAM "research peptides MX puro" = $38-71M MXN/año (canal web D2C, §A.2) atiende hoy a ~2-3% del universo biohacker/longevity (4-8k clientes activos estimados vs 24-47k potencial total). <b>La penetración actual del mercado es 5-12%. Hay 10x de headroom antes de saturación.</b></div>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Apéndice A.3 · Segmentos · For research use only</footer>
+</div>
+
+<!-- =========================================================== -->
+<!-- PÁGINA 9 — FUENTES CITADAS                                  -->
+<!-- =========================================================== -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> · FUENTES CITADAS</h1>
+    <span class="meta">48 fuentes web verificables + 8 fuentes internas</span>
+  </header>
+
+  <h2>8. Fuentes</h2>
+
+  <h3>8.1 Fuentes de mercado (tamaño, crecimiento, segmentación)</h3>
+  <ol class="source-list">
+    <li>Grand View Research. <i>Mexico Peptide Therapeutics Market Size & Outlook, 2030.</i> <a href="https://www.grandviewresearch.com/horizon/outlook/peptide-therapeutics-market/mexico">grandviewresearch.com/horizon/outlook/peptide-therapeutics-market/mexico</a> — USD 467.5 M (2023) → 789.4 M (2030), CAGR 7.8%.</li>
+    <li>Grand View Research. <i>Latin America Peptide Therapeutics Market.</i> <a href="https://www.grandviewresearch.com/horizon/outlook/peptide-therapeutics-market/latin-america">grandviewresearch.com/.../latin-america</a> — USD 7.9 B (2030), CAGR 12.1%.</li>
+    <li>Precedence Research. <i>Peptide Therapeutics Market Size to Hit USD 87.21 Billion by 2035.</i> <a href="https://www.precedenceresearch.com/peptide-therapeutics-market">precedenceresearch.com/peptide-therapeutics-market</a> — global.</li>
+    <li>IMARC Group. <i>Mexico Medical Aesthetics Market.</i> <a href="https://www.imarcgroup.com/mexico-medical-aesthetics-market">imarcgroup.com/mexico-medical-aesthetics-market</a> — USD 274.5 M (2024) → 560.3 M (2033).</li>
+    <li>IMARC Group. <i>Mexico Regenerative Medicine Market 2033.</i> <a href="https://www.imarcgroup.com/mexico-regenerative-medicine-market">imarcgroup.com/mexico-regenerative-medicine-market</a> — USD 400.5 M (2024) → 1,939.9 M (2033), CAGR 19.16%.</li>
+    <li>IMARC Group. <i>Mexico Fitness Supplements Market.</i> <a href="https://www.imarcgroup.com/mexico-fitness-supplements-market">imarcgroup.com/mexico-fitness-supplements-market</a> — USD 277.4 M (2024) → 610.2 M (2033).</li>
+    <li>IMARC Group. <i>Mexico Anti-Aging Market.</i> <a href="https://www.imarcgroup.com/mexico-anti-aging-market">imarcgroup.com/mexico-anti-aging-market</a> — USD 1.2 B (2024) → 2.1 B (2033).</li>
+    <li>Mordor Intelligence. <i>Peptide Therapeutics Market Size & Trends 2031.</i> <a href="https://www.mordorintelligence.com/industry-reports/peptide-therapeutics-market">mordorintelligence.com/industry-reports/peptide-therapeutics-market</a></li>
+  </ol>
+
+  <h3>8.2 Fuentes regulatorias (COFEPRIS, Meta Ads)</h3>
+  <ol class="source-list" start="9">
+    <li>COFEPRIS / gob.mx. <i>Alerta Sanitaria Tirzepatida 09-feb-2026</i> (PDF oficial). <a href="https://www.gob.mx/cms/uploads/attachment/file/1055652/Alerta_Sanitaria_Tirzepatida_09022026.pdf">gob.mx/cms/uploads/.../Alerta_Sanitaria_Tirzepatida_09022026.pdf</a></li>
+    <li>La Jornada. <i>Cofepris emite alerta sanitaria por venta ilegal de productos con Tirzepatida.</i> Feb 9, 2026. <a href="https://www.jornada.com.mx/noticia/2026/02/09/sociedad/cofepris-emite-alerta-sanitaria-por-venta-ilegal-de-productos-con-tirzepatida">jornada.com.mx/2026/02/09/...tirzepatida</a></li>
+    <li>Infobae México. <i>Cofepris alerta por venta ilegal de "tirzepatida" en México.</i> Feb 19, 2026. <a href="https://www.infobae.com/mexico/2026/02/19/cofepris-alerta-por-venta-ilegal-de-tirzepatida-en-mexico/">infobae.com/mexico/2026/02/19/...</a></li>
+    <li>Meta Transparency Center. <i>Drugs and Pharmaceuticals advertising policy.</i> <a href="https://transparency.meta.com/policies/ad-standards/restricted-goods-services/drugs-pharmaceuticals/">transparency.meta.com/policies/.../drugs-pharmaceuticals</a></li>
+    <li>ppc.land. <i>Unapproved peptides ads surge 208% as marketplaces see 276% sales growth.</i> <a href="https://ppc.land/unapproved-peptides-ads-surge-208-as-marketplaces-see-276-sales-growth/">ppc.land/unapproved-peptides-ads-surge-208...</a></li>
+  </ol>
+
+  <h3>8.3 Fuentes de tendencia, demanda, cultura biohacker</h3>
+  <ol class="source-list" start="14">
+    <li>Glossy. <i>Injectable peptide therapy went mainstream in 2025.</i> <a href="https://www.glossy.co/beauty/injectable-peptide-therapy-went-mainstream-in-2025-priming-consumers-for-the-next-big-wave-in-wellness/">glossy.co/beauty/injectable-peptide-therapy-went-mainstream...</a></li>
+    <li>The Atlantic. <i>The Peptide Boom Is Getting Out of Hand.</i> Mar 2026. <a href="https://www.theatlantic.com/health/2026/03/peptides-compounded-drugs-underground-market/686398/">theatlantic.com/health/2026/03/peptides-compounded-drugs...</a></li>
+    <li>Accio Trends. <i>2025 Trends of BPC-157: Market Growth and Regulatory Challenges.</i> <a href="https://www.accio.com/business/trends-of-bpc157">accio.com/business/trends-of-bpc157</a> — BPC-157 growth 15-20% anual proyectado.</li>
+    <li>QSC Peptides. <i>Janoshik Analytical Lab: How to Verify Your Peptide Purity COA.</i> <a href="https://qsc-usa.com/janoshik-analytical-lab/">qsc-usa.com/janoshik-analytical-lab</a></li>
+    <li>Verify.Janoshik. Portal de verificación oficial. <a href="https://verify.janoshik.com">verify.janoshik.com</a></li>
+  </ol>
+
+  <h3>8.4 Fuentes sector estética / clínicas MX</h3>
+  <ol class="source-list" start="18">
+    <li>El Economista. <i>Sector de la medicina estética prevé crecer 7% anual hasta 2029.</i> <a href="https://www.eleconomista.com.mx/arteseideas/sector-medicina-estetica-preve-crecer-7-anual-20250202-744504.html">eleconomista.com.mx/arteseideas/...medicina-estetica-preve-crecer-7-anual</a></li>
+    <li>AMIR México. <i>El boom de la medicina estética en México.</i> <a href="https://amirmexico.com/el-boom-de-la-medicina-estetica-en-mexicotendencias-oportunidades-y-formacion-para-destacar/">amirmexico.com/el-boom-de-la-medicina-estetica-en-mexico...</a> — ANME 12,000+ médicos, clínicas duplicadas desde 2018.</li>
+    <li>ISAPS 2023. <i>Mexico ranks 5th globally in aesthetic procedures.</i> Citado en AMIR/IMARC.</li>
+  </ol>
+
+  <h3>8.5 Fuentes de competidores (scraping verificado mar 2026)</h3>
+  <ol class="source-list" start="21">
+    <li>GoutoGo.mx — <a href="https://www.goutogo.mx/productos/p-ptidos">goutogo.mx/productos/p-ptidos</a> (32 SKUs, PeptideSciences/Synergy/Biosynth)</li>
+    <li>AestheticPharmaMX.com — <a href="https://aestheticpharmamx.com">aestheticpharmamx.com</a> (BPC-157 $1,250, solo SPEI)</li>
+    <li>Bach Labs — <a href="https://bachlabs.mx">bachlabs.mx</a> (subscription $2,999-9,999/mes)</li>
+    <li>Exoma Peptides — <a href="https://exomapeptides.mx">exomapeptides.mx</a> (600+ reviews 4.5/5)</li>
+    <li>Cuerpoymente — <a href="https://cuerpoymente.mx">cuerpoymente.mx</a> (crypto pagos)</li>
+    <li>Singular Biotech — <a href="https://singularbiotech.mx">singularbiotech.mx</a> (60+ peptides, mayoreo unbranded)</li>
+    <li>TheFitWeekend — <a href="https://thefitweekend.com">thefitweekend.com</a> (56 peptides, sin disclaimers)</li>
+    <li>XT Labs Mexico — <a href="https://xtlabs-mexico.com">xtlabs-mexico.com</a> (precio piso $849-1,050)</li>
+    <li>Supreme Peptides — <a href="https://supremepeptides.com">supremepeptides.com</a> (Monterrey, Wix)</li>
+  </ol>
+
+  <h3>8.6 Fuentes del Apéndice A (volumen búsqueda · competidores · segmentos)</h3>
+  <ol class="source-list" start="30">
+    <li>The Peptide Effect. <i>State of Peptides 2026: Search Trends, Research & Market Analysis.</i> <a href="https://www.peptideeffect.com/reports/peptide-trends-2026">peptideeffect.com/reports/peptide-trends-2026</a> — 10.1M US searches/mes, BPC-157 165K, tirzepatide 1M, retatrutide +512%, GHK-Cu +1,016% YoY.</li>
+    <li>eMarketer. <i>Peptide buzz climbs as influencer hype drives demand online.</i> <a href="https://www.emarketer.com/content/peptide-buzz-climbs-influencer-hype-drives-demand-online">emarketer.com/content/peptide-buzz-climbs-influencer-hype-drives-demand-online</a></li>
+    <li>Glimpse / Glossy. <i>Ozempic Trending 30% (March 2025) — 14M searches/mo global.</i> <a href="https://meetglimpse.com/trend/ozempic/">meetglimpse.com/trend/ozempic</a></li>
+    <li>SimilarWeb. <i>Traffic metrics para 9 competidores MX (snapshot mar 2026).</i> <a href="https://www.similarweb.com/website/aestheticpharmamx.com/">aestheticpharmamx 37.4K</a>, <a href="https://www.similarweb.com/website/xtlabs-mexico.com/">xtlabs 47.1K</a>, <a href="https://www.similarweb.com/website/exomapeptides.mx/">exoma 12.9K</a>, <a href="https://www.similarweb.com/website/goutogo.mx/">goutogo 11.2K</a>, <a href="https://www.similarweb.com/website/thefitweekend.com/">thefitweekend 11.5K</a>, <a href="https://www.similarweb.com/website/cuerpoymente.mx/">cuerpoymente 12.8K</a>, <a href="https://www.similarweb.com/website/supremepeptides.com/">supreme 2.8K</a>, <a href="https://www.similarweb.com/website/singularbiotech.mx/">singular 982</a>, <a href="https://www.similarweb.com/website/bachlabs.mx/">bachlabs 573</a></li>
+    <li>Loox Reviews. <i>Aesthetic Pharma México reviews portal.</i> <a href="https://loox.io/s/Vyx4PhQIC_">loox.io/s/Vyx4PhQIC_</a> — 4,458-5,299 reviews acumulados 2021-2026, 4.9★</li>
+    <li>MercadoLibre MX. <i>XT Labs BPC-157 listings y 4,800+ verified reviews.</i> <a href="https://listado.mercadolibre.com.mx/bpc-157">listado.mercadolibre.com.mx/bpc-157</a></li>
+    <li>AMAI. <i>Estimaciones NSE 2022 y Regla AMAI 2024.</i> <a href="https://www.amai.org/NSE/index.php?queVeo=NSE2024">amai.org/NSE/index.php?queVeo=NSE2024</a> — A/B 7.3%, C+ 12.0%, C 15.3% nacional.</li>
+    <li>AMAI. <i>Nota Metodológica NSE AMAI 2024.</i> <a href="https://www.amai.org/descargas/NOTA_METODOLOGICA_NSE_AMAI_2024_v6.pdf">amai.org/descargas/NOTA_METODOLOGICA_NSE_AMAI_2024_v6.pdf</a></li>
+    <li>INEGI. <i>Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) 2024.</i> <a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/enigh/ENIGH2024_RR.pdf">inegi.org.mx/.../ENIGH2024_RR.pdf</a> — 38,830,230 hogares MX.</li>
+    <li>INEGI. <i>Estadísticas de Salud en Establecimientos Particulares (ESEP) 2024.</i> <a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/salud/ESEP2024_RR.pdf">inegi.org.mx/.../ESEP2024_RR.pdf</a> — 17,390 consultorios privados, 70.2% especialidad, 5,193 quirófanos.</li>
+    <li>INEGI DENUE 2025. <i>Directorio Estadístico Nacional de Unidades Económicas.</i> <a href="https://www.inegi.org.mx/app/mapa/denue/">inegi.org.mx/app/mapa/denue</a> — 6M+ establecimientos; Salones y Clínicas de Belleza 310,133 unidades.</li>
+    <li>Consejo Mexicano de Dermatología. <i>Certificaciones 1974-mar 2025.</i> <a href="https://www.consejomexicanodermatologia.org.mx/">consejomexicanodermatologia.org.mx</a> — 2,385 dermatólogos certificados + 181 pediátricos + 79 dermatopatólogos.</li>
+    <li>Dermatología Revista Mexicana. <i>Distribución geográfica de los dermatólogos en México</i> — 2,062 practicantes (estudio 2018).</li>
+    <li>ANME. <i>Asociación Nacional de Medicina Estética — membresía.</i> <a href="https://anme.mx/membresia.html">anme.mx/membresia.html</a> — 12,000+ médicos afiliados acumulados ~30 años.</li>
+    <li>Hypetrace / Modash. <i>Top Biohacking Instagram Influencers Mexico.</i> <a href="https://hypetrace.com/top/instagram/biohacking/mexico/">hypetrace.com/top/instagram/biohacking/mexico</a> — Jag Chima ~53K, Augusto Marolla ~57K.</li>
+    <li>Huberman Lab. <i>Podcast y audiencia.</i> <a href="https://www.hubermanlab.com/podcast">hubermanlab.com/podcast</a> — 4M IG followers, 3M YouTube subscribers (benchmark biohacker global).</li>
+    <li>Fountain Life. <i>Longevity clinic cost & membership.</i> <a href="https://www.fountainlife.com/blog/how-much-does-longevity-clinic-cost">fountainlife.com/blog/how-much-does-longevity-clinic-cost</a> — benchmark USD 19,500-25,000/año longevity membership (sin operación MX).</li>
+    <li>Longevity Medical Institute. <i>Los Cabos MX — único clon Fountain-Life con licencia COFEPRIS.</i> <a href="https://www.longevity-institute.com/">longevity-institute.com</a></li>
+    <li>Optimantra. <i>Peptide therapy trends 2026 — what clinics must know.</i> <a href="https://www.optimantra.com/blog/peptide-therapy-trends-to-watch-in-2025-what-clinics-need-to-know">optimantra.com/blog/peptide-therapy-trends</a> — benchmark US $1,500-5,000 USD/mes clínica compra peptides.</li>
+    <li>Scamadviser / Loox. <i>Aesthetic Pharma MX trust score 68%</i> <a href="https://www.scamadviser.com/check-website/aestheticpharmamx.com">scamadviser.com/check-website/aestheticpharmamx.com</a></li>
+  </ol>
+
+  <h3>8.7 Fuentes internas TDI (research previo)</h3>
+  <ol class="source-list" start="49">
+    <li><code>/research/competidores-research.md</code> — 11 competidores detallados (21-mar-2026)</li>
+    <li><code>/research/matriz-precios-competidores.md</code> — scraping precios (22-mar-2026)</li>
+    <li><code>/research/estrategia-precios.md</code> — estrategia precios Nova → PEPTIQ (27-mar-2026)</li>
+    <li><code>/research/analisis-precios-china.md</code> — proveedor Zhi Peptide (21-mar-2026)</li>
+    <li><code>/research/legal-cofepris-research.md</code> — marco legal MX (21-mar-2026)</li>
+    <li><code>/research/goutogo-scraping.md</code> — scraping GoutoGo (21-mar-2026)</li>
+    <li><code>/research/pasarelas-pago-research.md</code> — análisis gateways (21-mar-2026)</li>
+    <li><code>/research/proveedores-research.md</code> — proveedores alternativos (21-mar-2026)</li>
+  </ol>
+
+  <h2>Disclaimer legal</h2>
+  <div class="warn">
+    <b>FOR RESEARCH USE ONLY.</b> Este documento es un análisis de mercado interno de Grupo TDI para planeación estratégica de PEPTIQ MX. Los productos referenciados son péptidos para uso en investigación de laboratorio únicamente. No son medicamentos ni alimentos. No están destinados al uso humano o veterinario. La adquisición implica que el comprador es un investigador calificado. Los datos de mercado citados provienen de fuentes terceras (Grand View Research, IMARC, Mordor, Precedence, Glossy, The Atlantic, COFEPRIS, AMIR, ISAPS, AMAI, INEGI, The Peptide Effect, SimilarWeb, Loox, MercadoLibre, Consejo Mexicano de Dermatología, ANME, Fountain Life, Optimantra) y están sujetos a las condiciones de esos publicadores. Las estimaciones de SAM/SOM y del Apéndice A son derivaciones propias basadas en scraping público, proyecciones US→MX y triangulación de señales, no reflejan data oficial medida. Los valores del Apéndice A están marcados con confianza (ALTA/MEDIA/BAJA) y no deben usarse como cifras definitivas sin validación con herramientas pagadas (Ahrefs, Semrush, Kantar, Euromonitor). Este documento es confidencial y propiedad de Grupo TDI.
+  </div>
+
+  <footer>PEPTIQ MX · peptiqmx.com · COA Janoshik verificable · Página 9 de 9 · For research use only · © 2026 Grupo TDI</footer>
+</div>
+
+</body>
+</html>

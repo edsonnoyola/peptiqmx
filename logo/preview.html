@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEPTIQ MX — Logo Final</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#0a0a0a; color:#fff; padding:40px 20px; }
+    h1 { font-family:'Playfair Display',serif; font-size:28px; font-weight:400; text-align:center; margin-bottom:6px; letter-spacing:4px; }
+    .sub { text-align:center; font-size:11px; color:#666; letter-spacing:3px; margin-bottom:50px; }
+    .grid { display:flex; flex-direction:column; gap:50px; max-width:900px; margin:0 auto; }
+    .row { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+    .card { padding:40px 30px; text-align:center; border:1px solid #222; }
+    .card.dark { background:#1A1A1A; }
+    .card.light { background:#FFFFFF; }
+    .card h3 { font-size:10px; letter-spacing:2.5px; color:#C4A265; margin-bottom:24px; text-transform:uppercase; font-weight:600; }
+    .card.light h3 { color:#8B6914; }
+    .card .desc { font-size:11px; color:#555; margin-top:16px; }
+    .card.light .desc { color:#999; }
+
+    /* Logo renders via CSS — exactly matching the website */
+    .logo-render { display:inline-block; white-space:nowrap; }
+    .logo-render .peptiq { font-family:'Playfair Display',serif; font-weight:600; letter-spacing:5px; }
+    .logo-render .mx { font-family:'Playfair Display',serif; font-weight:300; letter-spacing:3px; margin-left:8px; }
+
+    /* Sizes */
+    .size-lg .peptiq { font-size:48px; }
+    .size-lg .mx { font-size:48px; }
+    .size-md .peptiq { font-size:36px; }
+    .size-md .mx { font-size:36px; }
+    .size-sm .peptiq { font-size:20px; letter-spacing:3px; }
+    .size-sm .mx { font-size:20px; letter-spacing:2px; }
+
+    /* Dark variants */
+    .dark .peptiq { color:#FFFFFF; }
+    .dark .mx { color:rgba(255,255,255,0.4); }
+    .dark .mx-gold { color:#C4A265; font-weight:600; }
+
+    /* Light variants */
+    .light .peptiq { color:#1A1A1A; }
+    .light .mx { color:rgba(26,26,26,0.35); }
+    .light .mx-gold { color:#B8933E; font-weight:600; }
+
+    .section-label { font-size:10px; letter-spacing:3px; color:#444; text-transform:uppercase; margin-bottom:20px; text-align:center; font-weight:600; }
+
+    /* IMPI box */
+    .impi-card { background:#fff; padding:60px; text-align:center; border:2px solid #ddd; }
+    .impi-card h3 { color:#1A1A1A; font-size:12px; letter-spacing:2px; margin-bottom:30px; }
+    .impi-card .desc { color:#888; }
+    .impi-render .peptiq { font-size:72px; color:#1A1A1A; }
+    .impi-render .mx { font-size:72px; color:rgba(26,26,26,0.35); }
+    .impi-render .mx-gold { font-size:72px; color:#B8933E; font-weight:600; }
+
+    .download-note { text-align:center; margin-top:40px; font-size:12px; color:#555; line-height:1.8; }
+    .download-note strong { color:#C4A265; }
+
+    .comparison { margin-top:60px; text-align:center; }
+    .comparison h2 { font-family:'Playfair Display',serif; font-size:20px; font-weight:400; letter-spacing:3px; margin-bottom:30px; }
+    .comp-row { display:flex; justify-content:center; gap:40px; align-items:center; flex-wrap:wrap; margin-bottom:30px; }
+    .comp-item { padding:20px 30px; }
+    .comp-item.on-dark { background:#1A1A1A; border:1px solid #333; }
+    .comp-item.on-light { background:#fff; border:1px solid #ddd; }
+    .comp-label { font-size:9px; letter-spacing:2px; color:#666; margin-top:8px; text-transform:uppercase; }
+  </style>
+</head>
+<body>
+
+  <h1>PEPTIQ MX</h1>
+  <div class="sub">LOGO FINAL &mdash; ABRIL 2026</div>
+
+  <div class="grid">
+
+    <!-- OPTION A: Clean (como está en la página) -->
+    <div class="section-label">Opción A &mdash; Clean (como está en la página)</div>
+    <div class="row">
+      <div class="card dark">
+        <h3>Dark</h3>
+        <div class="logo-render size-lg">
+          <span class="peptiq">PEPTIQ</span><span class="mx">MX</span>
+        </div>
+      </div>
+      <div class="card light">
+        <h3>Light</h3>
+        <div class="logo-render size-lg">
+          <span class="peptiq">PEPTIQ</span><span class="mx">MX</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION B: X dorada -->
+    <div class="section-label">Opción B &mdash; X Dorada (toque premium)</div>
+    <div class="row">
+      <div class="card dark">
+        <h3>Dark + Gold X</h3>
+        <div class="logo-render size-lg">
+          <span class="peptiq">PEPTIQ</span><span class="mx" style="margin-left:8px;">M</span><span class="mx-gold">X</span>
+        </div>
+      </div>
+      <div class="card light">
+        <h3>Light + Gold X</h3>
+        <div class="logo-render size-lg">
+          <span class="peptiq">PEPTIQ</span><span class="mx" style="margin-left:8px;">M</span><span class="mx-gold">X</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tamaños -->
+    <div class="section-label">Escalas</div>
+    <div class="card dark" style="text-align:left; padding:40px;">
+      <div style="margin-bottom:30px;">
+        <div class="logo-render size-lg">
+          <span class="peptiq">PEPTIQ</span><span class="mx" style="margin-left:8px;">M</span><span class="mx-gold">X</span>
+        </div>
+        <div class="desc">Hero / Header — 48px</div>
+      </div>
+      <div style="margin-bottom:30px;">
+        <div class="logo-render size-md">
+          <span class="peptiq">PEPTIQ</span><span class="mx" style="margin-left:6px;">M</span><span class="mx-gold">X</span>
+        </div>
+        <div class="desc">Nav / Cards — 36px</div>
+      </div>
+      <div>
+        <div class="logo-render size-sm">
+          <span class="peptiq">PEPTIQ</span><span class="mx" style="margin-left:4px;">M</span><span class="mx-gold">X</span>
+        </div>
+        <div class="desc">Footer / Labels / Viales — 20px</div>
+      </div>
+    </div>
+
+    <!-- IMPI -->
+    <div class="section-label">Para Registro IMPI (marca mixta)</div>
+    <div class="impi-card">
+      <h3>ARCHIVO PARA IMPI &mdash; FONDO BLANCO, 300 DPI</h3>
+      <div class="logo-render impi-render">
+        <span class="peptiq">PEPTIQ</span><span class="mx" style="margin-left:12px;">M</span><span class="mx-gold">X</span>
+      </div>
+      <div class="desc" style="margin-top:20px;">Para exportar: click derecho → Inspeccionar → Screenshot node. O usa Figma/Illustrator con los SVGs.</div>
+    </div>
+
+  </div>
+
+  <div class="download-note">
+    <strong>Archivos SVG disponibles en:</strong> /peptiqmx/logo/<br>
+    peptiq-final-dark.svg · peptiq-final-light.svg<br>
+    peptiq-gold-x-dark.svg · peptiq-gold-x-light.svg<br>
+    peptiq-impi.svg (alta resolución)
+  </div>
+
+</body>
+</html>

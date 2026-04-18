@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEPTIQ — Pago Confirmado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','187738085479345');fbq('track','PageView');fbq('track','Purchase',{currency:'MXN',value:0});</script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #111;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .check {
+      width: 80px; height: 80px;
+      border: 3px solid #22C55E;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 32px;
+      animation: pop 0.5s cubic-bezier(0.19,1,0.22,1);
+    }
+    @keyframes pop { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+    .check svg { width: 36px; height: 36px; stroke: #22C55E; fill: none; stroke-width: 3; }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+    .steps {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .step {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 24px;
+      width: 200px;
+      text-align: center;
+    }
+    .step-num {
+      font-size: 11px;
+      color: #C6A969;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .step-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+    .cta {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      padding: 16px 40px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .cta:hover { background: #20bd5a; }
+    .back {
+      display: block;
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      margin-top: 8px;
+    }
+    .back:hover { color: rgba(255,255,255,0.6); }
+    .logo {
+      margin-bottom: 48px;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">PEPTIQ</div>
+
+  <div class="check">
+    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+
+  <h1>Pago confirmado</h1>
+  <p class="subtitle">Tu pedido est&aacute; siendo preparado. Recibir&aacute;s confirmaci&oacute;n por WhatsApp con tu n&uacute;mero de rastreo.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-text">Preparamos tu pedido con cadena de fr&iacute;o</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-text">Env&iacute;o en 24-48h con rastreo</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-text">Refrigera al recibir (2-8&deg;C)</div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5214445770445?text=Hola%2C%20acabo%20de%20hacer%20un%20pedido%20en%20peptiqmx.com" target="_blank" rel="noopener" class="cta">Confirmar por WhatsApp</a>
+  <a href="/" class="back">Volver a peptiqmx.com</a>
+</body>
+</html>

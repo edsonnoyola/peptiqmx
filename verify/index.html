@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEPTIQ — Batch Verification</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --black: #111111;
+      --white: #FFFFFF;
+      --gray: #F5F5F5;
+      --text-secondary: #777777;
+      --green: #22C55E;
+      --beige: #C6A969;
+    }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .logo {
+      font-size: 11px;
+      letter-spacing: 4px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: #1A1A1A;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 48px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.25);
+      padding: 8px 20px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 32px;
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .product-line {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--beige);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .product-name {
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+    .product-dose {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 32px;
+    }
+    .data-cell {
+      background: #1A1A1A;
+      padding: 20px 16px;
+      text-align: left;
+    }
+    .data-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .data-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--white);
+    }
+    .data-value.green { color: var(--green); }
+    .data-value.gold { color: var(--beige); }
+    .method-tag {
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px 16px;
+      display: inline-block;
+      margin-bottom: 32px;
+    }
+    .allergen-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 20px;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+    .allergen-title {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .allergen-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+    .janoshik-link {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 3px;
+      text-decoration: none;
+      transition: color 0.2s;
+      margin: 0 auto;
+      width: fit-content;
+    }
+    .janoshik-link:hover { color: var(--white); }
+    .footer-note {
+      margin-top: 48px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.15);
+      letter-spacing: 0.5px;
+      text-align: center;
+      max-width: 360px;
+    }
+    .not-found {
+      text-align: center;
+    }
+    .not-found h2 {
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+    .not-found p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">PEPTIQ — Batch Verification</div>
+  <div id="content"></div>
+  <p class="footer-note">This product is for research purposes only. Not for human consumption. PEPTIQ MX — Advanced Human Optimization.</p>
+
+  <script>
+    const CATALOG = {
+      'epithalon': {
+        line: 'HIGHLANDER', lineColor: '#C6A969',
+        name: 'EPITHALON', dose: '10 mg',
+        purity: '99.32%', content: '10.67 mg',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Tetrapéptido sintético (Ala-Glu-Asp-Gly). Longitud insuficiente para contener epítopos alergénicos estructurados. Sin homología reportada con alérgenos conocidos en bases de datos AllerTop / WHO-IUIS. Riesgo alergénico: mínimo.'
+      },
+      'nad-plus': {
+        line: 'HIGHLANDER', lineColor: '#C6A969',
+        name: 'NAD+', dose: '500 mg',
+        purity: '99.500%', content: '500 mg',
+        method: 'HPLC + UV',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Molécula pequeña (coenzima, no péptido/proteína). No aplica análisis de epítopos alergénicos. El NAD+ es una molécula endógena presente en todas las células humanas. Sin reactividad cruzada con alérgenos conocidos.'
+      },
+      'bpc-157': {
+        line: 'WOLVERINE', lineColor: '#7A1C1C',
+        name: 'BPC-157', dose: '10 mg',
+        purity: '99.654%', content: '10.35 mg',
+        method: 'HPLC + MS',
+        lot: 'Mfg: Nov 6, 2025', expiry: '2027-11',
+        janoshikKey: 'HX5KQUANGC2F', janoshikTask: '#94490',
+        allergen: 'Pentadecapéptido sintético (Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val). Sin epítopos alergénicos identificados en análisis de homología. No presenta reactividad cruzada con alérgenos alimentarios, ambientales ni de látex registrados en WHO-IUIS. Riesgo alergénico: mínimo.'
+      },
+      'tb-500': {
+        line: 'WOLVERINE', lineColor: '#7A1C1C',
+        name: 'TB-500', dose: '10 mg',
+        purity: '99.328%', content: '10.20 mg',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Fragmento sintético de Timosina Beta-4 humana (residuos 17-23, péptido endógeno). Sin epítopos alergénicos conocidos. Alta similitud con proteína endógena reduce riesgo inmunogénico. Sin reactividad cruzada reportada en literatura científica. Riesgo alergénico: mínimo.'
+      },
+      'tirzepatide': {
+        line: 'SHRED', lineColor: '#333333',
+        name: 'TIRZEPATIDE', dose: '30 mg',
+        purity: '99.64%', content: '33.25 mg',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Péptido sintético de 39 aminoácidos, agonista dual GIP/GLP-1. Aprobado FDA (Mounjaro®/Zepbound®). Reacciones de hipersensibilidad reportadas en ensayos clínicos (<1% pacientes): eritema, prurito localizado, urticaria. Epítopos inmunodominantes: región N-terminal (análoga GIP) y región C-terminal (análoga GLP-1). Para uso exclusivo de investigación in vitro.'
+      },
+      'retatrutide': {
+        line: 'SHRED', lineColor: '#333333',
+        name: 'RETATRUTIDE', dose: '10 mg',
+        purity: '99.080%', content: '10.50 mg',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Péptido sintético triple agonista (GLP-1/GIP/Glucagón). En investigación clínica fase III (Eli Lilly). Perfil alergénico similar a clase GLP-1: posibles reacciones de hipersensibilidad en sitio de administración. Sin epítopos alergénicos de secuencia conocidos en alérgenos estructurales. Riesgo alergénico: bajo-moderado en contexto clínico.'
+      },
+      'ghk-cu': {
+        line: 'GLOW', lineColor: '#6A5ACD',
+        name: 'GHK-Cu', dose: '100 mg',
+        purity: '99.508%', content: '95 mg',
+        method: 'HPLC + ICP-MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Tripéptido sintético (Gly-His-Lys) + cobre (Cu²⁺). Secuencia demasiado corta para epítopos alergénicos convencionales. Posible sensibilización por cobre en individuos con hipersensibilidad a metales (raro, <0.1% población). Sin reactividad cruzada con alérgenos proteicos conocidos. Riesgo alergénico: mínimo.'
+      },
+      'ahk-cu': {
+        line: 'GLOW', lineColor: '#6A5ACD',
+        name: 'AHK-Cu', dose: '50 mg',
+        purity: '99.20%', content: '48 mg',
+        method: 'HPLC + ICP-MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Tripéptido sintético (Ala-His-Lys) + cobre (Cu²⁺). Secuencia demasiado corta para epítopos alergénicos convencionales. Mismas consideraciones que GHK-Cu respecto a sensibilización por cobre. Sin homología con alérgenos conocidos. Riesgo alergénico: mínimo.'
+      },
+      'bac-water': {
+        line: 'SUPPORT', lineColor: '#4C7F6A',
+        name: 'BAC WATER', dose: '3 ml',
+        purity: 'Sterile', content: '3.0 ml',
+        method: 'USP Standard',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Agua para inyección + cloruro de benzalconio 0.9% (conservador bacteriostático). No contiene péptidos ni proteínas — no aplica análisis de epítopos. Nota: el cloruro de benzalconio puede causar dermatitis de contacto en individuos sensibilizados (sensibilización ocupacional). Sin epítopos alergénicos proteicos.'
+      },
+      'trinity': {
+        line: 'GLOW', lineColor: '#6A5ACD',
+        name: 'TRINITY', dose: '70 mg',
+        purity: 'HPLC verified', content: '70 mg blend',
+        method: 'HPLC',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Blend de 3 péptidos: BPC-157 + GHK-Cu + TB-500. Perfil alergénico individual mínimo para cada componente. GHK-Cu contiene cobre (Cu²⁺) — posible sensibilización en individuos con hipersensibilidad a metales (<0.1%). Sin epítopos alergénicos cruzados conocidos entre componentes.'
+      },
+      'heal-stack': {
+        line: 'WOLVERINE', lineColor: '#7A1C1C',
+        name: 'HEAL STACK', dose: '20 mg',
+        purity: 'HPLC verified', content: '20 mg blend',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Blend de BPC-157 (10mg) + TB-500 (10mg). Ambos péptidos sintéticos sin epítopos alergénicos identificados. BPC-157: pentadecapéptido sin homología con alérgenos conocidos. TB-500: fragmento de timosina beta-4 endógena. Riesgo alergénico combinado: mínimo.'
+      },
+      'gh-stack': {
+        line: 'PRIME', lineColor: '#111111',
+        name: 'GH STACK', dose: '10 mg',
+        purity: 'HPLC verified', content: '10 mg blend',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Blend de CJC-1295 + Ipamorelin. Análogos sintéticos de GHRH y ghrelina respectivamente. Sin epítopos alergénicos conocidos en análisis de homología. Péptidos de acción hormonal — perfil de seguridad establecido en literatura clínica. Riesgo alergénico: mínimo.'
+      },
+      'ipamorelin': {
+        line: 'PRIME', lineColor: '#111111',
+        name: 'IPAMORELIN', dose: '10 mg',
+        purity: 'HPLC verified', content: '10 mg',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Pentapéptido sintético agonista de receptor de ghrelina (GHS-R1a). Sin homología con alérgenos alimentarios o ambientales. Secuencia corta (5 AA) — sin epítopos alergénicos convencionales. Riesgo alergénico: mínimo.'
+      },
+      'tesamorelin': {
+        line: 'PRIME', lineColor: '#111111',
+        name: 'TESAMORELIN', dose: '10 mg',
+        purity: 'HPLC verified', content: '10 mg',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Péptido sintético análogo de GHRH (44 AA). Aprobado FDA (Egrifta®). Reacciones de hipersensibilidad reportadas en ensayos clínicos: eritema en sitio de inyección (<5%), urticaria (<1%). Sin epítopos alergénicos de secuencia cruzados con alérgenos comunes. Riesgo alergénico: bajo.'
+      },
+      'kpv': {
+        line: 'WOLVERINE', lineColor: '#7A1C1C',
+        name: 'KPV', dose: '10 mg',
+        purity: 'HPLC verified', content: '10 mg',
+        method: 'HPLC',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Tripéptido sintético (Lys-Pro-Val) derivado de alfa-MSH. Secuencia de 3 aminoácidos — demasiado corta para epítopos alergénicos convencionales. Sin reactividad cruzada conocida. Riesgo alergénico: mínimo.'
+      },
+    };
+
+    function getSlug() {
+      // from URL: /verify/bpc-157 or /verify/bpc-157/
+      const path = window.location.pathname;
+      const parts = path.split('/').filter(Boolean);
+      return parts[parts.length - 1] || '';
+    }
+
+    function render() {
+      const slug = getSlug();
+      const p = CATALOG[slug];
+      const el = document.getElementById('content');
+
+      if (!p) {
+        el.innerHTML = `<div class="card not-found">
+          <h2>Product not found</h2>
+          <p>Check the QR code or visit peptiqmx.com</p>
+        </div>`;
+        return;
+      }
+
+      document.title = `PEPTIQ — ${p.name} Verification`;
+
+      el.innerHTML = `
+        <div class="card">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            VERIFIED
+          </div>
+          <div class="product-line" style="color:${p.lineColor}">${p.line}</div>
+          <div class="product-name">${p.name}</div>
+          <div class="product-dose">${p.dose}</div>
+          <div class="data-grid">
+            <div class="data-cell">
+              <div class="data-label">Purity</div>
+              <div class="data-value green">${p.purity}</div>
+            </div>
+            <div class="data-cell">
+              <div class="data-label">Actual Content</div>
+              <div class="data-value">${p.content}</div>
+            </div>
+            <div class="data-cell">
+              <div class="data-label">Batch</div>
+              <div class="data-value gold">${p.lot}</div>
+            </div>
+            <div class="data-cell">
+              <div class="data-label">Expiry</div>
+              <div class="data-value">${p.expiry}</div>
+            </div>
+          </div>
+          <div class="method-tag">Validation method: ${p.method}${p.janoshikTask ? ' · Task ' + p.janoshikTask : ''}</div><br>
+          <a class="janoshik-link" href="https://janoshik.com/verify/${p.janoshikKey || ''}" target="_blank" rel="noopener">
+            Independent verification → janoshik.com/verify${p.janoshikKey ? ' · Key: ' + p.janoshikKey : ''}
+          </a>
+          ${p.allergen ? `
+          <div class="allergen-box" style="margin-top:24px;">
+            <div class="allergen-title">Epítopos alergénicos</div>
+            <div class="allergen-text">${p.allergen}</div>
+          </div>` : ''}
+        </div>
+      `;
+    }
+
+    render();
+  </script>
+</body>
+</html>

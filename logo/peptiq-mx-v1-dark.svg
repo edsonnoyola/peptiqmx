@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="600" height="160">
+  <!-- V1: PEPTIQ MX — Luxury serif, X destacada en gold -->
+  <rect width="600" height="160" fill="#1A1A1A"/>
+  <!-- PEPTIQ -->
+  <text x="40" y="105" font-family="Georgia, 'Playfair Display', serif" font-size="72" font-weight="400" fill="#FFFFFF" letter-spacing="8">PEPTIQ</text>
+  <!-- M -->
+  <text x="390" y="105" font-family="Georgia, 'Playfair Display', serif" font-size="72" font-weight="300" fill="#8A8A8A" letter-spacing="4">M</text>
+  <!-- X — hero element, gold, bold -->
+  <text x="455" y="105" font-family="Georgia, 'Playfair Display', serif" font-size="82" font-weight="700" fill="#C4A265">X</text>
+  <!-- Tagline -->
+  <text x="42" y="135" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#6B6B6B" letter-spacing="4" text-transform="uppercase">ADVANCED SCIENCE FOR LIMITLESS LIVING</text>
+</svg>

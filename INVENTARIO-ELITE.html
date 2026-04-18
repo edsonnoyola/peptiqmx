@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ ELITE — Inventario &amp; Pricing Máximo Premium</title>
+<style>
+  @page { size: Letter landscape; margin: 10mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #111;
+    margin: 0;
+    padding: 0;
+    font-size: 10.5px;
+    line-height: 1.35;
+  }
+  .page { page-break-after: always; padding: 0; }
+  .page:last-child { page-break-after: auto; }
+  header {
+    border-bottom: 3px solid #c9a961;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  h1 { font-size: 22px; margin: 0; letter-spacing: 2px; font-weight: 800; }
+  h1 .gold { color: #c9a961; font-size: 11px; vertical-align: super; letter-spacing: 1px; }
+  h1 .tier { color: #c9a961; font-size: 16px; letter-spacing: 3px; }
+  h2 { font-size: 15px; color: #c9a961; border-left: 4px solid #c9a961; padding-left: 8px; margin: 14px 0 8px; text-transform: uppercase; letter-spacing: 1.2px; }
+  h3 { font-size: 12px; margin: 10px 0 4px; color: #333; text-transform: uppercase; letter-spacing: 0.5px; }
+  .meta { color: #777; font-size: 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; }
+  th {
+    background: #111;
+    color: #c9a961;
+    text-align: left;
+    padding: 6px 7px;
+    font-size: 9.5px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border: none;
+  }
+  td { padding: 5px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafaf7; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .code { font-family: 'SF Mono', Menlo, monospace; font-weight: 700; background: #111; color: #c9a961; padding: 2px 5px; border-radius: 3px; font-size: 9.5px; }
+  .up { color: #0a7f3f; font-weight: 700; }
+  .flat { color: #999; }
+  .warn { color: #c0392b; font-weight: 700; }
+  .elite { font-weight: 800; color: #c9a961; font-size: 11.5px; }
+  .old { color: #999; text-decoration: line-through; font-size: 9.5px; }
+  .stack-card {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    border: 1px solid #c9a961;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 0 1% 10px 0;
+    background: linear-gradient(180deg, #fff 0%, #faf7ee 100%);
+  }
+  .stack-card h4 { margin: 0 0 3px; font-size: 13px; color: #111; }
+  .stack-card .tag { font-size: 9px; color: #c9a961; letter-spacing: 1px; text-transform: uppercase; }
+  .stack-card .items { font-size: 10px; color: #555; margin: 4px 0 6px; }
+  .stack-card .prices { display: flex; justify-content: space-between; padding-top: 6px; border-top: 1px dashed #c9a961; font-size: 10.5px; align-items: baseline; }
+  .stack-card .prices .sale { font-weight: 800; color: #c9a961; font-size: 15px; }
+  .stack-card .prices .orig { text-decoration: line-through; color: #999; font-size: 9.5px; }
+  .stack-card .save { font-size: 9px; color: #0a7f3f; font-weight: 700; }
+  .summary-box { background: #111; color: #fff; padding: 10px 14px; border-radius: 6px; margin: 10px 0; }
+  .summary-box .row { display: flex; justify-content: space-between; padding: 3px 0; font-size: 11px; }
+  .summary-box .row .label { color: #c9a961; }
+  .callout { background: #faf7ee; border-left: 4px solid #c9a961; padding: 8px 12px; margin: 8px 0; font-size: 10.5px; }
+  .justif { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 8px 0; }
+  .justif div { padding: 8px 10px; border: 1px solid #e0dac7; border-radius: 5px; background: #faf7ee; font-size: 10px; }
+  .justif div b { display: block; color: #c9a961; text-transform: uppercase; font-size: 9px; letter-spacing: 1px; margin-bottom: 3px; }
+  footer { text-align: center; font-size: 8.5px; color: #999; margin-top: 12px; border-top: 1px solid #eee; padding-top: 6px; }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1: INVENTARIO + ELITE PRICING -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> <span class="tier">· ELITE</span></h1>
+    <span class="meta">17 abril 2026 · Inventario físico + Pricing Máximo Premium · Confidencial</span>
+  </header>
+
+  <div class="callout">
+    <b style="color:#c9a961;">NUEVO TIER ELITE — uplift +67-76% sobre precios de lanzamiento.</b>
+    Segmento objetivo: biohacker profesional ($80-250k MXN/mes), longevity seeker VIP (C-suite) y medicina estética de lujo. Justificación: COA Janoshik público por lote + protocolo 1-on-1 + concierge delivery + empaque premium.
+  </div>
+
+  <h2>Inventario + Pricing Elite · Productos individuales (por vial, MXN)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Código</th>
+        <th>Producto</th>
+        <th>Función principal</th>
+        <th class="num">Stock (viales)</th>
+        <th class="num">Precio lanzamiento</th>
+        <th class="num">PEPTIQ Elite</th>
+        <th class="num">Uplift</th>
+        <th class="num">Costo prov.</th>
+        <th class="num">Margen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><span class="code">BP10</span></td><td>BPC-157 10mg</td><td>Cicatrización, intestino, tendones</td><td class="num">10</td><td class="num old">$1,699</td><td class="num elite">$2,999</td><td class="num up">+76%</td><td class="num">$150</td><td class="num up">95%</td></tr>
+      <tr><td>2</td><td><span class="code">TB10</span></td><td>TB-500 10mg</td><td>Recuperación muscular/tendón, lesiones</td><td class="num">10</td><td class="num old">$2,199</td><td class="num elite">$3,799</td><td class="num up">+73%</td><td class="num">$280</td><td class="num up">93%</td></tr>
+      <tr><td>3</td><td><span class="code">BB20</span></td><td>Wolverine Stack (BPC+TB) 20mg</td><td>Stack recuperación total</td><td class="num">10</td><td class="num old">$3,299</td><td class="num elite">$5,499</td><td class="num up">+67%</td><td class="num">$340</td><td class="num up">94%</td></tr>
+      <tr><td>4</td><td><span class="code">GLOW70</span></td><td>GLOW blend 70mg</td><td>Piel + anti-aging + cicatrización</td><td class="num">10</td><td class="num old">$4,499</td><td class="num elite">$7,499</td><td class="num up">+67%</td><td class="num">$400</td><td class="num up">95%</td></tr>
+      <tr><td>5</td><td><span class="code">CU100</span></td><td>GHK-Cu 100mg</td><td>Colágeno, piel, cabello, anti-aging</td><td class="num">20 (×2)</td><td class="num old">$2,199</td><td class="num elite">$3,799</td><td class="num up">+73%</td><td class="num">$100</td><td class="num up">97%</td></tr>
+      <tr><td>6</td><td><span class="code">KPV10</span></td><td>KPV 10mg</td><td>Anti-inflamatorio, intestino, piel</td><td class="num">10</td><td class="num old">$1,699</td><td class="num elite">$2,899</td><td class="num up">+71%</td><td class="num">$120</td><td class="num up">96%</td></tr>
+      <tr><td>7</td><td><span class="code">IP10</span></td><td>Ipamorelin 10mg</td><td>GH suave, sueño, recuperación</td><td class="num">10</td><td class="num old">$1,699</td><td class="num elite">$2,899</td><td class="num up">+71%</td><td class="num">$140</td><td class="num up">95%</td></tr>
+      <tr><td>8</td><td><span class="code">TSM10</span></td><td>Tesamorelin 10mg</td><td>Grasa visceral, GH, cognición</td><td class="num">20 (×2)</td><td class="num old">$4,499</td><td class="num elite">$7,499</td><td class="num up">+67%</td><td class="num">$360</td><td class="num up">95%</td></tr>
+      <tr><td>9</td><td><span class="code">NJ1000</span></td><td>NAD+ 1000mg</td><td>Energía celular, longevidad, mitocondria</td><td class="num">10</td><td class="num old">$3,299</td><td class="num elite">$5,499</td><td class="num up">+67%</td><td class="num">$252</td><td class="num up">95%</td></tr>
+      <tr><td>10</td><td><span class="code">ET50</span></td><td>Epithalon 50mg</td><td>Anti-aging, telómeros, sueño profundo</td><td class="num">10</td><td class="num old">$3,999</td><td class="num elite">$6,799</td><td class="num up">+70%</td><td class="num">$280</td><td class="num up">96%</td></tr>
+      <tr><td>11</td><td><span class="code">SX10</span></td><td>Semax 10mg (verificar)</td><td>Nootrópico, foco, neuroprotección</td><td class="num">10</td><td class="num old">$1,699</td><td class="num elite">$2,899</td><td class="num up">+71%</td><td class="num">$140</td><td class="num up">95%</td></tr>
+      <tr><td>12</td><td><span class="code">RT30</span></td><td>Retatrutide 30mg <span class="warn">⚠️ OFF-MENU</span></td><td>Pérdida de peso (triple agonista)</td><td class="num">10</td><td class="num old">$7,999</td><td class="num elite">$12,999</td><td class="num up">+63%</td><td class="num">$390</td><td class="num up">97%</td></tr>
+      <tr><td>+</td><td><span class="code">CP10</span></td><td>CJC-1295 + Ipamorelin 10mg</td><td>GH release + performance</td><td class="num">—</td><td class="num old">$3,299</td><td class="num elite">$5,499</td><td class="num up">+67%</td><td class="num">$200</td><td class="num up">96%</td></tr>
+      <tr><td>+</td><td><span class="code">BA3</span></td><td>Agua Bacteriostática 3ml</td><td>Reconstitución (no péptido)</td><td class="num">por confirmar</td><td class="num old">$390</td><td class="num elite">$590</td><td class="num up">+51%</td><td class="num">$30</td><td class="num up">95%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="summary-box">
+    <div class="row"><span class="label">Stock físico total</span><span>14 cajas · 12 péptidos distintos · 140 viales</span></div>
+    <div class="row"><span class="label">Inversión proveedor</span><span>$1,746 USD · ~$34,920 MXN</span></div>
+    <div class="row"><span class="label">Valor venta · Nova (original)</span><span>~$364,570 MXN</span></div>
+    <div class="row"><span class="label">Valor venta · Lanzamiento (actual)</span><span>~$454,860 MXN</span></div>
+    <div class="row"><span class="label">Valor venta · PEPTIQ Elite</span><span style="color:#c9a961;font-weight:800;">$764,860 MXN · uplift +$310,000 (+68%)</span></div>
+    <div class="row"><span class="label">Margen bruto promedio Elite</span><span>95%</span></div>
+    <div class="row"><span class="label">ROI sobre inversión proveedor</span><span>21.9x</span></div>
+  </div>
+
+  <h3>Justificación del premium Elite</h3>
+  <div class="justif">
+    <div><b>COA Janoshik público</b>Verificación por lote — único en México</div>
+    <div><b>Protocolo 1-on-1</b>Consulta personalizada incluida con stacks ≥ $7,500</div>
+    <div><b>Concierge delivery</b>Envío mismo día CDMX · MTY · GDL</div>
+    <div><b>Empaque premium</b>Caja negra mate + sello holográfico anti-falsificación</div>
+    <div><b>Agua bact + guía</b>Reconstitución impresa + agua incluida sin costo</div>
+    <div><b>WhatsApp VIP</b>&lt;2h respuesta en horario extendido</div>
+    <div><b>Garantía COA</b>Si el lote no cumple pureza publicada → reembolso 100%</div>
+    <div><b>Membership Elite</b>Compras &gt;$20k desbloquean descuentos perpetuos y early access</div>
+  </div>
+
+  <footer>PEPTIQ MX · peptiqmx.com · COA Janoshik verificable · For research use only</footer>
+</div>
+
+<!-- PÁGINA 2: STACKS / PROTOCOLOS ELITE -->
+<div class="page">
+  <header>
+    <h1>PEPTIQ<span class="gold">MX</span> <span class="tier">· PROTOCOLOS ELITE</span></h1>
+    <span class="meta">Stacks armables con inventario actual · Precios Elite</span>
+  </header>
+
+  <h2>Protocolos 4 semanas — Stacks cortos (1 caja)</h2>
+
+  <div class="stack-card">
+    <span class="tag">🐺 Recuperación</span>
+    <h4>WOLVERINE</h4>
+    <div class="items"><b>BB20</b> (BPC+TB stack) + <b>BA3</b> agua bact</div>
+    <div class="prices">
+      <span><span class="orig">$6,089</span></span>
+      <span class="sale">$5,499</span>
+    </div>
+    <div class="save">Ahorro $590 · Agua GRATIS</div>
+  </div>
+
+  <div class="stack-card">
+    <span class="tag">✨ Estético</span>
+    <h4>GLOW ESSENTIAL</h4>
+    <div class="items"><b>GLOW70</b> (BPC+GHK+TB) + <b>BA3</b> agua bact</div>
+    <div class="prices">
+      <span><span class="orig">$8,089</span></span>
+      <span class="sale">$7,499</span>
+    </div>
+    <div class="save">Ahorro $590 · Agua GRATIS</div>
+  </div>
+
+  <div class="stack-card">
+    <span class="tag">💪 Performance GH</span>
+    <h4>GH BOOST</h4>
+    <div class="items"><b>CP10</b> (CJC+IPA) + <b>BA3</b> agua bact</div>
+    <div class="prices">
+      <span><span class="orig">$6,089</span></span>
+      <span class="sale">$5,499</span>
+    </div>
+    <div class="save">Ahorro $590 · Agua GRATIS</div>
+  </div>
+
+  <div class="stack-card">
+    <span class="tag">🔥 Pérdida de peso · OFF-MENU</span>
+    <h4>SHRED</h4>
+    <div class="items"><b>RT30</b> Retatrutide + <b>BA3×2</b> aguas bact · Consultar por WhatsApp</div>
+    <div class="prices">
+      <span><span class="orig">$14,179</span></span>
+      <span class="sale">$12,999</span>
+    </div>
+    <div class="save">Ahorro $1,180 · 2 aguas GRATIS</div>
+  </div>
+
+  <h2>Protocolos 8 semanas — Stacks medios (2 cajas)</h2>
+
+  <div class="stack-card">
+    <span class="tag">🐺 Recuperación PRO</span>
+    <h4>WOLVERINE PRO</h4>
+    <div class="items"><b>BP10</b> BPC-157 + <b>TB10</b> TB-500 + <b>BA3×2</b></div>
+    <div class="prices">
+      <span><span class="orig">$7,978</span></span>
+      <span class="sale">$6,999</span>
+    </div>
+    <div class="save">Ahorro $979 · 12% OFF · Aguas GRATIS</div>
+  </div>
+
+  <div class="stack-card">
+    <span class="tag">🧠 Cognitivo</span>
+    <h4>NEURO FOCUS</h4>
+    <div class="items"><b>SX10</b> Semax + <b>ET50</b> Epithalon + <b>BA3×2</b></div>
+    <div class="prices">
+      <span><span class="orig">$10,878</span></span>
+      <span class="sale">$8,999</span>
+    </div>
+    <div class="save">Ahorro $1,879 · 17% OFF · Aguas GRATIS</div>
+  </div>
+
+  <div class="stack-card">
+    <span class="tag">✨ Estético PRO</span>
+    <h4>GLOW PRO</h4>
+    <div class="items"><b>GLOW70</b> + <b>CU100</b> GHK-Cu + <b>BA3×2</b></div>
+    <div class="prices">
+      <span><span class="orig">$12,478</span></span>
+      <span class="sale">$9,999</span>
+    </div>
+    <div class="save">Ahorro $2,479 · 20% OFF · Aguas GRATIS</div>
+  </div>
+
+  <div class="stack-card">
+    <span class="tag">🌿 Gut &amp; Piel</span>
+    <h4>GUT RESET</h4>
+    <div class="items"><b>BP10</b> BPC-157 + <b>KPV10</b> + <b>BA3×2</b></div>
+    <div class="prices">
+      <span><span class="orig">$7,078</span></span>
+      <span class="sale">$5,999</span>
+    </div>
+    <div class="save">Ahorro $1,079 · 15% OFF · Aguas GRATIS</div>
+  </div>
+
+  <h2>Protocolos 12 semanas — Stacks flagship (3+ cajas)</h2>
+
+  <div class="stack-card">
+    <span class="tag">🕰️ Longevidad</span>
+    <h4>LONGEVITY</h4>
+    <div class="items"><b>NJ1000</b> NAD+ + <b>ET50</b> Epithalon + <b>CU100</b> + <b>BA3×3</b></div>
+    <div class="prices">
+      <span><span class="orig">$17,867</span></span>
+      <span class="sale">$14,999</span>
+    </div>
+    <div class="save">Ahorro $2,868 · 16% OFF · Consulta 1-on-1 incluida</div>
+  </div>
+
+  <div class="stack-card">
+    <span class="tag">⚡ GH máximo</span>
+    <h4>TITAN STACK</h4>
+    <div class="items"><b>TSM10</b> Tesa + <b>IP10</b> Ipa + <b>NJ1000</b> NAD+ + <b>BA3×3</b></div>
+    <div class="prices">
+      <span><span class="orig">$17,667</span></span>
+      <span class="sale">$14,999</span>
+    </div>
+    <div class="save">Ahorro $2,668 · 15% OFF · Consulta 1-on-1 incluida</div>
+  </div>
+
+  <div class="stack-card">
+    <span class="tag">🔥 Shred PRO · OFF-MENU</span>
+    <h4>SHRED PRO</h4>
+    <div class="items"><b>RT30</b> Reta + <b>IP10</b> Ipa + <b>BA3×3</b> · Consultar por WhatsApp</div>
+    <div class="prices">
+      <span><span class="orig">$17,668</span></span>
+      <span class="sale">$14,999</span>
+    </div>
+    <div class="save">Ahorro $2,669 · 15% OFF</div>
+  </div>
+
+  <div class="stack-card">
+    <span class="tag">👑 Flagship Elite</span>
+    <h4>APEX TOTAL</h4>
+    <div class="items"><b>RT30</b> + <b>TSM10</b> + <b>NJ1000</b> + <b>BP10</b> + <b>BA3×4</b></div>
+    <div class="prices">
+      <span><span class="orig">$32,356</span></span>
+      <span class="sale">$24,999</span>
+    </div>
+    <div class="save">Ahorro $7,357 · 23% OFF · Concierge + 2 consultas 1-on-1</div>
+  </div>
+
+  <h2>Proyección de revenue por stack (1 venta c/u)</h2>
+  <table>
+    <thead>
+      <tr><th>Stack</th><th class="num">Precio Elite</th><th class="num">Costo producto</th><th class="num">Margen MXN</th><th class="num">Margen %</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Wolverine</td><td class="num">$5,499</td><td class="num">$370</td><td class="num up">$5,129</td><td class="num up">93%</td></tr>
+      <tr><td>GLOW Essential</td><td class="num">$7,499</td><td class="num">$430</td><td class="num up">$7,069</td><td class="num up">94%</td></tr>
+      <tr><td>GH Boost</td><td class="num">$5,499</td><td class="num">$230</td><td class="num up">$5,269</td><td class="num up">96%</td></tr>
+      <tr><td>Shred (off-menu)</td><td class="num">$12,999</td><td class="num">$450</td><td class="num up">$12,549</td><td class="num up">97%</td></tr>
+      <tr><td>Wolverine PRO</td><td class="num">$6,999</td><td class="num">$490</td><td class="num up">$6,509</td><td class="num up">93%</td></tr>
+      <tr><td>Neuro Focus</td><td class="num">$8,999</td><td class="num">$480</td><td class="num up">$8,519</td><td class="num up">95%</td></tr>
+      <tr><td>GLOW PRO</td><td class="num">$9,999</td><td class="num">$560</td><td class="num up">$9,439</td><td class="num up">94%</td></tr>
+      <tr><td>Gut Reset</td><td class="num">$5,999</td><td class="num">$330</td><td class="num up">$5,669</td><td class="num up">94%</td></tr>
+      <tr><td>Longevity</td><td class="num">$14,999</td><td class="num">$722</td><td class="num up">$14,277</td><td class="num up">95%</td></tr>
+      <tr><td>TITAN</td><td class="num">$14,999</td><td class="num">$842</td><td class="num up">$14,157</td><td class="num up">94%</td></tr>
+      <tr><td>Shred PRO (off-menu)</td><td class="num">$14,999</td><td class="num">$620</td><td class="num up">$14,379</td><td class="num up">96%</td></tr>
+      <tr><td>APEX Total</td><td class="num">$24,999</td><td class="num">$1,212</td><td class="num up">$23,787</td><td class="num up">95%</td></tr>
+      <tr style="background:#111;color:#c9a961;"><td><b>TOTAL (1 de c/u)</b></td><td class="num"><b>$133,486</b></td><td class="num"><b>$6,734</b></td><td class="num"><b>$126,752</b></td><td class="num"><b>95%</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <b style="color:#c9a961;">Ticket promedio Elite objetivo: $8,500 MXN</b> (vs $4,200 tier Lanzamiento). Para cubrir inversión proveedor ($34,920) bastan <b>4 ventas Elite promedio</b>. ROI punto de equilibrio: semana 1 con 1 venta APEX o 2 TITAN.
+  </div>
+
+  <footer>PEPTIQ MX · peptiqmx.com · Los precios Elite son tier VIP · Retatrutide solo por consulta · For research use only</footer>
+</div>
+
+</body>
+</html>

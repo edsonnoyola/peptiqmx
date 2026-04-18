@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vial Labels Preview — PEPTIQ MX &amp; Nova Peptides</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0a0a0a; color: #fff; padding: 2rem; }
+    h1 { text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
+    .subtitle { text-align: center; color: #888; margin-bottom: 2rem; font-size: 0.9rem; }
+    .brand-section { margin-bottom: 3rem; }
+    .brand-title { font-size: 1.4rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #333; }
+    .brand-title.peptiq { color: #C4A265; border-color: #C4A265; }
+    .brand-title.nova { color: #00E5FF; border-color: #00E5FF; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .label-card { background: #1a1a1a; border-radius: 8px; padding: 1rem; transition: transform 0.2s; }
+    .label-card:hover { transform: scale(1.02); }
+    .label-card h3 { font-size: 0.85rem; color: #aaa; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+    .label-card img { width: 100%; height: auto; border-radius: 4px; }
+    .print-bar { text-align: center; margin: 2rem 0; }
+    .print-btn { background: #C4A265; color: #000; border: none; padding: 12px 32px; font-size: 1rem; font-weight: 600; border-radius: 6px; cursor: pointer; margin: 0 0.5rem; }
+    .print-btn:hover { background: #d4b87a; }
+    .print-btn.nova-btn { background: #00E5FF; }
+    .print-btn.nova-btn:hover { background: #33eaff; }
+    .stats { text-align: center; color: #666; font-size: 0.8rem; margin-top: 1rem; }
+    @media print {
+      body { background: #fff; padding: 0.5cm; }
+      .print-bar, .subtitle, h1 { display: none; }
+      .brand-title { color: #000 !important; }
+      .label-card { break-inside: avoid; background: #fff; border: 1px solid #ddd; }
+      .grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Vial Labels Preview</h1>
+  <p class="subtitle">PEPTIQ MX &amp; Nova Peptides — 13 products x 2 brands = 26 labels</p>
+
+  <div class="print-bar">
+    <button class="print-btn" onclick="window.print()">Print All Labels</button>
+  </div>
+
+  <div class="brand-section">
+    <h2 class="brand-title peptiq">PEPTIQ MX — Premium Line</h2>
+    <div class="grid">
+        <div class="label-card"><h3>BPC-157</h3><img src="peptiq-bpc157.svg" alt="PEPTIQ BPC-157"/></div>
+        <div class="label-card"><h3>TB-500</h3><img src="peptiq-tb500.svg" alt="PEPTIQ TB-500"/></div>
+        <div class="label-card"><h3>GHK-Cu</h3><img src="peptiq-ghkcu.svg" alt="PEPTIQ GHK-Cu"/></div>
+        <div class="label-card"><h3>Retatrutide</h3><img src="peptiq-retatrutide.svg" alt="PEPTIQ Retatrutide"/></div>
+        <div class="label-card"><h3>Tesamorelin</h3><img src="peptiq-tesamorelin.svg" alt="PEPTIQ Tesamorelin"/></div>
+        <div class="label-card"><h3>NAD+</h3><img src="peptiq-nad.svg" alt="PEPTIQ NAD+"/></div>
+        <div class="label-card"><h3>Semax</h3><img src="peptiq-semax.svg" alt="PEPTIQ Semax"/></div>
+        <div class="label-card"><h3>Epithalon</h3><img src="peptiq-epithalon.svg" alt="PEPTIQ Epithalon"/></div>
+        <div class="label-card"><h3>KPV</h3><img src="peptiq-kpv.svg" alt="PEPTIQ KPV"/></div>
+        <div class="label-card"><h3>CJC+Ipa</h3><img src="peptiq-cjcipa.svg" alt="PEPTIQ CJC+Ipa"/></div>
+        <div class="label-card"><h3>GLOW</h3><img src="peptiq-glow.svg" alt="PEPTIQ GLOW"/></div>
+        <div class="label-card"><h3>Ipamorelin</h3><img src="peptiq-ipamorelin.svg" alt="PEPTIQ Ipamorelin"/></div>
+        <div class="label-card"><h3>Agua Bact.</h3><img src="peptiq-bac-water.svg" alt="PEPTIQ Agua Bact."/></div>
+    </div>
+  </div>
+
+  <div class="brand-section">
+    <h2 class="brand-title nova">NOVA PEPTIDES — Original Line</h2>
+    <div class="grid">
+        <div class="label-card"><h3>BPC-157</h3><img src="nova-bpc157.svg" alt="Nova BPC-157"/></div>
+        <div class="label-card"><h3>TB-500</h3><img src="nova-tb500.svg" alt="Nova TB-500"/></div>
+        <div class="label-card"><h3>GHK-Cu</h3><img src="nova-ghkcu.svg" alt="Nova GHK-Cu"/></div>
+        <div class="label-card"><h3>Retatrutide</h3><img src="nova-retatrutide.svg" alt="Nova Retatrutide"/></div>
+        <div class="label-card"><h3>Tesamorelin</h3><img src="nova-tesamorelin.svg" alt="Nova Tesamorelin"/></div>
+        <div class="label-card"><h3>NAD+</h3><img src="nova-nad.svg" alt="Nova NAD+"/></div>
+        <div class="label-card"><h3>Semax</h3><img src="nova-semax.svg" alt="Nova Semax"/></div>
+        <div class="label-card"><h3>Epithalon</h3><img src="nova-epithalon.svg" alt="Nova Epithalon"/></div>
+        <div class="label-card"><h3>KPV</h3><img src="nova-kpv.svg" alt="Nova KPV"/></div>
+        <div class="label-card"><h3>CJC+Ipa</h3><img src="nova-cjcipa.svg" alt="Nova CJC+Ipa"/></div>
+        <div class="label-card"><h3>GLOW</h3><img src="nova-glow.svg" alt="Nova GLOW"/></div>
+        <div class="label-card"><h3>Ipamorelin</h3><img src="nova-ipamorelin.svg" alt="Nova Ipamorelin"/></div>
+        <div class="label-card"><h3>Agua Bact.</h3><img src="nova-bac-water.svg" alt="Nova Agua Bact."/></div>
+    </div>
+  </div>
+
+  <p class="stats">Generated: 13 products x 2 brands = 26 labels total</p>
+</body>
+</html>

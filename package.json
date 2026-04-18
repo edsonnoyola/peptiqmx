@@ -1,0 +1,12 @@
+{
+  "name": "peptiq-image-generator",
+  "version": "1.0.0",
+  "description": "Generador automático de imágenes para PEPTIQ MX",
+  "scripts": {
+    "generate": "node generate-all-images.js",
+    "prompts": "node generate-prompts-only.js"
+  },
+  "dependencies": {
+    "replicate": "^0.32.1"
+  }
+}

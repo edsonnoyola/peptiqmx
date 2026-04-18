@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- V3: Ícono standalone — X estilizada en hexágono -->
+  <rect width="200" height="200" fill="#1A1A1A"/>
+
+  <!-- Hexágono sutil -->
+  <polygon points="100,15 175,55 175,135 100,175 25,135 25,55" fill="none" stroke="#C4A265" stroke-width="1.2" opacity="0.4"/>
+
+  <!-- X central — las líneas cruzan como moléculas -->
+  <line x1="60" y1="60" x2="140" y2="140" stroke="#C4A265" stroke-width="4" stroke-linecap="round"/>
+  <line x1="140" y1="60" x2="60" y2="140" stroke="#C4A265" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Nodos moleculares en las puntas -->
+  <circle cx="60" cy="60" r="6" fill="#C4A265"/>
+  <circle cx="140" cy="60" r="6" fill="#C4A265"/>
+  <circle cx="60" cy="140" r="6" fill="#C4A265"/>
+  <circle cx="140" cy="140" r="6" fill="#C4A265"/>
+
+  <!-- Nodo central -->
+  <circle cx="100" cy="100" r="8" fill="#FFFFFF"/>
+  <circle cx="100" cy="100" r="4" fill="#C4A265"/>
+
+  <!-- Sub-nodos moleculares -->
+  <circle cx="100" cy="60" r="3" fill="#C4A265" opacity="0.5"/>
+  <circle cx="60" cy="100" r="3" fill="#C4A265" opacity="0.5"/>
+  <circle cx="140" cy="100" r="3" fill="#C4A265" opacity="0.5"/>
+  <circle cx="100" cy="140" r="3" fill="#C4A265" opacity="0.5"/>
+</svg>

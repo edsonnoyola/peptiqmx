@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="800" height="480">
+  <!-- NOVA PEPTIDES Vial Label — 50mm x 30mm -->
+
+  <!-- Black background -->
+  <rect width="200" height="120" fill="#111111" rx="2"/>
+
+  <!-- Top cyan line -->
+  <rect x="0" y="0" width="200" height="2" fill="#00E5FF"/>
+
+  <!-- Bottom cyan line -->
+  <rect x="0" y="118" width="200" height="2" fill="#00E5FF"/>
+
+  <!-- NOVA PEPTIDES logo -->
+  <text x="100" y="20" font-family="'Inter', Helvetica, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">NOVA</text>
+  <text x="100" y="30" font-family="'Inter', Helvetica, sans-serif" font-size="7" font-weight="400" fill="#00E5FF" text-anchor="middle" letter-spacing="2">PEPTIDES</text>
+
+  <!-- Thin line -->
+  <line x1="40" y1="36" x2="160" y2="36" stroke="#333333" stroke-width="0.5"/>
+
+  <!-- Product name -->
+  <text x="100" y="58" font-family="'Inter', Helvetica, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">Tesamorelin</text>
+
+  <!-- Dosage -->
+  <text x="100" y="70" font-family="'Inter', Helvetica, sans-serif" font-size="10" font-weight="400" fill="#888888" text-anchor="middle">10mg / vial</text>
+
+  <!-- Thin line -->
+  <line x1="40" y1="76" x2="160" y2="76" stroke="#333333" stroke-width="0.5"/>
+
+  <!-- Purity -->
+  <text x="100" y="89" font-family="'Inter', Helvetica, sans-serif" font-size="8" font-weight="600" fill="#00E5FF" text-anchor="middle" letter-spacing="1.5">99.062% HPLC</text>
+
+  <!-- Research use only -->
+  <text x="100" y="109" font-family="'Inter', Helvetica, sans-serif" font-size="4.5" font-weight="500" fill="#666666" text-anchor="middle" letter-spacing="1">FOR RESEARCH USE ONLY</text>
+
+  <!-- COA INCL. badge (bottom right) -->
+  <rect x="168" y="88" width="24" height="24" fill="none" stroke="#00E5FF" stroke-width="0.8" rx="3"/>
+  <text x="180" y="99" font-family="'Inter', sans-serif" font-size="5" fill="#00E5FF" text-anchor="middle" font-weight="700">COA</text>
+  <text x="180" y="106" font-family="'Inter', sans-serif" font-size="3.5" fill="#00E5FF" text-anchor="middle">INCL.</text>
+</svg>

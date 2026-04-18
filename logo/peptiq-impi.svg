@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240">
+  <!-- Para registro IMPI — fondo blanco, alta resolución -->
+  <rect width="1000" height="240" fill="#FFFFFF"/>
+  <!-- PEPTIQ bold -->
+  <text x="40" y="150" font-family="'Playfair Display', Georgia, serif" font-size="136" font-weight="700" fill="#1A1A1A" letter-spacing="8">PEPTIQ</text>
+  <!-- MX superscript gold -->
+  <text x="750" y="95" font-family="'Playfair Display', Georgia, serif" font-size="56" font-weight="500" fill="#C4A265" letter-spacing="2">MX</text>
+  <!-- PREMIUM WELLNESS -->
+  <text x="44" y="200" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#999999" letter-spacing="10" font-weight="400">PREMIUM WELLNESS</text>
+</svg>

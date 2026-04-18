@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Calendar — @peptiqmx</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Header */
+  .header {
+    padding: 40px 0 20px;
+    text-align: center;
+    border-bottom: 1px solid #1a1a1a;
+    margin-bottom: 40px;
+  }
+  .header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00d4aa, #0088ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .header p {
+    color: #666;
+    font-size: 0.95rem;
+  }
+
+  /* Brand Tabs */
+  .brand-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .brand-tab {
+    padding: 12px 32px;
+    border: 2px solid #222;
+    border-radius: 50px;
+    background: transparent;
+    color: #888;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .brand-tab.active-nova {
+    border-color: #00d4aa;
+    color: #00d4aa;
+    background: rgba(0,212,170,0.08);
+  }
+  .brand-tab.active-peptiq {
+    border-color: #c9a44a;
+    color: #c9a44a;
+    background: rgba(201,164,74,0.08);
+  }
+  .brand-tab:hover {
+    border-color: #444;
+    color: #ccc;
+  }
+
+  /* Section */
+  .section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .section-title.nova { color: #00d4aa; }
+  .section-title.peptiq { color: #c9a44a; }
+  .section-sub {
+    color: #555;
+    font-size: 0.85rem;
+    margin-bottom: 32px;
+  }
+
+  /* Grid */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 32px;
+  }
+
+  /* Post Card */
+  .post-card {
+    background: #111;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #1a1a1a;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .post-card:hover {
+    transform: translateY(-4px);
+    border-color: #333;
+  }
+
+  /* Post Header */
+  .post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .post-header .account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .post-header .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #00d4aa;
+  }
+  .post-header .avatar.peptiq-avatar { color: #c9a44a; }
+  .post-header .handle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ccc;
+  }
+  .post-header .day-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(0,212,170,0.12);
+    color: #00d4aa;
+  }
+  .post-header .day-badge.peptiq-badge {
+    background: rgba(201,164,74,0.12);
+    color: #c9a44a;
+  }
+
+  /* Preview Card (1080x1080 ratio) */
+  .preview-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background: #0d0d0d;
+  }
+  .preview-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+  }
+  .preview-inner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .preview-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    z-index: 2;
+  }
+  .preview-overlay.gradient-dark {
+    background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.15) 100%);
+  }
+  .preview-overlay.gradient-brand {
+    background: linear-gradient(135deg, rgba(0,20,15,0.95) 0%, rgba(0,40,30,0.85) 100%);
+  }
+  .preview-overlay.gradient-gold {
+    background: linear-gradient(135deg, rgba(30,20,0,0.95) 0%, rgba(50,35,0,0.85) 100%);
+  }
+  .preview-overlay.gradient-error {
+    background: linear-gradient(135deg, rgba(40,0,0,0.95) 0%, rgba(60,10,10,0.85) 100%);
+  }
+  .preview-overlay.gradient-blue {
+    background: linear-gradient(135deg, rgba(0,10,30,0.95) 0%, rgba(0,20,50,0.85) 100%);
+  }
+  .preview-overlay.gradient-purple {
+    background: linear-gradient(135deg, rgba(20,0,30,0.95) 0%, rgba(40,10,60,0.85) 100%);
+  }
+  .preview-overlay.center-content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .preview-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #00d4aa;
+    margin-bottom: 10px;
+  }
+  .preview-tag.gold { color: #c9a44a; }
+  .preview-tag.red { color: #ff4444; }
+  .preview-tag.blue { color: #4488ff; }
+
+  .preview-title {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+  .preview-title.large { font-size: 1.7rem; }
+  .preview-title.playfair { font-family: 'Playfair Display', serif; }
+
+  .preview-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+  .preview-price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #00d4aa;
+    margin-top: 6px;
+  }
+  .preview-price.gold { color: #c9a44a; }
+  .preview-price-old {
+    font-size: 1rem;
+    color: #ff4444;
+    text-decoration: line-through;
+    margin-right: 8px;
+    font-weight: 600;
+  }
+  .preview-bullets {
+    text-align: left;
+    margin-top: 10px;
+  }
+  .preview-bullets li {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    list-style: none;
+    padding-left: 16px;
+    position: relative;
+  }
+  .preview-bullets li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00d4aa;
+    font-weight: 700;
+  }
+  .preview-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(0,212,170,0.3);
+    position: absolute;
+    top: 16px;
+    left: 20px;
+  }
+  .preview-video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    z-index: 3;
+  }
+  .preview-video-icon::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 22px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 4px;
+  }
+  .preview-logo {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    z-index: 3;
+    opacity: 0.9;
+  }
+
+  /* Caption Area */
+  .caption-area {
+    padding: 16px;
+  }
+  .caption-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  .caption-text {
+    font-size: 0.82rem;
+    color: #bbb;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    white-space: pre-line;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    background: #0a0a0a;
+    border-radius: 8px;
+    border: 1px solid #1a1a1a;
+    transition: border-color 0.2s;
+  }
+  .caption-text:hover {
+    border-color: #333;
+  }
+  .caption-text::after {
+    content: 'Click to copy';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.6rem;
+    color: #444;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .caption-text.copied::after {
+    content: 'Copied!';
+    color: #00d4aa;
+  }
+
+  .hashtags {
+    font-size: 0.75rem;
+    color: #336;
+    line-height: 1.4;
+    cursor: pointer;
+    padding: 8px 10px;
+    background: #0a0a0a;
+    border-radius: 8px;
+    border: 1px solid #1a1a1a;
+    transition: border-color 0.2s;
+    position: relative;
+  }
+  .hashtags:hover { border-color: #333; }
+  .hashtags::after {
+    content: 'Click to copy';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.6rem;
+    color: #444;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .hashtags.copied::after {
+    content: 'Copied!';
+    color: #00d4aa;
+  }
+  .hashtags span { color: #4466aa; }
+
+  /* Post Type Badge */
+  .post-type {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .post-type.launch { background: rgba(0,212,170,0.15); color: #00d4aa; }
+  .post-type.product { background: rgba(68,136,255,0.15); color: #4488ff; }
+  .post-type.educational { background: rgba(255,170,0,0.15); color: #ffaa00; }
+  .post-type.promo { background: rgba(255,68,68,0.15); color: #ff4444; }
+  .post-type.social-proof { background: rgba(170,68,255,0.15); color: #aa44ff; }
+  .post-type.brand { background: rgba(201,164,74,0.15); color: #c9a44a; }
+  .post-type.trust { background: rgba(0,200,150,0.15); color: #00c896; }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #222, transparent);
+    margin: 60px auto;
+    max-width: 800px;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 24px;
+    background: #0d0d0d;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  .stat-num.nova-color { color: #00d4aa; }
+  .stat-num.peptiq-color { color: #c9a44a; }
+  .stat-label {
+    font-size: 0.7rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .posts-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+    .stats-bar { flex-wrap: wrap; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Instagram Content Calendar</h1>
+  <p>15 post concepts ready for production — @novapeptides.mx & @peptiqmx</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num nova-color">10</div>
+    <div class="stat-label">Nova Posts</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num peptiq-color">5</div>
+    <div class="stat-label">PEPTIQ Posts</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">15</div>
+    <div class="stat-label">Total</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">30</div>
+    <div class="stat-label">Days Coverage</div>
+  </div>
+</div>
+
+<!-- ==================== NOVA PEPTIDES ==================== -->
+<div class="section" id="nova">
+  <div class="section-title nova">@novapeptides.mx — Volume Brand</div>
+  <div class="section-sub">10 posts | Target: investigadores, biohackers, fitness avanzado | Tono: directo, accesible, sin BS</div>
+
+  <div class="posts-grid">
+
+    <!-- POST 1: Launch Announcement -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 1 — Lunes</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/hero-vials.jpg" alt="Hero vials">
+          <div class="preview-overlay gradient-dark">
+            <div class="preview-tag">Ya disponibles</div>
+            <div class="preview-title large">13 peptidos de investigacion<br>99%+ pureza</div>
+            <div class="preview-subtitle">Kit completo incluido con cada pedido</div>
+          </div>
+          <img src="img/logo-peptiqmx.png" class="preview-logo" style="opacity:0.5; width:36px; height:36px;">
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type launch">Lanzamiento</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">Ya disponibles en Mexico.
+
+13 peptidos de investigacion con pureza 99%+
+Cada pedido incluye kit completo: vial + agua bacteriostatica + guia de reconstitution.
+
+Sin intermediarios. Sin aduanas. Envio nacional.
+
+Precio directo. Calidad verificable.
+
+Link en bio para ver catalogo completo.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#peptidos #peptidosMexico #biohacking #investigacion #BPC157 #Retatrutide #NADplus #peptidosDeInvestigacion #NovaPeptides #cienciaReal #purezaVerificada #hechoEnMexico #kitCompleto</span></div>
+      </div>
+    </div>
+
+    <!-- POST 2: BPC-157 Product Highlight -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 3 — Miercoles</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/bpc-157.jpg" alt="BPC-157">
+          <div class="preview-overlay gradient-dark">
+            <div class="preview-tag">Producto destacado</div>
+            <div class="preview-title">BPC-157</div>
+            <div class="preview-subtitle">5mg | Pureza 99%+ | Kit incluido</div>
+            <div style="margin-top:8px;">
+              <span class="preview-price-old">$2,499</span>
+              <span class="preview-price">$1,299</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type product">Producto</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">BPC-157 — El peptido mas estudiado para recuperacion.
+
+5mg | Pureza 99%+
+Antes: $2,499
+Ahora: $1,299 MXN
+
+Incluye:
+- Vial liofilizado
+- Agua bacteriostatica
+- Guia de reconstitucion
+
+Disponible hoy. Envio a todo Mexico.
+Link en bio.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#BPC157 #peptidos #recuperacion #healing #biohacking #peptidosMexico #oferta #descuento #investigacion #NovaPeptides #purezaVerificada</span></div>
+      </div>
+    </div>
+
+    <!-- POST 3: Kit Contents -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 5 — Viernes</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/agua-bact.jpg" alt="Kit contents">
+          <div class="preview-overlay gradient-brand center-content">
+            <div class="preview-tag">Incluido en cada pedido</div>
+            <div class="preview-title large">Que incluye tu kit?</div>
+            <ul class="preview-bullets" style="margin-top:16px;">
+              <li>Vial liofilizado (pureza 99%+)</li>
+              <li>Agua bacteriostatica esteril</li>
+              <li>Guia de reconstitucion paso a paso</li>
+              <li>Empaque discreto y seguro</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type educational">Educativo</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">Que incluye tu kit? Todo lo que necesitas.
+
+Cada pedido de Nova Peptides incluye:
+
+1. Vial liofilizado con pureza 99%+
+2. Agua bacteriostatica esteril
+3. Guia de reconstitucion paso a paso
+4. Empaque discreto y seguro
+
+No necesitas comprar nada extra. Listo para investigacion desde que lo recibes.
+
+Pregunta lo que quieras por DM.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#peptidos #kit #aguaBacteriostatica #reconstitucion #biohacking #peptidosMexico #NovaPeptides #investigacion #tutorial #FAQ</span></div>
+      </div>
+    </div>
+
+    <!-- POST 4: Wolverine Stack -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 8 — Lunes</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/box-wolverine.jpg" alt="Wolverine Stack">
+          <div class="preview-overlay gradient-dark">
+            <div class="preview-tag" style="color:#ff6644;">Combo exclusivo</div>
+            <div class="preview-title large">Wolverine Stack</div>
+            <div class="preview-subtitle">BPC-157 + TB-500 + GHK-Cu</div>
+            <div class="preview-price">$2,899</div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type promo">Promo</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">Wolverine Stack — La combinacion definitiva para recuperacion.
+
+BPC-157 + TB-500 + GHK-Cu
+3 peptidos sinergicos en un solo paquete.
+
+$2,899 MXN (ahorro vs compra individual)
+
+Kit completo incluido con cada vial.
+Envio a todo Mexico.
+
+El stack mas pedido. Disponible ahora.
+Link en bio.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#WolverineStack #BPC157 #TB500 #GHKCu #recuperacion #combo #stack #peptidos #peptidosMexico #biohacking #NovaPeptides #healing</span></div>
+      </div>
+    </div>
+
+    <!-- POST 5: 3 Errors -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 10 — Miercoles</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <div class="preview-overlay gradient-error center-content" style="background: linear-gradient(135deg, #1a0000 0%, #2a0505 100%);">
+            <div class="preview-number" style="color:rgba(255,68,68,0.2);">!</div>
+            <div class="preview-tag red">No cometas estos errores</div>
+            <div class="preview-title large" style="max-width:90%;">3 errores al comprar peptidos</div>
+            <ul class="preview-bullets" style="margin-top:16px;">
+              <li style="color:rgba(255,255,255,0.9);">Comprar sin COA (Certificate of Analysis)</li>
+              <li style="color:rgba(255,255,255,0.9);">Ignorar la cadena de frio</li>
+              <li style="color:rgba(255,255,255,0.9);">Elegir por precio, no por pureza</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type educational">Educativo</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">3 errores que la gente comete al comprar peptidos:
+
+1. Comprar sin COA (Certificate of Analysis)
+Si no pueden mostrarte un certificado de pureza de laboratorio tercero, no compres. Punto.
+
+2. Ignorar la cadena de frio
+Los peptidos liofilizados deben almacenarse correctamente. Pregunta como envian.
+
+3. Elegir solo por precio
+Barato = baja pureza = desperdicio de dinero. 99%+ es el estandar minimo.
+
+En Nova Peptides todos nuestros productos tienen COA verificable, envio con control de temperatura y pureza 99%+.
+
+Guarda este post.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#peptidos #errores #educacion #COA #pureza #calidadImporta #biohacking #peptidosMexico #NovaPeptides #tips #investigacion</span></div>
+      </div>
+    </div>
+
+    <!-- POST 6: Retatrutide -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 12 — Viernes</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/retatrutide.jpg" alt="Retatrutide">
+          <div class="preview-overlay gradient-dark">
+            <div class="preview-tag blue">Triple agonista</div>
+            <div class="preview-title">Retatrutide</div>
+            <div class="preview-subtitle">10mg | GIP + GLP-1 + Glucagon | 99%+</div>
+            <div class="preview-price">$7,499</div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type product">Producto</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">Retatrutide — El primer triple agonista disponible en Mexico.
+
+10mg | Pureza 99%+
+$7,499 MXN
+
+Actua sobre 3 receptores simultaneamente:
+- GIP
+- GLP-1
+- Glucagon
+
+Es el compuesto mas estudiado de su categoria en ensayos clinicos de Fase 2.
+
+Kit completo incluido. Envio nacional.
+Link en bio.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#Retatrutide #tripleAgonista #GLP1 #GIP #peptidos #investigacion #metabolismo #peptidosMexico #NovaPeptides #ciencia</span></div>
+      </div>
+    </div>
+
+    <!-- POST 7: Reconstitution Tutorial Teaser -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 15 — Lunes</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/lifestyle-hand-vial.png" alt="Reconstitution tutorial">
+          <div class="preview-overlay gradient-dark center-content">
+            <div class="preview-video-icon"></div>
+            <div style="position:relative; z-index:4; margin-top:80px;">
+              <div class="preview-tag">Tutorial</div>
+              <div class="preview-title">Como reconstituir tu peptido</div>
+              <div class="preview-subtitle">Paso a paso en 60 segundos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type educational">Educativo</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">Como reconstituir tu peptido — paso a paso.
+
+1. Limpia el tapon del vial con alcohol
+2. Extrae agua bacteriostatica con jeringa
+3. Inyecta lentamente por la pared del vial
+4. Gira suavemente — NUNCA agites
+5. Almacena en refrigeracion
+
+Cada pedido incluye guia impresa con instrucciones detalladas + calculadora de dosis en nuestra web.
+
+Video completo proximamente.
+Guarda este post para referencia.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#reconstitucion #tutorial #peptidos #howto #biohacking #peptidosMexico #NovaPeptides #guia #paso­APaso #investigacion</span></div>
+      </div>
+    </div>
+
+    <!-- POST 8: NAD+ -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 17 — Miercoles</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/nad-plus.jpg" alt="NAD+">
+          <div class="preview-overlay gradient-dark">
+            <div class="preview-tag" style="color:#aa66ff;">Longevidad</div>
+            <div class="preview-title">NAD+</div>
+            <div class="preview-subtitle">500mg | La molecula de la energia celular</div>
+            <div class="preview-price">$2,299</div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type product">Producto</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">NAD+ — La molecula que tus celulas necesitan.
+
+500mg | Pureza 99%+
+$2,299 MXN
+
+NAD+ (Nicotinamida Adenina Dinucleotido) es fundamental para:
+- Produccion de energia celular
+- Reparacion de ADN
+- Funcion mitocondrial
+- Envejecimiento celular
+
+Los niveles de NAD+ disminuyen ~50% cada 20 anos despues de los 40.
+
+Kit completo incluido.
+Link en bio.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#NADplus #longevidad #antiaging #energia #celular #mitocondria #biohacking #peptidos #peptidosMexico #NovaPeptides #ciencia</span></div>
+      </div>
+    </div>
+
+    <!-- POST 9: Customer Testimonial Template -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 20 — Sabado</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <div class="preview-overlay gradient-purple center-content" style="background: linear-gradient(135deg, #0a0015 0%, #150025 100%);">
+            <div style="font-size:3rem; margin-bottom:12px;">&#x275D;</div>
+            <div class="preview-title" style="font-size:1.15rem; max-width:85%; font-style:italic; font-weight:600;">
+              "Llego en 3 dias a Monterrey. Empaque discreto, kit completo. Primer proveedor mexicano que me da confianza real."
+            </div>
+            <div style="margin-top:16px; color:rgba(255,255,255,0.5); font-size:0.75rem; font-weight:600;">
+              — Cliente verificado, NL
+            </div>
+            <div style="margin-top:12px; display:flex; gap:4px;">
+              <span style="color:#ffaa00; font-size:1.1rem;">&#9733;</span>
+              <span style="color:#ffaa00; font-size:1.1rem;">&#9733;</span>
+              <span style="color:#ffaa00; font-size:1.1rem;">&#9733;</span>
+              <span style="color:#ffaa00; font-size:1.1rem;">&#9733;</span>
+              <span style="color:#ffaa00; font-size:1.1rem;">&#9733;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type social-proof">Social Proof</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">Lo que dicen nuestros clientes.
+
+Envios a todo Mexico en 2-5 dias habiles.
+Empaque discreto. Kit completo. Pureza verificable.
+
+Gracias por la confianza.
+
+Tu tambien puedes compartir tu experiencia por DM y la publicamos (con tu permiso).
+
+Link en bio para hacer tu pedido.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#testimonio #clienteReal #peptidos #peptidosMexico #NovaPeptides #confianza #envioNacional #review #biohacking</span></div>
+      </div>
+    </div>
+
+    <!-- POST 10: Free Shipping -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar">NP</div>
+          <div class="handle">novapeptides.mx</div>
+        </div>
+        <div class="day-badge">Dia 22 — Lunes</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/unboxing-wolverine.jpg" alt="Unboxing">
+          <div class="preview-overlay gradient-dark center-content">
+            <div class="preview-tag" style="color:#ff4444; font-size:0.7rem; letter-spacing:3px;">Envio gratis</div>
+            <div class="preview-title large">ENVIO GRATIS<br>a todo Mexico</div>
+            <div class="preview-subtitle" style="margin-top:8px;">En todos los pedidos. Sin minimo de compra.</div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type promo">Promo</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">Envio GRATIS a todo Mexico.
+
+Sin minimo de compra.
+Sin costos ocultos.
+2-5 dias habiles a cualquier estado.
+
+Empaque discreto y seguro.
+
+13 peptidos de investigacion disponibles.
+Todos con kit completo incluido.
+
+Haz tu pedido hoy.
+Link en bio.</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#envioGratis #freeShipping #peptidos #peptidosMexico #NovaPeptides #envioNacional #sinMinimoDeCompra #promo #Mexico</span></div>
+      </div>
+    </div>
+
+  </div><!-- /posts-grid -->
+</div><!-- /section nova -->
+
+<div class="divider"></div>
+
+<!-- ==================== PEPTIQ MX ==================== -->
+<div class="section" id="peptiq">
+  <div class="section-title peptiq">@peptiqmx — Premium Brand</div>
+  <div class="section-sub">5 posts | Target: clinicas, medicos, KOLs, biohackers premium | Tono: premium, cientffico, confianza</div>
+
+  <div class="posts-grid">
+
+    <!-- PEPTIQ POST 1: Brand Film Teaser -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar peptiq-avatar">PQ</div>
+          <div class="handle">peptiqmx</div>
+        </div>
+        <div class="day-badge peptiq-badge">Dia 2 — Martes</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/hero-luxury.jpg" alt="PEPTIQ Brand Film">
+          <div class="preview-overlay gradient-dark center-content">
+            <div class="preview-video-icon"></div>
+            <div style="position:relative; z-index:4; margin-top:80px;">
+              <div class="preview-tag gold" style="letter-spacing:4px;">PEPTIQ MX</div>
+              <div class="preview-title playfair large">La ciencia detras de cada molecula</div>
+              <div class="preview-subtitle" style="margin-top:4px;">Brand Film — Coming Soon</div>
+            </div>
+          </div>
+          <img src="img/logo-peptiqmx.png" class="preview-logo">
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type brand">Brand Film</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">La ciencia detras de cada molecula.
+
+PEPTIQ MX representa un nuevo estandar en peptidos de investigacion para Mexico.
+
+Pureza verificada por laboratorios independientes.
+Cada lote con Certificate of Analysis.
+Cada molecula, trazable.
+
+Video completo proximamente.
+
+peptiqmx.com</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#PEPTIQMX #peptidos #ciencia #pureza #investigacion #premium #brandFilm #Mexico #biohacking #farmaceutico</span></div>
+      </div>
+    </div>
+
+    <!-- PEPTIQ POST 2: 99.654% Purity COA -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar peptiq-avatar">PQ</div>
+          <div class="handle">peptiqmx</div>
+        </div>
+        <div class="day-badge peptiq-badge">Dia 7 — Domingo</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <div class="preview-overlay center-content" style="background: #050505;">
+            <div style="border: 1px solid rgba(201,164,74,0.3); border-radius: 8px; padding: 24px 32px; max-width: 85%;">
+              <div style="font-size:0.55rem; letter-spacing:3px; text-transform:uppercase; color:#666; margin-bottom:16px; font-weight:700;">Certificate of Analysis</div>
+              <div style="font-size:0.7rem; color:#888; margin-bottom:4px;">Compound: <span style="color:#ccc;">BPC-157</span></div>
+              <div style="font-size:0.7rem; color:#888; margin-bottom:4px;">Batch: <span style="color:#ccc;">PQ-2026-0417</span></div>
+              <div style="font-size:0.7rem; color:#888; margin-bottom:4px;">Lab: <span style="color:#ccc;">Janoshik Analytical</span></div>
+              <div style="width:100%; height:1px; background:rgba(201,164,74,0.15); margin:16px 0;"></div>
+              <div style="font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; color:#c9a44a; margin-bottom:8px; font-weight:700;">HPLC Purity Result</div>
+              <div style="font-size:3.5rem; font-weight:900; color:#fff; line-height:1;">99.654<span style="font-size:1.5rem; color:#c9a44a;">%</span></div>
+              <div style="font-size:0.65rem; color:#555; margin-top:8px;">Verified by independent third-party laboratory</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type trust">Trust</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">99.654% pureza verificada.
+
+Esto no es un claim de marketing. Es un resultado de laboratorio.
+
+Cada lote de PEPTIQ MX es analizado por Janoshik Analytical — laboratorio independiente con estandares farmaceuticos internacionales.
+
+Puedes verificar tu lote directamente en janoshik.com
+
+No confies en claims. Confia en datos.
+
+peptiqmx.com</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#PEPTIQMX #COA #pureza #99pureza #Janoshik #laboratorio #verificable #peptidos #ciencia #transparencia #HPLC</span></div>
+      </div>
+    </div>
+
+    <!-- PEPTIQ POST 3: Why PEPTIQ Costs More -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar peptiq-avatar">PQ</div>
+          <div class="handle">peptiqmx</div>
+        </div>
+        <div class="day-badge peptiq-badge">Dia 14 — Domingo</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <div class="preview-overlay center-content" style="background: linear-gradient(135deg, #0a0800 0%, #141008 100%);">
+            <div class="preview-tag gold">La pregunta mas comun</div>
+            <div class="preview-title playfair" style="max-width:85%;">Por que PEPTIQ cuesta mas?</div>
+            <ul class="preview-bullets" style="margin-top:20px; max-width:80%;">
+              <li style="color:rgba(255,255,255,0.9);">COA individual por lote (Janoshik)</li>
+              <li style="color:rgba(255,255,255,0.9);">Sintesis farmaceutica, no generica</li>
+              <li style="color:rgba(255,255,255,0.9);">Cadena de frio verificada</li>
+              <li style="color:rgba(255,255,255,0.9);">Soporte tecnico especializado</li>
+              <li style="color:rgba(255,255,255,0.9);">Trazabilidad completa de molecula</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type educational">Educativo</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">Por que PEPTIQ cuesta mas?
+
+Porque la calidad farmaceutica tiene un costo real:
+
+1. Cada lote tiene COA de Janoshik Analytical
+2. Sintesis bajo estandares farmaceuticos (no peptidos genericos de catalogo)
+3. Cadena de frio documentada y verificada
+4. Soporte tecnico con equipo especializado
+5. Trazabilidad completa: sabes exactamente que molecula tienes
+
+Lo barato sale caro. Especialmente en compuestos de investigacion.
+
+PEPTIQ MX es para quienes no negocian con la calidad.
+
+peptiqmx.com</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#PEPTIQMX #calidad #premium #peptidos #farmaceutico #COA #porQueImporta #investigacion #ciencia #Mexico</span></div>
+      </div>
+    </div>
+
+    <!-- PEPTIQ POST 4: Product Showcase Luxury -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar peptiq-avatar">PQ</div>
+          <div class="handle">peptiqmx</div>
+        </div>
+        <div class="day-badge peptiq-badge">Dia 19 — Viernes</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <img src="img/hero-luxury-box.jpg" alt="PEPTIQ Luxury Box">
+          <div class="preview-overlay gradient-dark" style="justify-content:flex-start; padding-top:24px;">
+            <img src="img/logo-peptiqmx.png" style="width:56px; height:56px; object-fit:contain; margin-bottom:auto;">
+            <div>
+              <div class="preview-tag gold" style="letter-spacing:3px;">Grado farmaceutico</div>
+              <div class="preview-title playfair">Cada detalle importa</div>
+              <div class="preview-subtitle">Desde la molecula hasta el empaque</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type brand">Showcase</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">Cada detalle importa.
+
+Desde la sintesis de la molecula hasta el momento en que abres tu caja.
+
+PEPTIQ MX cuida cada paso:
+- Viales de vidrio borosilicato
+- Liofilizacion bajo estandares GMP
+- Empaque premium con proteccion termica
+- Documentacion completa incluida
+
+Esto es investigacion seria con productos serios.
+
+peptiqmx.com</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#PEPTIQMX #luxury #premium #peptidos #unboxing #farmaceutico #GMP #empaque #calidad #investigacion</span></div>
+      </div>
+    </div>
+
+    <!-- PEPTIQ POST 5: Janoshik Verification -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="account">
+          <div class="avatar peptiq-avatar">PQ</div>
+          <div class="handle">peptiqmx</div>
+        </div>
+        <div class="day-badge peptiq-badge">Dia 25 — Viernes</div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-inner">
+          <div class="preview-overlay center-content" style="background: #050505;">
+            <div style="max-width:80%; text-align:center;">
+              <div style="font-size:0.55rem; letter-spacing:4px; text-transform:uppercase; color:#c9a44a; margin-bottom:20px; font-weight:700;">Confianza verificable</div>
+              <div style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:6px;">janoshik.com</div>
+              <div style="width:60px; height:2px; background:#c9a44a; margin:16px auto;"></div>
+              <div class="preview-title playfair" style="font-size:1.3rem;">No nos creas a nosotros.<br>Verificalo tu mismo.</div>
+              <div style="margin-top:20px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+                <div style="text-align:center;">
+                  <div style="font-size:1.6rem; font-weight:800; color:#fff;">100%</div>
+                  <div style="font-size:0.6rem; color:#666; text-transform:uppercase; letter-spacing:1px;">Lotes testeados</div>
+                </div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.6rem; font-weight:800; color:#fff;">99%+</div>
+                  <div style="font-size:0.6rem; color:#666; text-transform:uppercase; letter-spacing:1px;">Pureza minima</div>
+                </div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.6rem; font-weight:800; color:#fff;">HPLC</div>
+                  <div style="font-size:0.6rem; color:#666; text-transform:uppercase; letter-spacing:1px;">Metodo analitico</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caption-area">
+        <span class="post-type trust">Trust</span>
+        <div class="caption-label">Caption</div>
+        <div class="caption-text" onclick="copyText(this)">No nos creas a nosotros. Verificalo tu mismo.
+
+Cada lote de PEPTIQ MX es analizado por Janoshik Analytical — el laboratorio de referencia en la industria de peptidos a nivel mundial.
+
+Puedes entrar a janoshik.com y verificar cualquier COA que te proporcionemos.
+
+100% de nuestros lotes testeados.
+99%+ pureza minima garantizada.
+Metodo HPLC (High Performance Liquid Chromatography).
+
+La transparencia no se negocia.
+
+peptiqmx.com</div>
+        <div class="caption-label" style="margin-top:8px;">Hashtags</div>
+        <div class="hashtags" onclick="copyText(this)"><span>#PEPTIQMX #Janoshik #verificable #COA #HPLC #transparencia #pureza #peptidos #confianza #ciencia #laboratorio</span></div>
+      </div>
+    </div>
+
+  </div><!-- /posts-grid -->
+</div><!-- /section peptiq -->
+
+<div style="text-align:center; padding:40px 24px 60px; color:#333; font-size:0.75rem;">
+  Content Calendar — @novapeptides.mx & @peptiqmx | Generated April 2026
+</div>
+
+<script>
+function copyText(el) {
+  const text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text.replace('Click to copy','').replace('Copied!','').trim()).then(() => {
+    el.classList.add('copied');
+    setTimeout(() => el.classList.remove('copied'), 2000);
+  });
+}
+</script>
+
+</body>
+</html>

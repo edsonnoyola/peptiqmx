@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="600" height="140">
+  <!-- V4: Ultra minimal — PEPTI Q con la Q estilizada como molécula + MX -->
+  <rect width="600" height="140" fill="#1A1A1A"/>
+
+  <!-- PEPTI -->
+  <text x="40" y="88" font-family="Georgia, 'Playfair Display', serif" font-size="64" font-weight="400" fill="#FFFFFF" letter-spacing="6">PEPTI</text>
+
+  <!-- Q estilizada — círculo + cola -->
+  <circle cx="338" cy="68" r="24" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <line x1="354" y1="84" x2="372" y2="100" stroke="#C4A265" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Punto molecular en la cola de la Q -->
+  <circle cx="375" cy="103" r="4" fill="#C4A265"/>
+
+  <!-- Espacio + MX -->
+  <text x="400" y="88" font-family="Georgia, 'Playfair Display', serif" font-size="64" font-weight="300" fill="#6B6B6B" letter-spacing="2">M</text>
+  <text x="460" y="88" font-family="Georgia, 'Playfair Display', serif" font-size="64" font-weight="700" fill="#C4A265" letter-spacing="2">X</text>
+
+  <!-- Tagline -->
+  <text x="42" y="120" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="9" fill="#6B6B6B" letter-spacing="3.5">ADVANCED SCIENCE FOR LIMITLESS LIVING</text>
+</svg>

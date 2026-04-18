@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
+  <rect width="520" height="120" fill="#F5F3F0"/>
+  <!-- PEPTIQ bold -->
+  <text x="20" y="75" font-family="'Playfair Display', Georgia, serif" font-size="68" font-weight="700" fill="#1A1A1A" letter-spacing="4">PEPTIQ</text>
+  <!-- MX superscript gold -->
+  <text x="380" y="48" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="500" fill="#C4A265" letter-spacing="1">MX</text>
+  <!-- PREMIUM WELLNESS -->
+  <text x="22" y="100" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#999999" letter-spacing="5" font-weight="400">PREMIUM WELLNESS</text>
+</svg>
