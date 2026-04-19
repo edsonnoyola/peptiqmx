@@ -116,10 +116,17 @@
     .section-head h2{font-family:var(--serif);font-size:clamp(32px,4.5vw,56px);font-weight:400;line-height:1.05;letter-spacing:-.01em}
     .section-head h2 em{font-style:italic;color:var(--beige-deep)}
     .section-head p{margin-top:20px;color:#3a3a3a;font-size:16px}
-    .filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+    .filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
     .filter-btn{padding:10px 18px;background:transparent;border:1px solid var(--rule);color:var(--ink);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-weight:500;transition:.2s}
     .filter-btn:hover{border-color:var(--ink)}
     .filter-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+    .line-desc{max-width:720px;margin:0 auto 48px;padding:24px 32px;background:var(--paper);border:1px solid var(--rule);border-left:3px solid var(--beige);text-align:left}
+    .line-desc .ld-tag{font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--beige-deep);font-weight:500;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+    .line-desc .ld-tag::after{content:"";flex:1;height:1px;background:var(--rule)}
+    .line-desc h3{font-family:var(--serif);font-size:22px;font-weight:500;font-style:italic;margin-bottom:8px;line-height:1.2}
+    .line-desc p{color:#3a3a3a;font-size:14px;line-height:1.6;margin-bottom:10px}
+    .line-desc .ld-who{font-size:12px;color:var(--mute);font-style:italic}
+    .line-desc .ld-who b{color:var(--ink);font-weight:500;font-style:normal}
     .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
     .p-card{background:var(--paper);border:1px solid var(--rule);transition:.25s;display:block;position:relative}
     .p-card:hover{transform:translateY(-3px);border-color:var(--beige)}
@@ -323,6 +330,12 @@
       <button class="filter-btn" onclick="filterProducts('prime')">Prime</button>
       <button class="filter-btn" onclick="filterProducts('support')">Support</button>
     </div>
+    <div class="line-desc" id="lineDesc">
+      <div class="ld-tag" id="ldTag">Catálogo completo</div>
+      <h3 id="ldTitle">14 péptidos · 6 líneas · 1 estándar</h3>
+      <p id="ldText">PEPTIQ organiza su catálogo en 6 líneas por objetivo. Cada péptido pertenece a una línea y puede combinarse en protocolos. Selecciona una línea para entender qué hace y para quién es.</p>
+      <div class="ld-who" id="ldWho"><b>Para quién:</b> biohackers, clínicas estéticas, medicina deportiva, investigación.</div>
+    </div>
     <div class="product-grid" id="productGrid">
       <a href="productos/bpc-157.html" class="p-card" data-cat="wolverine">
         <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/bpc-157.jpg" alt="BPC-157"></div>
@@ -356,7 +369,7 @@
 
       <a href="productos/ghk-cu.html" class="p-card" data-cat="glow highlander">
         <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/ghk-cu.jpg" alt="GHK-Cu"></div>
-        <div class="pbody"><div class="pline">Glow · Piel & Cabello</div><div class="pname">GHK-Cu</div><div class="pprice">$3,299 <small>MXN · 50mg</small></div>
+        <div class="pbody"><div class="pline">Glow + Highlander · Piel & longevidad</div><div class="pname">GHK-Cu</div><div class="pprice">$3,299 <small>MXN · 50mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('ghk-cu');">Comprar →</span></div></div></a>
 
       <a href="productos/ahk-cu.html" class="p-card" data-cat="glow">
@@ -555,6 +568,45 @@
 </div>
 
 <script>
+  const LINE_INFO = {
+    all: {
+      tag: 'Catálogo completo',
+      title: '14 péptidos · 6 líneas · 1 estándar',
+      text: 'PEPTIQ organiza su catálogo en 6 líneas por objetivo. Cada péptido pertenece a una línea y puede combinarse en protocolos. Selecciona una línea para entender qué hace y para quién es.',
+      who: '<b>Para quién:</b> biohackers, clínicas estéticas, medicina deportiva, investigación.'
+    },
+    wolverine: {
+      tag: 'Wolverine · Recuperación & reparación',
+      title: 'Para el cuerpo que se rompe y necesita volver.',
+      text: 'Línea enfocada en reparación de tejido blando: tendón, ligamento, articulación, mucosa intestinal. BPC-157 y TB-500 son los péptidos más estudiados en medicina deportiva. KPV añade un efecto anti-inflamatorio potente.',
+      who: '<b>Para quién:</b> atletas con lesiones, post-cirugía, tendinopatías, inflamación crónica, Crohn/colitis en investigación.'
+    },
+    highlander: {
+      tag: 'Highlander · Longevidad & anti-aging',
+      title: 'Para alargar la ventana saludable.',
+      text: 'Longevity protocol. NAD+ repone energía celular y función mitocondrial (pierdes ~50% después de los 50). Epithalon es el péptido más estudiado en extensión de telómeros y ciclos circadianos. Foundation stack de cualquier protocolo anti-aging serio.',
+      who: '<b>Para quién:</b> 35+ años, biohackers de longevidad, pacientes en programas de medicina preventiva, fatiga crónica, sueño fragmentado.'
+    },
+    glow: {
+      tag: 'Glow · Piel, cabello & estética',
+      title: 'Para regenerar lo visible.',
+      text: 'Péptidos de cobre (GHK-Cu, AHK-Cu) + TRINITY (flagship blend). Reducen inflamación cutánea, activan colágeno tipo I/III, estimulan folículo piloso. Usados por clínicas dermatológicas premium para protocolos de 8 semanas.',
+      who: '<b>Para quién:</b> clínicas estéticas, pacientes con envejecimiento cutáneo, alopecia androgénica leve/moderada, post-procedimiento (láser, PRP).'
+    },
+    prime: {
+      tag: 'Prime · Performance & composición corporal',
+      title: 'Para el pico de rendimiento.',
+      text: 'Growth hormone releasers. GH Stack (CJC-1295 + Ipamorelin) eleva pulso de GH nocturno sin afectar cortisol. Tesamorelin reduce grasa visceral específicamente. Ipamorelin solo para GH puro sin efecto en prolactina.',
+      who: '<b>Para quién:</b> atletas, recomposición corporal, grasa visceral alta, baja producción de GH, protocolos de performance en adultos sanos.'
+    },
+    support: {
+      tag: 'Support · Accesorios & reconstitución',
+      title: 'Lo que necesitas para armar el protocolo.',
+      text: 'Agua bacteriostática para reconstitución. Jeringas y material de investigación disponible por WhatsApp. Incluido gratis en órdenes superiores a $3,000 MXN.',
+      who: '<b>Para quién:</b> cualquier protocolo PEPTIQ. Necesario para disolver el péptido liofilizado antes de uso.'
+    }
+  };
+
   function filterProducts(cat){
     document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
     event.target.classList.add('active');
@@ -562,6 +614,11 @@
       const cats = (c.dataset.cat||'').split(' ');
       c.style.display = (cat==='all' || cats.includes(cat)) ? '' : 'none';
     });
+    const info = LINE_INFO[cat] || LINE_INFO.all;
+    document.getElementById('ldTag').textContent = info.tag;
+    document.getElementById('ldTitle').textContent = info.title;
+    document.getElementById('ldText').textContent = info.text;
+    document.getElementById('ldWho').innerHTML = info.who;
   }
 
   const API_BASE = 'https://sara-backend.edson-633.workers.dev';
