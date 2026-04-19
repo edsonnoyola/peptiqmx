@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEPTIQ MX — Research-Grade Peptides</title>
+  <meta name="description" content="Péptidos de investigación de grado farmacéutico. Pureza 99%+ verificada por Janoshik. Envío a todo México en 24-72h.">
+  <meta name="facebook-domain-verification" content="ran91oxu8nnp0gygm9sd4gauhyxhox" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '187738085479345');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=187738085479345&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #1A1A1A;
+      --white: #FFFFFF;
+      --beige: #B8A99A;
+      --light-gray: #F5F3F0;
+      --mid-gray: #E8E4E0;
+      --text-secondary: #6B6B6B;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+      --glass: rgba(255, 255, 255, 0.7);
+      --glass-dark: rgba(26, 26, 26, 0.8);
+      --trust-green: #22C55E;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--sans);
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ========== ANNOUNCEMENT BAR ========== */
+    .announcement-bar {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 18px 40px;
+      gap: 32px;
+    }
+
+    .nav-logo {
+      flex: 0 0 auto;
+      order: 1;
+      margin-right: 24px;
+    }
+
+    .nav-links {
+      flex: 1 1 auto;
+      order: 2;
+      justify-content: flex-start;
+    }
+
+    .nav-icons {
+      flex: 0 0 auto;
+      order: 3;
+    }
+
+    .nav-toggle { order: 0; }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.5;
+    }
+
+    .nav-logo a {
+      display: inline-block;
+    }
+
+    .nav-logo img {
+      height: 90px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      transition: opacity 0.2s;
+    }
+
+    .nav-icon:hover {
+      opacity: 0.5;
+    }
+
+    .nav-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--black);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--black);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--white);
+      z-index: 999;
+      padding: 80px 40px 40px;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-size: 28px;
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 85vh;
+    }
+
+    .hero-image {
+      background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 50%, #0D0D0D 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(184,169,154,0.15);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border: 1px solid rgba(184,169,154,0.08);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-image-text {
+      font-family: var(--serif);
+      font-size: 48px;
+      color: rgba(255,255,255,0.08);
+      letter-spacing: 12px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 80px;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--beige);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 440px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 16px 44px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary:hover {
+      background: #333;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--black);
+      color: var(--black);
+      padding: 16px 44px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+      text-align: center;
+    }
+
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* ========== PURITY SECTION ========== */
+    .purity-section {
+      padding: 120px 40px 80px;
+      text-align: center;
+    }
+
+    .purity-headline {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 60px;
+      letter-spacing: 1px;
+    }
+
+    .purity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .purity-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .purity-card img {
+      aspect-ratio: 3/4;
+    }
+
+    .purity-card:nth-child(1) {
+      background: #111;
+    }
+
+    .purity-card:nth-child(2) {
+      background: #111;
+    }
+
+    .purity-card:nth-child(3) {
+      background: #111;
+    }
+
+    .purity-card:nth-child(4) {
+      background: #111;
+    }
+
+    .purity-card-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--white);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    /* ========== TRUST METRICS ========== */
+    .trust-metrics {
+      padding: 80px 40px;
+      border-top: 1px solid var(--mid-gray);
+      border-bottom: 1px solid var(--mid-gray);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .trust-item {
+      padding: 20px;
+    }
+
+    .trust-number {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .trust-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      letter-spacing: 0.5px;
+    }
+
+    /* ========== CATALOG ========== */
+    .catalog-section {
+      padding: 120px 40px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      text-align: center;
+    }
+
+    .product-image {
+      aspect-ratio: 1;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(0.98);
+    }
+
+    /* circle removed */
+
+    .product-image-name {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--beige);
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-name {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .product-btn {
+      display: inline-block;
+      border: 1px solid var(--black);
+      color: var(--black);
+      padding: 10px 32px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .product-btn:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .product-wa-btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 10px 24px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 8px;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+
+    .product-wa-btn:hover {
+      opacity: 0.7;
+    }
+
+    .product-card-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ========== EMAIL POPUP ========== */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup-card {
+      background: var(--white);
+      max-width: 420px;
+      width: 90%;
+      padding: 48px 36px 36px;
+      position: relative;
+      text-align: center;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 22px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .popup-close:hover {
+      color: var(--black);
+    }
+
+    .popup-card h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    .popup-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .popup-card input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--mid-gray);
+      font-family: var(--sans);
+      font-size: 14px;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .popup-card input[type="email"]:focus {
+      border-color: var(--black);
+    }
+
+    .popup-card button[type="submit"] {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      padding: 14px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: var(--sans);
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s;
+    }
+
+    .popup-card button[type="submit"]:hover {
+      opacity: 0.8;
+    }
+
+    .popup-card .popup-fine {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+
+    .catalog-link {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .catalog-link a {
+      font-size: 13px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .catalog-link a:hover {
+      opacity: 0.5;
+    }
+
+    /* ========== PROTOCOLS ========== */
+    .protocols-section {
+      padding: 120px 40px;
+      background: var(--light-gray);
+    }
+
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .protocol-card {
+      background: var(--white);
+      padding: 48px 36px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .protocol-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .protocol-name {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .protocol-duration {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--beige);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .protocol-price {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .protocol-currency {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .protocol-btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 14px 36px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .protocol-btn:hover {
+      background: #333;
+    }
+
+    /* ========== COA / TRUST ========== */
+    .coa-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 60vh;
+    }
+
+    .coa-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+      background: var(--black);
+    }
+
+    .coa-headline {
+      font-family: var(--serif);
+      font-size: clamp(36px, 3.5vw, 56px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .coa-right {
+      display: flex;
+      align-items: center;
+      padding: 80px;
+    }
+
+    .coa-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .coa-text a {
+      border-bottom: 1px solid var(--black);
+      font-weight: 500;
+      color: var(--black);
+      transition: opacity 0.2s;
+    }
+
+    .coa-text a:hover {
+      opacity: 0.5;
+    }
+
+    /* ========== FAQ ========== */
+    .faq-section {
+      padding: 120px 40px;
+    }
+
+    .faq-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--mid-gray);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--sans);
+      color: var(--black);
+    }
+
+    .faq-question:hover {
+      opacity: 0.7;
+    }
+
+    .faq-icon {
+      font-size: 20px;
+      font-weight: 300;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      margin-left: 20px;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-bottom: 24px;
+    }
+
+    .faq-answer p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    /* ========== FINAL CTA ========== */
+    .final-cta {
+      padding: 120px 40px;
+      text-align: center;
+      background: var(--light-gray);
+    }
+
+    .final-cta-headline {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .final-cta-text {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.7);
+      padding: 80px 40px 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--white);
+      letter-spacing: 3px;
+      font-weight: 600;
+    }
+
+    .footer-logo sup {
+      font-size: 10px;
+      font-weight: 500;
+      color: #C4A265;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    .footer-social a {
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: var(--white);
+    }
+
+    .footer-disclaimer {
+      max-width: 1200px;
+      margin: 30px auto 0;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-copyright {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 50vh;
+      }
+
+      .hero-content {
+        padding: 60px 40px;
+      }
+
+      .coa-section {
+        grid-template-columns: 1fr;
+      }
+
+      .coa-left, .coa-right {
+        padding: 60px 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .announcement-bar {
+        font-size: 9px;
+        letter-spacing: 1px;
+        padding: 8px 16px;
+      }
+
+      .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-icons {
+        gap: 12px;
+      }
+
+      .hero-content {
+        padding: 48px 24px;
+      }
+
+      .purity-section {
+        padding: 80px 24px 60px;
+      }
+
+      .purity-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .trust-number {
+        font-size: 44px;
+      }
+
+      .catalog-section {
+        padding: 80px 24px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
+      }
+
+      .protocols-section {
+        padding: 80px 24px;
+      }
+
+      .protocol-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .coa-left, .coa-right {
+        padding: 48px 24px;
+      }
+
+      .faq-section {
+        padding: 80px 24px;
+      }
+
+      .final-cta {
+        padding: 80px 24px;
+      }
+
+      .footer {
+        padding: 60px 24px 32px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .footer-links {
+        gap: 20px;
+      }
+
+      .footer-social {
+        justify-content: center;
+      }
+
+      .btn-primary, .btn-outline {
+        padding: 14px 36px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .hero-image {
+        min-height: 40vh;
+      }
+    }
+
+    /* ========== OBJECTIVES ========== */
+    .objectives-section {
+      padding: 80px 24px;
+      background: var(--white);
+    }
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--mid-gray);
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid var(--mid-gray);
+    }
+    .objective-card {
+      background: var(--white);
+      padding: 36px 30px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.3s;
+    }
+    .objective-card:hover {
+      background: var(--light-gray);
+    }
+    .objective-num {
+      font-size: 11px;
+      color: var(--beige);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .objective-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .objective-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .objective-count {
+      font-size: 11px;
+      color: var(--beige);
+      letter-spacing: 1px;
+    }
+    @media (max-width: 768px) {
+      .objectives-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .objectives-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========== HOW IT WORKS ========== */
+    .how-section {
+      padding: 80px 24px;
+      background: var(--light-gray);
+    }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .how-step {
+      text-align: center;
+    }
+    .how-num {
+      font-family: var(--serif);
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--beige);
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .how-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .how-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .how-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    }
+    @media (max-width: 480px) {
+      .how-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========== TESTIMONIALS RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* ========== CATALOG FILTERS ========== */
+    .catalog-filters {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border: 1px solid var(--mid-gray);
+      font-weight: 500;
+      transition: all 0.2s;
+      font-family: var(--sans);
+      cursor: pointer;
+      background: none;
+      color: var(--text-secondary);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--black);
+      color: var(--black);
+      background: var(--light-gray);
+    }
+
+    /* FLOATING WHATSAPP */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 24px 14px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+    }
+    .wa-float svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .wa-float span { display: none; }
+      .wa-float { padding: 16px; border-radius: 50%; }
+    }
+
+    /* PREMIUM REFINEMENT */
+    .nav.scrolled {
+      background: rgba(255, 255, 255, 0.8) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+    }
+
+    .product-image {
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    }
+
+    .product-card:hover .product-image {
+      transform: translateY(-10px) scale(1.02) !important;
+      box-shadow: 0 40px 80px -15px rgba(0,0,0,0.12), 0 25px 50px -20px rgba(0,0,0,0.15) !important;
+    }
+
+    .janoshik-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #000;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(0,0,0,0.1);
+      z-index: 10;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .janoshik-badge i {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: #22C55E;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #22C55E;
+    }
+
+    .protocol-btn {
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .protocol-btn:hover {
+      background: #000 !important;
+      color: #fff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    &#9733;&nbsp; Agua bacteriost&aacute;tica GRATIS con cada vial &nbsp;&middot;&nbsp; Env&iacute;o 24-72h a todo M&eacute;xico &nbsp;&middot;&nbsp; COA Janoshik verificable en cada lote &nbsp;&#9733;
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#catalogo">Cat&aacute;logo</a></li>
+        <li><a href="#protocolos">Protocolos</a></li>
+        <li><a href="#coa">Ciencia</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
+        <li><a href="b2b-clinicas.html" style="color:#C6A969;">B2B Cl&iacute;nicas</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-logo">
+        <a href="#"><img src="img/logo-peptiqmx.svg" alt="PEPTIQ MX"></a>
+      </div>
+      <div class="nav-icons">
+        <a href="#catalogo" class="nav-icon" aria-label="Buscar">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        </a>
+        <a href="#faq" class="nav-icon" aria-label="Cuenta">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <a href="https://wa.me/5214445770445" target="_blank" rel="noopener" class="nav-icon" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="var(--black)" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.01a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374A9.86 9.86 0 0 1 2.15 12.01C2.15 6.558 6.58 2.13 12.04 2.13c2.655 0 5.148 1.035 7.025 2.913a9.87 9.87 0 0 1 2.895 7.01c-.004 5.46-4.434 9.9-9.9 9.9l-.01-.17zM12.05.13C5.495.13.15 5.474.15 12.01a11.83 11.83 0 0 0 1.598 5.945L0 24l6.228-1.634A11.86 11.86 0 0 0 12.05 24c6.557 0 11.9-5.344 11.9-11.89S18.607.13 12.05.13z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Cerrar menu">&times;</button>
+    <a href="#hero" onclick="closeMobile()">Home</a>
+    <a href="#catalogo" onclick="closeMobile()">Cat&aacute;logo</a>
+    <a href="#protocolos" onclick="closeMobile()">Protocolos</a>
+    <a href="#coa" onclick="closeMobile()">Ciencia</a>
+    <a href="#faq" onclick="closeMobile()">FAQ</a>
+    <a href="https://wa.me/5214445770445" target="_blank" rel="noopener" onclick="closeMobile()">WhatsApp</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-image">
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
+        <source src="video/peptiq-brand-film.mp4" type="video/mp4">
+      </video>
+      <!-- Fallback image if video fails -->
+      <noscript><img src="img/hero-luxury-box.jpg" alt="PEPTIQ MX Peptides" style="width:100%;height:100%;object-fit:cover;"></noscript>
+    </div>
+    <div class="hero-content">
+      <span class="hero-label">Research-Grade Peptides · México</span>
+      <h1 class="hero-headline">La pureza<br>que puedes<br>verificar.</h1>
+      <p class="hero-subtitle">Cada lote analizado por Janoshik Analytical en Praga. 99%+ HPLC. Certificado verificable públicamente. El único en México.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20p%C3%A9ptidos" target="_blank" rel="noopener" class="btn-primary">Ordenar por WhatsApp</a>
+        <a href="#catalogo" class="btn-outline">Ver cat&aacute;logo</a>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- OBJECTIVES / LINES -->
+  <section style="padding:80px 24px;background:var(--white);">
+    <div class="section-header">
+      <h2 class="section-title">6 sistemas. 15 compuestos. Una marca.</h2>
+      <p class="section-subtitle">Cada l&iacute;nea es un m&oacute;dulo de optimizaci&oacute;n dise&ntilde;ado para un objetivo espec&iacute;fico.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--mid-gray);max-width:1100px;margin:0 auto;border:1px solid var(--mid-gray);">
+      <a href="#catalogo" class="objective-card" onclick="filterProducts('wolverine')" style="text-decoration:none;color:inherit;background:var(--white);padding:32px;display:block;transition:background 0.3s;">
+        <div style="font-size:11px;letter-spacing:2px;color:#7A1C1C;margin-bottom:8px;">WOLVERINE&trade;</div>
+        <div style="font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:8px;">Recuperaci&oacute;n</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:12px;">Healing &middot; Anti-inflamatorio &middot; Tendones</div>
+        <div style="font-size:12px;color:#7A1C1C;">BPC-157 &middot; TB-500 &middot; KPV &middot; Heal Stack &rarr;</div>
+      </a>
+      <a href="#catalogo" class="objective-card" onclick="filterProducts('shred')" style="text-decoration:none;color:inherit;background:var(--white);padding:32px;display:block;transition:background 0.3s;">
+        <div style="font-size:11px;letter-spacing:2px;color:#333333;margin-bottom:8px;">SHRED&trade;</div>
+        <div style="font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:8px;">Metabolismo</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:12px;">Weight loss &middot; Recomposici&oacute;n &middot; GLP-1</div>
+        <div style="font-size:12px;color:#333;">Retatrutide &middot; Tirzepatide &rarr;</div>
+      </a>
+      <a href="#catalogo" class="objective-card" onclick="filterProducts('highlander')" style="text-decoration:none;color:inherit;background:var(--white);padding:32px;display:block;transition:background 0.3s;">
+        <div style="font-size:11px;letter-spacing:2px;color:var(--beige);margin-bottom:8px;">HIGHLANDER&trade;</div>
+        <div style="font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:8px;">Longevidad</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:12px;">Anti-aging &middot; Tel&oacute;meros &middot; NAD+</div>
+        <div style="font-size:12px;color:var(--beige);">Epithalon &middot; NAD+ &rarr;</div>
+      </a>
+      <a href="#catalogo" class="objective-card" onclick="filterProducts('glow')" style="text-decoration:none;color:inherit;background:var(--white);padding:32px;display:block;transition:background 0.3s;">
+        <div style="font-size:11px;letter-spacing:2px;color:#6A5ACD;margin-bottom:8px;">GLOW&trade;</div>
+        <div style="font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:8px;">Est&eacute;tica</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:12px;">Beauty &middot; Skin &middot; Hair &middot; Col&aacute;geno</div>
+        <div style="font-size:12px;color:#6A5ACD;">GHK-Cu &middot; AHK-Cu &middot; Trinity &rarr;</div>
+      </a>
+      <a href="#catalogo" class="objective-card" onclick="filterProducts('prime')" style="text-decoration:none;color:inherit;background:var(--white);padding:32px;display:block;transition:background 0.3s;">
+        <div style="font-size:11px;letter-spacing:2px;color:#111;margin-bottom:8px;">PRIME&trade;</div>
+        <div style="font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:8px;">Performance</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:12px;">Growth Hormone &middot; Composici&oacute;n &middot; Sue&ntilde;o</div>
+        <div style="font-size:12px;color:#111;">Ipamorelin &middot; Tesamorelin &middot; GH Stack &rarr;</div>
+      </a>
+      <a href="#catalogo" class="objective-card" onclick="filterProducts('support')" style="text-decoration:none;color:inherit;background:var(--white);padding:32px;display:block;transition:background 0.3s;">
+        <div style="font-size:11px;letter-spacing:2px;color:#4C7F6A;margin-bottom:8px;">SUPPORT&trade;</div>
+        <div style="font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:8px;">Utilidad</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:12px;">Solvente &middot; Reconstituci&oacute;n</div>
+        <div style="font-size:12px;color:#4C7F6A;">Agua Bacteriost&aacute;tica &rarr;</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- PURITY SECTION removed — product images already in catalog -->
+
+  
+<!-- TRUST METRICS -->
+  <section class="trust-metrics">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-number">99%+</div>
+        <div class="trust-label">Pureza HPLC certificada</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">15</div>
+        <div class="trust-label">SKUs en 6 l&iacute;neas</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">24-72h</div>
+        <div class="trust-label">Env&iacute;o a todo M&eacute;xico</div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- CATALOG -->
+  <section class="catalog-section" id="catalogo">
+    <div class="section-header">
+      <h2 class="section-title">Cat&aacute;logo</h2>
+      <p class="section-subtitle">Compuestos de investigaci&oacute;n de grado farmac&eacute;utico</p>
+    </div>
+    <div class="catalog-filters">
+      <button class="filter-btn active" onclick="filterProducts('todos')">Todos</button>
+      <button class="filter-btn" onclick="filterProducts('wolverine')">WOLVERINE</button>
+      <button class="filter-btn" onclick="filterProducts('highlander')">HIGHLANDER</button>
+      <button class="filter-btn" onclick="filterProducts('shred')">SHRED</button>
+      <button class="filter-btn" onclick="filterProducts('glow')">GLOW</button>
+      <button class="filter-btn" onclick="filterProducts('prime')">PRIME</button>
+      <button class="filter-btn" onclick="filterProducts('support')">SUPPORT</button>
+    </div>
+    <div class="product-grid" id="productGrid">
+      <a href="productos/bpc-157.html" class="product-card" data-cat="wolverine" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/bpc-157.jpg" alt="BPC-157" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">BPC-157 10mg</h3>
+        <p class="product-price">$2,999 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('bpc-157');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/tb-500.html" class="product-card" data-cat="wolverine" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/tb-500.jpg" alt="TB-500" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">TB-500 10mg</h3>
+        <p class="product-price">$3,799 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('tb-500');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/nad-plus.html" class="product-card" data-cat="highlander" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/nad.jpg" alt="NAD+" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">NAD+ 1000mg</h3>
+        <p class="product-price">$5,499 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('nad');">Comprar ahora</span>
+        </div>
+      </a>
+      <!-- Retatrutide oculto -->
+      <a href="productos/ghk-cu.html" class="product-card" data-cat="glow highlander" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/ghk-cu.jpg" alt="GHK-Cu" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">GHK-Cu 50mg</h3>
+        <p class="product-price">$3,299 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('ghk-cu');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/cjc-ipamorelin.html" class="product-card" data-cat="prime" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/gh-stack.jpg" alt="GH STACK" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">GH STACK&trade; 10mg</h3>
+        <p class="product-price">$4,999 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('gh-stack');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/tesamorelin.html" class="product-card" data-cat="prime" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/tesamorelin.jpg" alt="Tesamorelin" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">Tesamorelin 10mg</h3>
+        <p class="product-price">$6,999 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('tesamorelin');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/epithalon.html" class="product-card" data-cat="highlander" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/epithalon.jpg" alt="Epithalon" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">Epithalon 10mg</h3>
+        <p class="product-price">$3,999 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('epithalon');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/kpv.html" class="product-card" data-cat="wolverine" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/kpv.jpg" alt="KPV" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">KPV 10mg</h3>
+        <p class="product-price">$3,299 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('kpv');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/trinity.html" class="product-card" data-cat="glow" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/trinity.jpg" alt="TRINITY" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">TRINITY&trade; 70mg</h3>
+        <p class="product-price">$7,499 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn" style="font-size:9px;">BLEND &middot; Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('trinity');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/ipamorelin.html" class="product-card" data-cat="prime" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/ipamorelin.jpg" alt="Ipamorelin" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">Ipamorelin 10mg</h3>
+        <p class="product-price">$3,099 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('ipamorelin');">Comprar ahora</span>
+        </div>
+      </a>
+      <!-- Tirzepatide oculto -->
+      <a href="productos/ahk-cu.html" class="product-card" data-cat="glow" style="text-decoration:none;color:inherit;">
+        <div class="product-image">
+          <div class="janoshik-badge"><i></i>Janoshik Verified</div>
+          <img src="img/ahk-cu.jpg" alt="AHK-Cu" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="product-name">AHK-Cu 50mg</h3>
+        <p class="product-price">$3,299 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('ahk-cu');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/wolverine.html" class="product-card" data-cat="wolverine" style="text-decoration:none;color:inherit;">
+        <div class="product-image"><img src="img/heal-stack.jpg" alt="HEAL STACK" style="width:100%;height:100%;object-fit:cover;"></div>
+        <h3 class="product-name">WOLVERINE BLEND&trade; 20mg</h3>
+        <p class="product-price">$5,999 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn" style="font-size:9px;">BLEND &middot; Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('wolverine');">Comprar ahora</span>
+        </div>
+      </a>
+      <a href="productos/agua-bacteriostatica.html" class="product-card" data-cat="support" style="text-decoration:none;color:inherit;">
+        <div class="product-image"><img src="img/bac-water.jpg" alt="Agua Bacteriost&aacute;tica" style="width:100%;height:100%;object-fit:cover;"></div>
+        <h3 class="product-name">Agua Bacteriost&aacute;tica 3ml</h3>
+        <p class="product-price">$599 MXN</p>
+        <div class="product-card-actions">
+          <span class="product-btn">Ver detalles</span>
+          <span class="product-wa-btn" onclick="event.preventDefault();event.stopPropagation();buyNow('agua');">Comprar ahora</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  
+<!-- PROTOCOLS — Component breakdown style -->
+  <section class="protocols-section" id="protocolos">
+    <div class="section-header">
+      <h2 class="section-title">Sistemas completos</h2>
+      <p class="section-subtitle">Protocolos dise&ntilde;ados por objetivo. Ahorra vs compra individual.</p>
+    </div>
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+
+      <!-- WOLVERINE -->
+      <div style="background:var(--white);border:1px solid var(--mid-gray);padding:24px 28px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div>
+            <div style="font-size:9px;letter-spacing:2px;color:#7A1C1C;">WOLVERINE&trade; &middot; 8 SEM</div>
+            <div style="font-family:var(--serif);font-size:22px;font-weight:500;">Recuperaci&oacute;n</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px;color:var(--text-secondary);text-decoration:line-through;">$6,798</div>
+            <div style="font-family:var(--serif);font-size:24px;font-weight:500;">$5,999</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+          <span style="background:#7A1C1C;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">BPC-157</span>
+          <span style="background:#7A1C1C;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">TB-500</span>
+          <span style="background:var(--light-gray);color:var(--text-secondary);font-size:9px;padding:3px 10px;">+ Agua GRATIS</span>
+        </div>
+        <a href="productos/wolverine.html" class="protocol-btn" style="width:100%;text-align:center;display:block;">Ver sistema Wolverine</a>
+      </div>
+
+      <!-- HIGHLANDER -->
+      <div style="background:var(--white);border:1px solid var(--mid-gray);padding:24px 28px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div>
+            <div style="font-size:9px;letter-spacing:2px;color:#C6A969;">HIGHLANDER&trade; &middot; 12 SEM</div>
+            <div style="font-family:var(--serif);font-size:22px;font-weight:500;">Longevidad</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px;color:var(--text-secondary);text-decoration:line-through;">$12,797</div>
+            <div style="font-family:var(--serif);font-size:24px;font-weight:500;">$8,999</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+          <span style="background:#C6A969;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">NAD+</span>
+          <span style="background:#C6A969;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">EPITHALON</span>
+          <span style="background:#C6A969;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">GHK-Cu</span>
+          <span style="background:var(--light-gray);color:var(--text-secondary);font-size:9px;padding:3px 10px;">+ Agua GRATIS</span>
+        </div>
+        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20el%20sistema%20HIGHLANDER" target="_blank" rel="noopener" class="protocol-btn" style="width:100%;text-align:center;display:block;">Ordenar por WhatsApp</a>
+      </div>
+
+      <!-- SHRED -->
+      <div style="background:var(--white);border:1px solid var(--mid-gray);padding:24px 28px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div>
+            <div style="font-size:9px;letter-spacing:2px;color:#555;">SHRED&trade; &middot; 12 SEM</div>
+            <div style="font-family:var(--serif);font-size:22px;font-weight:500;">Metabolismo Elite</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px;color:var(--text-secondary);text-decoration:line-through;">$24,998</div>
+            <div style="font-family:var(--serif);font-size:24px;font-weight:500;">$14,999</div>
+            <div style="font-size:10px;color:#22C55E;font-weight:600;">OFERTA LANZAMIENTO</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+          <span style="background:#555;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">RETATRUTIDE</span>
+          <span style="background:#555;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">TIRZEPATIDE</span>
+          <span style="background:var(--light-gray);color:var(--text-secondary);font-size:9px;padding:3px 10px;">+ Agua GRATIS</span>
+        </div>
+        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20el%20sistema%20SHRED" target="_blank" rel="noopener" class="protocol-btn" style="width:100%;text-align:center;display:block;">Ordenar por WhatsApp</a>
+      </div>
+
+      <!-- GLOW -->
+      <div style="background:var(--white);border:1px solid var(--mid-gray);padding:24px 28px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div>
+            <div style="font-size:9px;letter-spacing:2px;color:#6A5ACD;">GLOW&trade; &middot; 8 SEM</div>
+            <div style="font-family:var(--serif);font-size:22px;font-weight:500;">Est&eacute;tica</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px;color:var(--text-secondary);text-decoration:line-through;">$14,097</div>
+            <div style="font-family:var(--serif);font-size:24px;font-weight:500;">$9,999</div>
+            <div style="font-size:10px;color:#22C55E;font-weight:600;">-29%</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+          <span style="background:#6A5ACD;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">GHK-Cu</span>
+          <span style="background:#6A5ACD;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">AHK-Cu</span>
+          <span style="background:#6A5ACD;color:#fff;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">TRINITY</span>
+          <span style="background:var(--light-gray);color:var(--text-secondary);font-size:9px;padding:3px 10px;">+ Agua GRATIS</span>
+        </div>
+        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20el%20sistema%20GLOW" target="_blank" rel="noopener" class="protocol-btn" style="width:100%;text-align:center;display:block;">Ordenar por WhatsApp</a>
+      </div>
+
+      <!-- TITAN / PRIME -->
+      <div style="background:var(--white);border:1px solid var(--mid-gray);padding:24px 28px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div>
+            <div style="font-size:9px;letter-spacing:2px;color:#111;">TIT&Aacute;N&trade; &middot; 12 SEM</div>
+            <div style="font-family:var(--serif);font-size:22px;font-weight:500;">Performance Elite</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px;color:var(--text-secondary);text-decoration:line-through;">$11,998</div>
+            <div style="font-family:var(--serif);font-size:24px;font-weight:500;">$8,999</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+          <span style="background:#111;color:#C6A969;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">GH STACK</span>
+          <span style="background:#111;color:#C6A969;font-size:9px;letter-spacing:1px;padding:3px 10px;font-weight:600;">TESAMORELIN</span>
+          <span style="background:var(--light-gray);color:var(--text-secondary);font-size:9px;padding:3px 10px;">+ Agua GRATIS</span>
+        </div>
+        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20el%20sistema%20TITAN" target="_blank" rel="noopener" class="protocol-btn" style="width:100%;text-align:center;display:block;">Ordenar por WhatsApp</a>
+      </div>
+
+      <!-- TITAN — full width flagship -->
+      <div style="background:#111;border:2px solid #C6A969;padding:28px 32px;grid-column:1/-1;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+          <div>
+            <div style="font-size:9px;letter-spacing:2px;color:#C6A969;">TITAN&trade; &middot; SISTEMA TOTAL &middot; 12 SEM</div>
+            <div style="font-family:var(--serif);font-size:26px;font-weight:500;color:#fff;margin:6px 0;">El stack completo PEPTIQ</div>
+            <div style="display:flex;gap:5px;flex-wrap:wrap;">
+              <span style="background:rgba(198,169,105,0.15);color:#C6A969;font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(198,169,105,0.3);">BPC-157</span>
+              <span style="background:rgba(198,169,105,0.15);color:#C6A969;font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(198,169,105,0.3);">TB-500</span>
+              <span style="background:rgba(198,169,105,0.15);color:#C6A969;font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(198,169,105,0.3);">NAD+</span>
+              <span style="background:rgba(198,169,105,0.15);color:#C6A969;font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(198,169,105,0.3);">EPITHALON</span>
+              <span style="background:rgba(198,169,105,0.15);color:#C6A969;font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(198,169,105,0.3);">GHK-Cu</span>
+              <span style="background:rgba(198,169,105,0.15);color:#C6A969;font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(198,169,105,0.3);">+ TODO</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:24px;">
+            <div style="text-align:right;">
+              <div style="font-size:11px;color:rgba(255,255,255,0.4);text-decoration:line-through;">$35,000+</div>
+              <div style="font-family:var(--serif);font-size:30px;color:#C6A969;">$24,999</div>
+              <div style="font-size:10px;color:#22C55E;font-weight:600;">Ahorra $10,000+</div>
+            </div>
+            <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20el%20TITAN%20Stack" target="_blank" rel="noopener" style="display:inline-block;background:#C6A969;color:#111;padding:14px 28px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;white-space:nowrap;">Ordenar TITAN</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+<!-- HOW IT WORKS -->
+  <section class="how-section">
+    <div class="section-header">
+      <h2 class="section-title">C&oacute;mo funciona</h2>
+      <p class="section-subtitle">De tu pedido a tu laboratorio en 4 pasos</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <div class="how-title">Elige tu objetivo</div>
+        <div class="how-desc">Selecciona el compuesto o protocolo seg&uacute;n tu &aacute;rea de investigaci&oacute;n.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <div class="how-title">Recibe tu kit</div>
+        <div class="how-desc">Env&iacute;o 24-72h a todo M&eacute;xico. Cadena de fr&iacute;o incluida. COA en cada vial.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <div class="how-title">Reconstituye</div>
+        <div class="how-desc">Inyecta agua bacteriost&aacute;tica en el vial. 30 segundos. Sin equipo especial.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">04</div>
+        <div class="how-title">Aplica y listo</div>
+        <div class="how-desc">Inyecci&oacute;n subcut&aacute;nea simple. Un piquete peque&ntilde;o, como la insulina.</div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- JANOSHIK — ONE STRONG SECTION -->
+  <section id="coa" style="padding:100px 24px;background:var(--black);">
+    <div style="max-width:800px;margin:0 auto;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);padding:8px 20px;margin-bottom:24px;font-size:11px;letter-spacing:2px;color:#22C55E;font-weight:600;">&#9679; VERIFICACI&Oacute;N INDEPENDIENTE</div>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.5vw,44px);color:var(--white);margin-bottom:16px;">Cada lote analizado por<br>Janoshik Analytical</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto;">Laboratorio independiente en Praga. El est&aacute;ndar global en verificaci&oacute;n de p&eacute;ptidos. Resultados p&uacute;blicos. Ning&uacute;n otro proveedor en M&eacute;xico ofrece esto.</p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:40px;">
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:20px 28px;text-align:center;">
+          <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:6px;">BPC-157</div>
+          <div style="font-family:var(--serif);font-size:28px;color:#22C55E;">99.654%</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:20px 28px;text-align:center;">
+          <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:6px;">TB-500</div>
+          <div style="font-family:var(--serif);font-size:28px;color:#22C55E;">99.328%</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:20px 28px;text-align:center;">
+          <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:6px;">GHK-Cu</div>
+          <div style="font-family:var(--serif);font-size:28px;color:#22C55E;">99.508%</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:20px 28px;text-align:center;">
+          <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:6px;">Retatrutide</div>
+          <div style="font-family:var(--serif);font-size:28px;color:#22C55E;">99.080%</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://janoshik.com/verify" target="_blank" rel="noopener" style="display:inline-block;border:1px solid rgba(255,255,255,0.2);color:var(--white);padding:14px 32px;font-size:11px;letter-spacing:2px;font-weight:600;text-transform:uppercase;text-decoration:none;">Verificar en janoshik.com</a>
+        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20ver%20los%20COA" target="_blank" rel="noopener" style="display:inline-block;background:var(--beige);color:var(--white);padding:14px 32px;font-size:11px;letter-spacing:2px;font-weight:600;text-transform:uppercase;text-decoration:none;">Solicitar COA por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- grey market warning removed — covered by comparison table -->
+
+  <!-- SOCIAL PROOF -->
+  <section style="padding:60px 24px;background:var(--white);">
+    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;">
+      <div style="padding:24px;">
+        <div style="font-family:var(--serif);font-size:36px;color:var(--beige);">99%+</div>
+        <div style="font-size:12px;color:var(--text-secondary);letter-spacing:1px;margin-top:4px;">Pureza Janoshik verificada</div>
+      </div>
+      <div style="padding:24px;">
+        <div style="font-family:var(--serif);font-size:36px;color:var(--beige);">15</div>
+        <div style="font-size:12px;color:var(--text-secondary);letter-spacing:1px;margin-top:4px;">Compuestos en 6 l&iacute;neas</div>
+      </div>
+      <div style="padding:24px;">
+        <div style="font-family:var(--serif);font-size:36px;color:var(--beige);">24-72h</div>
+        <div style="font-size:12px;color:var(--text-secondary);letter-spacing:1px;margin-top:4px;">Env&iacute;o a todo M&eacute;xico</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="padding:80px 24px;background:var(--white);">
+    <div class="section-header">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-subtitle">Biohackers, m&eacute;dicos y atletas de alto rendimiento</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;" class="testimonials-grid">
+      <div style="background:var(--light-gray);padding:40px 32px;position:relative;">
+        <div style="font-family:var(--serif);font-size:64px;color:var(--beige);line-height:0.6;margin-bottom:24px;">&ldquo;</div>
+        <p style="font-size:15px;line-height:1.8;color:#444;margin-bottom:24px;">El COA Janoshik fue lo que me convenci&oacute;. Soy m&eacute;dico, no puedo recomendar algo que no est&eacute; verificado. PEPTIQ es la &uacute;nica marca en M&eacute;xico donde puedo ver los n&uacute;meros reales antes de que llegue el pedido.</p>
+        <div style="border-top:1px solid var(--mid-gray);padding-top:16px;">
+          <div style="font-weight:600;font-size:14px;">Dr. Andr&eacute;s M.</div>
+          <div style="font-size:12px;color:var(--text-secondary);letter-spacing:0.5px;">Medicina Funcional &mdash; CDMX</div>
+        </div>
+      </div>
+      <div style="background:var(--light-gray);padding:40px 32px;position:relative;">
+        <div style="font-family:var(--serif);font-size:64px;color:var(--beige);line-height:0.6;margin-bottom:24px;">&ldquo;</div>
+        <p style="font-size:15px;line-height:1.8;color:#444;margin-bottom:24px;">Prob&eacute; tres marcas diferentes antes de llegar a PEPTIQ. La diferencia es evidente. Los protocolos que me mandaron son lo suficientemente detallados como para saber que saben de lo que hablan. No solo venden viales.</p>
+        <div style="border-top:1px solid var(--mid-gray);padding-top:16px;">
+          <div style="font-weight:600;font-size:14px;">Fernanda R.</div>
+          <div style="font-size:12px;color:var(--text-secondary);letter-spacing:0.5px;">Nutri&oacute;loga &amp; Biohacker &mdash; Monterrey</div>
+        </div>
+      </div>
+      <div style="background:var(--light-gray);padding:40px 32px;position:relative;">
+        <div style="font-family:var(--serif);font-size:64px;color:var(--beige);line-height:0.6;margin-bottom:24px;">&ldquo;</div>
+        <p style="font-size:15px;line-height:1.8;color:#444;margin-bottom:24px;">Soy muy escéptico con el mercado de péptidos en México. Cuando vi que puedes verificar el COA en la página de Janoshik con un c&oacute;digo único, ya no tuve dudas. El precio premium tiene sentido total cuando sabes exactamente qué estás recibiendo.</p>
+        <div style="border-top:1px solid var(--mid-gray);padding-top:16px;">
+          <div style="font-weight:600;font-size:14px;">Ricardo T.</div>
+          <div style="font-size:12px;color:var(--text-secondary);letter-spacing:0.5px;">Atleta de Alto Rendimiento &mdash; Guadalajara</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="https://wa.me/5214445770445?text=Hola%2C%20quisiera%20ver%20los%20COA%20de%20los%20productos" target="_blank" rel="noopener" style="font-size:13px;color:var(--beige);border-bottom:1px solid var(--beige);letter-spacing:1px;">Ver certificados Janoshik &rarr;</a>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section style="padding:80px 24px;background:var(--black);">
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="section-header" style="margin-bottom:48px;">
+        <h2 class="section-title" style="color:var(--white);">PEPTIQ vs el mercado</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.5);">No todas las marcas son iguales. Comprueba la diferencia.</p>
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:16px 20px;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.4);font-weight:500;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.1);"></th>
+              <th style="text-align:center;padding:16px 20px;font-family:var(--serif);font-size:16px;color:var(--beige);border-bottom:1px solid rgba(255,255,255,0.1);">PEPTIQ MX</th>
+              <th style="text-align:center;padding:16px 20px;font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.4);font-weight:500;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.1);">Otras marcas</th>
+              <th style="text-align:center;padding:16px 20px;font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.4);font-weight:500;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.1);">Mercado gris</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:16px 20px;color:rgba(255,255,255,0.7);border-bottom:1px solid rgba(255,255,255,0.06);">COA laboratorio independiente</td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#22C55E;font-size:18px;">&#10003;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">Janoshik Analytical</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#F59E0B;font-size:18px;">&#9888;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">COA propio (no independiente)</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#EF4444;font-size:18px;">&#10007;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">Sin verificaci&oacute;n</span></td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;color:rgba(255,255,255,0.7);border-bottom:1px solid rgba(255,255,255,0.06);">Verificable p&uacute;blicamente online</td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#22C55E;font-size:18px;">&#10003;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">janoshik.com/verify</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#EF4444;font-size:18px;">&#10007;</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#EF4444;font-size:18px;">&#10007;</span></td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;color:rgba(255,255,255,0.7);border-bottom:1px solid rgba(255,255,255,0.06);">Pureza 99%+ documentada</td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#22C55E;font-size:18px;">&#10003;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">HPLC + MS verificado</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#F59E0B;font-size:18px;">&#9888;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">Auto-declarada</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#EF4444;font-size:18px;">&#10007;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">Sin datos</span></td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;color:rgba(255,255,255,0.7);border-bottom:1px solid rgba(255,255,255,0.06);">Agua bacteriost&aacute;tica incluida</td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#22C55E;font-size:18px;">&#10003;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">Gratis con cada vial</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#EF4444;font-size:18px;">&#10007;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">Costo adicional</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#EF4444;font-size:18px;">&#10007;</span></td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;color:rgba(255,255,255,0.7);border-bottom:1px solid rgba(255,255,255,0.06);">Soporte experto WhatsApp 24/7</td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#22C55E;font-size:18px;">&#10003;</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#F59E0B;font-size:18px;">&#9888;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">Limitado</span></td>
+              <td style="text-align:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:#EF4444;font-size:18px;">&#10007;</span></td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;color:rgba(255,255,255,0.7);">Protocolo + dosificaci&oacute;n incluidos</td>
+              <td style="text-align:center;padding:16px 20px;"><span style="color:#22C55E;font-size:18px;">&#10003;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">Guía + calculadora online</span></td>
+              <td style="text-align:center;padding:16px 20px;"><span style="color:#F59E0B;font-size:18px;">&#9888;</span><br><span style="font-size:11px;color:rgba(255,255,255,0.4);">Básico</span></td>
+              <td style="text-align:center;padding:16px 20px;"><span style="color:#EF4444;font-size:18px;">&#10007;</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20conocer%20más%20sobre%20PEPTIQ" target="_blank" rel="noopener" style="display:inline-block;padding:16px 44px;background:var(--beige);color:var(--white);font-size:11px;letter-spacing:2px;font-weight:600;text-transform:uppercase;text-decoration:none;">Hablar con un asesor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Janoshik verification removed — consolidated into main Janoshik section -->
+
+  <!-- trust bar removed — covered by guarantee strip -->
+
+  
+<!-- ABOUT SECTION -->
+  <section style="padding:80px 24px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div style="background:#F5F3F0;border-radius:8px;height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <img src="img/box-peptiq.jpg" alt="PEPTIQ MX" style="width:100%;height:100%;object-fit:contain;padding:20px;">
+    </div>
+    <div>
+      <div style="font-family:'Inter',sans-serif;font-size:12px;letter-spacing:3px;color:#B8A99A;margin-bottom:16px;">ABOUT</div>
+      <img src="img/logo-peptiqmx.svg" alt="PEPTIQ MX" style="height:80px;width:auto;margin-bottom:24px;">
+      <p style="font-size:16px;line-height:1.8;color:#444;margin-bottom:16px;"><strong style="color:#1A1A1A;">PEPTIQ MX</strong> es una marca premium de p&eacute;ptidos de investigaci&oacute;n construida alrededor de una creencia simple: la pureza verificable importa m&aacute;s que las promesas.</p>
+      <p style="font-size:16px;line-height:1.8;color:#444;margin-bottom:32px;">Creamos PEPTIQ MX para profesionales de la salud, investigadores y biohackers que entienden que los resultados reales vienen de compuestos reales &mdash; cada lote analizado por Janoshik Analytical en Praga, cada COA verificable p&uacute;blicamente.</p>
+      <a href="#coa" style="display:inline-block;padding:16px 32px;background:#1A1A1A;color:#fff;text-decoration:none;font-size:12px;letter-spacing:2px;font-weight:600;">CONOCER M&Aacute;S</a>
+    </div>
+  </section>
+
+  
+  <!-- GUARANTEE -->
+  <section style="padding:60px 24px;background:var(--white);border-top:1px solid var(--mid-gray);">
+    <div style="max-width:700px;margin:0 auto;text-align:center;">
+      <div style="font-size:48px;margin-bottom:16px;">&#9878;</div>
+      <h2 style="font-family:var(--serif);font-size:24px;font-weight:500;margin-bottom:12px;">Garant&iacute;a PEPTIQ</h2>
+      <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">Si tu pedido llega da&ntilde;ado, incompleto o con cualquier problema de integridad, <strong style="color:var(--black);">te lo reponemos sin costo.</strong> Sin preguntas. Env&iacute;anos foto del producto por WhatsApp y procesamos el reemplazo en 24 horas.</p>
+      <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;font-size:12px;color:var(--text-secondary);">
+        <div><strong style="color:var(--black);">&#10003;</strong> Reposici&oacute;n inmediata</div>
+        <div><strong style="color:var(--black);">&#10003;</strong> Cadena de fr&iacute;o garantizada</div>
+        <div><strong style="color:var(--black);">&#10003;</strong> Empaque discreto</div>
+        <div><strong style="color:var(--black);">&#10003;</strong> Rastreo en tiempo real</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET -->
+  <section style="padding:60px 24px;background:var(--black);">
+    <div style="max-width:700px;margin:0 auto;text-align:center;">
+      <div style="font-size:10px;letter-spacing:3px;color:var(--beige);text-transform:uppercase;margin-bottom:16px;">GU&Iacute;A GRATUITA</div>
+      <h2 style="font-family:var(--serif);font-size:clamp(22px,3vw,32px);color:var(--white);margin-bottom:12px;">&iquest;No sabes por d&oacute;nde empezar?</h2>
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.7;">Rec&iacute;benos tu objetivo por WhatsApp y te enviamos una gu&iacute;a personalizada con el protocolo ideal, dosificaci&oacute;n y calendario completo. Gratis. Sin compromiso.</p>
+      <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20la%20gu%C3%ADa%20de%20protocolos%20personalizada" target="_blank" rel="noopener" style="display:inline-block;background:var(--beige);color:#fff;padding:16px 40px;font-size:11px;letter-spacing:2px;font-weight:600;text-transform:uppercase;text-decoration:none;">Quiero mi gu&iacute;a personalizada</a>
+      <p style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.25);">Respuesta en menos de 5 minutos &middot; Atenci&oacute;n por expertos</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>&iquest;Los p&eacute;ptidos son legales en M&eacute;xico?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>S&iacute;. Los p&eacute;ptidos de investigaci&oacute;n son legales para su venta y compra en M&eacute;xico. Nuestros compuestos est&aacute;n etiquetados y vendidos exclusivamente para fines de investigaci&oacute;n de laboratorio, conforme a la normativa vigente.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>&iquest;C&oacute;mo verifico la pureza?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Cada producto incluye un Certificado de An&aacute;lisis (COA) emitido por Janoshik Analytical en Praga. Puedes verificar la autenticidad de tu COA directamente en janoshik.com/verify ingresando el c&oacute;digo &uacute;nico de tu certificado.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>&iquest;Cu&aacute;nto tarda el env&iacute;o?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Realizamos env&iacute;os a todo M&eacute;xico con entrega en 24-72 horas h&aacute;biles. Todos los pedidos incluyen n&uacute;mero de rastreo y empaque discreto con control de temperatura.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>&iquest;C&oacute;mo pago?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Aceptamos transferencia bancaria (SPEI), tarjeta de d&eacute;bito/cr&eacute;dito y pago en OXXO. Al realizar tu pedido por WhatsApp te enviamos los datos de pago correspondientes.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>&iquest;Necesito receta?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No. Los p&eacute;ptidos de investigaci&oacute;n no requieren receta m&eacute;dica en M&eacute;xico. Sin embargo, recomendamos siempre consultar con un profesional de la salud antes de iniciar cualquier protocolo de investigaci&oacute;n.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- GUARANTEE STRIP -->
+  <section style="padding:40px 24px;background:var(--white);border-top:1px solid var(--mid-gray);">
+    <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center;">
+      <div>
+        <div style="font-size:22px;margin-bottom:4px;">&#128666;</div>
+        <div style="font-size:12px;font-weight:600;letter-spacing:1px;margin-bottom:2px;">ENV&Iacute;O R&Aacute;PIDO</div>
+        <div style="font-size:12px;color:var(--text-secondary);">24-72h · cadena de fr&iacute;o</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--mid-gray);"></div>
+      <div>
+        <div style="font-size:22px;margin-bottom:4px;">&#128200;</div>
+        <div style="font-size:12px;font-weight:600;letter-spacing:1px;margin-bottom:2px;">PUREZA GARANTIZADA</div>
+        <div style="font-size:12px;color:var(--text-secondary);">COA Janoshik verificable</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--mid-gray);"></div>
+      <div>
+        <div style="font-size:22px;margin-bottom:4px;">&#128167;</div>
+        <div style="font-size:12px;font-weight:600;letter-spacing:1px;margin-bottom:2px;">AGUA BACTERIOST&Aacute;TICA</div>
+        <div style="font-size:12px;color:var(--text-secondary);">Gratis con cada vial</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--mid-gray);"></div>
+      <div>
+        <div style="font-size:22px;margin-bottom:4px;">&#128172;</div>
+        <div style="font-size:12px;font-weight:600;letter-spacing:1px;margin-bottom:2px;">ASESOR&Iacute;A 24/7</div>
+        <div style="font-size:12px;color:var(--text-secondary);">Expertos por WhatsApp</div>
+      </div>
+    </div>
+  </section>
+
+<!-- FINAL CTA -->
+  <section class="final-cta" style="background:var(--black);padding:100px 40px;">
+    <div style="max-width:640px;margin:0 auto;text-align:center;">
+      <div style="font-size:11px;letter-spacing:3px;color:var(--beige);text-transform:uppercase;margin-bottom:24px;">Comienza hoy</div>
+      <h2 class="final-cta-headline" style="color:var(--white);font-size:clamp(28px,3.5vw,48px);">P&eacute;ptidos premium.<br>Pureza verificable.</h2>
+      <p class="final-cta-text" style="color:rgba(255,255,255,0.55);margin-bottom:40px;">Cu&eacute;ntanos tu objetivo por WhatsApp. Te dise&ntilde;amos el stack ideal y generamos tu link de pago en minutos.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20p%C3%A9ptidos" target="_blank" rel="noopener" style="display:inline-block;background:var(--beige);color:var(--white);padding:18px 48px;font-size:11px;letter-spacing:2px;font-weight:600;text-transform:uppercase;text-decoration:none;">Asesor&iacute;a gratis por WhatsApp</a>
+        <a href="#catalogo" style="display:inline-block;border:1px solid rgba(255,255,255,0.2);color:var(--white);padding:18px 36px;font-size:11px;letter-spacing:2px;font-weight:600;text-transform:uppercase;text-decoration:none;">Ver cat&aacute;logo</a>
+      </div>
+      <p style="margin-top:24px;font-size:12px;color:rgba(255,255,255,0.3);">Env&iacute;o en 24-72h &middot; COA Janoshik incluido &middot; Agua bacteriost&aacute;tica gratis</p>
+    </div>
+  </section>
+
+  
+  <!-- FOOTER -->
+  <footer class="footer" style="background:#0F0F0F; color:rgba(255,255,255,0.4); padding:80px 40px; border-top:1px solid rgba(255,255,255,0.05);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:40px; text-align:left; margin-bottom:60px;">
+        <div>
+          <img src="img/logo-peptiqmx.svg" alt="PEPTIQ MX" style="height:60px; filter:brightness(0) invert(1); margin-bottom:20px;">
+          <p style="font-size:13px; line-height:1.6;">Líderes en biotecnología aplicada a la investigación científica y optimización celular en México.</p>
+        </div>
+        <div>
+          <h3 style="color:#fff; font-size:11px; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">Certificación</h3>
+          <p style="font-size:12px; line-height:1.6;">Todos nuestros lotes son analizados por HPLC en Janoshik Analytical (Praga) para garantizar pureza >99%.</p>
+        </div>
+        <div>
+          <h3 style="color:#fff; font-size:11px; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">Enlaces</h3>
+          <ul style="list-style:none; font-size:12px; line-height:2.2;">
+            <li><a href="#catalogo" style="color:inherit;">Catálogo</a></li>
+            <li><a href="#coa" style="color:inherit;">Centro de Verificación</a></li>
+            <li><a href="mailto:contacto@peptiqmx.com" style="color:inherit;">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding-top:40px; border-top:1px solid rgba(255,255,255,0.05); text-align:center;">
+        <div style="border:1px solid rgba(255,193,7,0.3); background:rgba(255,193,7,0.04); padding:24px 28px; max-width:900px; margin:0 auto 24px; text-align:left;">
+          <p style="font-size:11px; letter-spacing:1.5px; color:#FFC107; text-transform:uppercase; font-weight:700; margin-bottom:14px;">&#9888; Aviso de seguridad y responsabilidad</p>
+          <p style="font-size:11px; line-height:1.9; color:rgba(255,255,255,0.7); font-weight:300; margin-bottom:10px;">
+            Los compuestos ofrecidos en <b style="color:#C6A969;">PEPTIQ MX</b> son <b>exclusivamente para fines de investigaci&oacute;n de laboratorio</b>. No son suplementos alimenticios, medicamentos, cosm&eacute;ticos, ni productos para consumo humano, diagn&oacute;stico, tratamiento, cura, prevenci&oacute;n o mitigaci&oacute;n de enfermedad alguna. No han sido evaluados por COFEPRIS ni por la FDA para uso humano.
+          </p>
+          <p style="font-size:11px; line-height:1.9; color:rgba(255,255,255,0.7); font-weight:300; margin-bottom:10px;">
+            <b style="color:#fff;">El uso de estos productos es responsabilidad &uacute;nica y exclusiva de la persona que los adquiere y/o utiliza.</b> PEPTIQ MX, sus representantes, empleados y afiliados no asumen responsabilidad alguna por el uso que el comprador o terceros den a los productos despu&eacute;s de la entrega. Cualquier aplicaci&oacute;n fuera del contexto de investigaci&oacute;n cient&iacute;fica queda bajo el criterio y riesgo exclusivo del usuario.
+          </p>
+          <p style="font-size:11px; line-height:1.9; color:rgba(255,255,255,0.7); font-weight:300; margin-bottom:10px;">
+            Al acceder a este sitio y realizar una compra, el usuario declara ser mayor de edad, ser un profesional de la investigaci&oacute;n o un adulto informado que actua bajo su propia responsabilidad, haber le&iacute;do y aceptado este aviso, y liberar a PEPTIQ MX de cualquier reclamaci&oacute;n por da&ntilde;os directos o indirectos derivados del uso indebido de los productos.
+          </p>
+          <p style="font-size:11px; line-height:1.9; color:rgba(255,255,255,0.55); font-weight:300;">
+            Consulta siempre a un m&eacute;dico calificado antes de cualquier protocolo. No revendas ni redistribuyas. Almac&eacute;n correcto: refrigeraci&oacute;n 2-8&deg;C, protegido de luz. La jurisdicci&oacute;n aplicable son los tribunales de la Ciudad de M&eacute;xico.
+          </p>
+        </div>
+        <p style="font-size:11px; opacity:0.6;">&copy; 2026 PEPTIQ MX. Todos los derechos reservados. <a href="https://peptiqmx.com/legal" style="color:inherit;text-decoration:underline;">T&eacute;rminos y condiciones</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20PEPTIQ" target="_blank" rel="noopener" class="wa-float">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.01a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374A9.86 9.86 0 012.15 12.01C2.15 6.558 6.58 2.13 12.04 2.13c2.655 0 5.148 1.035 7.025 2.913a9.87 9.87 0 012.895 7.01c-.004 5.46-4.434 9.9-9.9 9.9l-.01-.17zM12.05.13C5.495.13.15 5.474.15 12.01a11.83 11.83 0 001.598 5.945L0 24l6.228-1.634A11.86 11.86 0 0012.05 24c6.557 0 11.9-5.344 11.9-11.89S18.607.13 12.05.13z"/></svg>
+    <span>Ordenar ahora</span>
+  </a>
+
+  <script>
+    // ========== META PIXEL EVENTS ==========
+    function trackEvent(eventName, params) {
+      if (typeof fbq === 'function') fbq('track', eventName, params || {});
+    }
+
+    // Track ViewContent when scrolling to catalog
+    const catalogObs = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        trackEvent('ViewContent', { content_type: 'product_group', content_name: 'PEPTIQ Catalog' });
+        catalogObs.disconnect();
+      }
+    });
+    const catEl = document.getElementById('catalogo');
+    if (catEl) catalogObs.observe(catEl);
+
+    // Track Lead on WhatsApp float click
+    document.querySelector('.wa-float')?.addEventListener('click', () => {
+      trackEvent('Lead', { content_name: 'WhatsApp Float' });
+    });
+
+    // Track Lead on email signup
+    const emailForm = document.getElementById('emailForm');
+    if (emailForm) {
+      emailForm.addEventListener('submit', () => {
+        trackEvent('Lead', { content_name: 'Email Signup' });
+      });
+    }
+
+    // ========== STRIPE CHECKOUT ==========
+    const API_BASE = 'https://sara-backend.edson-633.workers.dev';
+
+    async function buyNow(productId) {
+      // Track InitiateCheckout
+      trackEvent('InitiateCheckout', { content_ids: [productId], content_type: 'product', currency: 'MXN' });
+
+      const btn = event.target;
+      const originalText = btn.textContent;
+      btn.textContent = 'Procesando...';
+      btn.style.pointerEvents = 'none';
+
+      try {
+        const res = await fetch(`${API_BASE}/api/peptiq/web-checkout`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product_id: productId }),
+        });
+
+        const data = await res.json();
+
+        if (data.payment_url) {
+          window.location.href = data.payment_url;
+        } else {
+          // Fallback to WhatsApp if Stripe fails
+          const catalog = {
+            'bpc-157': 'BPC-157 10mg', 'tb-500': 'TB-500 10mg', 'nad': 'NAD+ 1000mg',
+            'retatrutide': 'Retatrutide 30mg', 'ghk-cu': 'GHK-Cu 100mg', 'gh-stack': 'GH STACK 10mg',
+            'tesamorelin': 'Tesamorelin 10mg', 'epithalon': 'Epithalon 50mg', 'kpv': 'KPV 10mg',
+            'trinity': 'TRINITY 70mg', 'ipamorelin': 'Ipamorelin 10mg', 'tirzepatide': 'Tirzepatide 30mg',
+            'ahk-cu': 'AHK-Cu 50mg', 'heal-stack': 'WOLVERINE BLEND™ 20mg', 'agua': 'Agua Bacteriostática 3ml',
+          };
+          const name = catalog[productId] || productId;
+          window.open(`https://wa.me/5214445770445?text=Hola%2C%20quiero%20comprar%20${encodeURIComponent(name)}`, '_blank');
+        }
+      } catch (err) {
+        // Fallback to WhatsApp on error
+        window.open(`https://wa.me/5214445770445?text=Hola%2C%20quiero%20comprar%20${productId}`, '_blank');
+      } finally {
+        btn.textContent = originalText;
+        btn.style.pointerEvents = '';
+      }
+    }
+
+    // Sticky nav shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    mobileClose.addEventListener('click', closeMobile);
+
+    // Product filter
+    function filterProducts(cat) {
+      const cards = document.querySelectorAll('#productGrid .product-card');
+      const btns = document.querySelectorAll('.filter-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      event.target && event.target.classList && event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (cat === 'todos') {
+          card.style.display = '';
+        } else {
+          const cats = card.getAttribute('data-cat') || '';
+          card.style.display = cats.includes(cat) ? '' : 'none';
+        }
+      });
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+
+        // Toggle current
+        if (!wasOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+
+    // Email popup — show once per session after 15s
+    (function() {
+      if (sessionStorage.getItem('peptiq_popup_shown')) return;
+      setTimeout(function() {
+        if (sessionStorage.getItem('peptiq_popup_shown')) return;
+        var overlay = document.getElementById('emailPopup');
+        if (overlay) overlay.classList.add('active');
+      }, 15000);
+    })();
+
+    function closeEmailPopup() {
+      var overlay = document.getElementById('emailPopup');
+      if (overlay) overlay.classList.remove('active');
+      sessionStorage.setItem('peptiq_popup_shown', '1');
+    }
+  </script>
+
+  <!-- EMAIL CAPTURE POPUP -->
+  <div class="popup-overlay" id="emailPopup" onclick="if(event.target===this)closeEmailPopup();">
+    <div class="popup-card">
+      <span class="popup-close" onclick="closeEmailPopup();">&times;</span>
+      <h3>Recibe protocolos + novedades</h3>
+      <p>&Uacute;nete a la lista PEPTIQ. Sin spam. Solo ciencia.</p>
+      <form id="peptiqEmailCapture" name="email-capture" method="POST" data-netlify="true" action="/">
+        <input type="hidden" name="form-name" value="email-capture">
+        <input type="email" name="email" id="peptiqEmailInput" placeholder="tu@email.com" required>
+        <button type="submit" id="peptiqEmailBtn">Suscribirme</button>
+      </form>
+      <p class="popup-fine" id="peptiqEmailMsg">Prometemos no enviarte basura.</p>
+      <script>
+        (function(){
+          var form = document.getElementById('peptiqEmailCapture');
+          if (!form) return;
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var email = document.getElementById('peptiqEmailInput').value.trim();
+            var btn = document.getElementById('peptiqEmailBtn');
+            var msg = document.getElementById('peptiqEmailMsg');
+            if (!email || email.indexOf('@') === -1) return;
+            btn.disabled = true; btn.textContent = 'Enviando…';
+            // 1) Netlify Forms (backup nativo)
+            var fd = new FormData(form);
+            fetch('/', { method: 'POST', body: new URLSearchParams(fd).toString(), headers: {'Content-Type':'application/x-www-form-urlencoded'} }).catch(function(){});
+            // 2) SARA webhook → crea lead en CRM + notifica a Edson por WhatsApp
+            fetch('https://sara-backend.edson-633.workers.dev/webhook/peptiq-email-capture', {
+              method: 'POST',
+              headers: {'Content-Type':'application/json'},
+              body: JSON.stringify({ email: email, source: 'peptiqmx_popup' })
+            }).then(function(r){ return r.json(); }).then(function(res){
+              btn.textContent = '✓ Suscrito';
+              msg.textContent = '¡Gracias! Te enviaremos novedades PEPTIQ.';
+              sessionStorage.setItem('peptiq_popup_shown','1');
+              setTimeout(function(){ if (typeof closeEmailPopup === 'function') closeEmailPopup(); }, 1400);
+            }).catch(function(){
+              btn.disabled = false; btn.textContent = 'Suscribirme';
+              msg.textContent = 'Error. Inténtalo de nuevo o escríbenos por WhatsApp.';
+            });
+          });
+        })();
+      </script>
+    </div>
+  </div>
+
+
+</body>
+</html>
