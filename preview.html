@@ -127,6 +127,10 @@
     .line-desc p{color:#3a3a3a;font-size:14px;line-height:1.6;margin-bottom:10px}
     .line-desc .ld-who{font-size:12px;color:var(--mute);font-style:italic}
     .line-desc .ld-who b{color:var(--ink);font-weight:500;font-style:normal}
+    .line-desc .ld-sources{margin-top:18px;padding-top:14px;border-top:1px dashed var(--rule);font-size:11px;color:var(--mute);line-height:1.7}
+    .line-desc .ld-sources .ld-src-tag{font-weight:500;color:var(--ink);letter-spacing:1.6px;text-transform:uppercase;font-size:9px;margin-right:6px}
+    .line-desc .ld-sources a{color:var(--beige-deep);border-bottom:1px solid var(--rule);text-decoration:none}
+    .line-desc .ld-sources a:hover{color:var(--ink);border-bottom-color:var(--ink)}
     .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
     .p-card{background:var(--paper);border:1px solid var(--rule);transition:.25s;display:block;position:relative}
     .p-card:hover{transform:translateY(-3px);border-color:var(--beige)}
@@ -335,6 +339,7 @@
       <h3 id="ldTitle">14 péptidos · 6 líneas · 1 estándar</h3>
       <p id="ldText">PEPTIQ organiza su catálogo en 6 líneas por objetivo. Cada péptido pertenece a una línea y puede combinarse en protocolos. Selecciona una línea para entender qué hace y para quién es.</p>
       <div class="ld-who" id="ldWho"><b>Para quién:</b> biohackers, clínicas estéticas, medicina deportiva, investigación.</div>
+      <div class="ld-sources" id="ldSources"></div>
     </div>
     <div class="product-grid" id="productGrid">
       <a href="productos/bpc-157.html" class="p-card" data-cat="wolverine">
@@ -573,37 +578,43 @@
       tag: 'Catálogo completo',
       title: '14 péptidos · 6 líneas · 1 solo estándar',
       text: 'Los péptidos son pequeñas "cartas de instrucciones" que tu cuerpo ya fabrica. Cuando envejeces o te lesionas, tu cuerpo envía menos. PEPTIQ los repone — son los mismos que tu cuerpo conoce, en pureza verificada. Elige una línea para ver qué hace cada uno.',
-      who: '<b>Para ti si:</b> quieres recuperarte más rápido, dormir mejor, frenar el envejecimiento, mejorar piel y cabello, o rendir más.'
+      who: '<b>Para ti si:</b> quieres recuperarte más rápido, dormir mejor, frenar el envejecimiento, mejorar piel y cabello, o rendir más.',
+      sources: ''
     },
     wolverine: {
       tag: 'Wolverine · Recuperación',
       title: 'Para que tu cuerpo sane más rápido.',
       text: 'Tu cuerpo ya sabe reparar un tendón, un músculo roto o un intestino inflamado — pero tarda semanas. Wolverine le dice a tus células que <b>manden más sangre, oxígeno y células reparadoras a la zona lesionada</b>. Como meter una cuadrilla de construcción al tejido que se rompió. Resultado: sanas en la mitad del tiempo.',
-      who: '<b>Para ti si:</b> tienes una lesión deportiva, tendinitis, cirugía reciente, dolor articular crónico, o problemas de estómago/intestino.'
+      who: '<b>Para ti si:</b> tienes una lesión deportiva, tendinitis, cirugía reciente, dolor articular crónico, o problemas de estómago/intestino.',
+      sources: '<span class="ld-src-tag">Fuentes</span> Chang CH et al. <em>J Appl Physiol</em> 2011 — BPC-157 acelera curación de tendón en modelo animal (<a href="https://pubmed.ncbi.nlm.nih.gov/21293447/" target="_blank" rel="noopener">PubMed 21293447</a>) · Seiwerth S et al. <em>Curr Pharm Des</em> 2018 — BPC-157 y angiogénesis (<a href="https://pubmed.ncbi.nlm.nih.gov/29345571/" target="_blank" rel="noopener">PubMed 29345571</a>) · Goldstein AL et al. <em>Ann NY Acad Sci</em> 2012 — TB-4 como péptido regenerativo multi-función (<a href="https://pubmed.ncbi.nlm.nih.gov/22882274/" target="_blank" rel="noopener">PubMed 22882274</a>) · Kannengiesser K et al. <em>Inflamm Bowel Dis</em> 2008 — KPV anti-inflamatorio intestinal (<a href="https://pubmed.ncbi.nlm.nih.gov/18200517/" target="_blank" rel="noopener">PubMed 18200517</a>)'
     },
     highlander: {
       tag: 'Highlander · Longevidad',
       title: 'Para envejecer más lento por dentro.',
       text: 'Con la edad, la "batería" de tus células (NAD+) baja al 50% — por eso te sientes más cansado, duermes peor y te recuperas lento. Highlander <b>recarga esa batería y protege los extremos de tu ADN</b> para que tus células se sigan copiando sanas. No es magia: es reponer lo que tu cuerpo fabricaba de joven y dejó de fabricar.',
-      who: '<b>Para ti si:</b> tienes 35+, te cansas más que antes, duermes mal, o quieres llegar a 80 con el cuerpo de alguien de 60.'
+      who: '<b>Para ti si:</b> tienes 35+, te cansas más que antes, duermes mal, o quieres llegar a 80 con el cuerpo de alguien de 60.',
+      sources: '<span class="ld-src-tag">Fuentes</span> Rajman L, Chwalek K, Sinclair DA. <em>Cell Metab</em> 2018 — Potencial terapéutico de moléculas que elevan NAD+ (<a href="https://pubmed.ncbi.nlm.nih.gov/29514064/" target="_blank" rel="noopener">PubMed 29514064</a>) · Verdin E. <em>Science</em> 2015 — NAD+ en envejecimiento y metabolismo (<a href="https://pubmed.ncbi.nlm.nih.gov/26785480/" target="_blank" rel="noopener">PubMed 26785480</a>) · Khavinson VK et al. <em>Bull Exp Biol Med</em> 2003 — Epithalon activa telomerasa en células humanas (<a href="https://pubmed.ncbi.nlm.nih.gov/14523535/" target="_blank" rel="noopener">PubMed 14523535</a>) · Anisimov VN, Khavinson VK. <em>Biogerontology</em> 2010 — Péptidos y longevidad (<a href="https://pubmed.ncbi.nlm.nih.gov/19802582/" target="_blank" rel="noopener">PubMed 19802582</a>)'
     },
     glow: {
       tag: 'Glow · Piel & cabello',
       title: 'Para regenerar lo que se ve.',
       text: 'Los péptidos de cobre <b>le dicen a tu piel que fabrique más colágeno</b> — la proteína que mantiene la piel firme y sin arrugas. Al cuero cabelludo le dan la orden de hacer crecer cabello nuevo y más grueso. Tu piel sabe regenerarse, solo que con la edad la señal se apaga. Estos péptidos la vuelven a prender.',
-      who: '<b>Para ti si:</b> notas arrugas, piel apagada, pérdida de cabello, o quieres piel más firme en 8 semanas.'
+      who: '<b>Para ti si:</b> notas arrugas, piel apagada, pérdida de cabello, o quieres piel más firme en 8 semanas.',
+      sources: '<span class="ld-src-tag">Fuentes</span> Pickart L, Margolina A. <em>Biomed Res Int</em> 2018 — GHK-Cu en remodelado cutáneo (<a href="https://pubmed.ncbi.nlm.nih.gov/29854759/" target="_blank" rel="noopener">PubMed 29854759</a>) · Pickart L. <em>J Biomater Sci Polym Ed</em> 2008 — GHK-Cu señalización regenerativa (<a href="https://pubmed.ncbi.nlm.nih.gov/18534080/" target="_blank" rel="noopener">PubMed 18534080</a>) · Pickart L et al. <em>Cosmetics</em> 2015 — GHK-Cu, expresión génica y antioxidantes (<a href="https://www.mdpi.com/2079-9284/2/3/236" target="_blank" rel="noopener">MDPI 2015</a>) · Pyo HK et al. <em>Biol Pharm Bull</em> 2007 — Péptidos de cobre estimulan folículo piloso (<a href="https://pubmed.ncbi.nlm.nih.gov/17202654/" target="_blank" rel="noopener">PubMed 17202654</a>)'
     },
     prime: {
       tag: 'Prime · Performance',
       title: 'Para producir tu propia hormona de crecimiento.',
       text: 'No inyectamos hormona — le pedimos a <b>tu cuerpo que haga la suya, como cuando tenías 20 años</b>. La hormona de crecimiento natural se libera mientras duermes: quema grasa visceral (la peligrosa de la panza), reconstruye músculo, y te hace dormir profundo. Con la edad se apaga. Prime vuelve a prender ese pulso nocturno.',
-      who: '<b>Para ti si:</b> tienes grasa abdominal que no se va, pierdes músculo, duermes fragmentado, o quieres recuperar composición corporal.'
+      who: '<b>Para ti si:</b> tienes grasa abdominal que no se va, pierdes músculo, duermes fragmentado, o quieres recuperar composición corporal.',
+      sources: '<span class="ld-src-tag">Fuentes</span> Teichman SL et al. <em>J Clin Endocrinol Metab</em> 2006 — CJC-1295 prolonga secreción de GH e IGF-1 en humanos (<a href="https://pubmed.ncbi.nlm.nih.gov/16352683/" target="_blank" rel="noopener">PubMed 16352683</a>) · Raun K et al. <em>Eur J Endocrinol</em> 1998 — Ipamorelin como secretagogo selectivo de GH (<a href="https://pubmed.ncbi.nlm.nih.gov/9849822/" target="_blank" rel="noopener">PubMed 9849822</a>) · Falutz J et al. <em>N Engl J Med</em> 2007 — Tesamorelin reduce grasa visceral en ensayo clínico fase III (<a href="https://pubmed.ncbi.nlm.nih.gov/18032763/" target="_blank" rel="noopener">PubMed 18032763</a>, FDA-aprobado para lipodistrofia) · Sinha DK et al. <em>Transl Androl Urol</em> 2020 — GH secretagogos revisión clínica (<a href="https://pubmed.ncbi.nlm.nih.gov/32257879/" target="_blank" rel="noopener">PubMed 32257879</a>)'
     },
     support: {
       tag: 'Support · Accesorios',
       title: 'Lo que necesitas para usar tu péptido.',
       text: 'Los péptidos vienen en polvo liofilizado (seco) — <b>necesitas mezclarlos con agua bacteriostática antes de usarlos</b>. Esta agua especial mantiene el péptido estable 30 días en refrigeración. Incluimos el agua gratis en órdenes superiores a $3,000 MXN.',
-      who: '<b>Para ti si:</b> compras cualquier péptido PEPTIQ. Es necesario para activarlo.'
+      who: '<b>Para ti si:</b> compras cualquier péptido PEPTIQ. Es necesario para activarlo.',
+      sources: '<span class="ld-src-tag">Fuente</span> USP &lt;797&gt; — Pharmaceutical Compounding Sterile Preparations (United States Pharmacopeia) define alcohol bencílico al 0.9% como conservador estándar en agua bacteriostática multi-dosis. Estabilidad de péptidos reconstituidos: ~28 días a 2-8°C.'
     }
   };
 
@@ -619,6 +630,9 @@
     document.getElementById('ldTitle').textContent = info.title;
     document.getElementById('ldText').innerHTML = info.text;
     document.getElementById('ldWho').innerHTML = info.who;
+    const srcEl = document.getElementById('ldSources');
+    srcEl.innerHTML = info.sources || '';
+    srcEl.style.display = info.sources ? '' : 'none';
   }
 
   const API_BASE = 'https://sara-backend.edson-633.workers.dev';
