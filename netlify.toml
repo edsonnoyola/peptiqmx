@@ -1,4 +1,60 @@
+[functions]
+  directory = "netlify/functions"
+  included_files = ["netlify/functions/peptiq-kb.md"]
+
 [[redirects]]
   from = "/verify/*"
   to = "/verify/index.html"
   status = 200
+
+[[redirects]]
+  from = "/api/assistant"
+  to = "/.netlify/functions/peptiq-assistant"
+  status = 200
+
+[[redirects]]
+  from = "/api/legal-record"
+  to = "/.netlify/functions/peptiq-legal-record"
+  status = 200
+
+[[redirects]]
+  from = "/api/reminder-optin"
+  to = "/.netlify/functions/peptiq-reminder-optin"
+  status = 200
+
+[functions."peptiq-reminder-cron"]
+  schedule = "*/15 * * * *"
+
+[functions."peptiq-stories-cron"]
+  schedule = "0 * * * *"
+
+[functions."peptiq-reels-cron"]
+  schedule = "0 * * * *"
+
+[functions."peptiq-edu-cron"]
+  schedule = "0 * * * *"
+
+# Daily ads report · 9am MX = 15:00 UTC
+[functions."peptiq-ads-daily-report"]
+  schedule = "0 15 * * *"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://sara-backend.edson-633.workers.dev https://hwyrxlnycrlgohrecbpx.supabase.co; img-src 'self' data: https:; frame-ancestors 'none'"
+    Cache-Control = "no-store, no-cache, must-revalidate, private"
