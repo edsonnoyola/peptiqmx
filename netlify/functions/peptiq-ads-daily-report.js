@@ -86,23 +86,40 @@ exports.handler = async () => {
 
   msg += `\n💬 Responde a Claude con qué activar/pausar.\nReglas: max $300/día · max 5 días.`;
 
-  // Send via SARA WhatsApp send endpoint
+  // Send via Resend email (Resend domain peptiqmx.com already verified)
+  const RESEND_KEY = process.env.RESEND_API_KEY || 're_QkbDhBw4_DuChcCdaVLDQ1AjUAG71XU7N';
+  const TO_EMAIL = process.env.ALERT_EMAIL || 'edson@marketingtdi.com';
+
+  const htmlBody = msg.replace(/\n/g, '<br>').replace(/  /g, '&nbsp;&nbsp;');
+  const subject = `PEPTIQ Daily Ads · ${today} · $${totalSpend.toFixed(0)} spend · ${totalLeads} leads`;
+
+  let emailSent = false, emailErr = null;
   try {
-    const sendRes = await fetch(`${SARA}/send-whatsapp`, {
+    const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({to: WA_NUMBER, message: msg})
+      headers: {
+        'Authorization': `Bearer ${RESEND_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        from: 'PEPTIQ Ads <ads@peptiqmx.com>',
+        to: [TO_EMAIL],
+        subject,
+        text: msg,
+        html: `<pre style="font-family: ui-monospace,monospace; font-size: 13px; white-space: pre-wrap;">${msg}</pre>`
+      })
     });
-    const sendData = await sendRes.json().catch(() => ({}));
-    return { statusCode: 200, body: JSON.stringify({
-      sent: sendRes.ok,
-      sara_response: sendData,
-      report: { total_spend: totalSpend, total_leads: totalLeads, ads: recommendations.length }
-    }) };
+    const d = await r.json();
+    emailSent = r.ok;
+    if (!r.ok) emailErr = d;
   } catch (e) {
-    return { statusCode: 200, body: JSON.stringify({
-      whatsapp_send_failed: String(e),
-      report_built: msg.slice(0, 500)
-    }) };
+    emailErr = String(e);
   }
+
+  return { statusCode: 200, body: JSON.stringify({
+    email_sent: emailSent,
+    email_error: emailErr,
+    report: { total_spend: totalSpend, total_leads: totalLeads, ads_count: recommendations.length },
+    preview: msg.slice(0, 800)
+  }) };
 };
