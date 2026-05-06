@@ -1,0 +1,15 @@
+SUBJECT: Catálogo péptidos — {nombre_negocio}
+DELAY DAYS: 8
+
+--- BODY ---
+Hola {nombre},
+
+Te comparto nuestro catálogo para cuando lo necesites:
+https://peptiqmx.com/profesionales
+
+Sin compromiso. Quedo a tus órdenes.
+
+{firma}
+{whatsapp_link}
+
+⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador.

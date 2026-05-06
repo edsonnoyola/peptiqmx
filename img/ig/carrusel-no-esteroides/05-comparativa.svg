@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="redSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a0606" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="goldSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+    <clipPath id="leftClip"><rect x="0" y="0" width="540" height="1080"/></clipPath>
+    <clipPath id="rightClip"><rect x="540" y="0" width="540" height="1080"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#leftClip)">
+    <image xlink:href="https://peptiqmx.com/img/covers/prime-hero.png" x="0" y="0" width="540" height="1080" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="0" y="0" width="540" height="1080" fill="url(#redSide)"/>
+  </g>
+  <g clip-path="url(#rightClip)">
+    <image xlink:href="https://peptiqmx.com/img/covers/glow-hero.png" x="540" y="0" width="540" height="1080" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="540" y="0" width="540" height="1080" fill="url(#goldSide)"/>
+  </g>
+
+  <line x1="540" y1="160" x2="540" y2="990" stroke="#C6A969" stroke-width="0.6" opacity="0.5" stroke-dasharray="4 6"/>
+
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.6"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="10">04 · LADO A LADO</text>
+
+  <text x="270" y="220" font-family="'Inter',sans-serif" font-size="18" fill="#ff7878" text-anchor="middle" letter-spacing="6">HORMONA SINTÉTICA</text>
+  <text x="810" y="220" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#E5C981" text-anchor="middle" letter-spacing="6" font-style="italic">PÉPTIDO</text>
+
+  <g font-family="'Inter',sans-serif" font-size="17">
+    <text x="270" y="320" fill="#d4c8a8" text-anchor="middle">✗ Sustituye producción</text>
+    <text x="270" y="365" fill="#d4c8a8" text-anchor="middle">✗ Apaga sistema endógeno</text>
+    <text x="270" y="410" fill="#d4c8a8" text-anchor="middle">✗ Vida media larga</text>
+    <text x="270" y="455" fill="#d4c8a8" text-anchor="middle">✗ Difícil de ajustar</text>
+    <text x="270" y="500" fill="#d4c8a8" text-anchor="middle">✗ Genera dependencia</text>
+    <text x="270" y="545" fill="#d4c8a8" text-anchor="middle">✗ Efectos sistémicos</text>
+    <text x="270" y="590" fill="#d4c8a8" text-anchor="middle">✗ Recuperación: meses</text>
+
+    <text x="810" y="320" fill="#f0e4c8" text-anchor="middle"><tspan fill="#E5C981">✓</tspan> Activa producción</text>
+    <text x="810" y="365" fill="#f0e4c8" text-anchor="middle"><tspan fill="#E5C981">✓</tspan> Despierta sistema</text>
+    <text x="810" y="410" fill="#f0e4c8" text-anchor="middle"><tspan fill="#E5C981">✓</tspan> Vida media corta</text>
+    <text x="810" y="455" fill="#f0e4c8" text-anchor="middle"><tspan fill="#E5C981">✓</tspan> Dosis ajustable</text>
+    <text x="810" y="500" fill="#f0e4c8" text-anchor="middle"><tspan fill="#E5C981">✓</tspan> Sin dependencia</text>
+    <text x="810" y="545" fill="#f0e4c8" text-anchor="middle"><tspan fill="#E5C981">✓</tspan> Acción dirigida</text>
+    <text x="810" y="590" fill="#f0e4c8" text-anchor="middle"><tspan fill="#E5C981">✓</tspan> Recuperación: días</text>
+  </g>
+
+  <text x="540" y="900" font-family="'Playfair Display',Georgia,serif" font-size="32" fill="url(#gold)" text-anchor="middle" font-style="italic">Mecanismo opuesto. Resultado opuesto.</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.6"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">05 / 08</text>
+</svg>

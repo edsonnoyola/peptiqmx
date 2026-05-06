@@ -1,0 +1,358 @@
+lead_id,email,name_full,first_name,nombre_negocio,category,city
+15,dra.jaber@hotmail.com,Medicina estética Dra. Carla Jaber,Dra. Carla,Medicina estética Dra. Carla Jaber,estetica,Querétaro
+47,paulinans@hotmail.es,Nutriologa Paulina Novelo Soto,Dra. Paulina,Nutriologa Paulina Novelo Soto,nutriologos,Querétaro
+30,info@latinotype.com,Alteal Médica,,Alteal Médica,estetica,Mérida
+46,skinhealthcentermid@gmail.com,skin & health center Clínica de Medicina Estética,,skin & health center Clínica de Medicina E...,estetica,Mérida
+53,dra.alondra.cirujana@gmail.com,Clínica de Obesidad Dra. Ruelas,Dra. Ruelas,Clínica de Obesidad Dra. Ruelas,peso,Querétaro
+55,life.metabolism.center@gmail.com,Life Centro de Obesidad y Metabolismo - Cirugía Bariátrica,,Life Centro de Obesidad y Metabolismo,peso,Querétaro
+59,bariatriafuncionalqro21@gmail.com,Bariatría Clínica & Nutrición Funcional en Querétaro,,Bariatría Clínica & Nutrición Funcional en...,peso,Querétaro
+63,clinica@obesidadymetabolismo.com,Dr. Marcos Ponce de León Espíndola - Gastrocirujano,Dr. Marcos,Dr. Marcos Ponce de León Espíndola,peso,Querétaro
+76,dr.fnavarro@outlook.com,"Dr. Fernando Navarro Hernández, Cirujano Bariatra",Dr. Fernando,Dr. Fernando Navarro Hernández,peso,Querétaro
+78,info@antiobesidad.mx,ANTIOBESIDAD MX,,ANTIOBESIDAD MX,peso,Querétaro
+91,dra.vimukti@cirugiabariatricamerida.com,"Dra. Vimukti Carrillo, Cirugía Bariátrica en Merida",Dra. Vimukti,Dra. Vimukti Carrillo,peso,Mérida
+86,disenitosenartesania@hotmail.com,Belleza Organica Spa,,Belleza Organica Spa,spa_medico,Querétaro
+88,ventas@spasilhouette.mx,Silhouette Spa by Xóchitl,,Silhouette Spa by Xóchitl,spa_medico,Querétaro
+108,alamos.qro@modelartspa.com.mx,Model Art Spa Álamos,,Model Art Spa Álamos,spa_medico,Querétaro
+105,hola@genumet.com,Genumet,,Genumet,peso,Mérida
+115,comunicacion@cemsureste.com,CEM Centro de Especialidades Médicas del Sureste,,CEM Centro de Especialidades Médicas del S...,peso,Mérida
+126,plazaoriente@siluets.net,Siluets & Prodiet Altabrisa Mérida,,Siluets & Prodiet Altabrisa Mérida,spa_medico,Mérida
+140,contacto@dermasanfrancisco.com,Consultorio Dra María Eugenia Carvajal,Dra. María,Consultorio Dra María Eugenia Carvajal,dermatologia,Querétaro
+142,contacto@miestetic.com.mx,Miestetic Querétaro.,,Miestetic Querétaro.,dermatologia,Querétaro
+144,dermaweaver@hotmail.com,Dra. Mary Ann Weaver Velasco,Dra. Mary,Dra. Mary Ann Weaver Velasco,dermatologia,Querétaro
+131,spalereve@gmail.com,Clínica y Spa Le Réve,,Clínica y Spa Le Réve,spa_medico,Mérida
+150,hola@maospa.mx,MAŌ SPA,,MAŌ SPA,spa_medico,Mérida
+155,corporativo@biohormona.com,Clínica Biohormona Queretaro: Hormonas bioidénticas - Menopausia - Andropausia,,Clínica Biohormona Queretaro: Hormonas bio...,peptidos,Querétaro
+157,contact@sansoxygen.com,Centro Engel Querétaro,,Centro Engel Querétaro,peptidos,Querétaro
+159,contacto@medicafertil.com.mx,Médica Fértil,,Médica Fértil,peptidos,Querétaro
+184,drhormonas@gmail.com,Dr. Héctor de la Garza Hormonas Bioidénticas Mérida,Dr. Héctor,Dr. Héctor de la Garza Hormonas Bioidéntic...,peptidos,Mérida
+188,dra.estelagarcia@hotmail.com,DRA. ESTELA GARCÍA PACHECO,Dra. ESTELA,DRA. ESTELA GARCÍA PACHECO,peptidos,Mérida
+182,saludlarios@hotmail.com,"OZONE&HEALTH , CLINICA DE HERIDAS Y PIE DIABETICO",,OZONE&HEALTH,anti_aging,Puebla
+191,admin@clinicaidilico.com.mx,Idílico,,Idílico,estetica,Puebla
+193,control@bodylink.com.mx,BodyLink México - Clínica Estética,,BodyLink México,estetica,Puebla
+197,bariderm.puebla@gmail.com,BARIDERM | Dr. Diego Arturo Vázquez Herrera | Clínica de medicina estética y metabolismo,Dr. Diego,BARIDERM | Dr. Diego Arturo Vázquez Herrer...,estetica,Puebla
+203,contact@regeneristherapy.com,Stem Cells | IV Therapy | Regeneris Therapy,,Stem Cells | IV Therapy | Regeneris Therapy,anti_aging,Cancún
+207,mariamendozaarcos@gmail.com,"Vive Medical Spa / Criolipolisis, Lipoenzimas, Fillers, Botox",,Vive Medical Spa / Criolipolisis,anti_aging,Cancún
+209,info@ckmstemcells.com,CKM Stem Cells,,CKM Stem Cells,anti_aging,Cancún
+211,info@worldstemcellsclinic.com,World Stem Cells Clinic,,World Stem Cells Clinic,anti_aging,Cancún
+215,medicinadeportiva@live.com,Olympia Medicina Integral del Deporte,,Olympia Medicina Integral del Deporte,anti_aging,Cancún
+217,info@adorespacancun.com,"Adore MediSpa | Botox, Células Madre y Medicina Estética Regenerativa en Cancún",,Adore MediSpa | Botox,anti_aging,Cancún
+218,info@hospitalgalenia.com,Hospital Galenia,,Hospital Galenia,anti_aging,Cancún
+226,claunateras@hotmail.com,Éternité Cancún medicina estética y anti-age,,Éternité Cancún medicina estética y anti-age,estetica,Cancún
+221,support@avena.io,Nutrióloga deportiva Lezli Rodríguez / Consultorio de nutrición,Dra. deportiva,Nutrióloga deportiva Lezli Rodríguez / Con...,nutriologos,Puebla
+235,mariane@nutriologapuebla.com.mx,Nutrinet by Marine Dominguez,,Nutrinet by Marine Dominguez,nutriologos,Puebla
+243,info@nutriadn.com,nutriADN Puebla,,nutriADN Puebla,nutriologos,Puebla
+247,nutryvive@gmail.com,Nutryvive,,Nutryvive,nutriologos,Puebla
+248,dranazlymendezglz@gmai.com,ELITE AESTHETICS | Medicina Estética en Cancún,,ELITE AESTHETICS | Medicina Estética en Ca...,estetica,Cancún
+256,nutrial.mx@gmail.com,Nutrióloga Clínica Integral Cancún,Dra. Clínica,Nutrióloga Clínica Integral Cancún,nutriologos,Cancún
+260,citas.info@danielcamelo.net,Lic. Daniel Camelo | Nutriólogo Clínico Especialista,Lic. Daniel,Lic. Daniel Camelo | Nutriólogo Clínico Es...,nutriologos,Cancún
+266,info@nutrimet.com.mx,NUTRIMET VOLCANES,,NUTRIMET VOLCANES,peso,Puebla
+271,contacto@cirujanobariatraenpuebla.com,Cirujano Bariatra – Doctores Especialistas,,Cirujano Bariatra – Doctores Especialistas,peso,Puebla
+273,drespinosa.cirugia@gmail.com,"Dr. Omar Espinosa. Cirujano General, Cirujano Bariátra Certificado En Puebla",Dr. Omar,Dr. Omar Espinosa. Cirujano General,peso,Puebla
+276,contacto@medicanbariatrics.com,Medican Bariatrics,,Medican Bariatrics,peso,Puebla
+285,drvicentelopez@gmail.com,Newbe Slim Cancún by Dr Vicente López Kavanagh,Dr. Vicente,Newbe Slim Cancún by Dr Vicente López Kava...,peso,Cancún
+288,milenabbrandao@gmail.com,"Dra Andrea Torres Jiménez, Internista y Bariatra Clínico",Dra. Andrea,Dra Andrea Torres Jiménez,peso,Puebla
+295,info@antiobesitycenter.com,Antiobesity Center,,Antiobesity Center,peso,Cancún
+309,contacto@ultrasveltaspapostquirurgico.com.mx,Ultrasvelta Spa Post Quirúrgico,,Ultrasvelta Spa Post Quirúrgico,spa_medico,Cancún
+325,usuario@dominio.com,ETERNAL,,ETERNAL,spa_medico,Cancún
+300,satoripuebla@gmail.com,Satori Puebla,,Satori Puebla,spa_medico,Puebla
+308,gerencia@zendia.mx,ZENDIA Beauty Care & Spa,,ZENDIA Beauty Care & Spa,spa_medico,Puebla
+322,anahataspamx@gmail.com,Anahata Spa & Botica,,Anahata Spa & Botica,spa_medico,Puebla
+332,consultorio750@gmail.com,Dra. Diana Isabel Morán Maese,Dra. Diana,Dra. Diana Isabel Morán Maese,dermatologia,Puebla
+344,amaysa04@yahoo.com.mx,AMAYSA DERMATOLOGÍA DRA. ADRIANA MAY,Dra. ADRIANA,AMAYSA DERMATOLOGÍA DRA. ADRIANA MAY,dermatologia,Puebla
+331,drjuliasoruchan@gmail.com,Dra. Julia Soruchan,Dra. Julia,Dra. Julia Soruchan,dermatologia,Cancún
+339,dermatologiacosmetica2014@gmail.com,Doctora Idalia Aguilar Domínguez,Dra. Idalia,Doctora Idalia Aguilar Domínguez,dermatologia,Cancún
+349,beglow.mexico@gmail.com,"BeGlow (Tratamientos para acné, eliminación de estrías, melasma y control de peso)",,BeGlow (Tratamientos para acné,dermatologia,Cancún
+362,info@ciclicamed.mx,CÍCLICA,,CÍCLICA,peptidos,Puebla
+559,uderma.farmacia@gmail.com,Clínica Dermatologica | uDerma León,,Clínica Dermatologica | uDerma León,dermatologia,León
+366,ginecomed210@gmail.com,Ginecóloga en Cancún Dra. Ana Cristina Mota,Dra. Ana,Ginecóloga en Cancún Dra. Ana Cristina Mota,peptidos,Cancún
+374,contacto@rilassareclinic.com,Células Madre en Tijuana | Stem Cells Tijuana | Rilassare,,Células Madre en Tijuana | Stem Cells Tiju...,anti_aging,Tijuana
+377,innova.medicinaregenerativa@gmail.com,Innova Medical Health Center ( medicina regenerativa/sueros vitaminados),,Innova Medical Health Center ( medicina re...,anti_aging,Tijuana
+378,carabellaclinic@gmail.com,Carabella Clinic,,Carabella Clinic,anti_aging,Tijuana
+384,cellstimetj@gmail.com,Medicina regenerativa - Doctores Especialistas,,Medicina regenerativa,anti_aging,Tijuana
+386,info@horizontijuana.com,"Horizon Pain, Metabolic and stem cell center",,Horizon Pain,anti_aging,Tijuana
+394,info@amunamedicalspa.com,AMUNA Medical Spa,,AMUNA Medical Spa,estetica,Tijuana
+403,gynmed.mkt@gmail.com,"Dra. Brenda Moreno, Médico Estético",Dra. Brenda,Dra. Brenda Moreno,estetica,Tijuana
+405,vivemedspa@vivemedgroup.com,Vive Med SPA / Botox & Fillers Tijuana,,Vive Med SPA / Botox & Fillers Tijuana,estetica,Tijuana
+411,nutricionmichellesanchez@gmail.com,Nutrióloga Michelle Sánchez,Dra. Michelle,Nutrióloga Michelle Sánchez,nutriologos,Tijuana
+416,info@nutresmg.com,Nutres,,Nutres,nutriologos,Tijuana
+418,info@nancyverdinmd-ogenix.com,Dra. Nancy Verdín Medicina Estética y Regenerativa,Dra. Nancy,Dra. Nancy Verdín Medicina Estética y Rege...,nutriologos,Tijuana
+419,medico_naturista@hotmail.com,Salud y Nutrición / Medico Naturista,,Salud y Nutrición / Medico Naturista,nutriologos,Tijuana
+420,iruy.marin@gmail.com,NUTRICION TIJUANA,,NUTRICION TIJUANA,nutriologos,Tijuana
+422,info@drrenearmenta.com,Dr. Rene Armenta - Cirujano Bariatra en Tijuana,Dr. Rene,Dr. Rene Armenta,peso,Tijuana
+423,obn4me@gmail.com,Obesity Not 4 Me,,Obesity Not 4 Me,peso,Tijuana
+426,info@tijuanabariatrics.com,Tijuana Bariatrics,,Tijuana Bariatrics,peso,Tijuana
+428,consultasnutriologakenyalg@gmail.com,Nutrióloga Kenya LG,Dra. Kenya,Nutrióloga Kenya LG,peso,Tijuana
+430,contact@alobariatrics.com,ALO Bariatrics,,ALO Bariatrics,peso,Tijuana
+435,dr.garciavaldez@hotmail.com,Dr. Romeo García | Cirugía de Vesícula y Hernias en Tijuana,Dr. Romeo,Dr. Romeo García | Cirugía de Vesícula y H...,peso,Tijuana
+439,admissionsmaytorena@gmail.com,CMB Centro Médico Bariátric,,CMB Centro Médico Bariátric,peso,Tijuana
+440,roberto@katrank.com,Dr. Edwin Guerrero,Dr. Edwin,Dr. Edwin Guerrero,peso,Tijuana
+442,info@sanctuary-medspa.com,My Sanctuary Med Spa Tijuana & Beauty Center,,My Sanctuary Med Spa Tijuana & Beauty Center,spa_medico,Tijuana
+444,belletzaspa@gmail.com,Belletza Medica Spa,,Belletza Medica Spa,spa_medico,Tijuana
+447,scelvite@gmail.com,SCelvite Spa – Rejuvenecimiento Facial y Corporal,,SCelvite Spa – Rejuvenecimiento Facial y C...,spa_medico,Tijuana
+449,info@dmedicspa.com,D Medic Spa,,D Medic Spa,spa_medico,Tijuana
+463,glopezw@hotmail.com,Dra. Gloria M. López Wence,Dra. Gloria,Dra. Gloria M. López Wence,dermatologia,Tijuana
+467,jon.miller@gmail.com,Avanti Derma,,Avanti Derma,dermatologia,Tijuana
+472,drjavierpiri@gmail.com,Dr Javier Piri Ginecólogo Especialista en Fertilidad & Cirugía de mínima invasión en Tijuana,Dr. Javier,Dr Javier Piri Ginecólogo Especialista en ...,peptidos,Tijuana
+474,info@vidawellnessandbeauty.com,VIDA Wellness & Beauty Center,,VIDA Wellness & Beauty Center,peptidos,Tijuana
+499,mendaraclinica@outlook.es,MENDARA CLINICA Y SPA,,MENDARA CLINICA Y SPA,estetica,León
+519,info@doctormadrigal.com,Dr. Marco Antonio Madrigal Téllez - Cirujano Bariatra en León,Dr. Marco,Dr. Marco Antonio Madrigal Téllez,peso,León
+522,dr.alatorre.adame@gmail.com,Cirugía Bariátrica y Obesidad León - Dr. Roberto Alatorre Adame,Dr. Roberto,Cirugía Bariátrica y Obesidad León,peso,León
+532,leon@modelartspa.com,Model Art Spa León,,Model Art Spa León,spa_medico,León
+537,recepcion@casalua.life,Spa Casa Lúa,,Spa Casa Lúa,spa_medico,León
+579,ventas@holdingbit.com,Dermatólogo en León altaDERMA,,Dermatólogo en León altaDERMA,dermatologia,León
+607,hola@zelleklinik.com,Zelleklinik,,Zelleklinik,anti_aging,Aguascalientes
+633,empresas@hospitalesmac.com,Hospital MAC Aguascalientes Norte,,Hospital MAC Aguascalientes Norte,anti_aging,Aguascalientes
+645,hola@dvigna.com.mx,Clinica D'vigna,,Clinica D'vigna,estetica,Aguascalientes
+674,nutre.tee00@gmail.com,Lic. Lupita Fernandez - Nutrióloga en Aguascalientes,Lic. Lupita,Lic. Lupita Fernandez,nutriologos,Aguascalientes
+678,nutriologofernandomarzuka@gmail.com,Fernando Marzuka - Nutrición Integral,,Fernando Marzuka,nutriologos,Aguascalientes
+688,scienceandhealth5@gmail.com,SCIENCE AND HEALTH,,SCIENCE AND HEALTH,nutriologos,Aguascalientes
+719,vdlmed@hotmail.com,DR. VICENTE DELGADO LOPEZ,Dr. VICENTE,DR. VICENTE DELGADO LOPEZ,peso,Aguascalientes
+725,citas@gastroags.com,Gastro. Especialidades Médicas Digestivas,,Gastro. Especialidades Médicas Digestivas,peso,Aguascalientes
+806,draheiditrejo@gmail.com,GynFertil,,GynFertil,peptidos,Aguascalientes
+819,frmgyne@gmail.com,"Gyne, Felipe González Serrano, Francisco Ruiloba Madero",,Gyne,peptidos,Aguascalientes
+839,atencion@dermatiko.com,"Dermo Organic Center, Skin Care & Medical Spa, DERMATIKO",,Dermo Organic Center,anti_aging,San Luis Potosí
+845,doctora.asereth@gmail.com,Dra. Asereth Guerrero,Dra. Asereth,Dra. Asereth Guerrero,anti_aging,San Luis Potosí
+962,contacto@karacuerpo.com,Kara & Cuerpo Centro-Spa,,Kara & Cuerpo Centro-Spa,spa_medico,San Luis Potosí
+983,guillermodavalosdiazinfante@gmail.com,Dra. Sara Garcia Castillo,Dra. Sara,Dra. Sara Garcia Castillo,dermatologia,San Luis Potosí
+993,e_espinalp@hotmail.com,Dra. Liliana Elizabeth Espinal Pérez,Dra. Liliana,Dra. Liliana Elizabeth Espinal Pérez,dermatologia,San Luis Potosí
+1033,info@eternal.mx,Centro Médico Eternal Saltillo,,Centro Médico Eternal Saltillo,anti_aging,Saltillo
+1070,hola@skinklinik.com.mx,Skinklinik Med Spa,,Skinklinik Med Spa,estetica,Saltillo
+1075,macfisioyspa@gmail.com,Casa Mac By Mac Fisio y Spa,,Casa Mac By Mac Fisio y Spa,estetica,Saltillo
+1107,neuropatiaclinic@gmail.com,CIANYD Centro Integral Para la Atención Neuropatía y Dolor,,CIANYD Centro Integral Para la Atención Ne...,anti_aging,Ciudad de México
+1108,informes@biocentermx.com,Biocenter Células Madre y Terapia Celular,,Biocenter Células Madre y Terapia Celular,anti_aging,Ciudad de México
+1112,info@blueskyclinic.com.mx,Blue Sky Clinic - Blue Spa. Coyoacán,,Blue Sky Clinic,anti_aging,Ciudad de México
+1113,contacto@lonvida.com,Lonvida Polanco,,Lonvida Polanco,anti_aging,Ciudad de México
+1114,contacto@clinica-aurus.com,Clínica Aurus Polanco,,Clínica Aurus Polanco,anti_aging,Ciudad de México
+1115,drosorio@regenerage.clinic,RegenerAge Elite Clinic,,RegenerAge Elite Clinic,anti_aging,Ciudad de México
+1117,info@dermohealth.mx,DermoHealth,,DermoHealth,anti_aging,Ciudad de México
+1122,bcmedicinaestetica@gmail.com,BCM Clínica de medicina estética Belleza con Certeza Medica,,BCM Clínica de medicina estética Belleza c...,estetica,Ciudad de México
+1124,sofialopezlvdt@gmail.com,"Medicina Estética en Narvarte, CDMX - Dra. Sofía López",Dra. Sofía,Medicina Estética en Narvarte,estetica,Ciudad de México
+1128,eternalglow.medicalaesthetic@gmail.com,Eternal Glow CDMX Roma Norte (English speaking team) - Botox | Hilos tensores PDO | Sculptra | PDRN Salmón | Fillers & more,,Eternal Glow CDMX Roma Norte (English spea...,estetica,Ciudad de México
+1134,contacto@dralexparra.com,Dr. Alex Parra Medicina Estética,Dr. Alex,Dr. Alex Parra Medicina Estética,estetica,Ciudad de México
+1138,info@drhiramelizondo.com,Dr. Hiram Elizondo - Master en Medicina Estética y Longevidad,Dr. Hiram,Dr. Hiram Elizondo,estetica,Ciudad de México
+1139,myr.nutrition@gmail.com,M&R Nutrición Funcional.,,M&R Nutrición Funcional.,nutriologos,Ciudad de México
+1146,contacto@yamelnutricion.com,Yamel Nutrición Medicina Funcional Nutrióloga Lindavista,Dra. Lindavista,Yamel Nutrición Medicina Funcional Nutriól...,nutriologos,Ciudad de México
+1150,jcvilledaf@gmail.com,Nutriólogo Deportivo CDMX Fitness Coach Mx Juan Carlos Villeda,,Nutriólogo Deportivo CDMX Fitness Coach Mx...,nutriologos,Ciudad de México
+1153,info@drluigivilchis.com,Dr. Luigi Vilchis Medicina Funcional,Dr. Luigi,Dr. Luigi Vilchis Medicina Funcional,nutriologos,Ciudad de México
+1154,doctoralbertomendez@gmail.com,Medicina Alternativa en CDMX - Dr. Alberto Méndez Campos,Dr. Alberto,Medicina Alternativa en CDMX,nutriologos,Ciudad de México
+1162,slimbodycentercdmx@gmail.com,Slim Body Center - Dr Jesús Emmanuel Rodríguez Silverio - Cirujano Bariatra en CDMX,Dr. Jesús,Slim Body Center,peso,Ciudad de México
+1170,luis_valdes_o@hotmail.com,Centro De Bariatria,,Centro De Bariatria,peso,Ciudad de México
+1178,contacto@eternalspa.com.mx,"Eternal Spa, Massages, Tratamientos Corporales, Faciales, Roma y Condesa",,Eternal Spa,spa_medico,Ciudad de México
+1180,kcabelle@hotmail.com,La Belle,,La Belle,spa_medico,Ciudad de México
+1182,haspamx@gmail.com,Xa Spa Medic & Organic Beauty Roma Norte,,Xa Spa Medic & Organic Beauty Roma Norte,spa_medico,Ciudad de México
+1184,contacto@vitalispa.com.mx,Vitalí,,Vitalí,spa_medico,Ciudad de México
+1191,impallari@gmail.com,"ME AMO. Skin, Body and Massage",,ME AMO. Skin,spa_medico,Ciudad de México
+1192,tu@correo.com,Alta Especialidad Médica Roma CÓRDOBA 23,,Alta Especialidad Médica Roma CÓRDOBA 23,spa_medico,Ciudad de México
+1193,contacto@iikspa.com.mx,iik´spa,,iik´spa,spa_medico,Ciudad de México
+1194,wellnesscenter.csc@gmail.com,CSC Wellness Center | Spa Colonia Nápoles,,CSC Wellness Center | Spa Colonia Nápoles,spa_medico,Ciudad de México
+1197,team@latofonts.com,Dra. Gabriela Castrejón Dermatóloga,Dra. Gabriela,Dra. Gabriela Castrejón Dermatóloga,dermatologia,Ciudad de México
+1200,atencion_cliente@skingroup.com.mx,Skingroup Coapa - Dermatólogos en CDMX Sur,,Skingroup Coapa,dermatologia,Ciudad de México
+1201,hola@studioderma.mx,Dra. Rosario Pérez - Dermatóloga,Dra. Rosario,Dra. Rosario Pérez,dermatologia,Ciudad de México
+1202,contacto@skininstitute.com.mx,Skin Institute Clínica Dermatológica,,Skin Institute Clínica Dermatológica,dermatologia,Ciudad de México
+1209,recepcion@juvenaliabrio.com,Juvenalia Brío | CDMX - Botox & Hydrafacial,,Juvenalia Brío | CDMX,dermatologia,Ciudad de México
+1211,admin@dermawiseclinic.com,Dermawise Clínica Dermatológica,,Dermawise Clínica Dermatológica,dermatologia,Ciudad de México
+1215,cdt@dermatologicotennyson.com,Centro Dermatológico Tennyson,,Centro Dermatológico Tennyson,dermatologia,Ciudad de México
+1216,info@hormona-bioidentica.com,Centro De Reemplazo Hormonal,,Centro De Reemplazo Hormonal,peptidos,Ciudad de México
+1221,informes@horusclinicamexico.com,Dr Rosalío Valderrama Tellez,Dr. Rosalío,Dr Rosalío Valderrama Tellez,peptidos,Ciudad de México
+1223,renovarsce@gmail.com,Renovarsce - Medicina Regenerativa,,Renovarsce,anti_aging,Monterrey
+1225,contact@auraregenerative.com,Aura Regenerative Center,,Aura Regenerative Center,anti_aging,Monterrey
+1229,clinicadecelulasmadre@gmail.com,Células Madre en Monterrey | EliCells Clínica de Células Madre y Acupuntura,,Células Madre en Monterrey | EliCells Clín...,anti_aging,Monterrey
+1232,beyouclinica128@gmail.com,Dra. Gina Gonzalez - Medicina Estética en Monterrey,Dra. Gina,Dra. Gina Gonzalez,anti_aging,Monterrey
+1249,drapatycantu@gmail.com,Dra. Paty Cantú - Medicina Estética,Dra. Paty,Dra. Paty Cantú,estetica,Monterrey
+1251,admon@armone.mx,Armoné Medicina Estética,,Armoné Medicina Estética,estetica,Monterrey
+1263,info@drdavidgarita.com,Doctor en Medicina Funcional y Alternativa Integr,Dr. en,Doctor en Medicina Funcional y Alternativa...,nutriologos,Monterrey
+1268,nut.caroarizmendi@gmail.com,Carolina Arizmendi - Nutrióloga Funcional,Dra. Funcional,Carolina Arizmendi,nutriologos,Monterrey
+1271,medicinaconxciencia@gmail.com,Dr. Rodrigo Conxciencia Medicina Funcional Monterrey,Dr. Rodrigo,Dr. Rodrigo Conxciencia Medicina Funcional...,nutriologos,Monterrey
+1276,contacto@drsimental.com,Nutrióloga Celina Guerra de Simental - Nutri ADN - Nutrigenómica,Dra. Celina,Nutrióloga Celina Guerra de Simental,nutriologos,Monterrey
+1280,bariatriq@gmail.com,Cirujano Bariatra en Monterrey | Dr. Quetzalli Limas,Dr. Quetzalli,Cirujano Bariatra en Monterrey | Dr. Quetz...,peso,Monterrey
+1281,noe@bariatrimedic.com,BARIATRIMEDIC,,BARIATRIMEDIC,peso,Monterrey
+1283,info@mtybariatrics.com,MTY Bariatrics,,MTY Bariatrics,peso,Monterrey
+1289,contacto@cenutre.com.mx,Ce Nutre,,Ce Nutre,peso,Monterrey
+1294,info@bemybariatric.com,"Dr. Luis Alberto Zavala Salazar, Cirujano Bariatra Certificado",Dr. Luis,Dr. Luis Alberto Zavala Salazar,peso,Monterrey
+1295,formasaludable@outlook.com,Forma Saludable | Dra. Emma Macías,Dra. Emma,Forma Saludable | Dra. Emma Macías,peso,Monterrey
+1303,clientes@casaazulspa.mx,Casa Azul SPA Sucursal Obispado,,Casa Azul SPA Sucursal Obispado,spa_medico,Monterrey
+1304,info@mantramindbodyspa.com,Mantra Mind and Body Spa,,Mantra Mind and Body Spa,spa_medico,Monterrey
+1306,store@thann.com.mx,"Thann Sanctuary Spa, México",,Thann Sanctuary Spa,spa_medico,Monterrey
+1307,antienvejecimientoysalud@gmail.com,Medical Spa - Medical Tourism,,Medical Spa,spa_medico,Monterrey
+1311,admin@spalmira.com.mx,Spalmira,,Spalmira,spa_medico,Monterrey
+1312,azuleno@azuleno.com.mx,Azuleno Spa,,Azuleno Spa,spa_medico,Monterrey
+1315,dermamexico@hotmail.com,Dra. Cristina Cortés - Dermatología y Cirugía Dermatológica | Monterrey,Dra. Cristina,Dra. Cristina Cortés,dermatologia,Monterrey
+1318,dr.josealbertogarcia@gmail.com,Dr. José Alberto García Lozano - Dermatología y Cirugía Dermatológica,Dr. José,Dr. José Alberto García Lozano,dermatologia,Monterrey
+1319,dermasmedical@gmail.com,DRA BEATRIZ CALDERON LOZANO,Dra. BEATRIZ,DRA BEATRIZ CALDERON LOZANO,dermatologia,Monterrey
+1322,citas@cutique.com.mx,Cutique The Derma Company,,Cutique The Derma Company,dermatologia,Monterrey
+1325,esmeraldaorigen@gmail.com,Medipiel,,Medipiel,dermatologia,Monterrey
+1328,premiumdermatology@gmail.com,Dr. Juan Carlos Robles Méndez Dermatólogo,Dr. Juan,Dr. Juan Carlos Robles Méndez Dermatólogo,dermatologia,Monterrey
+1342,dr.marcelogarzaa@gmail.com,Dr. Luis Marcelo Garza Ayala,Dr. Luis,Dr. Luis Marcelo Garza Ayala,peptidos,Monterrey
+1348,micah@micahrich.com,"Dra. Andrea Pintor, Regenerative Medicine Guadalajara",Dra. Andrea,Dra. Andrea Pintor,anti_aging,Guadalajara
+1349,contacto@biotegnology.mx,Biotegnology Medical Center,,Biotegnology Medical Center,anti_aging,Guadalajara
+1352,cellstimemx@gmail.com,Medicina regenerativa - Doctores Especialistas,,Medicina regenerativa,anti_aging,Guadalajara
+1353,info@cellstime.mx,CELLSTIME CLINIQUE,,CELLSTIME CLINIQUE,anti_aging,Guadalajara
+1354,mediclinic@qodeinteractive.com,Vivo Cells Clinic,,Vivo Cells Clinic,anti_aging,Guadalajara
+1360,contact@stemlifeclinic.com,StemLife Clinic,,StemLife Clinic,anti_aging,Guadalajara
+1362,example@mail.com,SPA NATURAL COSMETIC - tratamientos estéticos y medicina regenerativa,,SPA NATURAL COSMETIC,anti_aging,Guadalajara
+1363,informes@immae.net,Instituto Mexicano de Medicina Antienvejecimiento y Estetica,,Instituto Mexicano de Medicina Antienvejec...,anti_aging,Guadalajara
+1365,contacto@atemposmartaging.com,ATEMPO SMART AGING,,ATEMPO SMART AGING,anti_aging,Guadalajara
+1366,mareatencionalcliente@gmail.com,"MARE Skincare Expert, Cosmelan tratamiento despigmentante clinica oficial en México",,MARE Skincare Expert,anti_aging,Guadalajara
+1372,guadalajara@tiam.mx,TIAM Aesthetic Clinic,,TIAM Aesthetic Clinic,estetica,Guadalajara
+1399,eduardojaramillo@hotmail.com,Cirujano Bariatra en Guadalajara - Dr. Eduardo Jaramillo de la Torre,Dr. Eduardo,Cirujano Bariatra en Guadalajara,peso,Guadalajara
+1409,nelson.md@centrobariatrico.com.mx,"Dr. Nelson Rodriguez, Centro Bariátrico Guadalajara",Dr. Nelson,Dr. Nelson Rodriguez,peso,Guadalajara
+1411,contacto@cirugia-bariatrica.com.mx,Dr. Rodrigo Prieto,Dr. Rodrigo,Dr. Rodrigo Prieto,peso,Guadalajara
+1413,eleganspamedico@gmail.com,ELEGANZ SPA MEDICO,,ELEGANZ SPA MEDICO,spa_medico,Guadalajara
+1415,matt@pixelspread.com,Chandan spa,,Chandan spa,spa_medico,Guadalajara
+1420,contacto.chale@gmail.com,Chalé Spa,,Chalé Spa,spa_medico,Guadalajara
+1430,ventas@dreamy-skin.com,Dreamy Skin - Equipos de Belleza y Servicios SPA,,Dreamy Skin,spa_medico,Guadalajara
+1431,derma.nadia.gdl@gmail.com,Dra. Nadia Janette Rodríguez Zendejas - Dermatóloga en Guadalajara,Dra. Nadia,Dra. Nadia Janette Rodríguez Zendejas,dermatologia,Guadalajara
+1435,contacto@asterclinic.mx,Aster Clinic Dermatología Avanzada,,Aster Clinic Dermatología Avanzada,dermatologia,Guadalajara
+1440,dermapharmacie@gmail.com,Ada Dermatóloga,,Ada Dermatóloga,dermatologia,Guadalajara
+1452,hola@revitacell.live,REVITACELL - Medicina Funcional Regenerativa,,REVITACELL,anti_aging,Querétaro
+1455,info@coreqro.com,"Clínica de Ortopedia, Traumatología, Rehabilitación y Ortopedia Regenerativa CORE REGENERA QRO",,Clínica de Ortopedia,anti_aging,Querétaro
+1457,jocelyn.anaya.c.dermocosmiatra@gmail.com,Jocelyn Anaya Dermocosmiatra,,Jocelyn Anaya Dermocosmiatra,estetica,Querétaro
+1460,contacto@giulia.com.mx,Giulia - Medicina Estética,,Giulia,estetica,Querétaro
+1462,contacto@sculptorsclinic.com.mx,Sculptors clinic,,Sculptors clinic,estetica,Querétaro
+1463,citas@draesmeraldameza.com,Rejuvenecimiento Facial | Dra. Esmeralda Meza,Dra. Esmeralda,Rejuvenecimiento Facial | Dra. Esmeralda Meza,estetica,Querétaro
+1469,arturovlds@gmail.com,Dr. Arturo Valdés Álvarez | Bariatra Certificado y especialista en Cirugía Laparoscópica,Dr. Arturo,Dr. Arturo Valdés Álvarez | Bariatra Certi...,peso,Saltillo
+1470,mansur@doctor.com,"Dr. Henry Mansur, Bariatra en Saltillo",Dr. Henry,Dr. Henry Mansur,peso,Saltillo
+1490,jess.ramirez@sbeltikspa.com,Sbeltik SPA,,Sbeltik SPA,spa_medico,Saltillo
+1503,info@ndiscovered.com,"Dr. Rodrigo Cepeda Valdes, Dermatólogo",Dr. Rodrigo,Dr. Rodrigo Cepeda Valdes,dermatologia,Saltillo
+1504,dermasaltillo@gmail.com,Dr. García - Dermatólogo Saltillo,Dr. García,Dr. García,dermatologia,Saltillo
+1511,dr.erickderma@gmail.com,Highderma,,Highderma,dermatologia,Saltillo
+1514,dramadrazosalazar@hotmail.com,Dra. Angeles Madrazo Salazar,Dra. Angeles,Dra. Angeles Madrazo Salazar,dermatologia,Saltillo
+1519,booking@centromedicosaltillo.com,Centro Medico de Saltillo,,Centro Medico de Saltillo,peptidos,Saltillo
+1523,posadad@yahoo.com,Clínica De Mastología De Saltillo,,Clínica De Mastología De Saltillo,peptidos,Saltillo
+1524,dr.robertomedinaglez@gmail.com,Cirugía de Rodilla en Torreón Dr Roberto Medina,Dr. Roberto,Cirugía de Rodilla en Torreón Dr Roberto M...,anti_aging,Torreón
+1534,enfermeras@medipiel.mx,Medipiel Torreón,,Medipiel Torreón,anti_aging,Torreón
+1535,clinica.gl@hotmail.com,Clínica Dermatologica,,Clínica Dermatologica,anti_aging,Torreón
+1549,comunidad@dermatlan.com,DERMATLÁN Torreón - Dermatólogo,,DERMATLÁN Torreón,estetica,Torreón
+1556,alejandrinalt@outlook.es,Nutrición Clínica Y Renal Alejandrina Lopez,,Nutrición Clínica Y Renal Alejandrina Lopez,nutriologos,Torreón
+1558,kimnajeranut@gmail.com,Kim Najera Nutrición,,Kim Najera Nutrición,nutriologos,Torreón
+1563,informacion@institutodeciencia.com,Nutriólogo clinico,,Nutriólogo clinico,nutriologos,Torreón
+1568,logisticaintegralobesitycare@gmail.com,Integral Obesity Care,,Integral Obesity Care,peso,Torreón
+1575,recepcion@centromedicodetorreon.com,Centro Médico de Torreón,,Centro Médico de Torreón,peso,Torreón
+1578,prevenspa@outlook..com,Prevén Spa - Spa en torreón,,Prevén Spa,spa_medico,Torreón
+1594,dermalag@hotmail.com,Clínica Dermatológica Dr. Salvador Morales,Dr. Salvador,Clínica Dermatológica Dr. Salvador Morales,dermatologia,Torreón
+1608,dominguezgine1@gmail.com,Dr. Raúl Domínguez González,Dr. Raúl,Dr. Raúl Domínguez González,peptidos,Torreón
+1612,info@dracamacho.com,Terapia Hormonal Bioidéntica,,Terapia Hormonal Bioidéntica,peptidos,Torreón
+1613,cbcellschihuahua@gmail.com,Medicina regenerativa - Doctores Especialistas,,Medicina regenerativa,anti_aging,Chihuahua
+1636,cmnmarina@hotmail.com,Dra. Marina Rubio Guerrero,Dra. Marina,Dra. Marina Rubio Guerrero,nutriologos,Chihuahua
+1642,anandayogaysalud@gmail.com,Ananda Centro Holístico Para El Bienestar,,Ananda Centro Holístico Para El Bienestar,nutriologos,Chihuahua
+1651,contacto@mimangagastrica.com.mx,Doctor Héctor Bernal- Clinica ActivaMe - Control de Peso,Dr. Héctor,Doctor Héctor Bernal- Clinica ActivaMe,peso,Chihuahua
+1678,ernesto.estrada.chavira@gmail.com,Medical Spa Clinic - Medical Tourism,,Medical Spa Clinic,spa_medico,Chihuahua
+1708,clinicaterapiasbiologicas@pxdmail.net,Clinica De Terapias Biologicas,,Clinica De Terapias Biologicas,anti_aging,Hermosillo
+1710,hola@laurean.com.mx,Laurean Clínica de Medicina Estética,,Laurean Clínica de Medicina Estética,anti_aging,Hermosillo
+1717,integrasaludybelleza@gmail.com,Clínica Integra Hermosillo,,Clínica Integra Hermosillo,anti_aging,Hermosillo
+1760,informacion@cimahermosillo.com,Hospital CIMA Hermosillo,,Hospital CIMA Hermosillo,peso,Hermosillo
+1749,programacion@hospitalsandiegodealcala.com,Unidad Metabólica San Diego de Alcalá,,Unidad Metabólica San Diego de Alcalá,nutriologos,Hermosillo
+1750,info@drungson.com,"Clínica de Cirugía, Obesidad y Diabetes",,Clínica de Cirugía,peso,Hermosillo
+1755,contacto@sonorabariatrics.com,SONORA BARIATRICS,,SONORA BARIATRICS,peso,Hermosillo
+1764,promocioneshsjh@grupomedicosanjose.com,Hospital San José Hermosillo,,Hospital San José Hermosillo,peso,Hermosillo
+1767,info@embryogen.com.mx,Hospital EmbryoGen,,Hospital EmbryoGen,peso,Hermosillo
+1776,ventas@piela.mx,Piela - Spa Dermatológico,,Piela,spa_medico,Hermosillo
+1789,hola@drisaidelvalle.com,Dr. Isaí del Valle Ruíz - Dermatólogo,Dr. Isaí,Dr. Isaí del Valle Ruíz,dermatologia,Hermosillo
+1793,hermosillo@dermatologica.org,Dermatologica Laser Cosmetics,,Dermatologica Laser Cosmetics,dermatologia,Hermosillo
+1799,anaquintos@gmail.com,DRA. ANA I. QUINTOS RAMÍREZ,Dra. ANA,DRA. ANA I. QUINTOS RAMÍREZ,dermatologia,Hermosillo
+1800,dermatologica.hmo@gmail.com,DERMATO LOGICA,,DERMATO LOGICA,dermatologia,Hermosillo
+1824,tu@email.com,Clínica Renacer,,Clínica Renacer,anti_aging,Culiacán
+1830,luisens@msn.com,Dr. Less Clinic,Dr. Less,Dr. Less Clinic,estetica,Culiacán
+1833,dr.bodyartist@gmail.com,Cirugía y Medicina Estética Dr. Body Artist.,Dr. Body,Cirugía y Medicina Estética Dr. Body Artist.,estetica,Culiacán
+1856,drfcomo@gmail.com,Dr. Francisco Magaña Cirugía Bariatrica y Laparoscopica,Dr. Francisco,Dr. Francisco Magaña Cirugía Bariatrica y ...,peso,Culiacán
+1862,ciobes@gmail.com,Ciobes,,Ciobes,peso,Culiacán
+1871,sublimespamx@gmail.com,Sublimespa,,Sublimespa,spa_medico,Culiacán
+1874,esmeraldapalma@gmail.com,ESMERALDA PALMA Spa | Salón | Consultoría de Imagen,,ESMERALDA PALMA Spa | Salón | Consultoría ...,spa_medico,Culiacán
+1888,paciente@mail.com,"Dra. Valeria Álvarez Rivero Dermatóloga, Dermatooncóloga",Dra. Valeria,Dra. Valeria Álvarez Rivero Dermatóloga,dermatologia,Culiacán
+1890,doctoradianacontreras@gmail.com,Dra. Diana Contreras | Dermatóloga,Dra. Diana,Dra. Diana Contreras | Dermatóloga,dermatologia,Culiacán
+1903,germandermatologia@gmail.com,Dr. Alfonso German,Dr. Alfonso,Dr. Alfonso German,dermatologia,Culiacán
+1913,geriatricanurse@gmail.com,Medicina Regenerativa y Ozonoterapia,,Medicina Regenerativa y Ozonoterapia,anti_aging,Playa del Carmen
+1914,dr.bernardo20@gmail.com,PlayaDoctor Walk In Clinic & Housecalls,,PlayaDoctor Walk In Clinic & Housecalls,anti_aging,Playa del Carmen
+1915,be.well.aesthetics.mx@gmail.com,Althea Wellness Clinic,,Althea Wellness Clinic,anti_aging,Playa del Carmen
+1916,info@wellbodyelite.com,WellBody Elite - Stem Cell Therapy Playa Del Carmen,,WellBody Elite,anti_aging,Playa del Carmen
+1917,recepcion@xtabaymedicinaestetica.com,Xtabay Medicina Estética,,Xtabay Medicina Estética,anti_aging,Playa del Carmen
+1918,creatives@digiflex360.com,Giostar Stem Cell Therapy Playa del Carmen,,Giostar Stem Cell Therapy Playa del Carmen,anti_aging,Playa del Carmen
+1920,example@mysite.com,Age Less Clinic,,Age Less Clinic,anti_aging,Playa del Carmen
+1921,info@timelessbeauty.com.mx,Timeless Beauty - Medicina Estética - Aesthetics Doctor,,Timeless Beauty,anti_aging,Playa del Carmen
+1930,burdenmarketingcanada@gmail.com,botox playa del carmen,,botox playa del carmen,anti_aging,Playa del Carmen
+1932,dreichelmann@dermacaribe.com,Dermacaribe,,Dermacaribe,anti_aging,Playa del Carmen
+1933,info@alluremedico.com,Allure Medico,,Allure Medico,estetica,Playa del Carmen
+1935,book@ergenrangel.com,Dr Rangel Aesthetics,Dr. Rangel,Dr Rangel Aesthetics,estetica,Playa del Carmen
+1936,info@slimspaplayadelcarmen.com,SLIM BODY & FACE AESTHETICS PLAYA DEL CARMEN,,SLIM BODY & FACE AESTHETICS PLAYA DEL CARMEN,estetica,Playa del Carmen
+1940,franquicias@urbanskin.com.mx,Urbanskin Playa del Carmen,,Urbanskin Playa del Carmen,estetica,Playa del Carmen
+1951,centronf17@gmail.com,Centro de Nutrición,,Centro de Nutrición,nutriologos,Playa del Carmen
+1952,neryjust@gmail.com,Nery OM Wellness,,Nery OM Wellness,nutriologos,Playa del Carmen
+1962,fd2x@hosv3064.mp,Santulan Garden,,Santulan Garden,nutriologos,Playa del Carmen
+1963,info@saludprimal.com,Salud Primal Centro Médico | Especialidades Médicas para ti y tu familia,,Salud Primal Centro Médico | Especialidade...,nutriologos,Playa del Carmen
+1964,transpersonalplaya@gmail.com,Transpersonal Playa,,Transpersonal Playa,nutriologos,Playa del Carmen
+1966,info@uppercare.mx,Upper Care Weight Loss Endoscopy,,Upper Care Weight Loss Endoscopy,peso,Playa del Carmen
+1968,info@luumspa.com,LU'UM Mayan SPA Playa del Carmen ❤ [NEW: Hydrafacial],,LU'UM Mayan SPA Playa del Carmen ❤ [NEW: H...,spa_medico,Playa del Carmen
+1970,info@playaharmonyspa.com,Playa Harmony Spa,,Playa Harmony Spa,spa_medico,Playa del Carmen
+1975,contacto@skinbalancefarmacia.com,Skin Balance,,Skin Balance,dermatologia,Playa del Carmen
+1981,frontdesk@restaurahealth.com,Restaura Health.MX,,Restaura Health.MX,peptidos,Playa del Carmen
+1987,contact@foreveryoungstemcell.com,Stem cell forever young,,Stem cell forever young,anti_aging,Los Cabos
+1991,cardenas@drcardenasaesthetics.com,Dr Cárdenas Anti-aging & Aesthetics,Dr. Cárdenas,Dr Cárdenas Anti-aging & Aesthetics,anti_aging,Los Cabos
+1992,info@lmiclinic.com,Longevity Medical Institute®,,Longevity Medical Institute®,anti_aging,Los Cabos
+1994,avcliniquedebeaute@gmail.com,AV Clinique de Beauté,,AV Clinique de Beauté,estetica,Los Cabos
+1995,info@drmiguelcortes.com,Dr Miguel Cortes - Medicina estética,Dr. Miguel,Dr Miguel Cortes,estetica,Los Cabos
+1996,iconiccabo@gmaill.com,Dr. Agapito Alvarez - ICONIC Medical Aesthetic and Well Aging,Dr. Agapito,Dr. Agapito Alvarez,estetica,Los Cabos
+2004,olosbeautyclinic@gmail.com,Olos Beauty Clinic,,Olos Beauty Clinic,estetica,Los Cabos
+2009,correo@ejemplo.com,Cosmiatría Villalobos,,Cosmiatría Villalobos,estetica,Los Cabos
+2014,nutriologakarinamador@gmail.com,NUTRIOLOGOS NUTRAVI Nutricion Naturismo Bienestar. Karina Amador,,NUTRIOLOGOS NUTRAVI Nutricion Naturismo Bi...,nutriologos,Los Cabos
+2021,gastrobariatric@gastrobariatric.com,Gastro&Bariatric Bariatrica | Gastroenterología | Endoscopia,,Gastro&Bariatric Bariatrica | Gastroentero...,peso,Los Cabos
+2026,drjorgeicl@southbariatrics.com.mx,"Dr. Jorge I. Cortés Larrinaga, SouthBariatrics: Cirugía Bariátrica y Metabólica / Cirugía General y Gastrointestinal",Dr. Jorge,Dr. Jorge I. Cortés Larrinaga,peso,Los Cabos
+2028,drcorteslarrinagamd@gmail.com,Bariatric Clinic - Medical Tourism,,Bariatric Clinic,peso,Los Cabos
+2029,correo@sudominio.com,DR. GERARDO GARCÍA ÁLVAREZ,Dr. GERARDO,DR. GERARDO GARCÍA ÁLVAREZ,peso,Los Cabos
+2030,gastrohealth@hotmail.com,GASTROENTEROLOGO Dr. Luis Enrique Sotelo Solis,Dr. Luis,GASTROENTEROLOGO Dr. Luis Enrique Sotelo S...,peso,Los Cabos
+2033,contactanos@hmas.mx,Hospital H+ Los Cabos,,Hospital H+ Los Cabos,peso,Los Cabos
+2034,dralauren_miranda@hotmail.com,DRA LAUREN KARIN MIRANDA IZQUIERDO,Dra. LAUREN,DRA LAUREN KARIN MIRANDA IZQUIERDO,peso,Los Cabos
+2035,medanomedspa@gmail.com,Medano Medical Spa (Marina Plaza),,Medano Medical Spa (Marina Plaza),spa_medico,Los Cabos
+2038,info@sereniumspa.com,Serenium Wellness Spa,,Serenium Wellness Spa,spa_medico,Los Cabos
+2039,spaconcierge@villagroup.com,The Desert Spa,,The Desert Spa,spa_medico,Los Cabos
+2040,info@edenspacabo.com,Eden´s Spa Los Cabos,,Eden´s Spa Los Cabos,spa_medico,Los Cabos
+2041,spacollection@solmar.com,Sea Spa at Land's End by Solmar Spa Collection,,Sea Spa at Land's End by Solmar Spa Collec...,spa_medico,Los Cabos
+2042,reservacionesspalc@velasresorts.com,SE Spa at Grand Velas Los Cabos,,SE Spa at Grand Velas Los Cabos,spa_medico,Los Cabos
+2044,dalila.ceballos@posadas.com,SOMMA WineSpa,,SOMMA WineSpa,spa_medico,Los Cabos
+2045,reservations@biohackspa.com,Biohack Spa,,Biohack Spa,spa_medico,Los Cabos
+2057,farmaciaenloscabos@hotmail.com,Farmacia Dermatológica Prosermed,,Farmacia Dermatológica Prosermed,dermatologia,Los Cabos
+2059,dragisselachavez@gmail.com,Dra. Gissela Chávez Lizardi,Dra. Gissela,Dra. Gissela Chávez Lizardi,dermatologia,Los Cabos
+2063,info@laurabaezmd.com,Doctora Laura Báez,Dra. Laura,Doctora Laura Báez,peptidos,Los Cabos
+2065,info@renaissanceantiage.com,Renaissance Anti Age and Regenerative Center,,Renaissance Anti Age and Regenerative Center,anti_aging,Puerto Vallarta
+2066,info@immunotherapymx.com,Immunotherapy Regenerative Medicine Treatments Vallarta,,Immunotherapy Regenerative Medicine Treatm...,anti_aging,Puerto Vallarta
+2067,cellstimepv@gmail.com,Medicina regenerativa - Doctores Especialistas,,Medicina regenerativa,anti_aging,Puerto Vallarta
+2068,info@regenamex.com,Regenamex | Stem Cell Therapy Clinic | Puerto Vallarta,,Regenamex | Stem Cell Therapy Clinic | Pue...,anti_aging,Puerto Vallarta
+2069,dra.susanazc@gmail.com,Begin Again by Dra Susana,Dra. Susana,Begin Again by Dra Susana,anti_aging,Puerto Vallarta
+2071,sac@alternativemedicinebybars.com,Alternative Medicine By Bars – Regenerative Stem Cell Therapy in Mexico,,Alternative Medicine By Bars – Regenerativ...,anti_aging,Puerto Vallarta
+2073,julia@vallartavitality.com,Vallarta Vitality,,Vallarta Vitality,anti_aging,Puerto Vallarta
+2075,hello@satisana.com,Satisana Medicine,,Satisana Medicine,anti_aging,Puerto Vallarta
+2076,contact@holisticbiospa.com,Holistic Bio Spa,,Holistic Bio Spa,anti_aging,Puerto Vallarta
+2078,artecuerpo.pv@outlook.es,"Clínica Arte Cuerpo Medicina Estética, Stem Cells,Depilación Láser reductivos y faciales.",,Clínica Arte Cuerpo Medicina Estética,estetica,Puerto Vallarta
+2081,contacto@houseofbeautyclinic.com.mx,House of Beauty | Medicina Estética y Antienvejecimiento,,House of Beauty | Medicina Estética y Anti...,estetica,Puerto Vallarta
+2083,artsthetik@gmail.com,ARTSTHETIK | Atelier de Ingeniería Facial & Longevidad,,ARTSTHETIK | Atelier de Ingeniería Facial ...,estetica,Puerto Vallarta
+2087,dernna.clinic@gmail.com,"Dernna, Clínica Especializada en Dermatología, Medicina Estética y Anti-Envejecimiento",,Dernna,estetica,Puerto Vallarta
+2090,info@medspa.com.mx,MedSpa Vallarta,,MedSpa Vallarta,estetica,Puerto Vallarta
+2095,luis_silver6@hotmail.com,Clínica De Belleza by Luis Huerta,,Clínica De Belleza by Luis Huerta,estetica,Puerto Vallarta
+2097,abemtzcd@gmail.com,"Dr. Abraham Cazares Aesthetic Medicine (Botox™, Medical Grade Skincare, Cosmetic Injectables) / Morpheus8™",Dr. Abraham,Dr. Abraham Cazares Aesthetic Medicine (Bo...,estetica,Puerto Vallarta
+2101,ventas@nutricionclinicavallarta.com,Nutrición Clínica y Renal Vallarta | Angélica Castellanos | Nutrición en la enfermedad,,Nutrición Clínica y Renal Vallarta | Angél...,nutriologos,Puerto Vallarta
+2107,nutriologapv@gmail.com,Nutrióloga PV - Estefanía Sánchez - Cambiando hábitos,Dra. PV,Nutrióloga PV,nutriologos,Puerto Vallarta
+2112,info@sanacentro.com,SANA CENTRO | Medicina natural alternativa,,SANA CENTRO | Medicina natural alternativa,nutriologos,Puerto Vallarta
+2119,vallarta@reduitmarmolejo.com,Réduit Vallarta,,Réduit Vallarta,peso,Puerto Vallarta
+2120,hidalgobariatrics@gmail.com,Hidalgo Bariatrics | Bariatric Surgery in Puerto Vallarta,,Hidalgo Bariatrics | Bariatric Surgery in ...,peso,Puerto Vallarta
+2121,info@drsergiodelhoyo.com,Dr. Sergio del Hoyo - Gastroenterologo Cirugía,Dr. Sergio,Dr. Sergio del Hoyo,peso,Puerto Vallarta
+2125,info@vallartamedicalcenter.mx,Hospital Vallarta Medical Center,,Hospital Vallarta Medical Center,peso,Puerto Vallarta
+2129,info@thrivepv.com,ThrIVe IV & MedSpa,,ThrIVe IV & MedSpa,spa_medico,Puerto Vallarta
+2141,hola@dranashyeliderma.com,Dra Nashyeli González Dermatóloga,Dra. Nashyeli,Dra Nashyeli González Dermatóloga,dermatologia,Puerto Vallarta
+2159,info@isiena.com.mx,"Instituto Superior de Investigación en Estética Médica, Nutrición y Anti-Envejecimiento - CCME, ISIENA",,Instituto Superior de Investigación en Est...,anti_aging,Cuernavaca
+2163,contacto@mediviamedicalspa.com,Medivia Medical Spa,,Medivia Medical Spa,anti_aging,Cuernavaca
+2164,informes@vieclinica.com,Vie Clínica Armonización Facial y Odontología Estetica,,Vie Clínica Armonización Facial y Odontolo...,anti_aging,Cuernavaca
+2166,draalcalajessica@gmail.com,Clínica de medicina estética Dra. Jessica Alcalá,Dra. Jessica,Clínica de medicina estética Dra. Jessica ...,anti_aging,Cuernavaca
+2167,contacto@medicinaalternativacuerna.com,Medicina Alternativa Cuernavaca,,Medicina Alternativa Cuernavaca,anti_aging,Cuernavaca
+2169,terapiacelular.circ@gmail.com,Terapia Celular CIRC,,Terapia Celular CIRC,anti_aging,Cuernavaca
+2180,sculptmed.contacto@gmail.com,Sculpt Med,,Sculpt Med,estetica,Cuernavaca
+2181,soporte@webador.es,El Rio Clinica y Spa Wellness Center,,El Rio Clinica y Spa Wellness Center,estetica,Cuernavaca
+2187,nutsanmoreno@gmail.com,Nutrióloga Clínica y Oncológica Sandra Nidia Moreno González.,Dra. Clínica,Nutrióloga Clínica y Oncológica Sandra Nid...,nutriologos,Cuernavaca
+2197,doctor@jorgediaz.com.mx,Dr. Jorge Alberto Diaz Astudillo,Dr. Jorge,Dr. Jorge Alberto Diaz Astudillo,nutriologos,Cuernavaca
+2202,bajardepeso@clinicamontesinai.com.mx,Clínica para Bajar de Peso en Cuernavaca,,Clínica para Bajar de Peso en Cuernavaca,peso,Cuernavaca
+2210,info@imtsc.com.mx,Hospital IMT - Instituto Mexicano de Trasplantes,,Hospital IMT,peso,Cuernavaca
+2216,velavi@workgroup.axiomati.com,"Velavi City SPA, Rituales para Parejas, Masajes, Faciales, Terapias Relajantes, Hidromasaje, Sauna, Vapor",,Velavi City SPA,spa_medico,Cuernavaca
+2220,reservaciones@lascasasbb.com,The White Spa Cuernavaca,,The White Spa Cuernavaca,spa_medico,Cuernavaca
+2242,jorgevela258@gmail.com,Dr. Jorge Luis Vela Cantoran - Ginecologo en Cuernavaca,Dr. Jorge,Dr. Jorge Luis Vela Cantoran,peptidos,Cuernavaca
+2243,soporte@doctoralia.com,Lorena Frade. Nutrióloga Funcional,,Lorena Frade. Nutrióloga Funcional,nutriologos,Ciudad de México
+2244,info@topdoctors.mx,"Dra. Adriana Gricel Pérez Uribe, Dermatología / Dermato-Oncología",Dra. Adriana,"Dra. Adriana Gricel Pérez Uribe, Dermatología / Dermato-Oncología",dermatologia,Ciudad de México
+2245,support@doctoranytime.mx,José Luis Rodríguez Villegas Nutricionista Puebla,,José Luis Rodríguez Villegas Nutricionista Puebla,peso,Puebla
+2246,user@domain.com,Pantoja Aesthetics Río,,Pantoja Aesthetics Río,spa_medico,Tijuana

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ Cerebro · Foco · Cognición · Memoria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:'Inter',sans-serif;color:#111;background:#FFF;line-height:1.5;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.italic{font-style:italic}
+.page{width:210mm;height:296mm;padding:14mm 18mm 10mm;page-break-after:always;page-break-inside:avoid;background:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;height:296mm}
+.page-num{position:absolute;top:14mm;right:18mm;font-size:10px;letter-spacing:2.4px;color:#999;font-weight:500}
+.page-disclaimer{margin-top:auto;font-size:8px;color:#999;letter-spacing:.3px;text-align:center;border-top:1px solid #EEE;padding-top:8px}
+.cover{background:#1A1F2E;color:#FFF;padding:0;position:relative}
+.cover .page-num{display:none}
+.cover-img{position:absolute;inset:0;z-index:1;overflow:hidden}
+.cover-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cover-overlay-top{position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-overlay-bot{position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-top{position:absolute;top:0;left:0;right:0;z-index:3;padding:24mm 24mm 0}
+.cover-tag{font-size:12px;letter-spacing:5px;color:#FFF;font-weight:600;margin-bottom:22px;text-transform:uppercase}
+.cover h1{font-family:'Playfair Display',serif;font-size:60px;font-weight:300;line-height:.95;letter-spacing:-1.5px;margin-bottom:14px;color:#FFF;max-width:140mm}
+.cover h1 em{font-style:italic;color:rgba(255,255,255,.7);font-weight:400}
+.cover-lede{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.55;max-width:130mm;font-weight:300}
+.cover-bottom{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 24mm 16mm}
+.cover-stats{display:flex;gap:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+.cstat{flex:0 0 auto}
+.cstat .v{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;color:#FFF;margin-bottom:2px;line-height:1}
+.cstat .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.75);text-transform:uppercase}
+.cover-edition{position:absolute;top:16mm;right:24mm;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.8);font-weight:500;text-align:right;z-index:10}
+.cover .page-disclaimer{position:absolute;bottom:5mm;left:24mm;right:24mm;z-index:4;color:rgba(255,255,255,.6);border:none;padding:0;text-align:center;margin:0;font-size:7.5px}
+
+.eyebrow{font-size:10px;letter-spacing:3.4px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.page h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:14px}
+.page h2 em{font-style:italic;color:#777;font-weight:400}
+.lede{font-size:13.5px;color:#3A3A3A;line-height:1.6;max-width:580px;margin-bottom:14px;font-weight:300}
+
+.intro-content{padding-top:14mm}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.intro-card{padding:20px 22px;background:#FAFAFA;border-left:2px solid #111}
+.intro-card h3{font-size:11px;letter-spacing:2.2px;font-weight:600;text-transform:uppercase;margin-bottom:10px;color:#111}
+.intro-card p{font-size:12.5px;color:#3A3A3A;line-height:1.55}
+.logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid #E5E5E5}
+.logo-chip{padding:8px 6px;background:#FFF;border:1px solid #E5E5E5;text-align:center}
+.logo-chip .lc-brand{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:#111;line-height:1.1;margin-bottom:2px}
+.logo-chip .lc-brand.serif{font-family:'Playfair Display',serif;font-style:italic;letter-spacing:.4px;font-weight:500}
+.logo-chip .lc-brand.condensed{letter-spacing:0;font-weight:900;font-size:11px}
+.logo-chip .lc-meta{font-size:7.5px;letter-spacing:.4px;color:#888;font-weight:400}
+
+.comparison-page{padding-top:14mm}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.comp-card{padding:24px 26px;display:flex;flex-direction:column;height:100%}
+.comp-card.bad{background:#FAFAFA;border-left:3px solid #888}
+.comp-card.good{background:#0E0E0E;color:#FFF;border-left:3px solid #FFF}
+.comp-tag{font-size:9.5px;letter-spacing:2.6px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.comp-card.bad .comp-tag{color:#888}
+.comp-card.good .comp-tag{color:rgba(255,255,255,.55)}
+.comp-h{font-family:'Playfair Display',serif;font-size:26px;line-height:1.05;font-weight:500;margin-bottom:14px}
+.comp-h em{font-style:italic;color:#777;font-weight:400}
+.comp-card.good .comp-h em{color:rgba(255,255,255,.55)}
+.comp-list{list-style:none;padding:0;margin:0}
+.comp-list li{font-size:12px;line-height:1.6;padding:8px 0;border-top:1px solid rgba(0,0,0,.06)}
+.comp-card.good .comp-list li{border-top-color:rgba(255,255,255,.1)}
+.comp-list li:first-child{border-top:none;padding-top:0}
+.comp-list li b{display:block;font-size:9.5px;letter-spacing:1.6px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.comp-card.bad .comp-list li b{color:#666}
+.comp-card.good .comp-list li b{color:rgba(255,255,255,.5)}
+.comp-card.bad .comp-list li{color:#3A3A3A}
+.comp-card.good .comp-list li{color:rgba(255,255,255,.85)}
+.comp-quote{margin-top:auto;padding:14px 18px;background:#111;color:#FFF;font-family:'Playfair Display',serif;font-style:italic;font-size:14px;line-height:1.4;text-align:center}
+.comp-source{margin-top:14px;font-size:9.5px;color:#777;letter-spacing:.3px;line-height:1.5}
+
+.product-page{padding-top:14mm}
+.prod-header{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-bottom:18px;align-items:start}
+.prod-meta{font-size:10px;letter-spacing:2.6px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.prod-name{font-family:'Playfair Display',serif;font-size:48px;font-weight:300;line-height:.95;letter-spacing:-1px;margin-bottom:6px;color:#111}
+.prod-name em{font-style:italic;color:#777;font-weight:400;font-size:22px;display:block;margin-top:4px}
+.prod-tagline{font-size:14px;color:#3A3A3A;line-height:1.5;font-weight:300;font-style:italic;margin-top:12px}
+.prod-img{width:100%;max-width:60mm;background:#0E0E0E;aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:auto}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-body{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px}
+.benefit-block{padding:0}
+.benefit-tag{font-size:9px;letter-spacing:2.4px;color:#111;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
+.benefit-h{font-family:'Playfair Display',serif;font-size:17px;line-height:1.15;font-weight:500;margin-bottom:6px;color:#111}
+.benefit-p{font-size:11.5px;color:#3A3A3A;line-height:1.55}
+.science-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;background:#0E0E0E;color:#FFF;padding:16px 20px;margin-top:14px}
+.science-cell .l{font-size:8.5px;letter-spacing:2.2px;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.science-cell .v{font-size:12px;color:#FFF;line-height:1.4;font-weight:400}
+.testimonial{margin-top:14px;padding:14px 20px;background:#FAFAFA;border-left:2px solid #111}
+.testimonial-q{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#222;line-height:1.4;margin-bottom:6px}
+.testimonial-a{font-size:9.5px;letter-spacing:1.8px;color:#777;font-weight:600;text-transform:uppercase}
+.sources{margin-top:10px;padding:10px 14px;background:#F5F5F5;font-size:9.5px;color:#3A3A3A;line-height:1.5}
+.sources b{color:#111;letter-spacing:1.6px;text-transform:uppercase;font-size:8.5px;font-weight:700;display:block;margin-bottom:4px}
+
+.price-page{padding-top:14mm}
+.pricing-table{margin-top:32px;border:1px solid #E5E5E5;background:#FFF}
+.pt-row{display:grid;grid-template-columns:2.5fr 1fr 1fr;align-items:center;padding:18px 24px;border-bottom:1px solid #F5F5F5}
+.pt-row:last-child{border-bottom:none}
+.pt-name{font-family:'Playfair Display',serif;font-size:17px;color:#111;font-weight:500}
+.pt-name small{display:block;font-family:'Inter',sans-serif;font-size:11px;color:#777;font-weight:400;margin-top:2px;letter-spacing:.3px}
+.pt-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#111;text-align:right}
+.pt-tag{font-size:11px;color:#777;letter-spacing:1px;text-align:right}
+.cta-banner{margin-top:32px;padding:36px;background:#0E0E0E;color:#FFF;text-align:center}
+.cta-banner h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:300;line-height:1.1;margin-bottom:8px;color:#FFF}
+.cta-banner h3 em{font-style:italic;color:rgba(255,255,255,.65)}
+.cta-banner p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.55;max-width:480px;margin:0 auto 20px;font-weight:300}
+.cta-btn{display:inline-block;padding:14px 32px;background:#FFF;color:#111;font-size:11px;letter-spacing:2.6px;font-weight:600;text-transform:uppercase;text-decoration:none}
+
+.back{background:#0E0E0E;color:#FFF;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.back .page-disclaimer{color:rgba(255,255,255,.4);border-top-color:rgba(255,255,255,.08)}
+.back-h{font-family:'Playfair Display',serif;font-size:56px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:16px;max-width:700px}
+.back-h em{font-style:italic;color:rgba(255,255,255,.55);font-weight:400}
+.back-p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.6;max-width:520px;margin-bottom:42px;font-weight:300}
+.back-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:30px;padding-top:42px;border-top:1px solid rgba(255,255,255,.1);width:100%;max-width:680px}
+.bc-cell{text-align:center}
+.bc-cell .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.bc-cell .v{font-size:14px;color:#FFF;font-weight:500}
+
+@page{margin:0;size:210mm 297mm}
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 · COVER ═══════════════ -->
+<div class="page cover">
+  <div class="cover-img"><img src="../img/covers-v2/highlander-cover.png" alt="PEPTIQ Cerebro · Foco · Cognición · Memoria"></div>
+  <div class="cover-overlay-top"></div>
+  <div class="cover-overlay-bot"></div>
+  <div class="cover-edition">EDICIÓN<br>MAYO 2026</div>
+  <div class="cover-top">
+    <div class="cover-tag">PROTOCOLO COGNITIVO · ENFOQUE EJECUTIVO</div>
+    <h1>Pensar como<br><em>a los 25 otra vez.</em></h1>
+    <p class="cover-lede">Niebla mental · memoria de trabajo que falla · fatiga cognitiva al mediodía · creatividad apagada. Stack research-grade que activa neurogénesis hipocampal sin estimulantes ni tolerancia.</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-stats">
+      <div class="cstat"><div class="v">3</div><div class="l">Neuropéptidos sinérgicos</div></div>
+      <div class="cstat"><div class="v">99.3%</div><div class="l">Pureza HPLC</div></div>
+      <div class="cstat"><div class="v">8 sem</div><div class="l">Ciclo completo</div></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+<!-- ═══════════════ PAGE 2 · QUÉ ES ═══════════════ -->
+<div class="page">
+  <div class="page-num">02 · ¿QUÉ RESUELVE?</div>
+  <div class="intro-content">
+    <div class="eyebrow">Más allá de Adderall y Modafinil</div>
+    <h2>El cerebro<br><em>no es un músculo a forzar.</em></h2>
+    <p class="lede">Modafinil bloquea adenosina (efectivo pero genera tolerancia y cae en eficacia post-12 meses). Adderall acelera dopamina (efectivo pero down-regulación post-uso prolongado). Los neuropéptidos PEPTIQ hacen lo opuesto: <b>activan neurogénesis hipocampal y BDNF</b> — el cerebro genera neuronas nuevas, no se desgasta.</p>
+    <div class="intro-grid">
+      <div class="intro-card"><h3>Por qué funciona</h3><p>Semax y Selank son heptapéptidos rusos desarrollados por el Inst. Biología Molecular RAS — análogos de ACTH/Tuftsin endógenos. Activan BDNF, NGF y receptores μ-opioides cerebrales. Cerebrolysin es mezcla neurotrófica con NCAM-mimetic activity (Plosker, Gauthier 2009).</p></div><div class="intro-card"><h3>Qué resuelve</h3><p>Niebla mental crónica · pérdida de memoria de trabajo (no recuerdas a qué entraste a un cuarto) · TDAH adulto · burnout cognitivo · recuperación post-COVID neurológica · fatiga mental ejecutiva al mediodía.</p></div><div class="intro-card"><h3>Quién ya lo usa</h3><p>CEOs y cirujanos que necesitan precisión cognitiva sostenida 12h. Andrew Huberman discute Semax en Lab #100. Tim Ferriss menciona Selank en 4-Hour Body. Bryan Johnson lo integra en Project Blueprint.</p><div class="logos-grid"><div class="logo-chip"><div class="lc-brand condensed">HUBERMAN</div><div class="lc-meta">Lab #100</div></div><div class="logo-chip"><div class="lc-brand serif">TIM FERRISS</div><div class="lc-meta">4-Hour Body</div></div><div class="logo-chip"><div class="lc-brand serif">INST. RAS</div><div class="lc-meta">Moscow neuroresearch</div></div></div></div><div class="intro-card"><h3>Quién NO debería</h3><p>Trastorno bipolar activo · embarazo · lactancia · hipertiroidismo no tratado · psicosis activa. Si tomas IMAO o antidepresivos sin supervisión, consulta a tu médico antes.</p></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Información para fines de investigación. No constituye consejo médico. Consulta a tu profesional de salud antes de iniciar cualquier protocolo.</div>
+</div>
+
+<!-- ═══════════════ PAGE 3 · COMPARACIÓN ═══════════════ -->
+<div class="page comparison-page">
+  <div class="page-num">03 · LO QUE NO TE EXPLICAN</div>
+  <div class="eyebrow">EL NUEVO PARADIGMA</div>
+  <h2>El paradigma <em>cambió.</em><br><em>Y la diferencia es brutal.</em></h2>
+  <p class="lede">Las opciones convencionales tienen su lugar — pero pagan precio biológico que no siempre se discute. Los péptidos research-grade actúan sobre la causa, no enmascaran el síntoma.</p>
+  <div class="comp-grid">
+    <div class="comp-card bad">
+      <div class="comp-tag">EL ENFOQUE CONVENCIONAL</div>
+      <h3 class="comp-h">Estimulantes <em>queman tu reserva.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>Bloquean recaptación de dopamina/noradrenalina o adenosina.</li><li><b>Efecto</b>Pico cognitivo + crash inevitable + tolerancia 6-12 meses.</li><li><b>Riesgo</b>Down-regulation receptor · dependencia · arritmias · insomnio crónico.</li><li><b>Recovery</b>Wash-out 4-8 semanas con depresión funcional.</li><li><b>Ejemplos</b>Adderall · Ritalin · Vyvanse · Modafinil · Armodafinil.</li></ul>
+    </div>
+    <div class="comp-card good">
+      <div class="comp-tag">PÉPTIDOS · LA RESTAURACIÓN</div>
+      <h3 class="comp-h">Neuropéptidos <em>generan neuronas nuevas.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>Activan BDNF, NGF, neurogénesis hipocampal.</li><li><b>Efecto</b>Mejora gradual sostenida 4-8 semanas · sin pico ni crash.</li><li><b>Ventaja</b>Sin tolerancia documentada · sin dependencia · efecto neuroprotector.</li><li><b>Recovery</b>Cambios estructurales se mantienen meses post-ciclo.</li><li><b>Ejemplos</b>Semax · Selank · Cerebrolysin · Cerebrolysin.</li></ul>
+    </div>
+  </div>
+  <p class="comp-quote">"El cerebro adulto sigue generando neuronas si le das la señal correcta."</p>
+  <p class="comp-source"><b>Fuentes:</b> Andreeva LA et al. <i>Eksp Klin Farmakol</i> 2006 (Semax). Plosker GL, Gauthier S. <i>CNS Drugs</i> 2009 (Cerebrolysin). Eriksson PS et al. <i>Nature Med</i> 1998 (neurogénesis hipocampal humana adulta).</p>
+  <div class="page-disclaimer">Productos research-grade · for research use only · El uso es responsabilidad del comprador</div>
+</div>
+
+
+<div class="page product-page">
+  <div class="page-num">04 · PRODUCTO 01</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">HEPTAPÉPTIDO · 10MG · CEREBRO</div>
+      <h1 class="prod-name">Semax<em>El nootrópico ruso heptapéptido</em></h1>
+      <p class="prod-tagline">"Análogo sintético de ACTH(4-10) — activa BDNF y mejora memoria de trabajo medible en pruebas Stroop."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/semax-studio.png" alt="Semax"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Niebla mental + memoria de trabajo</div>
+      <p class="benefit-p">Olvidas a qué entraste al cuarto · pierdes el hilo en juntas · re-leerás el mismo párrafo. Semax restaura activación prefrontal medible por fMRI en 4-6 semanas.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Activa BDNF en hipocampo</div>
+      <p class="benefit-p">BDNF (Brain-Derived Neurotrophic Factor) es el factor de crecimiento que mantiene plasticidad sináptica. Semax aumenta su expresión 30-60% en estudios en humanos (Andreeva 2006).</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Análogo ACTH(4-10) endógeno</div>
+      <p class="benefit-p">ACTH es la hormona del eje estrés. El fragmento 4-10 retiene los efectos cognitivos sin los hormonales. Tu cerebro reconoce esta señal como propia — sin tolerancia documentada.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Recovery cognitivo post-COVID</div>
+      <p class="benefit-p">Estudios rusos 2022-2024 reportan mejora documentada en pacientes long-COVID con niebla mental — Semax fue priorizado en protocolos de neurorecuperación.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">300-600mcg/día<br>matutino</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>o intranasal spray</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">5 días on / 2 off<br>6 sem on / 3 off</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Soy cirujano de 47 años. Después de 8 semanas con Semax intranasal matutino, mi recall de nombres de pacientes mejoró notablemente. Y dejé de necesitar 4 cafés."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ MTY · 47 años · cirujano cardiotorácico</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Andreeva LA et al. <i>Eksp Klin Farmakol</i> 2006 · Inst. Biología Molecular RAS · Semax y BDNF.<br>Asmarin IP et al. <i>Neurosci Behav Physiol</i> 1997 · efectos cognitivos en humanos.<br>Levitskaya NG et al. · revisión 2008 · 30 años de investigación Semax.
+  </div>
+  <div class="page-disclaimer">$2,899 MXN · 10mg liofilizado · COA Janoshik · Pureza HPLC 99.345%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">05 · PRODUCTO 02</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">HEPTAPÉPTIDO · 5MG · CEREBRO</div>
+      <h1 class="prod-name">Selank<em>Ansiolítico cognitivo sin sedación</em></h1>
+      <p class="prod-tagline">"Análogo de Tuftsin — apaga ansiedad sin afectar cognición. El opuesto de benzodiacepinas."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/selank-studio.png" alt="Selank"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Ansiedad ejecutiva sin sedación</div>
+      <p class="benefit-p">El estrés que apaga creatividad sin justificar Tafil. Selank reduce GABA-A response sin sedar — quedas tranquilo Y enfocado.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Modula GABA y serotonina</div>
+      <p class="benefit-p">Vía cascada secundaria sin agonismo directo GABA-A — efecto ansiolítico sin sedación, sin dependencia, sin rebote al suspender.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Análogo de Tuftsin endógeno</div>
+      <p class="benefit-p">Tuftsin es péptido inmunomodulador natural en plasma. Selank es su análogo sintético con perfil ansiolítico añadido — desarrollado en Rusia 2010 (Medvedev VE et al.).</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Mejora memoria simultánea</div>
+      <p class="benefit-p">Diferente de benzos que deterioran memoria, Selank documenta mejora en memoria de trabajo y enfoque sostenido — efecto dual ansiolítico+nootrópico.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">1-2 sprays nasales<br>según necesidad</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Intranasal spray</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Continuo o por demanda<br>4-6 sem ciclos OK</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Trabajo en M&A con presión brutal. Tafil me dejaba aturdido al día siguiente. Selank apaga la ansiedad sin sedarme — sigo razonando claro."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ Polanco · 41 años · M&A advisor</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Medvedev VE et al. <i>Russ J Psychiatry</i> 2010 · Selank en TAG.<br>Kost NV et al. <i>Bull Exp Biol Med</i> 2005 · ansiolítico sin sedación.<br>Semenova TP et al. · memoria y Selank · Inst. Biol Molecular RAS.
+  </div>
+  <div class="page-disclaimer">$2,899 MXN · 5mg spray nasal · COA Janoshik · Pureza HPLC 99.345%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">06 · PRODUCTO 03</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">MEZCLA NEUROTRÓFICA · 30ML · CEREBRO</div>
+      <h1 class="prod-name">Cerebrolysin<em>Mezcla neurotrófica europea</em></h1>
+      <p class="prod-tagline">"Mezcla de péptidos con NCAM-mimetic activity. Aprobado en 50+ países como neuroprotector — research-grade en MX."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/cerebrolysin-studio.png" alt="Cerebrolysin"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Recuperación neurológica + memoria</div>
+      <p class="benefit-p">Recovery post-ictus · post-traumatismo craneal · deterioro cognitivo leve · TDAH adulto · post-COVID neurológico — Cerebrolysin aporta factores neurotróficos que el cerebro adulto deja de producir.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Imita NCAM y BDNF endógenos</div>
+      <p class="benefit-p">Mezcla de fragmentos peptídicos derivados de cerebro porcino purificado. Activa receptores TrkB (BDNF) y promueve sinaptogénesis (Plosker, Gauthier 2009).</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">50+ países lo usan en hospital</div>
+      <p class="benefit-p">Cerebrolysin (EVER Pharma · Austria) tiene aprobación clínica en Europa, Asia y LATAM — pero en MX es research-grade. La evidencia clínica es robusta para Alzheimer, ictus y TBI.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Sinergia con Semax y Selank</div>
+      <p class="benefit-p">Stack signature: Semax matutino + Cerebrolysin IM ciclos + Selank por demanda. Cerebrolysin proporciona base neurotrófica · Semax acelera BDNF · Selank apaga ruido.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">5-10ml IM<br>diario por 4 sem</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Intramuscular<br>(superior a SC)</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">4 sem ON / 8 sem OFF<br>2-3 ciclos al año</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Sufrí TCE leve por accidente de bici. 5 meses después aún tenía niebla mental. Después de un ciclo Cerebrolysin de 28 días, mi capacidad de concentración volvió a baseline."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ CDMX · 39 años · ingeniero</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Plosker GL, Gauthier S · <i>CNS Drugs</i> 2009 · revisión Cerebrolysin.<br>Heiss WD et al. · <i>Stroke</i> 2012 · Cerebrolysin en ictus agudo.<br>EVER Pharma · 30+ años de investigación clínica europea.
+  </div>
+  <div class="page-disclaimer">$4,499 MXN · 30ml multidosis · COA Janoshik · Pureza HPLC verificada</div>
+</div>
+
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<div class="page price-page">
+  <div class="page-num">07 · INVERSIÓN</div>
+  <div class="eyebrow">STACKS Y PROTOCOLOS</div>
+  <h2>El acceso premium<br><em>al protocolo completo.</em></h2>
+  <p class="lede">Los stacks signature ofrecen ahorro real vs comprar individuales — además del concierge specialist 1-on-1 que diseña tu protocolo según tus síntomas, comorbilidades y wearables.</p>
+  <div class="pricing-table">
+    <div class="pt-row head"><div>STACK / PROTOCOLO</div><div style="text-align:right">PRECIO MXN</div><div style="text-align:right">DETALLE</div></div>
+    <div class="pt-row"><div class="pt-name">ESSENTIAL Cerebro<small>Semax + Selank · 6 sem</small></div><div class="pt-price">$5,499</div><div class="pt-tag"></div></div><div class="pt-row"><div class="pt-name">SIGNATURE Cognitivo<small>Semax + Selank + Cerebrolysin · 8 sem</small></div><div class="pt-price">$10,799</div><div class="pt-tag">(ahorras $1,797 vs individual)</div></div><div class="pt-row"><div class="pt-name">EXECUTIVE Anual<small>Stack signature × 4 ciclos + neuroquímica panel</small></div><div class="pt-price">$39,999</div><div class="pt-tag"></div></div>
+  </div>
+  <div class="cta-banner">
+    <h3>El cerebro genera neuronas<br><em>a cualquier edad.</em></h3>
+    <p>Niebla mental · memoria que falla · creatividad apagada · burnout. Stack research-grade sin estimulantes, sin tolerancia, sin crash.</p>
+    <a href="https://wa.me/5214445770445" class="cta-btn">VER STACK CEREBRO</a>
+  </div>
+  <div class="page-disclaimer">Precios sujetos a cambio · No incluye consulta médica especializada · Concierge specialist 1-on-1 incluido en stacks Signature y superiores</div>
+</div>
+
+<!-- ═══════════════ BACK COVER ═══════════════ -->
+<div class="page back">
+  <div style="margin:auto 0">
+  <h2 class="back-h">Pensar claro<br><em>es la base de todo lo demás.</em></h2>
+  <p class="back-p">Stack research-grade · COA Janoshik público · concierge specialist 1-on-1 · sin estimulantes · sin tolerancia.</p>
+  <div class="back-contact">
+    <div class="bc-cell"><div class="l">WHATSAPP</div><div class="v">+52 444 577 0445</div></div>
+    <div class="bc-cell"><div class="l">WEB</div><div class="v">peptiqmx.com</div></div>
+    <div class="bc-cell"><div class="l">CITY</div><div class="v">San Luis Potosí · MX</div></div>
+  </div>
+  </div>
+  <div class="page-disclaimer">© 2026 PEPTIQ MX · Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+</body>
+</html>

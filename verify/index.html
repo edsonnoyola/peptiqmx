@@ -12,8 +12,8 @@
       --white: #FFFFFF;
       --gray: #F5F5F5;
       --text-secondary: #777777;
-      --green: #22C55E;
-      --beige: #C6A969;
+      --green: #111111;
+      --beige: #111111;
     }
     body {
       font-family: 'Inter', -apple-system, sans-serif;
@@ -175,6 +175,8 @@
       color: rgba(255,255,255,0.4);
     }
   </style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
 </head>
 <body>
   <div class="logo">PEPTIQ — Batch Verification</div>
@@ -184,7 +186,7 @@
   <script>
     const CATALOG = {
       'epithalon': {
-        line: 'HIGHLANDER', lineColor: '#C6A969',
+        line: 'HIGHLANDER', lineColor: '#111111',
         name: 'EPITHALON', dose: '10 mg',
         purity: '99.32%', content: '10.67 mg',
         method: 'HPLC + MS',
@@ -192,7 +194,7 @@
         allergen: 'Tetrapéptido sintético (Ala-Glu-Asp-Gly). Longitud insuficiente para contener epítopos alergénicos estructurados. Sin homología reportada con alérgenos conocidos en bases de datos AllerTop / WHO-IUIS. Riesgo alergénico: mínimo.'
       },
       'nad-plus': {
-        line: 'HIGHLANDER', lineColor: '#C6A969',
+        line: 'HIGHLANDER', lineColor: '#111111',
         name: 'NAD+', dose: '500 mg',
         purity: '99.500%', content: '500 mg',
         method: 'HPLC + UV',
@@ -200,7 +202,7 @@
         allergen: 'Molécula pequeña (coenzima, no péptido/proteína). No aplica análisis de epítopos alergénicos. El NAD+ es una molécula endógena presente en todas las células humanas. Sin reactividad cruzada con alérgenos conocidos.'
       },
       'bpc-157': {
-        line: 'WOLVERINE', lineColor: '#7A1C1C',
+        line: 'WOLVERINE', lineColor: '#111111',
         name: 'BPC-157', dose: '10 mg',
         purity: '99.654%', content: '10.35 mg',
         method: 'HPLC + MS',
@@ -209,7 +211,7 @@
         allergen: 'Pentadecapéptido sintético (Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val). Sin epítopos alergénicos identificados en análisis de homología. No presenta reactividad cruzada con alérgenos alimentarios, ambientales ni de látex registrados en WHO-IUIS. Riesgo alergénico: mínimo.'
       },
       'tb-500': {
-        line: 'WOLVERINE', lineColor: '#7A1C1C',
+        line: 'WOLVERINE', lineColor: '#111111',
         name: 'TB-500', dose: '10 mg',
         purity: '99.328%', content: '10.20 mg',
         method: 'HPLC + MS',
@@ -233,7 +235,7 @@
         allergen: 'Péptido sintético triple agonista (GLP-1/GIP/Glucagón). En investigación clínica fase III (Eli Lilly). Perfil alergénico similar a clase GLP-1: posibles reacciones de hipersensibilidad en sitio de administración. Sin epítopos alergénicos de secuencia conocidos en alérgenos estructurales. Riesgo alergénico: bajo-moderado en contexto clínico.'
       },
       'ghk-cu': {
-        line: 'GLOW', lineColor: '#6A5ACD',
+        line: 'GLOW', lineColor: '#111111',
         name: 'GHK-Cu', dose: '100 mg',
         purity: '99.508%', content: '95 mg',
         method: 'HPLC + ICP-MS',
@@ -241,7 +243,7 @@
         allergen: 'Tripéptido sintético (Gly-His-Lys) + cobre (Cu²⁺). Secuencia demasiado corta para epítopos alergénicos convencionales. Posible sensibilización por cobre en individuos con hipersensibilidad a metales (raro, <0.1% población). Sin reactividad cruzada con alérgenos proteicos conocidos. Riesgo alergénico: mínimo.'
       },
       'ahk-cu': {
-        line: 'GLOW', lineColor: '#6A5ACD',
+        line: 'GLOW', lineColor: '#111111',
         name: 'AHK-Cu', dose: '50 mg',
         purity: '99.20%', content: '48 mg',
         method: 'HPLC + ICP-MS',
@@ -257,7 +259,7 @@
         allergen: 'Agua para inyección + cloruro de benzalconio 0.9% (conservador bacteriostático). No contiene péptidos ni proteínas — no aplica análisis de epítopos. Nota: el cloruro de benzalconio puede causar dermatitis de contacto en individuos sensibilizados (sensibilización ocupacional). Sin epítopos alergénicos proteicos.'
       },
       'trinity': {
-        line: 'GLOW', lineColor: '#6A5ACD',
+        line: 'GLOW', lineColor: '#111111',
         name: 'TRINITY', dose: '70 mg',
         purity: 'HPLC verified', content: '70 mg blend',
         method: 'HPLC',
@@ -265,7 +267,7 @@
         allergen: 'Blend de 3 péptidos: BPC-157 + GHK-Cu + TB-500. Perfil alergénico individual mínimo para cada componente. GHK-Cu contiene cobre (Cu²⁺) — posible sensibilización en individuos con hipersensibilidad a metales (<0.1%). Sin epítopos alergénicos cruzados conocidos entre componentes.'
       },
       'heal-stack': {
-        line: 'WOLVERINE', lineColor: '#7A1C1C',
+        line: 'WOLVERINE', lineColor: '#111111',
         name: 'HEAL STACK', dose: '20 mg',
         purity: 'HPLC verified', content: '20 mg blend',
         method: 'HPLC + MS',
@@ -297,20 +299,43 @@
         allergen: 'Péptido sintético análogo de GHRH (44 AA). Aprobado FDA (Egrifta®). Reacciones de hipersensibilidad reportadas en ensayos clínicos: eritema en sitio de inyección (<5%), urticaria (<1%). Sin epítopos alergénicos de secuencia cruzados con alérgenos comunes. Riesgo alergénico: bajo.'
       },
       'kpv': {
-        line: 'WOLVERINE', lineColor: '#7A1C1C',
+        line: 'WOLVERINE', lineColor: '#111111',
         name: 'KPV', dose: '10 mg',
         purity: 'HPLC verified', content: '10 mg',
         method: 'HPLC',
         lot: 'Pending COA', expiry: '—',
         allergen: 'Tripéptido sintético (Lys-Pro-Val) derivado de alfa-MSH. Secuencia de 3 aminoácidos — demasiado corta para epítopos alergénicos convencionales. Sin reactividad cruzada conocida. Riesgo alergénico: mínimo.'
       },
+      'semax': {
+        line: 'PRIME', lineColor: '#111111',
+        name: 'SEMAX', dose: '10 mg',
+        purity: 'HPLC verified', content: '10 mg',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Heptapéptido sintético derivado de ACTH (4-10). Secuencia corta (7 AA) sin homología con alérgenos comunes. Uso clínico extendido en Rusia desde 1982 sin reportes significativos de hipersensibilidad. Riesgo alergénico: mínimo.'
+      },
+      'cjc-ipamorelin': {
+        line: 'PRIME', lineColor: '#111111',
+        name: 'CJC + IPAMORELIN', dose: '10 mg blend',
+        purity: 'HPLC verified', content: '5 mg + 5 mg',
+        method: 'HPLC + MS',
+        lot: 'Pending COA', expiry: '—',
+        allergen: 'Blend de CJC-1295 (DAC) + Ipamorelin. Análogos sintéticos de GHRH y agonista ghrelina. Sin epítopos alergénicos conocidos. Perfil de seguridad establecido en literatura de péptidos GH-secretagogos. Riesgo alergénico: mínimo.'
+      },
     };
 
     function getSlug() {
-      // from URL: /verify/bpc-157 or /verify/bpc-157/
-      const path = window.location.pathname;
+      // Accept both formats:
+      //   /verify/bpc-157  (path-based, used in printed labels)
+      //   /verify/?id=bpc-157  (query-based, used in QR codes)
+      const qs = new URLSearchParams(window.location.search);
+      const fromQuery = qs.get('id');
+      if (fromQuery) return fromQuery.trim().toLowerCase();
+      const path = window.location.pathname.replace(/\/$/, '');
       const parts = path.split('/').filter(Boolean);
-      return parts[parts.length - 1] || '';
+      const last = parts[parts.length - 1] || '';
+      if (last === 'verify' || last === 'index.html') return '';
+      return last.toLowerCase();
     }
 
     function render() {
@@ -370,5 +395,12 @@
 
     render();
   </script>
+
+<!-- peptiq-global-disclaimer -->
+<div style="position:fixed;left:0;right:0;bottom:0;background:rgba(17,17,17,0.92);color:#F5F5F5;font-size:10.5px;line-height:1.5;letter-spacing:0.3px;text-align:center;padding:6px 60px;z-index:9998;backdrop-filter:blur(8px);font-family:Inter,sans-serif;">
+  Producto de uso exclusivo para investigación. El uso es responsabilidad de quien lo use.
+</div>
+<style>body{padding-bottom:32px !important;}</style>
+
 </body>
 </html>

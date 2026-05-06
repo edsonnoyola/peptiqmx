@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <filter id="neon-gold" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a0805"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- Outer circle with neon -->
+  <circle cx="540" cy="540" r="430" fill="none" stroke="#E5C981" stroke-width="5" filter="url(#neon-gold)" opacity="0.9"/>
+
+  <!-- Single large vial icon centered, gold neon outline -->
+  <g filter="url(#neon-gold)" stroke="#f0e4c8" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- vial cap -->
+    <rect x="465" y="340" width="150" height="50" rx="8"/>
+    <!-- vial neck -->
+    <rect x="475" y="390" width="130" height="30"/>
+    <!-- vial body -->
+    <path d="M 460 420 L 460 740 Q 460 760 480 760 L 600 760 Q 620 760 620 740 L 620 420 Z"/>
+    <!-- liquid fill line (glowing stronger) -->
+    <line x1="470" y1="620" x2="610" y2="620" stroke="#E5C981" stroke-width="12"/>
+    <line x1="470" y1="680" x2="610" y2="680" stroke="#E5C981" stroke-width="4" opacity="0.7"/>
+  </g>
+</svg>

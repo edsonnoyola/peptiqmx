@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E0E0E">
+<title>PEPTIQ VIP · Acceso semana de lanzamiento</title>
+<meta name="description" content="PEPTIQ Highlander Longevity Stack · NAD+ + Epithalon + GHK-Cu · COA Janoshik público · 50 viales esta semana.">
+<meta property="og:title" content="PEPTIQ Highlander Stack · Solo esta semana">
+<meta property="og:description" content="Stack longevidad con COA Janoshik · Concierge médico 1-on-1">
+<meta property="og:image" content="https://peptiqmx.com/img/products-v2/nad-plus-lifestyle.png">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E0E0E;
+  --paper:#FFFFFF;
+  --stone:#FAFAFA;
+  --rule:#F5F5F5;
+  --mute:#6B6B6B;
+  --gold:#111111;
+  --gold-deep:#111111;
+  --maroon:#5B1A1F;
+  --maroon-light:#7A2A30;
+  --ok:#111111;
+}
+*{box-sizing:border-box;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:#0E0E0E;color:#fff;font-family:'Inter',-apple-system,sans-serif;line-height:1.55}
+.serif{font-family:'Playfair Display',Georgia,serif}
+
+/* Sticky urgency banner */
+.urgency{position:sticky;top:0;background:linear-gradient(90deg,var(--maroon),var(--maroon-light));color:#fff;text-align:center;padding:10px 16px;font-size:12px;letter-spacing:1.5px;font-weight:500;z-index:100;border-bottom:1px solid var(--gold)}
+.urgency strong{color:var(--gold)}
+
+/* Hero */
+.hero{padding:64px 24px 48px;text-align:center;max-width:680px;margin:0 auto;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(198,169,105,.15) 0%,transparent 60%);pointer-events:none}
+.brand-row{font-family:'Playfair Display';font-size:12px;letter-spacing:5px;color:var(--gold);font-weight:600;margin-bottom:32px}
+.brand-row .dot{width:5px;height:5px;background:var(--gold);border-radius:50%;display:inline-block;margin:0 8px;vertical-align:middle}
+.hero h1{font-family:'Playfair Display';font-size:54px;font-weight:600;line-height:1.05;margin:0 0 20px;letter-spacing:-1px;position:relative;z-index:1}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero .lede{font-size:18px;color:#bbb;max-width:520px;margin:0 auto;font-weight:300}
+.hero-img{margin:36px auto 0;max-width:380px;width:100%}
+.hero-img img{width:100%;display:block;border-radius:3px;border:1px solid rgba(198,169,105,.2)}
+
+/* Stats row */
+.stats{display:flex;justify-content:center;gap:40px;padding:24px;background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);flex-wrap:wrap}
+.stat{text-align:center;padding:8px}
+.stat .num{font-family:'Playfair Display';font-size:36px;font-weight:600;color:var(--gold);line-height:1}
+.stat .lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-top:6px;font-weight:500}
+
+/* Offer block */
+.offer{padding:60px 24px;text-align:center;max-width:640px;margin:0 auto}
+.offer-eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;font-weight:500}
+.offer h2{font-family:'Playfair Display';font-size:38px;font-weight:600;margin:0 0 14px;line-height:1.15}
+.offer h2 em{color:var(--gold);font-style:italic}
+.offer .stack-name{font-family:'Playfair Display';font-size:24px;color:#fff;margin:24px 0 6px;font-weight:600}
+.offer .stack-desc{color:#aaa;font-size:14px;margin-bottom:32px}
+
+/* Stack components */
+.components{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;padding:24px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.component{text-align:left;padding:0 8px}
+.comp-name{font-family:'Playfair Display';font-size:16px;font-weight:600;color:var(--gold);margin-bottom:4px}
+.comp-desc{font-size:11px;color:#888;line-height:1.4}
+
+/* Price box */
+.price-box{background:linear-gradient(135deg,var(--maroon),#3a1014);padding:32px 24px;border-radius:3px;margin:28px 0;border:1px solid var(--gold)}
+.price-was{font-size:13px;color:#aaa;text-decoration:line-through;margin-bottom:6px}
+.price-now{font-family:'Playfair Display';font-size:48px;font-weight:600;color:#fff;line-height:1}
+.price-now small{font-size:14px;color:var(--gold);font-family:'Inter';font-weight:500;letter-spacing:1px;margin-left:6px}
+.price-msi{font-size:13px;color:#ddd;margin-top:8px}
+.price-incl{font-size:11px;color:#999;margin-top:14px;line-height:1.6}
+
+/* CTA buttons */
+.cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 0}
+@media(max-width:540px){.cta-row{grid-template-columns:1fr}}
+.btn{padding:18px 22px;border-radius:3px;text-decoration:none;font-weight:600;letter-spacing:1.5px;font-size:13px;text-transform:uppercase;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s}
+.btn:active{transform:scale(.98)}
+.btn-gold{background:#FFFFFF;color:#111111;border:1px solid #111111}
+.btn-wa{background:#111111;color:#fff}
+.btn-full{margin-top:10px;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15);font-size:11px;padding:14px;letter-spacing:1.2px}
+
+/* Why-block */
+.why{padding:60px 24px;background:var(--paper);color:var(--ink)}
+.why-inner{max-width:640px;margin:0 auto}
+.why-eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold-deep);text-transform:uppercase;margin-bottom:14px;text-align:center;font-weight:500}
+.why h3{font-family:'Playfair Display';font-size:34px;font-weight:600;text-align:center;margin:0 0 32px;line-height:1.2}
+.why h3 em{color:var(--maroon);font-style:italic}
+.reasons{display:flex;flex-direction:column;gap:0}
+.reason{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.reason:last-child{border-bottom:0}
+.reason .num{font-family:'Playfair Display';font-size:36px;font-weight:600;color:var(--maroon);line-height:1;flex-shrink:0;width:60px}
+.reason h4{font-family:'Playfair Display';font-size:18px;font-weight:600;margin:0 0 4px}
+.reason p{margin:0;color:var(--mute);font-size:14px;line-height:1.55}
+.reason cite{display:block;margin-top:8px;font-size:11px;color:var(--gold-deep);font-style:normal;letter-spacing:1.5px;font-weight:500}
+
+/* Quote */
+.quote-block{background:var(--ink);padding:80px 24px;text-align:center}
+.quote-block blockquote{font-family:'Playfair Display';font-style:italic;font-size:28px;color:var(--gold);max-width:640px;margin:0 auto;line-height:1.3;font-weight:500}
+.quote-block cite{display:block;margin-top:24px;font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.5);text-transform:uppercase;font-style:normal;font-family:'Inter'}
+
+/* FAQ compacta */
+.faq{padding:60px 24px;background:#181818}
+.faq-inner{max-width:640px;margin:0 auto}
+.faq h3{font-family:'Playfair Display';font-size:28px;text-align:center;margin:0 0 32px;font-weight:600}
+.faq details{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08);cursor:pointer}
+.faq summary{font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#fff}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';color:var(--gold);font-size:24px;font-weight:300}
+.faq details[open] summary::after{content:'−'}
+.faq details[open]{padding-bottom:16px}
+.faq details p{margin:14px 0 0;color:#aaa;font-size:14px;line-height:1.6}
+
+/* Final CTA */
+.final{padding:80px 24px;text-align:center;background:linear-gradient(180deg,var(--ink),#1a1416)}
+.final h3{font-family:'Playfair Display';font-size:42px;font-weight:600;margin:0 0 16px;line-height:1.1}
+.final h3 em{color:var(--gold);font-style:italic}
+.final p{color:#aaa;font-size:16px;max-width:520px;margin:0 auto 32px}
+.final-cta{max-width:480px;margin:0 auto}
+
+/* Footer */
+footer{padding:40px 24px;text-align:center;border-top:1px solid rgba(255,255,255,.05);background:var(--ink)}
+footer .b{font-family:'Playfair Display';font-size:14px;letter-spacing:6px;color:var(--gold);font-weight:600}
+footer p{color:#555;font-size:11px;margin:8px 0;line-height:1.6}
+footer a{color:#888;text-decoration:none}
+
+/* Floating WhatsApp */
+.float-wa{position:fixed;bottom:20px;right:20px;background:#111111;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 16px rgba(0,0,0,.3);text-decoration:none;z-index:50}
+
+@media(max-width:600px){
+  .hero h1{font-size:38px}
+  .offer h2{font-size:28px}
+  .why h3{font-size:26px}
+  .quote-block blockquote{font-size:20px}
+  .final h3{font-size:32px}
+  .components{grid-template-columns:1fr;gap:8px}
+  .stats{gap:24px}
+  .stat .num{font-size:28px}
+}
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body>
+
+<div class="urgency">
+  ⚡ <strong>SOLO ESTA SEMANA</strong> · 50 viales asignados · concierge médico incluido
+</div>
+
+<section class="hero">
+  <div class="brand-row">PEPTIQ MX<span class="dot"></span><span style="color:#888">VIP ACCESS</span></div>
+  <h1>El protocolo de los<br><em>próximos 20 años.</em></h1>
+  <p class="lede">Stack premium NAD+ + Epithalon + GHK-Cu con COA Janoshik público. Único proveedor en México que publica certificados por lote.</p>
+  <div class="hero-img">
+    <img src="/img/products-v2/nad-plus-lifestyle.png" alt="PEPTIQ Highlander Longevity Stack" loading="eager">
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat">
+    <div class="num">99.7%</div>
+    <div class="lbl">Pureza COA</div>
+  </div>
+  <div class="stat">
+    <div class="num">50</div>
+    <div class="lbl">Viales/mes</div>
+  </div>
+  <div class="stat">
+    <div class="num">1:1</div>
+    <div class="lbl">Concierge médico</div>
+  </div>
+  <div class="stat">
+    <div class="num">24h</div>
+    <div class="lbl">Envío MX</div>
+  </div>
+</div>
+
+<section class="offer">
+  <div class="offer-eyebrow">Highlander Longevity Stack</div>
+  <h2>Tres péptidos.<br>Un sistema <em>integral.</em></h2>
+
+  <div class="components">
+    <div class="component">
+      <div class="comp-name">NAD+ 1000mg</div>
+      <div class="comp-desc">Energía mitocondrial · activación sirtuinas · reparación ADN</div>
+    </div>
+    <div class="component">
+      <div class="comp-name">Epithalon 50mg</div>
+      <div class="comp-desc">Activación telomerasa · ritmo circadiano · melatonina natural</div>
+    </div>
+    <div class="component">
+      <div class="comp-name">GHK-Cu 100mg</div>
+      <div class="comp-desc">Master regulator · 4,000+ genes reparación · piel y cabello</div>
+    </div>
+  </div>
+
+  <div class="price-box">
+    <div class="price-was">Precio individual: $16,097 MXN</div>
+    <div class="price-now">$14,999<small> MXN</small></div>
+    <div class="price-msi">3, 6 o 12 MSI con tarjeta · OXXO · SPEI · Apple/Google Pay</div>
+    <div class="price-incl">+ Agua bacteriostática + jeringas + guía protocolo + COA Janoshik físico + asesoría 1-on-1</div>
+  </div>
+
+  <div class="cta-row">
+    <a href="https://buy.stripe.com/6oU3cwd7hbg4gCt7Fuds407" class="btn btn-gold">💳 Pagar tarjeta</a>
+    <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20el%20Highlander%20Longevity%20Stack%20%2414%2C999" class="btn btn-wa">📱 Pedir por WhatsApp</a>
+  </div>
+  <a href="https://peptiqmx.com" class="btn btn-full">Ver todos los stacks PEPTIQ →</a>
+</section>
+
+<section class="why">
+  <div class="why-inner">
+    <div class="why-eyebrow">¿Por qué $14,999 y no $4,800 (precios competencia)?</div>
+    <h3>No competimos por precio.<br><em>Competimos por integridad.</em></h3>
+
+    <div class="reasons">
+      <div class="reason">
+        <div class="num">01</div>
+        <div>
+          <h4>COA Janoshik público por lote</h4>
+          <p>Cada vial llega con QR único. Verificas pureza en janoshik.com en 30 segundos. Único proveedor en México que publica COA por lote — la competencia los oculta o los falsifica.</p>
+          <cite>JANOSHIK ANALYTICAL · PRAGA, REP. CHECA</cite>
+        </div>
+      </div>
+      <div class="reason">
+        <div class="num">02</div>
+        <div>
+          <h4>Concierge médico 1-on-1</h4>
+          <p>Tu protocolo no es genérico. Te asignamos asesoría médica personalizada antes y durante el ciclo. Dosis, ritmo, timing, signos a vigilar. No vendemos cajas — entregamos resultados.</p>
+        </div>
+      </div>
+      <div class="reason">
+        <div class="num">03</div>
+        <div>
+          <h4>Cadena de custodia completa</h4>
+          <p>Refrigeración 2-8°C desde lyofilizado hasta tu puerta. Empaque sellado anti-tampering. Trackeo logístico cada paso. La competencia te manda en sobres con baterías de litio.</p>
+        </div>
+      </div>
+      <div class="reason">
+        <div class="num">04</div>
+        <div>
+          <h4>Producción limitada</h4>
+          <p>Solo 50 viales asignados al mes. No vendemos en Amazon, ni MercadoLibre, ni Sears. Mercado VIP por invitación o referido. Esto protege la pureza del lote y la atención que damos.</p>
+        </div>
+      </div>
+      <div class="reason">
+        <div class="num">05</div>
+        <div>
+          <h4>Stack curado científicamente</h4>
+          <p>NAD+ activa sirtuinas. Epithalon mantiene telómeros. GHK-Cu regula 4,000+ genes. Los tres juntos completan el ciclo. Comprar individual fragmenta el protocolo.</p>
+          <cite>IMAI &amp; GUARENTE · CELL 2014 · KHAVINSON 2002 · PICKART 2008</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-block">
+  <blockquote>"En 10 años verás la diferencia entre quienes invirtieron en su biología<br>y quienes solo gastaron en suplementos."</blockquote>
+  <cite>— EQUIPO PEPTIQ MX</cite>
+</section>
+
+<section class="faq">
+  <div class="faq-inner">
+    <h3>Preguntas frecuentes</h3>
+    <details>
+      <summary>¿Es legal comprar péptidos en México?</summary>
+      <p>Sí. PEPTIQ comercializa péptidos research-grade exclusivamente para investigación de laboratorio. El uso es responsabilidad del comprador. Toda la documentación regulatoria está en peptiqmx.com.</p>
+    </details>
+    <details>
+      <summary>¿Cuándo llega después de pagar?</summary>
+      <p>Empacamos en 24h y enviamos con DHL/Estafeta refrigerado. Recibe en 24-48h en CDMX/MTY/GDL · 48-72h en otras ciudades. Trackeo enviado por WhatsApp.</p>
+    </details>
+    <details>
+      <summary>¿La asesoría médica es real?</summary>
+      <p>Sí. Médico cédula MX que te contacta vía WhatsApp después del pago. Resuelve dudas de protocolo, dosing, frecuencia. No es chatbot ni AI — es médico real.</p>
+    </details>
+    <details>
+      <summary>¿Por qué tan caro vs Aesthetic Pharma?</summary>
+      <p>Compras DIFERENTE producto. Aesthetic vende sin COA público, sin asesoría, sin trazabilidad. PEPTIQ es la única opción si valoras pureza verificable y resultados sostenibles. Si te basta lo más barato, no somos para ti.</p>
+    </details>
+    <details>
+      <summary>¿Puedo pagar en mensualidades?</summary>
+      <p>Sí. Stripe acepta MSI 3, 6 o 12 meses con tarjeta crédito mexicana. También OXXO (24h ficha), SPEI directo, Apple Pay, Google Pay. Todo en el checkout.</p>
+    </details>
+    <details>
+      <summary>¿Qué pasa si no funciona para mí?</summary>
+      <p>Garantía de protocolo: si seguiste el ciclo y no notas cambios después de 8 semanas, te asignamos consulta médica adicional sin costo para ajustar plan o evaluar siguiente fase.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final">
+  <h3>Solo 50 viales.<br><em>Esta semana.</em></h3>
+  <p>Cuando se agoten, abrimos lista de espera mensual. Si valoras tu próxima década, este es el momento.</p>
+  <div class="final-cta">
+    <div class="cta-row">
+      <a href="https://buy.stripe.com/6oU3cwd7hbg4gCt7Fuds407" class="btn btn-gold">💳 Pagar $14,999</a>
+      <a href="https://wa.me/5214445770445?text=Hola%2C%20vi%20la%20p%C3%A1gina%20VIP%20%C2%BFcontin%C3%BAa%20disponible%20Highlander%3F" class="btn btn-wa">📱 Hablar antes</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="b">PEPTIQ</div>
+  <p style="letter-spacing:3px;font-size:10px">HACK YOUR LIMITS</p>
+  <p style="margin-top:24px"><a href="https://peptiqmx.com">peptiqmx.com</a> · WhatsApp <a href="https://wa.me/5214445770445">+52 1 444 577 0445</a></p>
+  <p style="margin-top:24px;font-size:10px;color:#444;line-height:1.6">Research products · No para consumo humano. El uso es responsabilidad del comprador. Información educativa, no reemplaza consulta médica.</p>
+</footer>
+
+<a href="https://wa.me/5214445770445?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20VIP%20PEPTIQ" class="float-wa" aria-label="WhatsApp PEPTIQ">💬</a>
+
+</body>
+</html>

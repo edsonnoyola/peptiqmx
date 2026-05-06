@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1308"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <circle cx="540" cy="960" r="420" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.35"/>
+  <circle cx="540" cy="960" r="390" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.2"/>
+  <text x="540" y="880" font-family="'Playfair Display',Georgia,serif" font-size="32" font-style="italic" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.75">certificate</text>
+  <text x="540" y="1060" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="320" font-weight="800" fill="url(#gold)" text-anchor="middle" letter-spacing="16">COA</text>
+  <line x1="420" y1="1130" x2="660" y2="1130" stroke="#C6A969" stroke-width="1" opacity="0.6"/>
+  <text x="540" y="1200" font-family="'Inter',sans-serif" font-size="30" fill="#a8987a" text-anchor="middle" letter-spacing="10">HPLC · JANOSHIK</text>
+</svg>

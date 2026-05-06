@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>PEPTIQ Launch Dashboard — 2026-04-20</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --ink:#0A0A0A;
+      --ink-2:#141414;
+      --ink-3:#1E1E1E;
+      --paper:#F6F3EE;
+      --beige:#B8A99A;
+      --beige-deep:#9C8D7F;
+      --gold:#C6A969;
+      --rule:rgba(255,255,255,.08);
+      --mute:#8a8274;
+      --ok:#22C55E;
+      --bad:#ef4444;
+      --warn:#FFC107;
+      --serif:'Playfair Display', Georgia, serif;
+      --sans:'Inter', -apple-system, sans-serif;
+    }
+    html{-webkit-font-smoothing:antialiased}
+    body{font-family:var(--sans);background:var(--ink);color:var(--paper);line-height:1.5;font-weight:400;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer;border:0;background:0;font-family:inherit;color:inherit}
+
+    .wrap{max-width:720px;margin:0 auto;padding:20px 16px 40px}
+
+    /* HEADER */
+    .hdr{padding:16px 0 24px;border-bottom:1px solid var(--rule);margin-bottom:24px}
+    .hdr .eyebrow{font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+    .hdr h1{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.15;letter-spacing:-.01em}
+    .hdr h1 em{font-style:italic;color:var(--beige-deep)}
+    .hdr .meta{margin-top:10px;font-size:11px;color:var(--mute);letter-spacing:.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    .hdr .meta .dot{display:inline-flex;align-items:center;gap:6px}
+    .dot::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mute)}
+    .dot.ok::before{background:var(--ok);box-shadow:0 0 8px var(--ok)}
+    .dot.bad::before{background:var(--bad);box-shadow:0 0 8px var(--bad)}
+    .dot.warn::before{background:var(--warn)}
+
+    /* SECTION CARD */
+    .card{background:var(--ink-2);border:1px solid var(--rule);padding:20px;margin-bottom:14px;border-radius:2px}
+    .card .c-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+    .card .c-title{font-family:var(--serif);font-size:17px;font-weight:500;font-style:italic}
+    .card .c-title .ic{font-family:var(--sans);font-style:normal;color:var(--gold);font-size:12px;margin-right:6px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;vertical-align:middle}
+    .card .c-meta{font-size:10px;color:var(--mute);letter-spacing:1.4px;text-transform:uppercase}
+
+    /* BIG NUMBER */
+    .big-num{font-family:var(--serif);font-size:52px;font-weight:500;line-height:1;letter-spacing:-.02em;color:var(--paper)}
+    .big-num small{font-size:14px;color:var(--mute);font-family:var(--sans);letter-spacing:1px;font-weight:400;margin-left:6px}
+    .big-sub{font-size:11px;color:var(--mute);margin-top:8px;letter-spacing:.4px}
+    .big-sub b{color:var(--gold);font-weight:500}
+
+    /* TABLE */
+    .tbl{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
+    .tbl th{text-align:left;padding:8px 6px;border-bottom:1px solid var(--rule);color:var(--mute);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500}
+    .tbl td{padding:10px 6px;border-bottom:1px solid rgba(255,255,255,.04);color:#d5cfbf;vertical-align:top}
+    .tbl td.mono{font-family:'SF Mono',Menlo,monospace;font-size:11px;color:var(--beige)}
+    .tbl td.muted{color:var(--mute)}
+    .tbl tr:last-child td{border-bottom:0}
+    .tbl-empty{padding:24px 8px;text-align:center;color:var(--mute);font-size:12px;font-style:italic}
+
+    /* KEY LINKS */
+    .links-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .lk{display:block;background:var(--ink-3);border:1px solid var(--rule);padding:14px;transition:.2s}
+    .lk:active, .lk:hover{border-color:var(--gold);transform:translateY(-1px)}
+    .lk .lk-label{font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:4px}
+    .lk .lk-name{font-family:var(--serif);font-size:15px;font-weight:500;font-style:italic}
+    .lk .lk-url{font-size:10px;color:var(--mute);margin-top:4px;word-break:break-all}
+
+    /* HEALTH */
+    .health-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .health-item{background:var(--ink-3);border:1px solid var(--rule);padding:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .health-item .hi-name{font-size:13px;font-weight:500}
+    .health-item .hi-url{font-size:10px;color:var(--mute);margin-top:2px;word-break:break-all}
+
+    /* PIXEL COUNTERS */
+    .pixel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .pxl{background:var(--ink-3);border:1px solid var(--rule);padding:16px 12px;text-align:center}
+    .pxl .pxl-lbl{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:6px}
+    .pxl .pxl-val{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--paper)}
+    .pxl .pxl-val.stub{color:var(--mute);font-style:italic}
+    .note{font-size:11px;color:var(--warn);margin-top:10px;font-style:italic;text-align:center;letter-spacing:.3px}
+
+    /* REFRESH */
+    .refresh{position:sticky;bottom:14px;margin-top:20px;z-index:10}
+    .refresh-btn{width:100%;background:var(--gold);color:var(--ink);padding:14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;border:0;transition:.2s}
+    .refresh-btn:active{transform:scale(.98)}
+    .refresh-info{text-align:center;font-size:10px;color:var(--mute);margin-top:8px;letter-spacing:.8px}
+
+    .loading{color:var(--mute);font-style:italic;font-size:12px}
+
+    @media(min-width:680px){
+      .pixel-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:420px){
+      .links-grid, .health-grid{grid-template-columns:1fr}
+      .big-num{font-size:42px}
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="eyebrow">Internal · No auth</div>
+    <h1>PEPTIQ Launch <em>Dashboard</em> — 2026-04-20</h1>
+    <div class="meta">
+      <span id="clock">—</span>
+      <span class="dot ok" id="pixelDot">Pixel</span>
+      <span class="dot" id="siteDot">Site</span>
+      <span class="dot" id="saraDot">Sara</span>
+    </div>
+  </header>
+
+  <!-- SUBSCRIBERS TODAY -->
+  <section class="card">
+    <div class="c-head">
+      <div class="c-title"><span class="ic">01</span>Subscribers today</div>
+      <div class="c-meta" id="subsMeta">—</div>
+    </div>
+    <div class="big-num" id="subsNum"><span class="loading">…</span></div>
+    <div class="big-sub" id="subsSub">Suscripciones recibidas en las últimas 24h vía webhook <b>peptiq-email-capture</b>.</div>
+  </section>
+
+  <!-- RECENT LEADS -->
+  <section class="card">
+    <div class="c-head">
+      <div class="c-title"><span class="ic">02</span>Recent leads</div>
+      <div class="c-meta">Últimos 20</div>
+    </div>
+    <div id="leadsBox">
+      <table class="tbl" id="leadsTable" style="display:none">
+        <thead>
+          <tr><th>Email</th><th>UTM source</th><th>Cuándo</th></tr>
+        </thead>
+        <tbody id="leadsBody"></tbody>
+      </table>
+      <div class="tbl-empty" id="leadsEmpty">Cargando…</div>
+    </div>
+  </section>
+
+  <!-- HEALTH CHECK -->
+  <section class="card">
+    <div class="c-head">
+      <div class="c-title"><span class="ic">03</span>Health check</div>
+      <div class="c-meta" id="healthMeta">—</div>
+    </div>
+    <div class="health-grid">
+      <div class="health-item">
+        <div>
+          <div class="hi-name" id="hSiteName">peptiqmx.com <span class="dot" id="hSiteDot" style="margin-left:6px;padding:2px 0"></span></div>
+          <div class="hi-url">https://peptiqmx.com/</div>
+        </div>
+      </div>
+      <div class="health-item">
+        <div>
+          <div class="hi-name" id="hSaraName">sara-backend /health <span class="dot" id="hSaraDot" style="margin-left:6px;padding:2px 0"></span></div>
+          <div class="hi-url">sara-backend.edson-633.workers.dev/health</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIXEL EVENT COUNTERS -->
+  <section class="card">
+    <div class="c-head">
+      <div class="c-title"><span class="ic">04</span>Pixel events (24h)</div>
+      <div class="c-meta">Meta</div>
+    </div>
+    <div class="pixel-grid">
+      <div class="pxl">
+        <div class="pxl-lbl">ViewContent</div>
+        <div class="pxl-val stub">—</div>
+      </div>
+      <div class="pxl">
+        <div class="pxl-lbl">Lead</div>
+        <div class="pxl-val stub">—</div>
+      </div>
+      <div class="pxl">
+        <div class="pxl-lbl">Contact</div>
+        <div class="pxl-val stub">—</div>
+      </div>
+    </div>
+    <div class="note">Requires Meta Conversions API token. Ver en Meta Events Manager →</div>
+  </section>
+
+  <!-- KEY LINKS -->
+  <section class="card">
+    <div class="c-head">
+      <div class="c-title"><span class="ic">05</span>Key links</div>
+    </div>
+    <div class="links-grid">
+      <a href="https://business.facebook.com/adsmanager" target="_blank" rel="noopener" class="lk">
+        <div class="lk-label">Ads</div>
+        <div class="lk-name">Meta Ads Manager</div>
+        <div class="lk-url">business.facebook.com/adsmanager</div>
+      </a>
+      <a href="https://business.facebook.com/events_manager2" target="_blank" rel="noopener" class="lk">
+        <div class="lk-label">Pixel</div>
+        <div class="lk-name">Meta Events Manager</div>
+        <div class="lk-url">business.facebook.com/events_manager2</div>
+      </a>
+      <a href="https://resend.com/emails" target="_blank" rel="noopener" class="lk">
+        <div class="lk-label">Email</div>
+        <div class="lk-name">Resend Dashboard</div>
+        <div class="lk-url">resend.com/emails</div>
+      </a>
+      <a href="https://dash.cloudflare.com/workers" target="_blank" rel="noopener" class="lk">
+        <div class="lk-label">Worker</div>
+        <div class="lk-name">SARA Worker Logs</div>
+        <div class="lk-url">dash.cloudflare.com/workers</div>
+      </a>
+      <a href="https://app.netlify.com/projects/peptiqmx" target="_blank" rel="noopener" class="lk">
+        <div class="lk-label">Deploy</div>
+        <div class="lk-name">Netlify Deploys</div>
+        <div class="lk-url">app.netlify.com/projects/peptiqmx</div>
+      </a>
+      <a href="https://wa.me/5214445770445" target="_blank" rel="noopener" class="lk">
+        <div class="lk-label">WhatsApp</div>
+        <div class="lk-name">Línea directa</div>
+        <div class="lk-url">+52 1 444 577 0445</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- REFRESH -->
+  <div class="refresh">
+    <button class="refresh-btn" onclick="refreshAll()">↻ Refrescar ahora</button>
+    <div class="refresh-info">Auto-refresh cada 60s · Última: <span id="lastRefresh">—</span></div>
+  </div>
+
+</div>
+
+<script>
+  // ==================================================================
+  // PEPTIQ Launch Dashboard
+  // Security-by-obscurity: no auth. Do not link publicly.
+  // ==================================================================
+
+  const SARA_BASE = 'https://sara-backend.edson-633.workers.dev';
+  // PLACEHOLDER: replace with real API key once backend endpoint is live
+  const SARA_API_KEY = 'PLACEHOLDER';
+
+  // ====== CLOCK ======
+  function tickClock(){
+    const now = new Date();
+    const el = document.getElementById('clock');
+    if (el) el.textContent = now.toLocaleString('es-MX', { dateStyle:'medium', timeStyle:'short' });
+  }
+  tickClock();
+  setInterval(tickClock, 1000 * 30);
+
+  // ====== SUBSCRIBERS TODAY ======
+  // NOTE: Endpoint may not exist yet. If it returns non-JSON or 404, dashboard
+  // falls back to showing a placeholder. Backend task for Edson:
+  //   GET /api/peptiq/subscribers/today?api_key=XXX
+  //   → { count: <int>, last20: [{ email, utm_source, created_at }] }
+  async function fetchSubscribers(){
+    const subsNum = document.getElementById('subsNum');
+    const subsMeta = document.getElementById('subsMeta');
+    const subsSub = document.getElementById('subsSub');
+    const leadsBody = document.getElementById('leadsBody');
+    const leadsTable = document.getElementById('leadsTable');
+    const leadsEmpty = document.getElementById('leadsEmpty');
+    try {
+      const res = await fetch(`${SARA_BASE}/api/peptiq/subscribers/today?api_key=${SARA_API_KEY}`, {
+        method: 'GET',
+        headers: {'Accept':'application/json'}
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const ct = res.headers.get('content-type') || '';
+      if (ct.indexOf('application/json') === -1) throw new Error('Not JSON');
+      const data = await res.json();
+      const count = (data.count != null) ? data.count : (Array.isArray(data.last20) ? data.last20.length : 0);
+      subsNum.innerHTML = `${count}<small>hoy</small>`;
+      subsMeta.textContent = 'Live · SARA';
+      subsSub.innerHTML = `Suscripciones recibidas en las últimas 24h vía webhook <b>peptiq-email-capture</b>.`;
+
+      // Populate leads table
+      const last20 = Array.isArray(data.last20) ? data.last20 : [];
+      if (last20.length > 0) {
+        leadsBody.innerHTML = last20.map(l => {
+          const email = (l.email || '').replace(/</g,'&lt;');
+          const utm = (l.utm_source || l.source || '—').replace(/</g,'&lt;');
+          const when = l.created_at ? timeAgo(new Date(l.created_at)) : '—';
+          return `<tr><td class="mono">${email}</td><td class="muted">${utm}</td><td class="muted">${when}</td></tr>`;
+        }).join('');
+        leadsTable.style.display = '';
+        leadsEmpty.style.display = 'none';
+      } else {
+        leadsTable.style.display = 'none';
+        leadsEmpty.textContent = 'No hay leads todavía. Lanzamiento aún no dispara.';
+        leadsEmpty.style.display = '';
+      }
+    } catch (e) {
+      // Placeholder mode — endpoint not yet implemented
+      subsNum.innerHTML = `<span style="color:var(--mute);font-style:italic;font-size:32px">pending</span>`;
+      subsMeta.textContent = 'Stub · endpoint pending';
+      subsSub.innerHTML = `Backend endpoint <b>/api/peptiq/subscribers/today</b> aún no implementado. Ver fetchSubscribers() en status.html — se activará cuando el worker exponga el endpoint con api_key.`;
+      leadsTable.style.display = 'none';
+      leadsEmpty.innerHTML = `Endpoint pendiente. <br><span style="font-size:10px;opacity:.7">Error: ${(e.message||'').replace(/</g,'&lt;')}</span>`;
+      leadsEmpty.style.display = '';
+    }
+  }
+
+  // ====== HEALTH CHECK ======
+  async function checkSite(){
+    const dot = document.getElementById('hSiteDot');
+    const navDot = document.getElementById('siteDot');
+    try {
+      // Use no-cors fallback — only confirms we reached the origin, not status
+      const res = await fetch('https://peptiqmx.com/', { method:'HEAD', mode:'no-cors', cache:'no-store' });
+      // Opaque responses are normal under no-cors — treat as green
+      dot.classList.remove('bad'); dot.classList.add('ok');
+      navDot.classList.remove('bad'); navDot.classList.add('ok');
+    } catch(e) {
+      dot.classList.remove('ok'); dot.classList.add('bad');
+      navDot.classList.remove('ok'); navDot.classList.add('bad');
+    }
+  }
+
+  async function checkSara(){
+    const dot = document.getElementById('hSaraDot');
+    const navDot = document.getElementById('saraDot');
+    try {
+      const res = await fetch(`${SARA_BASE}/health`, { method:'GET', cache:'no-store' });
+      if (res.ok) {
+        dot.classList.remove('bad','warn'); dot.classList.add('ok');
+        navDot.classList.remove('bad','warn'); navDot.classList.add('ok');
+      } else {
+        dot.classList.remove('ok'); dot.classList.add('warn');
+        navDot.classList.remove('ok'); navDot.classList.add('warn');
+      }
+    } catch(e) {
+      dot.classList.remove('ok','warn'); dot.classList.add('bad');
+      navDot.classList.remove('ok','warn'); navDot.classList.add('bad');
+    }
+    document.getElementById('healthMeta').textContent = new Date().toLocaleTimeString('es-MX', { hour:'2-digit', minute:'2-digit' });
+  }
+
+  // ====== UTILS ======
+  function timeAgo(d){
+    const sec = Math.floor((Date.now() - d.getTime()) / 1000);
+    if (sec < 60) return `hace ${sec}s`;
+    if (sec < 3600) return `hace ${Math.floor(sec/60)}m`;
+    if (sec < 86400) return `hace ${Math.floor(sec/3600)}h`;
+    return d.toLocaleString('es-MX', { dateStyle:'short', timeStyle:'short' });
+  }
+
+  function markLastRefresh(){
+    document.getElementById('lastRefresh').textContent =
+      new Date().toLocaleTimeString('es-MX', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+  }
+
+  // ====== REFRESH ALL ======
+  async function refreshAll(){
+    await Promise.allSettled([
+      fetchSubscribers(),
+      checkSite(),
+      checkSara()
+    ]);
+    markLastRefresh();
+  }
+
+  // Initial load
+  refreshAll();
+
+  // Auto-refresh every 60s
+  setInterval(refreshAll, 60 * 1000);
+
+  // Pixel dot: we can't actually verify pixel firing server-side without CAPI token.
+  // Mark it based on whether fbq is loadable in child iframes (skipped). Default ok.
+  document.getElementById('pixelDot').classList.add('ok');
+</script>
+
+
+<!-- peptiq-global-disclaimer -->
+<div style="position:fixed;left:0;right:0;bottom:0;background:rgba(17,17,17,0.92);color:#E8E2D5;font-size:10.5px;line-height:1.5;letter-spacing:0.3px;text-align:center;padding:6px 60px;z-index:9998;backdrop-filter:blur(8px);font-family:Inter,sans-serif;">
+  Producto de uso exclusivo para investigación. El uso es responsabilidad de quien lo use.
+</div>
+<style>body{padding-bottom:32px !important;}</style>
+
+</body>
+</html>

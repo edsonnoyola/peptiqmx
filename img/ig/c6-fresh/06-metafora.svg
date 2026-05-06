@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="darkAll" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <image xlink:href="https://peptiqmx.com/img/covers/spa-hero.png" x="0" y="0" width="1080" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1080" height="1080" fill="url(#darkAll)"/>
+
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="10">05 · LA METÁFORA</text>
+
+  <text x="540" y="270" font-family="'Playfair Display',Georgia,serif" font-size="40" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Piénsalo así:</text>
+
+  <g transform="translate(120 350)">
+    <rect width="840" height="160" fill="rgba(0,0,0,0.65)" stroke="#b53d3d" stroke-width="1.5" rx="2"/>
+    <text x="40" y="48" font-family="'Inter',sans-serif" font-size="14" fill="#ff7878" letter-spacing="3">HORMONA SINTÉTICA</text>
+    <text x="40" y="100" font-family="'Playfair Display',Georgia,serif" font-size="30" fill="#f0e4c8" font-style="italic">"Reemplazar al pianista</text>
+    <text x="40" y="138" font-family="'Playfair Display',Georgia,serif" font-size="30" fill="#f0e4c8" font-style="italic">con un MP3 en repeat."</text>
+  </g>
+
+  <g transform="translate(120 540)">
+    <rect width="840" height="160" fill="rgba(0,0,0,0.65)" stroke="url(#gold)" stroke-width="2" rx="2"/>
+    <text x="40" y="48" font-family="'Inter',sans-serif" font-size="14" fill="#E5C981" letter-spacing="3">PÉPTIDO</text>
+    <text x="40" y="100" font-family="'Playfair Display',Georgia,serif" font-size="30" fill="#f0e4c8" font-style="italic">"Enseñar al pianista a tocar</text>
+    <text x="40" y="138" font-family="'Playfair Display',Georgia,serif" font-size="30" fill="url(#gold)" font-style="italic">con las dos manos otra vez."</text>
+  </g>
+
+  <text x="540" y="800" font-family="'Playfair Display',Georgia,serif" font-size="28" fill="#f0e4c8" text-anchor="middle" font-style="italic">Uno te hace dependiente.</text>
+  <text x="540" y="845" font-family="'Playfair Display',Georgia,serif" font-size="28" fill="url(#gold)" text-anchor="middle" font-style="italic">El otro te devuelve tu propio cuerpo.</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">06 / 08</text>
+</svg>

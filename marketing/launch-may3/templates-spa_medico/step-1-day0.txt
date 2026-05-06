@@ -1,0 +1,23 @@
+SUBJECT: {nombre_negocio} — péptidos premium para spa médico
+DELAY DAYS: 0
+
+--- BODY ---
+Hola {nombre},
+
+Vi que {nombre_negocio} en {ciudad} ofrece tratamientos de spa médico. Te contacto porque distribuimos péptidos de grado investigación que varios spas médicos en México están incorporando.
+
+Péptidos populares en spas médicos:
+• GHK-Cu — regeneración celular, anti-aging
+• Colágeno bioactivo — firmeza y elasticidad
+• BPC-157 — recuperación y antiinflamatorio
+• Glutatión — antioxidante y luminosidad
+
+Precios de mayoreo + certificado de análisis por lote.
+
+¿Te gustaría ver nuestro catálogo?
+
+Saludos,
+{firma}
+{whatsapp_link}
+
+⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador.

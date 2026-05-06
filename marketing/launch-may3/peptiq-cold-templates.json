@@ -1,0 +1,146 @@
+[
+  {
+    "category": "nutriologos",
+    "categoryLabel": "Nutriólogos / Funcional",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "{nombre_negocio} — péptidos para tus pacientes",
+        "body": "Hola {nombre},\n\nVi que {nombre_negocio} en {ciudad} se especializa en nutrición. Te escribo porque trabajamos con nutriólogos en México que están complementando sus planes con péptidos de grado investigación.\n\nLos más solicitados por nutriólogos:\n• BPC-157 — recuperación gastrointestinal y muscular\n• Colágeno tipo II/III — articulaciones y piel\n• AOD-9604 — composición corporal\n\nManejamos precios de mayoreo y todo viene con certificado de análisis (COA).\n\n¿Te interesa que te mande el catálogo con precios?\n\nSaludos,\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 2,
+        "day": 3,
+        "subject": "Re: {nombre_negocio} — péptidos para tus pacientes",
+        "body": "Hola {nombre},\n\nTe escribí hace unos días sobre péptidos para tu consultorio. Sé que el día a día en consulta es intenso.\n\nSolo para darte contexto: más de 80 profesionales de salud en México ya usan nuestros péptidos con sus pacientes. El que más piden los nutriólogos es el BPC-157 por sus resultados en salud intestinal.\n\nSi prefieres, mándame un WhatsApp y te paso el catálogo directo:\n{whatsapp_link}\n\nSaludos,\n{firma}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 3,
+        "day": 7,
+        "subject": "Catálogo péptidos mayoreo — {nombre_negocio}",
+        "body": "Hola {nombre},\n\nÚltimo mensaje, no quiero ser insistente.\n\nTe dejo el link a nuestro catálogo por si en algún momento te interesa explorar péptidos como complemento para tus pacientes:\nhttps://peptiqmx.com/profesionales\n\nSi no es el momento, lo entiendo perfecto. Quedo a tus órdenes.\n\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      }
+    ]
+  },
+  {
+    "category": "estetica",
+    "categoryLabel": "Medicina Estética",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "{nombre_negocio} — péptidos para tratamientos estéticos",
+        "body": "Hola {nombre},\n\nVi que {nombre_negocio} ofrece tratamientos de medicina estética en {ciudad}. Te contacto porque distribuimos péptidos que varias clínicas estéticas ya están usando en sus protocolos.\n\nLos más solicitados por clínicas estéticas:\n• GHK-Cu — regeneración celular y anti-aging\n• Colágeno bioactivo — rejuvenecimiento dérmico\n• Epithalon — longevidad celular\n• TB-500 — recuperación post-tratamiento\n\nTodo con certificado de análisis y precios de mayoreo para clínicas.\n\n¿Te mando el catálogo con precios?\n\nSaludos,\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 2,
+        "day": 3,
+        "subject": "Re: {nombre_negocio} — péptidos estéticos",
+        "body": "Hola {nombre},\n\nSeguimiento rápido. El péptido que más nos piden las clínicas estéticas es el GHK-Cu por sus resultados en regeneración de piel — varias clínicas lo están integrando en sus protocolos faciales.\n\nSi te interesa, te puedo mandar información específica para tratamientos estéticos.\n\n¿Prefieres por email o por WhatsApp?\n{whatsapp_link}\n\n{firma}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 3,
+        "day": 7,
+        "subject": "Último aviso — catálogo péptidos estéticos",
+        "body": "Hola {nombre},\n\nNo quiero saturar tu bandeja. Te dejo nuestro catálogo por si en algún momento buscas proveedor de péptidos para tus tratamientos:\nhttps://peptiqmx.com/profesionales\n\nQuedo a tus órdenes.\n\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      }
+    ]
+  },
+  {
+    "category": "peso",
+    "categoryLabel": "Reducción de Peso",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "{nombre_negocio} — péptidos para programas de control de peso",
+        "body": "Hola {nombre},\n\nVi que {nombre_negocio} en {ciudad} se enfoca en reducción de peso. Te escribo porque varios médicos bariátras y clínicas de control de peso en México están complementando sus programas con péptidos.\n\nLos más usados en control de peso:\n• AOD-9604 — fragmento de hormona de crecimiento para composición corporal\n• BPC-157 — recuperación metabólica y gastrointestinal\n• CJC-1295 — estímulo natural de GH\n\nManejamos precios de mayoreo con certificado de análisis en cada lote.\n\n¿Te interesa ver el catálogo?\n\nSaludos,\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 2,
+        "day": 3,
+        "subject": "Re: péptidos para control de peso — {nombre_negocio}",
+        "body": "Hola {nombre},\n\nSeguimiento breve. El AOD-9604 es el péptido más solicitado por clínicas de control de peso en México. A diferencia de otros compuestos, trabaja específicamente en composición corporal sin afectar niveles de glucosa.\n\nSi quieres que te pase la ficha técnica y precios, responde este email o mándame WhatsApp:\n{whatsapp_link}\n\n{firma}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 3,
+        "day": 7,
+        "subject": "Catálogo péptidos mayoreo — última notificación",
+        "body": "Hola {nombre},\n\nÚltimo mensaje. Aquí tienes acceso a nuestro catálogo completo:\nhttps://peptiqmx.com/profesionales\n\nSi en algún momento necesitas proveedor de péptidos, con gusto te atendemos.\n\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      }
+    ]
+  },
+  {
+    "category": "spa_medico",
+    "categoryLabel": "Spa Médico",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "{nombre_negocio} — péptidos premium para spa médico",
+        "body": "Hola {nombre},\n\nVi que {nombre_negocio} en {ciudad} ofrece tratamientos de spa médico. Te contacto porque distribuimos péptidos de grado investigación que varios spas médicos en México están incorporando.\n\nPéptidos populares en spas médicos:\n• GHK-Cu — regeneración celular, anti-aging\n• Colágeno bioactivo — firmeza y elasticidad\n• BPC-157 — recuperación y antiinflamatorio\n• Glutatión — antioxidante y luminosidad\n\nPrecios de mayoreo + certificado de análisis por lote.\n\n¿Te gustaría ver nuestro catálogo?\n\nSaludos,\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 2,
+        "day": 4,
+        "subject": "Re: péptidos para {nombre_negocio}",
+        "body": "Hola {nombre},\n\nSeguimiento rápido. Varios spas médicos están usando GHK-Cu como complemento en sus tratamientos faciales premium — los resultados en regeneración de piel lo hacen ideal para protocolos de rejuvenecimiento.\n\n¿Te interesa que te mande información?\n{whatsapp_link}\n\n{firma}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 3,
+        "day": 8,
+        "subject": "Catálogo péptidos — {nombre_negocio}",
+        "body": "Hola {nombre},\n\nTe comparto nuestro catálogo para cuando lo necesites:\nhttps://peptiqmx.com/profesionales\n\nSin compromiso. Quedo a tus órdenes.\n\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      }
+    ]
+  },
+  {
+    "category": "anti_aging",
+    "categoryLabel": "Anti-Aging / Regenerativa",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "{nombre_negocio} — péptidos para medicina regenerativa",
+        "body": "Hola {nombre},\n\nVi que {nombre_negocio} se especializa en medicina anti-aging y regenerativa en {ciudad}. Te escribo porque somos distribuidores de péptidos de grado investigación y trabajamos con varias clínicas de medicina regenerativa en México.\n\nPéptidos más solicitados en anti-aging:\n• Epithalon — activación de telomerasa, longevidad celular\n• GHK-Cu — regeneración tisular y anti-aging\n• BPC-157 — reparación sistémica\n• CJC-1295/Ipamorelin — estímulo natural de GH\n• TB-500 — recuperación y antiinflamatorio\n\nTodos con COA (certificado de análisis) por lote. Precios de mayoreo para clínicas.\n\n¿Te interesa el catálogo completo?\n\nSaludos,\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 2,
+        "day": 3,
+        "subject": "Re: péptidos regenerativos — {nombre_negocio}",
+        "body": "Hola {nombre},\n\nSeguimiento breve. El Epithalon es nuestro péptido más vendido en clínicas anti-aging — la investigación sobre telomerasa lo hace muy atractivo para protocolos de longevidad.\n\nSi te interesa, te paso la ficha técnica y precios por WhatsApp:\n{whatsapp_link}\n\n{firma}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 3,
+        "day": 7,
+        "subject": "Último mensaje — catálogo péptidos regenerativos",
+        "body": "Hola {nombre},\n\nNo quiero ser insistente. Te dejo nuestro catálogo:\nhttps://peptiqmx.com/profesionales\n\nCuando lo necesites, aquí estamos.\n\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      }
+    ]
+  },
+  {
+    "category": "dermatologia",
+    "categoryLabel": "Dermatología Estética",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "{nombre_negocio} — péptidos para dermatología estética",
+        "body": "Hola {nombre},\n\nVi que {nombre_negocio} se dedica a dermatología estética en {ciudad}. Te contacto porque distribuimos péptidos que varios dermatólogos en México están integrando en sus protocolos.\n\nPéptidos más usados en dermatología:\n• GHK-Cu — regeneración cutánea, síntesis de colágeno\n• Colágeno tipo I/III — elasticidad y firmeza\n• BPC-157 — cicatrización y antiinflamatorio\n• Glutatión — luminosidad, manchas\n\nCon certificado de análisis y precios de mayoreo para consultorios.\n\n¿Te paso el catálogo?\n\nSaludos,\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 2,
+        "day": 3,
+        "subject": "Re: péptidos dermatológicos — {nombre_negocio}",
+        "body": "Hola {nombre},\n\nSeguimiento rápido. El GHK-Cu es el péptido estrella en dermatología estética — estimula la síntesis de colágeno y la remodelación de la matriz extracelular. Varios dermatólogos lo están usando como complemento en tratamientos faciales.\n\n¿Te interesa la ficha técnica?\n{whatsapp_link}\n\n{firma}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      },
+      {
+        "step": 3,
+        "day": 7,
+        "subject": "Catálogo péptidos dermatológicos — {nombre_negocio}",
+        "body": "Hola {nombre},\n\nÚltimo mensaje. Catálogo disponible aquí:\nhttps://peptiqmx.com/profesionales\n\nQuedo a tus órdenes.\n\n{firma}\n{whatsapp_link}\n\n⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador."
+      }
+    ]
+  }
+]

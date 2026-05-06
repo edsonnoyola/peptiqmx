@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1308"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <circle cx="540" cy="960" r="420" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.35"/>
+
+  <text x="540" y="860" font-family="'Playfair Display',Georgia,serif" font-size="32" font-style="italic" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.75">dudas frecuentes</text>
+
+  <text x="540" y="1150" font-family="'Playfair Display',Georgia,serif" font-size="440" font-weight="500" font-style="italic" fill="url(#gold)" text-anchor="middle">?</text>
+
+  <text x="540" y="1260" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="120" font-weight="700" fill="#f0e4c8" text-anchor="middle" letter-spacing="14">FAQ</text>
+  <line x1="380" y1="1330" x2="700" y2="1330" stroke="#C6A969" stroke-width="1" opacity="0.6"/>
+  <text x="540" y="1400" font-family="'Inter',sans-serif" font-size="26" fill="#a8987a" text-anchor="middle" letter-spacing="8">RECONSTITUCIÓN · PAGO · ASESORÍA</text>
+</svg>

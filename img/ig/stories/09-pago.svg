@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <line x1="80" y1="180" x2="1000" y2="180" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="240" font-family="Inter,sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.85">CHECKOUT SEGURO</text>
+  <text x="540" y="450" font-family="Playfair Display,Georgia,serif" font-size="120" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="4">PAGO</text>
+  <text x="540" y="580" font-family="Playfair Display,Georgia,serif" font-size="120" font-weight="500" fill="url(#gold)" text-anchor="middle" font-style="italic">seguro.</text>
+  <line x1="420" y1="650" x2="660" y2="650" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+  <g font-family="Inter,sans-serif" text-anchor="middle">
+    <g transform="translate(540 820)">
+      <rect x="-440" y="-60" width="420" height="120" rx="14" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      <text x="-230" y="20" font-size="40" fill="#f0e4c8" font-weight="700" letter-spacing="4">stripe</text>
+      <rect x="20" y="-60" width="420" height="120" rx="14" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      <text x="230" y="20" font-size="40" fill="#f0e4c8" font-weight="700" letter-spacing="4">PayPal</text>
+    </g>
+    <g transform="translate(540 980)">
+      <rect x="-440" y="-60" width="420" height="120" rx="14" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      <text x="-230" y="20" font-size="34" fill="#f0e4c8" font-weight="700" letter-spacing="4">MercadoPago</text>
+      <rect x="20" y="-60" width="420" height="120" rx="14" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      <text x="230" y="20" font-size="40" fill="#f0e4c8" font-weight="700" letter-spacing="4">OXXO</text>
+    </g>
+  </g>
+  <line x1="180" y1="1130" x2="900" y2="1130" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <g font-family="Inter,sans-serif" fill="#cfc3a5" text-anchor="middle">
+    <text x="540" y="1230" font-size="30">✓ Visa · Mastercard · Amex</text>
+    <text x="540" y="1290" font-size="30">✓ MSI con MercadoPago</text>
+    <text x="540" y="1350" font-size="30">✓ OXXO en tienda</text>
+    <text x="540" y="1410" font-size="30">✓ Factura CFDI 4.0 con IVA</text>
+  </g>
+  <text x="540" y="1560" font-family="Inter,sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="6">PERSONAS FÍSICAS Y MORALES</text>
+  <line x1="80" y1="1810" x2="1000" y2="1810" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1860" font-family="Inter,sans-serif" font-size="26" fill="url(#gold)" text-anchor="middle" letter-spacing="6" font-weight="600">peptiqmx.com</text>
+  <text x="540" y="1900" font-family="Inter,sans-serif" font-size="22" fill="#a8987a" text-anchor="middle" letter-spacing="4">+52 444 577 0445  ·  WHATSAPP</text>
+</svg>

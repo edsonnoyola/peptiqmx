@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="dark" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#000000" stop-opacity="0.55"/><stop offset="100%" stop-color="#000000" stop-opacity="0.95"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <image xlink:href="https://peptiqmx.com/img/covers/prime-hero.png" x="0" y="0" width="1080" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1080" height="1080" fill="url(#dark)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="10">01 · EL PROBLEMA</text>
+  <text x="540" y="320" font-family="'Playfair Display',Georgia,serif" font-size="56" fill="#f0e4c8" text-anchor="middle" font-style="italic">Después de los 30,</text>
+  <text x="540" y="430" font-family="'Playfair Display',Georgia,serif" font-size="120" fill="url(#gold)" text-anchor="middle" letter-spacing="4" font-style="italic">tu GH cae.</text>
+  <line x1="420" y1="490" x2="660" y2="490" stroke="#C6A969" stroke-width="1" opacity="0.7"/>
+  <text x="540" y="600" font-family="'Playfair Display',Georgia,serif" font-size="36" fill="#f0e4c8" text-anchor="middle" font-style="italic">La pituitaria está cansada.</text>
+  <text x="540" y="660" font-family="'Playfair Display',Georgia,serif" font-size="36" fill="#f0e4c8" text-anchor="middle" font-style="italic">Los pulsos naturales bajan en</text>
+  <text x="540" y="730" font-family="'Playfair Display',Georgia,serif" font-size="36" fill="url(#gold)" text-anchor="middle" font-style="italic">volumen y frecuencia.</text>
+  <text x="540" y="850" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="4">→ MENOS RECUPERACIÓN · MÁS GRASA · MENOS MASA</text>
+  <text x="540" y="900" font-family="'Inter',sans-serif" font-size="14" fill="#a8987a" text-anchor="middle" letter-spacing="2">FALUTZ ET AL. · NEJM · 2007 · 2010</text>
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">02 / 08</text>
+</svg>

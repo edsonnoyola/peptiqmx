@@ -1,0 +1,70 @@
+{
+  "templates_to_submit_to_meta": [
+    {
+      "name": "peptiq_b2b_estetica",
+      "language": "es_MX",
+      "category": "MARKETING",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "Hola {{1}},\n\nSoy del equipo PEPTIQ MX. Distribuimos péptidos research-grade con COA Janoshik público por lote — único proveedor con esto en México.\n\nLas clínicas estéticas en {{2}} que están moviendo ticket están integrando GHK-Cu en protocolos post-láser y faciales premium.\n\n• GHK-Cu 100mg — $3,799\n• TRINITY Glow Blend — $7,499\n\nLANZA20 = -20% primer pedido. ¿Le mando catálogo con COAs?",
+          "example": {
+            "body_text": [["Dra. Carla", "CDMX"]]
+          }
+        },
+        {
+          "type": "BUTTONS",
+          "buttons": [
+            {"type": "QUICK_REPLY", "text": "Mandar catálogo"},
+            {"type": "QUICK_REPLY", "text": "No gracias"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "peptiq_b2b_peso",
+      "language": "es_MX",
+      "category": "MARKETING",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "Hola {{1}},\n\nSoy del equipo PEPTIQ MX. ¿Vio los datos fase 3 de Retatrutide? -24% peso en 48 semanas vs Ozempic -15%.\n\nLas clínicas en {{2}} que están moviendo ticket lo están integrando ahora — los que esperen al lanzamiento comercial llegan tarde.\n\n• Retatrutide 30mg — consultar\n• Tesamorelin 10mg — $7,499\n• BPC-157 (preserva muscular) — $2,999\n\nCOA Janoshik público por lote. ¿Le mando reporte clínico?",
+          "example": {
+            "body_text": [["Dr. Alondra", "Monterrey"]]
+          }
+        },
+        {
+          "type": "BUTTONS",
+          "buttons": [
+            {"type": "QUICK_REPLY", "text": "Mandar reporte"},
+            {"type": "QUICK_REPLY", "text": "No gracias"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "peptiq_b2b_longevity",
+      "language": "es_MX",
+      "category": "MARKETING",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "Hola {{1}},\n\nSoy del equipo PEPTIQ MX. El segmento longevidad creció 9% el año pasado (Euromonitor 2025) y los profesionales en {{2}} están integrando NAD+ y Epithalon como protocolo trimestral premium.\n\n• NAD+ 1000mg — $5,499\n• Epithalon 50mg — $6,799\n• Longevity Stack — $14,999\n\nCOA Janoshik público. ¿Le mando reporte de protocolos?",
+          "example": {
+            "body_text": [["Dr. Juan", "Guadalajara"]]
+          }
+        },
+        {
+          "type": "BUTTONS",
+          "buttons": [
+            {"type": "QUICK_REPLY", "text": "Mandar reporte"},
+            {"type": "QUICK_REPLY", "text": "No gracias"}
+          ]
+        }
+      ]
+    }
+  ],
+  "submission_instructions": "Submit each template via Meta Business Manager → WhatsApp Manager → Message Templates → Create Template. Or use Graph API: POST /{waba_id}/message_templates with the JSON body above (one template per call). WABA_ID: 2377523032729367",
+  "approval_time_typical": "1-24 hours",
+  "fallback_if_pending": "Use 'nova_catalogo' approved template with body parameters carefully chosen to not say 'Nova' (depends on actual approved body text)"
+}

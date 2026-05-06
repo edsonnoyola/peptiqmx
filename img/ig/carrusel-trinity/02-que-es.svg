@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="dark" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#000000" stop-opacity="0.5"/><stop offset="100%" stop-color="#000000" stop-opacity="0.92"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <image xlink:href="https://peptiqmx.com/img/covers/spa-hero.png" x="0" y="0" width="1080" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1080" height="1080" fill="url(#dark)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="10">01 · QUÉ ES TRINITY</text>
+  <text x="540" y="280" font-family="'Playfair Display',Georgia,serif" font-size="58" fill="#f0e4c8" text-anchor="middle" font-style="italic">Un solo vial. 70mg.</text>
+  <text x="540" y="350" font-family="'Playfair Display',Georgia,serif" font-size="58" fill="url(#gold)" text-anchor="middle" font-style="italic">Tres péptidos premezclados.</text>
+  <g transform="translate(540 580)">
+    <circle r="180" fill="rgba(0,0,0,0.5)" stroke="url(#gold)" stroke-width="2" stroke-dasharray="3 6"/>
+    <circle cx="0" cy="-100" r="55" fill="#0e0b07" stroke="url(#gold)" stroke-width="2"/>
+    <text x="0" y="-92" font-family="'Playfair Display',Georgia,serif" font-size="14" fill="#E5C981" text-anchor="middle">BPC-157</text>
+    <text x="0" y="-72" font-family="'Inter',sans-serif" font-size="11" fill="#a8987a" text-anchor="middle">10mg</text>
+    <circle cx="-87" cy="50" r="55" fill="#0e0b07" stroke="url(#gold)" stroke-width="2"/>
+    <text x="-87" y="58" font-family="'Playfair Display',Georgia,serif" font-size="14" fill="#E5C981" text-anchor="middle">GHK-Cu</text>
+    <text x="-87" y="78" font-family="'Inter',sans-serif" font-size="11" fill="#a8987a" text-anchor="middle">50mg</text>
+    <circle cx="87" cy="50" r="55" fill="#0e0b07" stroke="url(#gold)" stroke-width="2"/>
+    <text x="87" y="58" font-family="'Playfair Display',Georgia,serif" font-size="14" fill="#E5C981" text-anchor="middle">TB-500</text>
+    <text x="87" y="78" font-family="'Inter',sans-serif" font-size="11" fill="#a8987a" text-anchor="middle">10mg</text>
+  </g>
+  <text x="540" y="900" font-family="'Inter',sans-serif" font-size="18" fill="#E5C981" text-anchor="middle" letter-spacing="4">PROTOCOLO GLOW · PIEL · CABELLO · TEJIDO</text>
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">02 / 08</text>
+</svg>

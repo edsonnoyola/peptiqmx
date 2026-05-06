@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <filter id="neon-gold" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a0805"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <circle cx="540" cy="540" r="430" fill="none" stroke="#E5C981" stroke-width="5" filter="url(#neon-gold)" opacity="0.9"/>
+
+  <!-- Box + location pin icon, gold neon -->
+  <g filter="url(#neon-gold)" stroke="#f0e4c8" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- box front face -->
+    <path d="M 340 480 L 540 420 L 740 480 L 540 540 Z"/>
+    <!-- box body -->
+    <path d="M 340 480 L 340 720 L 540 780 L 540 540"/>
+    <path d="M 740 480 L 740 720 L 540 780"/>
+    <!-- box tape center seam -->
+    <line x1="440" y1="510" x2="440" y2="750" opacity="0.6"/>
+    <!-- location pin on top -->
+    <path d="M 540 280 Q 590 280 590 330 Q 590 370 540 420 Q 490 370 490 330 Q 490 280 540 280 Z" stroke="#E5C981" stroke-width="10"/>
+    <circle cx="540" cy="325" r="15" fill="#E5C981" stroke="none"/>
+  </g>
+</svg>

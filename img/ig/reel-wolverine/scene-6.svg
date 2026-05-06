@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+
+  <line x1="80" y1="200" x2="1000" y2="200" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="260" font-family="'Inter',sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="16" opacity="0.75">EL ESTÁNDAR</text>
+
+  <text x="540" y="720" font-family="'Playfair Display',Georgia,serif" font-size="90" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Un lote.</text>
+  <text x="540" y="840" font-family="'Playfair Display',Georgia,serif" font-size="90" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Un protocolo.</text>
+  <text x="540" y="980" font-family="'Playfair Display',Georgia,serif" font-size="90" font-weight="500" fill="url(#gold)" text-anchor="middle" font-style="italic">Un estándar.</text>
+
+  <line x1="320" y1="1070" x2="760" y2="1070" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <text x="540" y="1220" font-family="'Inter',sans-serif" font-size="34" fill="#cfc3a5" text-anchor="middle">COA Janoshik por lote · 99%+ HPLC</text>
+  <text x="540" y="1275" font-family="'Inter',sans-serif" font-size="34" fill="#cfc3a5" text-anchor="middle">Envío discreto 24-72h · todo México</text>
+
+  <text x="540" y="1500" font-family="'Playfair Display',Georgia,serif" font-size="68" font-weight="500" fill="url(#gold)" text-anchor="middle">peptiqmx.com/wolverine</text>
+
+  <line x1="80" y1="1800" x2="1000" y2="1800" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1855" font-family="'Inter',sans-serif" font-size="30" fill="url(#gold)" text-anchor="middle" letter-spacing="14" font-weight="600">PEPTIQ MX</text>
+</svg>

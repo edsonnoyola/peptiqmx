@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <!-- Black radial gradient background -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0a0805"/>
+      <stop offset="70%" stop-color="#050302"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <!-- Gold gradient for Q letter -->
+    <linearGradient id="goldQ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7e3a8"/>
+      <stop offset="35%" stop-color="#E5C981"/>
+      <stop offset="70%" stop-color="#b8934a"/>
+      <stop offset="100%" stop-color="#f0d890"/>
+    </linearGradient>
+
+    <!-- Soft gold glow filter -->
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle warm vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="80%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.85"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1920" fill="url(#bgGrad)"/>
+
+  <!-- Faint gold radial wash behind logo -->
+  <circle cx="540" cy="780" r="380" fill="#E5C981" opacity="0.04"/>
+
+  <!-- TAGLINE SUPERIOR · Playfair italic crema -->
+  <text x="540" y="560"
+        font-family="'Playfair Display', 'Didot', Georgia, serif"
+        font-size="46"
+        font-style="italic"
+        fill="#d8cfa8"
+        text-anchor="middle"
+        letter-spacing="2">
+    Your metabolism, engineered.
+  </text>
+
+  <!-- Hairline gold divider -->
+  <line x1="440" y1="620" x2="640" y2="620" stroke="#E5C981" stroke-width="1" opacity="0.5"/>
+
+  <!-- LOGO PEPTIQ -->
+  <g filter="url(#goldGlow)">
+    <text x="540" y="830"
+          font-family="'Playfair Display', 'Didot', Georgia, serif"
+          font-size="140"
+          font-weight="700"
+          fill="#f0e4c8"
+          text-anchor="middle"
+          letter-spacing="8">PEPTI<tspan fill="url(#goldQ)">Q</tspan></text>
+  </g>
+
+  <!-- Underline accent -->
+  <line x1="360" y1="880" x2="720" y2="880" stroke="#E5C981" stroke-width="2" opacity="0.7"/>
+
+  <!-- SHRED line label -->
+  <text x="540" y="960"
+        font-family="'Inter', 'Helvetica Neue', sans-serif"
+        font-size="34"
+        font-weight="300"
+        fill="#E5C981"
+        text-anchor="middle"
+        letter-spacing="22">S H R E D</text>
+
+  <!-- URL -->
+  <text x="540" y="1180"
+        font-family="'Inter', 'Helvetica Neue', sans-serif"
+        font-size="38"
+        font-weight="400"
+        fill="#f0e4c8"
+        text-anchor="middle"
+        letter-spacing="3">peptiqmx.com/shred</text>
+
+  <!-- CTA BOX · gold outline -->
+  <rect x="290" y="1300" width="500" height="110" rx="4"
+        fill="none" stroke="#E5C981" stroke-width="1.5" opacity="0.9"/>
+
+  <text x="540" y="1370"
+        font-family="'Inter', 'Helvetica Neue', sans-serif"
+        font-size="28"
+        font-weight="500"
+        fill="#E5C981"
+        text-anchor="middle"
+        letter-spacing="8">ASESORÍA PRIVADA · WHATSAPP</text>
+
+  <!-- Decorative dots -->
+  <circle cx="510" cy="1480" r="3" fill="#E5C981" opacity="0.6"/>
+  <circle cx="540" cy="1480" r="3" fill="#E5C981" opacity="0.6"/>
+  <circle cx="570" cy="1480" r="3" fill="#E5C981" opacity="0.6"/>
+
+  <!-- LEGAL DISCLAIMER -->
+  <text x="540" y="1820"
+        font-family="'Inter', sans-serif"
+        font-size="18"
+        fill="#6b5d44"
+        text-anchor="middle"
+        opacity="0.75"
+        letter-spacing="0.5">
+    El uso de este producto es responsabilidad de quien lo use,
+  </text>
+  <text x="540" y="1848"
+        font-family="'Inter', sans-serif"
+        font-size="18"
+        fill="#6b5d44"
+        text-anchor="middle"
+        opacity="0.75"
+        letter-spacing="0.5">
+    solo para investigación.
+  </text>
+
+  <!-- Vignette on top -->
+  <rect width="1080" height="1920" fill="url(#vignette)"/>
+</svg>

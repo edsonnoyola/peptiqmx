@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="shim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#E5C981" stop-opacity="0"/>
+      <stop offset="48%" stop-color="#fff4c8" stop-opacity="0.55"/>
+      <stop offset="52%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="56%" stop-color="#fff4c8" stop-opacity="0.55"/>
+      <stop offset="65%" stop-color="#E5C981" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g transform="rotate(-18 540 960)">
+    <rect x="-800" y="-400" width="2680" height="2720" fill="url(#shim)"/>
+  </g>
+</svg>

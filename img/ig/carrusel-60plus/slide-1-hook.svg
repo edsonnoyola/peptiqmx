@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0E0E0E"/>
+      <stop offset="100%" stop-color="#1a1416"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4B97A"/>
+      <stop offset="100%" stop-color="#9F8347"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+
+  <!-- Eyebrow -->
+  <text x="540" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="500" fill="#C6A969" letter-spacing="6" text-transform="uppercase">PEPTIQ MX · 60+</text>
+
+  <!-- Big number -->
+  <text x="540" y="540" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="280" font-weight="600" fill="url(#gold)">30%</text>
+
+  <!-- Subtitle -->
+  <text x="540" y="640" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="500" fill="#fff" letter-spacing="1">del gasto mundial lo generan</text>
+  <text x="540" y="685" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="500" fill="#fff" letter-spacing="1">los consumidores de 60+</text>
+
+  <!-- Hook giant -->
+  <text x="540" y="850" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="58" font-weight="600" fill="#fff" font-style="italic">No tienen menos energía.</text>
+  <text x="540" y="930" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="58" font-weight="600" fill="#C6A969" font-style="italic">Tienen más recursos.</text>
+
+  <!-- Hairline -->
+  <line x1="440" y1="1080" x2="640" y2="1080" stroke="#C6A969" stroke-width="2" opacity="0.7"/>
+
+  <!-- Source -->
+  <text x="540" y="1140" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#888" letter-spacing="2">EUROMONITOR · FEB 2025</text>
+
+  <!-- Bottom brand -->
+  <text x="540" y="1260" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="24" font-weight="600" fill="#C6A969" letter-spacing="8">PEPTIQ</text>
+  <text x="540" y="1295" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#888" letter-spacing="6">HACK YOUR LIMITS</text>
+
+  <!-- Swipe indicator -->
+  <text x="540" y="1200" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#C6A969" letter-spacing="3">DESLIZA →</text>
+</svg>

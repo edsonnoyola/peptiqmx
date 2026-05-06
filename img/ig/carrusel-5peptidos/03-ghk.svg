@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0e0b07"/><stop offset="100%" stop-color="#000000"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#C6A969" text-anchor="middle" letter-spacing="10" opacity="0.75">02 · COLÁGENO + PIEL</text>
+
+  <text x="540" y="240" font-family="'Inter',sans-serif" font-size="22" fill="#a8987a" text-anchor="middle" letter-spacing="6">PROTOCOLO · GLOW™</text>
+  <text x="540" y="370" font-family="'Playfair Display',Georgia,serif" font-size="118" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="4">GHK-Cu</text>
+  <text x="540" y="430" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="4">TRIPÉPTIDO + COBRE · 1973</text>
+
+  <line x1="420" y1="490" x2="660" y2="490" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <text x="540" y="580" font-family="'Playfair Display',Georgia,serif" font-size="48" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">El renovador de tejido.</text>
+
+  <g font-family="'Inter',sans-serif" font-size="22" fill="#f0e4c8">
+    <text x="540" y="680" text-anchor="middle"><tspan fill="#C6A969">→</tspan> Síntesis colágeno y elastina</text>
+    <text x="540" y="725" text-anchor="middle"><tspan fill="#C6A969">→</tspan> Anti-aging dérmico · firmeza</text>
+    <text x="540" y="770" text-anchor="middle"><tspan fill="#C6A969">→</tspan> Cabello · folículos activos</text>
+    <text x="540" y="815" text-anchor="middle"><tspan fill="#C6A969">→</tspan> Reparación celular profunda</text>
+  </g>
+
+  <text x="540" y="900" font-family="'Inter',sans-serif" font-size="14" fill="#7a6a4a" text-anchor="middle" letter-spacing="2">PICKART · BIOMOLECULES · 2018</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">03 / 08</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#C6A969" text-anchor="middle" letter-spacing="10" opacity="0.75">05 · LA COMPARACIÓN</text>
+
+  <text x="540" y="230" font-family="'Playfair Display',Georgia,serif" font-size="58" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Research-grade</text>
+  <text x="540" y="295" font-family="'Inter',sans-serif" font-size="22" fill="#a8987a" text-anchor="middle" letter-spacing="4">VS · E-COMMERCE GENÉRICO</text>
+
+  <!-- Two columns -->
+  <g transform="translate(80 360)">
+    <!-- LEFT — generic -->
+    <rect width="430" height="540" fill="none" stroke="#3a2a1a" stroke-width="1"/>
+    <text x="215" y="50" font-family="'Inter',sans-serif" font-size="18" fill="#7a6a4a" text-anchor="middle" letter-spacing="6">RESELLER</text>
+    <line x1="180" y1="70" x2="250" y2="70" stroke="#7a6a4a" stroke-width="0.6"/>
+
+    <g font-family="'Inter',sans-serif" font-size="18" fill="#7a6a4a" letter-spacing="1">
+      <text x="40" y="130">✗ Multi-marca</text>
+      <text x="40" y="180">✗ Sin COA público</text>
+      <text x="40" y="230">✗ Sin lote trazable</text>
+      <text x="40" y="280">✗ Sin asesoría</text>
+      <text x="40" y="330">✗ Cristal claro</text>
+      <text x="40" y="380">✗ Etiqueta genérica</text>
+      <text x="40" y="430">✗ Sin reposición</text>
+      <text x="40" y="480">✗ Solo "100% original"</text>
+    </g>
+  </g>
+
+  <g transform="translate(570 360)">
+    <!-- RIGHT — PEPTIQ -->
+    <rect width="430" height="540" fill="none" stroke="url(#gold)" stroke-width="2"/>
+    <text x="215" y="50" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#E5C981" text-anchor="middle" letter-spacing="6" font-style="italic">PEPTIQ</text>
+    <line x1="170" y1="70" x2="260" y2="70" stroke="url(#gold)" stroke-width="0.8"/>
+
+    <g font-family="'Inter',sans-serif" font-size="18" fill="#f0e4c8" letter-spacing="1">
+      <text x="40" y="130"><tspan fill="#C6A969">✓</tspan> Marca propia</text>
+      <text x="40" y="180"><tspan fill="#C6A969">✓</tspan> COA por lote, público</text>
+      <text x="40" y="230"><tspan fill="#C6A969">✓</tspan> Lote QR trazable</text>
+      <text x="40" y="280"><tspan fill="#C6A969">✓</tspan> Asesoría incluida</text>
+      <text x="40" y="330"><tspan fill="#C6A969">✓</tspan> Cristal ámbar UV</text>
+      <text x="40" y="380"><tspan fill="#C6A969">✓</tspan> Etiqueta editorial</text>
+      <text x="40" y="430"><tspan fill="#C6A969">✓</tspan> Reposición por daño</text>
+      <text x="40" y="480"><tspan fill="#C6A969">✓</tspan> Janoshik third-party</text>
+    </g>
+  </g>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">06 / 08</text>
+</svg>

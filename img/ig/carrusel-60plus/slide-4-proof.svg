@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <rect width="1080" height="1350" fill="#F6F3EE"/>
+
+  <!-- Eyebrow -->
+  <text x="540" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="500" fill="#9F8347" letter-spacing="6">04 · POR QUÉ FUNCIONA</text>
+
+  <!-- Title -->
+  <text x="540" y="290" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="68" font-weight="600" fill="#0E0E0E">No es promesa.</text>
+  <text x="540" y="370" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="68" font-weight="600" fill="#5B1A1F" font-style="italic">Es literatura.</text>
+
+  <!-- 3 facts -->
+  <g transform="translate(80,500)">
+    <!-- 1 -->
+    <circle cx="50" cy="60" r="40" fill="#0E0E0E"/>
+    <text x="50" y="75" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="40" font-weight="600" fill="#C6A969">1</text>
+    <text x="130" y="55" font-family="Inter, sans-serif" font-size="22" font-weight="600" fill="#0E0E0E">NAD+ activa sirtuinas</text>
+    <text x="130" y="90" font-family="Inter, sans-serif" font-size="18" fill="#6B6B6B">Imai &amp; Guarente · Cell 2014 · pathway de longevidad</text>
+
+    <!-- 2 -->
+    <circle cx="50" cy="220" r="40" fill="#0E0E0E"/>
+    <text x="50" y="235" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="40" font-weight="600" fill="#C6A969">2</text>
+    <text x="130" y="215" font-family="Inter, sans-serif" font-size="22" font-weight="600" fill="#0E0E0E">Epithalon activa telomerasa</text>
+    <text x="130" y="250" font-family="Inter, sans-serif" font-size="18" fill="#6B6B6B">Khavinson · Petersburg · 25 años de research</text>
+
+    <!-- 3 -->
+    <circle cx="50" cy="380" r="40" fill="#0E0E0E"/>
+    <text x="50" y="395" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="40" font-weight="600" fill="#C6A969">3</text>
+    <text x="130" y="375" font-family="Inter, sans-serif" font-size="22" font-weight="600" fill="#0E0E0E">GHK-Cu modula 4,000+ genes</text>
+    <text x="130" y="410" font-family="Inter, sans-serif" font-size="18" fill="#6B6B6B">Pickart 2008, 2018 · cell renewal master regulator</text>
+  </g>
+
+  <!-- Quote -->
+  <rect x="80" y="990" width="920" height="200" rx="3" fill="#0E0E0E"/>
+  <text x="540" y="1060" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="28" font-style="italic" fill="#C6A969">"Estos péptidos son el tipo</text>
+  <text x="540" y="1100" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="28" font-style="italic" fill="#C6A969">de inversión que en 10 años</text>
+  <text x="540" y="1140" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="28" font-style="italic" fill="#C6A969">explica por qué unos envejecen</text>
+  <text x="540" y="1180" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="28" font-style="italic" fill="#C6A969">y otros se mantienen."</text>
+
+  <text x="540" y="1290" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="20" font-weight="600" fill="#9F8347" letter-spacing="6">PEPTIQ</text>
+</svg>

@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E0E0E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PEPTIQ">
+<link rel="manifest" href="/app/manifest.json">
+<link rel="apple-touch-icon" href="/app/icons/icon-192.png">
+<title>PEPTIQ Tracker · Tu protocolo, en tu bolsillo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+:root{
+  --ink:#0E0E0E;
+  --paper:#FFFFFF;
+  --stone:#F6F3EE;
+  --soft:#F0ECE4;
+  --rule:#E3DED6;
+  --mute:#6B6B6B;
+  --gold:#C6A969;
+  --gold-deep:#9F8347;
+  --maroon:#5B1A1F;
+  --maroon-light:#7A2A30;
+  --ok:#22C55E;
+  --warn:#F59E0B;
+  --bad:#DC2626;
+}
+*{-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--ink);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;overscroll-behavior-y:contain}
+.serif{font-family:'Playfair Display',Georgia,serif}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mute);font-weight:500}
+.gold-text{color:var(--gold)}
+.maroon-bg{background:var(--maroon)}
+.gold-bg{background:var(--gold)}
+
+.app-shell{max-width:430px;margin:0 auto;background:var(--paper);min-height:100vh;min-height:100dvh;position:relative;display:flex;flex-direction:column;box-shadow:0 0 60px rgba(0,0,0,.4)}
+
+.nav-top{display:flex;align-items:center;padding:14px 20px 12px;border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:30}
+.nav-top .brand{font-family:'Playfair Display';font-weight:600;letter-spacing:2px;font-size:14px}
+.nav-top .gold-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;display:inline-block;margin:0 6px;vertical-align:middle}
+
+.nav-bot{position:sticky;bottom:0;background:var(--paper);border-top:1px solid var(--rule);display:grid;grid-template-columns:1.3fr 1fr 1.3fr 1fr 1fr;padding:8px 0 max(8px,env(safe-area-inset-bottom));z-index:30}
+.nav-bot button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 4px;font-size:10px;color:var(--mute);font-weight:500;letter-spacing:.4px;background:transparent;border:0}
+.nav-bot button.active{color:var(--ink);font-weight:600}
+.nav-bot button.primary{color:var(--gold-deep)}
+.nav-bot button.primary.active{color:var(--ink)}
+.nav-bot button.primary.active svg{filter:drop-shadow(0 0 6px rgba(152,114,69,.5))}
+.nav-bot svg{width:22px;height:22px;stroke-width:1.6;transition:transform .2s}
+.nav-bot button.active svg{transform:scale(1.08)}
+.nav-bot button.primary svg{width:26px;height:26px}
+
+.screen{flex:1;overflow-y:auto;padding:20px;padding-bottom:30px}
+
+.btn-primary{background:var(--ink);color:var(--paper);padding:14px 24px;border-radius:2px;font-weight:500;letter-spacing:.5px;font-size:14px;width:100%;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-secondary{border:1px solid var(--rule);color:var(--ink);padding:14px 24px;border-radius:2px;font-weight:500;letter-spacing:.5px;font-size:14px;width:100%;background:var(--paper)}
+.btn-gold{background:var(--maroon);color:var(--paper);padding:14px 24px;border-radius:2px;font-weight:500;letter-spacing:.5px;font-size:14px;width:100%;border:1px solid var(--maroon)}
+
+.input{width:100%;padding:14px 16px;border:1px solid var(--rule);border-radius:2px;font-size:15px;font-family:inherit;background:var(--paper);outline:none;color:var(--ink)}
+.input:focus{border-color:var(--ink)}
+
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:18px}
+.card-stone{background:var(--stone);border:1px solid var(--rule);border-radius:3px;padding:18px}
+
+.dose-card{background:linear-gradient(180deg,var(--maroon) 0%,var(--maroon-light) 100%);color:var(--paper);border-radius:3px;padding:24px;position:relative;overflow:hidden}
+.dose-card::after{content:'';position:absolute;top:-40px;right:-30px;width:140px;height:140px;background:var(--gold);opacity:.1;border-radius:50%}
+
+.pill{display:inline-flex;align-items:center;padding:4px 10px;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;background:var(--soft);color:var(--mute);border-radius:1px;font-weight:500}
+.pill-gold{background:rgba(198,169,105,.15);color:var(--gold-deep)}
+.pill-ok{background:rgba(34,197,94,.1);color:#15803D}
+.pill-miss{background:rgba(220,38,38,.08);color:#B91C1C}
+.pill-today{background:#0E0E0E;color:#988646;font-weight:700}
+
+.divider{height:1px;background:var(--rule);width:100%;margin:18px 0}
+
+/* Auth/onboarding splash */
+.splash{background:var(--ink);color:var(--paper);min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 28px max(28px,env(safe-area-inset-bottom));max-width:430px;margin:0 auto}
+
+/* Chat */
+.chat-bubble-user{background:var(--ink);color:var(--paper);padding:11px 14px;border-radius:14px 14px 2px 14px;max-width:85%;align-self:flex-end;font-size:14px;line-height:1.5}
+.chat-bubble-bot{background:var(--stone);color:var(--ink);padding:11px 14px;border-radius:14px 14px 14px 2px;max-width:85%;align-self:flex-start;font-size:14px;line-height:1.5;border:1px solid var(--rule)}
+.chat-source{font-size:11px;color:var(--mute);margin-top:6px;font-style:italic}
+
+/* Pro toggle */
+.pro-banner{background:linear-gradient(90deg,var(--ink),#2a2a2a);color:var(--gold);padding:12px 18px;font-size:11px;letter-spacing:2px;text-align:center;text-transform:uppercase;font-weight:500}
+
+/* Schedule blocks */
+.day-block{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.day-block:last-child{border-bottom:0}
+.day-circle{width:42px;height:42px;border-radius:50%;background:var(--soft);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.day-circle .dow{font-size:9px;letter-spacing:1px;color:var(--mute);text-transform:uppercase}
+.day-circle .dom{font-size:14px;font-weight:600;color:var(--ink)}
+.day-circle.today{background:var(--ink);color:var(--paper)}
+.day-circle.today .dow,.day-circle.today .dom{color:var(--paper)}
+
+.empty{text-align:center;padding:48px 20px;color:var(--mute);font-size:13px}
+
+/* iOS-style switch */
+.switch{position:relative;display:inline-block;width:42px;height:24px}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;inset:0;background:var(--rule);transition:.2s;border-radius:24px}
+.slider::before{position:absolute;content:'';height:18px;width:18px;left:3px;bottom:3px;background:white;transition:.2s;border-radius:50%}
+input:checked + .slider{background:var(--ink)}
+input:checked + .slider::before{transform:translateX(18px)}
+
+/* Loading dot */
+@keyframes blink{50%{opacity:.3}}
+@keyframes bubble{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-30px);opacity:.8}}
+@keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(152,114,69,.4)}50%{box-shadow:0 0 0 8px rgba(152,114,69,0)}}
+.dots span{animation:blink 1.4s infinite;display:inline-block}
+.dots span:nth-child(2){animation-delay:.2s}
+.dots span:nth-child(3){animation-delay:.4s}
+
+/* Calculator · syringe visual */
+.syringe-wrap{display:flex;flex-direction:column;align-items:center;padding:20px 0}
+.syringe{width:100%;max-width:300px;height:80px;position:relative;margin:8px 0 20px}
+.syringe-body{position:absolute;left:30px;right:50px;top:24px;bottom:24px;background:#fff;border:2px solid var(--ink);border-radius:2px;overflow:hidden}
+.syringe-fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#FFF7DC 0%,#C6A969 100%);transition:width .6s cubic-bezier(.4,0,.2,1);width:0}
+.syringe-needle{position:absolute;right:0;top:50%;transform:translateY(-50%);width:50px;height:2px;background:var(--mute)}
+.syringe-needle::after{content:'';position:absolute;right:0;top:-3px;width:8px;height:8px;background:var(--mute);clip-path:polygon(0 0,100% 50%,0 100%)}
+.syringe-plunger{position:absolute;left:0;top:18px;bottom:18px;width:30px;background:#1a1a1a;border-radius:3px 0 0 3px}
+.syringe-ticks{position:absolute;left:30px;right:50px;top:8px;display:flex;justify-content:space-between;padding:0 4px;pointer-events:none}
+.syringe-ticks span{width:1px;height:14px;background:var(--mute);opacity:.6}
+.syringe-ticks-bot{position:absolute;left:30px;right:50px;bottom:6px;display:flex;justify-content:space-between;padding:0 4px;font-size:8px;color:var(--mute);font-family:monospace}
+
+.calc-result{background:linear-gradient(135deg,var(--maroon) 0%,#3a1014 100%);color:white;border-radius:3px;padding:24px;text-align:center;margin:16px 0}
+.calc-result-num{font-family:'Playfair Display';font-size:54px;font-weight:600;line-height:1;color:var(--gold)}
+.calc-result-unit{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;margin-top:8px}
+.calc-result-help{font-size:12px;opacity:.7;margin-top:12px;line-height:1.5}
+
+.calc-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule)}
+.calc-row:last-child{border-bottom:0}
+.calc-label{font-size:13px;color:var(--mute)}
+.calc-value{font-size:15px;font-weight:500}
+
+.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:50;display:flex;align-items:flex-end;justify-content:center}
+.modal{background:var(--paper);width:100%;max-width:430px;max-height:90vh;border-radius:16px 16px 0 0;overflow-y:auto;animation:slideUp .3s cubic-bezier(.4,0,.2,1)}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-header{padding:18px 20px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--paper);z-index:1}
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body x-data="app()" x-cloak>
+
+<!-- ════ SPLASH / WELCOME ════ -->
+<div x-show="screen==='welcome'" class="splash">
+  <div></div>
+  <div style="text-align:center">
+    <div class="eyebrow gold-text" style="margin-bottom:16px">PEPTIQ MX</div>
+    <h1 class="serif" style="font-size:42px;line-height:1.1;font-weight:600;margin:0 0 16px">Tu protocolo,<br><em style="color:var(--gold)">en tu bolsillo.</em></h1>
+    <p style="color:#aaa;font-size:14px;line-height:1.6;max-width:300px;margin:0 auto">Recordatorios, dosis, reconstitución, inventario. Y un asistente que responde tus dudas grounded en literatura clínica.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <button @click="screen='auth';mode='signup'" class="btn-primary" style="background:var(--paper);color:var(--ink)">Crear cuenta</button>
+    <button @click="screen='auth';mode='login'" class="btn-secondary" style="border-color:#444;color:#fff;background:transparent">Ya tengo cuenta</button>
+    <p style="color:#666;font-size:11px;text-align:center;margin-top:8px;letter-spacing:.5px">Research products · No para consumo humano</p>
+  </div>
+</div>
+
+<!-- ════ AUTH ════ -->
+<div x-show="screen==='auth'" class="splash">
+  <button @click="screen='welcome'" style="color:#888;font-size:13px;align-self:flex-start;letter-spacing:.5px">‹ Atrás</button>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <div class="eyebrow gold-text" style="margin-bottom:12px" x-text="mode==='signup' ? 'Bienvenido' : 'Hola de nuevo'"></div>
+    <h2 class="serif" style="color:white;font-size:28px;font-weight:500;margin:0 0 28px" x-text="mode==='signup' ? 'Empieza tu protocolo' : 'Continúa tu protocolo'"></h2>
+    <input type="email" placeholder="tucorreo@ejemplo.com" class="input" style="background:#1a1a1a;border-color:#333;color:white;margin-bottom:12px" x-model="email" @input="localStorage.setItem('peptiq_email',email)">
+    <button @click="screen='consent'" class="btn-primary" style="background:var(--paper);color:var(--ink);margin-top:8px">Continuar →</button>
+    <p style="color:#666;font-size:11px;text-align:center;margin-top:18px">Te mandamos un magic link · sin contraseñas</p>
+  </div>
+  <div></div>
+</div>
+
+<!-- ════ CONSENT · firma electrónica obligatoria · estilo Apple/Stripe ════ -->
+<div x-show="screen==='consent'" class="splash" style="overflow-y:auto;padding-bottom:24px">
+  <button @click="screen='auth'" style="color:#888;font-size:13px;align-self:flex-start;letter-spacing:.5px">‹ Atrás</button>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding-top:14px">
+    <div class="eyebrow gold-text">⚠️ ACUERDO LEGAL VINCULANTE</div>
+    <h2 class="serif" style="color:white;font-size:26px;font-weight:500;margin:8px 0 12px;line-height:1.2">Términos, condiciones<br><em style="color:rgba(255,255,255,.55);font-style:italic">y exención de responsabilidad.</em></h2>
+    <p style="color:#aaa;font-size:13px;line-height:1.55;margin-bottom:18px">Lee cuidadosamente. Tu aceptación es legalmente vinculante y queda registrada con timestamp UTC, IP, dispositivo y firma digital para protección legal mutua bajo el Código Civil Federal y el Código de Comercio de los Estados Unidos Mexicanos.</p>
+
+    <div style="background:#1a1a1a;border:1px solid #333;padding:16px 18px;font-size:11.5px;color:#ddd;line-height:1.65;margin-bottom:16px;max-height:340px;overflow-y:auto">
+
+      <p style="margin-bottom:10px;font-size:10px;color:#666;letter-spacing:1px;text-transform:uppercase">PEPTIQ MX · Acuerdo Marco de Usuario v1.5 · Vigente desde mayo 2026</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 1. NATURALEZA RESEARCH-GRADE Y ESTATUS REGULATORIO</b><br>Todos los productos PEPTIQ MX se comercializan exclusivamente como <b>For Research Use Only (RUO)</b> al amparo del régimen de productos de investigación química. NO son medicamentos, NO son suplementos alimenticios, NO son cosméticos terminados. NO cuentan ni requieren registro sanitario COFEPRIS, FDA, EMA, ANVISA o cualquier autoridad sanitaria, dado que NO están destinados a consumo humano ni veterinario. Las etiquetas y el etiquetado regulatorio reflejan este estatus de manera prominente y permanente. El usuario reconoce este estatus en el momento de adquisición y reitera su reconocimiento mediante el presente acuerdo.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 2. NATURALEZA INFORMATIVA DE LA APLICACIÓN</b><br>PEPTIQ Tracker (la "Aplicación") es una herramienta exclusivamente <b>informativa, educativa y de productividad personal</b>. La Aplicación NO constituye, NO reemplaza, NO sustituye y NO debe interpretarse como: (a) consejo médico profesional, (b) diagnóstico médico, (c) prescripción médica, (d) plan de tratamiento, (e) consulta médica, (f) opinión farmacéutica, (g) asesoría nutricional, (h) recomendación clínica individualizada. Toda información contenida en la Aplicación — incluyendo dosis sugeridas, protocolos, calculadoras de reconstitución, recordatorios, recomendaciones de horario, notas sobre ayuno, contraindicaciones, compatibilidades de stack, fuentes citadas y respuestas del asistente AI — es de carácter <b>educativo general</b> y <b>no individualizada</b>. El usuario debe consultar SIEMPRE a un profesional de salud calificado y con licencia vigente (médico, endocrinólogo, internista, ginecólogo, oncólogo, nutricionista clínico u otro especialista relevante) antes de iniciar, modificar o suspender cualquier protocolo.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 3. EXENCIÓN AMPLIA DE RESPONSABILIDAD</b><br>EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY APLICABLE, PEPTIQ MX, sus accionistas, directores, empleados, contratistas, proveedores, fabricantes, transportistas, clínicas afiliadas, profesionales de salud externos referidos, asistentes de inteligencia artificial integrados, infraestructura de servidores, y cualquier parte relacionada (en conjunto las "Partes Indemnizadas") <b>NO ASUMEN, RECHAZAN Y EXIMEN EXPRESAMENTE</b> toda responsabilidad civil, penal, mercantil, fiscal, regulatoria, contractual o extracontractual derivada directa o indirectamente de: (a) reacciones adversas, alergias, intolerancias, idiosincrasias o efectos secundarios de cualquier péptido o sustancia adquirida; (b) interacciones medicamentosas con tratamientos prescritos o no prescritos; (c) errores de cálculo en reconstitución, dosificación, frecuencia, vía de administración o sitio de inyección; (d) uso simultáneo o stack incompatible de múltiples sustancias; (e) almacenamiento inadecuado, ruptura de cadena de frío, contaminación post-apertura o uso de viales caducos; (f) interpretación errónea de información educativa; (g) decisiones médicas tomadas con base en información de la Aplicación; (h) eventos adversos reportables o no reportables a COFEPRIS; (i) infracciones a normas anti-doping (WADA, USADA, NADO-MX, COMUDA) por parte del usuario; (j) lucro cesante, daño emergente, daño moral, daño punitivo o cualquier daño consecuencial; (k) errores, omisiones o inexactitudes en literatura científica citada; (l) cambios regulatorios sobrevenidos; (m) caso fortuito o fuerza mayor.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 4. RESPONSABILIDAD PERSONAL EXCLUSIVA</b><br>El usuario reconoce, acepta y declara expresamente que <b>el uso de cualquier péptido o producto adquirido y la aplicación de cualquier información provista por la Aplicación es de su exclusiva, total y absoluta responsabilidad personal</b>. El usuario actúa por su propia cuenta y riesgo, en pleno uso de sus facultades mentales, con conocimiento de causa, sin coacción, y habiendo evaluado los riesgos inherentes. El usuario libera de toda responsabilidad a las Partes Indemnizadas y se obliga a sacarlas en paz y a salvo (<i>hold harmless</i>) frente a cualquier reclamación, demanda, acción legal, queja administrativa, denuncia, multa, sanción o procedimiento iniciado por el propio usuario, sus familiares, derechohabientes, terceros o autoridades competentes.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 5. CONTRAINDICACIONES ABSOLUTAS · NO USAR SI</b><br>(a) Embarazo confirmado o sospechado · (b) Lactancia materna activa · (c) Cáncer activo o en remisión menor a 5 años, en particular hormono-dependientes (mama ER+/PR+, endometrial, próstata, testicular, tiroides medular, MEN-2) · (d) Antecedente personal o familiar de carcinoma medular tiroideo (MTC) cuando se trate de agonistas GLP-1 · (e) Hipersensibilidad documentada a péptidos, alcohol bencílico, manitol o componentes del vial · (f) Diabetes mellitus tipo 1 o 2 no controlada (HbA1c >9%) · (g) Hipertensión arterial no controlada (>160/100) · (h) Insuficiencia hepática severa Child-Pugh C · (i) Insuficiencia renal severa (TFG <30 ml/min) · (j) Cardiopatía isquémica activa, IAM en últimos 6 meses, arritmias graves · (k) Epilepsia no controlada · (l) Trastornos psiquiátricos en fase aguda sin estabilización farmacológica · (m) Uso concomitante de anticoagulantes orales o parenterales sin supervisión médica · (n) Trasplante reciente o inmunosupresión farmacológica · (o) Menores de 18 años · (p) Pacientes en testing anti-doping competitivo. El usuario declara bajo protesta de decir verdad que no se encuentra en ninguna de estas situaciones, o bien, que cuenta con autorización médica explícita y por escrito de su médico tratante.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 6. PROCEDENCIA, CADENA DE CUSTODIA Y CADENA DE FRÍO</b><br>PEPTIQ MX provee Certificado de Análisis (COA) Janoshik Analytical o equivalente ISO-17025 por lote. Una vez recibido el producto por el usuario, la cadena de custodia y cadena de frío son responsabilidad EXCLUSIVA del usuario. Cualquier degradación post-entrega no es atribuible a PEPTIQ MX.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 7. ASISTENTE INTELIGENCIA ARTIFICIAL</b><br>La Aplicación incluye un asistente AI basado en modelos de lenguaje grande (LLM, Anthropic Claude). Las respuestas del asistente son <b>generadas algorítmicamente</b> y pueden contener errores, alucinaciones, omisiones o inexactitudes. El usuario debe verificar siempre con un profesional de salud calificado. NO seguir ciegamente las recomendaciones del asistente. PEPTIQ MX no se hace responsable por el contenido específico generado por el asistente AI.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 8. CONSENTIMIENTO INFORMADO Y CAPACIDAD LEGAL</b><br>El usuario declara: ser mayor de 18 años cumplidos; tener capacidad legal plena conforme al art. 22 y 23 del Código Civil Federal; haber leído íntegramente este acuerdo; haber tenido oportunidad de consultar dudas con asesor legal y/o médico antes de aceptar; aceptar libre, expresa, informada e inequívocamente cada cláusula.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 9. PRIVACIDAD Y DATOS PERSONALES</b><br>Los datos del usuario en la Aplicación (péptidos registrados, dosis aplicadas, recordatorios, perfil de salud, firma electrónica) se almacenan localmente en el dispositivo del usuario (localStorage del navegador). PEPTIQ MX no accede activamente a esa información. Se aplica la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP). Aviso de privacidad completo: peptiqmx.com/privacidad.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 10. INDEMNIZACIÓN</b><br>El usuario se obliga a indemnizar y sacar en paz y a salvo a las Partes Indemnizadas frente a TODA reclamación, demanda, costo, gasto, honorario legal razonable, multa o sanción derivada del uso indebido de los productos, infracción a este acuerdo, o violación a derechos de terceros.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 11. JURISDICCIÓN, COMPETENCIA Y LEY APLICABLE</b><br>Este acuerdo se rige por las leyes vigentes en los Estados Unidos Mexicanos. Para todo litigio derivado, las partes se someten expresamente a la competencia exclusiva de los <b>tribunales civiles competentes con residencia en San Luis Potosí, S.L.P., México</b>, renunciando a cualquier otro fuero que pudiera corresponderles por razón de domicilio presente o futuro. Antes de acudir a tribunales, las partes intentarán de buena fe una solución amigable mediante mediación PROFECO o conciliación CONDUSEF según aplique.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 12. MODIFICACIONES</b><br>PEPTIQ MX puede actualizar este acuerdo. La continuación del uso de la Aplicación tras una notificación de cambio constituye aceptación tácita de los nuevos términos.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 13. DIVISIBILIDAD</b><br>Si cualquier cláusula resulta inválida, ilegal o inexigible, el resto del acuerdo permanece en pleno vigor. Las Partes negociarán de buena fe una cláusula sustitutiva con efecto económico equivalente.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 14. RENUNCIAS Y NO-RENUNCIAS</b><br>Ninguna omisión o demora de PEPTIQ MX en exigir el cumplimiento de cualquier cláusula constituye renuncia. Toda renuncia requiere documento por escrito firmado.</p>
+
+      <p style="margin-bottom:10px"><b style="color:var(--gold)">§ 15. INTEGRACIÓN</b><br>Este acuerdo, junto con el Aviso de Privacidad, los Términos del Sitio Web y los disclaimers individuales en cada vista de la Aplicación, constituyen el acuerdo íntegro entre las partes y prevalece sobre toda comunicación previa.</p>
+
+      <p style="margin-top:14px;padding-top:10px;border-top:1px solid #333;font-size:10.5px;color:#999;font-style:italic">El usuario reconoce que ha tenido tiempo razonable y oportunidad de leer íntegramente este acuerdo, formular preguntas, consultar asesoría legal y médica externa, y que su aceptación es libre, informada y voluntaria.</p>
+    </div>
+
+    <div style="background:#0E0E0E;border:1px solid #444;padding:18px;margin-bottom:14px">
+      <label style="display:flex;gap:12px;align-items:flex-start;color:#fff;font-size:13.5px;line-height:1.55;cursor:pointer">
+        <input type="checkbox" x-model="consentAll" @change="consent1=consentAll;consent2=consentAll;consent3=consentAll;consent4=consentAll" style="margin-top:3px;flex:0 0 auto;width:18px;height:18px;accent-color:#988646">
+        <span><b>He leído y acepto</b> los Términos y Condiciones, el Acuerdo Marco v1.5, la Exención de Responsabilidad y declaro bajo protesta de decir verdad ser mayor de 18 años, no estar embarazada/lactando, no tener cáncer activo, y asumir responsabilidad personal exclusiva sobre el uso de los productos research-grade.</span>
+      </label>
+    </div>
+
+    <input type="text" placeholder="Firma · escribe tu nombre completo" class="input" x-model="consentSignature" style="background:#1a1a1a;border-color:#333;color:white;margin-bottom:14px;font-family:'Playfair Display';font-size:18px;font-style:italic;text-align:center">
+
+    <button @click="signConsent()" :disabled="!consentAll||!consentSignature||consentSignature.length<5" :style="`background:${(consentAll&&consentSignature&&consentSignature.length>=5)?'var(--gold)':'#444'};color:${(consentAll&&consentSignature&&consentSignature.length>=5)?'#000':'#888'};padding:14px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:${(consentAll&&consentSignature&&consentSignature.length>=5)?'pointer':'not-allowed'}`">Firmar y aceptar</button>
+    <p style="color:#666;font-size:10.5px;text-align:center;margin-top:10px;line-height:1.5">Tu acuse queda firmado con timestamp UTC y guardado en tu dispositivo. Puedes consultarlo en Perfil › Mi acuse legal.</p>
+  </div>
+</div>
+
+<!-- ════ ONBOARDING 1 — TIPO ════ -->
+<!-- ════ SETUP CONSOLIDADO · 3 secciones en 1 pantalla ════ -->
+<div x-show="screen==='onboard1'" class="splash" style="overflow-y:auto;padding-bottom:30px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0">
+    <button @click="screen='auth'" style="color:#888;font-size:13px">‹</button>
+    <div style="color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:600">SETUP</div>
+    <span style="color:#666;font-size:12px">1/2</span>
+  </div>
+  <div style="padding:20px 0">
+    <h2 class="serif" style="color:white;font-size:32px;font-weight:500;margin:0 0 8px;line-height:1.15">Configura<br><em style="color:rgba(255,255,255,.55);font-style:italic">tu protocolo.</em></h2>
+    <p style="color:#aaa;font-size:13px;margin:0 0 26px">3 datos rápidos · luego al dashboard.</p>
+
+    <!-- Sección 1 · Tipo -->
+    <div class="eyebrow gold-text" style="margin-bottom:10px">PERFIL</div>
+    <div style="display:flex;gap:10px;margin-bottom:24px">
+      <button @click="userType='personal'" :class="userType==='personal'?'':'inactive-pill'" :style="`flex:1;padding:14px 12px;background:${userType==='personal'?'var(--gold)':'transparent'};color:${userType==='personal'?'#000':'#aaa'};border:1px solid ${userType==='personal'?'var(--gold)':'#444'};font-size:13px;font-weight:600;letter-spacing:.5px`">
+        <div style="font-size:11px;letter-spacing:1.5px;margin-bottom:2px">PERSONAL</div>
+        <div style="font-size:11px;font-weight:400;opacity:.8">Mi propio protocolo</div>
+      </button>
+      <button @click="userType='pro'" :style="`flex:1;padding:14px 12px;background:${userType==='pro'?'var(--gold)':'transparent'};color:${userType==='pro'?'#000':'#aaa'};border:1px solid ${userType==='pro'?'var(--gold)':'#444'};font-size:13px;font-weight:600;letter-spacing:.5px`">
+        <div style="font-size:11px;letter-spacing:1.5px;margin-bottom:2px">PRO</div>
+        <div style="font-size:11px;font-weight:400;opacity:.8">Médico / clínica</div>
+      </button>
+    </div>
+
+    <!-- Sección 2 · Péptido -->
+    <div class="eyebrow gold-text" style="margin-bottom:10px">TU PÉPTIDO PRINCIPAL</div>
+    <select x-model="firstPeptideName" @change="firstPeptide=peptides.find(p=>p.name===firstPeptideName)||{name:firstPeptideName,purpose:''};selectedHour=(firstPeptideData&&firstPeptideData.recommendedHour)||'07:30'" class="input" style="background:#1a1a1a;border:1px solid #333;color:white;padding:16px;font-size:15px;margin-bottom:8px;width:100%;font-family:'Inter'">
+      <option value="" disabled selected>Selecciona…</option>
+      <template x-for="p in peptides" :key="p.name">
+        <option :value="p.name" x-text="p.name + ' · ' + p.purpose"></option>
+      </template>
+    </select>
+    <div x-show="firstPeptideData" style="font-size:11.5px;color:#aaa;line-height:1.5;margin-bottom:24px;padding:10px 14px;background:rgba(152,114,69,.08);border-left:2px solid var(--gold)">
+      <b style="color:var(--gold)">Protocolo recomendado:</b> <span x-text="firstPeptideData?firstPeptideData.protocol:''"></span>
+    </div>
+
+    <!-- Sección 3 · Hora con recomendación contextual -->
+    <div class="eyebrow gold-text" style="margin-bottom:10px">HORA DE RECORDATORIO</div>
+    <div x-show="firstPeptideData && firstPeptideData.optimalTime!=='flexible'" style="background:linear-gradient(135deg,rgba(152,114,69,.18),rgba(152,114,69,.05));border-left:3px solid var(--gold);padding:12px 14px;margin-bottom:10px;font-size:11.5px">
+      <div style="color:var(--gold);font-weight:600;margin-bottom:4px">⚡ Aplicar <span x-text="firstPeptideData?firstPeptideData.optimalTime:''"></span> · <span x-text="firstPeptideData?firstPeptideData.recommendedHour:''"></span></div>
+      <div style="color:#bbb;line-height:1.45" x-text="firstPeptideData?firstPeptideData.whyTime:''"></div>
+      <div style="color:var(--gold);margin-top:4px">🍽️ <span style="color:#fff" x-text="firstPeptideData?firstPeptideData.fastingRule:''"></span></div>
+    </div>
+    <input id="peptiqHourInput" type="time" x-model="selectedHour" class="input" style="background:#1a1a1a;border:1px solid #333;color:white;font-size:22px;text-align:center;padding:18px;font-family:'Playfair Display';width:100%;margin-bottom:8px">
+    <div x-show="hourMismatch==='wrong-night'||hourMismatch==='wrong-morning'" style="background:rgba(184,126,0,.15);border:1px solid var(--warn);padding:10px 14px;margin-bottom:14px;font-size:11.5px;color:#FFE2B0;line-height:1.5">
+      ⚠️ <b>Hora subóptima</b> — recomendamos <b><span x-text="firstPeptideData&&firstPeptideData.recommendedHour"></span></b>
+    </div>
+
+    <!-- Tutorial Y/N -->
+    <div class="eyebrow gold-text" style="margin-bottom:10px;margin-top:8px">EXPERIENCIA</div>
+    <div style="display:flex;gap:8px;margin-bottom:14px">
+      <button @click="firstTime=true" :style="`flex:1;padding:13px;background:${firstTime===true?'var(--gold)':'transparent'};color:${firstTime===true?'#000':'#aaa'};border:1px solid ${firstTime===true?'var(--gold)':'#444'};font-size:12px;font-weight:600;letter-spacing:1px`">Primera vez · ver tutorial</button>
+      <button @click="firstTime=false" :style="`flex:1;padding:13px;background:${firstTime===false?'var(--gold)':'transparent'};color:${firstTime===false?'#000':'#aaa'};border:1px solid ${firstTime===false?'var(--gold)':'#444'};font-size:12px;font-weight:600;letter-spacing:1px`">Ya sé reconstituir</button>
+    </div>
+
+    <!-- Continuar -->
+    <button @click="if(firstPeptide && firstTime!==null){saveSetup();screen='wa-optin'}" :disabled="!firstPeptide || firstTime===null" :style="`width:100%;padding:16px;background:${firstPeptide && firstTime!==null?'var(--paper)':'#444'};color:${firstPeptide && firstTime!==null?'var(--ink)':'#888'};font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:none;margin-top:10px;cursor:${firstPeptide && firstTime!==null?'pointer':'not-allowed'}`">Continuar →</button>
+  </div>
+</div>
+
+<!-- legacy onboard2/3 hidden but kept for backward compat -->
+<div x-show="false">
+<div x-show="screen==='onboard3'">
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <button @click="screen='onboard2'" style="color:#888;font-size:13px">‹</button>
+    <div style="display:flex;gap:6px">
+      <span style="width:24px;height:2px;background:var(--gold)"></span>
+      <span style="width:24px;height:2px;background:var(--gold)"></span>
+      <span style="width:24px;height:2px;background:var(--gold)"></span>
+    </div>
+    <span style="color:#666;font-size:12px">3/3</span>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <h2 class="serif" style="color:white;font-size:30px;font-weight:500;margin:0 0 8px">¿A qué hora te recordamos?</h2>
+    <p style="color:#aaa;font-size:14px;margin:0 0 16px">Push notification diaria a esa hora.</p>
+
+    <!-- Recomendación contextual -->
+    <div x-show="firstPeptideData && firstPeptideData.optimalTime!=='flexible'" style="background:linear-gradient(135deg,rgba(152,114,69,.15),rgba(152,114,69,.05));border-left:3px solid var(--gold);padding:14px 16px;margin-bottom:14px">
+      <div style="color:var(--gold);font-size:10px;letter-spacing:2px;font-weight:700;margin-bottom:6px">⚡ RECOMENDADO PARA <span x-text="(firstPeptide&&firstPeptide.name||'').toUpperCase()"></span></div>
+      <div style="color:white;font-size:14px;font-weight:600;margin-bottom:4px">
+        Aplicar <span x-text="firstPeptideData?firstPeptideData.optimalTime:''"></span> · <span x-text="firstPeptideData?firstPeptideData.recommendedHour:''"></span>
+      </div>
+      <div style="color:#bbb;font-size:11.5px;line-height:1.5;margin-bottom:6px" x-text="firstPeptideData?firstPeptideData.whyTime:''"></div>
+      <div style="color:var(--gold);font-size:11px;font-weight:600;margin-top:6px">🍽️ Ayuno: <span style="color:#FFF;font-weight:400" x-text="firstPeptideData?firstPeptideData.fastingRule:''"></span></div>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(152,114,69,.25);font-size:10px;color:#888;line-height:1.4"><b style="color:#aaa">Fuente:</b> <span x-text="firstPeptideData?firstPeptideData.source:''"></span></div>
+      <div style="margin-top:6px;font-size:9.5px;color:#666;line-height:1.4;font-style:italic">⚠️ Información educativa research-grade · No constituye consejo médico · No sustituye consulta con profesional de salud · Usar bajo responsabilidad personal.</div>
+      <button @click="selectedHour=firstPeptideData.recommendedHour;document.querySelector('#peptiqHourInput').value=firstPeptideData.recommendedHour" style="margin-top:10px;background:var(--gold);color:#000;font-size:11px;font-weight:600;padding:8px 14px;letter-spacing:1.2px;text-transform:uppercase">Usar hora recomendada</button>
+    </div>
+
+    <input id="peptiqHourInput" type="time" x-model="selectedHour" class="input" style="background:#1a1a1a;border-color:#333;color:white;font-size:24px;text-align:center;padding:20px;font-family:'Playfair Display'">
+
+    <!-- Warning si elige hora subóptima -->
+    <div x-show="hourMismatch==='wrong-night'" style="background:#3a1f1f;border:1px solid var(--warn);padding:12px 14px;margin-top:10px">
+      <div style="color:var(--warn);font-size:11px;font-weight:700;letter-spacing:1.5px;margin-bottom:4px">⚠️ HORA SUBÓPTIMA</div>
+      <div style="color:#FFE2B0;font-size:12.5px;line-height:1.5"><span x-text="firstPeptide&&firstPeptide.name"></span> es un péptido <b>nocturno</b>. La GH/reparación se libera durante el sueño profundo — aplicar de día desperdicia el efecto. Recomendamos <b><span x-text="firstPeptideData&&firstPeptideData.recommendedHour"></span></b>.</div>
+    </div>
+    <div x-show="hourMismatch==='wrong-morning'" style="background:#3a1f1f;border:1px solid var(--warn);padding:12px 14px;margin-top:10px">
+      <div style="color:var(--warn);font-size:11px;font-weight:700;letter-spacing:1.5px;margin-bottom:4px">⚠️ HORA SUBÓPTIMA</div>
+      <div style="color:#FFE2B0;font-size:12.5px;line-height:1.5"><span x-text="firstPeptide&&firstPeptide.name"></span> es un péptido <b>matutino</b> — aplicar de noche puede causar insomnio o no funcionar bien con tu ritmo circadiano. Recomendamos <b><span x-text="firstPeptideData&&firstPeptideData.recommendedHour"></span></b>.</div>
+    </div>
+
+    <div style="margin-top:18px;padding:16px;background:#1a1a1a;border:1px solid #333">
+      <div style="color:white;font-size:13px;font-weight:600;margin-bottom:10px">¿Es tu primera vez con péptidos?</div>
+      <div style="display:flex;gap:8px">
+        <button @click="firstTime=true;screen='wa-optin'" style="flex:1;background:var(--gold);color:#000;font-size:12px;font-weight:600;padding:12px;letter-spacing:1px;text-transform:uppercase">Sí · ver tutorial</button>
+        <button @click="firstTime=false;screen='wa-optin'" style="flex:1;background:transparent;border:1px solid #444;color:white;font-size:12px;font-weight:500;padding:12px;letter-spacing:1px">No · ya sé</button>
+      </div>
+    </div>
+  </div>
+  <div></div>
+</div>
+</div><!-- /legacy wrapper -->
+
+<!-- ════ WA OPT-IN · captura WhatsApp + recordatorios ════ -->
+<div x-show="screen==='wa-optin'" class="splash" style="overflow-y:auto">
+  <button @click="screen='onboard1'" style="color:#888;font-size:13px;align-self:flex-start;letter-spacing:.5px">‹ Atrás</button>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:14px">
+    <div class="eyebrow gold-text">RECORDATORIOS POR WHATSAPP</div>
+    <h2 class="serif" style="color:white;font-size:28px;font-weight:500;margin:8px 0 12px;line-height:1.2">No te saltes<br><em style="color:rgba(255,255,255,.55);font-style:italic">una sola dosis.</em></h2>
+    <p style="color:#aaa;font-size:13px;line-height:1.55;margin-bottom:20px">Te avisamos por WhatsApp a tu hora exacta · día por día · con confirmación rápida desde el chat. Cero spam, cero promociones — solo el recordatorio de tu péptido.</p>
+
+    <input type="tel" placeholder="WhatsApp (ej: 4445770445)" class="input" x-model="waNumber" style="background:#1a1a1a;border-color:#333;color:white;font-size:18px;text-align:center;padding:18px;letter-spacing:1px;font-family:'Inter'">
+    <p style="color:#666;font-size:11px;text-align:center;margin-top:6px">10 dígitos México · sin lada · sin guiones</p>
+
+    <label style="display:flex;gap:10px;align-items:flex-start;color:#fff;font-size:12.5px;line-height:1.5;cursor:pointer;margin-top:18px;padding:14px;background:#1a1a1a;border:1px solid #333">
+      <input type="checkbox" x-model="waOptIn" style="margin-top:3px;flex:0 0 auto;width:18px;height:18px;accent-color:#988646">
+      <span><b>Sí, quiero recordatorios diarios por WhatsApp.</b> Solo a la hora de mi dosis. Puedo desactivarlo en Perfil. Acepto recibir mensajes desde el +52 1 444 577 0445.</span>
+    </label>
+
+    <div style="display:flex;gap:8px;margin-top:18px">
+      <button @click="skipWaOptIn()" style="flex:0.5;background:transparent;border:1px solid #444;color:#888;padding:14px;font-size:11.5px;letter-spacing:1px">Omitir</button>
+      <button @click="submitWaOptIn()" :disabled="!waNumber||waNumber.replace(/\D/g,'').length<10" :style="`flex:1.5;background:${(waNumber&&waNumber.replace(/\\D/g,'').length>=10)?'var(--gold)':'#444'};color:${(waNumber&&waNumber.replace(/\\D/g,'').length>=10)?'#000':'#888'};padding:14px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:none`">Activar recordatorios</button>
+    </div>
+
+    <div style="margin-top:18px;padding:12px 14px;background:rgba(255,255,255,0.05);border-left:2px solid #988646;font-size:11px;color:#aaa;line-height:1.5">
+      <b style="color:#988646">Privacy:</b> Tu número se guarda solo para enviarte recordatorios automáticos via Meta WhatsApp Business API. No lo compartimos. No lo usamos para marketing. Puedes pedir borrado a edson@marketingtdi.com.
+    </div>
+  </div>
+  <div></div>
+</div>
+
+<!-- ════ TUTORIAL · primera vez ════ -->
+<div x-show="screen==='tutorial'" class="splash" style="overflow-y:auto;padding-bottom:24px">
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <button @click="tutorialStep>1 ? tutorialStep-- : screen='onboard3'" style="color:#888;font-size:13px">‹</button>
+    <div style="color:var(--gold);font-size:12px;letter-spacing:2px"><span x-text="tutorialStep"></span> / 5</div>
+    <button @click="firstTime=false;screen='dashboard'" style="color:#888;font-size:11px;letter-spacing:1px">SALTAR</button>
+  </div>
+
+  <!-- Step 1: Qué necesitas -->
+  <div x-show="tutorialStep===1" style="margin-top:20px">
+    <div class="eyebrow gold-text">PASO 1 DE 5</div>
+    <h2 class="serif" style="color:white;font-size:28px;font-weight:500;margin:6px 0 14px;line-height:1.2">Qué necesitas tener<br><em style="color:rgba(255,255,255,.55);font-style:italic">antes de empezar.</em></h2>
+    <p style="color:#aaa;font-size:13px;margin-bottom:14px;line-height:1.55">Sin estos materiales no abras tu vial. PEPTIQ los incluye en tu Starter Kit ($590).</p>
+
+    <!-- Disclaimer del tutorial -->
+    <div style="background:#FFF8E1;border:1px solid #B87E00;padding:11px 13px;margin-bottom:18px;font-size:11px;color:#5A3D00;line-height:1.5">
+      <b>⚠️ Importante</b> · Este tutorial es educativo. NO sustituye consulta médica. Si es tu primera vez con péptidos, agenda asesoría 1-on-1 sin costo con tu Concierge PEPTIQ antes de iniciar. Productos research-grade · For research use only.
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px;display:flex;gap:12px;align-items:flex-start">
+        <div style="font-size:24px">💧</div>
+        <div><div style="color:white;font-size:14px;font-weight:600">Agua bacteriostática</div><div style="color:#888;font-size:12px;margin-top:2px;line-height:1.4">3-5ml. NUNCA agua del grifo, destilada normal o salina. Solo "BAC water". Vida útil 28 días refrigerada.</div></div>
+      </div>
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px;display:flex;gap:12px;align-items:flex-start">
+        <div style="font-size:24px">💉</div>
+        <div><div style="color:white;font-size:14px;font-weight:600">Jeringas de insulina U-100</div><div style="color:#888;font-size:12px;margin-top:2px;line-height:1.4">100 unidades = 1ml. Aguja 27G-31G x 8mm o 12.7mm. Pack de 100 ≈ $250 MXN en farmacias.</div></div>
+      </div>
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px;display:flex;gap:12px;align-items:flex-start">
+        <div style="font-size:24px">🧴</div>
+        <div><div style="color:white;font-size:14px;font-weight:600">Alcohol isopropílico 70%</div><div style="color:#888;font-size:12px;margin-top:2px;line-height:1.4">Toallitas o spray. Limpia el vial Y la zona de inyección antes de cada aplicación.</div></div>
+      </div>
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px;display:flex;gap:12px;align-items:flex-start">
+        <div style="font-size:24px">📦</div>
+        <div><div style="color:white;font-size:14px;font-weight:600">Sharps container</div><div style="color:#888;font-size:12px;margin-top:2px;line-height:1.4">Contenedor rígido para jeringas usadas. Nunca al bote regular. Se compra en farmacia ≈ $80 MXN.</div></div>
+      </div>
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px;display:flex;gap:12px;align-items:flex-start">
+        <div style="font-size:24px">❄️</div>
+        <div><div style="color:white;font-size:14px;font-weight:600">Refrigerador</div><div style="color:#888;font-size:12px;margin-top:2px;line-height:1.4">Vial reconstituido va al refri (2-8°C). Vial liofilizado sin abrir aguanta a temperatura ambiente meses, pero mejor refri.</div></div>
+      </div>
+    </div>
+    <button @click="tutorialStep=2" class="btn-primary" style="background:var(--gold);color:#000;margin-top:22px;font-weight:600">Siguiente: cómo reconstituir →</button>
+  </div>
+
+  <!-- Step 2: Reconstitución -->
+  <div x-show="tutorialStep===2" style="margin-top:20px">
+    <div class="eyebrow gold-text">PASO 2 DE 5</div>
+    <h2 class="serif" style="color:white;font-size:28px;font-weight:500;margin:6px 0 14px;line-height:1.2">Cómo reconstituir<br><em style="color:rgba(255,255,255,.55);font-style:italic">tu vial liofilizado.</em></h2>
+    <p style="color:#aaa;font-size:13px;margin-bottom:18px;line-height:1.55">El polvo blanco/beige (liofilizado) se debe mezclar con agua bact ANTES de usar. Una sola vez por vial.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <!-- PASO A: limpieza con alcohol -->
+      <div style="background:#1a1a1a;border-left:3px solid var(--gold);padding:14px;display:flex;gap:14px;align-items:center">
+        <svg width="68" height="80" viewBox="0 0 68 80" style="flex:0 0 68px">
+          <!-- Vial silhouette -->
+          <rect x="22" y="6" width="20" height="6" fill="#C0C0C0" rx="1"/>
+          <rect x="20" y="12" width="24" height="58" fill="rgba(255,255,255,0.1)" stroke="#666" stroke-width="1.5" rx="2"/>
+          <!-- Cotton swab with alcohol -->
+          <ellipse cx="55" cy="9" rx="6" ry="4" fill="#FFF" opacity="0.9"/>
+          <line x1="60" y1="9" x2="64" y2="14" stroke="#988646" stroke-width="2"/>
+          <!-- Drops -->
+          <circle cx="32" cy="9" r="1.5" fill="#988646" opacity="0.7"/>
+          <circle cx="36" cy="9" r="1.5" fill="#988646" opacity="0.5"/>
+        </svg>
+        <div style="flex:1"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">PASO A · LIMPIA</div><div style="color:white;font-size:13px;margin-top:4px;line-height:1.5">Limpia tapón de hule del vial Y del agua bact con alcohol isopropílico 70%.</div></div>
+      </div>
+
+      <!-- PASO B: extraer 2ml -->
+      <div style="background:#1a1a1a;border-left:3px solid var(--gold);padding:14px;display:flex;gap:14px;align-items:center">
+        <svg width="68" height="80" viewBox="0 0 68 80" style="flex:0 0 68px">
+          <!-- Bact water vial -->
+          <rect x="6" y="14" width="14" height="46" fill="rgba(150,200,220,0.3)" stroke="#999" stroke-width="1.5" rx="1"/>
+          <rect x="8" y="10" width="10" height="5" fill="#888"/>
+          <text x="13" y="40" text-anchor="middle" font-size="6" fill="#FFF" opacity="0.6">BACT</text>
+          <text x="13" y="48" text-anchor="middle" font-size="6" fill="#FFF" opacity="0.6">H₂O</text>
+          <!-- Syringe extracting -->
+          <line x1="14" y1="18" x2="14" y2="34" stroke="#888" stroke-width="1.5"/>
+          <rect x="22" y="32" width="34" height="8" fill="rgba(255,255,255,0.95)" stroke="#666" stroke-width="1"/>
+          <rect x="22" y="32" width="22" height="8" fill="rgba(150,200,220,0.6)"/>
+          <rect x="40" y="29" width="6" height="14" fill="#666"/>
+          <rect x="56" y="34" width="8" height="4" fill="#666"/>
+          <text x="33" y="51" text-anchor="middle" font-size="9" fill="#988646" font-weight="700">2ml</text>
+        </svg>
+        <div style="flex:1"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">PASO B · EXTRAE 2ML</div><div style="color:white;font-size:13px;margin-top:4px;line-height:1.5">Con jeringa nueva, extrae <b>2ml de agua bact</b> (la app calcula valores específicos por péptido).</div></div>
+      </div>
+
+      <!-- PASO C: inyectar pared interna -->
+      <div style="background:#1a1a1a;border-left:3px solid var(--gold);padding:14px;display:flex;gap:14px;align-items:center">
+        <svg width="68" height="80" viewBox="0 0 68 80" style="flex:0 0 68px">
+          <!-- Vial liofilizado -->
+          <rect x="32" y="22" width="24" height="48" fill="rgba(255,255,255,0.1)" stroke="#666" stroke-width="1.5" rx="2"/>
+          <rect x="34" y="18" width="20" height="5" fill="#C0C0C0"/>
+          <!-- Polvo at bottom -->
+          <rect x="33" y="58" width="22" height="11" fill="rgba(180,160,120,0.5)" rx="1"/>
+          <!-- Syringe coming from left, angled to wall -->
+          <rect x="2" y="32" width="30" height="6" fill="rgba(150,200,220,0.6)" stroke="#666" stroke-width="1" transform="rotate(-12 17 35)"/>
+          <line x1="30" y1="36" x2="36" y2="32" stroke="#888" stroke-width="1.5"/>
+          <!-- Arrow showing angle -->
+          <path d="M 38 30 Q 42 35 38 40" fill="none" stroke="#988646" stroke-width="2" stroke-dasharray="2,2"/>
+          <text x="44" y="45" font-size="6" fill="#988646" font-weight="700">PARED</text>
+        </svg>
+        <div style="flex:1"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">PASO C · INYECTA EN LA PARED</div><div style="color:white;font-size:13px;margin-top:4px;line-height:1.5">Inyecta el agua <b>despacio</b> contra la <b>pared interna</b> del vial. Nunca directo al polvo — agita la molécula.</div></div>
+      </div>
+
+      <!-- PASO D: girar palmas -->
+      <div style="background:#1a1a1a;border-left:3px solid var(--gold);padding:14px;display:flex;gap:14px;align-items:center">
+        <svg width="68" height="80" viewBox="0 0 68 80" style="flex:0 0 68px">
+          <!-- Vial dissolving -->
+          <rect x="26" y="14" width="20" height="50" fill="rgba(180,160,120,0.3)" stroke="#666" stroke-width="1.5" rx="2"/>
+          <rect x="28" y="10" width="16" height="5" fill="#C0C0C0"/>
+          <!-- Liquid dissolved -->
+          <rect x="27" y="22" width="18" height="40" fill="rgba(180,160,120,0.6)" rx="1"/>
+          <!-- Rotation arrows around vial -->
+          <path d="M 14 30 Q 8 40 14 50" fill="none" stroke="#988646" stroke-width="2" stroke-dasharray="3,2"/>
+          <path d="M 12 28 L 14 30 L 16 28" fill="none" stroke="#988646" stroke-width="2"/>
+          <path d="M 58 30 Q 64 40 58 50" fill="none" stroke="#988646" stroke-width="2" stroke-dasharray="3,2"/>
+          <path d="M 56 52 L 58 50 L 60 52" fill="none" stroke="#988646" stroke-width="2"/>
+          <!-- X symbol for NO shake -->
+          <line x1="35" y1="72" x2="42" y2="78" stroke="#bb3333" stroke-width="2"/>
+          <line x1="42" y1="72" x2="35" y2="78" stroke="#bb3333" stroke-width="2"/>
+        </svg>
+        <div style="flex:1"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">PASO D · GIRA · NO AGITES</div><div style="color:white;font-size:13px;margin-top:4px;line-height:1.5"><b>NO agitar como coctel.</b> Gira el vial suavemente entre las palmas hasta disolver. 30-60 segundos.</div></div>
+      </div>
+
+      <!-- PASO E: marca + refri -->
+      <div style="background:#1a1a1a;border-left:3px solid var(--gold);padding:14px;display:flex;gap:14px;align-items:center">
+        <svg width="68" height="80" viewBox="0 0 68 80" style="flex:0 0 68px">
+          <!-- Refrigerator -->
+          <rect x="14" y="10" width="40" height="60" fill="rgba(200,220,230,0.15)" stroke="#999" stroke-width="1.5" rx="2"/>
+          <line x1="14" y1="32" x2="54" y2="32" stroke="#999" stroke-width="1"/>
+          <rect x="48" y="20" width="3" height="8" fill="#888"/>
+          <rect x="48" y="42" width="3" height="20" fill="#888"/>
+          <!-- Vial inside with date label -->
+          <rect x="22" y="38" width="14" height="24" fill="rgba(180,160,120,0.5)" stroke="#666" stroke-width="1" rx="1"/>
+          <rect x="20" y="48" width="18" height="6" fill="#FFF"/>
+          <text x="29" y="53" text-anchor="middle" font-size="4" fill="#000" font-weight="700">2/MAY</text>
+          <!-- Snowflake icon -->
+          <text x="40" y="20" font-size="10" fill="#988646">❄</text>
+          <!-- 28 days marker -->
+          <text x="34" y="78" text-anchor="middle" font-size="7" fill="#988646" font-weight="700">28 días</text>
+        </svg>
+        <div style="flex:1"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">PASO E · MARCA + REFRIGERA</div><div style="color:white;font-size:13px;margin-top:4px;line-height:1.5">Marca vial con fecha de reconstitución. Refrigera 2-8°C. Úsalo en máximo <b>28 días</b>.</div></div>
+      </div>
+    </div>
+    <div style="background:#3a1f1f;border:1px solid var(--gold);padding:14px;margin-top:14px"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">⚠️ NUNCA HAGAS</div><div style="color:white;font-size:12.5px;margin-top:6px;line-height:1.5">No agites como coctel. No uses agua destilada normal. No mezcles 2 péptidos en mismo vial. No uses vial reconstituido > 28 días.</div></div>
+    <button @click="tutorialStep=3" class="btn-primary" style="background:var(--gold);color:#000;margin-top:22px;font-weight:600">Siguiente: cargar jeringa →</button>
+  </div>
+
+  <!-- Step 3: Jeringa -->
+  <div x-show="tutorialStep===3" style="margin-top:20px">
+    <div class="eyebrow gold-text">PASO 3 DE 5</div>
+    <h2 class="serif" style="color:white;font-size:28px;font-weight:500;margin:6px 0 14px;line-height:1.2">Cuánto poner<br><em style="color:rgba(255,255,255,.55);font-style:italic">en la jeringa.</em></h2>
+    <p style="color:#aaa;font-size:13px;margin-bottom:18px;line-height:1.55">La calculadora hace el cálculo automático — aquí ves visualmente cuánto cargar.</p>
+
+    <!-- VISUAL: Jeringa con marca de "llena hasta aquí" -->
+    <div style="background:#1a1a1a;border:1px solid #333;padding:24px 14px;text-align:center">
+      <div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px;margin-bottom:12px">EJEMPLO BPC-157 · DOSIS 250MCG</div>
+      <svg width="100%" height="120" viewBox="0 0 360 120" style="max-width:340px">
+        <!-- Syringe body -->
+        <rect x="40" y="50" width="240" height="22" fill="rgba(255,255,255,0.95)" stroke="#999" stroke-width="1.5"/>
+        <!-- Filled portion 5 units = 5/100 of body -->
+        <rect x="40" y="50" width="12" height="22" fill="url(#peptideFill)"/>
+        <defs>
+          <linearGradient id="peptideFill" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#988646" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#988646" stop-opacity="0.9"/>
+          </linearGradient>
+        </defs>
+        <!-- Plunger -->
+        <rect x="48" y="46" width="10" height="30" fill="#888"/>
+        <rect x="20" y="48" width="20" height="26" fill="#666"/>
+        <!-- Needle -->
+        <rect x="280" y="59" width="40" height="4" fill="#999"/>
+        <line x1="320" y1="61" x2="335" y2="61" stroke="#999" stroke-width="2"/>
+        <!-- Tick marks 0-100 -->
+        <g stroke="#666" stroke-width="0.8">
+          <line x1="64" y1="50" x2="64" y2="44"/><line x1="88" y1="50" x2="88" y2="44"/>
+          <line x1="112" y1="50" x2="112" y2="44"/><line x1="136" y1="50" x2="136" y2="44"/>
+          <line x1="160" y1="50" x2="160" y2="44"/><line x1="184" y1="50" x2="184" y2="44"/>
+          <line x1="208" y1="50" x2="208" y2="44"/><line x1="232" y1="50" x2="232" y2="44"/>
+          <line x1="256" y1="50" x2="256" y2="44"/><line x1="280" y1="50" x2="280" y2="44"/>
+        </g>
+        <text x="40" y="42" font-size="9" fill="#999" font-family="Inter">0</text>
+        <text x="160" y="42" font-size="9" fill="#999" font-family="Inter">50</text>
+        <text x="280" y="42" font-size="9" fill="#999" font-family="Inter">100</text>
+        <!-- Pointer arrow at 5u -->
+        <polygon points="52,86 46,94 58,94" fill="#988646"/>
+        <text x="52" y="108" text-anchor="middle" font-size="14" fill="#988646" font-weight="700">5 unidades</text>
+        <text x="52" y="120" text-anchor="middle" font-size="9" fill="#aaa">marca "5"</text>
+      </svg>
+      <div style="background:#FAF6EE;color:#000;padding:14px;margin-top:14px;text-align:left;font-size:12.5px;line-height:1.6">
+        <b style="color:var(--maroon);font-size:11px;letter-spacing:1.5px">CÓMO LEER LA JERINGA</b><br>
+        Vial: 10mg + 2ml agua bact = <b>5,000 mcg/ml</b><br>
+        Dosis target: 250mcg = <b>0.05 ml</b><br>
+        Jeringa U-100: <b>llena hasta la línea "5"</b> (5 unidades)<br>
+        Para 500mcg → línea "10" · para 1000mcg → línea "20"
+      </div>
+    </div>
+    <div style="background:#1a1a1a;border:1px solid #333;padding:18px;margin-top:12px">
+      <div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px;margin-bottom:8px">FÓRMULA UNIVERSAL</div>
+      <div style="color:white;font-size:14px;line-height:1.7">
+        Concentración = <b>Mg vial × 1000 ÷ ml agua</b><br>
+        Volumen dosis = <b>Mcg target ÷ concentración</b><br>
+        Unidades jeringa = <b>Volumen × 100</b>
+      </div>
+    </div>
+    <div style="background:#FAF6EE;color:#000;padding:18px;margin-top:12px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--maroon)">EJEMPLO BPC-157</div>
+      <div style="font-size:13.5px;line-height:1.7;margin-top:6px">
+        Vial: <b>10mg</b> · Agua bact: <b>2ml</b> · Dosis target: <b>250mcg</b><br>
+        Concentración: 10×1000÷2 = <b>5,000 mcg/ml</b><br>
+        Volumen: 250÷5000 = <b>0.05 ml</b><br>
+        Jeringa U-100: <b>5 unidades</b> = la línea "5"
+      </div>
+    </div>
+    <div style="background:#1a1a1a;border:1px solid #333;padding:14px;margin-top:12px"><div style="color:white;font-size:13px;line-height:1.55">📐 La app tiene una <b>calculadora visual</b> en cada péptido (botón "Calcular" en Hoy/Inventario). Te muestra exactamente cuántas unidades cargar.</div></div>
+    <button @click="tutorialStep=4" class="btn-primary" style="background:var(--gold);color:#000;margin-top:22px;font-weight:600">Siguiente: dónde inyectar →</button>
+  </div>
+
+  <!-- Step 4: Dónde inyectar -->
+  <div x-show="tutorialStep===4" style="margin-top:20px">
+    <div class="eyebrow gold-text">PASO 4 DE 5</div>
+    <h2 class="serif" style="color:white;font-size:28px;font-weight:500;margin:6px 0 14px;line-height:1.2">Dónde inyectar<br><em style="color:rgba(255,255,255,.55);font-style:italic">de forma segura.</em></h2>
+    <p style="color:#aaa;font-size:13px;margin-bottom:18px;line-height:1.55">Subcutáneo (SC) significa <b>en grasa subcutánea</b>, no músculo. Aguja insulina (8mm) entra a 90° o 45° si tienes poca grasa.</p>
+
+    <!-- VISUAL: Body silhouette frontal + back con zonas de inyección -->
+    <div style="background:#1a1a1a;border:1px solid #333;padding:18px;margin-bottom:16px">
+      <div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px;margin-bottom:14px;text-align:center">ZONAS DE INYECCIÓN SC</div>
+      <div style="display:flex;justify-content:center;gap:24px">
+        <!-- Front view -->
+        <div style="text-align:center">
+          <svg width="120" height="240" viewBox="0 0 120 240">
+            <!-- Body silhouette front -->
+            <path d="M 60 12 C 52 12 47 18 47 26 C 47 32 50 36 54 38 L 50 44 C 36 46 28 54 26 68 L 24 100 C 24 110 28 116 32 118 L 32 154 C 32 162 30 170 28 178 L 26 220 L 36 220 L 44 184 L 48 184 L 50 220 L 60 220 L 60 12 Z" fill="rgba(255,255,255,0.12)" stroke="#666" stroke-width="1"/>
+            <path d="M 60 12 C 68 12 73 18 73 26 C 73 32 70 36 66 38 L 70 44 C 84 46 92 54 94 68 L 96 100 C 96 110 92 116 88 118 L 88 154 C 88 162 90 170 92 178 L 94 220 L 84 220 L 76 184 L 72 184 L 70 220 L 60 220 L 60 12 Z" fill="rgba(255,255,255,0.12)" stroke="#666" stroke-width="1"/>
+            <!-- Abdomen zones (4 quadrants around umbilicus) -->
+            <rect x="38" y="74" width="18" height="20" fill="#988646" opacity="0.85" rx="2"/>
+            <rect x="64" y="74" width="18" height="20" fill="#988646" opacity="0.85" rx="2"/>
+            <rect x="38" y="98" width="18" height="20" fill="#988646" opacity="0.85" rx="2"/>
+            <rect x="64" y="98" width="18" height="20" fill="#988646" opacity="0.85" rx="2"/>
+            <!-- Umbilicus -->
+            <circle cx="60" cy="100" r="2" fill="#444"/>
+            <!-- Thighs front -->
+            <rect x="34" y="138" width="14" height="34" fill="#988646" opacity="0.85" rx="2"/>
+            <rect x="72" y="138" width="14" height="34" fill="#988646" opacity="0.85" rx="2"/>
+            <!-- Labels -->
+            <text x="60" y="60" text-anchor="middle" font-size="7" fill="#988646" font-weight="700">ABDOMEN</text>
+            <text x="60" y="186" text-anchor="middle" font-size="6" fill="#988646" font-weight="700">MUSLO EXT.</text>
+          </svg>
+          <div style="font-size:10px;color:#999;margin-top:4px;letter-spacing:1px">FRENTE</div>
+        </div>
+        <!-- Back view -->
+        <div style="text-align:center">
+          <svg width="120" height="240" viewBox="0 0 120 240">
+            <path d="M 60 12 C 52 12 47 18 47 26 C 47 32 50 36 54 38 L 50 44 C 36 46 28 54 26 68 L 24 100 C 24 110 28 116 32 118 L 32 154 C 32 162 30 170 28 178 L 26 220 L 36 220 L 44 184 L 48 184 L 50 220 L 60 220 L 60 12 Z" fill="rgba(255,255,255,0.12)" stroke="#666" stroke-width="1"/>
+            <path d="M 60 12 C 68 12 73 18 73 26 C 73 32 70 36 66 38 L 70 44 C 84 46 92 54 94 68 L 96 100 C 96 110 92 116 88 118 L 88 154 C 88 162 90 170 92 178 L 94 220 L 84 220 L 76 184 L 72 184 L 70 220 L 60 220 L 60 12 Z" fill="rgba(255,255,255,0.12)" stroke="#666" stroke-width="1"/>
+            <!-- Triceps -->
+            <ellipse cx="32" cy="62" rx="6" ry="14" fill="#988646" opacity="0.85"/>
+            <ellipse cx="88" cy="62" rx="6" ry="14" fill="#988646" opacity="0.85"/>
+            <!-- Lower back / glutes upper outer -->
+            <ellipse cx="40" cy="130" rx="10" ry="14" fill="#988646" opacity="0.85"/>
+            <ellipse cx="80" cy="130" rx="10" ry="14" fill="#988646" opacity="0.85"/>
+            <!-- Hamstring upper -->
+            <rect x="34" y="148" width="14" height="22" fill="#988646" opacity="0.85" rx="2"/>
+            <rect x="72" y="148" width="14" height="22" fill="#988646" opacity="0.85" rx="2"/>
+            <!-- Labels -->
+            <text x="22" y="58" text-anchor="middle" font-size="6" fill="#988646" font-weight="700">TRÍCEPS</text>
+            <text x="60" y="118" text-anchor="middle" font-size="7" fill="#988646" font-weight="700">GLÚTEO SUP.</text>
+          </svg>
+          <div style="font-size:10px;color:#999;margin-top:4px;letter-spacing:1px">ESPALDA</div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:10.5px;color:#aaa;margin-top:10px;line-height:1.5">Las zonas <span style="color:#988646;font-weight:700">en oro</span> son seguras para SC. Aguja 8mm a 90° (o 45° si poca grasa).</div>
+    </div>
+
+    <!-- VISUAL: rotación abdomen 4 cuadrantes -->
+    <div style="background:#1a1a1a;border:1px solid #333;padding:18px;margin-bottom:16px">
+      <div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px;margin-bottom:14px;text-align:center">ROTACIÓN · 4 CUADRANTES SEMANALES</div>
+      <div style="display:flex;justify-content:center">
+        <svg width="200" height="200" viewBox="0 0 200 200">
+          <!-- Abdomen outline -->
+          <ellipse cx="100" cy="100" rx="80" ry="70" fill="rgba(255,255,255,0.08)" stroke="#666" stroke-width="1.5"/>
+          <!-- 4 quadrants -->
+          <line x1="100" y1="30" x2="100" y2="170" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="20" y1="100" x2="180" y2="100" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+          <!-- Quadrant labels with arrows -->
+          <rect x="32" y="42" width="56" height="50" fill="#988646" opacity="0.4" rx="3"/>
+          <text x="60" y="74" text-anchor="middle" font-size="22" font-weight="700" fill="#FFF" font-family="Playfair Display">1</text>
+          <text x="60" y="86" text-anchor="middle" font-size="8" fill="#FFF" opacity="0.7">SEM 1</text>
+          <rect x="112" y="42" width="56" height="50" fill="#988646" opacity="0.4" rx="3"/>
+          <text x="140" y="74" text-anchor="middle" font-size="22" font-weight="700" fill="#FFF" font-family="Playfair Display">2</text>
+          <text x="140" y="86" text-anchor="middle" font-size="8" fill="#FFF" opacity="0.7">SEM 2</text>
+          <rect x="112" y="108" width="56" height="50" fill="#988646" opacity="0.4" rx="3"/>
+          <text x="140" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#FFF" font-family="Playfair Display">3</text>
+          <text x="140" y="152" text-anchor="middle" font-size="8" fill="#FFF" opacity="0.7">SEM 3</text>
+          <rect x="32" y="108" width="56" height="50" fill="#988646" opacity="0.4" rx="3"/>
+          <text x="60" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#FFF" font-family="Playfair Display">4</text>
+          <text x="60" y="152" text-anchor="middle" font-size="8" fill="#FFF" opacity="0.7">SEM 4</text>
+          <!-- Umbilicus center -->
+          <circle cx="100" cy="100" r="4" fill="#222" stroke="#666" stroke-width="1"/>
+          <!-- Rotation arrows -->
+          <path d="M 100 28 Q 175 28 175 100" fill="none" stroke="#988646" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <path d="M 175 100 Q 175 172 100 172" fill="none" stroke="#988646" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <path d="M 100 172 Q 25 172 25 100" fill="none" stroke="#988646" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <path d="M 25 100 Q 25 28 100 28" fill="none" stroke="#988646" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <!-- Arrow heads -->
+          <polygon points="170,98 178,100 170,104" fill="#988646"/>
+        </svg>
+      </div>
+      <div style="text-align:center;font-size:11px;color:#aaa;margin-top:6px;line-height:1.55">Cada inyección a <b style="color:#FFF">1 dedo de distancia</b> de la anterior. Después de 7 días misma sección, rota al siguiente cuadrante. Evita ombligo (3cm radio) y cicatrices.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">SITIO 1 · ABDOMEN</div><div style="color:white;font-size:13px;margin-top:6px;line-height:1.55">Más usado. Pellizca la grasa <b>5cm a cada lado del ombligo</b>. NO sobre el ombligo, NO en cicatrices.</div></div>
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">SITIO 2 · MUSLO EXTERNO</div><div style="color:white;font-size:13px;margin-top:6px;line-height:1.55">Frente del muslo, parte exterior, mitad superior. Buen sitio si te molesta el abdomen.</div></div>
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">SITIO 3 · TRÍCEPS</div><div style="color:white;font-size:13px;margin-top:6px;line-height:1.55">Parte posterior del brazo. Más difícil de auto-inyectar (necesitas pellizcar con la otra mano).</div></div>
+      <div style="background:#3a1f1f;border:1px solid var(--gold);padding:14px"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">⚡ ROTACIÓN</div><div style="color:white;font-size:13px;margin-top:6px;line-height:1.55"><b>Rota cada vez.</b> Misma zona repetida = lipodistrofia (bultos de grasa). Cambia lado: izq → der → otra zona.</div></div>
+    </div>
+
+    <div style="background:#FAF6EE;color:#000;padding:14px;margin-top:14px;font-size:12.5px;line-height:1.6">
+      <b>Técnica:</b> 1) Limpia con alcohol · 2) Pellizca grasa · 3) Inserta aguja 90° (45° si delgado) · 4) Empuja émbolo lento (3-5 seg) · 5) Saca aguja · 6) Presiona algodón sin frotar · 7) Jeringa al sharps container.
+    </div>
+    <button @click="tutorialStep=5" class="btn-primary" style="background:var(--gold);color:#000;margin-top:22px;font-weight:600">Siguiente: stacks y multi-vial →</button>
+  </div>
+
+  <!-- Step 5: Multi-vial / stacks -->
+  <div x-show="tutorialStep===5" style="margin-top:20px">
+    <div class="eyebrow gold-text">PASO 5 DE 5</div>
+    <h2 class="serif" style="color:white;font-size:28px;font-weight:500;margin:6px 0 14px;line-height:1.2">Si vas a usar<br><em style="color:rgba(255,255,255,.55);font-style:italic">más de un péptido.</em></h2>
+    <p style="color:#aaa;font-size:13px;margin-bottom:18px;line-height:1.55">Algunos protocolos usan 2-4 péptidos juntos (stacks). Reglas básicas:</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">REGLA 1 · NUNCA EN MISMO VIAL</div><div style="color:white;font-size:13px;margin-top:6px;line-height:1.55">No mezcles 2 péptidos en un solo vial liofilizado. Cada péptido tiene su propia estabilidad y vida útil.</div></div>
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">REGLA 2 · MISMA JERINGA OK</div><div style="color:white;font-size:13px;margin-top:6px;line-height:1.55">Puedes cargar 2 péptidos en la <b>misma jeringa</b> al momento de inyectar (ej: BPC + TB-500). Carga uno, luego el otro, inyecta junto.</div></div>
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">REGLA 3 · TIMING IMPORTA</div><div style="color:white;font-size:13px;margin-top:6px;line-height:1.55">CJC+Ipa, Tesamorelin, Ipamorelin → <b>antes de dormir</b> y <b>2h después de comer</b>. BPC, TB-500 → cualquier hora.</div></div>
+      <div style="background:#1a1a1a;border:1px solid #333;padding:14px"><div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.5px">REGLA 4 · CONCIERGE</div><div style="color:white;font-size:13px;margin-top:6px;line-height:1.55">Si tu protocolo tiene 3+ péptidos, agenda <b>asesoría 1-on-1 sin costo</b>. PEPTIQ específica te ayuda a no equivocarte.</div></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:22px">
+      <a href="https://wa.me/5214445770445?text=Hola%20PEPTIQ%2C%20es%20mi%20primera%20vez%20y%20quiero%20concierge%201-on-1%20para%20mi%20protocolo." target="_blank" class="btn-primary" style="background:#25D366;color:#FFF;flex:1;font-weight:600;text-decoration:none;text-align:center;padding:14px">💬 Concierge gratis</a>
+    </div>
+    <button @click="firstTime=true;screen='dashboard'" class="btn-primary" style="background:var(--gold);color:#000;margin-top:10px;font-weight:600">Listo · empezar protocolo →</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     APP PRINCIPAL · navegación inferior
+     ════════════════════════════════════════════════════════════ -->
+<div x-show="['dashboard','schedule','assistant','inventory','profile'].includes(screen)" class="app-shell">
+
+  <!-- Regulatory disclaimer banner (dismissible) -->
+  <div x-show="!disclaimerDismissed" x-init="$nextTick(()=>{ disclaimerDismissed=localStorage.getItem('peptiq_disclaimer_seen')==='1' })" style="background:#FFF8E1;border-bottom:1px solid #B87E00;padding:10px 14px;font-size:10.5px;color:#5A3D00;line-height:1.5;display:flex;gap:10px;align-items:flex-start">
+    <div style="flex:1"><b>⚠️ Información educativa.</b> Esta app NO sustituye consulta médica. Productos research-grade · For research use only · No para consumo humano · El uso es responsabilidad de quien lo aplique.</div>
+    <button @click="disclaimerDismissed=true;localStorage.setItem('peptiq_disclaimer_seen','1')" style="color:#5A3D00;font-size:14px;flex:0 0 auto;padding:0 4px;background:transparent">×</button>
+  </div>
+
+  <!-- Pro banner -->
+  <div x-show="userType==='pro'" class="pro-banner">
+    <span style="margin-right:6px">◈</span> PEPTIQ PRO · 12 pacientes activos
+  </div>
+
+  <!-- Top nav -->
+  <div class="nav-top">
+    <div class="brand">PEPTIQ<span class="gold-dot"></span><span style="color:var(--mute);font-size:11px;letter-spacing:1.5px;font-weight:500">TRACKER</span></div>
+    <button style="margin-left:auto;padding:6px;color:var(--mute)">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 10-12 0v3.2c0 .5-.2 1-.6 1.4L4 17h5m6 0a3 3 0 11-6 0"/></svg>
+    </button>
+  </div>
+
+  <!-- ──── DASHBOARD ──── -->
+  <div x-show="screen==='dashboard'" x-effect="screen==='dashboard' && setTimeout(()=>checkDailyPrompt(),600)" class="screen">
+    <div class="eyebrow" style="margin-bottom:6px">Hoy · <span x-text="todayLabel"></span></div>
+    <h1 class="serif" style="font-size:28px;font-weight:500;margin:0 0 22px;line-height:1.15"><span x-text="greeting"></span><span style="color:var(--gold)">.</span></h1>
+
+    <!-- First-time tutorial banner -->
+    <div x-show="firstTime" class="card" style="background:linear-gradient(135deg,#FAF6EE,#F0ECE4);border:1px solid var(--gold);margin-bottom:14px">
+      <div class="eyebrow" style="color:var(--gold-deep)">⭐ Primera vez con péptidos</div>
+      <div class="serif" style="font-size:17px;font-weight:600;margin-top:6px;margin-bottom:4px">Empieza por el tutorial</div>
+      <div style="font-size:12.5px;color:var(--mute);margin-bottom:12px;line-height:1.5">Aprende a reconstituir tu vial · cuánto poner en la jeringa · dónde inyectar · qué necesitas comprar.</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button @click="screen='tutorial'" class="btn-gold" style="flex:1;font-size:12px">📚 Ver tutorial 5 min</button>
+        <button @click="firstTime=false" class="btn-secondary" style="font-size:11px;padding:10px 14px">Ya sé</button>
+      </div>
+    </div>
+
+    <!-- HERO · Vial gigante centro de la pantalla -->
+    <div style="margin-bottom:14px;padding:24px 18px;background:linear-gradient(180deg,#F8F4ED 0%,#F1ECDF 100%);border:1px solid #E8DFCA;border-radius:8px;text-align:center;position:relative;overflow:hidden">
+      <!-- Eyebrow -->
+      <div style="font-size:10px;letter-spacing:3px;color:var(--gold-deep);font-weight:700;text-transform:uppercase;margin-bottom:6px">PRÓXIMA DOSIS · <span x-text="nextDoseTime"></span></div>
+
+      <!-- VIAL GIGANTE -->
+      <div style="position:relative;width:140px;height:240px;margin:14px auto 12px">
+        <!-- Cap silver gradient -->
+        <div style="position:absolute;top:0;left:34px;right:34px;height:30px;background:linear-gradient(180deg,#E0E0E0 0%,#A8A8A8 40%,#7A7A7A 100%);border-radius:4px 4px 1px 1px;z-index:3;box-shadow:inset 0 -3px 0 rgba(0,0,0,.25)"></div>
+        <!-- Crimp band -->
+        <div style="position:absolute;top:28px;left:26px;right:26px;height:12px;background:linear-gradient(180deg,#C0C0C0 0%,#888 100%);z-index:3;border-radius:1px"></div>
+        <!-- Glass body -->
+        <div style="position:absolute;top:38px;left:8px;right:8px;bottom:0;background:linear-gradient(110deg,rgba(255,255,255,.85) 0%,rgba(220,230,235,.4) 30%,rgba(180,200,210,.3) 65%,rgba(255,255,255,.7) 100%);border:2px solid #B8C5CC;border-radius:4px 4px 14px 14px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.18)">
+          <!-- LIQUID -->
+          <div :style="`position:absolute;left:0;right:0;bottom:0;height:${(daysRemainingFor(pname)/Math.max(1,daysPerVialFor(pname)))*100}%;background:linear-gradient(180deg,${isCriticalStockFor(pname)?'rgba(180,40,40,.7)':isLowStockFor(pname)?'rgba(184,126,0,.7)':'rgba(152,114,69,.78)'} 0%,${isCriticalStockFor(pname)?'#7C1818':isLowStockFor(pname)?'#7A5500':'#5A4126'} 100%);transition:height 1.2s cubic-bezier(0.4,0,0.2,1);border-top:1.5px solid rgba(255,255,255,.55)`">
+            <!-- Meniscus -->
+            <div style="position:absolute;top:-3px;left:0;right:0;height:5px;background:linear-gradient(180deg,rgba(255,255,255,.45),transparent)"></div>
+            <!-- Bubble animation -->
+            <div :style="`position:absolute;left:30%;bottom:25%;width:5px;height:5px;background:rgba(255,255,255,.5);border-radius:50%;animation:bubble 3s ease-in-out infinite`"></div>
+            <div :style="`position:absolute;left:60%;bottom:50%;width:3px;height:3px;background:rgba(255,255,255,.4);border-radius:50%;animation:bubble 4s ease-in-out infinite 1s`"></div>
+          </div>
+          <!-- LABEL band -->
+          <div style="position:absolute;top:34%;left:-2px;right:-2px;height:36%;background:#FFF;border-top:2px solid #0E0E0E;border-bottom:2px solid #0E0E0E;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6px 4px">
+            <div style="background:#0E0E0E;color:#FFF;font-size:11px;letter-spacing:2.5px;padding:3px 10px;font-weight:700;font-family:'Playfair Display'">PEPTIQ</div>
+            <div style="font-size:14px;font-weight:700;color:#0E0E0E;margin-top:6px;line-height:1.05" x-text="pname"></div>
+            <div style="font-size:8px;font-weight:600;color:#666;margin-top:3px;letter-spacing:1.2px;text-transform:uppercase" x-text="pline"></div>
+          </div>
+          <!-- Glass highlight reflection -->
+          <div style="position:absolute;top:0;left:14px;width:8px;bottom:14px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent 80%);z-index:2;border-radius:4px"></div>
+        </div>
+      </div>
+
+      <!-- Péptido name + dosis -->
+      <div class="serif" style="font-size:26px;font-weight:600;margin-bottom:2px" x-text="pname"></div>
+      <div style="font-size:13px;color:var(--mute);margin-bottom:6px"><span x-text="currentDoseLabel"></span></div>
+      <div x-show="firstPeptideData && firstPeptideData.fastingRule!=='cualquier momento' && firstPeptideData.fastingRule!=='no aplica'" style="font-size:11px;color:var(--gold-deep);background:rgba(152,114,69,.1);display:inline-block;padding:5px 12px;border-radius:14px;margin-bottom:14px">🍽️ <span x-text="firstPeptideData?firstPeptideData.fastingRule:''"></span></div>
+
+      <!-- Action buttons primary -->
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <button @click="openCalc(pname)" class="btn-secondary" style="flex:1;padding:13px;font-size:12px;letter-spacing:1.4px;font-weight:600;text-transform:uppercase">📐 Calcular</button>
+        <button @click="markDailyDoseTaken()" :disabled="appliedToday(pname)" :style="`flex:1.4;padding:13px;background:${appliedToday(pname)?'#D4D2CB':'var(--ink)'};color:${appliedToday(pname)?'#888':'#FFF'};font-size:12px;letter-spacing:1.4px;font-weight:600;text-transform:uppercase;border:none`" x-text="appliedToday(pname)?'✓ Aplicada hoy':'✓ Aplicar dosis'"></button>
+      </div>
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;margin-top:18px;padding-top:14px;border-top:1px solid #E5DFCD">
+        <div style="flex:1;text-align:center">
+          <div class="serif" style="font-size:22px;font-weight:600" x-html="cycleDayLabel"></div>
+          <div style="font-size:9.5px;letter-spacing:1.2px;color:var(--mute);text-transform:uppercase;margin-top:2px" x-text="cyclePhaseLabel||'Día del ciclo'"></div>
+        </div>
+        <div style="width:1px;background:#E5DFCD"></div>
+        <div style="flex:1;text-align:center">
+          <div class="serif" style="font-size:22px;font-weight:600"><span x-text="adherencePct"></span><span style="font-size:13px;color:var(--mute)">%</span></div>
+          <div style="font-size:9.5px;letter-spacing:1.2px;color:var(--mute);text-transform:uppercase;margin-top:2px">Adherencia</div>
+        </div>
+        <div style="width:1px;background:#E5DFCD"></div>
+        <div style="flex:1;text-align:center">
+          <div class="serif" style="font-size:22px;font-weight:600" :style="`color:${isCriticalStockFor(pname)?'var(--bad)':isLowStockFor(pname)?'var(--warn)':'var(--ink)'}`" x-text="daysRemainingFor(pname)"></div>
+          <div style="font-size:9.5px;letter-spacing:1.2px;color:var(--mute);text-transform:uppercase;margin-top:2px">Días restantes</div>
+        </div>
+      </div>
+
+      <!-- Mini syringe -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid #E5DFCD">
+        <div style="position:relative;width:90px;height:14px;flex:0 0 90px">
+          <div style="position:absolute;left:8px;right:14px;top:3px;bottom:3px;background:#FFF;border:1px solid #888;border-radius:1px;overflow:hidden">
+            <div :style="`position:absolute;left:0;top:0;bottom:0;width:${Math.min(syringeFillPercent,100)}%;background:linear-gradient(90deg,rgba(152,114,69,.5),rgba(152,114,69,.85));transition:width .6s`"></div>
+          </div>
+          <div :style="`position:absolute;top:0;width:8px;height:14px;background:#666;border-radius:1px;left:${Math.min(syringeFillPercent*0.65,65)}px;transition:left .6s`"></div>
+          <div style="position:absolute;right:0;top:6px;width:12px;height:1.5px;background:#666"></div>
+          <div style="position:absolute;left:0;top:1px;bottom:1px;width:4px;background:#444"></div>
+        </div>
+        <div style="font-size:11px;color:var(--mute)">por dosis: <b style="color:var(--ink);font-size:13px;font-family:'Playfair Display'"><span x-text="syringeUnits"></span> u</b></div>
+      </div>
+    </div>
+
+    <!-- Adherencia + Ciclo (real data) -->
+    <div x-show="false" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
+      <div class="card-stone">
+        <div class="eyebrow">Adherencia</div>
+        <div class="serif" style="font-size:32px;font-weight:600;line-height:1;margin-top:6px"><span x-text="adherencePct"></span><span style="font-size:16px;color:var(--mute)">%</span></div>
+        <div style="font-size:11px;color:var(--mute);margin-top:4px" x-text="adherenceLabel"></div>
+      </div>
+      <div class="card-stone">
+        <div class="eyebrow">Ciclo</div>
+        <div class="serif" style="font-size:32px;font-weight:600;line-height:1;margin-top:6px"><span x-text="cycleDayLabel"></span></div>
+        <div style="font-size:11px;color:var(--mute);margin-top:4px" x-text="cyclePhaseLabel"></div>
+      </div>
+    </div>
+
+    <!-- Esta semana -->
+    <div class="eyebrow" style="margin-bottom:10px">Esta semana</div>
+    <div class="card" style="margin-bottom:18px">
+      <template x-for="(d,i) in weekDays" :key="i">
+        <div class="day-block">
+          <div class="day-circle" :class="{'today':d.today}">
+            <span class="dow" x-text="d.dow"></span>
+            <span class="dom" x-text="d.dom"></span>
+          </div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:500" x-text="d.peptide"></div>
+            <div style="font-size:11px;color:var(--mute);margin-top:1px" x-text="d.time + ' · ' + d.dose"></div>
+          </div>
+          <span class="pill" :class="{'pill-ok':d.status==='ok','pill-miss':d.status==='miss','pill-today':d.today}" x-text="d.statusLabel"></span>
+        </div>
+      </template>
+    </div>
+
+    <!-- Recompra · solo se muestra cuando realmente queda poco stock -->
+    <div x-show="isLowStockFor(pname)" class="card" style="background:linear-gradient(135deg,#FAF6EE,#F0ECE4);border:1px solid var(--gold)">
+      <div class="eyebrow" style="color:var(--gold-deep)">⏰ NO ROMPAS TU AVANCE</div>
+      <div class="serif" style="font-size:19px;font-weight:500;margin-top:6px;margin-bottom:6px;line-height:1.25">Te quedan <span x-text="daysRemainingFor(pname)"></span> días de <span x-text="pname"></span></div>
+      <div style="font-size:12.5px;color:#3A3A3A;margin-bottom:12px;line-height:1.55">Cortar mitad del ciclo <b>no es lo mismo</b> que completarlo — los receptores se desensibilizan y tienes que reiniciar. Pide ahora con código <b style="color:var(--maroon)">REPEAT15</b> · envío 24-72h MX cadena de frío.</div>
+      <div style="display:flex;gap:8px">
+        <a :href="buyLinkFor(pname)" class="btn-gold" style="flex:1;text-align:center;text-decoration:none;display:block;padding:12px">Comprar y mantener avance</a>
+        <a :href="waLinkFor(pname)" class="btn-secondary" style="flex:0 0 auto;text-decoration:none;padding:12px 14px;display:flex;align-items:center" target="_blank" aria-label="WhatsApp directo">💬</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ──── SCHEDULE ──── -->
+  <div x-show="screen==='schedule'" class="screen">
+    <div class="eyebrow">Tu protocolo</div>
+    <h1 class="serif" style="font-size:28px;font-weight:500;margin:0 0 18px">Schedule</h1>
+
+    <!-- Empty state · sin péptidos en vialUsage -->
+    <div x-show="myInventoryLines.length===0" class="card" style="padding:32px 22px;text-align:center;background:#FAFAFA">
+      <div style="font-size:54px;margin-bottom:12px">📅</div>
+      <div class="serif" style="font-size:20px;font-weight:600;margin-bottom:6px">Aún no tienes protocolo activo</div>
+      <div style="font-size:13px;color:var(--mute);line-height:1.55;margin-bottom:18px">Cuando registres tu primer vial en Inventario · Schedule te muestra automáticamente: progreso del ciclo, días ON/OFF, dosis programadas y próximas fechas.</div>
+      <button @click="screen='inventory'" class="btn-gold" style="display:inline-block;padding:12px 22px">Ir a Inventario</button>
+    </div>
+
+    <!-- Cards dinámicas · uno por péptido en vialUsage -->
+    <template x-for="pn in myInventoryLines" :key="pn">
+      <div class="card" x-data="{p: peptideData.find(p=>p.name===pn) || {}, u: vialUsage[pn]}" style="margin-bottom:14px">
+        <div style="display:flex;justify-content:space-between;align-items:start">
+          <div>
+            <div class="serif" style="font-size:18px;font-weight:600" x-text="pn"></div>
+            <div style="font-size:12px;color:var(--mute);margin-top:2px">
+              <span x-text="(peptides.find(x=>x.name===pn)?.purpose) || 'Protocolo activo'"></span>
+              <span x-show="p.weeksOn"> · Sem <span x-text="(()=>{const s=u&&u.startDate?new Date(u.startDate):new Date();const today=new Date();const days=Math.floor((today-s)/86400000);return Math.min(p.weeksOn||1, Math.floor(days/7)+1)})()"></span>/<span x-text="p.weeksOn"></span> ciclo activo</span>
+            </div>
+          </div>
+          <span class="pill pill-ok">Activo</span>
+        </div>
+
+        <!-- Progress bar ciclo real -->
+        <div style="margin-top:10px">
+          <div style="height:4px;background:var(--soft);border-radius:2px;overflow:hidden">
+            <div :style="`height:100%;width:${(()=>{if(!p.weeksOn)return 50;const s=u&&u.startDate?new Date(u.startDate):new Date();const today=new Date();const days=Math.floor((today-s)/86400000)+1;return Math.min(100,Math.round((days/(p.weeksOn*7))*100))})()}%;background:var(--ok)`"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--mute);margin-top:4px;letter-spacing:1px">
+            <span x-text="`SEM ${(()=>{const s=u&&u.startDate?new Date(u.startDate):new Date();const today=new Date();return Math.min(p.weeksOn||1, Math.floor((today-s)/86400000/7)+1)})()}/${p.weeksOn||'-'}`"></span>
+            <span x-text="`OFF ${(()=>{if(!p.weeksOn)return '—';const s=u&&u.startDate?new Date(u.startDate):new Date();const offDate=new Date(s.getTime()+p.weeksOn*7*86400000);return offDate.toLocaleDateString('es-MX',{day:'numeric',month:'short'})})()}`"></span>
+          </div>
+        </div>
+
+        <!-- Días aplicación -->
+        <div style="margin-top:14px">
+          <div class="eyebrow" style="margin-bottom:6px">Días de aplicación</div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px">
+            <template x-for="(d,i) in ['L','M','M','J','V','S','D']" :key="i">
+              <div :style="`text-align:center;padding:8px 0;font-size:11px;font-weight:600;border-radius:2px;background:${(()=>{const dpw=dosesPerWeekFor(pn);if(dpw===5)return i<5?'var(--ink)':'var(--soft)';if(dpw===2)return [0,3].includes(i)?'var(--ink)':'var(--soft)';if(dpw===1)return i===0?'var(--ink)':'var(--soft)';return 'var(--ink)'})()};color:${(()=>{const dpw=dosesPerWeekFor(pn);if(dpw===5)return i<5?'var(--gold)':'var(--mute)';if(dpw===2)return [0,3].includes(i)?'var(--gold)':'var(--mute)';if(dpw===1)return i===0?'var(--gold)':'var(--mute)';return 'var(--gold)'})()}`" x-text="d"></div>
+            </template>
+          </div>
+          <div style="font-size:10px;color:var(--mute);margin-top:6px;letter-spacing:.5px" x-text="p.daysOn||''"></div>
+        </div>
+
+        <div class="divider"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:13px;margin-bottom:14px">
+          <div><div class="eyebrow">Dosis</div><div style="margin-top:4px" x-text="p.defaultDose>=1000?(p.defaultDose/1000)+'mg SC':p.defaultDose+'mcg SC'"></div></div>
+          <div><div class="eyebrow">Reconst.</div><div style="margin-top:4px" x-text="(p.defaultWater||2)+'ml bact'"></div></div>
+          <div><div class="eyebrow">Hora</div><div style="margin-top:4px" x-text="p.recommendedHour||'07:30'"></div></div>
+          <div><div class="eyebrow">Después</div><div style="margin-top:4px" x-text="(p.weeksOff||0)+' sem off'"></div></div>
+        </div>
+
+        <button @click="openCalc(pn)" class="btn-secondary" style="font-size:12px;padding:10px;width:100%">📐 Calcular dosis</button>
+      </div>
+    </template>
+
+    <button x-show="myInventoryLines.length>0" @click="screen='inventory'" class="btn-secondary" style="margin-top:8px">+ Agregar péptido</button>
+  </div>
+
+  <!-- ──── ASSISTANT · ChatGPT-style ──── -->
+  <div x-show="screen==='assistant'" class="screen" style="display:flex;flex-direction:column;padding:0;height:calc(100vh - 110px)">
+    <!-- Header sticky -->
+    <div style="padding:14px 18px;border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px">
+      <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#988646,#5A4126);color:#FFF;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-size:16px;font-weight:600">P</div>
+      <div style="flex:1">
+        <div class="serif" style="font-size:16px;font-weight:600">PEPTIQ Assistant</div>
+        <div style="font-size:10.5px;color:var(--mute);display:flex;align-items:center;gap:5px">
+          <span style="width:6px;height:6px;background:#1A6B1F;border-radius:50%;display:inline-block"></span>
+          Online · Claude API · KB 22 péptidos
+        </div>
+      </div>
+      <button x-show="chat.length>0" @click="chat=[]" style="background:transparent;border:1px solid var(--rule);color:var(--mute);padding:7px 12px;font-size:11px;letter-spacing:.5px">Limpiar</button>
+    </div>
+
+    <!-- Chat scrollable area -->
+    <div id="chatScroll" style="flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;background:linear-gradient(180deg,var(--paper) 0%,#FAFAFA 100%)">
+      <!-- Welcome state · cuando chat vacío -->
+      <div x-show="chat.length===0" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 12px">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#988646,#3A2818);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:30px">🧬</div>
+        <h2 class="serif" style="font-size:22px;font-weight:600;margin-bottom:6px;line-height:1.2">¿En qué te ayudo<br>con tu protocolo?</h2>
+        <p style="font-size:12.5px;color:var(--mute);max-width:280px;line-height:1.55;margin-bottom:24px">Pregunta sobre dosis, reconstitución, interacciones, contraindicaciones. Respuestas grounded en literatura clínica.</p>
+      </div>
+
+      <!-- Mensajes -->
+      <template x-for="m in chat" :key="m.id">
+        <div :style="`display:flex;gap:10px;align-items:flex-start;${m.role==='user'?'flex-direction:row-reverse':''}`">
+          <!-- Avatar -->
+          <div :style="`width:30px;height:30px;border-radius:50%;flex:0 0 30px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;${m.role==='user'?'background:var(--ink);color:#FFF':'background:linear-gradient(135deg,#988646,#5A4126);color:#FFF;font-family:Playfair Display'}`" x-text="m.role==='user'?'tú':'P'"></div>
+          <!-- Bubble -->
+          <div :style="`flex:1;max-width:82%;padding:12px 14px;border-radius:14px;${m.role==='user'?'background:var(--ink);color:#FFF':'background:#FFF;color:var(--ink);border:1px solid var(--rule)'};font-size:13.5px;line-height:1.55`">
+            <div x-html="m.text"></div>
+            <div x-show="m.source" style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,.08);font-size:10.5px;color:var(--mute);font-style:italic" x-text="m.source"></div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Loading -->
+      <div x-show="chatLoading" style="display:flex;gap:10px;align-items:flex-start">
+        <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#988646,#5A4126);color:#FFF;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-size:13px;font-weight:600">P</div>
+        <div style="padding:12px 16px;border-radius:14px;background:#FFF;border:1px solid var(--rule);display:flex;gap:4px">
+          <span style="width:7px;height:7px;background:#988646;border-radius:50%;animation:blink 1.2s infinite ease-in-out"></span>
+          <span style="width:7px;height:7px;background:#988646;border-radius:50%;animation:blink 1.2s infinite ease-in-out 0.2s"></span>
+          <span style="width:7px;height:7px;background:#988646;border-radius:50%;animation:blink 1.2s infinite ease-in-out 0.4s"></span>
+        </div>
+      </div>
+
+      <!-- Quick suggestions · solo cuando chat vacío -->
+      <div x-show="chat.length===0" style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+        <div class="eyebrow" style="text-align:center;margin-bottom:4px">Empieza con</div>
+        <template x-for="g in goals.slice(0,4)" :key="g.label">
+          <button @click="askQuestion(g.q)" style="background:#FFF;border:1px solid var(--rule);border-radius:14px;padding:14px 16px;text-align:left;display:flex;align-items:center;gap:12px;font-size:13px;width:100%;transition:all .15s">
+            <span style="font-size:22px" x-text="g.icon"></span>
+            <div style="flex:1">
+              <div style="font-weight:600;color:var(--ink)" x-text="g.label"></div>
+              <div style="font-size:11px;color:var(--mute);margin-top:2px;line-height:1.3" x-text="g.q"></div>
+            </div>
+            <span style="color:var(--gold);font-size:18px">›</span>
+          </button>
+        </template>
+        <div style="font-size:11px;color:var(--mute);text-align:center;margin-top:8px">o pregunta directo abajo ↓</div>
+      </div>
+    </div>
+
+    <!-- Input bar · sticky bottom -->
+    <div style="padding:12px 14px;border-top:1px solid var(--rule);background:var(--paper)">
+      <div style="display:flex;gap:8px;align-items:center;border:1.5px solid var(--rule);border-radius:24px;padding:6px 6px 6px 16px;background:#FFF;transition:border-color .15s" :style="chatInput?'border-color:var(--gold)':'';">
+        <input x-model="chatInput" @keyup.enter="askQuestion(chatInput);chatInput='';$nextTick(()=>document.getElementById('chatScroll').scrollTop=999999)" placeholder="Pregunta lo que necesites…" style="flex:1;border:0;outline:0;font-size:14px;font-family:inherit;color:var(--ink);background:transparent;padding:9px 0">
+        <button @click="askQuestion(chatInput);chatInput='';$nextTick(()=>document.getElementById('chatScroll').scrollTop=999999)" :disabled="!chatInput || chatLoading" :style="`background:${chatInput&&!chatLoading?'var(--ink)':'var(--rule)'};color:${chatInput&&!chatLoading?'#FFF':'#999'};width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:0;font-size:16px;transition:all .15s`">↑</button>
+      </div>
+      <p style="font-size:10px;color:var(--mute);text-align:center;margin-top:8px">Research-grade · No reemplaza consulta médica · Verifica con tu profesional</p>
+    </div>
+  </div>
+
+  <!-- ──── INVENTORY ──── -->
+  <div x-show="screen==='inventory'" class="screen">
+    <div class="eyebrow">Tus viales</div>
+    <h1 class="serif" style="font-size:28px;font-weight:500;margin:0 0 14px">Inventario</h1>
+
+    <!-- Low-stock alert banner · solo si HAY low stock real -->
+    <div x-show="myInventoryLines.some(n=>isLowStockFor(n))" class="card" style="background:linear-gradient(135deg,#FFF3CD,#FFE8A3);border:1px solid #B87E00;margin-bottom:16px;padding:14px 16px">
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <div style="font-size:22px;line-height:1">⏰</div>
+        <div style="flex:1">
+          <div class="serif" style="font-size:16px;font-weight:600;color:#5A3D00;margin-bottom:2px">No rompas tu avance</div>
+          <div style="font-size:12px;color:#6B5300;line-height:1.45;margin-bottom:10px">Cortar el ciclo a mitad <b>no es lo mismo</b> que completarlo — receptores desensibilizados, hay que reiniciar.</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <a :href="myFirstLowStock ? buyLinkFor(myFirstLowStock) : '#'" style="background:#0E0E0E;color:#FFF;padding:9px 14px;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;display:inline-block">PEDIR + 15% OFF</a>
+            <a :href="myFirstLowStock ? waLinkFor(myFirstLowStock) : '#'" target="_blank" style="background:#25D366;color:#FFF;padding:9px 14px;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;display:inline-block">💬 WHATSAPP</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state · usuario sin inventario aún -->
+    <div x-show="myInventoryLines.length===0" class="card" style="padding:32px 22px;text-align:center;background:#FAFAFA">
+      <div style="font-size:54px;margin-bottom:12px">📦</div>
+      <div class="serif" style="font-size:20px;font-weight:600;margin-bottom:6px">Aún no registras tu primer vial</div>
+      <div style="font-size:13px;color:var(--mute);line-height:1.55;margin-bottom:18px">Cuando recibas tu pedido PEPTIQ, registra el vial aquí para que la app calcule días restantes, dosis disponibles y te recuerde cuando se esté acabando.</div>
+      <div style="display:flex;gap:8px;flex-direction:column">
+        <button @click="addVialOpen=true" class="btn-gold" style="padding:14px 22px;font-weight:600">+ Registrar mi primer vial</button>
+        <a href="https://peptiqmx.com/?utm_source=app&utm_medium=inventory_empty" class="btn-secondary" style="display:inline-block;text-decoration:none;padding:12px 22px">Ver catálogo PEPTIQ</a>
+      </div>
+    </div>
+
+    <!-- Cards dinámicas · solo péptidos que el usuario tiene -->
+    <template x-for="pname in myInventoryLines" :key="pname">
+      <div class="card" style="margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div class="serif" style="font-size:17px;font-weight:600" x-text="pname + ' · ' + (peptideData.find(p=>p.name===pname)?.vial||10) + 'mg'"></div>
+            <div style="font-size:11px;color:var(--mute);margin-top:2px" x-text="'Iniciado ' + (vialUsage[pname]?.startDate ? new Date(vialUsage[pname].startDate).toLocaleDateString('es-MX',{day:'numeric',month:'short'}) : 'hoy')"></div>
+          </div>
+          <div style="text-align:right">
+            <div class="serif" style="font-size:24px;font-weight:600" :style="`color:${isCriticalStockFor(pname)?'var(--bad)':isLowStockFor(pname)?'var(--warn)':'var(--ink)'}`"><span x-text="(vialUsage[pname]?.vialsOwned||1) - Math.floor((vialUsage[pname]?.dosesUsed||0)/dosesPerVialFor(pname))"></span><span style="font-size:13px;color:var(--mute)"> vial</span></div>
+            <div style="font-size:11px;margin-top:2px" :style="`color:${isCriticalStockFor(pname)?'var(--bad)':isLowStockFor(pname)?'var(--warn)':'var(--ok)'}`" x-text="'~' + daysRemainingFor(pname) + ' días'"></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div style="display:flex;gap:8px">
+          <button @click="openCalc(pname)" class="btn-secondary" style="font-size:12px;padding:10px;flex:1">📐 Calcular dosis</button>
+          <a :href="buyLinkFor(pname)" :class="isLowStockFor(pname)?'btn-gold':'btn-secondary'" style="font-size:12px;padding:10px;flex:1;text-align:center;text-decoration:none;display:block" x-text="isLowStockFor(pname)?'Reabastecer':'+ Otro vial'"></a>
+        </div>
+      </div>
+    </template>
+
+    <button @click="addVialOpen=true" class="btn-secondary" style="margin-top:8px">+ Registrar nuevo vial</button>
+
+    <!-- Concierge ribbon -->
+    <div style="margin-top:18px;padding:14px;background:#FAFAFA;border:1px solid var(--rule);text-align:center">
+      <div style="font-size:12px;color:var(--mute);margin-bottom:8px">¿No sabes qué reabastecer primero?</div>
+      <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20que%20mi%20concierge%20PEPTIQ%20revise%20mi%20inventario%20y%20me%20arme%20el%20pr%C3%B3ximo%20pedido." target="_blank" style="font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink);text-decoration:underline">Habla con tu Concierge →</a>
+    </div>
+  </div>
+
+  <!-- ──── PROFILE ──── -->
+  <div x-show="screen==='profile'" class="screen">
+    <!-- Header con avatar real -->
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 0 22px;border-bottom:1px solid var(--rule);margin-bottom:22px">
+      <div style="width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#988646,#3A2818);color:#FFF;font-family:'Playfair Display';font-size:32px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(152,114,69,.3)" x-text="userInitials"></div>
+      <div class="serif" style="font-size:20px;font-weight:600;margin-top:14px" x-text="userName"></div>
+      <div style="font-size:12px;color:var(--mute);margin-top:2px" x-text="email || 'sin email'"></div>
+      <span class="pill pill-gold" style="margin-top:10px" x-text="userType==='pro' ? 'PEPTIQ PRO' : 'PERSONAL'"></span>
+    </div>
+
+    <!-- Mis péptidos · summary -->
+    <div x-show="myInventoryLines.length>0" class="eyebrow" style="margin:0 0 8px">Mis péptidos</div>
+    <div x-show="myInventoryLines.length>0" class="card" style="padding:0;margin-bottom:22px">
+      <template x-for="(pn,idx) in myInventoryLines" :key="pn">
+        <div :style="`padding:14px 16px;display:flex;justify-content:space-between;align-items:center;${idx<myInventoryLines.length-1?'border-bottom:1px solid var(--rule)':''}`">
+          <div>
+            <div style="font-size:14px;font-weight:600" x-text="pn"></div>
+            <div style="font-size:11px;color:var(--mute);margin-top:2px" x-text="dosesRemainingFor(pn)+' dosis · '+daysRemainingFor(pn)+' días restantes'"></div>
+          </div>
+          <button @click="firstPeptide=peptides.find(p=>p.name===pn)||{name:pn};firstPeptideName=pn;screen='dashboard'" :style="`background:${pname===pn?'var(--gold)':'transparent'};color:${pname===pn?'#000':'var(--ink)'};border:1px solid ${pname===pn?'var(--gold)':'var(--rule)'};padding:6px 12px;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase`" x-text="pname===pn?'ACTIVO':'CAMBIAR'"></button>
+        </div>
+      </template>
+    </div>
+
+    <div class="eyebrow" style="margin:0 0 8px">Preferencias</div>
+    <div class="card" style="padding:0;margin-bottom:22px">
+      <div style="padding:16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule)">
+        <div>
+          <div style="font-size:14px;font-weight:500">📱 Recordatorios WhatsApp</div>
+          <div style="font-size:11px;color:var(--mute);margin-top:2px" x-text="waOptIn && waNumber ? ('Activo · '+waNumber.slice(-10)) : 'Inactivo · sin número'"></div>
+        </div>
+        <label class="switch"><input type="checkbox" :checked="waOptIn" @change="waOptIn=!waOptIn;localStorage.setItem('peptiq_wa_optin',waOptIn?'1':'0');if(waOptIn&&waNumber)submitWaOptIn()"><span class="slider"></span></label>
+      </div>
+      <div style="padding:16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule)">
+        <div>
+          <div style="font-size:14px;font-weight:500">⏰ Auto-alerta low stock</div>
+          <div style="font-size:11px;color:var(--mute);margin-top:2px">Aviso cuando vial bajo de 10 días</div>
+        </div>
+        <label class="switch"><input type="checkbox" :checked="autoLowStockAlert!==false" @change="autoLowStockAlert=$event.target.checked;localStorage.setItem('peptiq_auto_low',autoLowStockAlert?'1':'0')"><span class="slider"></span></label>
+      </div>
+      <div style="padding:16px;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-size:14px;font-weight:500">🩺 Modo Pro</div>
+          <div style="font-size:11px;color:var(--mute);margin-top:2px">Para médicos y clínicas</div>
+        </div>
+        <label class="switch"><input type="checkbox" :checked="userType==='pro'" @change="userType=userType==='pro'?'personal':'pro'"><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <!-- Quick actions -->
+    <div class="eyebrow" style="margin:0 0 8px">Acciones</div>
+    <div class="card" style="padding:0;margin-bottom:22px">
+      <button @click="screen='inventory'" style="padding:16px;display:flex;justify-content:space-between;align-items:center;width:100%;background:transparent;text-align:left;border:0;border-bottom:1px solid var(--rule)">
+        <div style="font-size:14px;font-weight:500">📦 Inventario completo</div>
+        <span style="color:var(--mute)">›</span>
+      </button>
+      <button @click="screen='tutorial';tutorialStep=1;firstTime=true" style="padding:16px;display:flex;justify-content:space-between;align-items:center;width:100%;background:transparent;text-align:left;border:0;border-bottom:1px solid var(--rule)">
+        <div style="font-size:14px;font-weight:500">📚 Ver tutorial 5 min</div>
+        <span style="color:var(--mute)">›</span>
+      </button>
+      <a href="https://wa.me/5214445770445?text=Hola%2C%20tengo%20una%20duda%20de%20PEPTIQ" target="_blank" style="padding:16px;display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--rule)">
+        <div style="font-size:14px;font-weight:500">💬 Concierge WhatsApp</div>
+        <span style="color:var(--mute)">›</span>
+      </a>
+      <button @click="if(confirm('¿Cerrar sesión y borrar datos locales?')){localStorage.clear();sessionStorage.clear();location.reload()}" style="padding:16px;display:flex;justify-content:space-between;align-items:center;width:100%;background:transparent;text-align:left;border:0">
+        <div style="font-size:14px;font-weight:500;color:var(--bad)">Cerrar sesión y borrar datos</div>
+        <span style="color:var(--bad)">›</span>
+      </button>
+    </div>
+
+    <!-- Mi perfil de salud · contraindicaciones -->
+    <div class="eyebrow" style="margin:24px 0 8px">Mi perfil de salud</div>
+    <div class="card" style="padding:14px 16px;font-size:12.5px;line-height:1.5">
+      <p style="color:var(--mute);margin-bottom:10px">Marca lo que aplique. La app te alertará si elijes un péptido contraindicado.</p>
+      <label style="display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:center"><input type="checkbox" x-model="userHealth.pregnancy" @change="saveHealth()" style="width:16px;height:16px"><span>🤰 Embarazo / lactancia</span></label>
+      <label style="display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:center"><input type="checkbox" x-model="userHealth.cancer" @change="saveHealth()" style="width:16px;height:16px"><span>🎗️ Cáncer activo (cualquier tipo)</span></label>
+      <label style="display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:center"><input type="checkbox" x-model="userHealth.diabetes" @change="saveHealth()" style="width:16px;height:16px"><span>💉 Diabetes no controlada</span></label>
+      <label style="display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:center"><input type="checkbox" x-model="userHealth.hypertension" @change="saveHealth()" style="width:16px;height:16px"><span>❤️ Hipertensión severa</span></label>
+      <label style="display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:center"><input type="checkbox" x-model="userHealth.autoimmune" @change="saveHealth()" style="width:16px;height:16px"><span>🦋 Autoinmune (lupus, EM, etc)</span></label>
+      <label style="display:flex;gap:8px;padding:8px 0;align-items:center"><input type="checkbox" x-model="userHealth.anticoag" @change="saveHealth()" style="width:16px;height:16px"><span>🩸 Anticoagulantes activos</span></label>
+    </div>
+
+    <!-- Mi acuse legal -->
+    <div class="eyebrow" style="margin:24px 0 8px">Mi acuse legal</div>
+    <div class="card" style="padding:14px 16px;font-size:12px;line-height:1.5">
+      <div x-show="!consentRecord" style="color:var(--mute);font-style:italic">No has firmado el acuerdo. Cierra sesión y vuelve a entrar para firmarlo.</div>
+      <div x-show="consentRecord">
+        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--rule)"><span style="color:var(--mute)">Firmado por</span><b x-text="consentRecord && consentRecord.signature"></b></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--rule)"><span style="color:var(--mute)">Email</span><span x-text="consentRecord && consentRecord.email"></span></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--rule)"><span style="color:var(--mute)">Fecha UTC</span><span style="font-size:10.5px" x-text="consentRecord && new Date(consentRecord.timestamp).toLocaleString('es-MX')"></span></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0"><span style="color:var(--mute)">Versión</span><span style="font-size:10.5px" x-text="consentRecord && consentRecord.version"></span></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:32px">
+      <div class="serif" style="font-size:13px;font-weight:600;letter-spacing:2px">PEPTIQ MX</div>
+      <div style="font-size:10px;color:var(--mute);margin-top:4px">v1.4 · Hack Your Limits</div>
+      <div style="font-size:10px;color:var(--mute);margin-top:8px">Research products · Solo investigación</div>
+    </div>
+  </div>
+
+  <!-- Bottom nav · Hoy + Asistente AI primary · resto secondary -->
+  <div class="nav-bot">
+    <button @click="screen='dashboard'" :class="['primary',{'active':screen==='dashboard'}]">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+      Hoy
+    </button>
+    <button @click="screen='schedule'" :class="{'active':screen==='schedule'}">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+      Schedule
+    </button>
+    <button @click="screen='assistant'" :class="['primary',{'active':screen==='assistant'}]">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Asistente
+    </button>
+    <button @click="screen='inventory'" :class="{'active':screen==='inventory'}">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      Inventario
+    </button>
+    <button @click="screen='profile'" :class="{'active':screen==='profile'}">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>
+      Perfil
+    </button>
+  </div>
+</div>
+
+<!-- ════ CALCULADORA RECONSTITUCIÓN ════ -->
+<div x-show="calcOpen" x-transition.opacity class="modal-back" @click.self="calcOpen=false">
+  <div class="modal" @click.stop>
+    <div class="modal-header">
+      <div>
+        <div class="eyebrow gold-text" style="color:var(--gold-deep)">Calculadora</div>
+        <div class="serif" style="font-size:20px;font-weight:600">Reconstitución y dosis</div>
+      </div>
+      <button @click="calcOpen=false" style="font-size:20px;color:var(--mute);padding:6px">✕</button>
+    </div>
+
+    <div style="padding:18px;max-height:80vh;overflow-y:auto">
+      <!-- Personal alert (top, never collapse) -->
+      <div x-show="userHealth && (userHealth.pregnancy||userHealth.cancer) && currentPeptide.contraindications" style="padding:12px 14px;background:#3a1f1f;border:2px solid var(--bad);color:#FFE0E0;margin-bottom:14px;border-radius:4px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.4px;margin-bottom:3px">🚨 ALERTA PERSONAL</div>
+        <div style="font-size:11.5px;line-height:1.5">Tu perfil de salud puede tener contraindicación. <b>Consulta médico antes de continuar.</b></div>
+      </div>
+
+      <!-- HERO · jeringa visual + resultado upfront -->
+      <div style="text-align:center;margin-bottom:8px">
+        <div class="eyebrow" style="margin-bottom:6px">Llena la jeringa hasta</div>
+      </div>
+      <div class="syringe-wrap">
+        <div class="syringe">
+          <div class="syringe-plunger"></div>
+          <div class="syringe-body">
+            <div class="syringe-fill" :style="`width:${Math.min(syringeFillPercent,100)}%`"></div>
+          </div>
+          <div class="syringe-ticks">
+            <template x-for="i in 11"><span></span></template>
+          </div>
+          <div class="syringe-ticks-bot">
+            <span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span>
+          </div>
+          <div class="syringe-needle"></div>
+        </div>
+      </div>
+      <div class="calc-result">
+        <div class="calc-result-num" x-text="syringeUnits"></div>
+        <div class="calc-result-unit">unidades · jeringa insulina U-100</div>
+        <div class="calc-result-help" x-text="`= ${calcVolumeMl.toFixed(3)} ml`"></div>
+      </div>
+
+      <!-- INPUTS compactos (3 fields) -->
+      <div style="margin-top:18px;display:grid;grid-template-columns:1fr;gap:10px">
+        <div>
+          <div class="eyebrow" style="margin-bottom:5px">Péptido</div>
+          <select x-model="calcPeptide" @change="updateCalcDefaults()" class="input" style="font-size:14px;padding:11px">
+            <template x-for="p in peptideData" :key="p.name">
+              <option :value="p.name" x-text="p.name + ' · vial ' + p.vial + 'mg'"></option>
+            </template>
+          </select>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:5px">Agua bact</div>
+          <div style="display:flex;gap:5px">
+            <template x-for="ml in [1,2,3,5]">
+              <button @click="calcWater=ml" :style="`flex:1;padding:10px;border:1px solid ${calcWater===ml?'var(--ink)':'var(--rule)'};background:${calcWater===ml?'var(--ink)':'transparent'};color:${calcWater===ml?'var(--paper)':'var(--ink)'};font-size:13px;font-weight:500`" x-text="ml+'ml'"></button>
+            </template>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:5px">Dosis target (mcg)</div>
+          <input type="number" x-model.number="calcDose" class="input" style="padding:11px;font-size:14px" min="50" max="10000" step="50">
+        </div>
+      </div>
+
+      <!-- Stats strip compacto -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin-top:14px;padding:12px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);text-align:center">
+        <div>
+          <div class="serif" style="font-size:16px;font-weight:600" x-text="concentrationMcgMl.toLocaleString()"></div>
+          <div style="font-size:9.5px;letter-spacing:1.2px;color:var(--mute);text-transform:uppercase;margin-top:2px">mcg/ml</div>
+        </div>
+        <div style="border-left:1px solid var(--rule);border-right:1px solid var(--rule)">
+          <div class="serif" style="font-size:16px;font-weight:600" x-text="calcVolumeMl.toFixed(3)+'ml'"></div>
+          <div style="font-size:9.5px;letter-spacing:1.2px;color:var(--mute);text-transform:uppercase;margin-top:2px">Volumen</div>
+        </div>
+        <div>
+          <div class="serif" style="font-size:16px;font-weight:600" x-text="dosesPerVial"></div>
+          <div style="font-size:9.5px;letter-spacing:1.2px;color:var(--mute);text-transform:uppercase;margin-top:2px">Dosis/vial</div>
+        </div>
+      </div>
+
+      <!-- Accordion sections -->
+      <div x-data="{open:'protocol'}" style="margin-top:14px">
+        <!-- Protocolo -->
+        <div style="border-bottom:1px solid var(--rule)">
+          <button @click="open=open==='protocol'?'':'protocol'" style="width:100%;padding:14px 0;display:flex;justify-content:space-between;align-items:center;background:transparent;border:0;text-align:left">
+            <span style="font-size:13px;font-weight:600">📋 Protocolo recomendado</span>
+            <span style="color:var(--mute);transition:transform .2s" :style="open==='protocol'?'transform:rotate(180deg)':''">▾</span>
+          </button>
+          <div x-show="open==='protocol'" x-collapse style="padding-bottom:14px;font-size:12.5px;line-height:1.55;color:var(--ink)">
+            <div x-text="currentPeptideProtocol"></div>
+            <div x-show="currentPeptide.optimalTime!=='flexible'" style="margin-top:8px;font-size:11.5px;color:var(--mute)">
+              ⏰ <b style="color:var(--ink)" x-text="currentPeptide.recommendedHour + ' ('+currentPeptide.optimalTime+')'"></b>
+              <span x-show="currentPeptide.fastingRule!=='cualquier momento' && currentPeptide.fastingRule!=='no aplica'"> · 🍽️ <b style="color:var(--ink)" x-text="currentPeptide.fastingRule"></b></span>
+            </div>
+            <div style="margin-top:8px;font-size:10.5px;color:var(--mute);line-height:1.4">
+              <b style="color:var(--ink)">Fuente:</b> <span x-text="currentPeptide.source||''"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stack compat -->
+        <div x-show="currentPeptide.stackCompat" style="border-bottom:1px solid var(--rule)">
+          <button @click="open=open==='stack'?'':'stack'" style="width:100%;padding:14px 0;display:flex;justify-content:space-between;align-items:center;background:transparent;border:0;text-align:left">
+            <span style="font-size:13px;font-weight:600">🔗 Compatibilidad de stack</span>
+            <span style="color:var(--mute);transition:transform .2s" :style="open==='stack'?'transform:rotate(180deg)':''">▾</span>
+          </button>
+          <div x-show="open==='stack'" x-collapse style="padding-bottom:14px;font-size:12px;line-height:1.55">
+            <div style="margin-bottom:6px"><b style="color:#1A6B1F">✓ Compatible:</b> <span x-text="currentPeptide.stackCompat"></span></div>
+            <div><b style="color:var(--bad)">✗ NO mezclar:</b> <span x-text="currentPeptide.stackIncompat"></span></div>
+          </div>
+        </div>
+
+        <!-- Contra -->
+        <div x-show="currentPeptide.contraindications" style="border-bottom:1px solid var(--rule)">
+          <button @click="open=open==='contra'?'':'contra'" style="width:100%;padding:14px 0;display:flex;justify-content:space-between;align-items:center;background:transparent;border:0;text-align:left">
+            <span style="font-size:13px;font-weight:600;color:var(--bad)">⛔ Contraindicaciones</span>
+            <span style="color:var(--mute);transition:transform .2s" :style="open==='contra'?'transform:rotate(180deg)':''">▾</span>
+          </button>
+          <div x-show="open==='contra'" x-collapse style="padding-bottom:14px;font-size:12px;line-height:1.55">
+            <div x-text="currentPeptide.contraindications"></div>
+            <div style="margin-top:6px;font-size:10.5px;color:var(--mute);font-style:italic">NO uses sin supervisión médica especializada.</div>
+          </div>
+        </div>
+
+        <!-- Disclaimer regulatorio -->
+        <div>
+          <button @click="open=open==='legal'?'':'legal'" style="width:100%;padding:14px 0;display:flex;justify-content:space-between;align-items:center;background:transparent;border:0;text-align:left">
+            <span style="font-size:13px;font-weight:600;color:#5A3D00">⚠️ Disclaimer regulatorio</span>
+            <span style="color:var(--mute);transition:transform .2s" :style="open==='legal'?'transform:rotate(180deg)':''">▾</span>
+          </button>
+          <div x-show="open==='legal'" x-collapse style="padding-bottom:14px;font-size:11px;color:#5A3D00;line-height:1.55;background:#FFF8E1;padding:10px 12px;border-radius:3px">
+            Calculadora <b>informativa únicamente</b>. NO sustituye consulta médica especialista. Productos research-grade · For research use only · El uso es responsabilidad personal. Reporta efectos adversos a COFEPRIS.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ Daily dose prompt · "¿ya te la pusiste?" ════ -->
+<!-- ════ Add Vial Modal · registrar péptido al inventario ════ -->
+<div x-show="addVialOpen" x-transition.opacity class="modal-back" style="z-index:170" @click.self="addVialOpen=false">
+  <div class="modal" @click.stop style="max-width:420px;width:92%">
+    <div class="modal-header">
+      <div>
+        <div class="eyebrow gold-text" style="color:var(--gold-deep)">Registrar vial</div>
+        <div class="serif" style="font-size:20px;font-weight:600">Agregar al inventario</div>
+      </div>
+      <button @click="addVialOpen=false" style="font-size:20px;color:var(--mute);padding:6px">✕</button>
+    </div>
+    <div style="padding:20px">
+      <div class="eyebrow" style="margin-bottom:6px">Péptido</div>
+      <select x-model="addVialPeptide" class="input" style="margin-bottom:14px;padding:12px;font-size:14px">
+        <option value="" disabled>Selecciona…</option>
+        <template x-for="p in peptideData" :key="p.name">
+          <option :value="p.name" x-text="p.name + ' · vial ' + p.vial + 'mg'"></option>
+        </template>
+      </select>
+
+      <div class="eyebrow" style="margin-bottom:6px">Cantidad de viales</div>
+      <div style="display:flex;gap:6px;margin-bottom:14px">
+        <template x-for="n in [1,2,3,5,10]" :key="n">
+          <button @click="addVialQty=n" :style="`flex:1;padding:12px;border:1px solid ${addVialQty===n?'var(--ink)':'var(--rule)'};background:${addVialQty===n?'var(--ink)':'transparent'};color:${addVialQty===n?'var(--paper)':'var(--ink)'};font-size:14px;font-weight:600`" x-text="n"></button>
+        </template>
+      </div>
+
+      <div class="eyebrow" style="margin-bottom:6px">Fecha de inicio del protocolo</div>
+      <input type="date" x-model="addVialStartDate" class="input" style="padding:12px;font-size:14px;margin-bottom:14px;font-family:'Inter'">
+      <p style="font-size:11px;color:var(--mute);margin-bottom:14px">La app cuenta días desde hoy · adherence + ciclo se calculan desde aquí.</p>
+
+      <div x-show="addVialPeptide" style="background:#F5F0E5;padding:12px 14px;margin-bottom:14px;font-size:12.5px;color:#5A4126;line-height:1.55;border-left:3px solid var(--gold)">
+        <b>Datos automáticos:</b> protocolo recomendado · hora óptima · regla de ayuno · contraindicaciones · todo se aplicará desde tu inventario.
+      </div>
+
+      <div style="display:flex;gap:8px">
+        <button @click="addVialOpen=false" style="flex:1;background:transparent;border:1px solid var(--rule);color:var(--ink);padding:13px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase">Cancelar</button>
+        <button @click="confirmAddVial()" :disabled="!addVialPeptide" :style="`flex:1.4;background:${addVialPeptide?'var(--ink)':'#444'};color:${addVialPeptide?'#FFF':'#888'};padding:13px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600;border:0`">✓ Registrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div x-show="dailyPromptOpen" x-transition.opacity class="modal-back" style="z-index:180" @click.self="dailyPromptOpen=false">
+  <div class="modal" @click.stop style="max-width:380px;width:92%">
+    <div style="padding:24px 22px 8px;text-align:center">
+      <div style="font-size:38px;margin-bottom:6px">⏰</div>
+      <h3 class="serif" style="font-size:22px;font-weight:600;margin-bottom:8px">¿Ya te la pusiste?</h3>
+      <div class="serif" style="font-size:17px;color:var(--maroon);font-weight:600;margin-bottom:4px" x-text="(firstPeptide&&firstPeptide.name)||'BPC-157'"></div>
+      <div style="font-size:13px;color:var(--mute);line-height:1.5"><span x-text="currentDoseLabel"></span> · hora recomendada <span x-text="firstPeptideData?firstPeptideData.recommendedHour:'7:30'"></span></div>
+    </div>
+    <div style="padding:14px 18px 18px;display:flex;flex-direction:column;gap:8px">
+      <button @click="markDailyDoseTaken()" style="background:var(--ink);color:#FFF;padding:14px;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600">✓ Sí · ya me la puse</button>
+      <button @click="dailyPromptOpen=false" style="background:transparent;border:1px solid var(--rule);color:var(--ink);padding:13px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase">Aún no</button>
+      <button @click="snoozeDailyPrompt()" style="background:transparent;color:var(--mute);padding:8px;font-size:11px;letter-spacing:1px">Posponer 30 min</button>
+    </div>
+    <div style="padding:0 18px 14px;text-align:center;font-size:9.5px;color:#999">Al confirmar, tu inventario se descarga automáticamente.</div>
+  </div>
+</div>
+
+<!-- ════ Action Ack Modal · estilo Apple — antes de cada feature de riesgo ════ -->
+<div x-show="actionAckOpen" x-transition.opacity class="modal-back" style="z-index:200" @click.self="actionAckOpen=false">
+  <div class="modal" @click.stop style="max-width:380px;width:92%">
+    <div style="padding:24px 22px 8px;text-align:center">
+      <div style="font-size:34px;margin-bottom:6px" x-text="actionAckIcon"></div>
+      <h3 class="serif" style="font-size:20px;font-weight:600;margin-bottom:6px" x-text="actionAckTitle"></h3>
+      <p style="font-size:12.5px;color:var(--mute);line-height:1.55" x-text="actionAckBody"></p>
+    </div>
+    <div style="background:#FFF8E1;border-top:1px solid #E0C570;border-bottom:1px solid #E0C570;padding:12px 18px;font-size:11px;color:#5A3D00;line-height:1.55">
+      Al continuar reconoces y aceptas que: <b>(i)</b> esta función es informativa y NO sustituye consulta médica · <b>(ii)</b> la información puede contener errores · <b>(iii)</b> el uso es de tu responsabilidad personal exclusiva · <b>(iv)</b> PEPTIQ MX queda libre de toda responsabilidad civil, penal, mercantil y regulatoria conforme al Acuerdo Marco aceptado al iniciar sesión · <b>(v)</b> en caso de duda consultarás a un profesional de salud calificado.
+    </div>
+    <div style="padding:14px 18px 18px;display:flex;gap:8px">
+      <button @click="actionAckOpen=false;actionAckCallback=null" style="flex:1;background:transparent;border:1px solid var(--rule);color:var(--ink);padding:13px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:500">Cancelar</button>
+      <button @click="ackAction(actionAckKey);actionAckOpen=false;if(actionAckCallback)actionAckCallback()" style="flex:1.4;background:var(--ink);color:#fff;padding:13px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600">Acepto · continuar</button>
+    </div>
+    <div style="text-align:center;padding:0 18px 14px;font-size:9.5px;color:#999;letter-spacing:.5px">Acuse registrado con timestamp UTC · Acuerdo Marco v1.5</div>
+  </div>
+</div>
+
+<!-- Toast cinematic aplicada -->
+<div x-show="markTaken" x-transition.opacity.duration.500ms style="position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#0E0E0E,#3A2818);color:#988646;padding:18px 28px;border-radius:8px;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:600;z-index:50;box-shadow:0 14px 40px rgba(0,0,0,.35);border:1px solid #988646;display:flex;align-items:center;gap:12px">
+  <div style="font-size:24px">✓</div>
+  <div>
+    <div>Aplicada · +1 streak</div>
+    <div style="font-size:10px;color:rgba(255,255,255,.55);letter-spacing:1px;font-weight:300;text-transform:none;margin-top:2px" x-text="`Día ${cycleDayLabel.replace(/<[^>]+>/g,'')} · ${pname}`"></div>
+  </div>
+</div>
+
+<script>
+function app(){
+  return {
+    screen: (() => {
+      // Si ya firmó + configuró péptido + tiene email → ir directo al dashboard
+      try {
+        const consent = JSON.parse(localStorage.getItem('peptiq_consent')||'null');
+        const setup = JSON.parse(localStorage.getItem('peptiq_setup')||'null');
+        if (consent && consent.signature && setup && setup.firstPeptide) return 'dashboard';
+        if (consent && consent.signature) return 'onboard1'; // firmó pero no setup
+      } catch(e){}
+      return 'welcome';
+    })(), // welcome | auth | consent | onboard1 | tutorial | dashboard | schedule | assistant | inventory | profile
+    mode:'signup',
+    firstPeptide: (() => {
+      try {
+        const s = JSON.parse(localStorage.getItem('peptiq_setup')||'null');
+        return s && s.firstPeptide ? s.firstPeptide : null;
+      } catch(e){ return null; }
+    })(),
+    firstPeptideName: (() => {
+      try {
+        const s = JSON.parse(localStorage.getItem('peptiq_setup')||'null');
+        return s && s.firstPeptide ? s.firstPeptide.name : '';
+      } catch(e){ return ''; }
+    })(),
+    email: (() => {
+      try {
+        const s = JSON.parse(localStorage.getItem('peptiq_setup')||'null');
+        if (s && s.email) return s.email;
+        const c = JSON.parse(localStorage.getItem('peptiq_consent')||'null');
+        return c && c.email ? c.email : '';
+      } catch(e){ return ''; }
+    })(),
+    userType: (() => {
+      try {
+        const s = JSON.parse(localStorage.getItem('peptiq_setup')||'null');
+        return s && s.userType ? s.userType : 'personal';
+      } catch(e){ return 'personal'; }
+    })(),
+    selectedHour: (() => {
+      try {
+        const s = JSON.parse(localStorage.getItem('peptiq_setup')||'null');
+        return s && s.selectedHour ? s.selectedHour : '07:30';
+      } catch(e){ return '07:30'; }
+    })(),
+    firstTime:null,
+    tutorialStep:1,
+    disclaimerDismissed:false,
+    waNumber: localStorage.getItem('peptiq_wa_number')||'',
+    waOptIn: localStorage.getItem('peptiq_wa_optin')==='1',
+    submitWaOptIn(){
+      const clean=(this.waNumber||'').replace(/\D/g,'');
+      if(clean.length<10) return;
+      const wa = clean.length===10 ? '521'+clean : clean;
+      localStorage.setItem('peptiq_wa_number', wa);
+      localStorage.setItem('peptiq_wa_optin', this.waOptIn?'1':'0');
+      const p = this.firstPeptideData;
+      const body = {
+        whatsapp: wa,
+        peptide: (this.firstPeptide&&this.firstPeptide.name)||'BPC-157',
+        recommendedHour: p? p.recommendedHour : (this.selectedHour||'07:30'),
+        fastingRule: p? p.fastingRule : 'cualquier momento',
+        email: this.email||'',
+        signature: (this.consentRecord&&this.consentRecord.signature)||'',
+        timezone: 'America/Mexico_City'
+      };
+      // Fire-and-forget — backend solo acepta si waOptIn estuvo true
+      if(this.waOptIn){
+        try{
+          fetch('/api/reminder-optin', {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify(body),
+            keepalive: true
+          }).catch(()=>{});
+        }catch(e){}
+      }
+      // Continue
+      this.screen = this.firstTime ? 'tutorial' : 'dashboard';
+      this.tutorialStep = 1;
+    },
+    skipWaOptIn(){
+      this.waOptIn=false;
+      localStorage.setItem('peptiq_wa_optin','0');
+      this.screen = this.firstTime ? 'tutorial' : 'dashboard';
+      this.tutorialStep = 1;
+    },
+    // Consent / firma electrónica
+    consent1:false,consent2:false,consent3:false,consent4:false,
+    consentAll:false,
+    consentSignature:'',
+    consentRecord: JSON.parse(localStorage.getItem('peptiq_consent')||'null'),
+    actionAcks: JSON.parse(localStorage.getItem('peptiq_action_acks')||'{}'),
+    actionAckOpen:false,actionAckTitle:'',actionAckBody:'',actionAckIcon:'',actionAckKey:'',actionAckCallback:null,
+    dailyPromptOpen:false,
+    checkDailyPrompt(){
+      try{
+        const pname=(this.firstPeptide&&this.firstPeptide.name)||null;
+        if(!pname || this.screen!=='dashboard') return;
+        const p=this.peptideData.find(x=>x.name===pname);
+        if(!p) return;
+        const now=new Date();
+        const dow=now.getDay();
+        const perWeek=this.dosesPerWeekFor(pname);
+        const isDoseDay = perWeek===5 ? (dow>=1 && dow<=5) : perWeek===2 ? (dow===1||dow===4) : perWeek===1 ? (dow===0) : true;
+        if(!isDoseDay) return;
+        if(this.appliedToday(pname)) return;
+        const recH=parseInt((p.recommendedHour||'07:30').split(':')[0]);
+        if(now.getHours() < recH) return;
+        const snoozeKey='peptiq_snooze_'+pname+'_'+now.toISOString().slice(0,10);
+        const snoozeUntil=parseInt(localStorage.getItem(snoozeKey)||'0');
+        if(Date.now() < snoozeUntil) return;
+        this.dailyPromptOpen=true;
+      }catch(e){}
+    },
+    markDailyDoseTaken(){
+      const pname=(this.firstPeptide&&this.firstPeptide.name)||'BPC-157';
+      const ok=this.incrementDose(pname);
+      this.dailyPromptOpen=false;
+      if(ok){ this.markTaken=true; setTimeout(()=>this.markTaken=false,1800); }
+    },
+    snoozeDailyPrompt(){
+      const pname=(this.firstPeptide&&this.firstPeptide.name)||'BPC-157';
+      const snoozeKey='peptiq_snooze_'+pname+'_'+new Date().toISOString().slice(0,10);
+      localStorage.setItem(snoozeKey, String(Date.now()+30*60*1000));
+      this.dailyPromptOpen=false;
+    },
+    ackAction(key){
+      const record={ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,80)};
+      this.actionAcks[key]=record;
+      localStorage.setItem('peptiq_action_acks', JSON.stringify(this.actionAcks));
+      this.persistLegal({
+        record_type:'action_ack',
+        email:this.email,
+        action_key:key,
+        signature:(this.consentRecord&&this.consentRecord.signature)||null,
+        payload:record
+      });
+    },
+    hasAcked(key){ return !!this.actionAcks[key]; },
+    requireAck(key,title,body,icon,cb){
+      if(this.hasAcked(key)){ cb(); return; }
+      this.actionAckKey=key; this.actionAckTitle=title; this.actionAckBody=body; this.actionAckIcon=icon||'⚠️';
+      this.actionAckCallback=cb; this.actionAckOpen=true;
+    },
+    // Health profile (contraindicaciones)
+    userHealth: JSON.parse(localStorage.getItem('peptiq_health')||'{"pregnancy":false,"cancer":false,"diabetes":false,"hypertension":false,"autoimmune":false,"anticoag":false,"none":true}'),
+    saveHealth(){
+      localStorage.setItem('peptiq_health', JSON.stringify(this.userHealth));
+      this.persistLegal({record_type:'health_profile',email:this.email,payload:this.userHealth});
+    },
+    persistLegal(body){
+      // Fire-and-forget · localStorage is primary, server is backup
+      try{
+        fetch('/api/legal-record',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify(body),
+          keepalive:true
+        }).catch(()=>{});
+      }catch(e){}
+    },
+    signConsent(){
+      const record={
+        signature:this.consentSignature.trim(),
+        email:this.email||'(no email)',
+        timestamp:new Date().toISOString(),
+        userAgent:navigator.userAgent,
+        consents:{c1:this.consent1,c2:this.consent2,c3:this.consent3,c4:this.consent4},
+        version:'v1.5-2026-05'
+      };
+      localStorage.setItem('peptiq_consent', JSON.stringify(record));
+      this.consentRecord=record;
+      this.persistLegal({
+        record_type:'consent',
+        email:record.email,
+        signature:record.signature,
+        agreement_version:record.version,
+        payload:record
+      });
+      this.screen='onboard1';
+    },
+    get firstPeptideData(){
+      if(!this.firstPeptide) return null;
+      return this.peptideData.find(p=>p.name===this.firstPeptide.name);
+    },
+    get hourMismatch(){
+      const p=this.firstPeptideData;
+      if(!p || p.optimalTime==='flexible') return null;
+      const h=parseInt((this.selectedHour||'07:30').split(':')[0]);
+      // noche = 19-23h · mañana = 5-11h
+      const userIsMorning = h>=5 && h<12;
+      const userIsNight = h>=19 || h<5;
+      const wantsNight = p.optimalTime==='noche';
+      const wantsMorning = p.optimalTime==='mañana';
+      if(wantsNight && !userIsNight) return 'wrong-night';
+      if(wantsMorning && !userIsMorning) return 'wrong-morning';
+      return null;
+    },
+    markTaken:false,
+    addCycleOpen:false,
+    chat:[],
+    chatInput:'',
+    chatLoading:false,
+    calcOpen:false,
+    calcPeptide:'BPC-157',
+    calcWater:2,
+    calcDose:250,
+    peptideData:[
+      // ═══════ WOLVERINE · Recuperación ═══════
+      {name:'BPC-157',vial:10,defaultDose:250,defaultWater:2,daysOn:'lun-vie',weeksOn:6,weeksOff:3,protocol:'250-500mcg/día subcutáneo · 6 sem on / 3 off · descansa fines de semana',optimalTime:'flexible',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'BPC-157 es sistémico — funciona igual mañana o noche. Elige la hora que más fácil recuerdes.',source:'Sikiric P et al. Curr Pharm Des 2018 · Universidad de Zagreb · 200+ papers desde 1991',stackCompat:'TB-500, KPV, LL-37, GHK-Cu, Trinity (misma jeringa OK)',stackIncompat:'GH peptides (Tesa/CJC/Ipa) — timing diferente · GLP-1s nunca',contraindications:'Cáncer activo (estimula angiogénesis · consultar oncólogo) · Embarazo · Lactancia · Atletas WADA (clase S0)'},
+      {name:'TB-500',vial:10,defaultDose:2500,defaultWater:2,daysOn:'lun y jue',weeksOn:6,weeksOff:4,protocol:'Carga: 2.5mg 2×/sem (4-6 sem) → Mantenimiento: 2.5mg 1×/sem',optimalTime:'flexible',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Vida media larga (8-10 días). La hora exacta no importa — la consistencia 2×/sem sí.',source:'Goldstein AL et al. Trends Mol Med 2005 · Bock-Marquette I et al. Nature 2004',stackCompat:'BPC-157, KPV, GHK-Cu, MGF (misma jeringa OK)',stackIncompat:'GH peptides — timing diferente · GLP-1s nunca',contraindications:'Cáncer activo (modula migración celular) · Embarazo · Lactancia · Atletas WADA (clase S2)'},
+      {name:'KPV',vial:10,defaultDose:500,defaultWater:2,daysOn:'lun-vie',weeksOn:6,weeksOff:3,protocol:'200-500mcg/día subcut u oral · 5 días on / 2 off',optimalTime:'flexible',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Inmunomodulador anti-inflamatorio. La consistencia diaria importa más que el horario.',source:'Bohm M et al. Endocr Rev 2006 · Brzoska T et al. J Invest Dermatol 2008',stackCompat:'BPC-157, TB-500, GHK-Cu (sinergia anti-inflamatoria)',stackIncompat:'GLP-1s nunca · ningún issue grave',contraindications:'Embarazo · Lactancia · Hipersensibilidad α-MSH'},
+      {name:'LL-37',vial:5,defaultDose:100,defaultWater:1,daysOn:'lun-vie',weeksOn:4,weeksOff:4,protocol:'100mcg/día tópico u oral · 4 sem on / 4 off',optimalTime:'flexible',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Catelicidina antimicrobiana — actúa local. Hora no crítica.',source:'Dürr UH et al. Biochim Biophys Acta 2006 · Vandamme D et al. Cell Immunol 2012',stackCompat:'BPC-157, KPV (perfil inmune)',stackIncompat:'Inmunosupresores activos · GLP-1s',contraindications:'Lupus activo · Embarazo · Lactancia · Quemaduras agudas'},
+      {name:'MGF',vial:5,defaultDose:200,defaultWater:1,daysOn:'post-entreno',weeksOn:4,weeksOff:4,protocol:'200mcg post-entreno IM local · 4-6 sem',optimalTime:'flexible',recommendedHour:'18:00',fastingRule:'post-entreno',whyTime:'Mechano Growth Factor — solo después de entrenamiento, dentro de 1h ventana anabólica.',source:'Goldspink G. Annu Rev Physiol 2003 · Hill M, Goldspink G. J Physiol 2003',stackCompat:'TB-500 post-entreno',stackIncompat:'GH peptides en mismo día — competencia receptor IGF',contraindications:'Cáncer activo · Embarazo · Lactancia · Atletas WADA (clase S2)'},
+      {name:'BA3',vial:10,defaultDose:1000,defaultWater:2,daysOn:'lun-vie',weeksOn:6,weeksOff:3,protocol:'1mg/día subcut · 6 sem on / 3 off',optimalTime:'flexible',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Wolverine triple stack (BPC + TB + análogos) · usar como BPC-157 base.',source:'Compuesto research-grade · ver KB para fuentes individuales',stackCompat:'Como BPC-157 base',stackIncompat:'GH peptides timing · GLP-1s',contraindications:'Cáncer activo · Embarazo · Lactancia'},
+      {name:'Wolverine Blend',vial:20,defaultDose:500,defaultWater:2,daysOn:'lun-vie',weeksOn:6,weeksOff:3,protocol:'500mcg/día (BPC + TB en mismo vial) · 6 sem on / 3 off',optimalTime:'flexible',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Combo BPC-157 + TB-500 pre-mezclado. Hora flexible.',source:'Sikiric P 2018 + Goldstein 2005',stackCompat:'Es blend BPC+TB · agregar GHK-Cu OK',stackIncompat:'GH peptides timing · GLP-1s',contraindications:'Cáncer activo · Embarazo · Lactancia · Atletas WADA'},
+      {name:'Heal Stack',vial:30,defaultDose:1000,defaultWater:2,daysOn:'lun-vie',weeksOn:6,weeksOff:3,protocol:'1mg/día subcut · 6 sem on',optimalTime:'flexible',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Stack regenerativo sistémico. Hora flexible.',source:'Stack research-grade',stackCompat:'Stack regenerativo · solo · no mezclar más',stackIncompat:'GH peptides · GLP-1s',contraindications:'Cáncer activo · Embarazo · Lactancia'},
+      {name:'Trinity',vial:30,defaultDose:1000,defaultWater:2,daysOn:'1×/mes',weeksOn:24,weeksOff:0,protocol:'1mg/sesión 1×/mes (BPC + GHK + TB)',optimalTime:'flexible',recommendedHour:'10:00',fastingRule:'cualquier momento',whyTime:'Stack regenerativo mensual sistémico — 1 dosis al mes.',source:'Sikiric 2018 + Pickart 2018 + Goldstein 2005',stackCompat:'Es blend BPC+GHK+TB · solo · no mezclar más',stackIncompat:'GH peptides · GLP-1s',contraindications:'Cáncer activo · Embarazo · Lactancia'},
+
+      // ═══════ HIGHLANDER · Longevidad ═══════
+      {name:'NAD+',vial:1000,defaultDose:200000,defaultWater:4,daysOn:'lun-vie',weeksOn:10,weeksOff:4,protocol:'100-250mg/día matutino · 8-12 sem on / 4 off · empezar gradual',optimalTime:'mañana',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Activa mitocondria y sirtuinas — genera energía. Aplicar de noche causa insomnio. Mañana alinea con ritmo circadiano.',source:'Sinclair D, Lifespan · Atria 2019 · Imai S, Guarente L. Cell Metab 2014',stackCompat:'Solo · IV preferido · sin mezclar',stackIncompat:'No mezclar misma jeringa con NADA — IV separado',contraindications:'Cáncer activo · Embarazo · Lactancia · Insuficiencia renal severa · Hipertensión no controlada'},
+      {name:'Epithalon',vial:50,defaultDose:5000,defaultWater:2,daysOn:'10 días continuos',weeksOn:3,weeksOff:24,protocol:'5-10mg/día por 10-20 días · pausa 4-6 meses · ciclo Khavinson',optimalTime:'noche',recommendedHour:'22:00',fastingRule:'cualquier momento',whyTime:'Sincroniza pineal y reactiva melatonina endógena. Aplicar antes de dormir potencia el ciclo nocturno natural.',source:'Anisimov VN, Khavinson VK. Mech Ageing Dev 2003 · Khavinson VK. Neuroendocrinol Lett 2002',stackCompat:'Pinealon, MOTS-c (longevidad stack)',stackIncompat:'GLP-1s · evitar con cáncer activo',contraindications:'Cáncer activo · Embarazo · Lactancia · Tumores hipofisarios'},
+      {name:'Pinealon',vial:20,defaultDose:200,defaultWater:1,daysOn:'cada 3 días',weeksOn:2,weeksOff:8,protocol:'100-200mcg cada 3 días · ciclos 10 días · 3×/año',optimalTime:'mañana',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Bioregulador glandular — modula DNA en pineal. Aplicar matutino sincroniza eje glandular.',source:'Khavinson VK. Bull Exp Biol Med 2004 · Anisimov VN, Khavinson VK 2010',stackCompat:'Epithalon, NAD+ (eje glandular)',stackIncompat:'GLP-1s',contraindications:'Embarazo · Lactancia · Tumores cerebrales activos'},
+      {name:'MOTS-c',vial:5,defaultDose:50,defaultWater:1,daysOn:'lun-vie',weeksOn:4,weeksOff:4,protocol:'25-50mcg/día subcut · 4 sem on / 4 off',optimalTime:'mañana',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Péptido mitocondrial — activa AMPK metabólico. Mañana óptimo para impacto energético diurno.',source:'Lee C et al. Cell Metab 2015 · Yen K et al. Aging 2013',stackCompat:'Epithalon, NAD+ (mitochondrial)',stackIncompat:'GLP-1s',contraindications:'Cáncer activo · Embarazo · Lactancia'},
+      {name:'Thymalin',vial:10,defaultDose:1000,defaultWater:2,daysOn:'lun-vie',weeksOn:2,weeksOff:24,protocol:'1mg/día por 10 días · 2-3 ciclos/año',optimalTime:'flexible',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Inmunorregulador timo — restaura función inmune. Hora flexible.',source:'Khavinson VK. Bull Exp Biol Med 2009 · Morozov VG, Khavinson VK Russ J 2003',stackCompat:'Thymosin Alpha-1 (inmune)',stackIncompat:'Inmunosupresores · GLP-1s',contraindications:'Lupus · Esclerosis múltiple · Embarazo · Lactancia · Trasplantados'},
+      {name:'Thymosin Alpha-1',vial:5,defaultDose:1600,defaultWater:1,daysOn:'2×/sem',weeksOn:8,weeksOff:0,protocol:'1.6mg 2×/semana · 8 sem',optimalTime:'mañana',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Tα1 modulador inmune T-cell — efecto inmediato.',source:'Goldstein AL. Ann NY Acad Sci 2007 · Garaci E et al. Curr Med Chem 2007',stackCompat:'Thymalin (sinergia inmune)',stackIncompat:'Inmunosupresores · GLP-1s',contraindications:'Trasplantados · Lupus · Embarazo · Lactancia'},
+
+      // ═══════ GLOW · Piel y cabello ═══════
+      {name:'GHK-Cu',vial:100,defaultDose:1000,defaultWater:2,daysOn:'lun-vie',weeksOn:4,weeksOff:4,protocol:'1-2mg/día antes de dormir · 30 días on / 30 off · 2-3 ciclos/año',optimalTime:'noche',recommendedHour:'22:00',fastingRule:'cualquier momento',whyTime:'Sinérgico con reparación dérmica nocturna (Fase 3-4 NREM). Aplicar antes de dormir maximiza activación de fibroblastos.',source:'Pickart L, Margolina A. Int J Mol Sci 2018 · regula 4,192 genes de reparación',stackCompat:'BPC-157, AHK-Cu, TB-500, Trinity (regenerativo)',stackIncompat:'GLP-1s · ningún issue mayor',contraindications:'Cáncer dérmico activo · Embarazo · Lactancia · Alergia al cobre'},
+      {name:'AHK-Cu',vial:50,defaultDose:1000,defaultWater:2,daysOn:'lun-vie',weeksOn:4,weeksOff:4,protocol:'1mg tópico cuero cabelludo nocturno · 12-16 sem',optimalTime:'noche',recommendedHour:'22:00',fastingRule:'cualquier momento',whyTime:'Específico folicular — aplicar tópico cuero cabelludo antes de dormir.',source:'Pyo HK et al. J Invest Dermatol 2007 · patente Procyte 2003',stackCompat:'GHK-Cu (sinergia tópica/sistémica capilar)',stackIncompat:'GLP-1s',contraindications:'Cáncer dérmico activo · Embarazo · Lactancia · Alergia al cobre'},
+
+      // ═══════ PRIME · Performance ═══════
+      {name:'Tesamorelin',vial:10,defaultDose:1000,defaultWater:2,daysOn:'lun-vie',weeksOn:10,weeksOff:4,protocol:'1-2mg/día en la noche · 8-12 sem on / 4 off · grasa visceral',optimalTime:'noche',recommendedHour:'22:00',fastingRule:'2h después de comer / ayuno',whyTime:'Libera GH desde pituitaria — el GH se libera durante SUEÑO PROFUNDO (4h post-onset). Aplicar 2h antes de dormir sincroniza con pulso GH endógeno. Insulina/glucosa apaga receptor GHRH.',source:'Falutz J et al. NEJM 2007 · Stanley TL et al. JCEM 2014 · único GHRH FDA-approved (Egrifta)',stackCompat:'Ipamorelin, CJC+Ipa (misma jeringa OK · ambos GH)',stackIncompat:'BPC/TB timing · GLP-1s · Insulina/comida',contraindications:'Cáncer activo · Embarazo · Lactancia · Diabetes no controlada · Retinopatía proliferativa · Tumores hipofisarios'},
+      {name:'Ipamorelin',vial:10,defaultDose:300,defaultWater:2,daysOn:'lun-vie',weeksOn:8,weeksOff:4,protocol:'200-300mcg antes de dormir · 5 días on / 2 off · NO comer 2h antes',optimalTime:'noche',recommendedHour:'22:30',fastingRule:'2h ayuno antes / 1h después',whyTime:'Secretagogo GH — solo funciona en AYUNO. Comer eleva insulina y bloquea pulso GH. Aplicar 2h post-cena, antes de dormir.',source:'Raun K et al. Eur J Endocrinol 1998 · Sigalos JT, Pastuszak AW. Sex Med Rev 2018',stackCompat:'Tesamorelin, CJC+Ipa (misma jeringa)',stackIncompat:'BPC/TB timing · GLP-1s · Comida 2h antes/1h después',contraindications:'Cáncer activo · Embarazo · Lactancia · Diabetes no controlada · Tumores hipofisarios'},
+      {name:'CJC+Ipa',vial:10,defaultDose:300,defaultWater:2,daysOn:'lun-vie',weeksOn:10,weeksOff:4,protocol:'100-300mcg de cada uno antes de dormir · 5 días on / 2 off',optimalTime:'noche',recommendedHour:'22:30',fastingRule:'2h ayuno antes / 1h después',whyTime:'Estimula pulso GH endógeno — solo funciona en AYUNO con receptor GHRH limpio. 2h post-cena, antes de dormir, alinea con pulso natural del sueño profundo.',source:'Teichman SL et al. JCEM 2006 · Peter Attia MD. Outlive ch.18 · Crown Publishing 2023',stackCompat:'Tesamorelin, Ipamorelin (misma jeringa)',stackIncompat:'BPC/TB timing · GLP-1s · Comida 2h antes/1h después',contraindications:'Cáncer activo · Embarazo · Lactancia · Diabetes no controlada · Tumores hipofisarios'},
+      {name:'GH Stack',vial:30,defaultDose:1000,defaultWater:2,daysOn:'lun-vie',weeksOn:10,weeksOff:4,protocol:'1mg/día (Tesa+CJC+Ipa) antes de dormir · 8-12 sem',optimalTime:'noche',recommendedHour:'22:30',fastingRule:'2h ayuno antes / 1h después',whyTime:'Triple GH secretagogue — máxima estimulación pulso GH nocturno.',source:'Combinación de los 3 GH research compounds',stackCompat:'Es blend Tesa+CJC+Ipa · solo',stackIncompat:'BPC/TB timing · GLP-1s · Comida cercana',contraindications:'Cáncer activo · Embarazo · Lactancia · Diabetes no controlada · Tumores hipofisarios'},
+      {name:'Semax',vial:10,defaultDose:600,defaultWater:2,daysOn:'lun-vie',weeksOn:6,weeksOff:3,protocol:'300-600mcg/día matutino · subcut o intranasal · 5 días on / 2 off',optimalTime:'mañana',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Nootrópico — efecto cognitivo 6-8h. Aplicar de noche causa insomnio y desperdicia pico cognitivo.',source:'Andreeva LA et al. Eksp Klin Farmakol 2006 · Inst. Biología Molecular RAS',stackCompat:'Selank (sinergia cognitiva matutina)',stackIncompat:'GLP-1s · IMAOs',contraindications:'Trastorno bipolar activo · Embarazo · Lactancia · Hipertiroidismo no tratado'},
+      {name:'Selank',vial:5,defaultDose:300,defaultWater:1,daysOn:'lun-vie',weeksOn:4,weeksOff:4,protocol:'1-2 sprays nasales/día · 4 sem on / 4 off',optimalTime:'flexible',recommendedHour:'10:00',fastingRule:'cualquier momento',whyTime:'Ansiolítico sin GABA-A directo — sin sedación. Hora flexible o por demanda.',source:'Medvedev VE et al. Russ J Psychiatry 2010 · Kost NV et al. Bull Exp Biol Med 2005',stackCompat:'Semax (sinergia matutina)',stackIncompat:'Benzodiacepinas (potenciación) · GLP-1s · Alcohol',contraindications:'Embarazo · Lactancia · Depresión severa sin supervisión'},
+      {name:'Cerebrolysin',vial:30,defaultDose:5000,defaultWater:2,daysOn:'lun-vie',weeksOn:4,weeksOff:8,protocol:'5-10mg/día IM · 4 sem on / 8 off · 2-3 ciclos/año',optimalTime:'mañana',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Mezcla neurotrófica — administrar matutino para soporte cognitivo diurno.',source:'Plosker GL, Gauthier S. CNS Drugs 2009 · Heiss WD et al. Stroke 2012',stackCompat:'Solo · IM separado',stackIncompat:'IMAOs · Antidepresivos sin supervisión · GLP-1s',contraindications:'Epilepsia activa · Embarazo · Lactancia · Insuficiencia renal severa'},
+
+      // ═══════ SHRED · Pérdida de peso ═══════
+      {name:'Tirzepatide',vial:10,defaultDose:2500,defaultWater:2,daysOn:'1×/sem',weeksOn:24,weeksOff:0,protocol:'2.5mg/sem (titulación 4 sem) → escalar 5/7.5/10/15mg',optimalTime:'flexible',recommendedHour:'20:00',fastingRule:'con comida ligera',whyTime:'Dual GIP/GLP-1 — misma hora cada semana. Con comida ligera reduce náusea inicial.',source:'Frias JP et al. NEJM 2021 SURPASS · FDA-approved Mounjaro 2022',stackCompat:'Solo · NEVER mezclar GLP-1s',stackIncompat:'Otros GLP-1 (Sema, Reta, Mazdu) · GH peptides · Insulina sin ajuste médico',contraindications:'Cáncer medular tiroides personal/familiar (MTC) · MEN-2 · Pancreatitis · Embarazo · Lactancia · Gastroparesia severa'},
+      {name:'Retatrutide',vial:30,defaultDose:500,defaultWater:3,daysOn:'1×/sem',weeksOn:24,weeksOff:0,protocol:'500mcg/sem (titulación 4 sem) → escalar gradual',optimalTime:'flexible',recommendedHour:'20:00',fastingRule:'con comida ligera',whyTime:'Triple agonista GLP-1/GIP/Glucagón — misma hora cada semana. Con comida ligera para náusea.',source:'Jastreboff AM et al. NEJM 2024 TRIUMPH · -24.2% peso 48 sem',stackCompat:'Solo · NEVER mezclar GLP-1s',stackIncompat:'Otros GLP-1 · GH peptides · Insulina sin ajuste médico',contraindications:'MTC personal/familiar · MEN-2 · Pancreatitis · Embarazo · Lactancia · Gastroparesia severa'},
+      {name:'AOD-9604',vial:5,defaultDose:300,defaultWater:1,daysOn:'lun-vie',weeksOn:8,weeksOff:4,protocol:'300mcg/día subcut · 8 sem on / 4 off',optimalTime:'mañana',recommendedHour:'07:00',fastingRule:'ayuno matutino',whyTime:'Fragmento GH lipolítico — funciona mejor en ayuno matutino para grasa terca.',source:'Heffernan M et al. JCEM 2001 · Calzonetti C et al. Obes Res 2002',stackCompat:'Solo o con BPC/TB sistémico',stackIncompat:'GLP-1s mismo día · GH peptides cercano',contraindications:'Cáncer activo · Embarazo · Lactancia · Diabetes no controlada'},
+      {name:'Mazdutide',vial:10,defaultDose:3000,defaultWater:2,daysOn:'1×/sem',weeksOn:24,weeksOff:0,protocol:'3-9mg/sem (titulación 4 sem)',optimalTime:'flexible',recommendedHour:'20:00',fastingRule:'con comida ligera',whyTime:'Dual GLP-1/Glucagón Innovent — misma hora cada semana.',source:'Ji L et al. Lancet Diabetes Endocrinol 2023 GLORY-1',stackCompat:'Solo · NEVER mezclar GLP-1s',stackIncompat:'Otros GLP-1 · GH peptides · Insulina sin ajuste',contraindications:'MTC · Pancreatitis · Embarazo · Lactancia · Gastroparesia'},
+      {name:'Cagri-Sema',vial:10,defaultDose:2400,defaultWater:2,daysOn:'1×/sem',weeksOn:24,weeksOff:0,protocol:'2.4mg/sem (Cagri+Sema)',optimalTime:'flexible',recommendedHour:'20:00',fastingRule:'con comida ligera',whyTime:'Dual amilina + GLP-1 Novo Nordisk — misma hora cada semana.',source:'Kelly RP et al. Diabetes Obes Metab 2023 · Novo Nordisk REDEFINE',stackCompat:'Solo · NEVER mezclar GLP-1s',stackIncompat:'Otros GLP-1 · GH peptides · Insulina sin ajuste',contraindications:'MTC · Pancreatitis · Embarazo · Lactancia · Gastroparesia'},
+      {name:'5-Amino-1MQ',vial:50,defaultDose:50000,defaultWater:1,daysOn:'lun-vie',weeksOn:8,weeksOff:4,protocol:'50mg/día oral · 8 sem on',optimalTime:'mañana',recommendedHour:'08:00',fastingRule:'ayuno matutino',whyTime:'Inhibidor NNMT oral — activa metabolismo en ayuno matutino.',source:'Neelakantan H et al. Biochem Pharmacol 2018',stackCompat:'Solo (oral) · OK con péptidos inyectados',stackIncompat:'Niacina alta dosis simultánea',contraindications:'Embarazo · Lactancia · Insuficiencia hepática severa'},
+
+      // ═══════ SPA / SUEÑO ═══════
+      {name:'DSIP',vial:5,defaultDose:200,defaultWater:1,daysOn:'continuo',weeksOn:24,weeksOff:0,protocol:'100-200mcg antes de dormir',optimalTime:'noche',recommendedHour:'22:00',fastingRule:'cualquier momento',whyTime:'Delta Sleep Inducing Peptide — induce ondas delta endógenas. Aplicar 30 min antes de dormir.',source:'Schoenenberger GA et al. Pflügers Arch 1977 · Universidad Basilea Suiza',stackCompat:'Pinealon, Epithalon (sleep stack)',stackIncompat:'Benzodiacepinas (potenciación sedativa) · Z-drugs · Alcohol',contraindications:'Apnea del sueño no diagnosticada · Embarazo · Lactancia · Niños/adolescentes'},
+
+      // ═══════ FUNCIÓN SEXUAL ═══════
+      {name:'PT-141',vial:10,defaultDose:1000,defaultWater:2,daysOn:'por demanda',weeksOn:12,weeksOff:0,protocol:'1-2mg subcut 45-90 min antes de actividad sexual',optimalTime:'flexible',recommendedHour:'19:00',fastingRule:'cualquier momento',whyTime:'Bremelanotide — actúa en SNC sobre deseo. 45-90 min antes de la actividad. No diario.',source:'Diamond LE et al. J Urol 2004 · FDA-approved Vyleesi 2019',stackCompat:'Solo · por demanda',stackIncompat:'Vasodilatadores · Antihipertensivos sin supervisión · Sildenafil cercano',contraindications:'Hipertensión no controlada · Cardiopatía isquémica · Embarazo · Lactancia · Hipotensión severa'},
+      {name:'Kisspeptin-10',vial:5,defaultDose:75,defaultWater:1,daysOn:'lun-vie',weeksOn:12,weeksOff:0,protocol:'50-100mcg/día matutino · 12 sem',optimalTime:'mañana',recommendedHour:'08:00',fastingRule:'cualquier momento',whyTime:'Detonador GnRH — pulsátil matutino mimetiza ritmo natural eje hormonal.',source:'Skorupskaite K et al. Hum Reprod Update 2014 · Comninos AN et al. JCI 2017',stackCompat:'Solo · por monitoreo eje hormonal',stackIncompat:'TRH/anticonceptivos sin supervisión · GLP-1s',contraindications:'Cáncer hormono-dependiente activo (mama ER+ · endometrial · próstata) · Embarazo · Lactancia · Trombofilia'},
+      {name:'HCG',vial:5,defaultDose:500,defaultWater:1,daysOn:'2-3×/sem',weeksOn:8,weeksOff:4,protocol:'500-1000 UI 2-3×/semana · 8 sem',optimalTime:'flexible',recommendedHour:'10:00',fastingRule:'cualquier momento',whyTime:'Imita LH — mantiene función testicular. 2-3×/sem suficiente por vida media.',source:'Coviello AD et al. JCEM 2005 · uso supervisado por médico',stackCompat:'Solo · supervisión médica obligatoria',stackIncompat:'Anabólicos sin protocolo · GLP-1s',contraindications:'Cáncer próstata o testicular activo · Embarazo (excepto inducción ovulación supervisada) · Trombofilia activa'},
+
+      // ═══════ AGUA BACTERIOSTÁTICA ═══════
+      {name:'Bact Water',vial:3,defaultDose:0,defaultWater:0,daysOn:'reconstitución',weeksOn:24,weeksOff:0,protocol:'3ml por vial — diluyente para reconstitución',optimalTime:'flexible',recommendedHour:'00:00',fastingRule:'no aplica',whyTime:'Solvente con alcohol bencílico 0.9% — no es péptido, es para diluir.',source:'USP Bacteriostatic Water for Injection · estándar farmacéutico',stackCompat:'Compatible con todos · es diluyente',stackIncompat:'NO usar agua destilada normal · NO solución salina',contraindications:'Alergia a alcohol bencílico (raro) · neonatos prematuros'},
+    ],
+    goals:[
+      {label:'Dormir mejor',icon:'🌙',q:'¿Qué péptido me ayuda a dormir mejor y mejorar calidad del sueño profundo?'},
+      {label:'Pérdida de peso',icon:'⚖️',q:'¿Qué péptidos ayudan a pérdida de peso y reducción de grasa visceral?'},
+      {label:'Recuperación muscular',icon:'💪',q:'¿Qué péptidos son mejores para recuperación muscular post-entreno o lesión?'},
+      {label:'Anti-aging',icon:'⏳',q:'¿Qué péptidos recomiendas para longevidad y anti-aging en pacientes 40+?'},
+      {label:'Foco / cognición',icon:'🧠',q:'¿Qué péptidos mejoran foco, memoria y rendimiento cognitivo?'},
+      {label:'Piel y cabello',icon:'✨',q:'¿Qué péptidos ayudan a piel, colágeno y crecimiento de cabello?'},
+      {label:'Salud intestinal',icon:'🌿',q:'¿Qué péptidos ayudan a salud intestinal y recuperación de mucosa?'},
+      {label:'GH / performance',icon:'🔥',q:'¿Qué péptidos son mejores para liberación de GH y rendimiento atlético?'},
+    ],
+    get currentPeptide(){return this.peptideData.find(p=>p.name===this.calcPeptide)||this.peptideData[0]},
+    get currentPeptideProtocol(){return this.currentPeptide.protocol},
+    get concentrationMcgMl(){return Math.round((this.currentPeptide.vial*1000)/this.calcWater)},
+    get calcVolumeMl(){return this.calcDose/this.concentrationMcgMl},
+    get syringeUnits(){return Math.round(this.calcVolumeMl*100)},
+    get syringeFillPercent(){return this.syringeUnits},
+    get dosesPerVial(){return Math.floor((this.currentPeptide.vial*1000)/this.calcDose)},
+    openCalc(peptide,dose){
+      const doOpen=()=>{
+        const p=this.peptideData.find(x=>x.name===peptide);
+        if(p){
+          this.calcPeptide=p.name;
+          this.calcWater=p.defaultWater;
+          this.calcDose=dose||p.defaultDose;
+        }
+        this.calcOpen=true;
+      };
+      this.requireAck('calculator_first_use',
+        'Calculadora informativa',
+        'La calculadora de reconstitución es una herramienta educativa basada en aritmética estándar. Los valores resultantes son referenciales y NO constituyen prescripción médica. Verifica con un profesional de salud antes de aplicar.',
+        '📐', doOpen);
+    },
+    updateCalcDefaults(){
+      const p=this.currentPeptide;
+      this.calcWater=p.defaultWater;
+      this.calcDose=p.defaultDose;
+    },
+    todayLabel:new Date().toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long'}),
+    get pname(){ return (this.firstPeptide&&this.firstPeptide.name)||'BPC-157'; },
+    get pline(){ return (this.firstPeptide&&this.firstPeptide.line)||'PEPTIDE'; },
+    get userName(){
+      const sig=(this.consentRecord&&this.consentRecord.signature)||'';
+      if(sig) return sig.trim().split(' ').slice(0,2).join(' ');
+      const e=this.email||'';
+      if(e.includes('@')) return e.split('@')[0].replace(/[._-]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+      return 'Sin nombre';
+    },
+    get userInitials(){
+      const n=this.userName;
+      if(n==='Sin nombre') return '?';
+      const parts=n.trim().split(' ').filter(Boolean);
+      if(parts.length>=2) return (parts[0][0]+parts[1][0]).toUpperCase();
+      return parts[0]?parts[0][0].toUpperCase():'?';
+    },
+    autoLowStockAlert: localStorage.getItem('peptiq_auto_low')!=='0',
+    init(){
+      // URL param handler · deeplinks desde WhatsApp template / push notification
+      try{
+        const params = new URLSearchParams(location.search);
+        const doseAction = params.get('dose');
+        if(doseAction){
+          // Strip param to clean URL
+          const clean = location.pathname + location.hash;
+          history.replaceState(null,'',clean);
+          this.$nextTick(()=>{
+            if(doseAction==='confirm' && this.firstPeptide){
+              const ok = this.incrementDose(this.firstPeptide.name);
+              if(ok){
+                this.markTaken=true;
+                setTimeout(()=>this.markTaken=false,2200);
+              }
+              this.screen='dashboard';
+            }else if(doseAction==='snooze' && this.firstPeptide){
+              const key='peptiq_snooze_'+this.firstPeptide.name+'_'+new Date().toISOString().slice(0,10);
+              localStorage.setItem(key, String(Date.now()+30*60*1000));
+              this.screen='dashboard';
+              alert('⏰ Recordatorio pospuesto 30 min');
+            }
+          });
+        }
+        // Show welcome back greeting if returning user
+        const consent = JSON.parse(localStorage.getItem('peptiq_consent')||'null');
+        if(consent && consent.signature){
+          this.email = consent.email || this.email;
+        }
+      }catch(e){console.warn('init param handler:',e)}
+    },
+    saveSetup(){
+      try{
+        localStorage.setItem('peptiq_setup', JSON.stringify({
+          firstPeptide: this.firstPeptide,
+          email: this.email,
+          userType: this.userType,
+          selectedHour: this.selectedHour,
+          firstTime: this.firstTime,
+          savedAt: new Date().toISOString()
+        }));
+      }catch(e){}
+    },
+    get adherencePct(){
+      const pname=(this.firstPeptide&&this.firstPeptide.name)||null;
+      if(!pname) return '—';
+      const u=this.vialUsage[pname];
+      if(!u||!u.startDate) return '—';
+      const start=new Date(u.startDate); start.setHours(0,0,0,0);
+      const today=new Date(); today.setHours(0,0,0,0);
+      const days=Math.max(1, Math.floor((today-start)/(1000*60*60*24))+1);
+      const perWeek=this.dosesPerWeekFor(pname);
+      const expected=Math.floor(days * perWeek/7);
+      if(expected<=0) return '—';
+      const taken=Object.keys(u.doseLog||{}).length;
+      return Math.min(100, Math.round((taken/expected)*100));
+    },
+    get adherenceLabel(){
+      const pname=(this.firstPeptide&&this.firstPeptide.name)||null;
+      if(!pname) return 'Sin datos';
+      const u=this.vialUsage[pname];
+      if(!u||!u.startDate) return 'Sin datos';
+      const start=new Date(u.startDate); start.setHours(0,0,0,0);
+      const today=new Date(); today.setHours(0,0,0,0);
+      const days=Math.floor((today-start)/(1000*60*60*24))+1;
+      return days<=1?'Empezando':`Últimos ${days} días`;
+    },
+    get cycleDayLabel(){
+      const pname=(this.firstPeptide&&this.firstPeptide.name)||null;
+      if(!pname) return '—';
+      const p=this.peptideData.find(x=>x.name===pname);
+      if(!p||!p.weeksOn) return '—';
+      const u=this.vialUsage[pname];
+      if(!u||!u.startDate) return `1<span style="font-size:16px;color:var(--mute)">/${p.weeksOn*7}</span>`;
+      const start=new Date(u.startDate); start.setHours(0,0,0,0);
+      const today=new Date(); today.setHours(0,0,0,0);
+      const dayInCycle=Math.floor((today-start)/(1000*60*60*24))+1;
+      const totalDays=p.weeksOn*7;
+      const dayInCurrent=((dayInCycle-1) % totalDays)+1;
+      return `${dayInCurrent}<span style="font-size:16px;color:var(--mute)">/${totalDays}</span>`;
+    },
+    get cyclePhaseLabel(){
+      const pname=(this.firstPeptide&&this.firstPeptide.name)||null;
+      if(!pname) return '';
+      const p=this.peptideData.find(x=>x.name===pname);
+      if(!p||!p.weeksOn) return '';
+      const u=this.vialUsage[pname];
+      if(!u||!u.startDate) return `Día 1 · ON-cycle`;
+      const start=new Date(u.startDate); start.setHours(0,0,0,0);
+      const today=new Date(); today.setHours(0,0,0,0);
+      const dayInCycle=Math.floor((today-start)/(1000*60*60*24))+1;
+      const onDays=p.weeksOn*7;
+      const offDays=(p.weeksOff||0)*7;
+      const cycleLen=onDays+offDays;
+      const dayInCurrent=((dayInCycle-1) % cycleLen)+1;
+      return dayInCurrent<=onDays ? 'ON-cycle' : 'OFF-cycle';
+    },
+    // Vial tracking · persists in localStorage
+    vialUsage: JSON.parse(localStorage.getItem('peptiq_vial_usage')||'{}'),
+    saveUsage(){ localStorage.setItem('peptiq_vial_usage', JSON.stringify(this.vialUsage)); },
+    initVial(name){
+      if(!this.vialUsage[name]){
+        // startDate = HOY · inventory tracking starts ahora
+        this.vialUsage[name]={dosesUsed:0,startDate:new Date().toISOString(),vialsOwned:1,reorderAlerted:false,doseLog:{}};
+        this.saveUsage();
+      }
+      if(!this.vialUsage[name].doseLog) this.vialUsage[name].doseLog={};
+      // Backfill startDate si falta
+      if(!this.vialUsage[name].startDate){
+        this.vialUsage[name].startDate=new Date().toISOString();
+        this.saveUsage();
+      }
+    },
+    incrementDose(name){
+      this.initVial(name);
+      const today=new Date().toISOString().slice(0,10);
+      // Avoid double-counting same day
+      if(this.vialUsage[name].doseLog[today]) return false;
+      this.vialUsage[name].dosesUsed++;
+      this.vialUsage[name].doseLog[today]={ts:new Date().toISOString()};
+      this.saveUsage();
+      return true;
+    },
+    appliedToday(name){
+      const u=this.vialUsage[name];
+      if(!u||!u.doseLog) return false;
+      const today=new Date().toISOString().slice(0,10);
+      return !!u.doseLog[today];
+    },
+    addVial(name){
+      this.initVial(name);
+      this.vialUsage[name].vialsOwned++;
+      this.vialUsage[name].reorderAlerted=false;
+      this.saveUsage();
+    },
+    addVialOpen:false,
+    addVialPeptide:'',
+    addVialQty:1,
+    addVialStartDate: new Date().toISOString().slice(0,10),
+    confirmAddVial(){
+      const name = this.addVialPeptide;
+      if(!name) return;
+      const startISO = new Date(this.addVialStartDate).toISOString();
+      // Si ya existe · sumamos viales · si no · creamos
+      if(!this.vialUsage[name]){
+        this.vialUsage[name] = {
+          dosesUsed: 0,
+          startDate: startISO,
+          vialsOwned: this.addVialQty,
+          reorderAlerted: false,
+          doseLog: {}
+        };
+      }else{
+        this.vialUsage[name].vialsOwned = (this.vialUsage[name].vialsOwned||0) + this.addVialQty;
+        this.vialUsage[name].reorderAlerted = false;
+      }
+      this.saveUsage();
+      // Si es el primero registrado · setearlo como firstPeptide
+      if(this.myInventoryLines.length===1 || !this.firstPeptide){
+        const p = this.peptides.find(x=>x.name===name) || {name, purpose:''};
+        this.firstPeptide = p;
+        this.firstPeptideName = name;
+        this.saveSetup && this.saveSetup();
+      }
+      // Reset modal
+      this.addVialOpen = false;
+      this.addVialPeptide = '';
+      this.addVialQty = 1;
+      this.addVialStartDate = new Date().toISOString().slice(0,10);
+      // Toast confirmación
+      this.markTaken = true;
+      setTimeout(()=>this.markTaken=false, 2200);
+    },
+    dosesPerVialFor(name){
+      const p=this.peptideData.find(x=>x.name===name);
+      if(!p) return 0;
+      return Math.floor((p.vial*1000)/p.defaultDose);
+    },
+    dosesPerWeekFor(name){
+      const p=this.peptideData.find(x=>x.name===name);
+      if(!p) return 7;
+      // Parse daysOn for frequency
+      if(p.daysOn==='lun-vie') return 5;
+      if(p.daysOn==='lun y jue') return 2;
+      if(p.daysOn==='1x/sem') return 1;
+      if(p.daysOn==='10-20 días') return 5;
+      return 7;
+    },
+    daysPerVialFor(name){
+      const doses=this.dosesPerVialFor(name);
+      const perWeek=this.dosesPerWeekFor(name);
+      return Math.floor(doses * (7/perWeek));
+    },
+    daysRemainingFor(name){
+      const u=this.vialUsage[name];
+      if(!u) return this.daysPerVialFor(name) * 1; // assume 1 vial fresh
+      const totalDoses=this.dosesPerVialFor(name) * u.vialsOwned;
+      const dosesLeft=totalDoses - u.dosesUsed;
+      const perWeek=this.dosesPerWeekFor(name);
+      return Math.max(0, Math.floor(dosesLeft * (7/perWeek)));
+    },
+    dosesRemainingFor(name){
+      const u=this.vialUsage[name];
+      if(!u) return this.dosesPerVialFor(name);
+      return Math.max(0, this.dosesPerVialFor(name)*u.vialsOwned - u.dosesUsed);
+    },
+    isLowStockFor(name){
+      return this.daysRemainingFor(name) <= 10;
+    },
+    isCriticalStockFor(name){
+      return this.daysRemainingFor(name) <= 5;
+    },
+    buyLinkFor(name){
+      const slugs={'BPC-157':'wolverine.html','TB-500':'wolverine.html','GHK-Cu':'glow.html','NAD+':'highlander.html','Retatrutide':'shred.html','Tesamorelin':'prime.html','Ipamorelin':'prime.html','Epithalon':'highlander.html','Semax':'cerebro-foco.html','KPV':'wolverine.html','CJC+Ipa':'prime.html'};
+      const slug=slugs[name]||'index.html';
+      return `https://peptiqmx.com/${slug}?utm_source=app&utm_medium=lowstock&product=${encodeURIComponent(name)}`;
+    },
+    waLinkFor(name){
+      const msg=`Hola PEPTIQ, mi vial de ${name} se está acabando (~${this.daysRemainingFor(name)} días restantes). Quiero pedir otro con código REPEAT15.`;
+      return `https://wa.me/5214445770445?text=${encodeURIComponent(msg)}`;
+    },
+    get myInventoryLines(){
+      return Object.keys(this.vialUsage||{}).filter(n => (this.vialUsage[n]?.vialsOwned||0) > 0);
+    },
+    get myFirstLowStock(){
+      return this.myInventoryLines.find(n => this.isLowStockFor(n)) || null;
+    },
+    get greeting(){
+      const h=new Date().getHours();
+      if(h>=5 && h<12) return 'Buenos días';
+      if(h>=12 && h<19) return 'Buenas tardes';
+      return 'Buenas noches';
+    },
+    get nextDoseTime(){
+      const h=new Date().getHours();
+      // If past 7am, next dose is tomorrow 7:30am · else today 7:30am
+      // For tesa/ipa/cjc nighttime peptides → 10:00 PM
+      const p=this.firstPeptide;
+      const nightOnes=['Tesamorelin','Ipamorelin','CJC+Ipa','Epithalon','GHK-Cu','DSIP'];
+      if(p && nightOnes.includes(p.name)){
+        return h<22 ? '10:00 PM' : 'mañana 10:00 PM';
+      }
+      return h<7 ? '7:30 AM' : 'mañana 7:30 AM';
+    },
+    get currentDoseLabel(){
+      const p=this.firstPeptide;
+      if(!p) return '250mcg subcutáneo';
+      const data=this.peptideData.find(x=>x.name===p.name);
+      if(!data) return '— subcutáneo';
+      const d=data.defaultDose;
+      const unit=d>=1000 ? (d/1000)+'mg' : d+'mcg';
+      return unit+' subcutáneo';
+    },
+    peptides:[
+      // Wolverine
+      {name:'BPC-157',purpose:'Cicatrización · intestino · tendones',line:'Wolverine'},
+      {name:'TB-500',purpose:'Músculo profundo · ligamentos',line:'Wolverine'},
+      {name:'KPV',purpose:'Anti-inflamatorio inmune',line:'Wolverine'},
+      {name:'LL-37',purpose:'Antimicrobiano · barrera',line:'Wolverine'},
+      {name:'MGF',purpose:'Hipertrofia post-entreno',line:'Wolverine'},
+      {name:'Wolverine Blend',purpose:'BPC + TB pre-mezclado',line:'Wolverine'},
+      {name:'Heal Stack',purpose:'Stack regenerativo sistémico',line:'Wolverine'},
+      {name:'Trinity',purpose:'BPC + GHK + TB · 1×/mes',line:'Wolverine'},
+      // Highlander
+      {name:'NAD+',purpose:'Energía · longevidad · mitocondria',line:'Highlander'},
+      {name:'Epithalon',purpose:'Telómeros · pineal · sueño',line:'Highlander'},
+      {name:'Pinealon',purpose:'Bioregulador glandular pineal',line:'Highlander'},
+      {name:'MOTS-c',purpose:'Mitocondrial · AMPK',line:'Highlander'},
+      {name:'Thymalin',purpose:'Inmunomodulador timo',line:'Highlander'},
+      {name:'Thymosin Alpha-1',purpose:'Inmune T-cell',line:'Highlander'},
+      // Glow
+      {name:'GHK-Cu',purpose:'Piel · colágeno · cabello',line:'Glow'},
+      {name:'AHK-Cu',purpose:'Folículo capilar específico',line:'Glow'},
+      // Prime
+      {name:'Tesamorelin',purpose:'Grasa visceral · GH',line:'Prime'},
+      {name:'Ipamorelin',purpose:'GH suave · sueño',line:'Prime'},
+      {name:'CJC+Ipa',purpose:'Pulso GH endógeno',line:'Prime'},
+      {name:'GH Stack',purpose:'Triple GH secretagogue',line:'Prime'},
+      {name:'Semax',purpose:'Foco · cognición · nootrópico',line:'Prime'},
+      {name:'Selank',purpose:'Ansiolítico sin sedación',line:'Prime'},
+      {name:'Cerebrolysin',purpose:'Neurotrófico · recuperación neuro',line:'Prime'},
+      // Shred
+      {name:'Tirzepatide',purpose:'GLP-1 dual · -22% peso',line:'Shred'},
+      {name:'Retatrutide',purpose:'Triple agonista · -24% peso',line:'Shred'},
+      {name:'AOD-9604',purpose:'Lipolisis grasa terca',line:'Shred'},
+      {name:'Mazdutide',purpose:'Dual GLP-1/Glucagón',line:'Shred'},
+      {name:'Cagri-Sema',purpose:'Dual amilina + GLP-1',line:'Shred'},
+      {name:'5-Amino-1MQ',purpose:'NNMT oral · metabolismo',line:'Shred'},
+      // Sueño / Spa
+      {name:'DSIP',purpose:'Sueño profundo delta',line:'Spa'},
+      // Función sexual
+      {name:'PT-141',purpose:'Deseo · función sexual',line:'Función sexual'},
+      {name:'Kisspeptin-10',purpose:'Eje hormonal · libido',line:'Función sexual'},
+      {name:'HCG',purpose:'LH · función testicular',line:'Función sexual'},
+      // Reconstitución
+      {name:'Bact Water',purpose:'Diluyente para reconstitución',line:'Esencial'},
+    ],
+    get weekDays(){
+      // Compute week dynamically · last 3 days + today + next 3 days = 7 days
+      const dows=['dom','lun','mar','mié','jue','vie','sáb'];
+      const today=new Date(); today.setHours(0,0,0,0);
+      const pname=(this.firstPeptide&&this.firstPeptide.name)||'BPC-157';
+      const pdata=this.peptideData.find(x=>x.name===pname);
+      const doseStr=pdata ? (pdata.defaultDose>=1000?(pdata.defaultDose/1000)+'mg':pdata.defaultDose+'mcg') : '250mcg';
+      const time=pdata && pdata.recommendedHour ? pdata.recommendedHour : '7:30';
+      const usage=this.vialUsage[pname];
+      const doseLog=(usage&&usage.doseLog)||{};
+      // Boundary: solo marcar MISS si user ya estaba tracking ese día
+      const startDate = usage && usage.startDate ? new Date(usage.startDate) : today;
+      startDate.setHours(0,0,0,0);
+      const days=[];
+      for(let i=-3;i<=3;i++){
+        const d=new Date(today); d.setDate(today.getDate()+i);
+        d.setHours(0,0,0,0);
+        const key=d.toISOString().slice(0,10);
+        const isToday=i===0;
+        const isPast=i<0;
+        const isFuture=i>0;
+        const isPreOnboard = d < startDate;
+        const dayOfWeek=d.getDay();
+        const perWeek=this.dosesPerWeekFor(pname);
+        const isDoseDay = perWeek===5 ? (dayOfWeek>=1 && dayOfWeek<=5) : perWeek===2 ? (dayOfWeek===1||dayOfWeek===4) : perWeek===1 ? (dayOfWeek===0) : true;
+        let status='', statusLabel='';
+        if(isPreOnboard){
+          // Antes de empezar a usar la app — no mostrar MISS
+          status='pre'; statusLabel='—';
+        }else if(isToday){
+          if(doseLog[key]){ status='ok'; statusLabel='OK'; }
+          else if(isDoseDay){ status=''; statusLabel='HOY'; }
+          else{ status='off'; statusLabel='HOY'; }
+        }else if(isPast && isDoseDay){
+          if(doseLog[key]){ status='ok'; statusLabel='OK'; }
+          else{ status='miss'; statusLabel='MISS'; }
+        }else if(isPast && !isDoseDay){
+          status='off'; statusLabel='OFF';
+        }else if(isFuture && isDoseDay){
+          status=''; statusLabel='';
+        }else{
+          status='off'; statusLabel='OFF';
+        }
+        days.push({
+          dow:dows[dayOfWeek],
+          dom:String(d.getDate()).padStart(2,'0'),
+          today:isToday,
+          peptide:isPreOnboard?'—':(isDoseDay?pname:'descanso'),
+          time:isPreOnboard?'—':(isDoseDay?time:'—'),
+          dose:isPreOnboard?'—':(isDoseDay?doseStr:'—'),
+          status,statusLabel,
+          dateKey:key
+        });
+      }
+      return days;
+    },
+    async askQuestion(q){
+      if(!q || !q.trim()) return;
+      if(!this.hasAcked('ai_first_use')){
+        const self=this;
+        this.requireAck('ai_first_use',
+          'Asistente AI · información generada algorítmicamente',
+          'Las respuestas son producidas por un modelo de lenguaje grande (Claude). Pueden contener errores, alucinaciones u omisiones. NO constituyen consejo médico. Verifica siempre con un profesional de salud calificado antes de actuar.',
+          '🤖', ()=>{ self.askQuestion(q); });
+        return;
+      }
+      const id=Date.now();
+      this.chat.push({id,role:'user',text:q});
+      this.chatInput='';
+      this.chatLoading=true;
+      try{
+        const history=this.chat.slice(-6,-1).map(m=>({role:m.role,text:m.text.replace(/<[^>]*>/g,'')}));
+        const r=await fetch('/api/assistant',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({question:q,history})
+        });
+        const data=await r.json();
+        this.chatLoading=false;
+        if(!r.ok){
+          this.chat.push({id:id+1,role:'bot',text:data.text||'No pude conectar con el asistente. Escríbenos al WhatsApp: <a href="https://wa.me/5214445770445" style="color:var(--gold-deep)">+52 1 444 577 0445</a>',source:''});
+          return;
+        }
+        const html=this.markdownLite(data.text);
+        this.chat.push({id:id+1,role:'bot',text:html,source:''});
+      }catch(err){
+        this.chatLoading=false;
+        this.chat.push({id:id+1,role:'bot',text:'Sin conexión. Intenta de nuevo o escríbenos al WhatsApp.',source:''});
+      }
+    },
+    markdownLite(t){
+      // Escape HTML
+      let s = t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+      // Render tables: lines with | ... | followed by separator
+      s = s.replace(/(\|[^\n]+\|\n\|[\s:|-]+\|\n(?:\|[^\n]+\|\n?)+)/g, (block) => {
+        const lines = block.trim().split('\n').filter(l => l.includes('|'));
+        if (lines.length < 2) return block;
+        const headerCells = lines[0].split('|').slice(1,-1).map(c => c.trim());
+        const rows = lines.slice(2).map(l => l.split('|').slice(1,-1).map(c => c.trim()));
+        let html = '<table style="border-collapse:collapse;font-size:12px;margin:8px 0;width:100%">';
+        html += '<thead><tr>' + headerCells.map(c => `<th style="border:1px solid #ddd;padding:6px 8px;background:#F5F0E5;font-weight:600;text-align:left">${c}</th>`).join('') + '</tr></thead>';
+        html += '<tbody>' + rows.map(r => '<tr>' + r.map(c => `<td style="border:1px solid #ddd;padding:6px 8px">${c}</td>`).join('') + '</tr>').join('') + '</tbody></table>';
+        return html;
+      });
+
+      // Headings ## ###
+      s = s.replace(/^### (.+)$/gm, '<h4 style="font-family:\'Playfair Display\',serif;font-size:15px;font-weight:600;margin:14px 0 6px">$1</h4>');
+      s = s.replace(/^## (.+)$/gm, '<h3 style="font-family:\'Playfair Display\',serif;font-size:17px;font-weight:600;margin:16px 0 8px;color:#5A4126">$1</h3>');
+      s = s.replace(/^# (.+)$/gm, '<h2 style="font-family:\'Playfair Display\',serif;font-size:20px;font-weight:600;margin:18px 0 8px">$1</h2>');
+
+      // Bullet lists (- item)
+      s = s.replace(/(^- .+(\n- .+)*)/gm, (block) => {
+        const items = block.split('\n').map(l => l.replace(/^- /,'')).map(l => `<li style="margin-bottom:4px">${l}</li>`).join('');
+        return `<ul style="margin:8px 0;padding-left:20px;list-style-type:disc">${items}</ul>`;
+      });
+
+      // Inline bold/italic/code
+      s = s.replace(/\*\*([^*\n]+)\*\*/g,'<strong>$1</strong>');
+      s = s.replace(/(?<!\w)\*([^*\n]+)\*(?!\w)/g,'<em>$1</em>');
+      s = s.replace(/`([^`\n]+)`/g,'<code style="background:#F5F0E5;padding:1px 5px;border-radius:3px;font-size:11.5px">$1</code>');
+
+      // Horizontal rule
+      s = s.replace(/^---+$/gm, '<hr style="border:0;border-top:1px solid #E5DFCD;margin:14px 0">');
+
+      // Links
+      s = s.replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" style="color:var(--gold-deep);text-decoration:underline">$1</a>');
+
+      // Paragraphs from double newlines (only outside HTML blocks)
+      s = s.replace(/\n\n/g,'</p><p style="margin:8px 0">').replace(/\n/g,'<br>');
+      s = '<p style="margin:0">' + s + '</p>';
+      // Clean up empty paragraphs around block elements
+      s = s.replace(/<p[^>]*><(table|ul|h[2-4]|hr)/g,'<$1');
+      s = s.replace(/<\/(table|ul|h[2-4])><\/p>/g,'</$1>');
+
+      return s;
+    },
+  }
+}
+
+// Service Worker registration for PWA
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/app/sw.js',{scope:'/app/'})
+      .then(reg=>console.log('SW registered',reg.scope))
+      .catch(err=>console.warn('SW failed',err));
+  });
+}
+
+// Install prompt capture (shows custom button later)
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();
+  deferredPrompt=e;
+  window.peptiqInstallReady=true;
+});
+window.peptiqInstall=()=>{
+  if(!deferredPrompt){alert('Para instalar: Safari iOS → botón compartir → "Añadir a pantalla de inicio"');return;}
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(()=>deferredPrompt=null);
+};
+</script>
+</body>
+</html>

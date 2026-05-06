@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+    <radialGradient id="vigTight" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#000" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="1"/>
+    </radialGradient>
+    <clipPath id="circleMask">
+      <circle cx="540" cy="760" r="340"/>
+    </clipPath>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+
+  <line x1="80" y1="160" x2="1000" y2="160" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="215" font-family="'Inter',sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.75">02 · WOLVERINE · RECOVERY</text>
+
+  <!-- Vial image: tight crop, bigger zoom (1680 wide centered → vial fills frame) + circular clip -->
+  <g clip-path="url(#circleMask)">
+    <image href="/Users/end/Desktop/tdi-peptidos/peptiqmx/img/tb-500.jpg" x="-300" y="440" width="1680" height="916" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="200" y="420" width="680" height="680" fill="#000" opacity="0.52"/>
+  </g>
+  <!-- Outer darkening ring blends vial into black -->
+  <rect x="0" y="420" width="1080" height="680" fill="url(#vigTight)"/>
+
+  <text x="540" y="1300" font-family="'Playfair Display',Georgia,serif" font-size="170" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="6">TB-500</text>
+  <text x="540" y="1370" font-family="'Inter',sans-serif" font-size="30" fill="#a8987a" text-anchor="middle" letter-spacing="10">10 MG · HPLC 99.3%</text>
+  <line x1="420" y1="1420" x2="660" y2="1420" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <text x="540" y="1530" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Acelera la recuperación</text>
+  <text x="540" y="1610" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">muscular profunda.</text>
+
+  <line x1="80" y1="1800" x2="1000" y2="1800" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1855" font-family="'Inter',sans-serif" font-size="30" fill="url(#gold)" text-anchor="middle" letter-spacing="14" font-weight="600">PEPTIQMX.COM</text>
+</svg>

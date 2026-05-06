@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="dark" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#000000" stop-opacity="0.6"/><stop offset="100%" stop-color="#000000" stop-opacity="0.95"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <image xlink:href="https://peptiqmx.com/img/covers/wolverine-hero.png" x="0" y="0" width="1080" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1080" height="1080" fill="url(#dark)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="10">04 · LA ARQUITECTURA</text>
+  <text x="540" y="240" font-family="'Playfair Display',Georgia,serif" font-size="48" fill="#f0e4c8" text-anchor="middle" font-style="italic">Construir + Distribuir.</text>
+  <text x="540" y="290" font-family="'Playfair Display',Georgia,serif" font-size="48" fill="url(#gold)" text-anchor="middle" font-style="italic">Sinergia obligatoria.</text>
+  <g transform="translate(140 380)">
+    <g>
+      <rect width="800" height="100" fill="rgba(0,0,0,0.65)" stroke="url(#gold)" stroke-width="1.2" rx="2"/>
+      <text x="40" y="38" font-family="'Inter',sans-serif" font-size="14" fill="#E5C981" letter-spacing="3">BPC-157</text>
+      <text x="40" y="68" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#f0e4c8" font-style="italic">Garantiza flujo sanguíneo y supervivencia celular</text>
+    </g>
+    <g transform="translate(0 130)">
+      <rect width="800" height="100" fill="rgba(0,0,0,0.65)" stroke="url(#gold)" stroke-width="1.2" rx="2"/>
+      <text x="40" y="38" font-family="'Inter',sans-serif" font-size="14" fill="#E5C981" letter-spacing="3">TB-500</text>
+      <text x="40" y="68" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#f0e4c8" font-style="italic">Reconstruye arquitectura del tejido desde adentro</text>
+    </g>
+    <g transform="translate(0 260)">
+      <rect width="800" height="100" fill="rgba(0,0,0,0.65)" stroke="url(#gold)" stroke-width="2" rx="2"/>
+      <text x="40" y="38" font-family="'Inter',sans-serif" font-size="14" fill="#E5C981" letter-spacing="3">SÍNTESIS</text>
+      <text x="40" y="68" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="url(#gold)" font-style="italic">Eficacia biológica innegable. Recuperación brutal.</text>
+    </g>
+  </g>
+  <text x="540" y="900" font-family="'Inter',sans-serif" font-size="14" fill="#a8987a" text-anchor="middle" letter-spacing="2">SEIWERTH · CURR PHARM DES · 2018 / GOLDSTEIN · 2010</text>
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">05 / 08</text>
+</svg>

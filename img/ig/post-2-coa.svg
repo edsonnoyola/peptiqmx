@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- Eyebrow -->
+  <text x="540" y="140" font-family="'Inter', sans-serif" font-size="22" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.75">LA DIFERENCIA</text>
+
+  <!-- Headline -->
+  <text x="540" y="290" font-family="'Playfair Display', Georgia, serif" font-size="88" font-weight="500" fill="#f0e4c8" text-anchor="middle" font-style="italic">Si no tiene COA,</text>
+  <text x="540" y="395" font-family="'Playfair Display', Georgia, serif" font-size="88" font-weight="500" fill="url(#gold)" text-anchor="middle" font-style="italic">no sabes qué te inyectas.</text>
+
+  <!-- Divider -->
+  <line x1="420" y1="455" x2="660" y2="455" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <!-- Body -->
+  <text x="540" y="560" font-family="'Inter', sans-serif" font-size="34" fill="#cfc3a5" text-anchor="middle">Cada lote PEPTIQ se analiza por</text>
+  <text x="540" y="610" font-family="'Inter', sans-serif" font-size="34" fill="#cfc3a5" text-anchor="middle">laboratorio independiente Janoshik.</text>
+
+  <text x="540" y="700" font-family="'Inter', sans-serif" font-size="34" fill="#cfc3a5" text-anchor="middle">HPLC real. Peso real. Identidad real.</text>
+  <text x="540" y="750" font-family="'Inter', sans-serif" font-size="34" fill="#cfc3a5" text-anchor="middle">Publicado antes de que compres.</text>
+
+  <!-- Numbers block -->
+  <g transform="translate(540 870)" text-anchor="middle">
+    <text x="-220" y="-20" font-family="'Playfair Display', Georgia, serif" font-size="80" fill="url(#gold)" font-weight="500">99%+</text>
+    <text x="-220" y="30" font-family="'Inter', sans-serif" font-size="22" fill="#a8987a" letter-spacing="4">HPLC</text>
+
+    <text x="0" y="-20" font-family="'Playfair Display', Georgia, serif" font-size="80" fill="url(#gold)" font-weight="500">100%</text>
+    <text x="0" y="30" font-family="'Inter', sans-serif" font-size="22" fill="#a8987a" letter-spacing="4">LOTES TESTEADOS</text>
+
+    <text x="220" y="-20" font-family="'Playfair Display', Georgia, serif" font-size="80" fill="url(#gold)" font-weight="500">0</text>
+    <text x="220" y="30" font-family="'Inter', sans-serif" font-size="22" fill="#a8987a" letter-spacing="4">OPACIDAD</text>
+  </g>
+
+  <!-- Bottom -->
+  <line x1="80" y1="980" x2="1000" y2="980" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1020" font-family="'Inter', sans-serif" font-size="26" font-weight="600" fill="url(#gold)" text-anchor="middle" letter-spacing="10">PEPTIQMX.COM</text>
+</svg>

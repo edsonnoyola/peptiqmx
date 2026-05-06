@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#1f1a12"/>
+      <stop offset="70%" stop-color="#0a0906"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <circle cx="540" cy="540" r="480" fill="none" stroke="#C6A969" stroke-width="1.5" opacity="0.35"/>
+
+  <!-- Three stacked vials (small) -->
+  <g transform="translate(540 510)" stroke="url(#gold)" stroke-width="10" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Vial 1 left -->
+    <g transform="translate(-170 0)">
+      <rect x="-40" y="-180" width="80" height="28" rx="4" fill="url(#gold)"/>
+      <path d="M -55 -150 L -55 140 Q -55 170 -25 170 L 25 170 Q 55 170 55 140 L 55 -150 Z"/>
+      <path d="M -55 70 L 55 70" stroke-width="5" opacity="0.5"/>
+    </g>
+    <!-- Vial 2 center (taller) -->
+    <g transform="translate(0 -20)">
+      <rect x="-45" y="-200" width="90" height="30" rx="5" fill="url(#gold)"/>
+      <path d="M -60 -170 L -60 160 Q -60 195 -28 195 L 28 195 Q 60 195 60 160 L 60 -170 Z"/>
+      <path d="M -60 80 L 60 80" stroke-width="5" opacity="0.5"/>
+    </g>
+    <!-- Vial 3 right -->
+    <g transform="translate(170 10)">
+      <rect x="-40" y="-170" width="80" height="28" rx="4" fill="url(#gold)"/>
+      <path d="M -55 -140 L -55 130 Q -55 160 -25 160 L 25 160 Q 55 160 55 130 L 55 -140 Z"/>
+      <path d="M -55 60 L 55 60" stroke-width="5" opacity="0.5"/>
+    </g>
+  </g>
+
+  <text x="540" y="910"
+        font-family="'Inter', 'Helvetica Neue', sans-serif"
+        font-size="60"
+        font-weight="600"
+        fill="url(#gold)"
+        text-anchor="middle"
+        letter-spacing="14">STACKS</text>
+</svg>

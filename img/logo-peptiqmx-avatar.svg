@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1308"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <circle cx="540" cy="540" r="460" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.3"/>
+
+  <text x="540" y="560"
+    font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+    font-size="230"
+    font-weight="700"
+    letter-spacing="8"
+    text-anchor="middle"
+    fill="#f0e4c8">PEPTI<tspan fill="url(#gold)">Q</tspan></text>
+
+  <line x1="340" y1="610" x2="740" y2="610" stroke="#C6A969" stroke-width="2" opacity="0.7"/>
+
+  <text x="540" y="680"
+    font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+    font-size="38"
+    font-weight="400"
+    letter-spacing="14"
+    text-anchor="middle"
+    fill="#C6A969" opacity="0.85">HACK YOUR LIMITS</text>
+</svg>

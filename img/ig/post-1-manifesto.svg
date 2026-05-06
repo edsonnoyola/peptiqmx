@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- Top frame -->
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="140" font-family="'Inter', sans-serif" font-size="22" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.75">PEPTIQ MX · MÉXICO</text>
+
+  <!-- Tiny dot -->
+  <circle cx="540" cy="310" r="4" fill="#C6A969" opacity="0.8"/>
+
+  <!-- Big wordmark -->
+  <text x="540" y="470"
+        font-family="'Playfair Display', 'Didot', Georgia, serif"
+        font-size="180"
+        font-weight="500"
+        fill="url(#gold)"
+        text-anchor="middle"
+        letter-spacing="14">PEPTIQ</text>
+
+  <line x1="420" y1="530" x2="660" y2="530" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <!-- Manifesto copy -->
+  <text x="540" y="620" font-family="'Playfair Display', Georgia, serif" font-size="60" font-weight="400" fill="#e8dcc0" text-anchor="middle" font-style="italic">Research-grade peptides.</text>
+  <text x="540" y="700" font-family="'Playfair Display', Georgia, serif" font-size="60" font-weight="400" fill="#e8dcc0" text-anchor="middle" font-style="italic">Pureza verificable.</text>
+
+  <!-- Subline -->
+  <text x="540" y="830" font-family="'Inter', sans-serif" font-size="34" fill="#a8987a" text-anchor="middle" letter-spacing="3">COA Janoshik por lote · 99%+ HPLC</text>
+  <text x="540" y="880" font-family="'Inter', sans-serif" font-size="34" fill="#a8987a" text-anchor="middle" letter-spacing="3">Envío nacional 24-72h</text>
+
+  <!-- Bottom frame -->
+  <line x1="80" y1="980" x2="1000" y2="980" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1020" font-family="'Inter', sans-serif" font-size="26" font-weight="600" fill="url(#gold)" text-anchor="middle" letter-spacing="10">HACK YOUR LIMITS</text>
+</svg>

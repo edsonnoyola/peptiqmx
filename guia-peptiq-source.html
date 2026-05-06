@@ -8,8 +8,8 @@
     @page { size: A4; margin: 16mm 14mm 18mm 14mm; }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{
-      --ink:#111; --stone:#F6F3EE; --paper:#FFF; --beige:#B8A99A;
-      --beige-deep:#9C8D7F; --gold:#C6A969; --rule:#E3DED6;
+      --ink:#111; --stone:#FAFAFA; --paper:#FFF; --beige:#777777;
+      --beige-deep:#777777; --gold:#111111; --rule:#F5F5F5;
       --mute:#6B6B6B; --serif:'Playfair Display',Georgia,serif;
       --sans:'Inter',sans-serif;
     }
@@ -72,10 +72,12 @@
     .back .footer-grid p{font-size:9.5pt;color:#3a3a3a;margin-bottom:0}
 
     .big-stat{font-family:var(--serif);font-size:80pt;line-height:.9;color:var(--beige-deep);font-style:italic;font-weight:500;margin:8mm 0}
-    .disclaimer-box{background:#1a1a1a;color:#c8c1b2;padding:8mm 10mm;margin-top:10mm;font-size:9pt;line-height:1.7}
+    .disclaimer-box{background:#1a1a1a;color:#E5E5E5;padding:8mm 10mm;margin-top:10mm;font-size:9pt;line-height:1.7}
     .disclaimer-box b{color:#fff;font-weight:500}
     .disclaimer-box h4{color:var(--gold);font-size:9pt;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;font-family:var(--sans);font-weight:500}
   </style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
 </head>
 <body>
 
@@ -418,6 +420,13 @@
     Al leer esta guía, el lector declara ser mayor de edad, profesional de la investigación o adulto informado que actúa bajo su propia responsabilidad. Recomendamos consultar con un médico, investigador o dermatólogo certificado antes de ejecutar cualquier protocolo.
   </div>
 </section>
+
+
+<!-- peptiq-global-disclaimer -->
+<div style="position:fixed;left:0;right:0;bottom:0;background:rgba(17,17,17,0.92);color:#F5F5F5;font-size:10.5px;line-height:1.5;letter-spacing:0.3px;text-align:center;padding:6px 60px;z-index:9998;backdrop-filter:blur(8px);font-family:Inter,sans-serif;">
+  Producto de uso exclusivo para investigación. El uso es responsabilidad de quien lo use.
+</div>
+<style>body{padding-bottom:32px !important;}</style>
 
 </body>
 </html>

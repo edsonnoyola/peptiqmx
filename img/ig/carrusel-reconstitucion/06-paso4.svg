@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0e0b07"/><stop offset="100%" stop-color="#000000"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#C6A969" text-anchor="middle" letter-spacing="10" opacity="0.75">05 · PASO 4 · ROTAR · NO AGITAR</text>
+
+  <text x="540" y="280" font-family="'Playfair Display',Georgia,serif" font-size="200" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="6">04</text>
+  <text x="540" y="380" font-family="'Playfair Display',Georgia,serif" font-size="48" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Rotación suave. 10 segundos.</text>
+
+  <line x1="420" y1="430" x2="660" y2="430" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <g transform="translate(180 510)" font-family="'Inter',sans-serif" font-size="22" fill="#f0e4c8">
+    <text x="0" y="40">Toma el vial entre dos dedos.</text>
+    <text x="0" y="90">Gíralo en círculos suaves (como copa de vino).</text>
+    <text x="0" y="140">NUNCA agitar. NUNCA invertir bruscamente.</text>
+    <text x="0" y="190">Resultado: líquido transparente sin grumos.</text>
+  </g>
+
+  <text x="540" y="850" font-family="'Inter',sans-serif" font-size="18" fill="#C6A969" text-anchor="middle" letter-spacing="4">AGITAR ROMPE LOS PUENTES PEPTÍDICOS · INACTIVO</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">06 / 08</text>
+</svg>

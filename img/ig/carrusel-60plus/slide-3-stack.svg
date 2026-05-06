@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5B1A1F"/>
+      <stop offset="100%" stop-color="#3a1014"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4B97A"/>
+      <stop offset="100%" stop-color="#C6A969"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#bg3)"/>
+
+  <!-- Eyebrow -->
+  <text x="540" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="500" fill="#C6A969" letter-spacing="6">03 · LONGEVITY STACK</text>
+
+  <!-- Title -->
+  <text x="540" y="280" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="68" font-weight="600" fill="#fff">El protocolo</text>
+  <text x="540" y="360" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="68" font-weight="600" fill="url(#g3)" font-style="italic">de los próximos</text>
+  <text x="540" y="440" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="68" font-weight="600" fill="url(#g3)" font-style="italic">20 años</text>
+
+  <!-- 3 stack cards -->
+  <g transform="translate(80,560)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="920" height="170" rx="3" fill="rgba(255,255,255,0.06)" stroke="#C6A969" stroke-width="1"/>
+    <text x="40" y="55" font-family="Playfair Display, Georgia, serif" font-size="36" font-weight="600" fill="#C6A969">NAD+ 1000mg</text>
+    <text x="40" y="90" font-family="Inter, sans-serif" font-size="16" fill="#fff" letter-spacing="2">ENERGÍA MITOCONDRIAL</text>
+    <text x="40" y="135" font-family="Inter, sans-serif" font-size="22" fill="#ddd">100-250mg/día · 8-12 sem on / 4 off</text>
+    <text x="880" y="60" text-anchor="end" font-family="Playfair Display, Georgia, serif" font-size="32" font-weight="600" fill="#fff">$5,499</text>
+
+    <!-- Card 2 -->
+    <rect x="0" y="200" width="920" height="170" rx="3" fill="rgba(255,255,255,0.06)" stroke="#C6A969" stroke-width="1"/>
+    <text x="40" y="255" font-family="Playfair Display, Georgia, serif" font-size="36" font-weight="600" fill="#C6A969">Epithalon 50mg</text>
+    <text x="40" y="290" font-family="Inter, sans-serif" font-size="16" fill="#fff" letter-spacing="2">TELÓMEROS · MELATONINA</text>
+    <text x="40" y="335" font-family="Inter, sans-serif" font-size="22" fill="#ddd">5-10mg/noche · 10 días · 3x al año</text>
+    <text x="880" y="260" text-anchor="end" font-family="Playfair Display, Georgia, serif" font-size="32" font-weight="600" fill="#fff">$6,799</text>
+
+    <!-- Card 3 -->
+    <rect x="0" y="400" width="920" height="170" rx="3" fill="rgba(255,255,255,0.06)" stroke="#C6A969" stroke-width="1"/>
+    <text x="40" y="455" font-family="Playfair Display, Georgia, serif" font-size="36" font-weight="600" fill="#C6A969">GHK-Cu 100mg</text>
+    <text x="40" y="490" font-family="Inter, sans-serif" font-size="16" fill="#fff" letter-spacing="2">REGENERACIÓN CELULAR</text>
+    <text x="40" y="535" font-family="Inter, sans-serif" font-size="22" fill="#ddd">1-2mg/noche · 30 días on / 30 off</text>
+    <text x="880" y="460" text-anchor="end" font-family="Playfair Display, Georgia, serif" font-size="32" font-weight="600" fill="#fff">$3,799</text>
+  </g>
+
+  <!-- Bottom -->
+  <line x1="440" y1="1200" x2="640" y2="1200" stroke="#C6A969" stroke-width="2" opacity="0.7"/>
+  <text x="540" y="1245" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#C6A969" letter-spacing="2">COA JANOSHIK PÚBLICO POR LOTE</text>
+  <text x="540" y="1300" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="20" font-weight="600" fill="#C6A969" letter-spacing="6">PEPTIQ MX</text>
+</svg>

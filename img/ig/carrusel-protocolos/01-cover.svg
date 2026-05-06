@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <line x1="80" y1="120" x2="1000" y2="120" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="165" font-family="'Inter',sans-serif" font-size="24" letter-spacing="16" text-anchor="middle" fill="#C6A969" opacity="0.8">PEPTIQ MX</text>
+
+  <text x="540" y="540" font-family="'Playfair Display',Georgia,serif" font-size="100" font-weight="400" font-style="italic" text-anchor="middle" fill="#f0e4c8">Seis protocolos.</text>
+  <text x="540" y="660" font-family="'Playfair Display',Georgia,serif" font-size="100" font-weight="500" font-style="italic" text-anchor="middle" fill="url(#gold)">Un estándar.</text>
+
+  <line x1="400" y1="740" x2="680" y2="740" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <g transform="translate(540 830)">
+    <circle cx="-250" cy="0" r="14" fill="#b53d3d"/>
+    <circle cx="-150" cy="0" r="14" fill="#C6A969"/>
+    <circle cx="-50" cy="0" r="14" fill="#a8c06a"/>
+    <circle cx="50" cy="0" r="14" fill="#f3ecd8"/>
+    <circle cx="150" cy="0" r="14" fill="#d0c9b8"/>
+    <circle cx="250" cy="0" r="14" fill="#78ae95"/>
+  </g>
+
+  <text x="540" y="900" font-family="'Inter',sans-serif" font-size="22" text-anchor="middle" fill="#a8987a" letter-spacing="6">WOLVERINE · HIGHLANDER · GLOW · PRIME · SHRED · SUPPORT</text>
+
+  <line x1="80" y1="1230" x2="1000" y2="1230" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1280" font-family="'Inter',sans-serif" font-size="22" letter-spacing="14" text-anchor="middle" fill="#C6A969" opacity="0.8">DESLIZA →</text>
+</svg>

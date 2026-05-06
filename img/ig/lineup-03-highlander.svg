@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="topFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- Top rule + eyebrow -->
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="22" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.75">03 · HIGHLANDER · LONGEVITY</text>
+
+  <!-- Vial photo: darkened via multiply overlay + vignette fade -->
+  <g>
+    <image href="/Users/end/Desktop/tdi-peptidos/peptiqmx/img/nad.jpg" x="0" y="220" width="1080" height="588" preserveAspectRatio="xMidYMid slice"/>
+    <!-- Global darken overlay (multiply black 0.25 makes whites into smoke) -->
+    <rect x="0" y="220" width="1080" height="588" fill="#000000" opacity="0.45"/>
+    <!-- Top fade into black -->
+    <rect x="0" y="220" width="1080" height="90" fill="url(#topFade)"/>
+    <!-- Bottom fade into black -->
+    <rect x="0" y="718" width="1080" height="90" fill="url(#bottomFade)"/>
+    <!-- Radial vignette to fade the remaining edges -->
+    <rect x="0" y="220" width="1080" height="588" fill="url(#vig)"/>
+  </g>
+
+  <!-- Line name -->
+  <text x="540" y="895" font-family="'Playfair Display',Georgia,serif" font-size="92" font-weight="500" fill="#C6A969" text-anchor="middle" letter-spacing="8">HIGHLANDER</text>
+
+  <!-- Compounds -->
+  <text x="540" y="945" font-family="'Inter',sans-serif" font-size="24" fill="#a8987a" text-anchor="middle" letter-spacing="6">NAD+ · EPITHALON</text>
+
+  <!-- Bottom rule + swipe -->
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="22" fill="#C6A969" text-anchor="middle" letter-spacing="12" opacity="0.8">DESLIZA →</text>
+</svg>

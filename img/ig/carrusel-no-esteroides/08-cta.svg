@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="ctaDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="50%" stop-color="#C6A969"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <image xlink:href="https://peptiqmx.com/img/covers/highlander-hero.png" x="0" y="0" width="1080" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1080" height="1080" fill="url(#ctaDark)"/>
+
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="22" fill="#E5C981" text-anchor="middle" letter-spacing="14">CHAPTER 06 · END</text>
+
+  <text x="540" y="370" font-family="'Playfair Display',Georgia,serif" font-size="68" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">No reemplazo.</text>
+  <text x="540" y="460" font-family="'Playfair Display',Georgia,serif" font-size="68" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">No esteroide.</text>
+  <text x="540" y="600" font-family="'Playfair Display',Georgia,serif" font-size="120" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="4" font-style="italic">Amplificación.</text>
+
+  <line x1="420" y1="660" x2="660" y2="660" stroke="#C6A969" stroke-width="1" opacity="0.7"/>
+  <text x="540" y="745" font-family="'Inter',sans-serif" font-size="22" fill="#f0e4c8" text-anchor="middle" letter-spacing="6">PROTOCOLO PERSONALIZADO · ASESORÍA INCLUIDA</text>
+  <text x="540" y="790" font-family="'Playfair Display',Georgia,serif" font-size="36" fill="url(#gold)" text-anchor="middle" font-style="italic">peptiqmx.com</text>
+
+  <g transform="translate(540 860)">
+    <circle cx="-200" cy="0" r="10" fill="#b53d3d"/>
+    <circle cx="-120" cy="0" r="10" fill="#C6A969"/>
+    <circle cx="-40" cy="0" r="10" fill="#a8c06a"/>
+    <circle cx="40" cy="0" r="10" fill="#f3ecd8"/>
+    <circle cx="120" cy="0" r="10" fill="#d0c9b8"/>
+    <circle cx="200" cy="0" r="10" fill="#78ae95"/>
+  </g>
+
+  <text x="540" y="925" font-family="'Inter',sans-serif" font-size="14" fill="#a8987a" text-anchor="middle" letter-spacing="2" opacity="0.85">El uso de este producto es responsabilidad de quien lo use, solo para investigación.</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">08 / 08</text>
+</svg>

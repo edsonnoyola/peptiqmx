@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="dark" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#000000" stop-opacity="0.55"/><stop offset="100%" stop-color="#000000" stop-opacity="0.92"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <image xlink:href="https://peptiqmx.com/img/covers/highlander-hero.png" x="0" y="0" width="1080" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1080" height="1080" fill="url(#dark)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="10">03 · LAS SIRTUINAS</text>
+  <text x="540" y="240" font-family="'Playfair Display',Georgia,serif" font-size="48" fill="#f0e4c8" text-anchor="middle" font-style="italic">Los genes de la longevidad.</text>
+  <g transform="translate(140 320)">
+    <g>
+      <rect width="320" height="80" fill="rgba(0,0,0,0.55)" stroke="url(#gold)" stroke-width="1.2" rx="2"/>
+      <text x="20" y="35" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#E5C981" font-style="italic">SIRT1</text>
+      <text x="20" y="62" font-family="'Inter',sans-serif" font-size="13" fill="#f0e4c8">Reparación ADN</text>
+    </g>
+    <g transform="translate(345 0)">
+      <rect width="320" height="80" fill="rgba(0,0,0,0.55)" stroke="url(#gold)" stroke-width="1.2" rx="2"/>
+      <text x="20" y="35" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#E5C981" font-style="italic">SIRT2</text>
+      <text x="20" y="62" font-family="'Inter',sans-serif" font-size="13" fill="#f0e4c8">Inflammaging</text>
+    </g>
+    <g transform="translate(0 100)">
+      <rect width="320" height="80" fill="rgba(0,0,0,0.55)" stroke="url(#gold)" stroke-width="1.2" rx="2"/>
+      <text x="20" y="35" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#E5C981" font-style="italic">SIRT3</text>
+      <text x="20" y="62" font-family="'Inter',sans-serif" font-size="13" fill="#f0e4c8">Mitocondria</text>
+    </g>
+    <g transform="translate(345 100)">
+      <rect width="320" height="80" fill="rgba(0,0,0,0.55)" stroke="url(#gold)" stroke-width="1.2" rx="2"/>
+      <text x="20" y="35" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#E5C981" font-style="italic">SIRT4-5</text>
+      <text x="20" y="62" font-family="'Inter',sans-serif" font-size="13" fill="#f0e4c8">Metabolismo</text>
+    </g>
+    <g transform="translate(0 200)">
+      <rect width="320" height="80" fill="rgba(0,0,0,0.55)" stroke="url(#gold)" stroke-width="1.2" rx="2"/>
+      <text x="20" y="35" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#E5C981" font-style="italic">SIRT6</text>
+      <text x="20" y="62" font-family="'Inter',sans-serif" font-size="13" fill="#f0e4c8">Telómeros</text>
+    </g>
+    <g transform="translate(345 200)">
+      <rect width="320" height="80" fill="rgba(0,0,0,0.55)" stroke="url(#gold)" stroke-width="1.2" rx="2"/>
+      <text x="20" y="35" font-family="'Playfair Display',Georgia,serif" font-size="22" fill="#E5C981" font-style="italic">SIRT7</text>
+      <text x="20" y="62" font-family="'Inter',sans-serif" font-size="13" fill="#f0e4c8">Estrés celular</text>
+    </g>
+  </g>
+
+  <text x="540" y="700" font-family="'Playfair Display',Georgia,serif" font-size="32" fill="#f0e4c8" text-anchor="middle" font-style="italic">Siete enzimas que controlan el envejecimiento.</text>
+  <text x="540" y="780" font-family="'Playfair Display',Georgia,serif" font-size="32" fill="url(#gold)" text-anchor="middle" font-style="italic">Y todas dependen de NAD+.</text>
+
+  <text x="540" y="900" font-family="'Inter',sans-serif" font-size="14" fill="#a8987a" text-anchor="middle" letter-spacing="2">SIRT1 · WIKIPEDIA · SINCLAIR · LIFESPAN BOOK 2019</text>
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">04 / 08</text>
+</svg>

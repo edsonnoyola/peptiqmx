@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1080" height="1920" fill="#000" opacity="0.4"/>
+  <line x1="120" y1="700" x2="960" y2="700" stroke="#C6A969" stroke-width="1" opacity="0.6"/>
+  <text x="540" y="780" font-family="'Inter',sans-serif" font-size="30" letter-spacing="18" text-anchor="middle" fill="#C6A969" opacity="0.85">HIGHLANDER · LONGEVITY</text>
+  <text x="540" y="1050" font-family="'Playfair Display',Georgia,serif" font-size="88" font-style="italic" fill="#f0e4c8" text-anchor="middle">La edad no es</text>
+  <text x="540" y="1160" font-family="'Playfair Display',Georgia,serif" font-size="88" font-style="italic" font-weight="500" fill="url(#gold)" text-anchor="middle">un destino.</text>
+  <line x1="120" y1="1240" x2="960" y2="1240" stroke="#C6A969" stroke-width="1" opacity="0.6"/>
+</svg>

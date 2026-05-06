@@ -1,0 +1,23 @@
+SUBJECT: {nombre_negocio} — péptidos para dermatología estética
+DELAY DAYS: 0
+
+--- BODY ---
+Hola {nombre},
+
+Vi que {nombre_negocio} se dedica a dermatología estética en {ciudad}. Te contacto porque distribuimos péptidos que varios dermatólogos en México están integrando en sus protocolos.
+
+Péptidos más usados en dermatología:
+• GHK-Cu — regeneración cutánea, síntesis de colágeno
+• Colágeno tipo I/III — elasticidad y firmeza
+• BPC-157 — cicatrización y antiinflamatorio
+• Glutatión — luminosidad, manchas
+
+Con certificado de análisis y precios de mayoreo para consultorios.
+
+¿Te paso el catálogo?
+
+Saludos,
+{firma}
+{whatsapp_link}
+
+⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador.

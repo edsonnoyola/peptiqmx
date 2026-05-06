@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PEPTIQ sticker WITH 2mm bleed · Final size 44×19mm · Cut at 40×15mm -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="44mm" height="19mm"
+     viewBox="0 0 440 190">
+  <defs>
+    <style>
+      .brand{font-family:'Playfair Display',Georgia,serif;font-weight:600;fill:#C6A969;letter-spacing:14px}
+      .tagline{font-family:'Inter',Arial,sans-serif;font-weight:500;fill:#C6A969;letter-spacing:6px}
+      .rule{stroke:#C6A969;stroke-width:1;fill:none}
+      .cut{stroke:#FF00FF;stroke-width:0.5;fill:none;stroke-dasharray:4 2}
+    </style>
+    <linearGradient id="foil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4B97A"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#9F8347"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BLEED zone (extends 2mm beyond cut line) -->
+  <rect width="440" height="190" fill="#0E0E0E"/>
+
+  <!-- PEPTIQ -->
+  <text x="220" y="98" text-anchor="middle" class="brand" font-size="48" fill="url(#foil)">PEPTIQ</text>
+  <line x1="180" y1="112" x2="260" y2="112" class="rule" opacity="0.7"/>
+  <text x="220" y="135" text-anchor="middle" class="tagline" font-size="11" fill="url(#foil)">HACK YOUR LIMITS</text>
+
+  <!-- CUT LINE (magenta, remove before print) -->
+  <rect x="20" y="20" width="400" height="150" rx="3" class="cut"/>
+</svg>

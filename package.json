@@ -7,6 +7,7 @@
     "prompts": "node generate-prompts-only.js"
   },
   "dependencies": {
+    "@netlify/blobs": "^10.7.4",
     "replicate": "^0.32.1"
   }
 }

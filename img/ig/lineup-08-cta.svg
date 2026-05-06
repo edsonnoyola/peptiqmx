@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="22" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.75">EL ESTÁNDAR</text>
+
+  <text x="540" y="320" font-family="'Playfair Display',Georgia,serif" font-size="76" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Un lote.</text>
+  <text x="540" y="410" font-family="'Playfair Display',Georgia,serif" font-size="76" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Un protocolo.</text>
+  <text x="540" y="500" font-family="'Playfair Display',Georgia,serif" font-size="76" font-weight="500" fill="url(#gold)" text-anchor="middle" font-style="italic">Un estándar verificado.</text>
+
+  <line x1="420" y1="560" x2="660" y2="560" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <g font-family="'Inter',sans-serif" fill="#cfc3a5" text-anchor="middle">
+    <text x="540" y="650" font-size="28">HPLC independiente · 99%+ pureza</text>
+    <text x="540" y="695" font-size="28">COA publicado por lote antes de comprar</text>
+    <text x="540" y="740" font-size="28">Envío discreto 24-72h a todo México</text>
+  </g>
+
+  <g transform="translate(540 870)" text-anchor="middle">
+    <text font-family="'Playfair Display',Georgia,serif" font-size="44" fill="url(#gold)" font-weight="500">peptiqmx.com</text>
+    <text y="50" font-family="'Inter',sans-serif" font-size="22" fill="#a8987a" letter-spacing="4">ASESORÍA PRIVADA EN BIO</text>
+  </g>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="22" fill="url(#gold)" text-anchor="middle" letter-spacing="10" font-weight="600">PEPTIQ MX</text>
+</svg>

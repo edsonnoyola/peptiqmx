@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="dark" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#000000" stop-opacity="0.55"/><stop offset="100%" stop-color="#000000" stop-opacity="0.92"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <image xlink:href="https://peptiqmx.com/img/covers/wolverine-hero.png" x="0" y="0" width="1080" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1080" height="1080" fill="url(#dark)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="10">02 · BPC-157 · CONSTRUYE LAS VÍAS</text>
+  <text x="540" y="270" font-family="'Inter',sans-serif" font-size="22" fill="#a8987a" text-anchor="middle" letter-spacing="6">10MG · DERIVADO DEL JUGO GÁSTRICO</text>
+  <text x="540" y="400" font-family="'Playfair Display',Georgia,serif" font-size="138" fill="url(#gold)" text-anchor="middle" letter-spacing="4">BPC-157</text>
+  <line x1="420" y1="460" x2="660" y2="460" stroke="#C6A969" stroke-width="1" opacity="0.7"/>
+  <text x="540" y="560" font-family="'Playfair Display',Georgia,serif" font-size="42" fill="#f0e4c8" text-anchor="middle" font-style="italic">Protección y angiogénesis.</text>
+  <g font-family="'Inter',sans-serif" font-size="20" fill="#f0e4c8">
+    <text x="540" y="660" text-anchor="middle"><tspan fill="#E5C981">→</tspan> Vía CRC-cavalin1-eNOS</text>
+    <text x="540" y="705" text-anchor="middle"><tspan fill="#E5C981">→</tspan> Activación óxido nítrico</text>
+    <text x="540" y="750" text-anchor="middle"><tspan fill="#E5C981">→</tspan> Forma vasos sanguíneos nuevos</text>
+    <text x="540" y="795" text-anchor="middle"><tspan fill="#E5C981">→</tspan> Restaura epitelio gastrointestinal</text>
+  </g>
+  <text x="540" y="880" font-family="'Playfair Display',Georgia,serif" font-size="28" fill="url(#gold)" text-anchor="middle" font-style="italic">Sin flujo sanguíneo · no hay reparación.</text>
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">03 / 08</text>
+</svg>

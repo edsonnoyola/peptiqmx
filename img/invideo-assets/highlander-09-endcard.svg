@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0e0b07" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1920" fill="#0e0b07"/>
+  <rect width="1080" height="1920" fill="url(#vignette)"/>
+
+  <line x1="80" y1="140" x2="1000" y2="140" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="182" font-family="'Inter',sans-serif" font-size="24" fill="#C6A969" text-anchor="middle" letter-spacing="18" opacity="0.75">HIGHLANDER · LONGEVITY</text>
+
+  <text x="540" y="760" font-family="'Playfair Display',Georgia,serif" font-size="120" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Vitality,</text>
+  <text x="540" y="890" font-family="'Playfair Display',Georgia,serif" font-size="120" font-weight="500" fill="url(#gold)" text-anchor="middle" font-style="italic">engineered.</text>
+
+  <line x1="420" y1="960" x2="660" y2="960" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <text x="540" y="1180" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="160" font-weight="700" letter-spacing="6" text-anchor="middle" fill="#f0e4c8">PEPTI<tspan fill="url(#gold)">Q</tspan></text>
+
+  <line x1="340" y1="1240" x2="740" y2="1240" stroke="#C6A969" stroke-width="1" opacity="0.6"/>
+
+  <text x="540" y="1320" font-family="'Inter',sans-serif" font-size="38" font-weight="400" letter-spacing="14" text-anchor="middle" fill="#C6A969" opacity="0.85">HACK YOUR LIMITS</text>
+
+  <text x="540" y="1600" font-family="'Playfair Display',Georgia,serif" font-size="44" font-weight="500" font-style="italic" fill="url(#gold)" text-anchor="middle">peptiqmx.com/highlander</text>
+  <text x="540" y="1660" font-family="'Inter',sans-serif" font-size="22" fill="#a8987a" text-anchor="middle" letter-spacing="6">ASESORÍA PRIVADA · WHATSAPP</text>
+
+  <line x1="80" y1="1790" x2="1000" y2="1790" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+
+  <text x="540" y="1840" font-family="'Inter',sans-serif" font-size="16" fill="#6b5d44" text-anchor="middle" letter-spacing="2" opacity="0.7">El uso de este producto es responsabilidad de quien lo use,</text>
+  <text x="540" y="1866" font-family="'Inter',sans-serif" font-size="16" fill="#6b5d44" text-anchor="middle" letter-spacing="2" opacity="0.7">solo para investigación.</text>
+</svg>

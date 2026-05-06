@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+    <linearGradient id="bottomGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <!-- Top fade to black on top 15% -->
+  <rect x="0" y="0" width="1080" height="290" fill="url(#bottomGrad)" transform="rotate(180 540 145)"/>
+  <!-- Bottom fade to black 60% -->
+  <rect x="0" y="1100" width="1080" height="820" fill="url(#bottomGrad)"/>
+
+  <!-- Top eyebrow -->
+  <line x1="80" y1="160" x2="1000" y2="160" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+  <text x="540" y="215" font-family="'Inter',sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.9">05 · WOLVERINE · RECOVERY</text>
+
+  <!-- Compound name -->
+  <text x="540" y="1320" font-family="'Playfair Display',Georgia,serif" font-size="160" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="4">HEAL STACK</text>
+  <text x="540" y="1385" font-family="'Inter',sans-serif" font-size="30" fill="#a8987a" text-anchor="middle" letter-spacing="10">BPC + TB · 20 MG</text>
+
+  <line x1="420" y1="1440" x2="660" y2="1440" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <!-- Benefit -->
+  <text x="540" y="1550" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Protocolo completo</text>
+  <text x="540" y="1630" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">de recuperación.</text>
+
+  <!-- Bottom brand -->
+  <line x1="80" y1="1800" x2="1000" y2="1800" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+  <text x="540" y="1855" font-family="'Inter',sans-serif" font-size="30" fill="url(#gold)" text-anchor="middle" letter-spacing="14" font-weight="600">PEPTIQMX.COM</text>
+</svg>

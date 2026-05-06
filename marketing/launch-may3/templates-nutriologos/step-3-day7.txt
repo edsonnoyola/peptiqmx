@@ -1,0 +1,17 @@
+SUBJECT: Catálogo péptidos mayoreo — {nombre_negocio}
+DELAY DAYS: 7
+
+--- BODY ---
+Hola {nombre},
+
+Último mensaje, no quiero ser insistente.
+
+Te dejo el link a nuestro catálogo por si en algún momento te interesa explorar péptidos como complemento para tus pacientes:
+https://peptiqmx.com/profesionales
+
+Si no es el momento, lo entiendo perfecto. Quedo a tus órdenes.
+
+{firma}
+{whatsapp_link}
+
+⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador.

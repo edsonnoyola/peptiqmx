@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0e0b07"/><stop offset="100%" stop-color="#000000"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#C6A969" text-anchor="middle" letter-spacing="10" opacity="0.75">05 · CÓMO DISTINGUIRLOS EN 30 SEG</text>
+
+  <text x="540" y="240" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Abre su sitio.</text>
+  <text x="540" y="310" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="url(#gold)" text-anchor="middle" font-style="italic">Busca esto:</text>
+
+  <g transform="translate(140 400)" font-family="'Playfair Display',Georgia,serif" fill="#f0e4c8">
+    <text x="0" y="40" font-size="30">01.</text>
+    <text x="80" y="40" font-size="30">¿La marca es de ellos o "venden marcas"?</text>
+
+    <text x="0" y="115" font-size="30">02.</text>
+    <text x="80" y="115" font-size="30">¿Hay COA público por lote · descargable?</text>
+
+    <text x="0" y="190" font-size="30">03.</text>
+    <text x="80" y="190" font-size="30">¿Mencionan Janoshik · Anabolic Lab · 3rd party?</text>
+
+    <text x="0" y="265" font-size="30">04.</text>
+    <text x="80" y="265" font-size="30">¿La fotografía es lifestyle editorial · o stock?</text>
+
+    <text x="0" y="340" font-size="30">05.</text>
+    <text x="80" y="340" font-size="30">¿Hay asesoría 1-on-1 incluida?</text>
+
+    <g fill="url(#gold)">
+      <text x="0" y="40" font-size="30">01.</text>
+      <text x="0" y="115" font-size="30">02.</text>
+      <text x="0" y="190" font-size="30">03.</text>
+      <text x="0" y="265" font-size="30">04.</text>
+      <text x="0" y="340" font-size="30">05.</text>
+    </g>
+  </g>
+
+  <text x="540" y="900" font-family="'Inter',sans-serif" font-size="18" fill="#a8987a" text-anchor="middle" letter-spacing="4">3 NO EN ESAS 5 = RESELLER · NO ARRIESGUES</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">06 / 08</text>
+</svg>

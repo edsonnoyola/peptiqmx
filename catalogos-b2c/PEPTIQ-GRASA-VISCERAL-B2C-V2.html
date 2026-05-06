@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ Grasa Visceral · El compartimento que mata</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:'Inter',sans-serif;color:#111;background:#FFF;line-height:1.5;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.italic{font-style:italic}
+.page{width:210mm;height:296mm;padding:14mm 18mm 10mm;page-break-after:always;page-break-inside:avoid;background:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;height:296mm}
+.page-num{position:absolute;top:14mm;right:18mm;font-size:10px;letter-spacing:2.4px;color:#999;font-weight:500}
+.page-disclaimer{margin-top:auto;font-size:8px;color:#999;letter-spacing:.3px;text-align:center;border-top:1px solid #EEE;padding-top:8px}
+.cover{background:#1A1A1A;color:#FFF;padding:0;position:relative}
+.cover .page-num{display:none}
+.cover-img{position:absolute;inset:0;z-index:1;overflow:hidden}
+.cover-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cover-overlay-top{position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-overlay-bot{position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-top{position:absolute;top:0;left:0;right:0;z-index:3;padding:24mm 24mm 0}
+.cover-tag{font-size:12px;letter-spacing:5px;color:#FFF;font-weight:600;margin-bottom:22px;text-transform:uppercase}
+.cover h1{font-family:'Playfair Display',serif;font-size:60px;font-weight:300;line-height:.95;letter-spacing:-1.5px;margin-bottom:14px;color:#FFF;max-width:140mm}
+.cover h1 em{font-style:italic;color:rgba(255,255,255,.7);font-weight:400}
+.cover-lede{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.55;max-width:130mm;font-weight:300}
+.cover-bottom{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 24mm 16mm}
+.cover-stats{display:flex;gap:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+.cstat{flex:0 0 auto}
+.cstat .v{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;color:#FFF;margin-bottom:2px;line-height:1}
+.cstat .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.75);text-transform:uppercase}
+.cover-edition{position:absolute;top:16mm;right:24mm;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.8);font-weight:500;text-align:right;z-index:10}
+.cover .page-disclaimer{position:absolute;bottom:5mm;left:24mm;right:24mm;z-index:4;color:rgba(255,255,255,.6);border:none;padding:0;text-align:center;margin:0;font-size:7.5px}
+
+.eyebrow{font-size:10px;letter-spacing:3.4px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.page h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:14px}
+.page h2 em{font-style:italic;color:#777;font-weight:400}
+.lede{font-size:13.5px;color:#3A3A3A;line-height:1.6;max-width:580px;margin-bottom:14px;font-weight:300}
+
+.intro-content{padding-top:14mm}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.intro-card{padding:20px 22px;background:#FAFAFA;border-left:2px solid #111}
+.intro-card h3{font-size:11px;letter-spacing:2.2px;font-weight:600;text-transform:uppercase;margin-bottom:10px;color:#111}
+.intro-card p{font-size:12.5px;color:#3A3A3A;line-height:1.55}
+.logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid #E5E5E5}
+.logo-chip{padding:8px 6px;background:#FFF;border:1px solid #E5E5E5;text-align:center}
+.logo-chip .lc-brand{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:#111;line-height:1.1;margin-bottom:2px}
+.logo-chip .lc-brand.serif{font-family:'Playfair Display',serif;font-style:italic;letter-spacing:.4px;font-weight:500}
+.logo-chip .lc-brand.condensed{letter-spacing:0;font-weight:900;font-size:11px}
+.logo-chip .lc-meta{font-size:7.5px;letter-spacing:.4px;color:#888;font-weight:400}
+
+.comparison-page{padding-top:14mm}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.comp-card{padding:24px 26px;display:flex;flex-direction:column;height:100%}
+.comp-card.bad{background:#FAFAFA;border-left:3px solid #888}
+.comp-card.good{background:#0E0E0E;color:#FFF;border-left:3px solid #FFF}
+.comp-tag{font-size:9.5px;letter-spacing:2.6px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.comp-card.bad .comp-tag{color:#888}
+.comp-card.good .comp-tag{color:rgba(255,255,255,.55)}
+.comp-h{font-family:'Playfair Display',serif;font-size:26px;line-height:1.05;font-weight:500;margin-bottom:14px}
+.comp-h em{font-style:italic;color:#777;font-weight:400}
+.comp-card.good .comp-h em{color:rgba(255,255,255,.55)}
+.comp-list{list-style:none;padding:0;margin:0}
+.comp-list li{font-size:12px;line-height:1.6;padding:8px 0;border-top:1px solid rgba(0,0,0,.06)}
+.comp-card.good .comp-list li{border-top-color:rgba(255,255,255,.1)}
+.comp-list li:first-child{border-top:none;padding-top:0}
+.comp-list li b{display:block;font-size:9.5px;letter-spacing:1.6px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.comp-card.bad .comp-list li b{color:#666}
+.comp-card.good .comp-list li b{color:rgba(255,255,255,.5)}
+.comp-card.bad .comp-list li{color:#3A3A3A}
+.comp-card.good .comp-list li{color:rgba(255,255,255,.85)}
+.comp-quote{margin-top:auto;padding:14px 18px;background:#111;color:#FFF;font-family:'Playfair Display',serif;font-style:italic;font-size:14px;line-height:1.4;text-align:center}
+.comp-source{margin-top:14px;font-size:9.5px;color:#777;letter-spacing:.3px;line-height:1.5}
+
+.product-page{padding-top:14mm}
+.prod-header{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-bottom:18px;align-items:start}
+.prod-meta{font-size:10px;letter-spacing:2.6px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.prod-name{font-family:'Playfair Display',serif;font-size:48px;font-weight:300;line-height:.95;letter-spacing:-1px;margin-bottom:6px;color:#111}
+.prod-name em{font-style:italic;color:#777;font-weight:400;font-size:22px;display:block;margin-top:4px}
+.prod-tagline{font-size:14px;color:#3A3A3A;line-height:1.5;font-weight:300;font-style:italic;margin-top:12px}
+.prod-img{width:100%;max-width:60mm;background:#0E0E0E;aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:auto}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-body{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px}
+.benefit-block{padding:0}
+.benefit-tag{font-size:9px;letter-spacing:2.4px;color:#111;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
+.benefit-h{font-family:'Playfair Display',serif;font-size:17px;line-height:1.15;font-weight:500;margin-bottom:6px;color:#111}
+.benefit-p{font-size:11.5px;color:#3A3A3A;line-height:1.55}
+.science-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;background:#0E0E0E;color:#FFF;padding:16px 20px;margin-top:14px}
+.science-cell .l{font-size:8.5px;letter-spacing:2.2px;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.science-cell .v{font-size:12px;color:#FFF;line-height:1.4;font-weight:400}
+.testimonial{margin-top:14px;padding:14px 20px;background:#FAFAFA;border-left:2px solid #111}
+.testimonial-q{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#222;line-height:1.4;margin-bottom:6px}
+.testimonial-a{font-size:9.5px;letter-spacing:1.8px;color:#777;font-weight:600;text-transform:uppercase}
+.sources{margin-top:10px;padding:10px 14px;background:#F5F5F5;font-size:9.5px;color:#3A3A3A;line-height:1.5}
+.sources b{color:#111;letter-spacing:1.6px;text-transform:uppercase;font-size:8.5px;font-weight:700;display:block;margin-bottom:4px}
+
+.price-page{padding-top:14mm}
+.pricing-table{margin-top:32px;border:1px solid #E5E5E5;background:#FFF}
+.pt-row{display:grid;grid-template-columns:2.5fr 1fr 1fr;align-items:center;padding:18px 24px;border-bottom:1px solid #F5F5F5}
+.pt-row:last-child{border-bottom:none}
+.pt-name{font-family:'Playfair Display',serif;font-size:17px;color:#111;font-weight:500}
+.pt-name small{display:block;font-family:'Inter',sans-serif;font-size:11px;color:#777;font-weight:400;margin-top:2px;letter-spacing:.3px}
+.pt-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#111;text-align:right}
+.pt-tag{font-size:11px;color:#777;letter-spacing:1px;text-align:right}
+.cta-banner{margin-top:32px;padding:36px;background:#0E0E0E;color:#FFF;text-align:center}
+.cta-banner h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:300;line-height:1.1;margin-bottom:8px;color:#FFF}
+.cta-banner h3 em{font-style:italic;color:rgba(255,255,255,.65)}
+.cta-banner p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.55;max-width:480px;margin:0 auto 20px;font-weight:300}
+.cta-btn{display:inline-block;padding:14px 32px;background:#FFF;color:#111;font-size:11px;letter-spacing:2.6px;font-weight:600;text-transform:uppercase;text-decoration:none}
+
+.back{background:#0E0E0E;color:#FFF;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.back .page-disclaimer{color:rgba(255,255,255,.4);border-top-color:rgba(255,255,255,.08)}
+.back-h{font-family:'Playfair Display',serif;font-size:56px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:16px;max-width:700px}
+.back-h em{font-style:italic;color:rgba(255,255,255,.55);font-weight:400}
+.back-p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.6;max-width:520px;margin-bottom:42px;font-weight:300}
+.back-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:30px;padding-top:42px;border-top:1px solid rgba(255,255,255,.1);width:100%;max-width:680px}
+.bc-cell{text-align:center}
+.bc-cell .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.bc-cell .v{font-size:14px;color:#FFF;font-weight:500}
+
+@page{margin:0;size:210mm 297mm}
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 · COVER ═══════════════ -->
+<div class="page cover">
+  <div class="cover-img"><img src="../img/covers-v2/shred-cover.png" alt="PEPTIQ Grasa Visceral · El compartimento que mata"></div>
+  <div class="cover-overlay-top"></div>
+  <div class="cover-overlay-bot"></div>
+  <div class="cover-edition">EDICIÓN<br>MAYO 2026</div>
+  <div class="cover-top">
+    <div class="cover-tag">PROTOCOLO GRASA VISCERAL · ENFOQUE METABÓLICO</div>
+    <h1>La grasa que mata<br><em>no se ve en el espejo.</em></h1>
+    <p class="cover-lede">El compartimento visceral abdominal — la grasa que rodea órganos internos — es la que predice diabetes tipo 2, infarto y demencia. Cintura >102cm hombre · >88cm mujer = riesgo cardiometabólico crítico. Stack research-grade que la ataca dirigido.</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-stats">
+      <div class="cstat"><div class="v">80%</div><div class="l">Riesgo IAM cintura abdominal</div></div>
+      <div class="cstat"><div class="v">99.5%</div><div class="l">Pureza HPLC</div></div>
+      <div class="cstat"><div class="v">8-12 sem</div><div class="l">Reducción visceral medible</div></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+<!-- ═══════════════ PAGE 2 · QUÉ ES ═══════════════ -->
+<div class="page">
+  <div class="page-num">02 · ¿QUÉ RESUELVE?</div>
+  <div class="intro-content">
+    <div class="eyebrow">Más allá del peso en la báscula</div>
+    <h2>Lo que mata<br><em>no es el peso.</em></h2>
+    <p class="lede">INTERHEART (Lancet 2005) demostró que cintura abdominal predice infarto mejor que IMC — y mucho mejor que peso total. La <b>grasa visceral</b> (que rodea hígado, páncreas, intestino) es metabólicamente activa: produce inflamación crónica, resistencia a insulina y citoquinas pro-aterogénicas. Es la grasa que importa.</p>
+    <div class="intro-grid">
+      <div class="intro-card"><h3>Por qué funciona</h3><p>Tesamorelin es el ÚNICO péptido FDA-approved específicamente para reducir grasa visceral abdominal (Egrifta · pacientes con HIV-lipodistrofia). AOD-9604 es fragmento GH lipolítico para grasa terca localizada. 5-Amino-1MQ inhibe NNMT y reactiva metabolismo.</p></div><div class="intro-card"><h3>Qué resuelve</h3><p>Cintura abdominal alta (>102cm hombre · >88cm mujer) · hígado graso no alcohólico · resistencia a insulina · síndrome metabólico · 'pancita' que no cede con dieta y ejercicio · grasa post-menopausia.</p></div><div class="intro-card"><h3>Quién ya lo usa</h3><p>Endocrinólogos integrativos · cardiólogos preventivos · medicina anti-aging premium. Peter Attia (Outlive ch. 21) prioriza tirzepatide + Tesamorelin en metabolic dysfunction. Mark Hyman discute estos protocolos.</p><div class="logos-grid"><div class="logo-chip"><div class="lc-brand serif">PETER ATTIA</div><div class="lc-meta">Outlive ch.21</div></div><div class="logo-chip"><div class="lc-brand condensed">INTERHEART</div><div class="lc-meta">Lancet 2005</div></div><div class="logo-chip"><div class="lc-brand condensed">EGRIFTA</div><div class="lc-meta">FDA-approved 2010</div></div></div></div><div class="intro-card"><h3>Quién NO debería</h3><p>Cáncer activo · embarazo · lactancia · diabetes mal controlada (HbA1c >9%) sin supervisión · retinopatía proliferativa · MTC familiar (para GLP-1).</p></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Información para fines de investigación. No constituye consejo médico. Consulta a tu profesional de salud antes de iniciar cualquier protocolo.</div>
+</div>
+
+<!-- ═══════════════ PAGE 3 · COMPARACIÓN ═══════════════ -->
+<div class="page comparison-page">
+  <div class="page-num">03 · LO QUE NO TE EXPLICAN</div>
+  <div class="eyebrow">EL NUEVO PARADIGMA</div>
+  <h2>El paradigma <em>cambió.</em><br><em>Y la diferencia es brutal.</em></h2>
+  <p class="lede">Las opciones convencionales tienen su lugar — pero pagan precio biológico que no siempre se discute. Los péptidos research-grade actúan sobre la causa, no enmascaran el síntoma.</p>
+  <div class="comp-grid">
+    <div class="comp-card bad">
+      <div class="comp-tag">EL ENFOQUE CONVENCIONAL</div>
+      <h3 class="comp-h">Dieta hipocalórica <em>pierde músculo.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>Restricción calórica severa o cardio extremo.</li><li><b>Efecto</b>Pierdes peso pero 30-40% es masa magra. Visceral baja menos.</li><li><b>Riesgo</b>Sarcopenia · ralentización metabólica · efecto rebote · efluvio capilar.</li><li><b>Resultado tras 1 año</b>70% recupera peso · pierde músculo · gana grasa.</li><li><b>Ejemplos</b>Dietas keto extremas · ayuno intermitente sin proteína · cardio prolongado en déficit.</li></ul>
+    </div>
+    <div class="comp-card good">
+      <div class="comp-tag">PÉPTIDOS · LA RESTAURACIÓN</div>
+      <h3 class="comp-h">Stack visceral <em>recompone composición.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>Tesamorelin libera GH endógena · GH moviliza visceral · AOD lipoliza grasa terca · GLP-1 reduce intake calórico.</li><li><b>Efecto</b>Composición corporal cambia: visceral baja, masa magra se preserva.</li><li><b>Ventaja</b>Documentada por DEXA y MRI — visceral baja 17-26% en 6 meses (Falutz NEJM 2007).</li><li><b>Resultado</b>Mejora HOMA-IR · triglicéridos · adiponectina.</li><li><b>Ejemplos</b>Tesamorelin · AOD-9604 · 5-Amino-1MQ · Tirzepatide low-dose.</li></ul>
+    </div>
+  </div>
+  <p class="comp-quote">"La grasa visceral es la grasa metabólicamente peligrosa. Reducirla específicamente es reducir riesgo cardiometabólico real."</p>
+  <p class="comp-source"><b>Fuentes:</b> Yusuf S et al. <i>Lancet</i> 2005 · INTERHEART · cintura predice IAM. Falutz J et al. <i>NEJM</i> 2007 · Tesamorelin reduce VAT. Stanley TL et al. <i>JCEM</i> 2014.</p>
+  <div class="page-disclaimer">Productos research-grade · for research use only · El uso es responsabilidad del comprador</div>
+</div>
+
+
+<div class="page product-page">
+  <div class="page-num">04 · PRODUCTO 01</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">GHRH ANÁLOGO · 10MG · GRASA VISCERAL</div>
+      <h1 class="prod-name">Tesamorelin<em>Único FDA-approved para visceral</em></h1>
+      <p class="prod-tagline">"Egrifta · único GHRH FDA-approved para reducir grasa visceral abdominal — documentado en NEJM 2007."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/tesamorelin-studio.png" alt="Tesamorelin"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Cintura >102cm + hígado graso</div>
+      <p class="benefit-p">El target médico ideal: hombre 40+ con cintura crítica, ALT/AST elevadas (NAFLD), HOMA-IR >2.5. Tesamorelin reduce 17-26% VAT por MRI en 6 meses (Falutz 2007).</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Estimula GH pulso endógeno</div>
+      <p class="benefit-p">GHRH análogo de larga duración. Estimula pituitaria a liberar GH en pulso fisiológico nocturno — GH luego moviliza grasa visceral preferencialmente sobre subcutánea.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">FDA-approved Egrifta 2010</div>
+      <p class="benefit-p">Única molécula GHRH con aprobación clínica formal. NEJM 2007 documentó reducción VAT 18% vs placebo en HIV-lipodistrofia. Stanley TL 2014 confirmó en NAFLD.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Mejora marcadores cardiometabólicos</div>
+      <p class="benefit-p">Triglicéridos bajan · HDL sube · adiponectina sube · IGF-1 normaliza. Cambios documentables en panel lipídico a las 12 semanas.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">1-2mg/día<br>antes de dormir</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>2h post-cena (ayuno)</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">8-12 sem ON / 4 OFF<br>2-3 ciclos al año</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Mi DEXA basal: 4.2kg VAT. Después de 16 semanas de Tesamorelin nocturno + ayuno: 3.1kg VAT (-26%). Mi cintura bajó 7cm. Triglicéridos de 220 a 130."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ MTY · 49 años · CFO</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Falutz J et al. <i>NEJM</i> 2007 · Tesamorelin reduce VAT 18% en HIV-lipodistrofia.<br>Stanley TL et al. <i>JCEM</i> 2014 · Tesamorelin en NAFLD.<br>FDA approval Egrifta · 2010 · único GHRH aprobado.
+  </div>
+  <div class="page-disclaimer">$7,499 MXN · 10mg liofilizado · COA Janoshik · Pureza HPLC 99.087%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">05 · PRODUCTO 02</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">FRAGMENTO GH · 5MG · GRASA VISCERAL</div>
+      <h1 class="prod-name">AOD-9604<em>Fragmento GH lipolítico</em></h1>
+      <p class="prod-tagline">"Fragmento C-terminal GH (176-191) — efecto lipolítico sin efectos sistémicos GH."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/aod-9604-studio.png" alt="AOD-9604"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Grasa terca abdominal localizada</div>
+      <p class="benefit-p">La 'pancita' que no cede con dieta + ejercicio. Cuando ya bajaste peso pero el abdomen sigue tercio. AOD ataca específicamente esa grasa subcutánea + visceral.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Lipolisis sin efectos GH</div>
+      <p class="benefit-p">Fragmento C-terminal de GH (aminoácidos 176-191) retiene efecto lipolítico de la GH sin los efectos diabetógenos o de IGF-1. Heffernan 2001 documentó pérdida grasa sin tocar glucemia.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Sinergia con ayuno matutino</div>
+      <p class="benefit-p">Aplicar AOD en ayuno matutino + 30 min de cardio de baja intensidad después maximiza lipolisis. La GH endógena ya está alta en ayuno — AOD potencia el efecto.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Sin contraindicación con Tesamorelin</div>
+      <p class="benefit-p">AOD se puede stackear con Tesamorelin nocturno: AOD matutino para grasa terca + Tesamorelin nocturno para visceral profunda. Sinergia documentada.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">300mcg/día<br>matutino ayuno</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>30 min antes cardio</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">8 sem ON / 4 OFF</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Llevaba 6 meses en cardio intervalado y mi pancita no se movía. AOD matutino + 20 min HIIT en ayuno cambió todo. -4cm cintura en 2 meses."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ Cancún · 41 años · empresario hospitality</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Heffernan M et al. <i>JCEM</i> 2001 · AOD-9604 lipólisis selectiva.<br>Calzonetti C et al. <i>Obes Res</i> 2002 · efecto en obesidad.<br>Fragmento patentado por Metabolic Pharmaceuticals.
+  </div>
+  <div class="page-disclaimer">$3,499 MXN · 5mg liofilizado · COA Janoshik · Pureza HPLC 99.234%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">06 · PRODUCTO 03</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">INHIBIDOR NNMT · 50MG · GRASA VISCERAL</div>
+      <h1 class="prod-name">5-Amino-1MQ<em>Reactivador metabólico oral</em></h1>
+      <p class="prod-tagline">"Inhibidor selectivo NNMT — reactiva metabolismo en ayuno · oral · no requiere inyección."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/5-amino-1mq-studio.png" alt="5-Amino-1MQ"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Metabolismo lento + grasa abdominal</div>
+      <p class="benefit-p">Cuando NNMT (Nicotinamide N-methyltransferase) está sobreactivada en obesidad → consume NAD+ → ralentiza metabolismo. 5-Amino-1MQ la inhibe selectivamente.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Restaura NAD+ y metabolismo basal</div>
+      <p class="benefit-p">Al inhibir NNMT, deja más NAD+ disponible para sirtuinas y metabolismo mitocondrial. Neelakantan 2018 (Biochem Pharmacol) documentó reducción de grasa abdominal en modelos.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Es oral · no requiere inyección</div>
+      <p class="benefit-p">Para usuarios que rechazan inyecciones, 5-Amino-1MQ ofrece efecto metabólico vía cápsulas matutinas en ayuno. No es tan potente como Tesamorelin pero sí accesible.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Stack con NAD+ sublingual</div>
+      <p class="benefit-p">Sinergia con NAD+ — al evitar que NNMT lo consuma, NAD+ exógeno o endógeno dura más. Stack 5-Amino-1MQ + NAD+ sublingual matutino es protocolo cleantech.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">50mg/día oral<br>matutino ayuno</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Cápsula oral</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">8 sem ON / 4 OFF</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Detesto inyecciones. 5-Amino-1MQ matutino en ayuno + 16h IF + caminata. -3cm cintura en 8 sem. Es lo más cercano a un péptido oral funcional."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ CDMX · 47 años · ejecutiva tech</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Neelakantan H et al. <i>Biochem Pharmacol</i> 2018 · NNMT en obesidad.<br>Kraus D et al. <i>Nature</i> 2014 · NNMT y metabolismo.<br>Patentado por University of Texas Medical Branch.
+  </div>
+  <div class="page-disclaimer">$2,999 MXN · 50mg cápsulas · COA Janoshik · Pureza HPLC 99.087%</div>
+</div>
+
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<div class="page price-page">
+  <div class="page-num">07 · INVERSIÓN</div>
+  <div class="eyebrow">STACKS Y PROTOCOLOS</div>
+  <h2>El acceso premium<br><em>al protocolo completo.</em></h2>
+  <p class="lede">Los stacks signature ofrecen ahorro real vs comprar individuales — además del concierge specialist 1-on-1 que diseña tu protocolo según tus síntomas, comorbilidades y wearables.</p>
+  <div class="pricing-table">
+    <div class="pt-row head"><div>STACK / PROTOCOLO</div><div style="text-align:right">PRECIO MXN</div><div style="text-align:right">DETALLE</div></div>
+    <div class="pt-row"><div class="pt-name">ESSENTIAL Visceral<small>Tesamorelin · 8 sem</small></div><div class="pt-price">$11,999</div><div class="pt-tag"></div></div><div class="pt-row"><div class="pt-name">SIGNATURE Triple<small>Tesamorelin + AOD + 5-Amino · 12 sem</small></div><div class="pt-price">$16,999</div><div class="pt-tag">(ahorras $2,498 vs individual)</div></div><div class="pt-row"><div class="pt-name">ELITE Anual + DEXA<small>Stack signature × 4 + DEXA trimestral + panel metabólico</small></div><div class="pt-price">$59,999</div><div class="pt-tag"></div></div>
+  </div>
+  <div class="cta-banner">
+    <h3>La grasa que importa<br><em>se mide con MRI no con báscula.</em></h3>
+    <p>Cintura abdominal · hígado graso · resistencia a insulina · síndrome metabólico. Stack que ataca el compartimento que mata.</p>
+    <a href="https://wa.me/5214445770445" class="cta-btn">VER STACK VISCERAL</a>
+  </div>
+  <div class="page-disclaimer">Precios sujetos a cambio · No incluye consulta médica especializada · Concierge specialist 1-on-1 incluido en stacks Signature y superiores</div>
+</div>
+
+<!-- ═══════════════ BACK COVER ═══════════════ -->
+<div class="page back">
+  <div style="margin:auto 0">
+  <h2 class="back-h">Reducir riesgo cardiometabólico<br><em>medible en 12 semanas.</em></h2>
+  <p class="back-p">Stack research-grade · COA Janoshik · DEXA basal incluido · supervisión clínica recomendada.</p>
+  <div class="back-contact">
+    <div class="bc-cell"><div class="l">WHATSAPP</div><div class="v">+52 444 577 0445</div></div>
+    <div class="bc-cell"><div class="l">WEB</div><div class="v">peptiqmx.com</div></div>
+    <div class="bc-cell"><div class="l">CITY</div><div class="v">San Luis Potosí · MX</div></div>
+  </div>
+  </div>
+  <div class="page-disclaimer">© 2026 PEPTIQ MX · Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+</body>
+</html>

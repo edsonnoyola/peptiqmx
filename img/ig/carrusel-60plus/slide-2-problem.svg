@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F6F3EE"/>
+      <stop offset="100%" stop-color="#E3DED6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#bg2)"/>
+
+  <!-- Eyebrow -->
+  <text x="540" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="500" fill="#9F8347" letter-spacing="6">02 · EL PROBLEMA REAL</text>
+
+  <!-- Title -->
+  <text x="540" y="320" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="72" font-weight="600" fill="#0E0E0E">No es la edad.</text>
+  <text x="540" y="410" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="72" font-weight="600" fill="#5B1A1F" font-style="italic">Es el NAD+.</text>
+
+  <!-- Stat 1 -->
+  <rect x="120" y="540" width="840" height="200" rx="2" fill="#0E0E0E"/>
+  <text x="540" y="620" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="100" font-weight="600" fill="#C6A969">-50%</text>
+  <text x="540" y="690" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" fill="#fff" letter-spacing="1">de NAD+ entre los 20 y los 50 años</text>
+
+  <!-- Body -->
+  <text x="540" y="850" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" fill="#0E0E0E" font-weight="400">El NAD+ es la coenzima que tus</text>
+  <text x="540" y="900" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" fill="#0E0E0E" font-weight="400">mitocondrias usan para producir</text>
+  <text x="540" y="950" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" fill="#0E0E0E" font-weight="400">energía celular.</text>
+
+  <text x="540" y="1050" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" fill="#0E0E0E" font-weight="600">Cae con la edad.</text>
+  <text x="540" y="1100" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" fill="#0E0E0E" font-weight="600">Por eso te sientes diferente.</text>
+
+  <!-- Source -->
+  <text x="540" y="1230" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#6B6B6B" letter-spacing="2">FUENTE · IMAI &amp; GUARENTE · CELL JOURNAL 2014</text>
+
+  <!-- Brand -->
+  <text x="540" y="1290" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="20" font-weight="600" fill="#9F8347" letter-spacing="6">PEPTIQ</text>
+</svg>

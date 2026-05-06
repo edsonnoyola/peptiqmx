@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ Sueño Profundo · Restauración nocturna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:'Inter',sans-serif;color:#111;background:#FFF;line-height:1.5;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.italic{font-style:italic}
+.page{width:210mm;height:296mm;padding:14mm 18mm 10mm;page-break-after:always;page-break-inside:avoid;background:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;height:296mm}
+.page-num{position:absolute;top:14mm;right:18mm;font-size:10px;letter-spacing:2.4px;color:#999;font-weight:500}
+.page-disclaimer{margin-top:auto;font-size:8px;color:#999;letter-spacing:.3px;text-align:center;border-top:1px solid #EEE;padding-top:8px}
+.cover{background:#0E1A2A;color:#FFF;padding:0;position:relative}
+.cover .page-num{display:none}
+.cover-img{position:absolute;inset:0;z-index:1;overflow:hidden}
+.cover-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cover-overlay-top{position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-overlay-bot{position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-top{position:absolute;top:0;left:0;right:0;z-index:3;padding:24mm 24mm 0}
+.cover-tag{font-size:12px;letter-spacing:5px;color:#FFF;font-weight:600;margin-bottom:22px;text-transform:uppercase}
+.cover h1{font-family:'Playfair Display',serif;font-size:60px;font-weight:300;line-height:.95;letter-spacing:-1.5px;margin-bottom:14px;color:#FFF;max-width:140mm}
+.cover h1 em{font-style:italic;color:rgba(255,255,255,.7);font-weight:400}
+.cover-lede{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.55;max-width:130mm;font-weight:300}
+.cover-bottom{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 24mm 16mm}
+.cover-stats{display:flex;gap:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+.cstat{flex:0 0 auto}
+.cstat .v{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;color:#FFF;margin-bottom:2px;line-height:1}
+.cstat .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.75);text-transform:uppercase}
+.cover-edition{position:absolute;top:16mm;right:24mm;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.8);font-weight:500;text-align:right;z-index:10}
+.cover .page-disclaimer{position:absolute;bottom:5mm;left:24mm;right:24mm;z-index:4;color:rgba(255,255,255,.6);border:none;padding:0;text-align:center;margin:0;font-size:7.5px}
+
+.eyebrow{font-size:10px;letter-spacing:3.4px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.page h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:14px}
+.page h2 em{font-style:italic;color:#777;font-weight:400}
+.lede{font-size:13.5px;color:#3A3A3A;line-height:1.6;max-width:580px;margin-bottom:14px;font-weight:300}
+
+.intro-content{padding-top:14mm}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.intro-card{padding:20px 22px;background:#FAFAFA;border-left:2px solid #111}
+.intro-card h3{font-size:11px;letter-spacing:2.2px;font-weight:600;text-transform:uppercase;margin-bottom:10px;color:#111}
+.intro-card p{font-size:12.5px;color:#3A3A3A;line-height:1.55}
+.logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid #E5E5E5}
+.logo-chip{padding:8px 6px;background:#FFF;border:1px solid #E5E5E5;text-align:center}
+.logo-chip .lc-brand{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:#111;line-height:1.1;margin-bottom:2px}
+.logo-chip .lc-brand.serif{font-family:'Playfair Display',serif;font-style:italic;letter-spacing:.4px;font-weight:500}
+.logo-chip .lc-brand.condensed{letter-spacing:0;font-weight:900;font-size:11px}
+.logo-chip .lc-meta{font-size:7.5px;letter-spacing:.4px;color:#888;font-weight:400}
+
+.comparison-page{padding-top:14mm}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.comp-card{padding:24px 26px;display:flex;flex-direction:column;height:100%}
+.comp-card.bad{background:#FAFAFA;border-left:3px solid #888}
+.comp-card.good{background:#0E0E0E;color:#FFF;border-left:3px solid #FFF}
+.comp-tag{font-size:9.5px;letter-spacing:2.6px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.comp-card.bad .comp-tag{color:#888}
+.comp-card.good .comp-tag{color:rgba(255,255,255,.55)}
+.comp-h{font-family:'Playfair Display',serif;font-size:26px;line-height:1.05;font-weight:500;margin-bottom:14px}
+.comp-h em{font-style:italic;color:#777;font-weight:400}
+.comp-card.good .comp-h em{color:rgba(255,255,255,.55)}
+.comp-list{list-style:none;padding:0;margin:0}
+.comp-list li{font-size:12px;line-height:1.6;padding:8px 0;border-top:1px solid rgba(0,0,0,.06)}
+.comp-card.good .comp-list li{border-top-color:rgba(255,255,255,.1)}
+.comp-list li:first-child{border-top:none;padding-top:0}
+.comp-list li b{display:block;font-size:9.5px;letter-spacing:1.6px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.comp-card.bad .comp-list li b{color:#666}
+.comp-card.good .comp-list li b{color:rgba(255,255,255,.5)}
+.comp-card.bad .comp-list li{color:#3A3A3A}
+.comp-card.good .comp-list li{color:rgba(255,255,255,.85)}
+.comp-quote{margin-top:auto;padding:14px 18px;background:#111;color:#FFF;font-family:'Playfair Display',serif;font-style:italic;font-size:14px;line-height:1.4;text-align:center}
+.comp-source{margin-top:14px;font-size:9.5px;color:#777;letter-spacing:.3px;line-height:1.5}
+
+.product-page{padding-top:14mm}
+.prod-header{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-bottom:18px;align-items:start}
+.prod-meta{font-size:10px;letter-spacing:2.6px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.prod-name{font-family:'Playfair Display',serif;font-size:48px;font-weight:300;line-height:.95;letter-spacing:-1px;margin-bottom:6px;color:#111}
+.prod-name em{font-style:italic;color:#777;font-weight:400;font-size:22px;display:block;margin-top:4px}
+.prod-tagline{font-size:14px;color:#3A3A3A;line-height:1.5;font-weight:300;font-style:italic;margin-top:12px}
+.prod-img{width:100%;max-width:60mm;background:#0E0E0E;aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:auto}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-body{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px}
+.benefit-block{padding:0}
+.benefit-tag{font-size:9px;letter-spacing:2.4px;color:#111;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
+.benefit-h{font-family:'Playfair Display',serif;font-size:17px;line-height:1.15;font-weight:500;margin-bottom:6px;color:#111}
+.benefit-p{font-size:11.5px;color:#3A3A3A;line-height:1.55}
+.science-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;background:#0E0E0E;color:#FFF;padding:16px 20px;margin-top:14px}
+.science-cell .l{font-size:8.5px;letter-spacing:2.2px;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.science-cell .v{font-size:12px;color:#FFF;line-height:1.4;font-weight:400}
+.testimonial{margin-top:14px;padding:14px 20px;background:#FAFAFA;border-left:2px solid #111}
+.testimonial-q{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#222;line-height:1.4;margin-bottom:6px}
+.testimonial-a{font-size:9.5px;letter-spacing:1.8px;color:#777;font-weight:600;text-transform:uppercase}
+.sources{margin-top:10px;padding:10px 14px;background:#F5F5F5;font-size:9.5px;color:#3A3A3A;line-height:1.5}
+.sources b{color:#111;letter-spacing:1.6px;text-transform:uppercase;font-size:8.5px;font-weight:700;display:block;margin-bottom:4px}
+
+.price-page{padding-top:14mm}
+.pricing-table{margin-top:32px;border:1px solid #E5E5E5;background:#FFF}
+.pt-row{display:grid;grid-template-columns:2.5fr 1fr 1fr;align-items:center;padding:18px 24px;border-bottom:1px solid #F5F5F5}
+.pt-row:last-child{border-bottom:none}
+.pt-name{font-family:'Playfair Display',serif;font-size:17px;color:#111;font-weight:500}
+.pt-name small{display:block;font-family:'Inter',sans-serif;font-size:11px;color:#777;font-weight:400;margin-top:2px;letter-spacing:.3px}
+.pt-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#111;text-align:right}
+.pt-tag{font-size:11px;color:#777;letter-spacing:1px;text-align:right}
+.cta-banner{margin-top:32px;padding:36px;background:#0E0E0E;color:#FFF;text-align:center}
+.cta-banner h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:300;line-height:1.1;margin-bottom:8px;color:#FFF}
+.cta-banner h3 em{font-style:italic;color:rgba(255,255,255,.65)}
+.cta-banner p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.55;max-width:480px;margin:0 auto 20px;font-weight:300}
+.cta-btn{display:inline-block;padding:14px 32px;background:#FFF;color:#111;font-size:11px;letter-spacing:2.6px;font-weight:600;text-transform:uppercase;text-decoration:none}
+
+.back{background:#0E0E0E;color:#FFF;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.back .page-disclaimer{color:rgba(255,255,255,.4);border-top-color:rgba(255,255,255,.08)}
+.back-h{font-family:'Playfair Display',serif;font-size:56px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:16px;max-width:700px}
+.back-h em{font-style:italic;color:rgba(255,255,255,.55);font-weight:400}
+.back-p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.6;max-width:520px;margin-bottom:42px;font-weight:300}
+.back-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:30px;padding-top:42px;border-top:1px solid rgba(255,255,255,.1);width:100%;max-width:680px}
+.bc-cell{text-align:center}
+.bc-cell .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.bc-cell .v{font-size:14px;color:#FFF;font-weight:500}
+
+@page{margin:0;size:210mm 297mm}
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 · COVER ═══════════════ -->
+<div class="page cover">
+  <div class="cover-img"><img src="../img/covers-v2/spa-cover.png" alt="PEPTIQ Sueño Profundo · Restauración nocturna"></div>
+  <div class="cover-overlay-top"></div>
+  <div class="cover-overlay-bot"></div>
+  <div class="cover-edition">EDICIÓN<br>MAYO 2026</div>
+  <div class="cover-top">
+    <div class="cover-tag">PROTOCOLO SUEÑO · ARQUITECTURA NOCTURNA</div>
+    <h1>Despertar restaurado<br><em>otra vez.</em></h1>
+    <p class="cover-lede">Tu sueño profundo cae 70% después de los 40. Y es ahí donde se libera GH, se repara DNA y el cerebro se limpia (sistema glinfático). Stack research-grade que restaura ondas delta sin tolerancia ni resaca.</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-stats">
+      <div class="cstat"><div class="v">70%</div><div class="l">Caída delta post-40</div></div>
+      <div class="cstat"><div class="v">99.2%</div><div class="l">Pureza HPLC</div></div>
+      <div class="cstat"><div class="v">0</div><div class="l">Tolerancia/dependencia</div></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+<!-- ═══════════════ PAGE 2 · QUÉ ES ═══════════════ -->
+<div class="page">
+  <div class="page-num">02 · ¿QUÉ RESUELVE?</div>
+  <div class="intro-content">
+    <div class="eyebrow">Más allá del zolpidem</div>
+    <h2>Dormir más<br><em>no es dormir mejor.</em></h2>
+    <p class="lede">Las benzodiacepinas (Tafil · Rivotril) y Z-drugs (Stilnox · Lunesta) <b>suprimen REM 30-50%</b>. Te duermes pero tu cerebro no completa los ciclos. Los péptidos del stack Sueño hacen lo opuesto: <b>inducen Fase 3-4 NREM endógena</b> sin tocar REM ni crear tolerancia. Es restaurar arquitectura, no sedar.</p>
+    <div class="intro-grid">
+      <div class="intro-card"><h3>Por qué funciona</h3><p>DSIP (Delta Sleep-Inducing Peptide) fue aislado en 1977 en cerebro de mamíferos durmiendo profundo. Es la molécula endógena que tu cuerpo libera cuando entra en delta — administrarlo restaura la cascada natural.</p></div><div class="intro-card"><h3>Qué resuelve</h3><p>Despertar a las 3am sin razón. Sueño liviano que no descansa. Insomnio crónico que no responde a higiene del sueño ni magnesio. Bruxismo nocturno por ansiedad. Wearables (Oura · Whoop · Apple Watch) que muestran 30-50min de profundo cuando deberían ser 90-120.</p></div><div class="intro-card"><h3>Quién ya lo usa</h3><p>Médicos del sueño en clínicas elite de Polanco/Monterrey, biohackers high-performance, ejecutivos C-level en quien la falta de sueño profundo está costando productividad medible. Andrew Huberman discute peptidos sleep en Lab #2 (2021).</p><div class="logos-grid"><div class="logo-chip"><div class="lc-brand condensed">HUBERMAN</div><div class="lc-meta">Lab #2 · Sleep</div></div><div class="logo-chip"><div class="lc-brand serif">MATTHEW WALKER</div><div class="lc-meta">'Why We Sleep' UC Berkeley</div></div><div class="logo-chip"><div class="lc-brand serif">PETER ATTIA</div><div class="lc-meta">Outlive ch.16 · Sleep</div></div></div></div><div class="intro-card"><h3>Quién NO debería</h3><p>Apnea del sueño no diagnosticada (consulta polisomnografía primero). Embarazo. Niños/adolescentes (sueño endógeno aún plástico). Si tomas otro hipnótico, supervisión médica para retirarlo gradualmente.</p></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Información para fines de investigación. No constituye consejo médico. Consulta a tu profesional de salud antes de iniciar cualquier protocolo.</div>
+</div>
+
+<!-- ═══════════════ PAGE 3 · COMPARACIÓN ═══════════════ -->
+<div class="page comparison-page">
+  <div class="page-num">03 · LO QUE NO TE EXPLICAN</div>
+  <div class="eyebrow">EL NUEVO PARADIGMA</div>
+  <h2>El paradigma <em>cambió.</em><br><em>Y la diferencia es brutal.</em></h2>
+  <p class="lede">Las opciones convencionales tienen su lugar — pero pagan precio biológico que no siempre se discute. Los péptidos research-grade actúan sobre la causa, no enmascaran el síntoma.</p>
+  <div class="comp-grid">
+    <div class="comp-card bad">
+      <div class="comp-tag">EL ENFOQUE CONVENCIONAL</div>
+      <h3 class="comp-h">Hipnóticos <em>te apagan.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>Agonistas GABA-A · suprimen actividad cortical.</li><li><b>Efecto</b>Sedación · pero supresión REM 30-50%.</li><li><b>Riesgo</b>Tolerancia rápida · dependencia · rebote insomnio · caídas geriátricas.</li><li><b>Recovery post-uso</b>Insomnio rebote 3-7 días al suspender.</li><li><b>Ejemplos</b>Zolpidem (Stilnox) · Eszopiclona (Lunesta) · Alprazolam (Tafil) · Clonazepam (Rivotril).</li></ul>
+    </div>
+    <div class="comp-card good">
+      <div class="comp-tag">PÉPTIDOS · LA RESTAURACIÓN</div>
+      <h3 class="comp-h">Péptidos <em>te dejan dormir.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>DSIP modula corteza para entrar en delta · Pinealon regula eje glándula pineal · Epithalon sincroniza ritmo circadiano.</li><li><b>Efecto</b>Inducción de Fase 3-4 NREM sin afectar REM.</li><li><b>Ventaja</b>Sin tolerancia documentada · sin dependencia · sin rebote al suspender.</li><li><b>Recovery post-uso</b>Cuerpo mantiene arquitectura mejorada por semanas post-ciclo.</li><li><b>Ejemplos</b>DSIP · Pinealon · Epithalon · Selank (apaga ansiedad nocturna sin sedar).</li></ul>
+    </div>
+  </div>
+  <p class="comp-quote">"Dormir bien no es ser noqueado. Es completar tus ciclos. Esa diferencia define cómo vives despierto."</p>
+  <p class="comp-source"><b>Fuentes:</b> Walker M · <i>Why We Sleep</i> · Scribner 2017 · UC Berkeley Sleep Lab. Schoenenberger GA et al. <i>Eur J Pharmacol</i> 1977 (DSIP descubrimiento, Universidad Basilea). Khavinson VK · escuela peptídica San Petersburgo · 30 años investigación bioregulación.</p>
+  <div class="page-disclaimer">Productos research-grade · for research use only · El uso es responsabilidad del comprador</div>
+</div>
+
+
+<div class="page product-page">
+  <div class="page-num">04 · PRODUCTO 01</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">NONAPÉPTIDO · 5MG · SUEÑO</div>
+      <h1 class="prod-name">DSIP<em>El péptido del sueño delta</em></h1>
+      <p class="prod-tagline">"Aislado en 1977 de cerebros de conejos en sueño profundo. La molécula endógena que tu cuerpo usa para entrar en delta."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/dsip-studio.png" alt="DSIP"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Despertar a las 3am sin razón</div>
+      <p class="benefit-p">El insomnio de mantenimiento (despertar a media noche y no volver a dormir) tiene firma diferente al insomnio de inicio. DSIP induce ondas delta sostenidas — los pacientes documentan ciclos completos sin interrupciones por primera vez en años.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Ondas delta endógenas naturales</div>
+      <p class="benefit-p">Schoenenberger 1977 demostró que DSIP induce Fase 3-4 NREM en EEG. No es sedación cortical (como GABA-A) — es activación de la cascada delta natural. Sales de la inducción al despertar, sin resaca cognitiva.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Tu cuerpo ya lo produce</div>
+      <p class="benefit-p">DSIP es endógeno — tu propio cerebro lo libera cuando entra en delta. Administrarlo es como darle a un cuerpo cansado más copias de su propia llave de inducción al sueño profundo.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">No tolerancia · uso largo plazo OK</div>
+      <p class="benefit-p">A diferencia de hipnóticos, DSIP no genera tolerancia ni dependencia documentada en 47 años de literatura. Pacientes lo usan continuo durante meses sin necesidad de aumentar dosis.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">100-200mcg<br>30 min antes de dormir</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>9-10pm óptimo</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Continuo · sin pausas obligatorias</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Mi Whoop registraba 28 minutos de profundo en promedio. Después de 14 días con DSIP, subí a 86 minutos. Mi recovery score pasó de 47% a 84% sostenido."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ MTY · 43 años · ejecutivo tech</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Schoenenberger GA, Monnier M · <i>Pflügers Arch</i> 1977 · descubrimiento DSIP, Universidad Basilea Suiza.<br>Iyer KS, Marks GA · <i>Brain Res Bull</i> 1992 · DSIP induce delta sin suprimir REM.<br>Mendelson WB · <i>Adv Pharmacol</i> 1990 · DSIP en humanos con insomnio crónico.
+  </div>
+  <div class="page-disclaimer">$2,499 MXN · 5mg liofilizado · COA Janoshik · Pureza HPLC 99.245%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">05 · PRODUCTO 02</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">TRIPÉPTIDO · 20MG · SUEÑO</div>
+      <h1 class="prod-name">Pinealon<em>El bioregulador glandular</em></h1>
+      <p class="prod-tagline">"Tripéptido descubierto por Khavinson — regula eje pineal-hipotálamo y sincroniza melatonina endógena."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/pinealon-studio.png" alt="Pinealon"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Ciclo sueño-vigilia desincronizado</div>
+      <p class="benefit-p">El jet lag crónico (turnos rotativos · viajes frecuentes · luz azul nocturna) desincroniza eje pineal-hipotálamo. Pinealon restaura el patrón circadiano de melatonina endógena — superior a melatonina exógena que solo da onset.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Regulador epigenético glandular</div>
+      <p class="benefit-p">Pinealon (Glu-Asp-Arg) actúa como bioregulador del DNA en glándula pineal. Khavinson y escuela San Petersburgo demostraron que tripéptidos cortos modulan expresión génica en glándulas específicas.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Producción endógena de melatonina</div>
+      <p class="benefit-p">Pinealon no es melatonina — es lo que regula tu fábrica de melatonina. Restaurarla es ataque a la causa, no parche al síntoma. Tu pineal vuelve a producir el ritmo correcto.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Efecto neuroprotector documentado</div>
+      <p class="benefit-p">Estudios de la escuela Khavinson reportan mejoría en función cognitiva y memoria en pacientes geriátricos con desincronía circadiana — el cerebro depende del ciclo correcto para limpieza glinfática nocturna.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">100-200mcg<br>cada 3 días</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>matutino</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">10 días · pausa 20 días<br>3 ciclos al año</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Después del primer ciclo de Pinealon, mi cuerpo empezó a tener sueño naturalmente a las 10pm. Antes me forzaba a dormir y no funcionaba."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ Cancún · 57 años · empresario travel-heavy</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Khavinson VK · <i>Bull Exp Biol Med</i> 2004 · Pinealon en bioregulación glándula pineal.<br>Anisimov VN, Khavinson VK · <i>Bull Exp Biol Med</i> 2010 · efecto neuroprotector tripéptidos.<br>Khavinson VK, Morozov VG · <i>Adv Gerontol</i> 2003 · pequeños péptidos como bioreguladores.
+  </div>
+  <div class="page-disclaimer">$2,199 MXN · 20mg liofilizado · COA Janoshik · Pureza HPLC 99.087%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">06 · PRODUCTO 03</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">TETRAPÉPTIDO · 20MG · SUEÑO</div>
+      <h1 class="prod-name">Epithalon<em>El sincronizador circadiano</em></h1>
+      <p class="prod-tagline">"Activa telomerasa endógena Y reprograma ritmo circadiano. Doble vía: longevidad + sueño en mismo péptido."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/epithalon-studio.png" alt="Epithalon"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Insomnio crónico geriátrico (60+)</div>
+      <p class="benefit-p">Después de los 60, la pineal calcifica progresivamente y la melatonina cae 70-80%. Epithalon reactiva la pineal residual y la salida de melatonina nocturna — confirmado en estudios geriátricos rusos de 10 años de seguimiento.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Reactiva pineal y telomerasa</div>
+      <p class="benefit-p">Doble vía: regula gen TERT (telomerasa) Y restablece secreción melatonina endógena. Único tetrapéptido (Ala-Glu-Asp-Gly) con literatura clínica humana de seguimiento >5 años.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Bioregulador epigenético</div>
+      <p class="benefit-p">Khavinson pasó 40 años en San Petersburgo demostrando que tetrapéptidos cortos como Epithalon modulan expresión génica en tejidos específicos — pineal, timo, próstata, hígado. No son hormonas.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Efecto anti-aging documentado</div>
+      <p class="benefit-p">Anisimov 2003 reportó +25% extensión de vida media en modelos animales con Epithalon. En humanos, mejora telómeros, función cognitiva y arquitectura del sueño en seguimientos de 6-10 años.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">5-10mg<br>cada 3 días</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>continuo 10-20 días</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Ciclo Khavinson:<br>10 días continuo · pausa 6 meses</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Tengo 67 años. Llevaba 8 años con melatonina 5mg que dejó de funcionar. Después del ciclo Epithalon, dormí 7 horas seguidas por primera vez sin pastilla. Sigo así 4 meses después."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ Polanco · 67 años · ex-CEO retirado</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Anisimov VN, Khavinson VK et al. <i>Mech Ageing Dev</i> 2003 · Epithalon prolonga vida en modelos animales.<br>Khavinson VK, Morozov VG · <i>Russ J Gerontol</i> 2003 · Epithalon en seguimiento clínico humano 10 años.<br>Khavinson VK · <i>Neuroendocrinol Lett</i> 2002 · regulación telomerasa endógena.
+  </div>
+  <div class="page-disclaimer">$3,799 MXN · 20mg liofilizado · COA Janoshik · Pureza HPLC 99.213%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">07 · PRODUCTO 04</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">HEPTAPÉPTIDO · 5MG · SUEÑO</div>
+      <h1 class="prod-name">Selank<em>Para ansiedad nocturna sin sedar</em></h1>
+      <p class="prod-tagline">"Heptapéptido ruso ansiolítico sin sedación. Apaga la rumiación que te despierta a las 3am sin noquearte."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/selank-studio.png" alt="Selank"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Ansiedad anticipatoria al dormir</div>
+      <p class="benefit-p">El insomnio causado por overthinking — la mente que no se apaga al meterse a la cama. Selank actúa sobre GABA y serotonina sin la sedación de benzodiacepinas. Tranquiliza la mente sin apagarla.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Ansiolítico sin GABA-A directo</div>
+      <p class="benefit-p">Selank modula expresión de receptores GABA y serotoninérgicos vía cascada secundaria — efecto ansiolítico sin la sedación, dependencia o efecto rebote de Tafil/Rivotril. Aprobado en Rusia 2010 (Medvedev VE et al.).</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Análogo de Tuftsin endógeno</div>
+      <p class="benefit-p">Selank es análogo sintético de Tuftsin — un péptido inmunomodulador natural. Lo desarrollaron neurocientíficos rusos buscando ansiolítico sin perfil benzodiacepínico. Resultado: tranquilizar sin apagar.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Mejora memoria y enfoque</div>
+      <p class="benefit-p">Estudios reportan mejora paralela en memoria de trabajo y enfoque sostenido — útil cuando la ansiedad ha causado disfunción cognitiva. Doble efecto: ansiolítico + nootrópico moderado.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">1-2 sprays nasales<br>antes de dormir</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Intranasal<br>(formato spray)</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Continuo o por demanda</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Tafil me dejaba aturdido al día siguiente. Selank me apaga la mente sin sedarme. Despierto fresco — no resaca farmacológica."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ CDMX · 44 años · abogado litigante</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Medvedev VE et al. <i>Russ J Psychiatry</i> 2010 · Selank en trastorno ansiedad generalizada.<br>Kost NV et al. <i>Bull Exp Biol Med</i> 2005 · efecto ansiolítico sin sedación.<br>Semenova TP et al. · Selank y memoria · Inst. Biología Molecular RAS.
+  </div>
+  <div class="page-disclaimer">$2,899 MXN · 5mg spray nasal · COA Janoshik · Pureza HPLC 99.345%</div>
+</div>
+
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<div class="page price-page">
+  <div class="page-num">08 · INVERSIÓN</div>
+  <div class="eyebrow">STACKS Y PROTOCOLOS</div>
+  <h2>El acceso premium<br><em>al protocolo completo.</em></h2>
+  <p class="lede">Los stacks signature ofrecen ahorro real vs comprar individuales — además del concierge specialist 1-on-1 que diseña tu protocolo según tus síntomas, comorbilidades y wearables.</p>
+  <div class="pricing-table">
+    <div class="pt-row head"><div>STACK / PROTOCOLO</div><div style="text-align:right">PRECIO MXN</div><div style="text-align:right">DETALLE</div></div>
+    <div class="pt-row"><div class="pt-name">ESSENTIAL Sleep Stack<small>DSIP + Pinealon · 30 días · ataque al insomnio crónico</small></div><div class="pt-price">$5,499</div><div class="pt-tag"></div></div><div class="pt-row"><div class="pt-name">SIGNATURE Sleep Stack<small>DSIP + Pinealon + Epithalon + Selank · 12 sem</small></div><div class="pt-price">$11,999</div><div class="pt-tag">(ahorras $1,398 vs individual)</div></div><div class="pt-row"><div class="pt-name">SLEEP Reset Quarterly<small>Stack signature × 4 trimestres + Oura Ring 4 + sleep audit mensual</small></div><div class="pt-price">$54,999</div><div class="pt-tag"></div></div>
+  </div>
+  <div class="cta-banner">
+    <h3>Dormir bien no es lujo.<br><em>Es la base de todo lo demás.</em></h3>
+    <p>Sin sueño profundo, ningún protocolo de longevidad arranca · ningún recovery muscular completa · ningún biohack funciona. Empieza aquí.</p>
+    <a href="https://wa.me/5214445770445" class="cta-btn">VER STACK SUEÑO</a>
+  </div>
+  <div class="page-disclaimer">Precios sujetos a cambio · No incluye consulta médica especializada · Concierge specialist 1-on-1 incluido en stacks Signature y superiores</div>
+</div>
+
+<!-- ═══════════════ BACK COVER ═══════════════ -->
+<div class="page back">
+  <div style="margin:auto 0">
+  <h2 class="back-h">El descanso es<br><em>la disciplina invisible.</em></h2>
+  <p class="back-p">Stack research-grade · COA Janoshik público · concierge specialist 1-on-1 · sleep audit con tu wearable. Empieza con asesoría gratis.</p>
+  <div class="back-contact">
+    <div class="bc-cell"><div class="l">WHATSAPP</div><div class="v">+52 444 577 0445</div></div>
+    <div class="bc-cell"><div class="l">WEB</div><div class="v">peptiqmx.com</div></div>
+    <div class="bc-cell"><div class="l">CITY</div><div class="v">San Luis Potosí · MX</div></div>
+  </div>
+  </div>
+  <div class="page-disclaimer">© 2026 PEPTIQ MX · Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="856" viewBox="0 0 1640 856">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="50%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#1f1b15"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9C8751"/>
+      <stop offset="50%" stop-color="#D4B97A"/>
+      <stop offset="100%" stop-color="#9C8751"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C6A969" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C6A969" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#C6A969" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#C6A969" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1640" height="856" fill="url(#bg)"/>
+  <rect width="1640" height="856" fill="url(#dots)"/>
+
+  <!-- Subtle vertical gold accent left -->
+  <line x1="120" y1="180" x2="120" y2="676" stroke="url(#goldSoft)" stroke-width="1" opacity="0.5"/>
+
+  <!-- Top eyebrow line -->
+  <line x1="820" y1="240" x2="980" y2="240" stroke="#C6A969" stroke-width="1" opacity="0.6"/>
+  <text x="900" y="230"
+        font-family="'Inter', 'Helvetica Neue', sans-serif"
+        font-size="14"
+        font-weight="500"
+        fill="#C6A969"
+        text-anchor="middle"
+        letter-spacing="8"
+        opacity="0.9">RESEARCH GRADE · MX</text>
+
+  <!-- Main wordmark PEPTIQ -->
+  <text x="820" y="430"
+        font-family="'Playfair Display', 'Didot', Georgia, serif"
+        font-size="220"
+        font-weight="500"
+        fill="url(#gold)"
+        text-anchor="middle"
+        letter-spacing="14"
+        filter="url(#glow)">PEPTIQ</text>
+
+  <!-- Separator -->
+  <line x1="720" y1="480" x2="920" y2="480" stroke="#C6A969" stroke-width="1" opacity="0.6"/>
+
+  <!-- Tagline -->
+  <text x="820" y="528"
+        font-family="'Inter', 'Helvetica Neue', sans-serif"
+        font-size="28"
+        font-weight="300"
+        fill="#E8DFC7"
+        text-anchor="middle"
+        letter-spacing="16"
+        opacity="0.95">HACK YOUR LIMITS</text>
+
+  <!-- Subtle sublabel -->
+  <text x="820" y="600"
+        font-family="'Inter', 'Helvetica Neue', sans-serif"
+        font-size="16"
+        font-weight="400"
+        fill="#8a7f6a"
+        text-anchor="middle"
+        letter-spacing="10"
+        opacity="0.75">PÉPTIDOS · NAD+ · MT2 · BPC-157</text>
+
+  <!-- Bottom domain strip -->
+  <line x1="120" y1="740" x2="1520" y2="740" stroke="#C6A969" stroke-width="0.5" opacity="0.3"/>
+  <text x="820" y="790"
+        font-family="'Inter', 'Helvetica Neue', sans-serif"
+        font-size="18"
+        font-weight="400"
+        fill="#C6A969"
+        text-anchor="middle"
+        letter-spacing="6"
+        opacity="0.85">peptiqmx.com</text>
+
+  <!-- Decorative corner marks -->
+  <g opacity="0.35" stroke="#C6A969" stroke-width="1" fill="none">
+    <path d="M120 140 L120 180 L160 180"/>
+    <path d="M1520 140 L1520 180 L1480 180"/>
+    <path d="M120 716 L120 676 L160 676"/>
+    <path d="M1520 716 L1520 676 L1480 676"/>
+  </g>
+</svg>

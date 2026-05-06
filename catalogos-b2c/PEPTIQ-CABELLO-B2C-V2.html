@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ Cabello · Reactivación folicular</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:'Inter',sans-serif;color:#111;background:#FFF;line-height:1.5;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.italic{font-style:italic}
+.page{width:210mm;height:296mm;padding:14mm 18mm 10mm;page-break-after:always;page-break-inside:avoid;background:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;height:296mm}
+.page-num{position:absolute;top:14mm;right:18mm;font-size:10px;letter-spacing:2.4px;color:#999;font-weight:500}
+.page-disclaimer{margin-top:auto;font-size:8px;color:#999;letter-spacing:.3px;text-align:center;border-top:1px solid #EEE;padding-top:8px}
+.cover{background:#1F1A14;color:#FFF;padding:0;position:relative}
+.cover .page-num{display:none}
+.cover-img{position:absolute;inset:0;z-index:1;overflow:hidden}
+.cover-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cover-overlay-top{position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-overlay-bot{position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-top{position:absolute;top:0;left:0;right:0;z-index:3;padding:24mm 24mm 0}
+.cover-tag{font-size:12px;letter-spacing:5px;color:#FFF;font-weight:600;margin-bottom:22px;text-transform:uppercase}
+.cover h1{font-family:'Playfair Display',serif;font-size:60px;font-weight:300;line-height:.95;letter-spacing:-1.5px;margin-bottom:14px;color:#FFF;max-width:140mm}
+.cover h1 em{font-style:italic;color:rgba(255,255,255,.7);font-weight:400}
+.cover-lede{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.55;max-width:130mm;font-weight:300}
+.cover-bottom{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 24mm 16mm}
+.cover-stats{display:flex;gap:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+.cstat{flex:0 0 auto}
+.cstat .v{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;color:#FFF;margin-bottom:2px;line-height:1}
+.cstat .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.75);text-transform:uppercase}
+.cover-edition{position:absolute;top:16mm;right:24mm;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.8);font-weight:500;text-align:right;z-index:10}
+.cover .page-disclaimer{position:absolute;bottom:5mm;left:24mm;right:24mm;z-index:4;color:rgba(255,255,255,.6);border:none;padding:0;text-align:center;margin:0;font-size:7.5px}
+
+.eyebrow{font-size:10px;letter-spacing:3.4px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.page h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:14px}
+.page h2 em{font-style:italic;color:#777;font-weight:400}
+.lede{font-size:13.5px;color:#3A3A3A;line-height:1.6;max-width:580px;margin-bottom:14px;font-weight:300}
+
+.intro-content{padding-top:14mm}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.intro-card{padding:20px 22px;background:#FAFAFA;border-left:2px solid #111}
+.intro-card h3{font-size:11px;letter-spacing:2.2px;font-weight:600;text-transform:uppercase;margin-bottom:10px;color:#111}
+.intro-card p{font-size:12.5px;color:#3A3A3A;line-height:1.55}
+.logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid #E5E5E5}
+.logo-chip{padding:8px 6px;background:#FFF;border:1px solid #E5E5E5;text-align:center}
+.logo-chip .lc-brand{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:#111;line-height:1.1;margin-bottom:2px}
+.logo-chip .lc-brand.serif{font-family:'Playfair Display',serif;font-style:italic;letter-spacing:.4px;font-weight:500}
+.logo-chip .lc-brand.condensed{letter-spacing:0;font-weight:900;font-size:11px}
+.logo-chip .lc-meta{font-size:7.5px;letter-spacing:.4px;color:#888;font-weight:400}
+
+.comparison-page{padding-top:14mm}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.comp-card{padding:24px 26px;display:flex;flex-direction:column;height:100%}
+.comp-card.bad{background:#FAFAFA;border-left:3px solid #888}
+.comp-card.good{background:#0E0E0E;color:#FFF;border-left:3px solid #FFF}
+.comp-tag{font-size:9.5px;letter-spacing:2.6px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.comp-card.bad .comp-tag{color:#888}
+.comp-card.good .comp-tag{color:rgba(255,255,255,.55)}
+.comp-h{font-family:'Playfair Display',serif;font-size:26px;line-height:1.05;font-weight:500;margin-bottom:14px}
+.comp-h em{font-style:italic;color:#777;font-weight:400}
+.comp-card.good .comp-h em{color:rgba(255,255,255,.55)}
+.comp-list{list-style:none;padding:0;margin:0}
+.comp-list li{font-size:12px;line-height:1.6;padding:8px 0;border-top:1px solid rgba(0,0,0,.06)}
+.comp-card.good .comp-list li{border-top-color:rgba(255,255,255,.1)}
+.comp-list li:first-child{border-top:none;padding-top:0}
+.comp-list li b{display:block;font-size:9.5px;letter-spacing:1.6px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.comp-card.bad .comp-list li b{color:#666}
+.comp-card.good .comp-list li b{color:rgba(255,255,255,.5)}
+.comp-card.bad .comp-list li{color:#3A3A3A}
+.comp-card.good .comp-list li{color:rgba(255,255,255,.85)}
+.comp-quote{margin-top:auto;padding:14px 18px;background:#111;color:#FFF;font-family:'Playfair Display',serif;font-style:italic;font-size:14px;line-height:1.4;text-align:center}
+.comp-source{margin-top:14px;font-size:9.5px;color:#777;letter-spacing:.3px;line-height:1.5}
+
+.product-page{padding-top:14mm}
+.prod-header{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-bottom:18px;align-items:start}
+.prod-meta{font-size:10px;letter-spacing:2.6px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.prod-name{font-family:'Playfair Display',serif;font-size:48px;font-weight:300;line-height:.95;letter-spacing:-1px;margin-bottom:6px;color:#111}
+.prod-name em{font-style:italic;color:#777;font-weight:400;font-size:22px;display:block;margin-top:4px}
+.prod-tagline{font-size:14px;color:#3A3A3A;line-height:1.5;font-weight:300;font-style:italic;margin-top:12px}
+.prod-img{width:100%;max-width:60mm;background:#0E0E0E;aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:auto}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-body{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px}
+.benefit-block{padding:0}
+.benefit-tag{font-size:9px;letter-spacing:2.4px;color:#111;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
+.benefit-h{font-family:'Playfair Display',serif;font-size:17px;line-height:1.15;font-weight:500;margin-bottom:6px;color:#111}
+.benefit-p{font-size:11.5px;color:#3A3A3A;line-height:1.55}
+.science-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;background:#0E0E0E;color:#FFF;padding:16px 20px;margin-top:14px}
+.science-cell .l{font-size:8.5px;letter-spacing:2.2px;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.science-cell .v{font-size:12px;color:#FFF;line-height:1.4;font-weight:400}
+.testimonial{margin-top:14px;padding:14px 20px;background:#FAFAFA;border-left:2px solid #111}
+.testimonial-q{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#222;line-height:1.4;margin-bottom:6px}
+.testimonial-a{font-size:9.5px;letter-spacing:1.8px;color:#777;font-weight:600;text-transform:uppercase}
+.sources{margin-top:10px;padding:10px 14px;background:#F5F5F5;font-size:9.5px;color:#3A3A3A;line-height:1.5}
+.sources b{color:#111;letter-spacing:1.6px;text-transform:uppercase;font-size:8.5px;font-weight:700;display:block;margin-bottom:4px}
+
+.price-page{padding-top:14mm}
+.pricing-table{margin-top:32px;border:1px solid #E5E5E5;background:#FFF}
+.pt-row{display:grid;grid-template-columns:2.5fr 1fr 1fr;align-items:center;padding:18px 24px;border-bottom:1px solid #F5F5F5}
+.pt-row:last-child{border-bottom:none}
+.pt-name{font-family:'Playfair Display',serif;font-size:17px;color:#111;font-weight:500}
+.pt-name small{display:block;font-family:'Inter',sans-serif;font-size:11px;color:#777;font-weight:400;margin-top:2px;letter-spacing:.3px}
+.pt-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#111;text-align:right}
+.pt-tag{font-size:11px;color:#777;letter-spacing:1px;text-align:right}
+.cta-banner{margin-top:32px;padding:36px;background:#0E0E0E;color:#FFF;text-align:center}
+.cta-banner h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:300;line-height:1.1;margin-bottom:8px;color:#FFF}
+.cta-banner h3 em{font-style:italic;color:rgba(255,255,255,.65)}
+.cta-banner p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.55;max-width:480px;margin:0 auto 20px;font-weight:300}
+.cta-btn{display:inline-block;padding:14px 32px;background:#FFF;color:#111;font-size:11px;letter-spacing:2.6px;font-weight:600;text-transform:uppercase;text-decoration:none}
+
+.back{background:#0E0E0E;color:#FFF;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.back .page-disclaimer{color:rgba(255,255,255,.4);border-top-color:rgba(255,255,255,.08)}
+.back-h{font-family:'Playfair Display',serif;font-size:56px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:16px;max-width:700px}
+.back-h em{font-style:italic;color:rgba(255,255,255,.55);font-weight:400}
+.back-p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.6;max-width:520px;margin-bottom:42px;font-weight:300}
+.back-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:30px;padding-top:42px;border-top:1px solid rgba(255,255,255,.1);width:100%;max-width:680px}
+.bc-cell{text-align:center}
+.bc-cell .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.bc-cell .v{font-size:14px;color:#FFF;font-weight:500}
+
+@page{margin:0;size:210mm 297mm}
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 · COVER ═══════════════ -->
+<div class="page cover">
+  <div class="cover-img"><img src="../img/covers-v2/glow-cover.png" alt="PEPTIQ Cabello · Reactivación folicular"></div>
+  <div class="cover-overlay-top"></div>
+  <div class="cover-overlay-bot"></div>
+  <div class="cover-edition">EDICIÓN<br>MAYO 2026</div>
+  <div class="cover-top">
+    <div class="cover-tag">PROTOCOLO CABELLO · REACTIVACIÓN FOLICULAR</div>
+    <h1>El folículo<br><em>no está muerto.</em></h1>
+    <p class="cover-lede">El 70% de los folículos 'perdidos' siguen vivos en estado vellus (latente). Stack research-grade que reactiva la señalización Wnt/β-catenin, alimenta papila dérmica y restaura ciclo anágeno — sin finasterida ni minoxidil.</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-stats">
+      <div class="cstat"><div class="v">70%</div><div class="l">Folículos rescatables</div></div>
+      <div class="cstat"><div class="v">99.3%</div><div class="l">Pureza HPLC</div></div>
+      <div class="cstat"><div class="v">16 sem</div><div class="l">Ciclo completo</div></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+<!-- ═══════════════ PAGE 2 · QUÉ ES ═══════════════ -->
+<div class="page">
+  <div class="page-num">02 · ¿QUÉ RESUELVE?</div>
+  <div class="intro-content">
+    <div class="eyebrow">Más allá de finasterida y minoxidil</div>
+    <h2>El folículo dormido<br><em>se puede despertar.</em></h2>
+    <p class="lede">Finasterida bloquea DHT (efectivo pero con disfunción sexual post-finasterida documentada). Minoxidil dilata vasos (efectivo solo mientras lo usas). Los péptidos del stack Cabello hacen algo diferente: <b>reactivan señalización Wnt/β-catenin</b> en papila dérmica — la vía maestra que controla ciclo anágeno-catágeno-telógeno del folículo.</p>
+    <div class="intro-grid">
+      <div class="intro-card"><h3>Por qué funciona</h3><p>GHK-Cu y AHK-Cu son tripéptidos cobre-uniones que tu plasma produce naturalmente. En el cuero cabelludo, activan fibroblastos de papila dérmica y reinician la fase anágena del folículo dormido. Patentes Lancôme y Hermès cosmetic desde 2009.</p></div><div class="intro-card"><h3>Qué resuelve</h3><p>Alopecia androgenética temprana (hombre/mujer). Efluvio crónico postmenopáusico. Caída postparto que no se recupera. Coronilla rala. Entradas que avanzan. Ojo: alopecia areata autoinmune requiere tratamiento médico paralelo.</p></div><div class="intro-card"><h3>Quién ya lo usa</h3><p>Tricólogos integrativos en clínicas premium (Polanco · MTY · GDL). Conversación pública de biohacking serio cita estos compuestos — Andrew Huberman discute péptidos hair en Lab #79 (2022).</p><div class="logos-grid"><div class="logo-chip"><div class="lc-brand condensed">HUBERMAN</div><div class="lc-meta">Lab #79 · Hair</div></div><div class="logo-chip"><div class="lc-brand serif">KÉRASTASE</div><div class="lc-meta">Genesis · péptidos</div></div><div class="logo-chip"><div class="lc-brand serif">LANCÔME</div><div class="lc-meta">Génifique 2009+</div></div></div></div><div class="intro-card"><h3>Quién NO debería</h3><p>Cáncer activo (todos los péptidos con efecto angiogénico requieren consulta oncológica). Embarazo. Lactancia. Alopecia areata extensa autoinmune (consulta dermatólogo).</p></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Información para fines de investigación. No constituye consejo médico. Consulta a tu profesional de salud antes de iniciar cualquier protocolo.</div>
+</div>
+
+<!-- ═══════════════ PAGE 3 · COMPARACIÓN ═══════════════ -->
+<div class="page comparison-page">
+  <div class="page-num">03 · LO QUE NO TE EXPLICAN</div>
+  <div class="eyebrow">EL NUEVO PARADIGMA</div>
+  <h2>El paradigma <em>cambió.</em><br><em>Y la diferencia es brutal.</em></h2>
+  <p class="lede">Las opciones convencionales tienen su lugar — pero pagan precio biológico que no siempre se discute. Los péptidos research-grade actúan sobre la causa, no enmascaran el síntoma.</p>
+  <div class="comp-grid">
+    <div class="comp-card bad">
+      <div class="comp-tag">EL ENFOQUE CONVENCIONAL</div>
+      <h3 class="comp-h">Bloqueadores <em>tienen costo.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo Finasterida</b>Bloquea 5α-reductasa · suprime DHT sistémicamente.</li><li><b>Riesgo Finasterida</b>PFS (Post-Finasteride Syndrome) · disfunción sexual persistente · depresión documentada.</li><li><b>Mecanismo Minoxidil</b>Vasodilatador tópico · dependiente de uso continuo.</li><li><b>Riesgo Minoxidil</b>Caída de rebote al suspender · irritación cuero cabelludo · vellos faciales.</li><li><b>Ejemplos</b>Propecia · Proscar · Avodart (dutasterida) · Rogaine · Regaine.</li></ul>
+    </div>
+    <div class="comp-card good">
+      <div class="comp-tag">PÉPTIDOS · LA RESTAURACIÓN</div>
+      <h3 class="comp-h">Péptidos <em>regeneran sin bloquear.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>GHK-Cu activa Wnt/β-catenin · AHK-Cu reactiva papila dérmica · Trinity sistémico.</li><li><b>Efecto</b>Folículo vellus pasa a anágeno · grosor terminal restaurado.</li><li><b>Ventaja</b>Sin afectar DHT · sin afectar libido · sin dependencia de uso continuo.</li><li><b>Recovery post-uso</b>Folículo reactivado mantiene ciclo por meses post-protocolo.</li><li><b>Ejemplos</b>GHK-Cu (sistémico + tópico) · AHK-Cu · Trinity (BPC + GHK + TB-500).</li></ul>
+    </div>
+  </div>
+  <p class="comp-quote">"El folículo no está muerto, está dormido. Si le mandas la señal correcta, despierta."</p>
+  <p class="comp-source"><b>Fuentes:</b> Pickart L · <i>BioMed Res Int</i> 2014 · GHK-Cu en regeneración folicular. Pyo HK et al. <i>J Invest Dermatol</i> 2007 · AHK-Cu y crecimiento capilar. Lancôme R&D patentes peptidil-cobre desde 2008.</p>
+  <div class="page-disclaimer">Productos research-grade · for research use only · El uso es responsabilidad del comprador</div>
+</div>
+
+
+<div class="page product-page">
+  <div class="page-num">04 · PRODUCTO 01</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">TRIPÉPTIDO · 50MG · CABELLO</div>
+      <h1 class="prod-name">GHK-Cu<em>El reactivador de papila dérmica</em></h1>
+      <p class="prod-tagline">"Tripéptido cobre que tu plasma produce — cae 50% entre los 20 y 60. Reactivar fibroblastos de papila dérmica reinicia ciclo anágeno."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/ghk-cu-studio.png" alt="GHK-Cu"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Coronilla rala · entradas avanzando</div>
+      <p class="benefit-p">Donde el folículo aún existe en estado vellus (cabello fino, corto, despigmentado), GHK-Cu reactiva señalización Wnt/β-catenin que controla transición vellus → terminal. Resultado: cabello visible más grueso en 12-16 semanas.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Activa 4,192 genes incluyendo folículo</div>
+      <p class="benefit-p">Pickart 2018 demostró regulación de 4,192 genes por GHK-Cu — incluyendo Wnt/β-catenin, BMP, IGF-1 expresados en papila dérmica. No es solo crecimiento — es reactivación de programa biológico completo.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Cobre tripéptido endógeno</div>
+      <p class="benefit-p">Tu cuerpo lo produce — el cuero cabelludo lo expresa naturalmente. Las patentes peptidil-cobre de Lancôme (Génifique 2009) y Kérastase (Genesis) son derivados sintéticos de esta misma molécula que nosotros ofrecemos pura.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Sinergia tópica + sistémica</div>
+      <p class="benefit-p">Protocolo signature: GHK-Cu sistémico SC 3×/semana + GHK-Cu tópico nocturno en cuero cabelludo. La vía sistémica alimenta el folículo desde el plasma; la tópica satura el receptor local.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">1-2mg sistémico<br>+ tópico 0.05% nocturno</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">SC sistémica<br>+ aplicación tópica</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">12-16 semanas continuo<br>luego mantenimiento 1×/sem</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Mi tricoscopia a las 16 semanas mostró +28% densidad en coronilla. Mi pareja lo notó antes que yo. No tomé finasterida — no quería tocar mi DHT."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ MTY · 38 años · ejecutivo financiero</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Pickart L, Margolina A · <i>Int J Mol Sci</i> 2018;19(7):1987 · regulación 4,192 genes incluyendo Wnt folicular.<br>Pickart L · <i>BioMed Res Int</i> 2014 · GHK-Cu en cells folicular.<br>Trumbore et al. · patente folículo-pilo · Procyte 2010.
+  </div>
+  <div class="page-disclaimer">$2,799 MXN · 50mg liofilizado · COA Janoshik · Pureza HPLC 99.128%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">05 · PRODUCTO 02</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">TRIPÉPTIDO · 50MG · CABELLO</div>
+      <h1 class="prod-name">AHK-Cu<em>Específico para folículo capilar</em></h1>
+      <p class="prod-tagline">"Tripéptido cobre Ala-His-Lys — descubierto buscando análogo GHK con afinidad superior por receptor de papila dérmica."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/ahk-cu-studio.png" alt="AHK-Cu"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Coronilla difusa · efluvio crónico</div>
+      <p class="benefit-p">Pyo et al. (2007) demostraron en cultivos foliculares humanos ex-vivo que AHK-Cu es 30-40% más potente que GHK-Cu para inducir transición vellus→terminal. Para casos donde GHK no fue suficiente.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Afinidad superior por papila dérmica</div>
+      <p class="benefit-p">AHK-Cu tiene afinidad específica por receptores en bulbos foliculares (vs GHK que es sistémico anti-aging general). Es el tripéptido cobre 'especialista' en cabello — no en piel.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Hermana sintética de GHK</div>
+      <p class="benefit-p">Mismo concepto, residuos diferentes. Donde GHK-Cu activa una cascada amplia de reparación, AHK-Cu se enfoca en el folículo. Los stacks elite los combinan: GHK sistémico, AHK tópico cuero cabelludo.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Patentes Procyte y Hermès cosmetic</div>
+      <p class="benefit-p">AHK-Cu tiene patentes desde 2003 en cosmética premium — Hermès, Lancôme y Procyte usan derivados peptidil-cobre. Lo que ofrecemos es la molécula pura research-grade, no la versión cosmética diluida.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">1mg tópico/día<br>nocturno cuero cabelludo</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Tópica concentrada<br>(formulación 0.1%)</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">12-16 semanas continuo</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Combinamos GHK-Cu sistémico con AHK-Cu tópico. El cambio en mi paciente fue dermatoscópicamente visible a las 12 semanas. Mejor resultado que con minoxidil 5%."</p>
+    <p class="testimonial-a">— Tricóloga clínica integrativa Polanco</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Pyo HK et al. <i>J Invest Dermatol</i> 2007 · AHK-Cu y crecimiento capilar in vitro.<br>Patente Procyte 2003 · AHK-Cu uso cosmético folicular.<br>Patente Hermès 2010 · derivados peptidil-cobre tricológicos.
+  </div>
+  <div class="page-disclaimer">$2,599 MXN · 50mg liofilizado · COA Janoshik · Pureza HPLC 99.087%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">06 · PRODUCTO 03</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">STACK REGENERATIVO · 30MG · CABELLO</div>
+      <h1 class="prod-name">Trinity<em>BPC + GHK + TB-500 sinérgico</em></h1>
+      <p class="prod-tagline">"Stack regenerativo sistémico mensual. Alimenta el cuerpo entero — incluyendo folículo — desde abajo."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/trinity-studio.png" alt="Trinity"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Caída acompañada de inflamación sistémica</div>
+      <p class="benefit-p">Cuando la caída coincide con problemas digestivos, fatiga crónica, lesiones que no sanan — la causa es sistémica, no solo folicular. Trinity ataca inflamación sistémica que también está saboteando el cabello.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Cascada regenerativa multi-órgano</div>
+      <p class="benefit-p">BPC-157 repara mucosa intestinal y vasos. GHK-Cu activa fibroblastos en piel/cabello/colágeno. TB-500 migra células reparadoras al daño profundo. La sinergia es mayor que la suma.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Inflamación sistémica = caída</div>
+      <p class="benefit-p">El cuero cabelludo es periferia metabólica — cuando el cuerpo está bajo estrés inflamatorio crónico (intestino, hígado, articulaciones), apaga producción capilar para conservar recursos. Bajar inflamación sistémica reactiva folículo.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Ritual mensual sistémico</div>
+      <p class="benefit-p">El protocolo signature: 1 dosis Trinity SC mensual + GHK/AHK semanales + GHK tópico diario. Trinity es la 'limpieza profunda' que prepara el terreno para que los activos folicular-específicos funcionen.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">5-10mg<br>1× al mes</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>sistémica</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Continuo · 1×/mes</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Llevaba 2 años con caída postparto que no recuperaba. Mi nutrióloga sumó Trinity al protocolo. A los 4 meses mi cabello volvió al volumen pre-embarazo."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ Cancún · 36 años · postparto crónico</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Sikiric P et al. · BPC-157 sistémico anti-inflamatorio · Universidad Zagreb 2018.<br>Pickart L · GHK-Cu y fibroblastos · BioMed Res Int 2014.<br>Goldstein AL · TB-500 reparación tisular profunda · NIH 2005.
+  </div>
+  <div class="page-disclaimer">$3,999 MXN · 30mg stack · COA Janoshik · 3 péptidos en frasco único</div>
+</div>
+
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<div class="page price-page">
+  <div class="page-num">07 · INVERSIÓN</div>
+  <div class="eyebrow">STACKS Y PROTOCOLOS</div>
+  <h2>El acceso premium<br><em>al protocolo completo.</em></h2>
+  <p class="lede">Los stacks signature ofrecen ahorro real vs comprar individuales — además del concierge specialist 1-on-1 que diseña tu protocolo según tus síntomas, comorbilidades y wearables.</p>
+  <div class="pricing-table">
+    <div class="pt-row head"><div>STACK / PROTOCOLO</div><div style="text-align:right">PRECIO MXN</div><div style="text-align:right">DETALLE</div></div>
+    <div class="pt-row"><div class="pt-name">ESSENTIAL Hair Stack<small>GHK-Cu sistémico + tópico · 12 sem</small></div><div class="pt-price">$5,499</div><div class="pt-tag"></div></div><div class="pt-row"><div class="pt-name">SIGNATURE Hair Stack<small>GHK-Cu + AHK-Cu + Trinity · 16 sem</small></div><div class="pt-price">$10,999</div><div class="pt-tag">(ahorras $2,098 vs individual)</div></div><div class="pt-row"><div class="pt-name">RESCUE Hair Quarterly<small>Stack signature × 4 trimestres + tricoscopia digital mensual</small></div><div class="pt-price">$39,999</div><div class="pt-tag"></div></div>
+  </div>
+  <div class="cta-banner">
+    <h3>El folículo recuerda<br><em>cómo crecer.</em></h3>
+    <p>Sin tocar tu DHT · sin minoxidil de por vida · sin shedding inicial brutal. Stack research-grade que reactiva señal endógena.</p>
+    <a href="https://wa.me/5214445770445" class="cta-btn">VER STACK CABELLO</a>
+  </div>
+  <div class="page-disclaimer">Precios sujetos a cambio · No incluye consulta médica especializada · Concierge specialist 1-on-1 incluido en stacks Signature y superiores</div>
+</div>
+
+<!-- ═══════════════ BACK COVER ═══════════════ -->
+<div class="page back">
+  <div style="margin:auto 0">
+  <h2 class="back-h">Despierta el folículo.<br><em>Recupera el grosor.</em></h2>
+  <p class="back-p">Stack research-grade · COA Janoshik público · tricoscopia digital basal incluida · concierge specialist 1-on-1.</p>
+  <div class="back-contact">
+    <div class="bc-cell"><div class="l">WHATSAPP</div><div class="v">+52 444 577 0445</div></div>
+    <div class="bc-cell"><div class="l">WEB</div><div class="v">peptiqmx.com</div></div>
+    <div class="bc-cell"><div class="l">CITY</div><div class="v">San Luis Potosí · MX</div></div>
+  </div>
+  </div>
+  <div class="page-disclaimer">© 2026 PEPTIQ MX · Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+</body>
+</html>

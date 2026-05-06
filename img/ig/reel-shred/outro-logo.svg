@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="#000"/>
+
+  <text x="540" y="900" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="6" text-anchor="middle" fill="#f0e4c8">PEPTI<tspan fill="url(#gold)">Q</tspan></text>
+
+  <line x1="340" y1="950" x2="740" y2="950" stroke="#C6A969" stroke-width="2" opacity="0.8"/>
+
+  <text x="540" y="1020" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="42" font-weight="400" letter-spacing="14" text-anchor="middle" fill="#C6A969" opacity="0.85">Your metabolism · engineered</text>
+
+  <text x="540" y="1250" font-family="'Inter',sans-serif" font-size="30" letter-spacing="8" text-anchor="middle" fill="#a8987a">peptiqmx.com/shred</text>
+</svg>

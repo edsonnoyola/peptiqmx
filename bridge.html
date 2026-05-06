@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>bridge</title>
+<script>
+window.addEventListener('message', async (ev) => {
+  if (!ev.data || ev.data.type !== 'fetch_video') return;
+  try {
+    const r = await fetch(ev.data.url);
+    const blob = await r.blob();
+    ev.source.postMessage({ type: 'video_blob', blob, name: ev.data.name || 'video.mp4' }, ev.origin);
+  } catch (e) {
+    ev.source.postMessage({ type: 'video_error', error: String(e) }, ev.origin);
+  }
+});
+parent && parent.postMessage({ type: 'bridge_ready' }, '*');
+</script>

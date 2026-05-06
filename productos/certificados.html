@@ -13,7 +13,7 @@
     :root {
       --black: #0F0F0F;
       --white: #FFFFFF;
-      --beige: #B8A99A;
+      --beige: #777777;
       --mid-gray: #1A1A1A;
       --text-secondary: #888;
       --serif: 'Playfair Display', serif;
@@ -32,11 +32,13 @@
     .batch-card { background:var(--mid-gray); padding:30px; border:1px solid rgba(255,255,255,0.05); }
     .batch-id { font-size:10px; letter-spacing:2px; color:var(--beige); margin-bottom:15px; text-transform:uppercase; }
     .batch-name { font-family:var(--serif); font-size:24px; margin-bottom:5px; }
-    .batch-purity { font-size:13px; color:#22C55E; font-weight:600; margin-bottom:20px; }
+    .batch-purity { font-size:13px; color:#111111; font-weight:600; margin-bottom:20px; }
     .batch-link { display:inline-block; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--white); border-bottom:1px solid var(--beige); text-decoration:none; padding-bottom:4px; }
     
     .verification-footer { max-width:800px; margin:0 auto; padding:60px 40px; border-top:1px solid var(--mid-gray); text-align:center; color:var(--text-secondary); font-size:12px; }
   </style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
 </head>
 <body>
 
@@ -83,6 +85,13 @@
   <footer class="verification-footer">
     <p>Todos los certificados son propiedad de PeptiqMX y están vinculados a los lotes físicos mediante códigos QR de seguridad únicos.</p>
   </footer>
+
+
+<!-- peptiq-global-disclaimer -->
+<div style="position:fixed;left:0;right:0;bottom:0;background:rgba(17,17,17,0.92);color:#F5F5F5;font-size:10.5px;line-height:1.5;letter-spacing:0.3px;text-align:center;padding:6px 60px;z-index:9998;backdrop-filter:blur(8px);font-family:Inter,sans-serif;">
+  Producto de uso exclusivo para investigación. El uso es responsabilidad de quien lo use.
+</div>
+<style>body{padding-bottom:32px !important;}</style>
 
 </body>
 </html>

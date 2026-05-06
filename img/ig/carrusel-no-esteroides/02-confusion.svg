@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="darkBottom" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="55%" stop-color="#000000" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <image xlink:href="https://peptiqmx.com/img/covers/shred-hero.png" x="0" y="0" width="1080" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1080" height="1080" fill="url(#darkBottom)"/>
+
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="10">01 · LA CONFUSIÓN</text>
+
+  <text x="540" y="650" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Misma jeringa.</text>
+  <text x="540" y="725" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="url(#gold)" text-anchor="middle" font-style="italic">Mecanismo opuesto.</text>
+
+  <line x1="420" y1="780" x2="660" y2="780" stroke="#C6A969" stroke-width="1" opacity="0.7"/>
+
+  <text x="540" y="860" font-family="'Playfair Display',Georgia,serif" font-size="32" fill="#f0e4c8" text-anchor="middle" font-style="italic">Se inyectan igual. Hacen cosas opuestas.</text>
+  <text x="540" y="920" font-family="'Inter',sans-serif" font-size="20" fill="#E5C981" text-anchor="middle" letter-spacing="4">UNO REEMPLAZA · EL OTRO AMPLIFICA</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.5"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">02 / 08</text>
+</svg>

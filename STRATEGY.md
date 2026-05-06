@@ -1,0 +1,304 @@
+# PEPTIQ MX · Go-to-Market Strategy
+**Última actualización:** 2026-04-28
+**Lanzamiento oficial:** 2026-04-20 (ya pasó — fase post-launch)
+**Estado:** Brand live · 8+ posts · 5 carruseles · 9 historias listas · 386 leads B2B · 2,254 leads Nova
+
+---
+
+## Tesis estratégica
+
+PEPTIQ es **DTC premium research-grade**. No vendemos como wellness genérico ni como Nova B2B. Diferenciador único en MX: **COA Janoshik por lote** (laboratorio independiente). Nadie más lo tiene.
+
+Competencia GoutoGo et al = resellers genéricos sin trazabilidad. Nuestra ventaja: trust signal verificable + branding luxury.
+
+---
+
+## Los 6 canales · prioridad y peso
+
+| # | Canal | Audiencia | ROI esperado | Status hoy |
+|---|---|---|---|---|
+| 1 | **TikTok Shop + TikTok orgánico** | DTC consumer 25-45 biohacker | ALTO (compra impulse) | **NO ARRANCADO** |
+| 2 | **Cold email B2B** | Clínicas estética/peso/anti-aging | MEDIO (ticket alto recurrente) | 20 drafts listos, 366 pendientes |
+| 3 | **Instagram orgánico** | Awareness DTC + B2B | MEDIO (long-game) | 8 posts + 5 carruseles activos |
+| 4 | **WhatsApp blast** | Lista B2B Nova + interesados | ALTO MX | NO ejecutado, lista existe |
+| 5 | **Meta Ads (FB+IG)** | Retargeting site visitors + lookalikes | ALTO con budget | NO arrancado |
+| 6 | **SEO + Blog peptiqmx.com** | Long-tail "péptidos research grade México" | LARGO PLAZO | Sitio live, blog vacío |
+
+---
+
+## 1. TikTok Shop + TikTok Orgánico (PRIORITARIO — el gap más grande)
+
+### Por qué es crítico
+- TikTok Shop MX explotó 2025 — sellers wellness/supplements escalan a $200K+ MXN/mes
+- Compra impulse + checkout in-app = conversion rate 3-5× superior a IG link-in-bio
+- Algoritmo recompensa sellers nuevos primeros 30 días (boost orgánico)
+- Pre-launch hype + scarcity drops = match perfecto para PEPTIQ luxury positioning
+
+### Setup (semana 1)
+1. **Cuenta TikTok Seller MX** — registro en seller.tiktok.com (RFC + datos fiscales). 24-48h verificación
+2. **Catálogo:** 6 SKUs flagship (Wolverine, Highlander, Glow, Prime, Shred, Spa) — cada uno con video producto vertical 1080×1920 + foto pack-shot + COA visible
+3. **Categorías:** "Wellness > Suplementos > Investigación" (importante: NO etiquetar como medicamento, eso te baja)
+4. **Pricing TikTok Shop:** mismo de peptiqmx.com (NO descuento — premium positioning), pero ofrece **bundle/stack discounts** (-15% comprar 2)
+5. **Cupón TT-LANZA20** primer pedido -20%
+6. **Envíos:** integrar Estafeta/DHL via TikTok Shop fulfillment
+
+### Contenido (semana 1-4 sostenido)
+**3 videos/día** en @peptiqmx_mx TikTok (cuenta nueva, separada de IG):
+
+| Tipo | Frecuencia | Duración |
+|---|---|---|
+| Educativo "qué es BPC-157" / "por qué COA importa" | 1/día | 45-60s |
+| Lifestyle producto + ritual reconstitución | 1/día | 30s |
+| Testimonial / social proof / behind-scenes | 1/día | 15-30s |
+
+**Hooks que funcionan en péptidos TikTok 2026:**
+- "El error que comete el 90% reconstituyendo péptidos"
+- "POV: tu doctor te dijo que esto no existe en México"
+- "Por qué este péptido cuesta $3,000 vs $300 en Amazon"
+- "5 péptidos research-grade que cambian la conversación post-Ozempic"
+
+### Creator partnerships (semana 2+)
+- 5-10 micro-influencers MX (10K-100K) en biohacking/longevity/fitness
+- Compensación: producto gratis + comisión 10-15% TikTok Shop
+- Brief: educacional + COA visible + link al shop
+
+### KPIs TikTok Shop (mes 1)
+- 50K views totales
+- 300 followers nuevos
+- 30 ventas (conversion 0.06%)
+- Ticket promedio $3,500 = $105K MXN revenue mes 1
+- Mes 3 target: $300K MXN
+
+---
+
+## 2. Cold Email B2B (en ejecución)
+
+### Lista
+- **386 leads PEPTIQ-rebranded** en `outreach/peptiq-emails-clean.csv`
+- Categorías: anti-aging (76), peso (61), spa médico (54), estética (49), nutriólogos (46), dermatología (46), péptidos directo (21)
+- Top ciudades: CDMX 38, Tijuana 35, MTY 27, Los Cabos 26, Playa 24
+
+### Templates
+- 18 templates en `outreach/peptiq-emails-PREVIEW.md`
+- Secuencia 3-step: Día 0 + Día 3 + Día 7
+- Hooks Euromonitor abril 2026
+
+### Sender domain (DECISIÓN PENDIENTE)
+3 opciones — **ACCIÓN: tú decides cuál**
+
+| Opción | Setup | Velocidad | Riesgo deliverability |
+|---|---|---|---|
+| **A.** edson@marketingtdi.com (actual) | 0 min | HOY | Medio (cross-brand) |
+| **B.** Crear hello@peptiqmx.com en Workspace | 30 min | HOY | Bajo |
+| **C.** Dominios secundarios + warming Instantly | 21 días | Día 21 | Mínimo |
+
+### Plan ejecución (asume opción B aprobada)
+- **Hoy:** 20 drafts Día 0 listos en Gmail (50 leads top — anti-aging + peso)
+- **Día +1:** 50 más Día 0 (resto categorías)
+- **Día +3:** Follow-up Step 2 a no-responders
+- **Día +7:** Follow-up Step 3 final (last chance)
+- **Throttle:** 30/día por sender para no quemar
+
+### KPIs B2B (mes 1)
+- 386 emails enviados
+- Open rate target 35% = 135 abren
+- Reply rate target 8% = 30 respuestas
+- Sample requests target 15
+- Conversiones a primer pedido target 5 = $50K-150K MXN (clínicas piden $10-30K stack inicial)
+
+---
+
+## 3. Instagram Orgánico (sostenido)
+
+### Lo publicado
+- 8 posts iniciales + 5 carruseles educativos (NO esteroides, NAD+, Wolverine, Mapa MX, Hipertrofia)
+- Reglas guardadas en memoria: máx 5 slides por carrusel, mínimo 1 story diaria
+
+### Plan abril–mayo
+- **Carruseles:** 2/semana — temas educativos (péptidos por categoría, COA explainer, comparativas)
+- **Posts simples:** 1/semana — drops, behind-scenes, testimonios
+- **Reels:** 1/semana — Veo 3 (~$16/reel) cinematográficos · ya tenemos playbook
+- **Stories:** mínimo 1/día (stack de 9 listo, rotar)
+- **Highlights:** COA, Productos, Envíos, Stacks, FAQ (covers ya creados)
+
+### KPIs IG (mes 1)
+- Followers: 500 → 2,500
+- Reach mensual: 100K
+- DMs/inquiries: 50
+
+---
+
+## 4. WhatsApp (canal MX nativo — ALTO ROI)
+
+### Activos existentes
+- WhatsApp +52 444 577 0445 (compartido con Nova)
+- Bot SARA architecture
+- Lista `outreach/peptiq-whatsapp-clean.csv`
+
+### Riesgo crítico
+**Mass-blast no opt-in = ban en <1h.** WhatsApp Business prohíbe broadcasts a non-saved contacts.
+
+### Plan seguro
+1. **Semana 1:** click-to-WhatsApp en cada email + post + bio IG
+2. **Bot setup:** flujo respuestas "Quiero info" → catálogo + COA + agenda asesoría
+3. **Solo respuesta a inbound** primero, no outbound mass
+4. **Semana 4+:** una vez con 200+ contactos opt-in, broadcast list segmentado
+
+### KPIs WhatsApp (mes 1)
+- 50 inbound chats
+- 30 conversiones a venta
+- Ticket promedio $2,500-5,000 MXN
+
+---
+
+## 5. Meta Ads (Facebook + Instagram)
+
+### Setup (semana 2)
+- Pixel peptiqmx.com instalado (verificar)
+- Catálogo productos en Commerce Manager
+- 3 audiencias:
+  - **A.** Retargeting site visitors 30 días (warm)
+  - **B.** Lookalike 1% de compradores (cuando tengamos 100+)
+  - **C.** Interest stack: biohacking + longevity + Tim Ferriss + Andrew Huberman + Bryan Johnson
+
+### Creative
+- Reels Veo 3 ya producidos (Wolverine, Highlander, etc) → adaptar como ads
+- Carruseles educativos → static ads
+- UGC creators TikTok → reuse cross-platform
+
+### Budget mes 1
+- $200 USD/día = $6,000 USD/mes ($120,000 MXN)
+- Split: 60% retargeting, 30% lookalike, 10% prospecting frío
+
+### KPIs Meta Ads (mes 1)
+- CPM target $250 MXN
+- CTR target 2%
+- ROAS target 2.5× = $300K MXN revenue
+
+---
+
+## 6. SEO + Blog peptiqmx.com
+
+### Plan
+- 4 artículos/mes, 1,500+ palabras cada uno, optimizados long-tail:
+  - "BPC-157 en México: dónde comprarlo legal en 2026"
+  - "Diferencia entre péptidos research-grade y compounded"
+  - "Cómo leer un COA Janoshik (guía completa)"
+  - "Stack post-Ozempic: por qué tu cuerpo necesita BPC-157"
+- Schema markup (FAQ, Product, Article)
+- Internal linking a productos
+- Backlinks: outreach a 5 blogs longevity/biohacking MX
+
+### KPIs SEO (mes 3+)
+- 5K visitas orgánicas/mes
+- 50 conversiones SEO/mes
+- Posicionar "péptidos research grade México" página 1
+
+---
+
+## Timeline ejecutiva (semanas 1–8)
+
+### Semana 1 (29 abr – 5 may)
+- ✅ Carruseles #6-#10 publicados
+- ⬜ Decidir sender email (A/B/C arriba)
+- ⬜ Mandar 20 drafts Día 0
+- ⬜ Crear cuenta TikTok Seller MX
+- ⬜ Producir 9 videos TikTok (3/día sem 1)
+- ⬜ Setup pixel Meta Ads + Commerce Manager
+- ⬜ 1 story IG/día
+
+### Semana 2 (6–12 may)
+- ⬜ TikTok Shop live (catálogo 6 SKUs)
+- ⬜ 50 más leads Día 0 + 20 Día 3 follow-up
+- ⬜ Lanzar Meta Ads $200/día
+- ⬜ 21 videos TikTok (3/día)
+- ⬜ Outreach 5 micro-influencers TikTok
+- ⬜ 1 carrusel + 1 reel + stories diarias IG
+
+### Semana 3 (13–19 may)
+- ⬜ Día 7 follow-up final 70 leads
+- ⬜ 21 videos TikTok continuos
+- ⬜ Primer creator drop TikTok
+- ⬜ Blog: artículo #1 publicado
+- ⬜ Empezar SEO outreach backlinks
+
+### Semana 4 (20–26 may)
+- ⬜ Lanzar Día 0 a siguientes 100 leads
+- ⬜ Optimizar Meta Ads: pausar low-ROAS, escalar winning
+- ⬜ Activar broadcast list WhatsApp (si tenemos 200 opt-ins)
+- ⬜ Blog: artículo #2
+
+### Semanas 5-8
+- Sostener cadencia de publicación
+- Escalar Meta Ads top winners
+- Lanzar Día 0 al resto de los 386 leads
+- Onboard 5+ creators TikTok recurrentes
+- Mes 1 review: KPIs vs target → ajustar
+
+---
+
+## Budget mensual (mes 1) — todo en MXN
+
+| Ítem | Costo |
+|---|---|
+| Meta Ads | $120,000 |
+| TikTok Ads (refuerzo orgánico) | $40,000 |
+| Producción TikTok videos (90 mes) | $30,000 |
+| Veo 3 Reels (4-6 al mes) | $1,500 |
+| Workspace Google (sender peptiqmx.com) | $300 |
+| Mailtrack Pro (tracking emails) | $100 |
+| Instantly.ai (cuando arranque dominios) | $1,500 |
+| Creator partnerships (10 × $1,500 producto + comisión) | $15,000 |
+| **TOTAL mes 1** | **$208,400 MXN** |
+
+---
+
+## Tracking centralizado (CRÍTICO)
+
+### Single source of truth
+**peptiqmx.com/admin/crm.html** — todo se trackea aquí.
+
+### Per channel UTM convention
+```
+?utm_source=tiktok|email|ig|fb_ads|whatsapp|google
+&utm_medium=organic|paid|cold_email|story|reel|carousel
+&utm_campaign=launch_apr26|ozempic_2026|nad_longevity|...
+&utm_content=lead_id_53|video_42|carousel_6|...
+```
+
+### Dashboards weekly review
+- Google Analytics 4 → Acquisition by source
+- TikTok Seller Center → conversion rate by SKU
+- Meta Ads Manager → ROAS by ad set
+- Gmail (Mailtrack) → open/reply rate by template
+- WhatsApp Business → response time + conversion
+
+### Decisión cada lunes
+- Top 3 channels por ROAS → escalar budget +50%
+- Bottom 1 → pausar/iterar
+- Iterar templates con <20% open rate
+
+---
+
+## Riesgos y mitigaciones
+
+| Riesgo | Mitigación |
+|---|---|
+| TikTok ban categoría wellness/péptidos | Posicionar "research-grade investigación" + disclaimer + COA Janoshik visible |
+| Sender domain quemado por cold email | Usar dominio secundario warming 14 días antes |
+| Meta Ads low ROAS primer mes | Empezar conservador $100/día, escalar solo winners |
+| Stockouts en SKUs hot | Forecast inventory mensual basado en TikTok Shop velocity |
+| Competencia GoutoGo descuenta -50% | NO match price war. Doblar en COA + asesoría 1-on-1 + branding luxury |
+| Bot WhatsApp ban por mass | Solo inbound primer mes, broadcast list opt-in semana 4+ |
+
+---
+
+## Decisiones que necesito de ti AHORA
+
+1. **Sender email** A/B/C arriba — ¿cuál?
+2. **TikTok Seller registro** — ¿lo abro yo via tu RFC o tú directamente?
+3. **Budget mes 1 confirmado** $208K MXN aprobado o ajustamos?
+4. **Producción videos TikTok** — ¿UGC creators o producción in-house tu equipo?
+5. **Creators MX shortlist** — ¿tienes contactos o yo busco?
+
+Confirma estos 5 y arranco mañana ejecución completa.

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+    <linearGradient id="topDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bottomDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1080" height="350" fill="url(#topDark)"/>
+  <rect x="0" y="1300" width="1080" height="620" fill="url(#bottomDark)"/>
+
+  <!-- Top eyebrow -->
+  <line x1="100" y1="180" x2="980" y2="180" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+  <text x="540" y="240" font-family="'Inter',sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="14">RECOVERY LINE</text>
+
+  <!-- Big brand name -->
+  <text x="540" y="1620" font-family="'Playfair Display',Georgia,serif" font-size="140" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="6">WOLVERINE</text>
+  <line x1="340" y1="1680" x2="740" y2="1680" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <!-- Tagline -->
+  <text x="540" y="1750" font-family="'Playfair Display',Georgia,serif" font-size="44" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Para el que rompe, vuelve.</text>
+
+  <!-- CTA -->
+  <text x="540" y="1860" font-family="'Inter',sans-serif" font-size="28" fill="url(#gold)" text-anchor="middle" letter-spacing="10" font-weight="600">PEPTIQMX.COM</text>
+</svg>

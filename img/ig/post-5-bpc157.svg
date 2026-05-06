@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- Line tag — wider rectangle -->
+  <rect x="290" y="100" width="500" height="54" rx="4" fill="none" stroke="#7A1C1C" stroke-width="2"/>
+  <text x="540" y="137" font-family="'Inter', sans-serif" font-size="24" fill="#9a3030" text-anchor="middle" letter-spacing="8" font-weight="600">WOLVERINE · RECOVERY</text>
+
+  <!-- Compound name -->
+  <text x="540" y="310" font-family="'Playfair Display', Georgia, serif" font-size="200" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="4">BPC-157</text>
+
+  <!-- Subline -->
+  <text x="540" y="380" font-family="'Inter', sans-serif" font-size="30" fill="#a8987a" text-anchor="middle" letter-spacing="8">10 MG · LIOFILIZADO · 99%+ HPLC</text>
+
+  <line x1="390" y1="420" x2="690" y2="420" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <!-- Hook headline -->
+  <text x="540" y="510" font-family="'Playfair Display', Georgia, serif" font-size="54" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">El péptido que los atletas</text>
+  <text x="540" y="575" font-family="'Playfair Display', Georgia, serif" font-size="54" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">de élite guardan en secreto.</text>
+
+  <!-- Benefits list -->
+  <g font-family="'Inter', sans-serif" fill="#cfc3a5" font-size="30">
+    <text x="200" y="700">→ Reparación tendón · ligamento</text>
+    <text x="200" y="755">→ Recuperación muscular acelerada</text>
+    <text x="200" y="810">→ Soporte mucosa gástrica</text>
+    <text x="200" y="865">→ Anti-inflamatorio sistémico</text>
+  </g>
+
+  <!-- Bottom - shortened URL -->
+  <line x1="80" y1="980" x2="1000" y2="980" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1020" font-family="'Inter', sans-serif" font-size="26" font-weight="600" fill="url(#gold)" text-anchor="middle" letter-spacing="8">VERIFICA LOTE · PEPTIQMX.COM</text>
+</svg>

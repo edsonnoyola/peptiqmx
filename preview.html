@@ -29,15 +29,15 @@
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{
       --ink:#111111;
-      --stone:#F6F3EE;
+      --stone:#FAFAFA;
       --paper:#FFFFFF;
-      --beige:#B8A99A;
-      --beige-deep:#9C8D7F;
-      --gold:#C6A969;
-      --rule:#E3DED6;
+      --beige:#777777;
+      --beige-deep:#777777;
+      --gold:#111111;
+      --rule:#F5F5F5;
       --mute:#6B6B6B;
-      --soft:#F0ECE4;
-      --ok:#22C55E;
+      --soft:#FAFAFA;
+      --ok:#111111;
       --serif:'Playfair Display', Georgia, serif;
       --sans:'Inter', -apple-system, sans-serif;
     }
@@ -92,7 +92,7 @@
     /* ====== MARQUEE / PROOF ====== */
     .proof{background:var(--ink);color:var(--paper);padding:22px 0;overflow:hidden}
     .proof-track{display:flex;gap:60px;animation:slide 32s linear infinite;white-space:nowrap}
-    .proof-track span{font-size:11px;letter-spacing:3.4px;text-transform:uppercase;font-weight:400;color:#c8c1b2}
+    .proof-track span{font-size:11px;letter-spacing:3.4px;text-transform:uppercase;font-weight:400;color:#E5E5E5}
     .proof-track em{font-style:normal;color:var(--gold)}
     @keyframes slide{to{transform:translateX(-50%)}}
 
@@ -158,11 +158,11 @@
     .coa-body .eyebrow{color:var(--gold);display:block;margin-bottom:20px}
     .coa-body h2{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:400;line-height:1.1;margin-bottom:24px}
     .coa-body h2 em{font-style:italic;color:var(--gold)}
-    .coa-body p{color:#c8c1b2;font-size:16px;margin-bottom:32px;max-width:440px}
+    .coa-body p{color:#E5E5E5;font-size:16px;margin-bottom:32px;max-width:440px}
     .coa-panel{background:rgba(255,255,255,.03);border:1px solid rgba(198,169,105,.3);padding:32px;font-family:'SF Mono', Menlo, monospace}
     .coa-row{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:12px}
     .coa-row:last-child{border-bottom:0}
-    .coa-row .k{color:#8a8274;letter-spacing:1.6px;text-transform:uppercase;font-size:10px;font-weight:500;align-self:center}
+    .coa-row .k{color:#777777;letter-spacing:1.6px;text-transform:uppercase;font-size:10px;font-weight:500;align-self:center}
     .coa-row .v{color:var(--paper);font-weight:500;letter-spacing:.3px}
     .coa-row .v.gold{color:var(--gold);font-size:16px;font-family:var(--serif);font-weight:500;font-style:italic}
     .coa-row .v .ok{color:var(--ok);margin-left:8px;font-size:10px;letter-spacing:1.6px;text-transform:uppercase}
@@ -188,31 +188,31 @@
     .b2b-grid .eyebrow{color:var(--gold);margin-bottom:18px;display:block}
     .b2b-grid h2{font-family:var(--serif);font-size:clamp(28px,3.5vw,44px);font-weight:400;line-height:1.1;margin-bottom:16px}
     .b2b-grid h2 em{font-style:italic;color:var(--gold)}
-    .b2b-grid p{color:#c8c1b2;font-size:15px;max-width:520px}
-    .b2b-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 28px;background:var(--gold);color:var(--ink);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+    .b2b-grid p{color:#E5E5E5;font-size:15px;max-width:520px}
+    .b2b-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 28px;background:#FFFFFF;color:#111111;border:1px solid #111111;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
     .b2b-btn:hover{background:#d4b97a}
     @media(max-width:760px){.b2b-grid{grid-template-columns:1fr;gap:32px;text-align:center}.b2b-btn{justify-self:center}}
 
     /* ====== DISCLAIMER ====== */
-    .disclaimer{padding:72px 0;background:#1a1a1a;color:#c8c1b2;border-top:1px solid rgba(255,255,255,.08)}
+    .disclaimer{padding:72px 0;background:#1a1a1a;color:#E5E5E5;border-top:1px solid rgba(255,255,255,.08)}
     .disclaimer-inner{max-width:860px;margin:0 auto}
     .disclaimer h3{color:#FFC107;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;font-weight:600;margin-bottom:22px}
-    .disclaimer p{font-size:13px;color:#b4ac9e;margin-bottom:16px;line-height:1.7}
+    .disclaimer p{font-size:13px;color:#777777;margin-bottom:16px;line-height:1.7}
     .disclaimer p b{color:var(--paper);font-weight:500}
 
     /* ====== FOOTER ====== */
     footer{background:var(--ink);color:var(--paper);padding:64px 0 28px}
     .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:48px}
     .foot-brand .brand-text{color:var(--paper)}
-    .foot-brand p{color:#8a8274;font-size:13px;max-width:280px;margin-top:18px;line-height:1.7}
+    .foot-brand p{color:#777777;font-size:13px;max-width:280px;margin-top:18px;line-height:1.7}
     .foot-col h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:500}
-    .foot-col a{display:block;color:#c8c1b2;font-size:13px;margin-bottom:10px;transition:.2s}
+    .foot-col a{display:block;color:#E5E5E5;font-size:13px;margin-bottom:10px;transition:.2s}
     .foot-col a:hover{color:var(--paper)}
-    .foot-rule{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;font-size:11px;color:#6a6358;letter-spacing:1px}
+    .foot-rule{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;font-size:11px;color:#777777;letter-spacing:1px}
     @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}.foot-brand{grid-column:span 2}}
 
     /* WA float */
-    .wa-float{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:55;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+    .wa-float{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:#111111;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:55;box-shadow:0 6px 24px rgba(0,0,0,.25)}
     .wa-float svg{width:28px;height:28px;fill:#fff}
 
     /* ===== popup ===== */
@@ -226,6 +226,8 @@
     .popup-card button{width:100%;padding:14px;background:var(--ink);color:var(--paper);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
     .popup-fine{font-size:11px;color:var(--mute);text-align:center;margin-top:12px}
   </style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
 </head>
 <body>
 
@@ -278,7 +280,7 @@
       </div>
       <div class="hero-visual">
         <span class="hero-tape">Janoshik · Verified</span>
-        <img src="img/trinity.jpg" alt="TRINITY PEPTIQ">
+        <img src="img/products-v2/trinity-studio.png" alt="TRINITY PEPTIQ">
       </div>
     </div>
   </div>
@@ -343,67 +345,67 @@
     </div>
     <div class="product-grid" id="productGrid">
       <a href="productos/bpc-157.html" class="p-card" data-cat="wolverine">
-        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/bpc-157.jpg" alt="BPC-157"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/products-v2/bpc-157-studio.png" alt="BPC-157"></div>
         <div class="pbody"><div class="pline">Wolverine · Recuperación</div><div class="pname">BPC-157</div><div class="pprice">$2,999 <small>MXN · 10mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('bpc-157');">Comprar →</span></div></div></a>
 
       <a href="productos/tb-500.html" class="p-card" data-cat="wolverine">
-        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/tb-500.jpg" alt="TB-500"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/products-v2/tb-500-studio.png" alt="TB-500"></div>
         <div class="pbody"><div class="pline">Wolverine · Recuperación</div><div class="pname">TB-500</div><div class="pprice">$3,799 <small>MXN · 10mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('tb-500');">Comprar →</span></div></div></a>
 
       <a href="productos/wolverine.html" class="p-card" data-cat="wolverine">
-        <div class="pimg"><span class="jbadge">Janoshik</span><span class="ptier">Blend</span><img src="img/heal-stack.jpg" alt="WOLVERINE BLEND"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><span class="ptier">Blend</span><img src="img/products-v2/heal-stack-studio.png" alt="WOLVERINE BLEND"></div>
         <div class="pbody"><div class="pline">Wolverine · Recuperación</div><div class="pname">Wolverine Blend</div><div class="pprice">$5,999 <small>MXN · 20mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('wolverine');">Comprar →</span></div></div></a>
 
       <a href="productos/kpv.html" class="p-card" data-cat="wolverine">
-        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/kpv.jpg" alt="KPV"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/products-v2/kpv-studio.png" alt="KPV"></div>
         <div class="pbody"><div class="pline">Wolverine · Inflamación</div><div class="pname">KPV</div><div class="pprice">$3,299 <small>MXN · 10mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('kpv');">Comprar →</span></div></div></a>
 
       <a href="productos/nad-plus.html" class="p-card" data-cat="highlander">
-        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/nad.jpg" alt="NAD+"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/products-v2/nad-plus-studio.png" alt="NAD+"></div>
         <div class="pbody"><div class="pline">Highlander · Longevidad</div><div class="pname">NAD+</div><div class="pprice">$5,499 <small>MXN · 1000mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('nad');">Comprar →</span></div></div></a>
 
       <a href="productos/epithalon.html" class="p-card" data-cat="highlander">
-        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/epithalon.jpg" alt="Epithalon"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/products-v2/epithalon-studio.png" alt="Epithalon"></div>
         <div class="pbody"><div class="pline">Highlander · Telómeros</div><div class="pname">Epithalon</div><div class="pprice">$3,999 <small>MXN · 10mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('epithalon');">Comprar →</span></div></div></a>
 
       <a href="productos/ghk-cu.html" class="p-card" data-cat="glow highlander">
-        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/ghk-cu.jpg" alt="GHK-Cu"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/products-v2/ghk-cu-studio.png" alt="GHK-Cu"></div>
         <div class="pbody"><div class="pline">Glow + Highlander · Piel & longevidad</div><div class="pname">GHK-Cu</div><div class="pprice">$3,299 <small>MXN · 50mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('ghk-cu');">Comprar →</span></div></div></a>
 
       <a href="productos/ahk-cu.html" class="p-card" data-cat="glow">
-        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/ahk-cu.jpg" alt="AHK-Cu"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/products-v2/ahk-cu-studio.png" alt="AHK-Cu"></div>
         <div class="pbody"><div class="pline">Glow · Cabello</div><div class="pname">AHK-Cu</div><div class="pprice">$3,299 <small>MXN · 50mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('ahk-cu');">Comprar →</span></div></div></a>
 
       <a href="productos/trinity.html" class="p-card" data-cat="glow">
-        <div class="pimg"><span class="jbadge">Janoshik</span><span class="ptier">Blend</span><img src="img/trinity.jpg" alt="TRINITY"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><span class="ptier">Blend</span><img src="img/products-v2/trinity-studio.png" alt="TRINITY"></div>
         <div class="pbody"><div class="pline">Glow · Flagship</div><div class="pname">Trinity™</div><div class="pprice">$7,499 <small>MXN · 70mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('trinity');">Comprar →</span></div></div></a>
 
       <a href="productos/cjc-ipamorelin.html" class="p-card" data-cat="prime">
-        <div class="pimg"><span class="jbadge">Janoshik</span><span class="ptier">Blend</span><img src="img/gh-stack.jpg" alt="GH STACK"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><span class="ptier">Blend</span><img src="img/products-v2/gh-stack-studio.png" alt="GH STACK"></div>
         <div class="pbody"><div class="pline">Prime · Growth Hormone</div><div class="pname">GH Stack™</div><div class="pprice">$4,999 <small>MXN · 10mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('gh-stack');">Comprar →</span></div></div></a>
 
       <a href="productos/ipamorelin.html" class="p-card" data-cat="prime">
-        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/ipamorelin.jpg" alt="Ipamorelin"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/products-v2/ipamorelin-studio.png" alt="Ipamorelin"></div>
         <div class="pbody"><div class="pline">Prime · GH-release</div><div class="pname">Ipamorelin</div><div class="pprice">$3,099 <small>MXN · 10mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('ipamorelin');">Comprar →</span></div></div></a>
 
       <a href="productos/tesamorelin.html" class="p-card" data-cat="prime">
-        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/tesamorelin.jpg" alt="Tesamorelin"></div>
+        <div class="pimg"><span class="jbadge">Janoshik</span><img src="img/products-v2/tesamorelin-studio.png" alt="Tesamorelin"></div>
         <div class="pbody"><div class="pline">Prime · Visceral fat</div><div class="pname">Tesamorelin</div><div class="pprice">$6,999 <small>MXN · 10mg</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('tesamorelin');">Comprar →</span></div></div></a>
 
       <a href="productos/agua-bacteriostatica.html" class="p-card" data-cat="support">
-        <div class="pimg"><img src="img/bac-water.jpg" alt="Agua Bacteriostática"></div>
+        <div class="pimg"><img src="img/products-v2/bac-water-studio.png" alt="Agua Bacteriostática"></div>
         <div class="pbody"><div class="pline">Support · Accesorio</div><div class="pname">Agua Bacteriostática</div><div class="pprice">$599 <small>MXN · 3ml</small></div>
           <div class="pact"><span class="b1">Detalles</span><span class="b2" onclick="event.preventDefault();event.stopPropagation();buyNow('agua');">Comprar →</span></div></div></a>
     </div>
@@ -418,7 +420,7 @@
         <div class="eyebrow">COA Janoshik · Lote público</div>
         <h2>La prueba<br>que nadie<br><em>te enseña.</em></h2>
         <p>Cada lote PEPTIQ se envía al laboratorio Janoshik en Eslovaquia para análisis HPLC + espectrometría de masas. Publicamos el COA completo antes de liberar el lote al mercado.</p>
-        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20ver%20los%20COA" target="_blank" rel="noopener" class="btn-ink" style="background:var(--gold);color:var(--ink)">Solicitar COA →</a>
+        <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20ver%20los%20COA" target="_blank" rel="noopener" class="btn-ink" style="background:#FFFFFF;color:#111111;border:1px solid #111111">Solicitar COA →</a>
       </div>
       <div class="coa-panel">
         <div class="coa-row"><div class="k">Product</div><div class="v">BPC-157 · 10mg</div></div>
@@ -699,6 +701,13 @@
     });
   });
 </script>
+
+
+<!-- peptiq-global-disclaimer -->
+<div style="position:fixed;left:0;right:0;bottom:0;background:rgba(17,17,17,0.92);color:#F5F5F5;font-size:10.5px;line-height:1.5;letter-spacing:0.3px;text-align:center;padding:6px 60px;z-index:9998;backdrop-filter:blur(8px);font-family:Inter,sans-serif;">
+  Producto de uso exclusivo para investigación. El uso es responsabilidad de quien lo use.
+</div>
+<style>body{padding-bottom:32px !important;}</style>
 
 </body>
 </html>

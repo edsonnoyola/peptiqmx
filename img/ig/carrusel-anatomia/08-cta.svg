@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="22" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.75">CHAPTER 01 · END</text>
+
+  <text x="540" y="370" font-family="'Playfair Display',Georgia,serif" font-size="68" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Cada vial.</text>
+  <text x="540" y="460" font-family="'Playfair Display',Georgia,serif" font-size="68" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Cada lote.</text>
+  <text x="540" y="580" font-family="'Playfair Display',Georgia,serif" font-size="120" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="4" font-style="italic">Trazable.</text>
+
+  <line x1="420" y1="640" x2="660" y2="640" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <text x="540" y="730" font-family="'Inter',sans-serif" font-size="22" fill="#f0e4c8" text-anchor="middle" letter-spacing="6">EXPLORA EL LINEUP</text>
+  <text x="540" y="775" font-family="'Playfair Display',Georgia,serif" font-size="36" fill="url(#gold)" text-anchor="middle" font-style="italic">peptiqmx.com</text>
+
+  <g transform="translate(540 850)">
+    <circle cx="-200" cy="0" r="10" fill="#b53d3d"/>
+    <circle cx="-120" cy="0" r="10" fill="#C6A969"/>
+    <circle cx="-40" cy="0" r="10" fill="#a8c06a"/>
+    <circle cx="40" cy="0" r="10" fill="#f3ecd8"/>
+    <circle cx="120" cy="0" r="10" fill="#d0c9b8"/>
+    <circle cx="200" cy="0" r="10" fill="#78ae95"/>
+  </g>
+
+  <text x="540" y="920" font-family="'Inter',sans-serif" font-size="14" fill="#a8987a" text-anchor="middle" letter-spacing="2" opacity="0.8">El uso de este producto es responsabilidad de quien lo use, solo para investigación.</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">08 / 08</text>
+</svg>

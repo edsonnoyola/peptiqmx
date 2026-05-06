@@ -13,7 +13,7 @@
     :root {
       --black: #1A1A1A;
       --white: #FFFFFF;
-      --beige: #B8A99A;
+      --beige: #777777;
       --light-gray: #F5F3F0;
       --mid-gray: #E8E4E0;
       --text-secondary: #6B6B6B;
@@ -60,7 +60,7 @@
 
     /* PURITY BAR */
     .purity-bar { display:flex; align-items:center; gap:10px; margin-bottom:24px; padding:14px 18px; background:var(--light-gray); }
-    .purity-dot { width:8px; height:8px; background:#22C55E; border-radius:50%; }
+    .purity-dot { width:8px; height:8px; background:#111111; border-radius:50%; }
     .purity-text { font-size:12px; letter-spacing:1px; font-weight:500; }
     .purity-value { margin-left:auto; font-size:13px; font-weight:600; letter-spacing:0.5px; }
 
@@ -111,7 +111,28 @@
       .nav { padding:14px 20px; }
       .breadcrumb { padding:16px 20px; }
     }
-  </style>
+  
+    .moment{padding:0;background:#0E0E0E;color:#FAFAFA;overflow:hidden}
+    .moment-grid{display:grid;grid-template-columns:1fr 1fr;min-height:680px}
+    .moment-img{position:relative;height:100%;overflow:hidden;background:#000}
+    .moment-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    .moment-img::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.15) 100%);pointer-events:none}
+    .moment-copy{padding:96px 72px;display:flex;flex-direction:column;justify-content:center;max-width:600px}
+    .moment-copy .eyebrow{color:rgba(255,255,255,.45);font-size:10px;letter-spacing:3.2px;font-weight:500;text-transform:uppercase}
+    .moment-copy h2{font-family:var(--serif),'Playfair Display',Georgia,serif;font-size:60px;font-weight:300;line-height:1.05;letter-spacing:-0.02em;margin:22px 0 32px;color:#FAFAFA}
+    .moment-copy h2 em{font-style:italic;font-weight:400;color:rgba(255,255,255,.65)}
+    .moment-copy p{font-size:17px;line-height:1.7;color:rgba(255,255,255,.55);font-weight:300;max-width:480px}
+    .moment-copy .moment-rule{width:48px;height:1px;background:rgba(255,255,255,.25);margin-top:40px}
+    @media(max-width:960px){
+      .moment-grid{grid-template-columns:1fr}
+      .moment-img{height:520px;order:-1}
+      .moment-copy{padding:72px 32px}
+      .moment-copy h2{font-size:40px;margin:18px 0 22px}
+      .moment-copy p{font-size:15px}
+    }
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
 </head>
 <body>
 
@@ -131,7 +152,7 @@
     <!-- Gallery -->
     <div class="product-gallery">
       <div class="product-main-image">
-        <img src="../img/semax.jpg" alt="Semax — PEPTIQ MX">
+        <img src="../img/products-v2/semax-studio.png" alt="Semax — PEPTIQ MX">
       </div>
     </div>
 
@@ -146,7 +167,15 @@
       </div>
       <div class="product-tax">Impuestos incluidos. Envío gratis a partir de $1,500 MXN.</div>
 
-      <p class="product-short-desc">Maestría Neuronal — Aumenta masivamente el BDNF. Promueve neuroplasticidad inquebrantable y claridad mental pura.</p>
+      <p class="product-short-desc">El nootrópico de la <strong>Academia Rusa de Ciencias</strong>. Desarrollado en el Instituto de Genética Molecular de Moscú en los 80s y en la <strong>Lista de Medicamentos Vitales y Esenciales de Rusia desde 1994</strong> — usado por cosmonautas en estaciones orbitales, equipos olímpicos soviéticos y personal médico de turnos extremos para sostener foco bajo fatiga. Análogo sintético de ACTH(4-10), formato gotas intranasales: eleva BDNF, mejora memoria de trabajo y disipa la niebla mental en ~30 minutos.</p>
+
+      <div style="background:#FAF8F4;border-left:3px solid var(--gold);padding:14px 18px;margin:18px 0;font-size:13px;line-height:1.6;color:#444;">
+        <strong style="display:block;font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:6px;">CONTEXTO HISTÓRICO</strong>
+        <p style="margin:4px 0;"><strong>1982</strong> — Síntesis original en el laboratorio del Prof. Nikolay Myasoedov, Instituto de Genética Molecular de la Academia Rusa de Ciencias.</p>
+        <p style="margin:4px 0;"><strong>1994</strong> — Aprobado en Rusia para ictus isquémico, lesiones de nervio óptico y trastornos cognitivos.</p>
+        <p style="margin:4px 0;"><strong>2011</strong> — Incluido en la Lista Oficial de Medicamentos Vitales (ЖНВЛП) del Ministerio de Salud Ruso.</p>
+        <p style="margin:4px 0;"><strong>Hoy</strong> — Usado fuera de Rusia exclusivamente como péptido <em>research-grade</em>; no aprobado por FDA ni COFEPRIS.</p>
+      </div>
 
       <!-- Purity -->
       <div class="purity-bar">
@@ -281,5 +310,72 @@
       }
     }
   </script>
+
+
+
+<section class="moment">
+  <div class="moment-grid">
+    <div class="moment-img"><img src="../img/products-v2/semax-lifestyle.png" alt="lifestyle" loading="lazy"></div>
+    <div class="moment-copy">
+      <span class="eyebrow">PRIME — COGNITIVE</span>
+      <h2>Foco<br><em>sin la molestia del estimulante.</em></h2>
+      <p>Heptapéptido nootrópico ruso. Concentración sin quemar. Sin tolerancia. Sin caída.</p>
+      <div class="moment-rule"></div>
+    </div>
+  </div>
+</section>
+
+<!-- peptiq-pricing-trust -->
+<section class="peptiq-pricing-trust" style="background:#FAF8F4;padding:60px 24px;border-top:1px solid #F5F5F5;border-bottom:1px solid #F5F5F5;font-family:Inter,sans-serif">
+  <div style="max-width:920px;margin:0 auto">
+    <div class="ppt-row2" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#F5F5F5;border:1px solid #F5F5F5;margin-bottom:36px">
+      <div style="background:#fff;padding:24px 22px">
+        <div style="font-size:9px;letter-spacing:2.4px;color:#111111;font-weight:600;margin-bottom:8px">VALOR VERIFICADO</div>
+        <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:500;line-height:1;color:#111">$300 MXN/mg</div>
+        <div style="font-size:11px;color:#666;margin-top:6px;letter-spacing:.5px">Semax · 10mg · pureza HPLC ≥99% Janoshik</div>
+      </div>
+      <div style="background:#fff;padding:24px 22px">
+        <div style="font-size:9px;letter-spacing:2.4px;color:#111111;font-weight:600;margin-bottom:8px">GARANTÍA COA</div>
+        <div style="font-size:13.5px;color:#222;line-height:1.55">Si tu lote no cumple la pureza declarada, <b>reembolso 100% + reposición sin costo</b>. Verifica el COA por número de serie 24/7.</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-bottom:28px">
+      <div style="font-size:10px;letter-spacing:3px;color:#111111;font-weight:600;margin-bottom:8px">⬥ TRANSPARENCIA TOTAL ⬥</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:500;color:#111;margin:0;line-height:1.2">Por qué cuesta lo que cuesta.</h3>
+    </div>
+
+    <div class="ppt-row4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;font-size:12.5px;color:#333;line-height:1.55">
+      <div style="background:#fff;border:1px solid #F5F5F5;padding:18px 16px">
+        <div style="font-size:9px;letter-spacing:2px;color:#888;font-weight:600;margin-bottom:8px">01 · LAB</div>
+        <div><b>Janoshik Analytical</b> (Eslovaquia) corre HPLC-UV + masas + endotoxinas en cada lote.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #F5F5F5;padding:18px 16px">
+        <div style="font-size:9px;letter-spacing:2px;color:#888;font-weight:600;margin-bottom:8px">02 · BRANDED</div>
+        <div>Vial liofilizado con <b>etiqueta trademark de fábrica</b>, número de serie único.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #F5F5F5;padding:18px 16px">
+        <div style="font-size:9px;letter-spacing:2px;color:#888;font-weight:600;margin-bottom:8px">03 · LOGÍSTICA</div>
+        <div>Empaque <b>temperatura-controlada</b>, concierge mismo día CDMX/MTY/GDL.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #F5F5F5;padding:18px 16px">
+        <div style="font-size:9px;letter-spacing:2px;color:#888;font-weight:600;margin-bottom:8px">04 · GARANTÍA</div>
+        <div>Reserva para <b>reposición de lote</b>, soporte WhatsApp y CFDI factura con IVA.</div>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:11.5px;color:#666;margin-top:24px;line-height:1.6;letter-spacing:.3px">
+      Cada vial sale del laboratorio con su propio certificado y número de serie. El estándar global de péptidos research-grade — auditado por Janoshik Analytical, entregado en México.
+    </p>
+  </div>
+</section>
+<style>@media(max-width:760px){.peptiq-pricing-trust .ppt-row2,.peptiq-pricing-trust .ppt-row4{grid-template-columns:1fr !important}}</style>
+
+<!-- peptiq-global-disclaimer -->
+<div style="position:fixed;left:0;right:0;bottom:0;background:rgba(17,17,17,0.92);color:#F5F5F5;font-size:10.5px;line-height:1.5;letter-spacing:0.3px;text-align:center;padding:6px 60px;z-index:9998;backdrop-filter:blur(8px);font-family:Inter,sans-serif;">
+  Producto de uso exclusivo para investigación. El uso es responsabilidad de quien lo use.
+</div>
+<style>body{padding-bottom:32px !important;}</style>
+
 </body>
 </html>

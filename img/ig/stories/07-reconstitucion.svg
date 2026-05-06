@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <line x1="80" y1="180" x2="1000" y2="180" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="240" font-family="Inter,sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.85">PROTOCOLO · GUÍA RÁPIDA</text>
+  <text x="540" y="400" font-family="Playfair Display,Georgia,serif" font-size="92" font-weight="500" fill="url(#gold)" text-anchor="middle" font-style="italic">Reconstitución</text>
+  <line x1="380" y1="460" x2="700" y2="460" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+  <g font-family="Inter,sans-serif" fill="#e8dcc0">
+    <g transform="translate(120 620)">
+      <circle cx="0" cy="-12" r="44" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      <text x="0" y="2" font-family="Playfair Display,serif" font-size="48" fill="url(#gold)" text-anchor="middle" font-weight="500">1</text>
+      <text x="100" y="-25" font-size="34" font-weight="600">Agua bacteriostática</text>
+      <text x="100" y="20" font-size="26" fill="#a8987a">1 ml por vial de 10 mg</text>
+    </g>
+    <g transform="translate(120 800)">
+      <circle cx="0" cy="-12" r="44" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      <text x="0" y="2" font-family="Playfair Display,serif" font-size="48" fill="url(#gold)" text-anchor="middle" font-weight="500">2</text>
+      <text x="100" y="-25" font-size="34" font-weight="600">Inyectar lento en pared</text>
+      <text x="100" y="20" font-size="26" fill="#a8987a">Sin disparar al polvo. Sin agitar.</text>
+    </g>
+    <g transform="translate(120 980)">
+      <circle cx="0" cy="-12" r="44" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      <text x="0" y="2" font-family="Playfair Display,serif" font-size="48" fill="url(#gold)" text-anchor="middle" font-weight="500">3</text>
+      <text x="100" y="-25" font-size="34" font-weight="600">Rotar suave entre manos</text>
+      <text x="100" y="20" font-size="26" fill="#a8987a">Disuelve en segundos. Cristalina.</text>
+    </g>
+    <g transform="translate(120 1160)">
+      <circle cx="0" cy="-12" r="44" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      <text x="0" y="2" font-family="Playfair Display,serif" font-size="48" fill="url(#gold)" text-anchor="middle" font-weight="500">4</text>
+      <text x="100" y="-25" font-size="34" font-weight="600">Refrigerar · 28 días</text>
+      <text x="100" y="20" font-size="26" fill="#a8987a">Jeringa insulina. 10-20 UI dosis.</text>
+    </g>
+  </g>
+  <text x="540" y="1500" font-family="Inter,sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="6">GUÍA COMPLETA EN PEPTIQMX.COM/GUIA</text>
+  <line x1="80" y1="1810" x2="1000" y2="1810" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1860" font-family="Inter,sans-serif" font-size="26" fill="url(#gold)" text-anchor="middle" letter-spacing="6" font-weight="600">peptiqmx.com</text>
+  <text x="540" y="1900" font-family="Inter,sans-serif" font-size="22" fill="#a8987a" text-anchor="middle" letter-spacing="4">+52 444 577 0445  ·  WHATSAPP</text>
+</svg>

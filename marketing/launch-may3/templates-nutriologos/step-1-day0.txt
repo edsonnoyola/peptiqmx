@@ -1,0 +1,22 @@
+SUBJECT: {nombre_negocio} — péptidos para tus pacientes
+DELAY DAYS: 0
+
+--- BODY ---
+Hola {nombre},
+
+Vi que {nombre_negocio} en {ciudad} se especializa en nutrición. Te escribo porque trabajamos con nutriólogos en México que están complementando sus planes con péptidos de grado investigación.
+
+Los más solicitados por nutriólogos:
+• BPC-157 — recuperación gastrointestinal y muscular
+• Colágeno tipo II/III — articulaciones y piel
+• AOD-9604 — composición corporal
+
+Manejamos precios de mayoreo y todo viene con certificado de análisis (COA).
+
+¿Te interesa que te mande el catálogo con precios?
+
+Saludos,
+{firma}
+{whatsapp_link}
+
+⚠ Research-grade · For research use only · No para consumo humano · Responsabilidad personal del comprador.

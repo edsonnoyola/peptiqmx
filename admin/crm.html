@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>PEPTIQ · CRM Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+      --serif:"Playfair Display",Georgia,serif;
+      --ink:#0a0a0a;
+      --ink-2:#141414;
+      --paper:#f6f3ee;
+      --card:#1a1a1a;
+      --beige:#B8A99A;
+      --beige-deep:#9C8D7F;
+      --gold:#C6A969;
+      --rule:rgba(255,255,255,.08);
+      --mute:#8a8274;
+      --ok:#22c55e;
+      --warn:#FFC107;
+      --bad:#ef4444;
+    }
+    body{font-family:var(--sans);background:var(--ink);color:var(--paper);line-height:1.5;min-height:100vh;font-weight:400}
+    .container{max-width:1400px;margin:0 auto;padding:0 24px}
+    a{color:var(--gold);text-decoration:none}
+
+    /* Nav */
+    .nav{background:var(--ink-2);border-bottom:1px solid var(--rule);padding:16px 0;position:sticky;top:0;z-index:30}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 24px}
+    .brand-row{display:flex;align-items:center;gap:16px}
+    .brand-row h1{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:-.4px}
+    .brand-row h1 em{font-style:italic;color:var(--gold)}
+    .brand-badge{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:3px 10px}
+    .nav-actions{display:flex;gap:12px;align-items:center}
+    .nav-actions .btn{padding:8px 14px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500;background:transparent;color:var(--paper);border:1px solid var(--rule);cursor:pointer}
+    .nav-actions .btn:hover{border-color:var(--gold);color:var(--gold)}
+
+    /* Login */
+    .login-wrap{min-height:90vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .login-card{background:var(--card);border:1px solid var(--rule);padding:48px 44px;max-width:420px;width:100%;border-top:3px solid var(--gold)}
+    .login-card h2{font-family:var(--serif);font-size:30px;font-weight:500;letter-spacing:-.6px;margin-bottom:8px}
+    .login-card h2 em{color:var(--gold);font-style:italic}
+    .login-card p{color:var(--mute);font-size:13px;margin-bottom:24px}
+    .login-card input{width:100%;padding:14px 16px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:14px;margin-bottom:12px}
+    .login-card input:focus{outline:none;border-color:var(--gold)}
+    .login-card button{width:100%;padding:14px;background:var(--gold);color:var(--ink);font-weight:500;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;border:0;cursor:pointer;margin-top:8px}
+    .login-card button:hover{background:#E5C981}
+    .login-err{color:var(--bad);font-size:12px;margin-top:12px;text-align:center;min-height:16px}
+
+    /* Content */
+    .content{padding:28px 0 80px}
+    .page-hd{margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .page-hd h2{font-family:var(--serif);font-size:28px;font-weight:500;letter-spacing:-.4px}
+    .page-hd h2 em{color:var(--gold);font-style:italic}
+    .refresh-btn{padding:8px 16px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;background:var(--card);color:var(--paper);border:1px solid var(--rule);cursor:pointer}
+    .refresh-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+    /* Stats */
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:32px}
+    .stat{background:var(--card);border:1px solid var(--rule);padding:20px 22px;border-left:3px solid var(--gold)}
+    .stat .lbl{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+    .stat .val{font-family:var(--serif);font-size:32px;font-weight:500;color:var(--paper);letter-spacing:-.6px;line-height:1.05}
+    .stat .val em{color:var(--gold);font-style:italic}
+    .stat .sub{font-size:11px;color:var(--mute);margin-top:4px;letter-spacing:.3px}
+
+    /* Tabs */
+    .tabs{display:flex;gap:2px;border-bottom:1px solid var(--rule);margin-bottom:24px}
+    .tab{padding:12px 20px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--mute);background:transparent;border:0;cursor:pointer;font-family:var(--sans);font-weight:500;border-bottom:2px solid transparent}
+    .tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+    .tab:hover{color:var(--paper)}
+    .tab-count{display:inline-block;margin-left:6px;background:var(--rule);color:var(--paper);padding:1px 8px;font-size:10px;border-radius:10px}
+
+    /* Tables */
+    .table-wrap{background:var(--card);border:1px solid var(--rule);overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th{padding:14px 16px;text-align:left;font-weight:500;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--rule);background:#111}
+    td{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--paper);vertical-align:top}
+    tr:hover td{background:#161616}
+    .col-id{font-family:'Monaco',monospace;font-size:11px;color:var(--mute)}
+    .col-phone{font-family:'Monaco',monospace;font-size:12px}
+    .col-name{font-weight:500}
+    .col-product{color:var(--gold)}
+    .col-total{font-family:var(--serif);font-size:16px;font-weight:500;white-space:nowrap}
+    .col-date{font-size:11px;color:var(--mute);white-space:nowrap}
+
+    /* Status badges */
+    .badge{display:inline-block;font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;padding:3px 8px;font-weight:500;border:1px solid}
+    .badge.pending{color:var(--warn);border-color:var(--warn);background:rgba(255,193,7,.08)}
+    .badge.paid{color:var(--ok);border-color:var(--ok);background:rgba(34,197,94,.08)}
+    .badge.shipped{color:#3b82f6;border-color:#3b82f6;background:rgba(59,130,246,.08)}
+    .badge.delivered{color:var(--gold);border-color:var(--gold);background:rgba(198,169,105,.08)}
+    .badge.cancelled{color:var(--bad);border-color:var(--bad);background:rgba(239,68,68,.08)}
+    .badge.new,.badge.contacted,.badge.qualified,.badge.scheduled,.badge.visited{color:var(--mute);border-color:var(--mute)}
+
+    /* Links */
+    td a.pay-link{color:var(--gold);font-size:11px;text-decoration:underline}
+    td a.pay-link:hover{color:#E5C981}
+    .empty{text-align:center;padding:60px 20px;color:var(--mute);font-size:14px}
+    .loading{text-align:center;padding:60px 20px;color:var(--gold);font-size:14px}
+    .err{background:rgba(239,68,68,.08);border:1px solid var(--bad);color:#fca5a5;padding:16px;font-size:13px;margin-bottom:20px}
+
+    @media(max-width:720px){
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .stat .val{font-size:24px}
+      th,td{padding:10px 12px;font-size:12px}
+      .col-date,.col-phone{display:none}
+      .login-card{padding:32px 24px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div class="login-wrap" id="loginWrap">
+  <div class="login-card">
+    <h2>PEPTIQ · <em>CRM</em></h2>
+    <p>Panel administrativo · Leads + Pedidos + Revenue tracking.</p>
+    <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="8" id="pinInput" placeholder="PIN" autocomplete="off" style="font-size:24px;letter-spacing:8px;text-align:center" autofocus>
+    <button onclick="loginPin()">Entrar →</button>
+    <div class="login-err" id="loginErr"></div>
+    <details style="margin-top:18px;font-size:11px;color:#777"><summary style="cursor:pointer">Acceso con API_SECRET (avanzado)</summary>
+      <input type="password" id="apiKey" placeholder="API_SECRET (wrangler)" autocomplete="off" style="margin-top:8px">
+      <input type="url" id="apiBase" placeholder="Backend URL" value="https://sara-backend.edson-633.workers.dev">
+      <button onclick="login()" style="margin-top:6px;background:#444">Entrar con API_SECRET</button>
+    </details>
+  </div>
+</div>
+
+<!-- ============ MAIN APP ============ -->
+<div id="app" style="display:none">
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand-row">
+        <h1>PEPTIQ · <em>CRM</em></h1>
+        <span class="brand-badge">Admin</span>
+      </div>
+      <div class="nav-actions">
+        <button class="btn" onclick="refresh()">↻ Actualizar</button>
+        <button class="btn" onclick="logout()">Cerrar sesión</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="content container">
+
+    <div class="page-hd">
+      <h2>Dashboard <em>ejecutivo.</em></h2>
+      <button class="refresh-btn" onclick="refresh()">↻ Actualizar datos</button>
+    </div>
+
+    <div id="errBox"></div>
+
+    <div class="stats-grid" id="statsGrid">
+      <div class="loading">Cargando stats...</div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="orders" onclick="switchTab('orders')">Pedidos <span class="tab-count" id="ordersCount">—</span></button>
+      <button class="tab" data-tab="leads" onclick="switchTab('leads')">Leads <span class="tab-count" id="leadsCount">—</span></button>
+    </div>
+
+    <div id="ordersTab">
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th class="col-phone">Teléfono</th>
+            <th>Producto</th>
+            <th style="text-align:right">Total</th>
+            <th>Status</th>
+            <th>Envío</th>
+            <th>Pago</th>
+          </tr></thead>
+          <tbody id="ordersBody"><tr><td colspan="8" class="loading">Cargando pedidos...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="leadsTab" style="display:none">
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Fecha</th>
+            <th>Nombre / Email</th>
+            <th class="col-phone">Teléfono</th>
+            <th>Interés</th>
+            <th>Dirección · LTV</th>
+            <th>Status</th>
+          </tr></thead>
+          <tbody id="leadsBody"><tr><td colspan="6" class="loading">Cargando leads...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+const TENANT_ID = '00000000-0000-0000-0000-000000000002';
+let API_KEY = localStorage.getItem('peptiq_crm_apikey') || '';
+let API_BASE = localStorage.getItem('peptiq_crm_apibase') || 'https://sara-backend.edson-633.workers.dev';
+
+if (API_KEY) {
+  document.getElementById('loginWrap').style.display='none';
+  document.getElementById('app').style.display='block';
+  loadAll();
+}
+
+async function loginPin(){
+  const pin = (document.getElementById('pinInput').value||'').trim();
+  const errEl = document.getElementById('loginErr');
+  if (!pin) { errEl.textContent = 'Introduce tu PIN'; return; }
+  const base = 'https://sara-backend.edson-633.workers.dev';
+  try {
+    const r = await fetch(`${base}/api/peptiq/pin-login`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ pin })
+    });
+    const d = await r.json();
+    if (!r.ok || !d.ok) {
+      errEl.textContent = 'PIN incorrecto';
+      document.getElementById('pinInput').value = '';
+      return;
+    }
+    API_KEY = d.api_key;
+    API_BASE = base;
+    localStorage.setItem('peptiq_crm_apikey', API_KEY);
+    localStorage.setItem('peptiq_crm_apibase', API_BASE);
+    document.getElementById('loginWrap').style.display='none';
+    document.getElementById('app').style.display='block';
+    loadAll();
+  } catch (e) {
+    errEl.textContent = 'Error de conexión';
+  }
+}
+// Submit PIN with Enter key
+document.addEventListener('DOMContentLoaded',()=>{
+  const pin = document.getElementById('pinInput');
+  if (pin) pin.addEventListener('keydown', e => { if (e.key==='Enter') loginPin(); });
+});
+function login(){
+  const k = document.getElementById('apiKey').value.trim();
+  const b = document.getElementById('apiBase').value.trim() || 'https://sara-backend.edson-633.workers.dev';
+  if (!k){ err('Introduce tu API_SECRET'); return; }
+  API_KEY = k;
+  API_BASE = b;
+  localStorage.setItem('peptiq_crm_apikey', k);
+  localStorage.setItem('peptiq_crm_apibase', b);
+  document.getElementById('loginWrap').style.display='none';
+  document.getElementById('app').style.display='block';
+  loadAll();
+}
+function logout(){
+  localStorage.removeItem('peptiq_crm_apikey');
+  location.reload();
+}
+function err(msg){
+  document.getElementById('loginErr').textContent = msg;
+}
+
+async function apiGet(path){
+  const sep = path.includes('?') ? '&' : '?';
+  const res = await fetch(`${API_BASE}${path}${sep}api_key=${encodeURIComponent(API_KEY)}`, {
+    headers: { 'Accept': 'application/json' }
+  });
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`HTTP ${res.status}: ${txt.substring(0,200)}`);
+  }
+  return res.json();
+}
+
+function fmtMXN(n){ return '$' + (n || 0).toLocaleString('es-MX') + ' MXN'; }
+function fmtDate(d){
+  if (!d) return '—';
+  const date = new Date(d);
+  const today = new Date();
+  const isToday = date.toDateString() === today.toDateString();
+  if (isToday) return date.toLocaleTimeString('es-MX', {hour:'2-digit',minute:'2-digit'});
+  return date.toLocaleDateString('es-MX', {day:'2-digit',month:'short'});
+}
+function fmtPhone(p){
+  if (!p) return '—';
+  const clean = String(p).replace(/\D/g,'');
+  if (clean.length >= 11) return '+' + clean.substring(0,2) + ' ' + clean.substring(2,5) + ' ' + clean.substring(5,8) + ' ' + clean.substring(8);
+  return p;
+}
+function badge(status){
+  const s = String(status||'').toLowerCase();
+  return `<span class="badge ${s}">${s}</span>`;
+}
+
+function showErr(msg){
+  document.getElementById('errBox').innerHTML = `<div class="err">${msg} · Verifica API_SECRET · <a href="javascript:logout()" style="text-decoration:underline">cambiar credenciales</a></div>`;
+}
+function clearErr(){ document.getElementById('errBox').innerHTML = ''; }
+
+async function loadStats(){
+  try {
+    const s = await apiGet('/api/peptiq/stats');
+    const g = document.getElementById('statsGrid');
+    g.innerHTML = `
+      <div class="stat"><div class="lbl">Revenue pagado</div><div class="val"><em>$</em>${(s.revenue?.total_paid||0).toLocaleString('es-MX')}</div><div class="sub">Pagados · confirmados</div></div>
+      <div class="stat"><div class="lbl">Últimos 7 días</div><div class="val">${fmtMXN(s.revenue?.last_7d||0)}</div><div class="sub">Ventas cerradas</div></div>
+      <div class="stat"><div class="lbl">Últimos 30 días</div><div class="val">${fmtMXN(s.revenue?.last_30d||0)}</div><div class="sub">Revenue mes</div></div>
+      <div class="stat"><div class="lbl">Pedidos pendientes</div><div class="val"><em>${s.orders?.pending||0}</em></div><div class="sub">Esperando pago · ${fmtMXN(s.revenue?.total_pending||0)}</div></div>
+      <div class="stat"><div class="lbl">Pedidos totales</div><div class="val">${s.orders?.total||0}</div><div class="sub">${s.orders?.paid||0} pagados · ${s.orders?.shipped||0} enviados</div></div>
+      <div class="stat"><div class="lbl">Leads totales</div><div class="val"><em>${s.leads?.total||0}</em></div><div class="sub">${s.leads?.last_7d||0} nuevos esta semana</div></div>
+    `;
+    clearErr();
+  } catch(e){ showErr('No se pudo cargar stats: ' + e.message); }
+}
+
+async function loadOrders(){
+  try {
+    const {orders} = await apiGet('/api/peptiq/orders?limit=200');
+    document.getElementById('ordersCount').textContent = orders.length;
+    const body = document.getElementById('ordersBody');
+    if (orders.length === 0) {
+      body.innerHTML = '<tr><td colspan="7" class="empty">No hay pedidos todavía · el primero va a aparecer aquí cuando SARA cierre una venta 🚀</td></tr>';
+      return;
+    }
+    body.innerHTML = orders.map(o => {
+      const firstProduct = (o.items || [])[0]?.title || 'Sin producto';
+      const pay = o.payment_url ? `<a class="pay-link" href="${o.payment_url}" target="_blank">Ver link</a>` : '—';
+      const addr = o.notes?.shipping_address || o.shipping_address;
+      const shipCell = addr
+        ? `<span title="${escapeHtml([addr.line1, addr.line2, addr.city, addr.state, addr.postal_code, addr.country].filter(Boolean).join(', '))}" style="color:#8ac68a">✓ ${addr.city || addr.state || 'Sí'}</span>`
+        : '<span style="color:#666">—</span>';
+      return `<tr>
+        <td class="col-date">${fmtDate(o.created_at)}</td>
+        <td class="col-name">${o.lead_name || '—'}</td>
+        <td class="col-phone">${fmtPhone(o.lead_phone)}</td>
+        <td class="col-product">${firstProduct}</td>
+        <td class="col-total" style="text-align:right">${fmtMXN(o.total)}</td>
+        <td>${badge(o.status)}</td>
+        <td>${shipCell}</td>
+        <td>${pay}</td>
+      </tr>`;
+    }).join('');
+  } catch(e){
+    document.getElementById('ordersBody').innerHTML = `<tr><td colspan="7" class="empty">Error cargando pedidos: ${e.message}</td></tr>`;
+  }
+}
+
+async function loadLeads(){
+  try {
+    const data = await apiGet(`/api/leads?tenant_id=${TENANT_ID}&limit=200`);
+    const leads = data.data || data || [];
+    document.getElementById('leadsCount').textContent = leads.length;
+    const body = document.getElementById('leadsBody');
+    if (leads.length === 0) {
+      body.innerHTML = '<tr><td colspan="6" class="empty">No hay leads todavía · vendrán cuando alguien escriba al bot WhatsApp 👥</td></tr>';
+      return;
+    }
+    body.innerHTML = leads.map(l => {
+      const notes = (l.notes && typeof l.notes === 'object') ? l.notes : {};
+      const addr = notes.shipping_address_full || (notes.shipping_address ? [
+        notes.shipping_address.line1,
+        notes.shipping_address.city,
+        notes.shipping_address.state,
+        notes.shipping_address.postal_code,
+      ].filter(Boolean).join(', ') : '');
+      const ltv = notes.lifetime_value ? `$${Number(notes.lifetime_value).toLocaleString('es-MX')}` : '';
+      const purchases = notes.total_purchases || 0;
+      return `<tr class="lead-row" data-id="${l.id}" onclick="openLeadDrawer('${l.id}')" style="cursor:pointer">
+        <td class="col-date">${fmtDate(l.created_at)}</td>
+        <td class="col-name">${l.name || '—'}${l.email ? `<div style="font-size:10px;color:#888">${l.email}</div>` : ''}</td>
+        <td class="col-phone">${fmtPhone(l.phone)}</td>
+        <td>${l.property_interest || '—'}</td>
+        <td style="font-size:11px;color:#aaa;max-width:240px">${addr || '—'}${purchases > 0 ? `<div style="font-size:10px;color:#C6A969">💰 ${purchases} pedido(s) · ${ltv}</div>` : ''}</td>
+        <td>${badge(l.status || 'new')}</td>
+      </tr>`;
+    }).join('');
+  } catch(e){
+    document.getElementById('leadsBody').innerHTML = `<tr><td colspan="6" class="empty">Error cargando leads: ${e.message}</td></tr>`;
+  }
+}
+
+function switchTab(name){
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+  document.getElementById('ordersTab').style.display = name === 'orders' ? 'block' : 'none';
+  document.getElementById('leadsTab').style.display = name === 'leads' ? 'block' : 'none';
+}
+
+function refresh(){ loadAll(); }
+function loadAll(){
+  loadStats();
+  loadOrders();
+  loadLeads();
+}
+
+// Auto-refresh cada 60s
+setInterval(()=>{ if (API_KEY) loadAll(); }, 60000);
+
+// ═══════════════════════════════════════════════════════════
+// SECURITY · Session persistente 30 días · sin auto-logout invasivo
+// ═══════════════════════════════════════════════════════════
+// API_KEY se conserva en localStorage indefinidamente · solo se borra con click manual "Cerrar sesión"
+// Para "logout" en caso de robo de device, usar el botón Cerrar Sesión.
+
+// ═══════════════════════════════════════════════════════════
+// Lead Drawer · WhatsApp conversation + emails + orders
+// ═══════════════════════════════════════════════════════════
+async function openLeadDrawer(leadId){
+  const drawer = document.getElementById('leadDrawer');
+  const body = document.getElementById('drawerBody');
+  drawer.classList.add('open');
+  body.innerHTML = '<div class="empty">Cargando...</div>';
+  try {
+    const d = await apiGet(`/api/peptiq/lead/${leadId}`);
+    const l = d.lead;
+    const conv = d.conversation || [];
+    const orders = d.orders || [];
+    const emails = d.emails || [];
+
+    const convHtml = conv.length === 0
+      ? '<div class="empty" style="padding:20px">Sin conversación · el lead aún no escribe por WhatsApp.</div>'
+      : conv.slice(-60).map(m => {
+          const role = m.role || m.from || '?';
+          const ts = m.timestamp || m.ts || '';
+          const text = (m.content || m.text || m.body || '').toString();
+          const mine = role === 'assistant' || role === 'sara' || role === 'bot';
+          return `<div class="msg ${mine?'msg-out':'msg-in'}">
+            <div class="msg-bubble">${escapeHtml(text).replace(/\n/g,'<br>')}</div>
+            <div class="msg-ts">${role} · ${ts ? new Date(ts).toLocaleString('es-MX') : ''}</div>
+          </div>`;
+        }).join('');
+
+    const ordersHtml = orders.length === 0
+      ? '<div class="empty" style="padding:14px">Sin pedidos</div>'
+      : orders.map(o => `<div class="drawer-card">
+          <div><b>${fmtMXN(o.total||0)}</b> · ${badge(o.status)} · ${fmtDate(o.created_at)}</div>
+          <div style="color:#999;font-size:12px;margin-top:4px">${(o.items||[])[0]?.title || ''}</div>
+          ${o.payment_url?`<a href="${o.payment_url}" target="_blank" class="pay-link">Ver link pago →</a>`:''}
+          ${(o.notes?.shipping_address||o.shipping_address)?`<div style="margin-top:6px;font-size:11px;color:#aaa">📦 ${[(o.notes?.shipping_address||o.shipping_address).line1, (o.notes?.shipping_address||o.shipping_address).city, (o.notes?.shipping_address||o.shipping_address).state, (o.notes?.shipping_address||o.shipping_address).postal_code].filter(Boolean).join(', ')}</div>`:''}
+          ${o.notes?.stripe_customer_email?`<div style="font-size:11px;color:#aaa">✉️ ${o.notes.stripe_customer_email}</div>`:''}
+          ${o.paid_at?`<div style="font-size:11px;color:#8ac68a;margin-top:4px">✓ Pagado ${fmtDate(o.paid_at)}</div>`:''}
+        </div>`).join('');
+
+    const emailsHtml = emails.length === 0
+      ? '<div class="empty" style="padding:14px">Sin emails aún. Cuando dispares el blast o Instantly, aparecerán aquí.</div>'
+      : emails.map(e => `<div class="drawer-card">
+          <div><b>${e.subject||e.template||'(sin asunto)'}</b> · ${fmtDate(e.sent_at)}</div>
+          <div style="margin-top:4px;font-size:12px">
+            ${e.opened_at?'<span class="pill ok">✓ Abierto</span>':'<span class="pill">No abierto</span>'}
+            ${e.clicked_at?'<span class="pill ok">✓ Click</span>':''}
+            ${e.replied_at?'<span class="pill ok">✓ Respondió</span>':''}
+            ${e.bounced_at?'<span class="pill bad">⚠ Bounce</span>':''}
+          </div>
+        </div>`).join('');
+
+    const cad = l.notes?.nova_cadencia;
+    const cadBadge = cad
+      ? (cad.completada ? `<span class="pill">cadencia ${cad.tipo} · completada</span>`
+        : cad.pausada ? `<span class="pill">cadencia ${cad.tipo} · ⏸ pausada (lead respondió)</span>`
+        : `<span class="pill ok">cadencia ${cad.tipo} · paso ${cad.paso||0} · activa</span>`)
+      : '<span class="pill">sin cadencia activa</span>';
+
+    const health = l.notes?.health_status;
+    const nps = l.notes?.nps_score;
+    let healthBadge = '';
+    if (health === 'happy') healthBadge = `<span class="pill ok">🟢 Cliente feliz${nps?' · NPS '+nps:''}</span>`;
+    else if (health === 'neutral') healthBadge = `<span class="pill">🟡 Neutral${nps?' · NPS '+nps:''}</span>`;
+    else if (health === 'detractor') healthBadge = `<span class="pill bad">🔴 Detractor · NPS ${nps}</span>`;
+    else if (health === 'issue') healthBadge = `<span class="pill bad">🚨 Issue: ${l.notes?.health_issue_keyword||'?'}</span>`;
+
+    body.innerHTML = `
+      <div class="drawer-header">
+        <h3>${escapeHtml(l.name||'Sin nombre')}</h3>
+        <div class="drawer-sub">${fmtPhone(l.phone)} ${l.email?'· '+l.email:''}</div>
+        <div class="drawer-sub" style="margin-top:4px">${badge(l.status||'new')} · ${l.source||'?'} · primer contacto ${fmtDate(l.created_at)}</div>
+        <div style="margin-top:8px">${cadBadge} ${healthBadge}</div>
+      </div>
+      <div class="drawer-tabs">
+        <button class="dtab active" onclick="switchDrawer('conv')">💬 WhatsApp <span>${conv.length}</span></button>
+        <button class="dtab" onclick="switchDrawer('orders')">📦 Pedidos <span>${orders.length}</span></button>
+        <button class="dtab" onclick="switchDrawer('emails')">✉ Emails <span>${emails.length}</span></button>
+      </div>
+      <div id="dpane-conv" class="dpane active">${convHtml}</div>
+      <div id="dpane-orders" class="dpane">${ordersHtml}</div>
+      <div id="dpane-emails" class="dpane">${emailsHtml}</div>
+    `;
+  } catch(err){
+    body.innerHTML = `<div class="empty" style="padding:20px;color:#f88">Error: ${err.message}</div>`;
+  }
+}
+function switchDrawer(tab){
+  document.querySelectorAll('.dtab').forEach((t,i)=>{
+    t.classList.toggle('active', t.textContent.toLowerCase().includes(tab==='conv'?'whatsapp':tab));
+  });
+  document.querySelectorAll('.dpane').forEach(p=>p.classList.remove('active'));
+  document.getElementById('dpane-'+tab).classList.add('active');
+}
+function closeDrawer(){ document.getElementById('leadDrawer').classList.remove('open'); }
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+</script>
+
+<style>
+  .lead-row:hover { background:#1a1a1a; }
+  #leadDrawer { position:fixed; top:0; right:-500px; width:480px; height:100vh; background:#0e0e0e; border-left:1px solid #333; box-shadow:-8px 0 24px rgba(0,0,0,0.6); transition:right .25s ease; z-index:100; overflow-y:auto; }
+  #leadDrawer.open { right:0; }
+  #leadDrawer .drawer-close { position:absolute; top:16px; right:16px; background:transparent; border:1px solid #444; color:#ccc; padding:6px 12px; cursor:pointer; border-radius:4px; }
+  .drawer-header { padding:28px 22px 18px; border-bottom:1px solid #222; }
+  .drawer-header h3 { font-family:'Playfair Display',serif; color:#fff; margin:0 0 6px; font-size:22px; }
+  .drawer-sub { color:#888; font-size:13px; letter-spacing:.5px; }
+  .drawer-tabs { display:flex; gap:0; border-bottom:1px solid #222; padding:0 14px; }
+  .dtab { flex:1; background:transparent; border:0; color:#777; padding:12px 8px; cursor:pointer; font-size:13px; font-weight:500; letter-spacing:.5px; border-bottom:2px solid transparent; }
+  .dtab:hover { color:#ccc; }
+  .dtab.active { color:#c6a969; border-bottom-color:#c6a969; }
+  .dtab span { display:inline-block; background:#222; color:#aaa; border-radius:10px; padding:1px 8px; font-size:11px; margin-left:4px; }
+  .dpane { display:none; padding:14px 18px; }
+  .dpane.active { display:block; }
+  .msg { margin:10px 0; max-width:86%; }
+  .msg-in { margin-right:auto; }
+  .msg-out { margin-left:auto; text-align:right; }
+  .msg-bubble { display:inline-block; padding:10px 14px; border-radius:12px; background:#1a1a1a; color:#e6e6e6; line-height:1.45; font-size:13.5px; text-align:left; }
+  .msg-out .msg-bubble { background:#2a2418; color:#f0e6cc; border:1px solid #3a3220; }
+  .msg-ts { font-size:10.5px; color:#666; margin-top:3px; letter-spacing:.3px; }
+  .drawer-card { background:#141414; border:1px solid #222; border-radius:6px; padding:12px 14px; margin-bottom:10px; font-size:13px; color:#ccc; }
+  .pill { display:inline-block; padding:2px 9px; border-radius:10px; font-size:10.5px; letter-spacing:.5px; background:#2a2a2a; color:#999; margin-right:4px; }
+  .pill.ok { background:#1c2e1c; color:#8ac68a; }
+  .pill.bad { background:#3a1c1c; color:#e28a8a; }
+</style>
+
+<div id="leadDrawer">
+  <button class="drawer-close" onclick="closeDrawer()">Cerrar ✕</button>
+  <div id="drawerBody"></div>
+</div>
+
+
+<!-- peptiq-global-disclaimer -->
+<div style="position:fixed;left:0;right:0;bottom:0;background:rgba(17,17,17,0.92);color:#E8E2D5;font-size:10.5px;line-height:1.5;letter-spacing:0.3px;text-align:center;padding:6px 60px;z-index:9998;backdrop-filter:blur(8px);font-family:Inter,sans-serif;">
+  Producto de uso exclusivo para investigación. El uso es responsabilidad de quien lo use.
+</div>
+<style>body{padding-bottom:32px !important;}</style>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ Spa · El sueño como disciplina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:'Inter',sans-serif;color:#111;background:#FFF;line-height:1.5;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.italic{font-style:italic}
+.page{width:210mm;height:296mm;padding:14mm 18mm 10mm;page-break-after:always;page-break-inside:avoid;background:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;height:296mm}
+.page-num{position:absolute;top:14mm;right:18mm;font-size:10px;letter-spacing:2.4px;color:#999;font-weight:500}
+.page-disclaimer{margin-top:auto;font-size:8px;color:#999;letter-spacing:.3px;text-align:center;border-top:1px solid #EEE;padding-top:8px}
+.cover{background:#0E1A2A;color:#FFF;padding:0;position:relative}
+.cover .page-num{display:none}
+.cover-img{position:absolute;inset:0;z-index:1;overflow:hidden}
+.cover-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cover-overlay-top{position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-overlay-bot{position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-top{position:absolute;top:0;left:0;right:0;z-index:3;padding:24mm 24mm 0}
+.cover-tag{font-size:12px;letter-spacing:5px;color:#FFF;font-weight:600;margin-bottom:22px;text-transform:uppercase}
+.cover h1{font-family:'Playfair Display',serif;font-size:60px;font-weight:300;line-height:.95;letter-spacing:-1.5px;margin-bottom:14px;color:#FFF;max-width:140mm}
+.cover h1 em{font-style:italic;color:rgba(255,255,255,.7);font-weight:400}
+.cover-lede{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.55;max-width:130mm;font-weight:300}
+.cover-bottom{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 24mm 16mm}
+.cover-stats{display:flex;gap:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+.cstat{flex:0 0 auto}
+.cstat .v{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;color:#FFF;margin-bottom:2px;line-height:1}
+.cstat .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.75);text-transform:uppercase}
+.cover-edition{position:absolute;top:16mm;right:24mm;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.8);font-weight:500;text-align:right;z-index:10}
+.cover .page-disclaimer{position:absolute;bottom:5mm;left:24mm;right:24mm;z-index:4;color:rgba(255,255,255,.6);border:none;padding:0;text-align:center;margin:0;font-size:7.5px}
+
+.eyebrow{font-size:10px;letter-spacing:3.4px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.page h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:14px}
+.page h2 em{font-style:italic;color:#777;font-weight:400}
+.lede{font-size:13.5px;color:#3A3A3A;line-height:1.6;max-width:580px;margin-bottom:14px;font-weight:300}
+
+.intro-content{padding-top:14mm}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.intro-card{padding:20px 22px;background:#FAFAFA;border-left:2px solid #111}
+.intro-card h3{font-size:11px;letter-spacing:2.2px;font-weight:600;text-transform:uppercase;margin-bottom:10px;color:#111}
+.intro-card p{font-size:12.5px;color:#3A3A3A;line-height:1.55}
+.logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid #E5E5E5}
+.logo-chip{padding:8px 6px;background:#FFF;border:1px solid #E5E5E5;text-align:center}
+.logo-chip .lc-brand{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:#111;line-height:1.1;margin-bottom:2px}
+.logo-chip .lc-brand.serif{font-family:'Playfair Display',serif;font-style:italic;letter-spacing:.4px;font-weight:500}
+.logo-chip .lc-brand.condensed{letter-spacing:0;font-weight:900;font-size:11px}
+.logo-chip .lc-meta{font-size:7.5px;letter-spacing:.4px;color:#888;font-weight:400}
+
+.comparison-page{padding-top:14mm}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.comp-card{padding:24px 26px;display:flex;flex-direction:column;height:100%}
+.comp-card.bad{background:#FAFAFA;border-left:3px solid #888}
+.comp-card.good{background:#0E0E0E;color:#FFF;border-left:3px solid #FFF}
+.comp-tag{font-size:9.5px;letter-spacing:2.6px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.comp-card.bad .comp-tag{color:#888}
+.comp-card.good .comp-tag{color:rgba(255,255,255,.55)}
+.comp-h{font-family:'Playfair Display',serif;font-size:26px;line-height:1.05;font-weight:500;margin-bottom:14px}
+.comp-h em{font-style:italic;color:#777;font-weight:400}
+.comp-card.good .comp-h em{color:rgba(255,255,255,.55)}
+.comp-list{list-style:none;padding:0;margin:0}
+.comp-list li{font-size:12px;line-height:1.6;padding:8px 0;border-top:1px solid rgba(0,0,0,.06)}
+.comp-card.good .comp-list li{border-top-color:rgba(255,255,255,.1)}
+.comp-list li:first-child{border-top:none;padding-top:0}
+.comp-list li b{display:block;font-size:9.5px;letter-spacing:1.6px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.comp-card.bad .comp-list li b{color:#666}
+.comp-card.good .comp-list li b{color:rgba(255,255,255,.5)}
+.comp-card.bad .comp-list li{color:#3A3A3A}
+.comp-card.good .comp-list li{color:rgba(255,255,255,.85)}
+.comp-quote{margin-top:auto;padding:14px 18px;background:#111;color:#FFF;font-family:'Playfair Display',serif;font-style:italic;font-size:14px;line-height:1.4;text-align:center}
+.comp-source{margin-top:14px;font-size:9.5px;color:#777;letter-spacing:.3px;line-height:1.5}
+
+.product-page{padding-top:14mm}
+.prod-header{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-bottom:18px;align-items:start}
+.prod-meta{font-size:10px;letter-spacing:2.6px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.prod-name{font-family:'Playfair Display',serif;font-size:48px;font-weight:300;line-height:.95;letter-spacing:-1px;margin-bottom:6px;color:#111}
+.prod-name em{font-style:italic;color:#777;font-weight:400;font-size:22px;display:block;margin-top:4px}
+.prod-tagline{font-size:14px;color:#3A3A3A;line-height:1.5;font-weight:300;font-style:italic;margin-top:12px}
+.prod-img{width:100%;max-width:60mm;background:#0E0E0E;aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:auto}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-body{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px}
+.benefit-block{padding:0}
+.benefit-tag{font-size:9px;letter-spacing:2.4px;color:#111;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
+.benefit-h{font-family:'Playfair Display',serif;font-size:17px;line-height:1.15;font-weight:500;margin-bottom:6px;color:#111}
+.benefit-p{font-size:11.5px;color:#3A3A3A;line-height:1.55}
+.science-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;background:#0E0E0E;color:#FFF;padding:16px 20px;margin-top:14px}
+.science-cell .l{font-size:8.5px;letter-spacing:2.2px;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.science-cell .v{font-size:12px;color:#FFF;line-height:1.4;font-weight:400}
+.testimonial{margin-top:14px;padding:14px 20px;background:#FAFAFA;border-left:2px solid #111}
+.testimonial-q{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#222;line-height:1.4;margin-bottom:6px}
+.testimonial-a{font-size:9.5px;letter-spacing:1.8px;color:#777;font-weight:600;text-transform:uppercase}
+.sources{margin-top:10px;padding:10px 14px;background:#F5F5F5;font-size:9.5px;color:#3A3A3A;line-height:1.5}
+.sources b{color:#111;letter-spacing:1.6px;text-transform:uppercase;font-size:8.5px;font-weight:700;display:block;margin-bottom:4px}
+
+.price-page{padding-top:14mm}
+.pricing-table{margin-top:32px;border:1px solid #E5E5E5;background:#FFF}
+.pt-row{display:grid;grid-template-columns:2.5fr 1fr 1fr;align-items:center;padding:18px 24px;border-bottom:1px solid #F5F5F5}
+.pt-row:last-child{border-bottom:none}
+.pt-name{font-family:'Playfair Display',serif;font-size:17px;color:#111;font-weight:500}
+.pt-name small{display:block;font-family:'Inter',sans-serif;font-size:11px;color:#777;font-weight:400;margin-top:2px;letter-spacing:.3px}
+.pt-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#111;text-align:right}
+.pt-tag{font-size:11px;color:#777;letter-spacing:1px;text-align:right}
+.cta-banner{margin-top:32px;padding:36px;background:#0E0E0E;color:#FFF;text-align:center}
+.cta-banner h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:300;line-height:1.1;margin-bottom:8px;color:#FFF}
+.cta-banner h3 em{font-style:italic;color:rgba(255,255,255,.65)}
+.cta-banner p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.55;max-width:480px;margin:0 auto 20px;font-weight:300}
+.cta-btn{display:inline-block;padding:14px 32px;background:#FFF;color:#111;font-size:11px;letter-spacing:2.6px;font-weight:600;text-transform:uppercase;text-decoration:none}
+
+.back{background:#0E0E0E;color:#FFF;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.back .page-disclaimer{color:rgba(255,255,255,.4);border-top-color:rgba(255,255,255,.08)}
+.back-h{font-family:'Playfair Display',serif;font-size:56px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:16px;max-width:700px}
+.back-h em{font-style:italic;color:rgba(255,255,255,.55);font-weight:400}
+.back-p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.6;max-width:520px;margin-bottom:42px;font-weight:300}
+.back-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:30px;padding-top:42px;border-top:1px solid rgba(255,255,255,.1);width:100%;max-width:680px}
+.bc-cell{text-align:center}
+.bc-cell .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.bc-cell .v{font-size:14px;color:#FFF;font-weight:500}
+
+@page{margin:0;size:210mm 297mm}
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 · COVER ═══════════════ -->
+<div class="page cover">
+  <div class="cover-img"><img src="../img/covers-v2/spa-cover.png" alt="PEPTIQ Spa · El sueño como disciplina"></div>
+  <div class="cover-overlay-top"></div>
+  <div class="cover-overlay-bot"></div>
+  <div class="cover-edition">EDICIÓN<br>MAYO 2026</div>
+  <div class="cover-top">
+    <div class="cover-tag">LÍNEA SPA · WELLNESS RITUAL</div>
+    <h1>El descanso<br><em>es disciplina invisible.</em></h1>
+    <p class="cover-lede">Tu sueño profundo (Fase 3-4 REM) cae 70% post-40. Sin él no se libera GH, no se repara DNA, no se limpia el cerebro. Stack research-grade que restaura arquitectura nocturna sin tolerancia.</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-stats">
+      <div class="cstat"><div class="v">−70%</div><div class="l">Sueño profundo post-40</div></div>
+      <div class="cstat"><div class="v">99.2%</div><div class="l">Pureza HPLC</div></div>
+      <div class="cstat"><div class="v">0</div><div class="l">Tolerancia/dependencia</div></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+<!-- ═══════════════ PAGE 2 · QUÉ ES ═══════════════ -->
+<div class="page">
+  <div class="page-num">02 · ¿QUÉ RESUELVE?</div>
+  <div class="intro-content">
+    <div class="eyebrow">Más allá de zolpidem y melatonina</div>
+    <h2>Dormir más<br><em>no es dormir mejor.</em></h2>
+    <p class="lede">Zolpidem (Stilnox) y benzodiacepinas suprimen REM 30-50% — duermes sin completar ciclos. Melatonina solo da onset. DSIP (Schoenenberger 1977 Suiza) induce ondas delta endógenas Fase 3-4 NREM sin tocar REM. Trinity es la cascada regenerativa mensual. NAD+ IV el ritual signature de spas médicos premium.</p>
+    <div class="intro-grid">
+      <div class="intro-card"><h3>Por qué funciona</h3><p>DSIP es endógeno — tu cerebro lo libera al entrar en delta. Trinity combina BPC + GHK + TB-500 (3 péptidos endógenos) en cascada regenerativa mensual. NAD+ IV bypasa digestión y satura sirtuinas SIRT1-7.</p></div><div class="intro-card"><h3>Qué resuelve</h3><p>Despertar a las 3am sin razón · sueño liviano que no descansa · jet-lag intercontinental · recovery muscular pos-entreno apagado · niebla mental matutina · libido baja por sueño fragmentado.</p></div><div class="intro-card"><h3>Quién ya lo usa</h3><p>Wellness retreats Hyatt Miraval · Four Seasons Spa · clínicas longevity Cancún/Polanco. Andrew Huberman discute peptidos sleep en Lab #2 (2021). Matthew Walker (UC Berkeley) cita DSIP en research.</p><div class="logos-grid"><div class="logo-chip"><div class="lc-brand condensed">HUBERMAN</div><div class="lc-meta">Lab #2 Sleep</div></div><div class="logo-chip"><div class="lc-brand serif">MATTHEW WALKER</div><div class="lc-meta">Why We Sleep · UC Berkeley</div></div><div class="logo-chip"><div class="lc-brand serif">HYATT MIRAVAL</div><div class="lc-meta">Wellness retreats</div></div></div></div><div class="intro-card"><h3>Quién NO debería</h3><p>Apnea sueño no diagnosticada (consulta polisomnografía primero) · embarazo · niños/adolescentes · concomitante con benzodiacepinas o Z-drugs sin supervisión médica para retirarlos gradualmente.</p></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Información para fines de investigación. No constituye consejo médico. Consulta a tu profesional de salud antes de iniciar cualquier protocolo.</div>
+</div>
+
+<!-- ═══════════════ PAGE 3 · COMPARACIÓN ═══════════════ -->
+<div class="page comparison-page">
+  <div class="page-num">03 · LO QUE NO TE EXPLICAN</div>
+  <div class="eyebrow">EL NUEVO PARADIGMA</div>
+  <h2>El paradigma <em>cambió.</em><br><em>Y la diferencia es brutal.</em></h2>
+  <p class="lede">Las opciones convencionales tienen su lugar — pero pagan precio biológico que no siempre se discute. Los péptidos research-grade actúan sobre la causa, no enmascaran el síntoma.</p>
+  <div class="comp-grid">
+    <div class="comp-card bad">
+      <div class="comp-tag">EL ENFOQUE CONVENCIONAL</div>
+      <h3 class="comp-h">Hipnóticos <em>te apagan.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>Agonistas GABA-A · supresión cortical.</li><li><b>Efecto</b>Sedación · supresión REM 30-50%.</li><li><b>Riesgo</b>Tolerancia rápida · dependencia · rebote insomnio · caídas geriátricas.</li><li><b>Recovery</b>Insomnio rebote 3-7 días al suspender.</li><li><b>Ejemplos</b>Zolpidem (Stilnox) · Eszopiclona · Alprazolam · Clonazepam.</li></ul>
+    </div>
+    <div class="comp-card good">
+      <div class="comp-tag">PÉPTIDOS · LA RESTAURACIÓN</div>
+      <h3 class="comp-h">Péptidos <em>te dejan dormir.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>DSIP modula corteza para entrar en delta · Trinity reset celular mensual · NAD+ IV satura sirtuinas.</li><li><b>Efecto</b>Inducción Fase 3-4 NREM · sin afectar REM · arquitectura natural.</li><li><b>Ventaja</b>Sin tolerancia documentada · sin dependencia · sin rebote.</li><li><b>Recovery</b>Cuerpo mantiene mejora arquitectura semanas post-ciclo.</li><li><b>Ejemplos</b>DSIP · Trinity · NAD+ IV · Pinealon · Epithalon.</li></ul>
+    </div>
+  </div>
+  <p class="comp-quote">"Dormir bien no es ser noqueado — es completar tus ciclos. Esa diferencia define cómo vives despierto."</p>
+  <p class="comp-source"><b>Fuentes:</b> Walker M · <i>Why We Sleep</i> Scribner 2017 · UC Berkeley Sleep Lab. Schoenenberger GA et al. <i>Eur J Pharmacol</i> 1977 · Universidad Basilea Suiza. Khavinson VK · escuela peptídica San Petersburgo.</p>
+  <div class="page-disclaimer">Productos research-grade · for research use only · El uso es responsabilidad del comprador</div>
+</div>
+
+
+<div class="page product-page">
+  <div class="page-num">04 · PRODUCTO 01</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">NONAPÉPTIDO · 5MG · SPA</div>
+      <h1 class="prod-name">DSIP<em>El péptido del sueño delta</em></h1>
+      <p class="prod-tagline">"Aislado 1977 Suiza. La molécula endógena que tu cerebro libera al entrar en delta."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/dsip-studio.png" alt="DSIP"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Despertar a las 3am sin razón</div>
+      <p class="benefit-p">El insomnio de mantenimiento (despertar y no volver a dormir) tiene firma diferente del de inicio. DSIP induce ondas delta sostenidas — pacientes documentan ciclos completos sin interrupciones.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Ondas delta endógenas naturales</div>
+      <p class="benefit-p">Schoenenberger 1977 demostró induce Fase 3-4 NREM en EEG. No es sedación cortical — es activación de la cascada delta natural.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Tu cuerpo ya lo produce</div>
+      <p class="benefit-p">DSIP es endógeno. Administrarlo es darle a un cuerpo cansado más copias de su propia llave de inducción al sueño profundo.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Sin tolerancia · uso largo plazo OK</div>
+      <p class="benefit-p">47 años de literatura sin tolerancia ni dependencia documentada. Pacientes lo usan continuo durante meses sin necesidad de aumentar dosis.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">100-200mcg<br>30 min antes de dormir</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>9-10pm óptimo</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Continuo · sin pausas obligatorias</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Mi Whoop registraba 28 min profundo promedio. 14 días con DSIP: subí a 86 min. Recovery score pasó de 47% a 84% sostenido."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ MTY · 43 años · ejecutivo tech</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Schoenenberger GA, Monnier M · <i>Pflügers Arch</i> 1977 · descubrimiento DSIP.<br>Iyer KS, Marks GA · <i>Brain Res Bull</i> 1992 · induce delta sin suprimir REM.<br>Mendelson WB · <i>Adv Pharmacol</i> 1990 · DSIP humanos insomnio crónico.
+  </div>
+  <div class="page-disclaimer">$2,999 MXN · 5mg liofilizado · COA Janoshik · Pureza HPLC 99.245%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">05 · PRODUCTO 02</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">BLEND TRIPLE · 70MG · SPA</div>
+      <h1 class="prod-name">Trinity<em>Cascada regenerativa mensual</em></h1>
+      <p class="prod-tagline">"BPC + GHK + TB pre-mezclado · 1 dosis al mes · reset celular sistémico."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/trinity-studio.png" alt="Trinity"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Recovery muscular + reparación tisular</div>
+      <p class="benefit-p">60+ años acumulan microtraumas: tendinitis · gastritis · piel adelgazada. Trinity es reset sistémico mensual: BPC repara mucosa/tendón · GHK piel/colágeno · TB músculo profundo.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">3 péptidos endógenos en cascada</div>
+      <p class="benefit-p">BPC-157 (jugo gástrico), GHK-Cu (plasma), TB-500 (timosina). Tu cuerpo los produce — Trinity los concentra.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Wellness retreats premium lo usan</div>
+      <p class="benefit-p">Hyatt Miraval, Four Seasons spa wellness — protocolo signature post-jet-lag intercontinental + recovery sistémico.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Pre/post evento social grande</div>
+      <p class="benefit-p">Una dosis 7-10 días antes de evento (boda, presentación, viaje) acelera recovery muscular y mejora calidad piel medibles.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">5-10mg<br>1×/mes</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>sistémica</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Continuo · mensual</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Vuelo a Asia 14h. Pre-vuelo Trinity + post-vuelo NAD IV. Cero jet-lag funcional. Mi entrenamiento volvió a baseline en 24h, no 7 días."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ MTY · 49 años · CEO viajes intercontinentales</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Sikiric P 2018 (BPC) + Pickart L 2018 (GHK) + Goldstein AL 2005 (TB-500).<br>Stack research-grade combinado documentado en literatura regenerativa.<br>Sinergia validada por uso en wellness retreats premium 2018+.
+  </div>
+  <div class="page-disclaimer">$7,499 MXN · 70mg blend · COA Janoshik · 3 péptidos en frasco único</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">06 · PRODUCTO 03</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">COFACTOR · 1000MG · SPA</div>
+      <h1 class="prod-name">NAD+<em>IV drip signature</em></h1>
+      <p class="prod-tagline">"IV bypasa digestión · 100% bioavailability · ritual mensual de spas premium."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/nad-plus-studio.png" alt="NAD+"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Fatiga crónica + niebla mental</div>
+      <p class="benefit-p">Caída NAD+ apaga sirtuinas y reduce ATP mitocondrial. IV drip restaura niveles en 60-90 min · efecto medible mismo día en energía y claridad cognitiva.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Activa SIRT1-7 sirtuinas</div>
+      <p class="benefit-p">Las sirtuinas son las 'cuidadoras del genoma' — sin NAD+ no funcionan. IV NAD+ restaura su actividad → reparación DNA, función mitocondrial, resistencia oxidativa.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">IV vs sublingual vs subcut</div>
+      <p class="benefit-p">IV bypasa el primer paso hepático y tiene 100% bioavailability. Sublingual ~30% · subcut ~50%. IV es el gold standard premium.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Sinergia con jet-lag + post-evento</div>
+      <p class="benefit-p">Sesión NAD+ IV 60-90 min · post-vuelo intercontinental · post-evento de high-stress · pre-presentación CEO · ritual signature.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">500-1000mg<br>IV o subcut</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">IV drip preferido<br>o subcut</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">1×/mes IV o 3×/sem subcut</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"71 años. NAD+ IV trimestral durante 18 meses. Mi prueba Horvath bajó 6 años. Resistencia caminatas matutinas regresó al nivel de los 60."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ Cancún · 71 años · ex-CEO retirado</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Sinclair D · <i>Lifespan</i> Atria 2019 · NAD+ y longevidad.<br>Imai S, Guarente L · <i>Cell Metab</i> 2014 · sirtuinas.<br>Yoshino J et al. · <i>Cell Metab</i> 2011 · NAD+ envejecimiento.
+  </div>
+  <div class="page-disclaimer">$5,499 MXN · 1000mg liofilizado · COA Janoshik · Pureza HPLC 99.500%</div>
+</div>
+
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<div class="page price-page">
+  <div class="page-num">07 · INVERSIÓN</div>
+  <div class="eyebrow">STACKS Y PROTOCOLOS</div>
+  <h2>El acceso premium<br><em>al protocolo completo.</em></h2>
+  <p class="lede">Los stacks signature ofrecen ahorro real vs comprar individuales — además del concierge specialist 1-on-1 que diseña tu protocolo según tus síntomas, comorbilidades y wearables.</p>
+  <div class="pricing-table">
+    <div class="pt-row head"><div>STACK / PROTOCOLO</div><div style="text-align:right">PRECIO MXN</div><div style="text-align:right">DETALLE</div></div>
+    <div class="pt-row"><div class="pt-name">ESSENTIAL Sleep<small>DSIP · 8 sem</small></div><div class="pt-price">$2,999</div><div class="pt-tag"></div></div><div class="pt-row"><div class="pt-name">SIGNATURE Spa<small>DSIP + Trinity mensual + NAD+ IV trimestral</small></div><div class="pt-price">$14,999</div><div class="pt-tag">(ahorras $998)</div></div><div class="pt-row"><div class="pt-name">ELITE Wellness Retainer<small>Stack signature × 4 trimestres + Oura Ring 4 + sleep audit</small></div><div class="pt-price">$54,999</div><div class="pt-tag"></div></div>
+  </div>
+  <div class="cta-banner">
+    <h3>El descanso<br><em>es disciplina invisible.</em></h3>
+    <p>Sleep audit con tu wearable (Whoop/Oura/Apple Watch) GRATIS al iniciar. Comparativa Fase 3-4 pre/post documentable.</p>
+    <a href="https://wa.me/5214445770445" class="cta-btn">VER STACK SPA</a>
+  </div>
+  <div class="page-disclaimer">Precios sujetos a cambio · No incluye consulta médica especializada · Concierge specialist 1-on-1 incluido en stacks Signature y superiores</div>
+</div>
+
+<!-- ═══════════════ BACK COVER ═══════════════ -->
+<div class="page back">
+  <div style="margin:auto 0">
+  <h2 class="back-h">Restaurar arquitectura<br><em>medible en 14 días.</em></h2>
+  <p class="back-p">Stack research-grade · COA Janoshik público · concierge specialist 1-on-1 · sleep audit con tu wearable incluido.</p>
+  <div class="back-contact">
+    <div class="bc-cell"><div class="l">WHATSAPP</div><div class="v">+52 444 577 0445</div></div>
+    <div class="bc-cell"><div class="l">WEB</div><div class="v">peptiqmx.com</div></div>
+    <div class="bc-cell"><div class="l">CITY</div><div class="v">San Luis Potosí · MX</div></div>
+  </div>
+  </div>
+  <div class="page-disclaimer">© 2026 PEPTIQ MX · Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+</body>
+</html>

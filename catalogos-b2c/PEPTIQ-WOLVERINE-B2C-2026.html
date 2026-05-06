@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ · Wolverine Catálogo Profesional 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; color:#0a0a0a; width:794px; font-size:11px; line-height:1.6; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.page { width:794px; height:1123px; position:relative; overflow:hidden; page-break-after:always; background:#fff; }
+.page:last-child { page-break-after:auto; }
+
+/* Brand tokens */
+:root {
+  --ink:#0a0a0a;
+  --ink-2:#1a1a1a;
+  --paper:#F6F3EE;
+  --stone:#FAF7F2;
+  --beige:#B8A99A;
+  --beige-deep:#9C8D7F;
+  --gold:#C6A969;
+  --gold-light:#E5C981;
+  --rule:#E3DED6;
+  --mute:#6B6B6B;
+  --burgundy:#6B2A2A;
+}
+
+h1, h2, h3, h4, h5 { font-family:'Playfair Display', Georgia, serif; font-weight:500; letter-spacing:-0.3px; }
+em.italic { font-style:italic; color:var(--beige-deep); font-weight:400; }
+.mono { font-family:'JetBrains Mono',monospace; letter-spacing:0.3px; }
+.eyebrow { font-size:9.5px; letter-spacing:2.8px; text-transform:uppercase; color:var(--beige-deep); font-weight:500; }
+.gold-line { width:48px; height:2px; background:var(--gold); margin:12px 0; }
+
+/* ═══════════════ PAGE 1: COVER ═══════════════ */
+.cover { background:var(--ink); color:#fff; height:1123px; display:flex; flex-direction:column; position:relative; overflow:hidden; }
+.cover-photo { height:600px; position:relative; overflow:hidden; background:var(--ink); }
+.cover-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+.cover-photo-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.68) 22%, rgba(10,10,10,0.35) 38%, rgba(10,10,10,0.05) 58%, rgba(10,10,10,0.2) 100%); z-index:2; }
+.cover-topbar { position:absolute; top:40px; left:56px; right:56px; display:flex; justify-content:space-between; align-items:flex-start; z-index:3; }
+.cover-topbar-brand { font-family:'Playfair Display',serif; font-size:28px; font-weight:500; letter-spacing:4px; color:#fff; }
+.cover-topbar-brand em { color:var(--gold-light); font-style:italic; font-weight:500; }
+.cover-topbar-edition { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.7); text-align:right; line-height:1.6; }
+.cover-topbar-edition b { display:block; color:var(--gold-light); font-weight:500; font-size:9.5px; letter-spacing:2.5px; }
+.cover-herotext { position:absolute; left:56px; right:56px; top:105px; z-index:3; }
+.cover-herotext .cat-eyebrow { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold-light); font-weight:600; margin-bottom:14px; text-shadow:0 1px 8px rgba(0,0,0,0.85), 0 0 20px rgba(0,0,0,0.4); }
+.cover-herotext .cat-slogan { font-family:'Playfair Display',serif; font-size:44px; line-height:1.08; font-weight:500; letter-spacing:-1px; color:#fff; max-width:640px; text-shadow:0 2px 16px rgba(0,0,0,0.85), 0 0 40px rgba(0,0,0,0.5); }
+.cover-herotext .cat-slogan em { font-style:italic; color:var(--gold-light); text-shadow:0 2px 16px rgba(0,0,0,0.85), 0 0 40px rgba(0,0,0,0.5); }
+.cover-topbar-brand, .cover-topbar-edition, .cover-topbar-edition b { text-shadow:0 1px 6px rgba(0,0,0,0.8); }
+
+.cover-bottom { flex:1; padding:56px 56px 40px; display:flex; flex-direction:column; justify-content:space-between; position:relative; z-index:1; background:var(--ink); }
+.cover-bottom::before { content:""; position:absolute; top:-100px; right:-100px; width:450px; height:450px; background:radial-gradient(circle, rgba(198,169,105,0.18), transparent 70%); }
+.cover-line-above { font-size:11px; letter-spacing:3.5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; font-weight:500; position:relative; z-index:1; }
+.cover-title { font-family:'Playfair Display',serif; font-size:62px; font-weight:500; line-height:1.02; letter-spacing:-1.8px; color:#fff; position:relative; z-index:1; }
+.cover-title em { color:var(--gold-light); font-style:italic; }
+.cover-lede { font-size:13.5px; color:rgba(255,255,255,0.72); max-width:540px; line-height:1.6; font-weight:300; margin-top:18px; position:relative; z-index:1; }
+.cover-line-eyebrow { color:var(--gold); font-size:11px; letter-spacing:3.5px; text-transform:uppercase; margin-bottom:8px; }
+.cover-tagline { font-family:'Playfair Display',serif; font-size:22px; color:rgba(255,255,255,0.85); font-style:italic; max-width:560px; line-height:1.3; font-weight:400; }
+.cover-badges { display:grid; grid-template-columns:repeat(4, 1fr); gap:28px; margin-top:24px; }
+.cover-badge { color:rgba(255,255,255,0.8); }
+.cover-badge .b-num { font-family:'Playfair Display',serif; font-size:26px; font-weight:500; color:var(--gold); font-style:italic; letter-spacing:-1px; line-height:1; }
+.cover-badge .b-lbl { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-top:4px; }
+.cover-foot { display:flex; justify-content:space-between; align-items:flex-end; padding-top:28px; border-top:1px solid rgba(255,255,255,0.1); margin-top:32px; }
+.cover-foot span { font-size:10px; color:rgba(255,255,255,0.45); letter-spacing:1px; }
+
+/* ═══════════════ STANDARD PAGE LAYOUT ═══════════════ */
+.std-page { padding:60px 60px 50px; background:#fff; }
+.std-header { margin-bottom:36px; display:flex; justify-content:space-between; align-items:flex-start; }
+.std-header-left .eyebrow { margin-bottom:12px; }
+.std-header h2 { font-size:36px; line-height:1.1; color:var(--ink); max-width:560px; }
+.std-header h2 em { font-style:italic; color:var(--beige-deep); }
+.std-header-right { text-align:right; font-size:10px; color:var(--mute); }
+.std-header-right .page-num { font-family:'Playfair Display',serif; font-size:40px; color:var(--gold); font-style:italic; letter-spacing:-1px; line-height:1; }
+.std-header-right .page-total { font-size:9px; color:var(--beige-deep); letter-spacing:1.5px; text-transform:uppercase; }
+
+.std-content p { font-size:12.5px; color:#2a2a2a; line-height:1.75; margin-bottom:14px; }
+.std-content p.lead { font-size:15px; color:var(--ink); font-weight:400; line-height:1.7; margin-bottom:18px; }
+.std-content p b { color:var(--ink); font-weight:600; }
+
+/* ═══════════════ PAGE FOOTER ═══════════════ */
+.page-footer { position:absolute; bottom:24px; left:60px; right:60px; display:flex; justify-content:space-between; align-items:center; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--beige-deep); padding-top:12px; border-top:1px solid var(--rule); }
+.page-footer::after { content:"⚠️ Research-grade · For research use only · No aprobado COFEPRIS · No para consumo humano · El uso es responsabilidad del comprador"; position:absolute; bottom:-14px; left:0; right:0; text-align:center; font-size:7.2px; letter-spacing:.3px; color:#a89b86; text-transform:none; font-style:italic; }
+.page-footer .pf-left { font-weight:500; }
+.page-footer .pf-right { font-family:'Playfair Display',serif; font-style:italic; color:var(--gold); font-size:12px; letter-spacing:0; text-transform:none; }
+
+/* ═══════════════ DATA CALLOUTS ═══════════════ */
+.callout { background:var(--stone); border-left:3px solid var(--gold); padding:20px 24px; margin:18px 0; }
+.callout b.title { display:block; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--beige-deep); margin-bottom:8px; font-weight:500; }
+.callout p { font-size:12px; color:#2a2a2a; line-height:1.7; margin:0; }
+.callout.dark { background:var(--ink); color:#fff; border-left-color:var(--gold); }
+.callout.dark b.title { color:var(--gold); }
+.callout.dark p { color:rgba(255,255,255,0.85); }
+
+.stat-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin:20px 0; }
+.stat-card { padding:22px 20px; background:var(--stone); border-top:2px solid var(--gold); }
+.stat-card .s-val { font-family:'Playfair Display',serif; font-size:38px; font-weight:500; color:var(--ink); letter-spacing:-1.5px; line-height:1; }
+.stat-card .s-val em { color:var(--gold); font-style:italic; }
+.stat-card .s-lbl { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--beige-deep); margin-top:6px; font-weight:500; }
+.stat-card .s-sub { font-size:10.5px; color:var(--mute); margin-top:4px; line-height:1.4; }
+
+/* ═══════════════ PRODUCT PAGE ═══════════════ */
+.product-page { padding:60px 60px 50px; background:#fff; }
+.product-hero { display:grid; grid-template-columns:300px 1fr; gap:40px; margin-bottom:30px; align-items:flex-start; }
+.product-img { width:300px; height:380px; background:var(--stone); border:1px solid var(--rule); overflow:hidden; display:flex; align-items:center; justify-content:center; }
+.product-img img { width:100%; height:100%; object-fit:cover; }
+.product-header { padding-top:8px; }
+.product-header .eyebrow { margin-bottom:8px; }
+.product-header h2 { font-size:44px; line-height:1; letter-spacing:-1.2px; color:var(--ink); margin-bottom:4px; }
+.product-header h2 em { font-style:italic; color:var(--beige-deep); font-size:0.7em; }
+.product-header .subtitle { font-size:13px; color:var(--mute); font-style:italic; font-family:'Playfair Display',serif; margin-bottom:16px; }
+.product-price-box { background:var(--ink); color:#fff; padding:18px 22px; margin-top:20px; border-left:3px solid var(--gold); }
+.product-price-box .pp-price { font-family:'Playfair Display',serif; font-size:34px; font-weight:500; letter-spacing:-1px; line-height:1; color:var(--gold-light); }
+.product-price-box .pp-unit { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-top:4px; }
+.product-price-box .pp-b2b { font-size:10px; color:var(--gold); margin-top:8px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.15); }
+
+.product-body { margin-top:4px; }
+.product-body h3 { font-size:15px; color:var(--ink); margin-bottom:8px; font-weight:500; }
+.product-body p { font-size:11.5px; color:#2a2a2a; line-height:1.7; margin-bottom:10px; }
+
+.product-specs { display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; margin-top:20px; padding-top:20px; border-top:1px solid var(--rule); }
+.spec-item .spec-lbl { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--beige-deep); margin-bottom:3px; font-weight:500; }
+.spec-item .spec-val { font-size:11.5px; color:var(--ink); font-weight:500; line-height:1.4; }
+
+.mech-box { background:var(--stone); padding:18px 20px; margin-top:18px; border-left:2px solid var(--gold); }
+.mech-box b { display:block; font-size:9.5px; letter-spacing:1.8px; text-transform:uppercase; color:var(--beige-deep); margin-bottom:6px; font-weight:600; }
+.mech-box p { font-size:10.5px; color:#2a2a2a; line-height:1.7; margin:0; }
+
+/* ═══════════════ STACK PAGE ═══════════════ */
+.stack-page { padding:60px 60px 50px; background:var(--stone); }
+.stack-hero { text-align:center; margin-bottom:30px; padding-bottom:28px; border-bottom:1px solid var(--rule); }
+.stack-hero .s-tag { display:inline-block; font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); padding:4px 14px; margin-bottom:14px; font-weight:500; }
+.stack-hero h2 { font-size:48px; line-height:1; letter-spacing:-1.5px; color:var(--ink); }
+.stack-hero h2 em { font-style:italic; color:var(--beige-deep); }
+.stack-hero p { font-size:13px; color:var(--mute); max-width:520px; margin:14px auto 0; line-height:1.6; font-style:italic; }
+
+.stack-components { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin:24px 0; }
+.stack-comp { background:#fff; border:1px solid var(--rule); padding:18px 16px; text-align:center; }
+.stack-comp .c-name { font-family:'Playfair Display',serif; font-size:14px; font-weight:500; color:var(--ink); letter-spacing:-0.3px; margin-bottom:4px; }
+.stack-comp .c-desc { font-size:9.5px; color:var(--mute); line-height:1.5; }
+
+.stack-price-row { background:var(--ink); color:#fff; padding:26px 32px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:40px; margin:20px 0; }
+.stack-price-row .spr-left h3 { font-size:18px; color:#fff; margin-bottom:4px; }
+.stack-price-row .spr-left p { font-size:11px; color:rgba(255,255,255,0.65); line-height:1.5; }
+.stack-price-row .spr-right .spr-price { font-family:'Playfair Display',serif; font-size:36px; font-weight:500; color:var(--gold-light); letter-spacing:-1px; line-height:1; }
+.stack-price-row .spr-right .spr-save { font-size:10px; color:var(--gold); margin-top:4px; text-align:right; }
+
+.protocol-timeline { margin-top:24px; }
+.pt-row { display:grid; grid-template-columns:80px 1fr; gap:20px; padding:16px 0; border-bottom:1px solid var(--rule); align-items:flex-start; }
+.pt-row:last-child { border-bottom:0; }
+.pt-week { font-family:'Playfair Display',serif; font-style:italic; color:var(--gold); font-size:20px; font-weight:500; line-height:1; }
+.pt-content h4 { font-size:12px; color:var(--ink); margin-bottom:3px; }
+.pt-content p { font-size:10.5px; color:#3a3a3a; line-height:1.6; margin:0; }
+
+/* ═══════════════ PRICING PAGE ═══════════════ */
+.pricing-page { padding:60px 60px 50px; background:#fff; }
+.pricing-table { margin-top:24px; border:1px solid var(--rule); }
+.pt-header { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; padding:16px 22px; background:var(--ink); color:#fff; font-size:10px; letter-spacing:2px; text-transform:uppercase; font-weight:500; }
+.pt-header span:last-child { color:var(--gold); }
+.pt-body .pt-pricing-row { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; padding:14px 22px; border-bottom:1px solid var(--rule); align-items:center; }
+.pt-body .pt-pricing-row:last-child { border-bottom:0; }
+.pt-body .pt-pricing-row.featured { background:var(--stone); }
+.pt-pricing-row .p-name { font-family:'Playfair Display',serif; font-size:13px; font-weight:500; color:var(--ink); }
+.pt-pricing-row .p-name small { display:block; font-size:9.5px; color:var(--mute); font-family:'Inter',sans-serif; font-weight:400; margin-top:2px; }
+.pt-pricing-row .p-price { font-family:'Playfair Display',serif; font-size:15px; font-weight:500; color:var(--ink); text-align:right; }
+.pt-pricing-row .p-b2b { font-family:'Playfair Display',serif; font-size:15px; font-weight:500; color:var(--burgundy); text-align:right; }
+.pt-pricing-row .p-vip { font-family:'Playfair Display',serif; font-size:15px; font-weight:500; color:var(--gold); text-align:right; }
+.p-mini { font-size:9px; color:var(--mute); text-align:right; display:block; margin-top:1px; }
+
+.tier-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:30px; }
+.tier-card { padding:22px 20px; border:1px solid var(--rule); text-align:center; }
+.tier-card.vip { background:var(--ink); color:#fff; border-color:var(--gold); border-width:2px; }
+.tier-card .t-tier { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; font-weight:500; }
+.tier-card .t-discount { font-family:'Playfair Display',serif; font-size:38px; font-weight:500; color:var(--ink); letter-spacing:-1.5px; line-height:1; }
+.tier-card.vip .t-discount { color:var(--gold-light); }
+.tier-card .t-req { font-size:10px; color:var(--mute); margin-top:6px; }
+.tier-card.vip .t-req { color:rgba(255,255,255,0.6); }
+.tier-card .t-perks { margin-top:14px; padding-top:12px; border-top:1px solid var(--rule); font-size:10px; color:#3a3a3a; line-height:1.7; }
+.tier-card.vip .t-perks { color:rgba(255,255,255,0.8); border-top-color:rgba(198,169,105,0.3); }
+
+/* ═══════════════ ORDER FLOW ═══════════════ */
+.flow-page { padding:60px 60px 50px; background:#fff; }
+.flow-steps { display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; margin:30px 0; }
+.flow-step { position:relative; }
+.flow-step .fs-num { font-family:'Playfair Display',serif; font-style:italic; font-size:52px; color:var(--gold); font-weight:500; letter-spacing:-2px; line-height:1; }
+.flow-step h4 { font-size:14px; color:var(--ink); margin:8px 0 4px; }
+.flow-step p { font-size:10.5px; color:#3a3a3a; line-height:1.6; margin:0; }
+
+/* ═══════════════ COA PAGE ═══════════════ */
+.coa-page { padding:60px 60px 50px; background:var(--stone); }
+.coa-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:24px; }
+.coa-card { background:#fff; border:1px solid var(--rule); padding:20px; }
+.coa-card h4 { font-size:14px; color:var(--ink); margin-bottom:8px; }
+.coa-card .coa-specs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0; font-size:10.5px; }
+.coa-card .coa-specs div b { display:block; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--beige-deep); margin-bottom:1px; }
+.coa-card .coa-specs div span { color:var(--ink); font-family:'JetBrains Mono',monospace; font-weight:500; }
+.coa-card .coa-seal { background:var(--gold); color:var(--ink); padding:6px 10px; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; font-weight:500; display:inline-block; margin-top:8px; }
+
+/* ═══════════════ BACK COVER ═══════════════ */
+.back-cover { background:var(--ink); color:#fff; height:1123px; padding:80px 60px; display:flex; flex-direction:column; justify-content:space-between; position:relative; }
+.back-cover::before { content:""; position:absolute; top:40%; right:-150px; width:400px; height:400px; background:radial-gradient(circle, rgba(198,169,105,0.2), transparent 70%); }
+.back-hero { position:relative; z-index:1; }
+.back-hero .eyebrow { color:var(--gold); }
+.back-hero h1 { font-size:62px; line-height:1.05; letter-spacing:-2px; color:#fff; margin:16px 0 20px; max-width:600px; }
+.back-hero h1 em { font-style:italic; color:var(--gold-light); }
+.back-hero .lede { font-size:15px; color:rgba(255,255,255,0.75); max-width:520px; line-height:1.6; font-weight:300; }
+.back-contact { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:40px; padding-top:40px; border-top:1px solid rgba(255,255,255,0.1); }
+.contact-block h4 { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:500; }
+.contact-block .c-item { font-size:13px; color:rgba(255,255,255,0.9); margin-bottom:6px; font-family:'Playfair Display',serif; font-weight:400; }
+.contact-block .c-item small { color:rgba(255,255,255,0.5); font-family:'Inter',sans-serif; display:block; font-size:10px; }
+.back-foot { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); padding-top:30px; border-top:1px solid rgba(255,255,255,0.08); }
+.back-foot p { margin-bottom:6px; font-size:9.5px; line-height:1.5; letter-spacing:0.5px; text-transform:none; color:rgba(255,255,255,0.4); font-style:italic; }
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 · COVER ═══════════════ -->
+<div class="page cover">
+  <div class="cover-photo">
+    <img src="../img/products-v2/bpc-157-lifestyle.png" alt="PEPTIQ MX · Línea WOLVERINE">
+    <div class="cover-photo-overlay"></div>
+    <div class="cover-topbar">
+      <div class="cover-topbar-brand">PEPTI<em>Q</em> · MX</div>
+      <div class="cover-topbar-edition">
+        <b>Edición Abril 2026</b>
+        Research-grade Peptides · MX
+      </div>
+    </div>
+    <div class="cover-herotext">
+      <div class="cat-eyebrow">Línea WOLVERINE · Para tu recuperación</div>
+      <h1 class="cat-slogan">La ciencia de<br><em>reparación celular.</em></h1>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div>
+      <div class="cover-line-above">Catálogo Profesional uso personal · 2026</div>
+      <p class="cover-lede" style="margin-top:0;font-size:15px;max-width:620px">La piel recuerda cómo sanaba a los 25. Péptidos dérmicos que reparan matriz, reactivan folículo y devuelven luminosidad. Sin filtros. Solo bioseñal directa.</p>
+    </div>
+
+    <div style="position:relative;z-index:1">
+      <div class="cover-badges">
+        <div class="cover-badge">
+          <div class="b-num">99.6<em>%</em></div>
+          <div class="b-lbl">Pureza HPLC</div>
+        </div>
+        <div class="cover-badge">
+          <div class="b-num">16.9<em>%</em></div>
+          <div class="b-lbl">CAGR Copper Peptides</div>
+        </div>
+        <div class="cover-badge">
+          <div class="b-num">24-72h</div>
+          <div class="b-lbl">Envío México</div>
+        </div>
+        <div class="cover-badge">
+          <div class="b-num">100<em>%</em></div>
+          <div class="b-lbl">COA por lote</div>
+        </div>
+      </div>
+      <div class="cover-foot">
+        <span>PEPTIQ MX · peptiqmx.com</span>
+        <span>Catálogo Profesional uso personal · v2026.04</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 2 · ABOUT PEPTIQ ═══════════════ -->
+<div class="page std-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Bienvenida · PEPTIQ MX</div>
+      <div class="gold-line"></div>
+      <h2>Péptidos <em class="italic">research-grade.</em><br>Ciencia verificable. Protocolo premium.</h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">02</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <div class="std-content">
+    <p class="lead">PEPTIQ MX es el primer distribuidor en México que publica el <b>Certificado de Análisis (COA) Janoshik</b> por cada lote que envía. Cada vial que llega a tu clínica viene acompañado del HPLC, masa molecular y análisis de endotoxinas del lote específico que recibiste · no uno genérico.</p>
+
+    <p>Operamos como el brazo científico para tu uso personal médicas que buscan elevar sus protocolos con compuestos bioactivos verificables. La diferencia no es el precio · es la <b>trazabilidad</b>.</p>
+
+    <div class="callout dark">
+      <b class="title">Nuestra misión</b>
+      <p>Democratizar el acceso a péptidos research-grade en México con el mismo rigor analítico que usa la industria farmacéutica internacional · y la elevación experiencial que merece un protocolo premium.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px">
+      <div style="padding:22px;background:var(--stone);border-top:2px solid var(--gold)">
+        <h3 style="font-size:14px;color:var(--ink);margin-bottom:8px">Pureza verificada</h3>
+        <p style="font-size:10.5px;color:#3a3a3a;line-height:1.6;margin:0">COA Janoshik Laboratory (Eslovaquia) · HPLC 99%+ por lote · publicado en peptiqmx.com/coa</p>
+      </div>
+      <div style="padding:22px;background:var(--stone);border-top:2px solid var(--gold)">
+        <h3 style="font-size:14px;color:var(--ink);margin-bottom:8px">Concierge médico</h3>
+        <p style="font-size:10.5px;color:#3a3a3a;line-height:1.6;margin:0">Specialist WhatsApp · respuesta &lt;10 min · protocolos 1-on-1 · asesoría sin costo</p>
+      </div>
+      <div style="padding:22px;background:var(--stone);border-top:2px solid var(--gold)">
+        <h3 style="font-size:14px;color:var(--ink);margin-bottom:8px">Logística premium</h3>
+        <p style="font-size:10.5px;color:#3a3a3a;line-height:1.6;margin:0">Cadena de frío cuando aplica · empaque térmico · 24-72h MX · CFDI · programa uso personal</p>
+      </div>
+    </div>
+
+    <p style="margin-top:32px;font-size:12px;color:#3a3a3a;line-height:1.75">Este catálogo contiene la selección de productos <b>PEPTIQ WOLVERINE</b> · diseñados específicamente para integrarse a protocolos de atletas amateurs, biohackers, profesionales 30-55 con lesiones crónicas o post-cirugía. Cada producto se acompaña de su ficha técnica, mecanismo de acción, dosis research estándar y opciones uso personal con pricing escalonado.</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Catálogo WOLVERINE 2026</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 3 · MARKET INTELLIGENCE · MEDICINA ESTÉTICA MX ═══════════════ -->
+<div class="page std-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Market Intelligence · Medicina deportiva + traumatología MX</div>
+      <div class="gold-line"></div>
+      <h2>El paciente que invierte en <em class="italic">recuperar primero.</em></h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">03</div>
+      <div class="page-total">Páginas 17</div>
+    </div>
+  </div>
+
+  <div class="std-content">
+    <p class="lead">El mercado de fisioterapia y medicina deportiva en México facturó <b>USD 1.2 bn en 2024</b> con CAGR <b>+8% a 2029</b> (Statista MX 2025). Post-COVID, las clínicas de recuperación deportiva triplicaron demanda de protocolos científicamente validados. <b>BPC-157 es el péptido más estudiado del mundo</b> · referencia obligada en clínicas elite de USA · gap evidente en MX que tu clínica puede cerrar.</p>
+
+    <div class="stat-grid" style="margin-top:24px">
+            <div class="stat-card">
+        <div class="s-val">1,200+</div>
+        <div class="s-lbl">Estudios preclínicos BPC-157</div>
+        <div class="s-sub">Sikiric et al. (Universidad Zagreb) 1991-2024 · referente absoluto regeneración tisular peptídica</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-val">+40%</div>
+        <div class="s-lbl">Reducción tiempo recuperación tendón</div>
+        <div class="s-sub">Comparado con fisioterapia convencional · documentado en tendinopatía crónica (Pevec et al. 2021)</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-val">220k</div>
+        <div class="s-lbl">Cirugías ortopédicas/año MX</div>
+        <div class="s-sub">CONAMED 2024 · de las cuales ~30% reportan recuperación lenta · oportunidad clara</div>
+      </div>
+</div>
+    </div>
+
+    <div class="callout">
+      <b class="title">Lever #1 · Post-procedimiento es donde se gana o se pierde el paciente</b>
+      <p>El 73% de pacientes que abandona después de un láser CO₂ fraccionado lo hace por "recuperación lenta o resultado inferior al esperado" (Mexican Society of Dermatology · 2024). Integrar GHK-Cu o TRINITY post-procedimiento <b>reduce dropout 40%+</b> y sostiene el upsell hacia paquetes de 3 sesiones.</p>
+    </div>
+
+    <div class="callout">
+      <b class="title">Lever #2 · El término "anti-aging" perdió tracción · ahora es "regenerativa dérmica"</b>
+      <p>L'Oréal rebrandeó Lancôme × Timeline como "mitochondrial skincare". El paciente ya no compra "verme menos vieja" · compra "regenero mi piel a nivel celular". Este pivote narrativo te permite cobrar <b>+25-40% del ticket promedio</b> usando los mismos minutos de cabina.</p>
+    </div>
+
+    <div class="callout">
+      <b class="title">Lever #3 · COA público es el nuevo botox-quality assurance</b>
+      <p>27% paga +20% por "formulación medicada" · 25% por "eficacia probada" · 25% por "personalización basada en diagnóstico" (Euromonitor 2025). La clínica que entrega <b>el COA del lote específico</b> que va al paciente convierte la objeción de precio en argumento de venta.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">Fuentes: Euromonitor Passport H&amp;W Sept 2025 · datos sectoriales MX 2024 · estudios peer-reviewed</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 4 · THE PEPTIQ DIFFERENCE ═══════════════ -->
+<div class="page std-page" style="background:var(--stone)">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Diferenciadores PEPTIQ</div>
+      <div class="gold-line"></div>
+      <h2>Por qué tu clínica <em class="italic">nos elige.</em></h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">04</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <div class="std-content">
+    <p class="lead">En un mercado saturado de distribuidores gray-market, el rigor analítico es tu única protección profesional. PEPTIQ es el único proveedor en México que publica COA por lote de laboratorio independiente internacional.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px">
+      <div style="background:#fff;padding:24px;border-left:3px solid var(--gold)">
+        <h3 style="font-size:15px;color:var(--ink);margin-bottom:8px">🔬 COA Janoshik por lote</h3>
+        <p style="font-size:10.5px;color:#3a3a3a;line-height:1.7">Certificado de Análisis HPLC, masa molecular y endotoxinas del lote específico que recibes. Publicado en peptiqmx.com/coa. Único en México con este estándar.</p>
+      </div>
+      <div style="background:#fff;padding:24px;border-left:3px solid var(--gold)">
+        <h3 style="font-size:15px;color:var(--ink);margin-bottom:8px">🧪 Pureza 99%+ verificada</h3>
+        <p style="font-size:10.5px;color:#3a3a3a;line-height:1.7">BPC-157: 99.654% · TB-500: 99.328% · NAD+: 99.500% · GHK-Cu: 99%+. Números verificables, no marketing.</p>
+      </div>
+      <div style="background:#fff;padding:24px;border-left:3px solid var(--gold)">
+        <h3 style="font-size:15px;color:var(--ink);margin-bottom:8px">📋 CFDI + Programa uso personal</h3>
+        <p style="font-size:10.5px;color:#3a3a3a;line-height:1.7">Facturación electrónica con IVA · programa clínicas con pricing tier 1/2/3 hasta -25% volumen · co-branding opcional.</p>
+      </div>
+      <div style="background:#fff;padding:24px;border-left:3px solid var(--gold)">
+        <h3 style="font-size:15px;color:var(--ink);margin-bottom:8px">💬 Concierge specialist</h3>
+        <p style="font-size:10.5px;color:#3a3a3a;line-height:1.7">WhatsApp priority response &lt;10 min horario hábil · protocolos personalizados · training clínico disponible para equipos.</p>
+      </div>
+      <div style="background:#fff;padding:24px;border-left:3px solid var(--gold)">
+        <h3 style="font-size:15px;color:var(--ink);margin-bottom:8px">📦 Logística premium</h3>
+        <p style="font-size:10.5px;color:#3a3a3a;line-height:1.7">Envío 24-72h · empaque térmico cuando aplica · cadena de frío · tracking en tiempo real · empaque discreto.</p>
+    </div>
+      <div style="background:#fff;padding:24px;border-left:3px solid var(--gold)">
+        <h3 style="font-size:15px;color:var(--ink);margin-bottom:8px">🎁 Starter Kit incluido</h3>
+        <p style="font-size:10.5px;color:#3a3a3a;line-height:1.7">Agua bacteriostática USP + jeringas estériles + guía de reconstitución · sin costo en cada pedido.</p>
+      </div>
+    </div>
+
+    <div class="callout dark" style="margin-top:28px">
+      <b class="title">Garantía de pureza</b>
+      <p>Si el COA del lote entregado reporta pureza HPLC menor al 97%, reponemos el producto sin costo. Es nuestra promesa al rigor analítico.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Catálogo WOLVERINE 2026</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 5 · CATEGORY INTRO GLOW ═══════════════ -->
+<div class="page" style="background:var(--ink);color:#fff;padding:90px 80px 60px;position:relative;overflow:hidden">
+  <div style="position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(198,169,105,0.25),transparent 70%)"></div>
+  <div style="position:relative;z-index:1">
+    <div style="font-size:9.5px;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Línea GLOW · Medicina estética + Dermatología regenerativa</div>
+    <div style="width:48px;height:2px;background:var(--gold);margin:12px 0 26px"></div>
+    <h1 style="font-size:64px;line-height:0.98;letter-spacing:-2.2px;color:#fff;margin-bottom:18px">Recuperación tisular<br><em style="font-style:italic;color:var(--gold-light)">avanzada.</em></h1>
+    <p style="font-size:14.5px;color:rgba(255,255,255,0.78);max-width:600px;line-height:1.6;font-weight:300">Cinco moléculas que tu paciente premium reconoce: <b>GHK-Cu</b> (cobre tripéptido · síntesis colágeno I/III), <b>TRINITY</b> (BPC + GHK + TB-500 blend), <b>AHK-Cu</b> (capilar), <b>NAD+</b> (mitocondrial sistémico) y <b>Epithalon</b> (telomérico). Protocolos validados para post-láser, mesoterapia capilar, hyperpigmentation, anti-aging facial integral y regeneración tisular post-quirúrgica.</p>
+
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:760px">
+      <div style="padding:18px 0;border-top:1px solid rgba(198,169,105,0.3)">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:34px;color:var(--gold);line-height:1">5</div>
+        <div style="font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-top:6px">Moléculas individuales</div>
+      </div>
+      <div style="padding:18px 0;border-top:1px solid rgba(198,169,105,0.3)">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:34px;color:var(--gold);line-height:1">7</div>
+        <div style="font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-top:6px">Casos de uso clínico</div>
+      </div>
+      <div style="padding:18px 0;border-top:1px solid rgba(198,169,105,0.3)">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:34px;color:var(--gold);line-height:1">6-12</div>
+        <div style="font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-top:6px">Sem · protocolo tipo</div>
+      </div>
+      <div style="padding:18px 0;border-top:1px solid rgba(198,169,105,0.3)">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:34px;color:var(--gold);line-height:1">99<span style="font-size:24px">%</span></div>
+        <div style="font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-top:6px">Pureza HPLC · COA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 5b · CASOS DE USO + PERSONAS + JOURNEY ═══════════════ -->
+<div class="page std-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Línea WOLVERINE · Casos de uso clínico</div>
+      <div class="gold-line"></div>
+      <h2>Dónde GLOW <em class="italic">cambia el ticket.</em></h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">5b</div>
+      <div class="page-total">Páginas 17</div>
+    </div>
+  </div>
+
+  <div class="std-content">
+    <p class="lead">No es un péptido buscando indicación · son indicaciones buscando el péptido correcto. La clínica que mejor cobra es la que mapea cada péptido a una occasion concreta.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px">
+      <div class="callout" style="margin:0">
+        <b class="title">🔥 Post-láser CO₂ fraccionado · Picosure · IPL</b>
+        <p>Mesoterapia GHK-Cu o TRINITY el mismo día post-láser + home-care 8 sem. Reduce eritema 40-60%, acelera reepitelización. <b>Upsell típico:</b> +$2,500-4,000/sesión sobre el láser.</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">💧 Mesoterapia facial integral 35+</b>
+        <p>Stack TRINITY + GHK-Cu mensual · 6-8 sesiones. Indicado pérdida elasticidad, líneas finas, fotodaño. <b>Ticket paquete:</b> $35,000-55,000 MXN/6 sesiones.</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">💇‍♀️ Mesoterapia capilar · alopecia patrón femenino</b>
+        <p>AHK-Cu + GHK-Cu intradérmico cuero cabelludo. 8-12 sesiones. <b>Ticket paquete:</b> $22,000-38,000 MXN. Alta retención (paciente regresa cada 4-6 sem por mantenimiento).</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">🩹 Cicatrización post-quirúrgica estética</b>
+        <p>Cirugía plástica (BBL, abdominoplastia, mastopexia) · TRINITY + GHK-Cu localizado. Reduce hipertrofia y queloide. Cirujanos plásticos en MTY/Polanco lo integran como add-on premium.</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">🧬 Anti-aging dérmico-sistémico (NAD+ + Epithalon)</b>
+        <p>Pacientes 50+ que buscan más que cremas. NAD+ IV drip 60-90 min ($4-8k MXN/sesión) + Epithalon ciclo Khavinson 10-on/20-off. Posiciona tu clínica como "longevity center".</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">🌡️ Hyperpigmentation · melasma resistente</b>
+        <p>GHK-Cu mesoterapia + topical compounding 12 sem. Donde hidroquinona ya no funciona o se rebota. Dermatólogas lo usan como segunda línea premium.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Línea WOLVERINE · Casos de uso</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 5c · PERSONAS + JOURNEY ═══════════════ -->
+<div class="page std-page" style="background:var(--stone)">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Línea GLOW · Quién compra · Cómo decide</div>
+      <div class="gold-line"></div>
+      <h2>Tres perfiles que <em class="italic">ya integran GLOW.</em></h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">5c</div>
+      <div class="page-total">Páginas 17</div>
+    </div>
+  </div>
+
+  <div class="std-content">
+    <p class="lead">No vendemos a "clínicas" · vendemos a una de tres mentalidades específicas. Identifica con cuál te identificas y el ROI se hace obvio.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px">
+            <div style="background:#fff;padding:20px;border-top:3px solid var(--gold)">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--beige-deep);margin-bottom:6px">Perfil 1</div>
+        <h3 style="font-size:17px;color:var(--ink);margin-bottom:10px;line-height:1.2">Médico deportivo boutique</h3>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65;margin-bottom:8px"><b>Quién:</b> 35-50 · clínica recovery 1-2 cabinas · 80-150 pac/mes · Polanco/MTY/GDL · ticket $3-8k</p>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65;margin-bottom:8px"><b>Dolor:</b> Pacientes que se "atoraron" con fisio convencional, buscan algo más. Compite contra centros de regen plasma rica en plaquetas (PRP).</p>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65"><b>Win con WOLVERINE:</b> Add-on BPC-157 SC al PRP · diferenciador "uso péptidos research-grade con COA" · paciente paga +$3-5k al ticket sin invertir en hardware.</p>
+      </div>
+      <div style="background:#fff;padding:20px;border-top:3px solid var(--gold)">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--beige-deep);margin-bottom:6px">Perfil 2</div>
+        <h3 style="font-size:17px;color:var(--ink);margin-bottom:10px;line-height:1.2">Cirujano ortopédico / traumatólogo</h3>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65;margin-bottom:8px"><b>Quién:</b> 40-60 · ticket $30-80k cirugía · 60-100 pac/mes · referencia post-quirúrgica</p>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65;margin-bottom:8px"><b>Dolor:</b> Pierde control del paciente al fisio · resultado de cirugía depende de recuperación que no controla. Quejas de cicatrización lenta dañan reputación.</p>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65"><b>Win con WOLVERINE:</b> Protocolo post-quirúrgico premium · vende BPC + TB-500 8 sem como add-on $12-18k MXN. Mantiene paciente en su circuito · acelera return-to-sport.</p>
+      </div>
+      <div style="background:#fff;padding:20px;border-top:3px solid var(--gold)">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--beige-deep);margin-bottom:6px">Perfil 3</div>
+        <h3 style="font-size:17px;color:var(--ink);margin-bottom:10px;line-height:1.2">Fisioterapeuta deportivo elite</h3>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65;margin-bottom:8px"><b>Quién:</b> 32-48 · trabaja con atletas profesionales · ticket sesión $1.5-3k · ~250 sesiones/mes</p>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65;margin-bottom:8px"><b>Dolor:</b> Mercado saturado de fisios genéricos. Atleta exige resultado en 4-6 sem · plataforma actual no escala el ROI.</p>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65"><b>Win con WOLVERINE:</b> Stack BPC + NAD+ + TB-500 para atletas máster · ticket paquete 6-8 sesiones $20-35k MXN · convierte fisio en "performance lab".</p>
+      </div>
+<h3 style="font-size:17px;color:var(--ink);margin-bottom:10px;line-height:1.2">El longevity / anti-aging center</h3>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65;margin-bottom:8px"><b>Quién:</b> Médico 45-60 · longevity clinic · IV drip + hormonal + estético · ticket $8-25k MXN/sesión · pacientes C-suite.</p>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65;margin-bottom:8px"><b>Dolor:</b> Pacientes ya conocen NAD+ y Epithalon · si la clínica no tiene COA del lote, pierde credibilidad vs USA.</p>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.65"><b>Win con GLOW:</b> Stack longevity NAD+ IV + Epithalon Khavinson + GHK-Cu sistémico. Ticket trimestre $40-80k MXN.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:18px;color:var(--ink);margin:30px 0 14px">Path-to-purchase típico</h3>
+
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px">
+      <div style="background:#fff;padding:14px;border-left:3px solid var(--gold)">
+        <div style="font-size:9.5px;color:var(--beige-deep);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px">Día 0</div>
+        <div style="font-size:11px;color:var(--ink);font-weight:500;line-height:1.4">Awareness</div>
+        <div style="font-size:10px;color:var(--mute);line-height:1.4;margin-top:4px">IG @peptiqmx · post colega · paid ad</div>
+      </div>
+      <div style="background:#fff;padding:14px;border-left:3px solid var(--gold)">
+        <div style="font-size:9.5px;color:var(--beige-deep);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px">Día 1-2</div>
+        <div style="font-size:11px;color:var(--ink);font-weight:500;line-height:1.4">Investigación</div>
+        <div style="font-size:10px;color:var(--mute);line-height:1.4;margin-top:4px">Google "GHK-Cu México COA Janoshik" · pide catálogo</div>
+      </div>
+      <div style="background:#fff;padding:14px;border-left:3px solid var(--gold)">
+        <div style="font-size:9.5px;color:var(--beige-deep);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px">Día 3-7</div>
+        <div style="font-size:11px;color:var(--ink);font-weight:500;line-height:1.4">Pilot 5 pacientes</div>
+        <div style="font-size:10px;color:var(--mute);line-height:1.4;margin-top:4px">Compra 2 viales · prueba en pacientes selectos</div>
+      </div>
+      <div style="background:#fff;padding:14px;border-left:3px solid var(--gold)">
+        <div style="font-size:9.5px;color:var(--beige-deep);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px">Sem 4-8</div>
+        <div style="font-size:11px;color:var(--ink);font-weight:500;line-height:1.4">Adoption</div>
+        <div style="font-size:10px;color:var(--mute);line-height:1.4;margin-top:4px">Resultados · integra en protocolo signature</div>
+      </div>
+      <div style="background:#fff;padding:14px;border-left:3px solid var(--gold)">
+        <div style="font-size:9.5px;color:var(--beige-deep);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px">Mes 2+</div>
+        <div style="font-size:11px;color:var(--ink);font-weight:500;line-height:1.4">Loyalty · re-orden</div>
+        <div style="font-size:10px;color:var(--mute);line-height:1.4;margin-top:4px">Pedido recurrente · concierge dedicado · co-branding</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:15px;color:var(--ink);margin:24px 0 10px;letter-spacing:.5px">Top 3 objeciones que vas a oír · y cómo se responden</h3>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+            <div style="background:var(--ink);color:#f0e6cc;padding:16px 18px;border-left:3px solid var(--gold)">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:14px;margin-bottom:8px">"¿Está aprobado en México?"</div>
+        <p style="font-size:11px;color:rgba(255,255,255,0.85);line-height:1.6;margin:0">Research-grade · for research use only. El paciente firma consentimiento informado · tu clínica usa el péptido bajo criterio médico profesional. PEPTIQ aporta COA + dossier científico para tu defensa documental.</p>
+      </div>
+      <div style="background:var(--ink);color:#f0e6cc;padding:16px 18px;border-left:3px solid var(--gold)">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:14px;margin-bottom:8px">"¿Cuánto tarda en notarse?"</div>
+        <p style="font-size:11px;color:rgba(255,255,255,0.85);line-height:1.6;margin:0">BPC-157: tendón mejora 50% en 2-3 sem · 80% en 4-6 sem (Sikiric 2018). Es de los péptidos con respuesta más rápida documentada. Si el paciente no nota en 3 semanas, revisamos protocolo contigo.</p>
+      </div>
+      <div style="background:var(--ink);color:#f0e6cc;padding:16px 18px;border-left:3px solid var(--gold)">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:14px;margin-bottom:8px">"¿Y el COFEPRIS?"</div>
+        <p style="font-size:11px;color:rgba(255,255,255,0.85);line-height:1.6;margin:0">Mismo marco que cualquier péptido research-grade en clínicas privadas. Lote con COA Janoshik · facturación CFDI · documentación lista para auditoría. Te apoyamos con marco legal y consent forms.</p>
+      </div>
+<p style="font-size:11px;color:rgba(255,255,255,0.85);line-height:1.6;margin:0">24-72h MX · empaque térmico cuando aplica · concierge tracking en tiempo real · empaque discreto.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Línea WOLVERINE · Personas + Journey</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 5d · PEPTIQ FAMILY · 6 LÍNEAS ═══════════════ -->
+<div class="page std-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">PEPTIQ Family · El ecosistema completo</div>
+      <div class="gold-line"></div>
+      <h2>GLOW es <em class="italic">una de seis líneas.</em></h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">5d</div>
+      <div class="page-total">Páginas 18</div>
+    </div>
+  </div>
+
+  <div class="std-content">
+    <p class="lead">Tu paciente premium muchas veces necesita más que regeneración dérmica. PEPTIQ ofrece 6 líneas integrables · si tu clínica quiere expandir hacia recovery, longevity o weight management, te damos catálogo dedicado por categoría con su propio protocolo, COA y pricing uso personal.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px">
+      <div style="background:var(--stone);padding:18px 20px;border-left:3px solid var(--gold);position:relative">
+        
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);font-weight:500;margin-bottom:4px">✨ GLOW</div>
+        <div style="font-size:10px;letter-spacing:1.5px;color:var(--beige-deep);text-transform:uppercase;margin-bottom:8px">Medicina estética · Dermatología regenerativa</div>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.6;margin:0">GHK-Cu · TRINITY · AHK-Cu · NAD+ · Epithalon. Post-láser, mesoterapia capilar, anti-aging facial, cicatrización.</p>
+      </div>
+      <div style="background:var(--stone);padding:18px 20px;border-left:3px solid var(--gold);position:relative">
+        <span style="position:absolute;top:14px;right:18px;font-size:10px;letter-spacing:1.5px;color:var(--gold);background:var(--ink);padding:3px 9px;border-radius:2px;font-weight:500">ESTÁS AQUÍ</span>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);font-weight:500;margin-bottom:4px">🐺 WOLVERINE</div>
+        <div style="font-size:10px;letter-spacing:1.5px;color:var(--beige-deep);text-transform:uppercase;margin-bottom:8px">Recuperación tisular · Medicina deportiva</div>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.6;margin:0">BPC-157 · TB-500 · KPV. Tendón, ligamento, post-cirugía ortopédica, atletas, gut healing.</p>
+      </div>
+      <div style="background:var(--stone);padding:18px 20px;border-left:3px solid var(--gold)">
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);font-weight:500;margin-bottom:4px">🕰️ HIGHLANDER</div>
+        <div style="font-size:10px;letter-spacing:1.5px;color:var(--beige-deep);text-transform:uppercase;margin-bottom:8px">Longevity · Biological age reversal</div>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.6;margin:0">NAD+ · Epithalon · Semax · GHK-Cu sistémico. Mitocondrial, telomérico, cognitivo, ciclo Khavinson.</p>
+      </div>
+      <div style="background:var(--stone);padding:18px 20px;border-left:3px solid var(--gold)">
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);font-weight:500;margin-bottom:4px">⚡ PRIME</div>
+        <div style="font-size:10px;letter-spacing:1.5px;color:var(--beige-deep);text-transform:uppercase;margin-bottom:8px">Performance · GH optimization</div>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.6;margin:0">CJC+Ipa · Tesamorelin · Ipamorelin. Composición corporal hombres 40+, sueño profundo, grasa visceral.</p>
+      </div>
+      <div style="background:var(--stone);padding:18px 20px;border-left:3px solid var(--gold)">
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);font-weight:500;margin-bottom:4px">🔥 SHRED</div>
+        <div style="font-size:10px;letter-spacing:1.5px;color:var(--beige-deep);text-transform:uppercase;margin-bottom:8px">GLP-1 evolution · Body recomposition</div>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.6;margin:0">Retatrutide · Tirzepatide · Tesamorelin · BPC-157. Pérdida peso premium, preservación muscular post-Ozempic.</p>
+      </div>
+      <div style="background:var(--stone);padding:18px 20px;border-left:3px solid var(--gold)">
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);font-weight:500;margin-bottom:4px">💎 SPA</div>
+        <div style="font-size:10px;letter-spacing:1.5px;color:var(--beige-deep);text-transform:uppercase;margin-bottom:8px">Spa médico · Wellness 360°</div>
+        <p style="font-size:11px;color:#3a3a3a;line-height:1.6;margin:0">TRINITY · GHK-Cu · BPC · NAD+ · Epithalon. Signature multi-protocolo, IV drip, longevity quarterly retainer.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:24px">
+      <b class="title">Cómo cross-sell entre líneas</b>
+      <p>Tu paciente GLOW de 50+ años es candidato natural a HIGHLANDER (longevity stack NAD+ + Epithalon). Tu paciente post-cirugía estética puede integrar WOLVERINE (BPC-157 sistémico). Tu paciente con caída cabello + pérdida de peso · cross-line GLOW (AHK-Cu) + SHRED (Retatrutide). Pídenos catálogo de cualquier línea sin costo.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Family · 6 líneas integrables</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGES 6-10 · PRODUCTS ═══════════════ -->
+
+<div class="page product-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Producto 01/5</div>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">06</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <div class="product-hero">
+    <div class="product-img"><img src="../img/products-v2/bpc-157-studio.png" alt="BPC-157"></div>
+    <div class="product-header">
+      <div class="eyebrow" style="color:var(--gold)">Pentadecapeptide · 10mg</div>
+      <h2>BPC-157 <em>10mg</em></h2>
+      <div class="subtitle">Body Protection Compound · gold standard</div>
+      <div class="product-price-box">
+        <div class="pp-price" style="font-size:32px;color:#111;font-weight:600">$2,999 MXN</div>
+        <div class="pp-unit">Por vial · 10mg liofilizado · COA Janoshik incluido</div>
+        <div class="pp-b2b" style="font-size:11px;color:#666">Envío 24-72h · Cadena de frío · Factura CFDI · Soporte WhatsApp</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-body">
+    <p>BPC-157 (Body Protection Compound) es un fragmento pentadecapéptido derivado de una proteína del jugo gástrico humano. 1,200+ estudios preclínicos desde 1991. Referente absoluto en regeneración de tejido blando, reparación intestinal y neuroprotección.</p>
+
+    <div class="mech-box">
+      <b>Mecanismo de acción</b>
+      <p>Acelera angiogénesis vía VEGFR2 y FGF1 · incrementa óxido nítrico endotelial · estimula migración de fibroblastos · efecto neuroprotector documentado · modula eje gut-brain · protege mucosa gastrointestinal contra úlceras.</p>
+    </div>
+
+    <h3 style="margin-top:20px">Aplicaciones clínicas</h3>
+    <p>• Lesiones tendinosas crónicas (tendinitis · epicondilitis · fascitis plantar)<br>• Recuperación post-cirugía ortopédica y deportiva<br>• Síndrome de intestino permeable · colitis · úlceras gástricas<br>• Post-operatorio de ginecología y urología<br>• Neuroprotección en pacientes con trauma cerebral leve</p>
+
+    <div class="product-specs">
+      <div class="spec-item"><div class="spec-lbl">Dosis research</div><div class="spec-val">250-500mcg 2×/día</div></div>
+      <div class="spec-item"><div class="spec-lbl">Vía</div><div class="spec-val">SC local + sistémica</div></div>
+      <div class="spec-item"><div class="spec-lbl">Duración</div><div class="spec-val">4-6 semanas</div></div>
+      <div class="spec-item"><div class="spec-lbl">Pureza HPLC</div><div class="spec-val">99.654% verificada</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Catálogo {CATEGORY_NAME} 2026</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<div class="page product-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Producto 02/5</div>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">07</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <div class="product-hero">
+    <div class="product-img"><img src="../img/products-v2/tb-500-studio.png" alt="TB-500"></div>
+    <div class="product-header">
+      <div class="eyebrow" style="color:var(--gold)">Thymosin Fragment · 10mg</div>
+      <h2>TB-500 <em>10mg</em></h2>
+      <div class="subtitle">Thymosin Beta-4 fragment · cell migration</div>
+      <div class="product-price-box">
+        <div class="pp-price" style="font-size:32px;color:#111;font-weight:600">$3,799 MXN</div>
+        <div class="pp-unit">Por vial · 10mg liofilizado · COA Janoshik incluido</div>
+        <div class="pp-b2b" style="font-size:11px;color:#666">Envío 24-72h · Cadena de frío · Factura CFDI · Soporte WhatsApp</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-body">
+    <p>Fragmento sintético del Thymosin Beta-4 (TB4) · proteína abundante en plaquetas y secreciones. Único mecanismo: promueve migración de células progenitoras al sitio de daño · complementa perfectamente la angiogénesis de BPC-157.</p>
+
+    <div class="mech-box">
+      <b>Mecanismo de acción</b>
+      <p>Secuestra G-actina libre · regula polimerización F-actina del citoesqueleto · activa macrófagos M2 pro-reparadores · reduce TNF-α e IL-6 · promueve migración de fibroblastos y células endoteliales · upregula factor de crecimiento VEGF.</p>
+    </div>
+
+    <h3 style="margin-top:20px">Aplicaciones clínicas</h3>
+    <p>• Lesiones musculares agudas y crónicas (desgarros · contracturas)<br>• Post-cirugía cardíaca (mejora función ventricular)<br>• Cicatrización de heridas crónicas y úlceras de presión<br>• Lesiones de ligamento cruzado · meniscales<br>• Recuperación atlética de alto rendimiento</p>
+
+    <div class="product-specs">
+      <div class="spec-item"><div class="spec-lbl">Dosis research</div><div class="spec-val">2-5mg 2×/semana</div></div>
+      <div class="spec-item"><div class="spec-lbl">Vía</div><div class="spec-val">Subcutánea</div></div>
+      <div class="spec-item"><div class="spec-lbl">Duración</div><div class="spec-val">6-8 semanas</div></div>
+      <div class="spec-item"><div class="spec-lbl">Pureza HPLC</div><div class="spec-val">99.328% verificada</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Catálogo {CATEGORY_NAME} 2026</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<div class="page product-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Producto 03/5</div>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">08</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <div class="product-hero">
+    <div class="product-img"><img src="../img/products-v2/kpv-studio.png" alt="KPV"></div>
+    <div class="product-header">
+      <div class="eyebrow" style="color:var(--gold)">Tripeptide · 10mg</div>
+      <h2>KPV <em>10mg</em></h2>
+      <div class="subtitle">α-MSH tripeptide · anti-inflammatory</div>
+      <div class="product-price-box">
+        <div class="pp-price" style="font-size:32px;color:#111;font-weight:600">$2,899 MXN</div>
+        <div class="pp-unit">Por vial · 10mg liofilizado · COA Janoshik incluido</div>
+        <div class="pp-b2b" style="font-size:11px;color:#666">Envío 24-72h · Cadena de frío · Factura CFDI · Soporte WhatsApp</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-body">
+    <p>Tripéptido Lys-Pro-Val · fragmento C-terminal del α-MSH. Único por su dualidad antiinflamatoria sin efecto inmunosupresor. Ideal complemento de BPC-157 cuando hay componente inflamatorio intestinal o dérmico.</p>
+
+    <div class="mech-box">
+      <b>Mecanismo de acción</b>
+      <p>Inhibe activación de NF-κB en células epiteliales · reduce IL-1β, IL-6, TNF-α localmente · efecto antimicrobiano selectivo contra C. albicans y S. aureus · modula receptor MC1R en piel e intestino · sin supresión inmune sistémica.</p>
+    </div>
+
+    <h3 style="margin-top:20px">Aplicaciones clínicas</h3>
+    <p>• Colitis ulcerativa · enfermedad de Crohn (off-label research)<br>• Acné inflamatorio severo · hidradenitis supurativa<br>• Dermatitis atópica recalcitrante<br>• SIBO y disbiosis intestinal<br>• Protocolos de recuperación con componente inflamatorio</p>
+
+    <div class="product-specs">
+      <div class="spec-item"><div class="spec-lbl">Dosis research</div><div class="spec-val">500-1000mcg 2-3×/día</div></div>
+      <div class="spec-item"><div class="spec-lbl">Vía</div><div class="spec-val">Oral (GI) · SC (sistémica)</div></div>
+      <div class="spec-item"><div class="spec-lbl">Duración</div><div class="spec-val">3-4 semanas</div></div>
+      <div class="spec-item"><div class="spec-lbl">Pureza HPLC</div><div class="spec-val">99%+ verificada</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Catálogo {CATEGORY_NAME} 2026</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<div class="page product-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Producto 04/5</div>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">09</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <div class="product-hero">
+    <div class="product-img"><img src="../img/products-v2/nad-plus-studio.png" alt="NAD+"></div>
+    <div class="product-header">
+      <div class="eyebrow" style="color:var(--gold)">Nicotinamide Adenine Dinucleotide · 1000mg</div>
+      <h2>NAD+ <em>1000mg</em></h2>
+      <div class="subtitle">Mitocondrial fuel · 500+ reactions</div>
+      <div class="product-price-box">
+        <div class="pp-price" style="font-size:32px;color:#111;font-weight:600">$5,499 MXN</div>
+        <div class="pp-unit">Por vial · 1000mg liofilizado · COA Janoshik incluido</div>
+        <div class="pp-b2b" style="font-size:11px;color:#666">Envío 24-72h · Cadena de frío · Factura CFDI · Soporte WhatsApp</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-body">
+    <p>NAD+ es la coenzima más abundante del cuerpo humano · cofactor esencial de 500+ reacciones metabólicas. En protocolos de recuperación acelera síntesis de ATP y repara daño DNA por estrés oxidativo post-cirugía o entrenamiento.</p>
+
+    <div class="mech-box">
+      <b>Mecanismo de acción</b>
+      <p>Activa 7 sirtuinas (SIRT1-SIRT7) reguladoras de longevidad · precursor para reparación DNA vía PARP · cofactor de complejo I mitocondrial · restaura ratio NAD:NADH para producción óptima ATP · acelera biogénesis mitocondrial.</p>
+    </div>
+
+    <h3 style="margin-top:20px">Aplicaciones clínicas</h3>
+    <p>• Recuperación post-cirugía mayor (cardiovascular · ortopédica)<br>• Fatiga crónica post-entrenamiento intenso<br>• Protocolo athletic longevity premium<br>• Neuroprotección post-TBI (traumatismo cerebral)<br>• Enfermedades mitocondriales y fatiga adrenal</p>
+
+    <div class="product-specs">
+      <div class="spec-item"><div class="spec-lbl">Dosis research</div><div class="spec-val">250-1000mg IV/SC</div></div>
+      <div class="spec-item"><div class="spec-lbl">Vía</div><div class="spec-val">IV drip · SC</div></div>
+      <div class="spec-item"><div class="spec-lbl">Duración</div><div class="spec-val">14 días reconstituido</div></div>
+      <div class="spec-item"><div class="spec-lbl">Pureza HPLC</div><div class="spec-val">99.500% verificada</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Catálogo {CATEGORY_NAME} 2026</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<div class="page product-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Producto 05/5</div>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">10</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <div class="product-hero">
+    <div class="product-img"><img src="../img/products-v2/ghk-cu-studio.png" alt="GHK-Cu"></div>
+    <div class="product-header">
+      <div class="eyebrow" style="color:var(--gold)">Copper Tripeptide · 100mg</div>
+      <h2>GHK-Cu <em>100mg</em></h2>
+      <div class="subtitle">Copper tripeptide · tissue remodeling</div>
+      <div class="product-price-box">
+        <div class="pp-price" style="font-size:32px;color:#111;font-weight:600">$3,799 MXN</div>
+        <div class="pp-unit">Por vial · 100mg liofilizado · COA Janoshik incluido</div>
+        <div class="pp-b2b" style="font-size:11px;color:#666">Envío 24-72h · Cadena de frío · Factura CFDI · Soporte WhatsApp</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-body">
+    <p>Glycyl-Histidyl-Lysyl-Cu²⁺ · el péptido más estudiado en dermatología regenerativa desde 1973. En protocolos Wolverine complementa cicatrización de heridas quirúrgicas · acelera remodelación de cicatrices · efecto antioxidante nivel farmacéutico.</p>
+
+    <div class="mech-box">
+      <b>Mecanismo de acción</b>
+      <p>Activa síntesis colágeno I/III vía SPARC y decorina · inhibe metaloproteinasas (MMPs) que degradan matriz extracelular · efecto antioxidante vía SOD · estimula angiogénesis cutánea · acelera remodelación tisular post-herida.</p>
+    </div>
+
+    <h3 style="margin-top:20px">Aplicaciones clínicas</h3>
+    <p>• Cicatrización post-cirugía estética · ortopédica<br>• Remodelación de cicatrices hipertróficas y queloides<br>• Post-quemaduras · post-injertos cutáneos<br>• Complemento a protocolos de recuperación facial post-procedimiento<br>• Stack con TRINITY para regeneración dérmica integral</p>
+
+    <div class="product-specs">
+      <div class="spec-item"><div class="spec-lbl">Dosis research</div><div class="spec-val">1-2mg SC local</div></div>
+      <div class="spec-item"><div class="spec-lbl">Vía</div><div class="spec-val">SC · mesoterapia</div></div>
+      <div class="spec-item"><div class="spec-lbl">Duración</div><div class="spec-val">90 días refrigerado</div></div>
+      <div class="spec-item"><div class="spec-lbl">Pureza HPLC</div><div class="spec-val">99%+ verificada</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Catálogo {CATEGORY_NAME} 2026</span>
+    <span class="pf-right">peptiqmx.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 11 · STACK 1 ═══════════════ -->
+<div class="page stack-page">
+  <div class="std-header" style="margin-bottom:0">
+    <div class="std-header-left">
+      <div class="eyebrow">Protocolo Signature · Stack 01/02</div>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">11</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <div class="stack-hero">
+    <div class="s-tag">Wolverine · 4-8 semanas</div>
+    <h2>Recuperación tisular <em class="italic">total.</em></h2>
+    <p>Protocolo integral de recuperación 4-8 semanas · enfoque en tendón, ligamento y post-operatorio · la combinación gold standard.</p>
+  </div>
+
+  <div class="stack-components">
+    <div class="stack-comp">
+      <div class="c-name">BPC-157 10mg</div>
+      <div class="c-desc">Angiogénesis + reparación vascular</div>
+    </div>
+    <div class="stack-comp">
+      <div class="c-name">TB-500 10mg</div>
+      <div class="c-desc">Migración celular + remodelación actina</div>
+    </div>
+    <div class="stack-comp">
+      <div class="c-name">+ Agua Bact. + Kit</div>
+      <div class="c-desc">Reconstitución + jeringas + guía</div>
+    </div>
+  </div>
+
+  <div class="stack-price-row">
+    <div class="spr-left">
+      <h3>🐺 Wolverine Stack</h3>
+      <p>Protocolo 4-8 semanas · 2 viales principales + starter kit · ahorra $799 vs compra individual</p>
+    </div>
+    <div class="spr-right">
+      <div class="spr-price">$5,499</div>
+      <div class="spr-save">MXN · ahorras $799 vs individual</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:15px;color:var(--ink);margin-top:24px;margin-bottom:6px">Timeline del protocolo</h3>
+  <div class="gold-line" style="margin:8px 0 12px"></div>
+
+  <div class="protocol-timeline">
+    <div class="pt-row">
+      <div class="pt-week">Sem 1</div>
+      <div class="pt-content">
+        <h4>Carga inicial</h4>
+        <p>Reconstitución · primera dosis SC pre-consulta · educación reconstitución al paciente · fotografía basal.</p>
+      </div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-week">Sem 2-3</div>
+      <div class="pt-content">
+        <h4>Fase intensiva</h4>
+        <p>3 aplicaciones SC por semana · observación clínica primera semana · registro tolerancia · mesoterapia opcional.</p>
+      </div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-week">Sem 4-5</div>
+      <div class="pt-content">
+        <h4>Consolidación</h4>
+        <p>Reducción a 2 aplicaciones semana · integración home-care tópico · evaluación progreso con paciente.</p>
+      </div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-week">Sem 6</div>
+      <div class="pt-content">
+        <h4>Evaluación final</h4>
+        <p>Dosis mantenimiento · fotografía final · recomendación ciclo siguiente · conversión a protocolo Longevity (Highlander).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 12 · HIGHLANDER LONGEVITY STACK ═══════════════ -->
+<div class="page stack-page">
+  <div class="std-header" style="margin-bottom:0">
+    <div class="std-header-left">
+      <div class="eyebrow">Protocolo Signature · Stack 02/02</div>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">12</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <div class="stack-hero">
+    <div class="s-tag">Wolverine PRO · 8-12 semanas</div>
+    <h2>Protocolo extendido <em class="italic">pro athletes.</em></h2>
+    <p>Stack avanzado 8-12 semanas · viales separados para flexibilidad de dosis · ideal atletas élite y lesiones crónicas.</p>
+  </div>
+
+  <div class="stack-components">
+    <div class="stack-comp">
+      <div class="c-name">BPC-157 + TB-500</div>
+      <div class="c-desc">Viales separados · dosis flexible</div>
+    </div>
+    <div class="stack-comp">
+      <div class="c-name">+ 2× Agua Bact.</div>
+      <div class="c-desc">Reconstitución fases 1 y 2</div>
+    </div>
+    <div class="stack-comp">
+      <div class="c-name">+ Protocolo 1-on-1</div>
+      <div class="c-desc">Specialist asignado · follow-up mensual</div>
+    </div>
+  </div>
+
+  <div class="stack-price-row">
+    <div class="spr-left">
+      <h3>💪 Wolverine PRO</h3>
+      <p>Ideal lesiones crónicas 3+ meses · post-cirugía mayor · protocolo fases diferenciadas</p>
+    </div>
+    <div class="spr-right">
+      <div class="spr-price">$6,999</div>
+      <div class="spr-save">MXN · ahorras $889 vs individual</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:15px;color:var(--ink);margin-top:24px;margin-bottom:6px">Timeline del protocolo</h3>
+  <div class="gold-line" style="margin:8px 0 12px"></div>
+
+  <div class="protocol-timeline">
+    <div class="pt-row">
+      <div class="pt-week">Sem 1-2</div>
+      <div class="pt-content">
+        <h4>Ignición mitocondrial</h4>
+        <p>NAD+ 500mg IV o 250mg SC (3× semana) · Epithalon 5mg SC nocturno (primeros 10 días).</p>
+      </div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-week">Sem 3-4</div>
+      <div class="pt-content">
+        <h4>Ciclo off Epithalon</h4>
+        <p>Mantener NAD+ semanal · OFF Epithalon (respetando ciclo 10-ON/20-OFF) · inicio GHK-Cu dérmico.</p>
+      </div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-week">Sem 5-8</div>
+      <div class="pt-content">
+        <h4>Segunda fase · telomerasa</h4>
+        <p>Segundo ciclo Epithalon 10 días · continuidad NAD+ y GHK-Cu · evaluación intermedia biomarcadores.</p>
+      </div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-week">Sem 9-12</div>
+      <div class="pt-content">
+        <h4>Consolidación sistémica</h4>
+        <p>Mantenimiento NAD+ quincenal · tercer ciclo Epithalon · dérmico continuo · evaluación biological age final con paciente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 13 · PRICING uso personal ═══════════════ -->
+<div class="page pricing-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Programa uso personal Clínicas</div>
+      <div class="gold-line"></div>
+      <h2>Pricing <em class="italic">escalonado.</em></h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">13</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <p style="font-size:12.5px;color:#2a2a2a;line-height:1.7;margin-bottom:8px">Precios consumer final y tres tiers uso personal según volumen mensual acumulado. Facturación CFDI con IVA incluida automáticamente para tu uso personal registradas en programa uso personal. Starter Kit incluido en todos los pedidos.</p>
+
+  <div class="tier-grid">
+    <div class="tier-card">
+      <div class="t-tier">Tier 1</div>
+      <div class="t-discount">-10%</div>
+      <div class="t-req">Desde 1er pedido uso personal · sin volumen mínimo</div>
+      <div class="t-perks">✓ CFDI · ✓ Starter kit · ✓ Protocolo 1-on-1 · ✓ Envío 24-72h</div>
+    </div>
+    <div class="tier-card">
+      <div class="t-tier">Tier 2</div>
+      <div class="t-discount">-20%</div>
+      <div class="t-req">Acumulado mensual ≥ $20,000 MXN</div>
+      <div class="t-perks">Todo tier 1 + ✓ Co-branding opcional · ✓ Priority WhatsApp</div>
+    </div>
+    <div class="tier-card vip">
+      <div class="t-tier">Tier 3 · VIP</div>
+      <div class="t-discount">-25%</div>
+      <div class="t-req">Acumulado mensual ≥ $50,000 MXN</div>
+      <div class="t-perks">Todo tier 2 + ✓ Training clínico · ✓ SLA dedicado · ✓ Early access</div>
+    </div>
+  </div>
+
+  <div class="pricing-table">
+    <div class="pt-header">
+      <span>Producto</span>
+      <span style="text-align:right">Consumer</span>
+      <span style="text-align:right">Tier 1 (-10%)</span>
+      <span style="text-align:right;color:var(--gold)">Tier 3 (-25%)</span>
+    </div>
+    <div class="pt-body">
+      <div class="pt-pricing-row featured">
+        <div class="p-name">GHK-Cu 100mg<small>Copper peptide premium</small></div>
+        <div class="p-price">$3,799</div>
+        <div class="p-b2b">$3,419</div>
+        <div class="p-vip">$2,849</div>
+      </div>
+      <div class="pt-pricing-row">
+        <div class="p-name">TRINITY 70mg<small>Triple peptide blend</small></div>
+        <div class="p-price">$7,499</div>
+        <div class="p-b2b">$6,749</div>
+        <div class="p-vip">$5,624</div>
+      </div>
+      <div class="pt-pricing-row featured">
+        <div class="p-name">AHK-Cu 50mg<small>Hair &amp; scalp peptide</small></div>
+        <div class="p-price">$3,299</div>
+        <div class="p-b2b">$2,969</div>
+        <div class="p-vip">$2,474</div>
+      </div>
+      <div class="pt-pricing-row">
+        <div class="p-name">NAD+ 1000mg<small>Mitocondrial longevity</small></div>
+        <div class="p-price">$5,499</div>
+        <div class="p-b2b">$4,949</div>
+        <div class="p-vip">$4,124</div>
+      </div>
+      <div class="pt-pricing-row featured">
+        <div class="p-name">Epithalon 50mg<small>Telomerase reactivation</small></div>
+        <div class="p-price">$6,799</div>
+        <div class="p-b2b">$6,119</div>
+        <div class="p-vip">$5,099</div>
+      </div>
+      <div class="pt-pricing-row">
+        <div class="p-name">🐺 Wolverine Stack<small>Protocolo 6-8 sem</small></div>
+        <div class="p-price">$7,499</div>
+        <div class="p-b2b">$6,749</div>
+        <div class="p-vip">$5,624</div>
+      </div>
+      <div class="pt-pricing-row featured">
+        <div class="p-name">Highlander Stack<small>Longevity 12 sem</small></div>
+        <div class="p-price">$14,999</div>
+        <div class="p-b2b">$13,499</div>
+        <div class="p-vip">$11,249</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:20px">
+    <b class="title">🎁 Lanzamiento 2026 · código LANZA20</b>
+    <p>Válido abril-mayo 2026 en primer pedido de cualquier tier · incluye -20% adicional + Starter Kit premium (agua bact × 2 · jeringas 30G · guía impresa profesional · calculadora dosis digital).</p>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 14 · ORDER FLOW ═══════════════ -->
+<div class="page flow-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Flujo de pedido · 4 pasos</div>
+      <div class="gold-line"></div>
+      <h2>Del primer mensaje <em class="italic">al primer paciente.</em></h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">14</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:#2a2a2a;line-height:1.7">Nuestro proceso concierge uso personal está diseñado para que tu clínica integre péptidos research-grade sin fricción. 4 pasos · tu specialist asignado te acompaña en cada uno.</p>
+
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="fs-num">01</div>
+      <h4>Contacto inicial</h4>
+      <p>Nos escribes por WhatsApp o email · asignamos specialist médico de tu zona (MTY · CDMX · GDL · Querétaro · Bajío). 10 min máximo.</p>
+    </div>
+    <div class="flow-step">
+      <div class="fs-num">02</div>
+      <h4>Protocolo personalizado</h4>
+      <p>Tu specialist evalúa tu perfil (categoría, tamaño clínica, tickets) · propone stack inicial · cotiza con pricing uso personal tier correcto.</p>
+    </div>
+    <div class="flow-step">
+      <div class="fs-num">03</div>
+      <h4>Confirmación + pago</h4>
+      <p>Apruebas cotización · emitimos CFDI con IVA · pagas por SPEI, tarjeta o MSI · enviamos tracking al recibir pago.</p>
+    </div>
+    <div class="flow-step">
+      <div class="fs-num">04</div>
+      <h4>Entrega + onboarding</h4>
+      <p>Envío 24-72h en empaque térmico · COA del lote dentro de la caja · tu specialist agenda llamada 30 min para onboarding.</p>
+    </div>
+  </div>
+
+  <div class="callout dark" style="margin-top:30px">
+    <b class="title">Tu specialist PEPTIQ</b>
+    <p>Cada clínica registrada en el programa uso personal recibe un specialist dedicado · responde por WhatsApp en menos de 10 min en horario hábil · coordina training para tu staff sin costo · acompaña protocolos 1-on-1 con pacientes premium cuando sea necesario.</p>
+  </div>
+
+  <div style="margin-top:30px;padding-top:24px;border-top:1px solid var(--rule)">
+    <h3 style="font-size:15px;color:var(--ink);margin-bottom:10px">Cómo empezar esta semana</h3>
+    <p style="font-size:12px;color:#3a3a3a;line-height:1.7">Escribe a <b>hola@peptiqmx.com</b> o WhatsApp <b>+52 444 577 0445</b> con la palabra "<b>LANZA20</b>". Agendamos llamada de 15 min para entender tu clínica y diseñar tu primera orden con el -20% de lanzamiento.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 15 · COA SAMPLE + GARANTÍAS ═══════════════ -->
+<div class="page coa-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Certificados + Garantías</div>
+      <div class="gold-line"></div>
+      <h2>Ciencia <em class="italic">verificable.</em></h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">15</div>
+      <div class="page-total">Páginas 16</div>
+    </div>
+  </div>
+
+  <p style="font-size:12.5px;color:#2a2a2a;line-height:1.7;margin-bottom:12px">Cada lote de PEPTIQ se analiza por Janoshik Analytical (Eslovaquia) · laboratorio independiente certificado ISO-17025. El COA específico del lote que recibes está publicado en peptiqmx.com/coa y viajará dentro de la caja en formato PDF.</p>
+
+  <div class="coa-grid">
+    <div class="coa-card">
+      <div class="coa-seal">Muestra · BPC-157</div>
+      <h4>BPC-157 10mg · Lote BPC-2026-Q2-001</h4>
+      <div class="coa-specs">
+        <div><b>HPLC Pureza</b><span>99.654%</span></div>
+        <div><b>Masa molecular</b><span>1419.55 Da</span></div>
+        <div><b>Endotoxinas</b><span>&lt;0.125 EU/mg</span></div>
+        <div><b>Aspecto</b><span>Polvo blanco</span></div>
+      </div>
+      <p style="font-size:10px;color:var(--mute);margin-top:6px">Analizado 12-ene-2026 · Janoshik Laboratory, Eslovaquia · ISO-17025</p>
+    </div>
+    <div class="coa-card">
+      <div class="coa-seal">Muestra · GHK-Cu</div>
+      <h4>GHK-Cu 100mg · Lote GHK-2026-Q1-004</h4>
+      <div class="coa-specs">
+        <div><b>HPLC Pureza</b><span>99.128%</span></div>
+        <div><b>Masa molecular</b><span>402.92 Da</span></div>
+        <div><b>Endotoxinas</b><span>&lt;0.125 EU/mg</span></div>
+        <div><b>Aspecto</b><span>Polvo azul-gris</span></div>
+      </div>
+      <p style="font-size:10px;color:var(--mute);margin-top:6px">Analizado 02-feb-2026 · Janoshik Laboratory, Eslovaquia · ISO-17025</p>
+    </div>
+    <div class="coa-card">
+      <div class="coa-seal">Muestra · TRINITY</div>
+      <h4>TRINITY 70mg · Lote TRI-2026-Q1-007</h4>
+      <div class="coa-specs">
+        <div><b>Pureza blend</b><span>99.4% promedio</span></div>
+        <div><b>Componentes</b><span>3 péptidos</span></div>
+        <div><b>Endotoxinas</b><span>&lt;0.125 EU/mg</span></div>
+        <div><b>Aspecto</b><span>Polvo blanco</span></div>
+      </div>
+      <p style="font-size:10px;color:var(--mute);margin-top:6px">Analizado 15-feb-2026 · Janoshik Laboratory · ISO-17025</p>
+    </div>
+    <div class="coa-card">
+      <div class="coa-seal">Muestra · NAD+</div>
+      <h4>NAD+ 1000mg · Lote NAD-2026-Q1-012</h4>
+      <div class="coa-specs">
+        <div><b>HPLC Pureza</b><span>99.500%</span></div>
+        <div><b>Masa molecular</b><span>663.43 Da</span></div>
+        <div><b>Endotoxinas</b><span>&lt;0.125 EU/mg</span></div>
+        <div><b>Aspecto</b><span>Polvo blanco</span></div>
+      </div>
+      <p style="font-size:10px;color:var(--mute);margin-top:6px">Analizado 20-feb-2026 · Janoshik Laboratory · ISO-17025</p>
+    </div>
+  </div>
+
+  <div class="callout dark" style="margin-top:24px">
+    <b class="title">🛡️ Garantía PEPTIQ</b>
+    <p>Si el COA del lote entregado reporta pureza HPLC menor al 97% · reponemos el producto sin costo · sin preguntas. Es nuestra promesa al rigor analítico.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 15b · RESEARCH & SOURCES ═══════════════ -->
+<div class="page std-page">
+  <div class="std-header">
+    <div class="std-header-left">
+      <div class="eyebrow">Research & Sources · Bibliografía</div>
+      <div class="gold-line"></div>
+      <h2>La ciencia <em class="italic">detrás de cada vial.</em></h2>
+    </div>
+    <div class="std-header-right">
+      <div class="page-num">15b</div>
+      <div class="page-total">Páginas 18</div>
+    </div>
+  </div>
+
+  <div class="std-content">
+    <p class="lead">Cada péptido PEPTIQ tiene literatura científica respaldando su mecanismo, dosis de investigación y aplicaciones. Solicítanos el dossier de papers completo para cualquier molécula sin costo · disponible para tu equipo médico.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px">
+      <div class="callout" style="margin:0">
+        <b class="title">BPC-157 · Body Protection Compound</b>
+        <p style="font-size:11px"><b>1,200+ estudios preclínicos · 1991-presente.</b> Sikiric et al. (Universidad Zagreb, 2010-2023) · referente absoluto regeneración tisular. Foco: tendón, ligamento, mucosa GI, neuroprotección.</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">TB-500 · Thymosin Beta-4 fragment</b>
+        <p style="font-size:11px"><b>Goldstein et al. (NIH).</b> Migración celular, post-cirugía cardíaca, cicatrización heridas crónicas. Sinérgico con BPC-157 (cubre vía complementaria · actina vs angiogénesis).</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">GHK-Cu · Copper Tripeptide-1</b>
+        <p style="font-size:11px"><b>Pickart 1973-presente · 50 años research.</b> Modula 4,192 genes de reparación tisular. Ingrediente #2 más rápido en anti-aging premium global (Euromonitor 2025 · CAGR 16.9%).</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">KPV · α-MSH C-terminal tripeptide</b>
+        <p style="font-size:11px"><b>Lipton et al.</b> Anti-inflamatorio sin efecto inmunosupresor. Aplicación intestinal (UC, Crohn off-label) y dérmica (acné inflamatorio, hidradenitis supurativa).</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">NAD+ · Nicotinamide Adenine Dinucleotide</b>
+        <p style="font-size:11px"><b>Sinclair et al. (Harvard) · Verdin et al. (Buck Institute).</b> 500+ reacciones celulares · activa 7 sirtuinas · cofactor mitocondrial. Decline ~50% entre 40 y 60 años.</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">Epithalon (AEDG) · Tetrapéptido</b>
+        <p style="font-size:11px"><b>Khavinson 1980-presente · St. Petersburg Institute of Bioregulation.</b> Único péptido con evidencia preclínica de reactivación telomerasa humana. Protocolo cíclico 10-on/20-off.</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">Tesamorelin · GHRH analog</b>
+        <p style="font-size:11px"><b>Aprobado FDA (Egrifta · EMD Serono).</b> Único secretagogo GH con aprobación regulatoria internacional. Selectividad sobre grasa visceral · documentada en lipodistrofia HIV y body recomp 45+.</p>
+      </div>
+      <div class="callout" style="margin:0">
+        <b class="title">Retatrutide · Triple agonist GLP-1/GIP/Glucagon</b>
+        <p style="font-size:11px"><b>Eli Lilly · Fase 3 NEJM 2024.</b> Pérdida peso -24% en 48 semanas vs -15% Ozempic. Generación siguiente del GLP-1 market · próximo blockbuster ($50bn forecast 2030).</p>
+      </div>
+    </div>
+
+    <div class="callout dark" style="margin-top:20px">
+      <b class="title">Cómo accedes al research dossier</b>
+      <p>Para tu equipo médico te enviamos: (1) PDF compilado con resúmenes clínicos por péptido + paper links, (2) acceso a portal interno PEPTIQ con últimas publicaciones (actualizado mensual), (3) llamada 30 min con specialist para Q&amp;A protocolar, (4) COA Janoshik del lote específico que recibes — en cada pedido. Solicítalo respondiendo este catálogo o en peptiqmx.com/research.</p>
+    </div>
+
+    <div style="background:#fff8e8;border:1px solid #e5c981;padding:14px 18px;margin-top:20px;border-radius:3px">
+      <p style="font-size:10.5px;color:#5a4220;margin:0;line-height:1.7"><b>⚠️ AVISO REGULATORIO · MÉXICO</b><br>
+      Los productos PEPTIQ son <b>péptidos research-grade · for research use only</b> · NO están aprobados por COFEPRIS para uso humano y NO son medicamentos. <b>No aptos para consumo humano</b>. La venta y posesión es legal en México bajo el marco de productos para investigación científica.<br><br>
+      <b>El uso de este producto es responsabilidad exclusiva de quien lo use · únicamente para investigación.</b> La información aquí presentada es educativa, no constituye consejo médico, prescripción ni recomendación de uso humano. Cualquier aplicación clínica off-label es bajo criterio profesional independiente del médico tratante, quien asume responsabilidad documental y consent forms con el paciente.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="pf-left">PEPTIQ MX · Research & Sources</span>
+    <span class="pf-right">peptiqmx.com/research</span>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 16 · BACK COVER ═══════════════ -->
+<div class="page back-cover">
+  <div class="back-hero">
+    <div class="eyebrow">PEPTIQ MX · 2026</div>
+    <h1>El respaldo científico<br>que tu clínica <em class="italic">merece.</em></h1>
+    <p class="lede">Estamos construyendo el estándar de péptidos research-grade en México. Únete al programa uso personal y eleva tu oferta clínica con ciencia verificable.</p>
+  </div>
+
+  <div class="back-contact">
+    <div class="contact-block">
+      <h4>Contacto directo</h4>
+      <div class="c-item">hola@peptiqmx.com<small>Respuesta en 24h · weekends incluidos</small></div>
+      <div class="c-item">+52 444 577 0445<small>WhatsApp concierge priority</small></div>
+    </div>
+    <div class="contact-block">
+      <h4>Programa uso personal</h4>
+      <div class="c-item">peptiqmx.com/b2b-clinicas<small>Registro profesionales</small></div>
+      <div class="c-item">peptiqmx.com/coa<small>COAs Janoshik públicos · todos los lotes</small></div>
+    </div>
+  </div>
+
+  <div class="back-foot">
+    <p>PEPTIQ MX · TDI Marketing SA de CV · México · Catálogo profesional WOLVERINE · Edición abril 2026</p>
+    <p>Fuentes: Euromonitor International Passport · Business of Wellness and Longevity · Abril 2026 · Voice of the Consumer Beauty Survey 2025 · Janoshik Analytical Laboratory Certifications 2025-2026.</p>
+    <p style="margin-top:16px;font-style:normal;font-size:10px;line-height:1.7;color:rgba(255,255,255,0.85)">⚠️ <b>AVISO REGULATORIO MX</b> · Productos research-grade · for research use only · NO aprobados por COFEPRIS · NO son medicamentos · NO aptos para consumo humano. Venta legal en México como productos de investigación científica. El uso es responsabilidad exclusiva del comprador · únicamente para investigación. Cualquier aplicación clínica es bajo criterio profesional del médico tratante con consent forms documentados.</p>
+  </div>
+</div>
+
+
+<!-- peptiq-global-disclaimer -->
+<div style="position:fixed;left:0;right:0;bottom:0;background:rgba(17,17,17,0.92);color:#E8E2D5;font-size:10.5px;line-height:1.5;letter-spacing:0.3px;text-align:center;padding:6px 60px;z-index:9998;backdrop-filter:blur(8px);font-family:Inter,sans-serif;">
+  Producto de uso exclusivo para investigación. El uso es responsabilidad de quien lo use.
+</div>
+<style>body{padding-bottom:32px !important;}</style>
+
+</body>
+</html>

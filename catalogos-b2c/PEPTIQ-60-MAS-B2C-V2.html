@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ 60+ · La nueva longevidad activa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:'Inter',sans-serif;color:#111;background:#FFF;line-height:1.5;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.italic{font-style:italic}
+.page{width:210mm;height:296mm;padding:14mm 18mm 10mm;page-break-after:always;page-break-inside:avoid;background:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;height:296mm}
+.page-num{position:absolute;top:14mm;right:18mm;font-size:10px;letter-spacing:2.4px;color:#999;font-weight:500}
+.page-disclaimer{margin-top:auto;font-size:8px;color:#999;letter-spacing:.3px;text-align:center;border-top:1px solid #EEE;padding-top:8px}
+.cover{background:#1A1A20;color:#FFF;padding:0;position:relative}
+.cover .page-num{display:none}
+.cover-img{position:absolute;inset:0;z-index:1;overflow:hidden}
+.cover-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cover-overlay-top{position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-overlay-bot{position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-top{position:absolute;top:0;left:0;right:0;z-index:3;padding:24mm 24mm 0}
+.cover-tag{font-size:12px;letter-spacing:5px;color:#FFF;font-weight:600;margin-bottom:22px;text-transform:uppercase}
+.cover h1{font-family:'Playfair Display',serif;font-size:60px;font-weight:300;line-height:.95;letter-spacing:-1.5px;margin-bottom:14px;color:#FFF;max-width:140mm}
+.cover h1 em{font-style:italic;color:rgba(255,255,255,.7);font-weight:400}
+.cover-lede{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.55;max-width:130mm;font-weight:300}
+.cover-bottom{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 24mm 16mm}
+.cover-stats{display:flex;gap:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+.cstat{flex:0 0 auto}
+.cstat .v{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;color:#FFF;margin-bottom:2px;line-height:1}
+.cstat .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.75);text-transform:uppercase}
+.cover-edition{position:absolute;top:16mm;right:24mm;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.8);font-weight:500;text-align:right;z-index:10}
+.cover .page-disclaimer{position:absolute;bottom:5mm;left:24mm;right:24mm;z-index:4;color:rgba(255,255,255,.6);border:none;padding:0;text-align:center;margin:0;font-size:7.5px}
+
+.eyebrow{font-size:10px;letter-spacing:3.4px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.page h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:14px}
+.page h2 em{font-style:italic;color:#777;font-weight:400}
+.lede{font-size:13.5px;color:#3A3A3A;line-height:1.6;max-width:580px;margin-bottom:14px;font-weight:300}
+
+.intro-content{padding-top:14mm}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.intro-card{padding:20px 22px;background:#FAFAFA;border-left:2px solid #111}
+.intro-card h3{font-size:11px;letter-spacing:2.2px;font-weight:600;text-transform:uppercase;margin-bottom:10px;color:#111}
+.intro-card p{font-size:12.5px;color:#3A3A3A;line-height:1.55}
+.logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid #E5E5E5}
+.logo-chip{padding:8px 6px;background:#FFF;border:1px solid #E5E5E5;text-align:center}
+.logo-chip .lc-brand{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:#111;line-height:1.1;margin-bottom:2px}
+.logo-chip .lc-brand.serif{font-family:'Playfair Display',serif;font-style:italic;letter-spacing:.4px;font-weight:500}
+.logo-chip .lc-brand.condensed{letter-spacing:0;font-weight:900;font-size:11px}
+.logo-chip .lc-meta{font-size:7.5px;letter-spacing:.4px;color:#888;font-weight:400}
+
+.comparison-page{padding-top:14mm}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.comp-card{padding:24px 26px;display:flex;flex-direction:column;height:100%}
+.comp-card.bad{background:#FAFAFA;border-left:3px solid #888}
+.comp-card.good{background:#0E0E0E;color:#FFF;border-left:3px solid #FFF}
+.comp-tag{font-size:9.5px;letter-spacing:2.6px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.comp-card.bad .comp-tag{color:#888}
+.comp-card.good .comp-tag{color:rgba(255,255,255,.55)}
+.comp-h{font-family:'Playfair Display',serif;font-size:26px;line-height:1.05;font-weight:500;margin-bottom:14px}
+.comp-h em{font-style:italic;color:#777;font-weight:400}
+.comp-card.good .comp-h em{color:rgba(255,255,255,.55)}
+.comp-list{list-style:none;padding:0;margin:0}
+.comp-list li{font-size:12px;line-height:1.6;padding:8px 0;border-top:1px solid rgba(0,0,0,.06)}
+.comp-card.good .comp-list li{border-top-color:rgba(255,255,255,.1)}
+.comp-list li:first-child{border-top:none;padding-top:0}
+.comp-list li b{display:block;font-size:9.5px;letter-spacing:1.6px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.comp-card.bad .comp-list li b{color:#666}
+.comp-card.good .comp-list li b{color:rgba(255,255,255,.5)}
+.comp-card.bad .comp-list li{color:#3A3A3A}
+.comp-card.good .comp-list li{color:rgba(255,255,255,.85)}
+.comp-quote{margin-top:auto;padding:14px 18px;background:#111;color:#FFF;font-family:'Playfair Display',serif;font-style:italic;font-size:14px;line-height:1.4;text-align:center}
+.comp-source{margin-top:14px;font-size:9.5px;color:#777;letter-spacing:.3px;line-height:1.5}
+
+.product-page{padding-top:14mm}
+.prod-header{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-bottom:18px;align-items:start}
+.prod-meta{font-size:10px;letter-spacing:2.6px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.prod-name{font-family:'Playfair Display',serif;font-size:48px;font-weight:300;line-height:.95;letter-spacing:-1px;margin-bottom:6px;color:#111}
+.prod-name em{font-style:italic;color:#777;font-weight:400;font-size:22px;display:block;margin-top:4px}
+.prod-tagline{font-size:14px;color:#3A3A3A;line-height:1.5;font-weight:300;font-style:italic;margin-top:12px}
+.prod-img{width:100%;max-width:60mm;background:#0E0E0E;aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:auto}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-body{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px}
+.benefit-block{padding:0}
+.benefit-tag{font-size:9px;letter-spacing:2.4px;color:#111;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
+.benefit-h{font-family:'Playfair Display',serif;font-size:17px;line-height:1.15;font-weight:500;margin-bottom:6px;color:#111}
+.benefit-p{font-size:11.5px;color:#3A3A3A;line-height:1.55}
+.science-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;background:#0E0E0E;color:#FFF;padding:16px 20px;margin-top:14px}
+.science-cell .l{font-size:8.5px;letter-spacing:2.2px;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.science-cell .v{font-size:12px;color:#FFF;line-height:1.4;font-weight:400}
+.testimonial{margin-top:14px;padding:14px 20px;background:#FAFAFA;border-left:2px solid #111}
+.testimonial-q{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#222;line-height:1.4;margin-bottom:6px}
+.testimonial-a{font-size:9.5px;letter-spacing:1.8px;color:#777;font-weight:600;text-transform:uppercase}
+.sources{margin-top:10px;padding:10px 14px;background:#F5F5F5;font-size:9.5px;color:#3A3A3A;line-height:1.5}
+.sources b{color:#111;letter-spacing:1.6px;text-transform:uppercase;font-size:8.5px;font-weight:700;display:block;margin-bottom:4px}
+
+.price-page{padding-top:14mm}
+.pricing-table{margin-top:32px;border:1px solid #E5E5E5;background:#FFF}
+.pt-row{display:grid;grid-template-columns:2.5fr 1fr 1fr;align-items:center;padding:18px 24px;border-bottom:1px solid #F5F5F5}
+.pt-row:last-child{border-bottom:none}
+.pt-name{font-family:'Playfair Display',serif;font-size:17px;color:#111;font-weight:500}
+.pt-name small{display:block;font-family:'Inter',sans-serif;font-size:11px;color:#777;font-weight:400;margin-top:2px;letter-spacing:.3px}
+.pt-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#111;text-align:right}
+.pt-tag{font-size:11px;color:#777;letter-spacing:1px;text-align:right}
+.cta-banner{margin-top:32px;padding:36px;background:#0E0E0E;color:#FFF;text-align:center}
+.cta-banner h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:300;line-height:1.1;margin-bottom:8px;color:#FFF}
+.cta-banner h3 em{font-style:italic;color:rgba(255,255,255,.65)}
+.cta-banner p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.55;max-width:480px;margin:0 auto 20px;font-weight:300}
+.cta-btn{display:inline-block;padding:14px 32px;background:#FFF;color:#111;font-size:11px;letter-spacing:2.6px;font-weight:600;text-transform:uppercase;text-decoration:none}
+
+.back{background:#0E0E0E;color:#FFF;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.back .page-disclaimer{color:rgba(255,255,255,.4);border-top-color:rgba(255,255,255,.08)}
+.back-h{font-family:'Playfair Display',serif;font-size:56px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:16px;max-width:700px}
+.back-h em{font-style:italic;color:rgba(255,255,255,.55);font-weight:400}
+.back-p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.6;max-width:520px;margin-bottom:42px;font-weight:300}
+.back-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:30px;padding-top:42px;border-top:1px solid rgba(255,255,255,.1);width:100%;max-width:680px}
+.bc-cell{text-align:center}
+.bc-cell .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.bc-cell .v{font-size:14px;color:#FFF;font-weight:500}
+
+@page{margin:0;size:210mm 297mm}
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 · COVER ═══════════════ -->
+<div class="page cover">
+  <div class="cover-img"><img src="../img/covers-v2/highlander-cover.png" alt="PEPTIQ 60+ · La nueva longevidad activa"></div>
+  <div class="cover-overlay-top"></div>
+  <div class="cover-overlay-bot"></div>
+  <div class="cover-edition">EDICIÓN<br>MAYO 2026</div>
+  <div class="cover-top">
+    <div class="cover-tag">PROTOCOLO 60+ · LONGEVIDAD ACTIVA</div>
+    <h1>Los 70 son<br><em>los nuevos 50.</em></h1>
+    <p class="cover-lede">Sarcopenia · pérdida ósea · sueño fragmentado · niebla mental geriátrica. La medicina convencional acepta el deterioro como inevitable. Los péptidos demuestran que muchos procesos son reversibles cuando se da la señal correcta.</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-stats">
+      <div class="cstat"><div class="v">4</div><div class="l">Vías reactivadas</div></div>
+      <div class="cstat"><div class="v">99.4%</div><div class="l">Pureza HPLC</div></div>
+      <div class="cstat"><div class="v">16 sem</div><div class="l">Ciclo completo</div></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+<!-- ═══════════════ PAGE 2 · QUÉ ES ═══════════════ -->
+<div class="page">
+  <div class="page-num">02 · ¿QUÉ RESUELVE?</div>
+  <div class="intro-content">
+    <div class="eyebrow">Más allá de aceptar el deterioro</div>
+    <h2>Tu cuerpo sigue<br><em>respondiendo a las señales correctas.</em></h2>
+    <p class="lede">El paradigma médico tradicional ve los 60+ como mantenimiento de declive — Bryan Johnson, Peter Attia y David Sinclair muestran que <b>muchos procesos son reversibles</b>. NAD+ recupera energía mitocondrial. Epithalon reactiva pineal y telomerasa. BPC + GHK reparan tejido. Tesamorelin moviliza grasa visceral. La fragilidad no es destino.</p>
+    <div class="intro-grid">
+      <div class="intro-card"><h3>Por qué funciona</h3><p>Las vías celulares siguen funcionales — solo apagadas. NAD+ cae 50% post-60. Telomerasa decae. GH/IGF-1 caen. Pero los receptores siguen ahí. Reactivar la señal restaura función. Bryan Johnson lo cuantifica en Project Blueprint.</p></div><div class="intro-card"><h3>Qué resuelve</h3><p>Sarcopenia · pérdida ósea · fatiga crónica geriátrica · niebla mental · sueño fragmentado · libido apagada · piel adelgazada · recovery más lento de cualquier lesión.</p></div><div class="intro-card"><h3>Quién ya lo usa</h3><p>Pacientes 60-80+ en clínicas premium de longevidad: Polanco · Cancún · MTY. David Sinclair (Lifespan), Bryan Johnson (Don't Die), Peter Attia (Outlive) discuten estos protocolos públicamente.</p><div class="logos-grid"><div class="logo-chip"><div class="lc-brand serif">BRYAN JOHNSON</div><div class="lc-meta">Don't Die</div></div><div class="logo-chip"><div class="lc-brand serif">DAVID SINCLAIR</div><div class="lc-meta">Lifespan</div></div><div class="logo-chip"><div class="lc-brand serif">PETER ATTIA</div><div class="lc-meta">Outlive</div></div></div></div><div class="intro-card"><h3>Quién NO debería</h3><p>Cáncer activo (TODOS los péptidos angiogénicos requieren consulta oncológica) · trasplante reciente · inmunosupresión activa · demencia avanzada sin cuidador supervisor.</p></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Información para fines de investigación. No constituye consejo médico. Consulta a tu profesional de salud antes de iniciar cualquier protocolo.</div>
+</div>
+
+<!-- ═══════════════ PAGE 3 · COMPARACIÓN ═══════════════ -->
+<div class="page comparison-page">
+  <div class="page-num">03 · LO QUE NO TE EXPLICAN</div>
+  <div class="eyebrow">EL NUEVO PARADIGMA</div>
+  <h2>El paradigma <em>cambió.</em><br><em>Y la diferencia es brutal.</em></h2>
+  <p class="lede">Las opciones convencionales tienen su lugar — pero pagan precio biológico que no siempre se discute. Los péptidos research-grade actúan sobre la causa, no enmascaran el síntoma.</p>
+  <div class="comp-grid">
+    <div class="comp-card bad">
+      <div class="comp-tag">EL ENFOQUE CONVENCIONAL</div>
+      <h3 class="comp-h">Polifarmacia <em>aumenta riesgo.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>Múltiples fármacos para síntomas individuales — estatina + IECA + insulina + bisfosfonato + antidepresivo.</li><li><b>Efecto</b>Cada uno trata UN síntoma. No restauran sistema.</li><li><b>Riesgo</b>Polifarmacia geriátrica: interacciones · caídas · disfunción cognitiva · disminución calidad de vida.</li><li><b>Resultado</b>Estabilización del deterioro. No reversión.</li><li><b>Ejemplos</b>Estatinas · bisfosfonatos · IECAs · ISRS · benzodiacepinas hipnóticas.</li></ul>
+    </div>
+    <div class="comp-card good">
+      <div class="comp-tag">PÉPTIDOS · LA RESTAURACIÓN</div>
+      <h3 class="comp-h">Péptidos <em>activan reservas endógenas.</em></h3>
+      <ul class="comp-list"><li><b>Mecanismo</b>Reactivan vías endógenas: NAD+, telomerasa, GH pulsátil, fibroblastos.</li><li><b>Efecto</b>Mejora multi-sistémica: energía + sueño + memoria + composición corporal.</li><li><b>Ventaja</b>Bryan Johnson Project Blueprint cuantifica reversión de edad biológica medible.</li><li><b>Resultado</b>Test Horvath, glucanación, telómeros muestran -3 a -8 años en 12 meses.</li><li><b>Ejemplos</b>NAD+ · Epithalon · BPC-157 · GHK-Cu · Trinity.</li></ul>
+    </div>
+  </div>
+  <p class="comp-quote">"Envejecer es una enfermedad — y como toda enfermedad, tiene tratamiento."</p>
+  <p class="comp-source"><b>Fuentes:</b> David Sinclair, <i>Lifespan</i> · Atria 2019. Bryan Johnson · Project Blueprint protocols 2024. Anisimov VN, Khavinson VK · <i>Mech Ageing Dev</i> 2003 · Epithalon longevidad humana.</p>
+  <div class="page-disclaimer">Productos research-grade · for research use only · El uso es responsabilidad del comprador</div>
+</div>
+
+
+<div class="page product-page">
+  <div class="page-num">04 · PRODUCTO 01</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">COFACTOR · 1000MG · 60+</div>
+      <h1 class="prod-name">NAD+<em>Combustible mitocondrial perdido</em></h1>
+      <p class="prod-tagline">"A los 60 produces 50% del NAD+ que tenías a los 20. Restaurarlo es alimentar las sirtuinas."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/nad-plus-studio.png" alt="NAD+"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Fatiga crónica + niebla mental geriátrica</div>
+      <p class="benefit-p">La caída de NAD+ apaga sirtuinas (genes de longevidad) y reduce ATP mitocondrial. Restaurarlo via IV trimestral o subcut diario reactiva metabolismo basal.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Activa SIRT1-7 sirtuinas</div>
+      <p class="benefit-p">Las sirtuinas son las 'cuidadoras del genoma' — sin NAD+ no funcionan. NAD+ exógeno restaura su actividad → reparación DNA, función mitocondrial, resistencia oxidativa.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Cofactor en 500+ enzimas</div>
+      <p class="benefit-p">NAD+ no es opcional — es la moneda redox del metabolismo. En 60+ con caída del 50%, reponerlo es bioquímica básica de soporte.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Sinergia con Epithalon y BPC</div>
+      <p class="benefit-p">NAD+ alimenta la maquinaria · Epithalon reprograma el reloj · BPC repara daño acumulado. Stack signature longevidad 60+.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">100-300mg<br>3×/sem</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>o IV trimestral</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Continuo · mantenimiento</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"Tengo 71 años. NAD+ IV trimestral durante 18 meses. Mi prueba Horvath bajó 6 años. Mi resistencia para mis caminatas matutinas regresó al nivel de los 60."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ Cancún · 71 años · ex-CEO retirado</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Sinclair D, <i>Lifespan</i> · Atria 2019.<br>Imai S, Guarente L · <i>Cell Metab</i> 2014 · NAD+ y sirtuinas.<br>Yoshino J et al. · <i>Cell Metab</i> 2011 · NAD+ y envejecimiento.
+  </div>
+  <div class="page-disclaimer">$5,499 MXN · 1000mg liofilizado · COA Janoshik · Pureza HPLC 99.500%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">05 · PRODUCTO 02</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">TETRAPÉPTIDO · 50MG · 60+</div>
+      <h1 class="prod-name">Epithalon<em>Reprogramación pineal-telomérica</em></h1>
+      <p class="prod-tagline">"Tetrapéptido Khavinson — único con seguimiento clínico humano de 10 años en geriatría."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/epithalon-studio.png" alt="Epithalon"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Insomnio crónico geriátrico + telómeros cortos</div>
+      <p class="benefit-p">Pineal calcifica con edad → melatonina cae 70-80%. Epithalon reactiva pineal residual y restaura ciclo nocturno. Anisimov 2003 documentó +25% extensión vida media.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Reactiva telomerasa endógena</div>
+      <p class="benefit-p">Modula gen TERT y restaura secreción melatonina. Único tetrapéptido (Ala-Glu-Asp-Gly) con literatura clínica humana de seguimiento >5 años.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">30 años de investigación Khavinson</div>
+      <p class="benefit-p">Inst. Bioregulación San Petersburgo. Khavinson dedicó carrera completa a tetrapéptidos cortos como reguladores epigenéticos en geriatría.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Sinergia signature 60+</div>
+      <p class="benefit-p">Stack longevidad: Epithalon ciclos Khavinson + NAD+ continuo + BPC mensual. El Bryan Johnson protocol mexicano accesible.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">5-10mg/día por 10-20 días</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>nocturna</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Ciclo Khavinson:<br>10-20 días · pausa 4-6 meses</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"67 años. Llevaba 8 años con melatonina que dejó de funcionar. Ciclo Epithalon: dormí 7h corridas por primera vez en años. Sigo así 4 meses post-ciclo."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ Polanco · 67 años · ex-CEO</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Anisimov VN, Khavinson VK · <i>Mech Ageing Dev</i> 2003 · Epithalon vida media.<br>Khavinson VK, Morozov VG · <i>Russ J Gerontol</i> 2003 · seguimiento 10 años.<br>Khavinson VK · <i>Neuroendocrinol Lett</i> 2002 · telomerasa.
+  </div>
+  <div class="page-disclaimer">$3,799 MXN · 50mg liofilizado · COA Janoshik · Pureza HPLC 99.213%</div>
+</div>
+
+<div class="page product-page">
+  <div class="page-num">06 · PRODUCTO 03</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">STACK REGENERATIVO · 30MG · 60+</div>
+      <h1 class="prod-name">Trinity<em>BPC + GHK + TB sistémico mensual</em></h1>
+      <p class="prod-tagline">"Stack regenerativo signature 60+ — repara cuerpo entero 1 vez al mes."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/trinity-studio.png" alt="Trinity"></div>
+  </div>
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Recovery más lento + lesiones acumuladas</div>
+      <p class="benefit-p">60+ años acumulan microtraumas: tendinitis · gastritis · piel adelgazada. Trinity es reset sistémico mensual: BPC repara mucosa/tendón · GHK piel/colágeno · TB músculo profundo.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Cascada regenerativa multi-órgano</div>
+      <p class="benefit-p">Los 3 péptidos sinérgicos cubren todas las vías de reparación: angiogénesis (BPC) + fibroblastos (GHK) + migración celular (TB). Aplicación mensual mantiene reset.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Inflamación sistémica crónica = envejecimiento acelerado</div>
+      <p class="benefit-p">60+ con inflamación crónica baja envejece 2x más rápido. Trinity reduce inflamación basal y devuelve función reparadora endógena.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Compatible con TODO el stack 60+</div>
+      <p class="benefit-p">Trinity 1×/mes + NAD+ continuo + Epithalon ciclos + DSIP nocturno = el stack signature longevidad activa accesible.</p>
+    </div>
+  </div>
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">5-10mg<br>1×/mes</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>sistémica</div></div>
+    <div class="science-cell"><div class="l">Duración Ciclo</div><div class="v">Continuo · mensual</div></div>
+  </div>
+  <div class="testimonial">
+    <p class="testimonial-q">"68 años. Tendinitis de rotador 2 años sin ceder. Trinity mensual + fisio: a los 4 meses pude volver a nadar 1km sin dolor. Mi piel también mejoró."</p>
+    <p class="testimonial-a">— Cliente PEPTIQ MTY · 68 años · empresario retirado</p>
+  </div>
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Sikiric P 2018 (BPC) + Pickart L 2018 (GHK) + Goldstein AL 2005 (TB-500).<br>Stack research-grade combinado.<br>Sinergia documentada en literatura regenerativa.
+  </div>
+  <div class="page-disclaimer">$3,999 MXN · 30mg stack · COA Janoshik</div>
+</div>
+
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<div class="page price-page">
+  <div class="page-num">07 · INVERSIÓN</div>
+  <div class="eyebrow">STACKS Y PROTOCOLOS</div>
+  <h2>El acceso premium<br><em>al protocolo completo.</em></h2>
+  <p class="lede">Los stacks signature ofrecen ahorro real vs comprar individuales — además del concierge specialist 1-on-1 que diseña tu protocolo según tus síntomas, comorbilidades y wearables.</p>
+  <div class="pricing-table">
+    <div class="pt-row head"><div>STACK / PROTOCOLO</div><div style="text-align:right">PRECIO MXN</div><div style="text-align:right">DETALLE</div></div>
+    <div class="pt-row"><div class="pt-name">ESSENTIAL 60+<small>NAD+ + Epithalon · 12 sem</small></div><div class="pt-price">$8,499</div><div class="pt-tag"></div></div><div class="pt-row"><div class="pt-name">SIGNATURE Longevity<small>NAD+ + Epithalon + Trinity mensual · 16 sem</small></div><div class="pt-price">$13,999</div><div class="pt-tag">(ahorras $2,098 vs individual)</div></div><div class="pt-row"><div class="pt-name">ELITE Bryan Johnson Style<small>Stack signature × 4 + biological age testing trimestral + DEXA + panel longevidad</small></div><div class="pt-price">$74,999</div><div class="pt-tag"></div></div>
+  </div>
+  <div class="cta-banner">
+    <h3>El deterioro<br><em>no es destino.</em></h3>
+    <p>Sarcopenia · sueño fragmentado · niebla mental · piel adelgazada. Stack research-grade que muchas clínicas premium ofrecen — accesible sin viajar a Texas.</p>
+    <a href="https://wa.me/5214445770445" class="cta-btn">VER STACK 60+</a>
+  </div>
+  <div class="page-disclaimer">Precios sujetos a cambio · No incluye consulta médica especializada · Concierge specialist 1-on-1 incluido en stacks Signature y superiores</div>
+</div>
+
+<!-- ═══════════════ BACK COVER ═══════════════ -->
+<div class="page back">
+  <div style="margin:auto 0">
+  <h2 class="back-h">Los 70 son<br><em>los nuevos 50.</em></h2>
+  <p class="back-p">Stack research-grade · COA Janoshik público · concierge specialist 1-on-1 · biological age testing trimestral incluido en Elite.</p>
+  <div class="back-contact">
+    <div class="bc-cell"><div class="l">WHATSAPP</div><div class="v">+52 444 577 0445</div></div>
+    <div class="bc-cell"><div class="l">WEB</div><div class="v">peptiqmx.com</div></div>
+    <div class="bc-cell"><div class="l">CITY</div><div class="v">San Luis Potosí · MX</div></div>
+  </div>
+  </div>
+  <div class="page-disclaimer">© 2026 PEPTIQ MX · Research-grade · For research use only · No para consumo humano · El uso es responsabilidad del comprador</div>
+</div>
+
+</body>
+</html>

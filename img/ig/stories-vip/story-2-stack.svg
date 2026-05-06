@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5B1A1F"/>
+      <stop offset="50%" stop-color="#3a1014"/>
+      <stop offset="100%" stop-color="#0E0E0E"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4B97A"/>
+      <stop offset="100%" stop-color="#C6A969"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1920" fill="url(#bg2)"/>
+
+  <!-- Top eyebrow -->
+  <text x="540" y="120" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500" font-size="20" fill="#C6A969" letter-spacing="6">HIGHLANDER STACK</text>
+  <line x1="430" y1="145" x2="650" y2="145" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+
+  <!-- Big editorial title -->
+  <text x="540" y="260" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="600" font-size="68" fill="#fff">El protocolo</text>
+  <text x="540" y="340" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-style="italic" font-weight="600" font-size="68" fill="url(#goldGrad)">de los próximos</text>
+  <text x="540" y="420" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-style="italic" font-weight="600" font-size="68" fill="url(#goldGrad)">20 años.</text>
+
+  <!-- 3 péptidos columnas -->
+  <g transform="translate(80,560)">
+    <!-- 1 NAD+ -->
+    <rect x="0" y="0" width="920" height="180" rx="3" fill="rgba(255,255,255,0.05)" stroke="rgba(198,169,105,0.3)" stroke-width="1"/>
+    <text x="40" y="60" font-family="Playfair Display,Georgia,serif" font-weight="600" font-size="40" fill="#C6A969">NAD+</text>
+    <text x="40" y="105" font-family="Inter,sans-serif" font-weight="500" font-size="16" fill="#fff" letter-spacing="3">ENERGÍA MITOCONDRIAL</text>
+    <text x="40" y="155" font-family="Inter,sans-serif" font-size="22" fill="#ddd">Activa sirtuinas · repara ADN</text>
+    <text x="880" y="100" text-anchor="end" font-family="Playfair Display,Georgia,serif" font-weight="600" font-size="36" fill="#fff">1000mg</text>
+
+    <!-- 2 Epithalon -->
+    <rect x="0" y="200" width="920" height="180" rx="3" fill="rgba(255,255,255,0.05)" stroke="rgba(198,169,105,0.3)" stroke-width="1"/>
+    <text x="40" y="260" font-family="Playfair Display,Georgia,serif" font-weight="600" font-size="40" fill="#C6A969">Epithalon</text>
+    <text x="40" y="305" font-family="Inter,sans-serif" font-weight="500" font-size="16" fill="#fff" letter-spacing="3">TELÓMEROS</text>
+    <text x="40" y="355" font-family="Inter,sans-serif" font-size="22" fill="#ddd">Activa telomerasa · circadiano</text>
+    <text x="880" y="300" text-anchor="end" font-family="Playfair Display,Georgia,serif" font-weight="600" font-size="36" fill="#fff">50mg</text>
+
+    <!-- 3 GHK-Cu -->
+    <rect x="0" y="400" width="920" height="180" rx="3" fill="rgba(255,255,255,0.05)" stroke="rgba(198,169,105,0.3)" stroke-width="1"/>
+    <text x="40" y="460" font-family="Playfair Display,Georgia,serif" font-weight="600" font-size="40" fill="#C6A969">GHK-Cu</text>
+    <text x="40" y="505" font-family="Inter,sans-serif" font-weight="500" font-size="16" fill="#fff" letter-spacing="3">REGENERACIÓN</text>
+    <text x="40" y="555" font-family="Inter,sans-serif" font-size="22" fill="#ddd">4,000+ genes · piel · cabello</text>
+    <text x="880" y="500" text-anchor="end" font-family="Playfair Display,Georgia,serif" font-weight="600" font-size="36" fill="#fff">100mg</text>
+  </g>
+
+  <!-- Price block -->
+  <rect x="160" y="1230" width="760" height="180" rx="3" fill="rgba(0,0,0,0.5)" stroke="#C6A969" stroke-width="2"/>
+  <text x="540" y="1290" text-anchor="middle" font-family="Inter,sans-serif" font-size="18" fill="#aaa" letter-spacing="3">STACK COMPLETO · MSI 12 MESES</text>
+  <text x="540" y="1370" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="600" font-size="64" fill="#fff">$14,999<tspan font-family="Inter" font-size="22" fill="#C6A969" letter-spacing="2"> MXN</tspan></text>
+
+  <!-- Sticker zones -->
+  <rect x="290" y="1490" width="500" height="170" rx="20" fill="rgba(255,255,255,0.06)" stroke="#888" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="540" y="1565" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="22" fill="#C6A969" letter-spacing="3">↓ LINK STICKER ↓</text>
+  <text x="540" y="1605" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" fill="#888" letter-spacing="2">peptiqmx.com/vip</text>
+  <text x="540" y="1635" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#666">Texto botón: "Acceso VIP"</text>
+
+  <!-- Sticker poll zone -->
+  <rect x="190" y="1700" width="700" height="120" rx="20" fill="rgba(34,197,94,0.1)" stroke="#22C55E" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="540" y="1745" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="18" fill="#888" letter-spacing="2">↓ POLL STICKER ↓</text>
+  <text x="540" y="1775" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#555">"¿Quieres acceso?" → Sí / Cuéntame más</text>
+
+  <!-- Footer -->
+  <text x="540" y="1880" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#666" letter-spacing="6">PEPTIQ MX · COA JANOSHIK</text>
+</svg>

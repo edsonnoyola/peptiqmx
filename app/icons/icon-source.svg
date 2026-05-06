@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0E0E0E"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4B97A"/>
+      <stop offset="100%" stop-color="#9F8347"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <text x="256" y="280" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="160" font-weight="600" fill="url(#gold)" letter-spacing="-4">P</text>
+  <line x1="180" y1="320" x2="332" y2="320" stroke="url(#gold)" stroke-width="2"/>
+  <text x="256" y="360" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500" fill="url(#gold)" letter-spacing="6">PEPTIQ</text>
+</svg>

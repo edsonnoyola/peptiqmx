@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1080" height="1920" fill="#000" opacity="0.35"/>
+  <text x="540" y="280" font-family="'Inter',sans-serif" font-size="28" letter-spacing="14" text-anchor="middle" fill="#C6A969" opacity="0.85">PROTOCOLO FLAGSHIP</text>
+  <line x1="400" y1="330" x2="680" y2="330" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+  <text x="540" y="1480" font-family="'Playfair Display',Georgia,serif" font-size="68" font-style="italic" text-anchor="middle" fill="#f0e4c8">NAD+ · EPITHALON</text>
+  <line x1="400" y1="1540" x2="680" y2="1540" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+  <text x="540" y="1640" font-family="'Inter',sans-serif" font-size="32" letter-spacing="4" text-anchor="middle" fill="#a8987a">12 SEMANAS · ANTI-AGING ESTRUCTURAL</text>
+</svg>

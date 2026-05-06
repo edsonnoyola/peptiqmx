@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0e0b07"/><stop offset="100%" stop-color="#000000"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#C6A969" text-anchor="middle" letter-spacing="10" opacity="0.75">01 · ¿QUÉ ES UN RESELLER?</text>
+
+  <text x="540" y="240" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Compra al mayor.</text>
+  <text x="540" y="310" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Te lo vende a precio MX.</text>
+
+  <g transform="translate(140 400)" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a">
+    <g>
+      <rect width="800" height="86" fill="none" stroke="#3a2a1a" stroke-width="1" rx="2"/>
+      <text x="40" y="38" fill="#C6A969" font-family="'Playfair Display',Georgia,serif" font-size="22" font-style="italic">Multi-marca</text>
+      <text x="40" y="68" letter-spacing="1">Importan 5-8 marcas distintas. Sin control de calidad.</text>
+    </g>
+    <g transform="translate(0 110)">
+      <rect width="800" height="86" fill="none" stroke="#3a2a1a" stroke-width="1" rx="2"/>
+      <text x="40" y="38" fill="#C6A969" font-family="'Playfair Display',Georgia,serif" font-size="22" font-style="italic">Sin trazabilidad</text>
+      <text x="40" y="68" letter-spacing="1">No saben de qué lote vino · qué laboratorio fabricó.</text>
+    </g>
+    <g transform="translate(0 220)">
+      <rect width="800" height="86" fill="none" stroke="#3a2a1a" stroke-width="1" rx="2"/>
+      <text x="40" y="38" fill="#C6A969" font-family="'Playfair Display',Georgia,serif" font-size="22" font-style="italic">Sin asesoría</text>
+      <text x="40" y="68" letter-spacing="1">Te venden la caja. Tú resuelves dosis · ciclo · stack.</text>
+    </g>
+    <g transform="translate(0 330)">
+      <rect width="800" height="86" fill="none" stroke="#3a2a1a" stroke-width="1" rx="2"/>
+      <text x="40" y="38" fill="#C6A969" font-family="'Playfair Display',Georgia,serif" font-size="22" font-style="italic">Sin reposición</text>
+      <text x="40" y="68" letter-spacing="1">Llega dañado · pierdes el dinero. No es su problema.</text>
+    </g>
+  </g>
+
+  <text x="540" y="900" font-family="'Inter',sans-serif" font-size="18" fill="#a8987a" text-anchor="middle" letter-spacing="4">SHOPIFY GENÉRICO + LISTA DE PRODUCTOS = RESELLER</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">02 / 08</text>
+</svg>

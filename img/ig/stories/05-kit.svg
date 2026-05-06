@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <line x1="80" y1="180" x2="1000" y2="180" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="240" font-family="Inter,sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="14" opacity="0.85">EL KIT QUE RECIBES</text>
+  <image href="/Users/end/Desktop/tdi-peptidos/peptiqmx/img/box-wolverine-new.jpg" x="40" y="380" width="1000" height="800" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="40" y="380" width="1000" height="800" fill="#000" opacity="0.18"/>
+  <linearGradient id="topFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#000" stop-opacity="0.85"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="botFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.95"/>
+  </linearGradient>
+  <rect x="40" y="380" width="1000" height="120" fill="url(#topFade)"/>
+  <rect x="40" y="1060" width="1000" height="120" fill="url(#botFade)"/>
+  <text x="540" y="1290" font-family="Playfair Display,Georgia,serif" font-size="76" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Discreto por fuera.</text>
+  <text x="540" y="1380" font-family="Playfair Display,Georgia,serif" font-size="76" font-weight="500" fill="url(#gold)" text-anchor="middle" font-style="italic">Premium por dentro.</text>
+  <line x1="380" y1="1450" x2="700" y2="1450" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+  <text x="540" y="1540" font-family="Inter,sans-serif" font-size="30" fill="#cfc3a5" text-anchor="middle">Viales · syringes · agua bact · protocolo · QR</text>
+  <line x1="80" y1="1810" x2="1000" y2="1810" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1860" font-family="Inter,sans-serif" font-size="26" fill="url(#gold)" text-anchor="middle" letter-spacing="6" font-weight="600">peptiqmx.com</text>
+  <text x="540" y="1900" font-family="Inter,sans-serif" font-size="22" fill="#a8987a" text-anchor="middle" letter-spacing="4">+52 444 577 0445  ·  WHATSAPP</text>
+</svg>

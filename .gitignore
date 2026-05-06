@@ -5,3 +5,5 @@ node_modules/
 img/_backup_tiny/
 *.log
 .netlify/
+.peptiq-meta-creds
+.peptiq-page-token

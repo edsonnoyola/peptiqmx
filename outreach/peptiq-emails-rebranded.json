@@ -1,0 +1,86 @@
+[
+  {
+    "category": "anti_aging",
+    "categoryLabel": "Anti-aging / Longevity",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "Pregunta rápida sobre NAD+ en {ciudad}",
+        "body": "{greeting},\n\nUna pregunta rápida: ¿manejas NAD+ o Epithalon en tu clínica?\n\nSi sí · ¿qué proveedor usas? Estoy mapeando opciones research-grade en MX y noto que el 53% de péptidos online no contienen el compuesto declarado (UCLA · JAMA 2023).\n\nNosotros (PEPTIQ MX) somos los únicos en MX con COA Janoshik público por lote · 99%+ HPLC verificable. Programa B2B clínicas tiene 25-35% margen + crédito 15 días.\n\n¿Te interesa que te mande el deck en 2 minutos?\n\nResponde solo con \"SI\" si quieres el deck.\n\n— Equipo PEPTIQ MX\nwa.me/5214445770445"
+      }
+    ]
+  },
+  {
+    "category": "estetica",
+    "categoryLabel": "Medicina Estética / Post-procedimiento",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "GHK-Cu post-láser en {ciudad}",
+        "body": "{greeting},\n\nSi haces post-láser o post-mesoterapia · GHK-Cu acelera 4,192 genes de reparación cutánea (Pickart · Int J Mol Sci 2018).\n\nMary Claire Haver lo cita en \"The New Menopause\" como alternativa a fillers en pacientes post-Ozempic.\n\nLo manejamos research-grade · COA Janoshik por lote · margen B2B 25-35% para clínicas.\n\n¿Te interesa que te mande precios mayoreo + deck?\n\nResponde \"SI\" y va.\n\n— Equipo PEPTIQ MX\nwa.me/5214445770445"
+      }
+    ]
+  },
+  {
+    "category": "dermatologia",
+    "categoryLabel": "Dermatología",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "Alternativa a finasterida sin PFS",
+        "body": "{greeting},\n\n¿Tienes pacientes que rechazan finasterida por miedo a PFS · pero también odian el rebote del minoxidil?\n\nAHK-Cu (tetrapéptido cobre) reactiva folículo dormido sin tocar DHT · sin tocar libido · +85% crecimiento cabellos terminales en 16 semanas (Pyo · Biol Pharm Bull 2007).\n\nResearch-grade · COA Janoshik por lote · 99%+ HPLC.\n\nPrograma B2B PEPTIQ tiene 25-35% margen + crédito 15 días.\n\n¿Mando deck con protocolo + precios?\n\nResponde \"SI\".\n\n— Equipo PEPTIQ MX\nwa.me/5214445770445"
+      }
+    ]
+  },
+  {
+    "category": "nutriologos",
+    "categoryLabel": "Nutriólogos / Bariátrica",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "Pacientes Ozempic post-pérdida en {ciudad}",
+        "body": "{greeting},\n\nDe pacientes que bajaron 8-15kg con GLP-1 · ¿cuántos tienes preocupados por la cara/piel/cabello post-pérdida?\n\nGHK-Cu (research-grade) reactiva colágeno tipo I/III endógeno · compatible con Mounjaro · sin interacción documentada. Es la alternativa a fillers para pacientes Ozempic Face.\n\nNosotros (PEPTIQ) somos los únicos MX con COA Janoshik público por lote.\n\nMargen B2B 25-35% + crédito 15 días para protocolo retención post-GLP-1.\n\n¿Te mando el deck con precios?\n\nResponde \"SI\".\n\n— Equipo PEPTIQ MX\nwa.me/5214445770445"
+      }
+    ]
+  },
+  {
+    "category": "peso",
+    "categoryLabel": "Pérdida de peso / GLP-1 alternativas",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "Tirzepatide research-grade · 70% menos vs Mounjaro pharmacy",
+        "body": "{greeting},\n\nMounjaro de farmacia: $6,800 MXN/mes para tu paciente.\nATLAS Tirzepatide research-grade: $8,999 MXN = 3-4 meses de protocolo.\n\nMismo péptido · 50% más pérdida que Ozempic (SURMOUNT-5 · Lancet 2024) · COA Janoshik UE acreditado por lote.\n\nAcceso restringido vía specialist · evaluación previa obligatoria.\n\nPrograma B2B clínicas tiene márgenes 25-35% · crédito 15 días.\n\n¿Te interesa el deck con protocolos + márgenes?\n\nResponde \"SI\".\n\n— Equipo PEPTIQ MX\nwa.me/5214445770445"
+      }
+    ]
+  },
+  {
+    "category": "spa_medico",
+    "categoryLabel": "Spa Médico / Wellness",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "Protocolo Trinity para tu spa en {ciudad}",
+        "body": "{greeting},\n\n¿Tu spa ya ofrece protocolos regenerativos research-grade · o solo facials/láser estándar?\n\nTRINITY (BPC-157 + GHK-Cu + TB-500) es el blend de regeneración tisular que dermatólogas estéticas premium en CDMX/MTY ya integran al post-procedimiento.\n\n4,192 genes de reparación cutánea reactivados (Pickart 2018).\n\nNosotros (PEPTIQ MX) somos los únicos con COA Janoshik público. Margen B2B 25-35% + crédito 15 días.\n\n¿Mando deck con protocolo + márgenes?\n\nResponde \"SI\".\n\n— Equipo PEPTIQ MX\nwa.me/5214445770445"
+      }
+    ]
+  },
+  {
+    "category": "peptidos",
+    "categoryLabel": "Profesional Péptidos / Genérico",
+    "sequence": [
+      {
+        "step": 1,
+        "day": 0,
+        "subject": "El 53% de péptidos online en MX no contiene lo declarado",
+        "body": "{greeting},\n\nUCLA · JAMA Network Open 2023: 53% de los péptidos comprados online NO contienen el compuesto declarado.\n\nSi vendes/recetas péptidos a tus pacientes · ¿cómo verificas pureza?\n\nNosotros (PEPTIQ MX) somos los únicos en MX con COA Janoshik público por lote · 99%+ HPLC · ISO/IEC 17025 UE acreditado.\n\nPrograma B2B con margen 25-35% + crédito 15 días para clínicas serias.\n\n¿Te mando el deck en 2 min?\n\nResponde \"SI\".\n\n— Equipo PEPTIQ MX\nwa.me/5214445770445"
+      }
+    ]
+  }
+]

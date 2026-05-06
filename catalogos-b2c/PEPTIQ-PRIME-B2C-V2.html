@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PEPTIQ Prime · La línea de performance ejecutivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:'Inter',sans-serif;color:#111;background:#FFF;line-height:1.5;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.italic{font-style:italic}
+.page{width:210mm;height:296mm;padding:14mm 18mm 10mm;page-break-after:always;page-break-inside:avoid;background:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;height:296mm}
+.page-num{position:absolute;top:14mm;right:18mm;font-size:10px;letter-spacing:2.4px;color:#999;font-weight:500}
+.page-disclaimer{margin-top:auto;font-size:8px;color:#999;letter-spacing:.3px;text-align:center;border-top:1px solid #EEE;padding-top:8px}
+
+.cover{background:#0E0E0E;color:#FFF;padding:0;position:relative}
+.cover .page-num{display:none}
+.cover-img{position:absolute;inset:0;z-index:1;overflow:hidden}
+.cover-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cover-overlay-top{position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-overlay-bot{position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,0) 100%);z-index:2}
+.cover-top{position:absolute;top:0;left:0;right:0;z-index:3;padding:24mm 24mm 0}
+.cover-tag{font-size:12px;letter-spacing:5px;color:#FFF;font-weight:600;margin-bottom:22px;text-transform:uppercase}
+.cover h1{font-family:'Playfair Display',serif;font-size:60px;font-weight:300;line-height:.95;letter-spacing:-1.5px;margin-bottom:14px;color:#FFF;max-width:140mm}
+.cover h1 em{font-style:italic;color:rgba(255,255,255,.7);font-weight:400}
+.cover-lede{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.55;max-width:130mm;font-weight:300}
+.cover-bottom{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 24mm 16mm}
+.cover-stats{display:flex;gap:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+.cstat{flex:0 0 auto}
+.cstat .v{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;color:#FFF;margin-bottom:2px;line-height:1}
+.cstat .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.75);text-transform:uppercase}
+.cover-edition{position:absolute;top:16mm;right:24mm;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.8);font-weight:500;text-align:right;z-index:10}
+.cover .page-disclaimer{position:absolute;bottom:5mm;left:24mm;right:24mm;z-index:4;color:rgba(255,255,255,.6);border:none;padding:0;text-align:center;margin:0;font-size:7.5px}
+
+.eyebrow{font-size:10px;letter-spacing:3.4px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.page h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:14px}
+.page h2 em{font-style:italic;color:#777;font-weight:400}
+.lede{font-size:13.5px;color:#3A3A3A;line-height:1.6;max-width:580px;margin-bottom:14px;font-weight:300}
+
+.intro-content{padding-top:14mm}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.intro-card{padding:20px 22px;background:#FAFAFA;border-left:2px solid #111}
+.intro-card h3{font-size:11px;letter-spacing:2.2px;font-weight:600;text-transform:uppercase;margin-bottom:10px;color:#111}
+.intro-card p{font-size:12.5px;color:#3A3A3A;line-height:1.55}
+.logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid #E5E5E5}
+.logo-chip{padding:8px 6px;background:#FFF;border:1px solid #E5E5E5;text-align:center}
+.logo-chip .lc-brand{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:#111;line-height:1.1;margin-bottom:2px}
+.logo-chip .lc-brand.serif{font-family:'Playfair Display',serif;font-style:italic;letter-spacing:.4px;font-weight:500}
+.logo-chip .lc-brand.condensed{letter-spacing:0;font-weight:900;font-size:11px}
+.logo-chip .lc-meta{font-size:7.5px;letter-spacing:.4px;color:#888;font-weight:400}
+
+.comparison-page{padding-top:14mm}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.comp-card{padding:24px 26px;display:flex;flex-direction:column;height:100%}
+.comp-card.bad{background:#FAFAFA;border-left:3px solid #888}
+.comp-card.good{background:#0E0E0E;color:#FFF;border-left:3px solid #FFF}
+.comp-tag{font-size:9.5px;letter-spacing:2.6px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.comp-card.bad .comp-tag{color:#888}
+.comp-card.good .comp-tag{color:rgba(255,255,255,.55)}
+.comp-h{font-family:'Playfair Display',serif;font-size:26px;line-height:1.05;font-weight:500;margin-bottom:14px}
+.comp-h em{font-style:italic;color:#777;font-weight:400}
+.comp-card.good .comp-h em{color:rgba(255,255,255,.55)}
+.comp-list{list-style:none;padding:0;margin:0}
+.comp-list li{font-size:12px;line-height:1.6;padding:8px 0;border-top:1px solid rgba(0,0,0,.06)}
+.comp-card.good .comp-list li{border-top-color:rgba(255,255,255,.1)}
+.comp-list li:first-child{border-top:none;padding-top:0}
+.comp-list li b{display:block;font-size:9.5px;letter-spacing:1.6px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.comp-card.bad .comp-list li b{color:#666}
+.comp-card.good .comp-list li b{color:rgba(255,255,255,.5)}
+.comp-card.bad .comp-list li{color:#3A3A3A}
+.comp-card.good .comp-list li{color:rgba(255,255,255,.85)}
+.comp-quote{margin-top:auto;padding:14px 18px;background:#111;color:#FFF;font-family:'Playfair Display',serif;font-style:italic;font-size:14px;line-height:1.4;text-align:center}
+.comp-source{margin-top:14px;font-size:9.5px;color:#777;letter-spacing:.3px;line-height:1.5}
+
+.product-page{padding-top:14mm}
+.prod-header{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-bottom:18px;align-items:start}
+.prod-meta{font-size:10px;letter-spacing:2.6px;color:#777;font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.prod-name{font-family:'Playfair Display',serif;font-size:48px;font-weight:300;line-height:.95;letter-spacing:-1px;margin-bottom:6px;color:#111}
+.prod-name em{font-style:italic;color:#777;font-weight:400;font-size:22px;display:block;margin-top:4px}
+.prod-tagline{font-size:14px;color:#3A3A3A;line-height:1.5;font-weight:300;font-style:italic;margin-top:12px}
+.prod-img{width:100%;max-width:60mm;background:#0E0E0E;aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:auto}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-body{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px}
+.benefit-block{padding:0}
+.benefit-tag{font-size:9px;letter-spacing:2.4px;color:#111;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
+.benefit-h{font-family:'Playfair Display',serif;font-size:17px;line-height:1.15;font-weight:500;margin-bottom:6px;color:#111}
+.benefit-p{font-size:11.5px;color:#3A3A3A;line-height:1.55}
+.science-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;background:#0E0E0E;color:#FFF;padding:16px 20px;margin-top:14px}
+.science-cell .l{font-size:8.5px;letter-spacing:2.2px;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.science-cell .v{font-size:12px;color:#FFF;line-height:1.4;font-weight:400}
+.testimonial{margin-top:14px;padding:14px 20px;background:#FAFAFA;border-left:2px solid #111}
+.testimonial-q{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#222;line-height:1.4;margin-bottom:6px}
+.testimonial-a{font-size:9.5px;letter-spacing:1.8px;color:#777;font-weight:600;text-transform:uppercase}
+.sources{margin-top:10px;padding:10px 14px;background:#F5F5F5;font-size:9.5px;color:#3A3A3A;line-height:1.5}
+.sources b{color:#111;letter-spacing:1.6px;text-transform:uppercase;font-size:8.5px;font-weight:700;display:block;margin-bottom:4px}
+
+.price-page{padding-top:14mm}
+.pricing-table{margin-top:32px;border:1px solid #E5E5E5;background:#FFF}
+.pt-row{display:grid;grid-template-columns:2.5fr 1fr 1fr;align-items:center;padding:18px 24px;border-bottom:1px solid #F5F5F5}
+.pt-row:last-child{border-bottom:none}
+.pt-row.head{background:#0E0E0E;color:#FFF;font-size:10px;letter-spacing:2.4px;font-weight:600;text-transform:uppercase}
+.pt-name{font-family:'Playfair Display',serif;font-size:17px;color:#111;font-weight:500}
+.pt-name small{display:block;font-family:'Inter',sans-serif;font-size:11px;color:#777;font-weight:400;margin-top:2px;letter-spacing:.3px}
+.pt-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#111;text-align:right}
+.pt-tag{font-size:11px;color:#777;letter-spacing:1px;text-align:right}
+.cta-banner{margin-top:32px;padding:36px;background:#0E0E0E;color:#FFF;text-align:center}
+.cta-banner h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:300;line-height:1.1;margin-bottom:8px;color:#FFF}
+.cta-banner h3 em{font-style:italic;color:rgba(255,255,255,.65)}
+.cta-banner p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.55;max-width:480px;margin:0 auto 20px;font-weight:300}
+.cta-btn{display:inline-block;padding:14px 32px;background:#FFF;color:#111;font-size:11px;letter-spacing:2.6px;font-weight:600;text-transform:uppercase;text-decoration:none}
+
+.how-page{padding-top:14mm}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px}
+.how-step{padding:0}
+.how-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:300;color:#777;line-height:1;margin-bottom:12px}
+.how-h{font-size:13px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;margin-bottom:10px;color:#111}
+.how-p{font-size:12px;color:#3A3A3A;line-height:1.6}
+.warning{margin-top:32px;padding:22px 28px;background:#FAFAFA;border:1px solid #E5E5E5}
+.warning b{display:block;font-size:9.5px;letter-spacing:2.4px;color:#111;font-weight:700;text-transform:uppercase;margin-bottom:8px}
+.warning p{font-size:12px;color:#3A3A3A;line-height:1.65}
+
+.back{background:#0E0E0E;color:#FFF;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.back .page-disclaimer{color:rgba(255,255,255,.4);border-top-color:rgba(255,255,255,.08)}
+.back-h{font-family:'Playfair Display',serif;font-size:56px;font-weight:300;line-height:1;letter-spacing:-1px;margin-bottom:16px;max-width:700px}
+.back-h em{font-style:italic;color:rgba(255,255,255,.55);font-weight:400}
+.back-p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.6;max-width:520px;margin-bottom:42px;font-weight:300}
+.back-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:30px;padding-top:42px;border-top:1px solid rgba(255,255,255,.1);width:100%;max-width:680px}
+.bc-cell{text-align:center}
+.bc-cell .l{font-size:9px;letter-spacing:2.4px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.bc-cell .v{font-size:14px;color:#FFF;font-weight:500}
+@page{margin:0;size:210mm 297mm}
+</style>
+  <script src="/peptiq-legal-banner.js" defer></script>
+    <script defer src="/peptiq-age-gate.js?v=1"></script>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 · COVER ═══════════════ -->
+<div class="page cover">
+  <div class="cover-img"><img src="../img/covers-v2/prime-cover.png" alt="Prime executive performance"></div>
+  <div class="cover-overlay-top"></div>
+  <div class="cover-overlay-bot"></div>
+  <div class="cover-edition">EDICIÓN<br>ABRIL 2026</div>
+  <div class="cover-top">
+    <div class="cover-tag">LÍNEA PRIME · PERFORMANCE</div>
+    <h1>El estado en que<br><em>todo se alinea otra vez.</em></h1>
+    <p class="cover-lede">Composición corporal, energía sostenida, foco mental y libido al nivel que tenías antes de los 40. La línea que reactiva tu producción endógena de hormona de crecimiento — sin reemplazarla, sin shut down.</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-stats">
+      <div class="cstat"><div class="v">−14%</div><div class="l">GH cada década post-30</div></div>
+      <div class="cstat"><div class="v">FDA</div><div class="l">Tesamorelin · Egrifta®</div></div>
+      <div class="cstat"><div class="v">0%</div><div class="l">Cortisol con Ipamorelin</div></div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Producto de uso exclusivo para investigación · Research-grade · For research use only · No aprobado COFEPRIS · No medicamento · No apto para consumo humano · El uso es responsabilidad exclusiva del comprador.</div>
+</div>
+
+<!-- ═══════════════ PAGE 2 · QUÉ ES ═══════════════ -->
+<div class="page">
+  <div class="page-num">02 · ¿QUÉ ES?</div>
+  <div class="intro-content">
+    <div class="eyebrow">DESPUÉS DE LOS 30, LA PITUITARIA SE CANSA</div>
+    <h2>Tu hormona de crecimiento<br><em>cae 14% cada década.</em></h2>
+    <p class="lede">A los 30 produces 50% del GH que tenías a los 20. A los 50, 25%. La caída es por <b>frecuencia y amplitud de pulsos pituitarios</b> — no por falla de la glándula. La línea Prime no inyecta hormona de fuera (eso apaga tu eje endógeno). Le devuelve a tu pituitaria la señal correcta para que vuelva a producir, en su pulso natural nocturno.</p>
+
+    <div class="intro-grid">
+      <div class="intro-card">
+        <h3>El "booth del DJ"</h3>
+        <p>CJC-1295 es <b>el promotor</b>: prolonga la vida media del pulso GH a 8 días y multiplica frecuencia. Ipamorelin es <b>el hype man</b>: amplifica la amplitud del pulso SIN elevar cortisol ni prolactina. Juntos hacen que tu pituitaria toque más fuerte y más seguido — sin que tú toques nada.</p>
+      </div>
+      <div class="intro-card">
+        <h3>Tesamorelin: el FDA-approved</h3>
+        <p>Aprobado por FDA como Egrifta® (EMD Serono) para lipodistrofia HIV. Off-label: efecto selectivo sobre <b>grasa visceral profunda</b> (la que rodea órganos). Único secretagogo GH con aprobación regulatoria internacional. Documentado en body recomp 45+.</p>
+      </div>
+      <div class="intro-card">
+        <h3>Quién ya lo usa</h3>
+        <p>Las voces más serias del biohacking ejecutivo discuten secretagogos GH peptídicos como alternativa a HGH recombinante. En MX, longevity clinics premium en Polanco, MTY y San Pedro ya integran el stack en protocolos C-suite.</p>
+        <div class="logos-grid">
+          <div class="logo-chip">
+            <div class="lc-brand">HUBERMAN LAB</div>
+            <div class="lc-meta">Stanford · Ep. #100</div>
+          </div>
+          <div class="logo-chip">
+            <div class="lc-brand serif">Outlive</div>
+            <div class="lc-meta">Peter Attia, MD</div>
+          </div>
+          <div class="logo-chip">
+            <div class="lc-brand condensed">JRE</div>
+            <div class="lc-meta">Joe Rogan Experience</div>
+          </div>
+        </div>
+      </div>
+      <div class="intro-card">
+        <h3>Quién NO debería</h3>
+        <p>Cáncer activo (GH puede acelerar proliferación tumoral). Retinopatía diabética. Embarazo. Si tu IGF-1 ya está alto (>250 ng/mL) — primero análisis sanguíneo. Atletas profesionales bajo testing WADA (CJC y Tesa están en lista prohibida). No mezclar con HGH recombinante simultáneo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-disclaimer">Información para fines de investigación. Consulta a endocrinólogo y haz panel hormonal completo (IGF-1, IGFBP-3, glucosa) antes de iniciar protocolo GH peptídico.</div>
+</div>
+
+<!-- ═══════════════ PAGE 3 · NO ES HGH NI TRT ═══════════════ -->
+<div class="page comparison-page">
+  <div class="page-num">03 · LO QUE NO TE EXPLICAN</div>
+  <div class="eyebrow">LA TRAMPA DEL HGH RECOMBINANTE</div>
+  <h2>Esto <em>no es</em> HGH inyectable.<br><em>Y por eso funciona a los 60.</em></h2>
+  <p class="lede">HGH recombinante (Humatrope, Genotropin, Norditropin) <b>te vuelve dependiente</b>: tu pituitaria detecta hormona en sangre y apaga producción endógena. Cuando lo dejas, tu eje somatotropo tarda 6-18 meses en despertar — si despierta. La línea Prime hace lo opuesto: <b>activa tu propia pituitaria</b> con secretagogos peptídicos. Tu cuerpo produce GH endógeno, en pulsos fisiológicos nocturnos, sin shut down.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card bad">
+      <div class="comp-tag">HGH RECOMBINANTE · REEMPLAZO</div>
+      <h3 class="comp-h">Te vuelves <em>dependiente de la inyección.</em></h3>
+      <ul class="comp-list">
+        <li><b>Mecanismo</b>Inyectas la hormona final · pituitaria detecta exceso y apaga producción endógena.</li>
+        <li><b>Pulso fisiológico</b>Plano · niveles constantes 24/7 · NO replica pulso natural nocturno.</li>
+        <li><b>Riesgo</b>Resistencia a insulina · síndrome del túnel carpiano · acromegalia con dosis altas.</li>
+        <li><b>Costo MX</b>$25-60k MXN/mes en clínicas TRT premium · de por vida.</li>
+        <li><b>Salida</b>6-18 meses para recuperar producción endógena · si la recuperas.</li>
+      </ul>
+    </div>
+    <div class="comp-card good">
+      <div class="comp-tag">SECRETAGOGOS PEPTÍDICOS · REACTIVACIÓN</div>
+      <h3 class="comp-h">Tu pituitaria <em>vuelve a producir solo.</em></h3>
+      <ul class="comp-list">
+        <li><b>Mecanismo</b>CJC+Ipa estimula pituitaria a liberar GH endógeno · respeta feedback negativo.</li>
+        <li><b>Pulso fisiológico</b>Pulsátil nocturno · replica el patrón natural que tenías a los 25.</li>
+        <li><b>Ventaja brutal</b>Ipamorelin no eleva cortisol ni prolactina · perfil de seguridad superior.</li>
+        <li><b>Costo MX</b>Stack mensual $5,499 MXN · uso cíclico, no diario perpetuo.</li>
+        <li><b>Salida</b>Cuerpo regresa a baseline en días · pituitaria nunca se apagó.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="comp-quote">"Los secretagogos GH son la jugada inteligente. Estimular tu propia pituitaria es siempre superior a reemplazar la hormona — fisiología que el cuerpo entiende."</p>
+  <p class="comp-source"><b>Fuentes:</b> Andrew Huberman, PhD · Stanford School of Medicine · <i>Huberman Lab</i> ep. #100 "Peptides for performance, recovery & longevity" 2023. Peter Attia, MD · libro <i>"Outlive: The Science and Art of Longevity"</i> 2023. Ionescu M & Frohman LA · 2006 · <i>J Clin Endocrinol Metab</i> · CJC-1295 con DAC.</p>
+  <div class="page-disclaimer">Productos research-grade · for research use only</div>
+</div>
+
+<!-- ═══════════════ PAGE 4 · CJC + IPAMORELIN ═══════════════ -->
+<div class="page product-page">
+  <div class="page-num">04 · PRODUCTO 01</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">GH STACK · 10MG · PRIME</div>
+      <h1 class="prod-name">CJC + Ipamorelin<em>El "booth del DJ" hormonal</em></h1>
+      <p class="prod-tagline">"CJC es el promotor: prolonga la vida media a 8 días. Ipamorelin es el hype man: amplifica el pulso sin tocar cortisol. Juntos restauran el patrón GH que tenías a los 25."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/cjc-ipamorelin-studio.png" alt="CJC + Ipamorelin"></div>
+  </div>
+
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Composición corporal estancada 40+</div>
+      <p class="benefit-p">Entrenas igual que hace 10 años pero la grasa abdominal no se mueve. La masa magra cae aunque hagas fuerza 4×/semana. Tu sueño profundo dura 30 min en vez de 90. Todos esos síntomas tienen un denominador común: tus pulsos GH nocturnos cayeron 60% post-40. CJC+Ipa los restaura.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Restaura pulsos GH nocturnos</div>
+      <p class="benefit-p">El GH se libera en <b>pulsos cada 3-4 horas</b>, especialmente durante sueño profundo (estadio 3-4 REM). Después de los 30, tanto la frecuencia como la amplitud caen. CJC-1295 (DAC) prolonga vida media de los pulsos a 8 días y aumenta frecuencia. Ipamorelin amplifica amplitud sin tocar cortisol ni prolactina.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Secretagogo + GHRP en sinergia</div>
+      <p class="benefit-p">CJC-1295 es análogo de GHRH (hormona del hipotálamo). Ipamorelin es agonista selectivo de receptor GHS-R1a (mismo que ghrelina). Activan dos vías paralelas que confluyen en pituitaria. La sinergia produce 3-4× más GH endógeno que cualquiera por separado.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Sin las desventajas de ghrelina</div>
+      <p class="benefit-p">Otros GHRP (GHRP-2, GHRP-6, hexarelin) elevan cortisol y prolactina — efectos colaterales que limitan uso prolongado. Ipamorelin es <b>el secretagogo más limpio</b>: es agonista selectivo, sin efectos en eje HPA. Por eso clínicas serias lo prefieren para protocolos 12+ semanas.</p>
+    </div>
+  </div>
+
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">CJC: 1-2mg<br>Ipa: 100-300mcg SC</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>30-60 min antes de dormir</div></div>
+    <div class="science-cell"><div class="l">Frecuencia</div><div class="v">5 noches/semana<br>2 noches off · 12 sem</div></div>
+  </div>
+
+  <div class="testimonial">
+    <p class="testimonial-q">"Si voy a usar péptidos GH, sería CJC + Ipamorelin antes que HGH recombinante. La razón es simple: respetas la pulsatilidad endógena. La fisiología pulsátil es lo que tu cuerpo entiende — y eso es lo que protege el feedback negativo."</p>
+    <p class="testimonial-a">— Peter Attia, MD · libro "Outlive" · The Drive podcast ep. #224 con Dr. Pamela Conboy, 2023</p>
+  </div>
+
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Ionescu M & Frohman LA · 2006 · <i>J Clin Endocrinol Metab</i> · "Pulsatile secretion of growth hormone (GH) persists during continuous stimulation by CJC-1295".<br>
+    Raun K et al. 1998 · <i>European Journal of Endocrinology</i> · "Ipamorelin, the first selective growth hormone secretagogue".<br>
+    Huberman A · Stanford · <i>Huberman Lab</i> ep. #100 · "Peptides for performance, recovery & longevity", 2023.
+  </div>
+  <div class="page-disclaimer">Producto de uso exclusivo para investigación · Research-grade · For research use only · No aprobado COFEPRIS · No medicamento · No apto para consumo humano · El uso es responsabilidad exclusiva del comprador.</div>
+</div>
+
+<!-- ═══════════════ PAGE 5 · TESAMORELIN ═══════════════ -->
+<div class="page product-page">
+  <div class="page-num">05 · PRODUCTO 02</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">GHRH ANALOG · 10MG · PRIME</div>
+      <h1 class="prod-name">Tesamorelin<em>El francotirador de la grasa visceral</em></h1>
+      <p class="prod-tagline">"El único secretagogo GH con aprobación FDA (Egrifta® · EMD Serono). Selectividad documentada sobre grasa visceral profunda — la que rodea tus órganos."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/tesamorelin-studio.png" alt="Tesamorelin"></div>
+  </div>
+
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Abdomen rebelde post-40</div>
+      <p class="benefit-p">Esa "llanta" abdominal que aparece a los 40 aunque tu peso sea normal. La grasa visceral profunda (la que rodea hígado, páncreas, intestinos) que NO mueves con dieta o cardio. Tesamorelin actúa específicamente sobre ese depósito — no la grasa subcutánea estética. Estudios documentan reducción visceral 15-20% en 26 semanas.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Mejora marcadores metabólicos</div>
+      <p class="benefit-p">La grasa visceral no es estética — es <b>endocrinológicamente activa</b>. Produce IL-6 y TNF-α (inflamación crónica), reduce sensibilidad a insulina, predice riesgo cardiovascular. Eliminarla mejora HbA1c, perfil lipídico y CRP simultáneamente. Body recomposition real, no superficial.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Único secretagogo FDA-approved</div>
+      <p class="benefit-p">Aprobado por FDA en 2010 como <b>Egrifta®</b> (EMD Serono) para lipodistrofia HIV. Aprobación significa: ensayos clínicos fase 3 randomizados controlados con placebo, perfil de seguridad documentado en miles de pacientes. Ningún otro secretagogo GH tiene este nivel de validación regulatoria.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Cognitive support documentado</div>
+      <p class="benefit-p">Bonus inesperado: Falutz et al. 2019 documentaron mejora cognitiva en pacientes 50+ con Tesamorelin (memoria verbal, función ejecutiva). Mecanismo probable: aumento de IGF-1 cerebral. Es el "side effect" que muchos buscan deliberadamente.</p>
+    </div>
+  </div>
+
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">1-2mg SC<br>diario o 5×/semana</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Subcutánea<br>matutina (no noche)</div></div>
+    <div class="science-cell"><div class="l">Duración</div><div class="v">26 semanas<br>protocolo estándar</div></div>
+  </div>
+
+  <div class="testimonial">
+    <p class="testimonial-q">"Tesamorelin es el único secretagogo GH que tiene aprobación FDA. Eso es importante. La selectividad sobre grasa visceral está documentada en ensayos randomizados. No es speculation — es data."</p>
+    <p class="testimonial-a">— Dr. Steven Grinspoon · Harvard Medical School · Director MGH Metabolism Unit · investigador principal Tesamorelin trials</p>
+  </div>
+
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Falutz J et al. 2010 · <i>JAMA</i> · "Effects of tesamorelin (TH9507), a growth hormone-releasing factor analog" · 26-week phase 3 RCT.<br>
+    Falutz J et al. 2019 · <i>Clin Infect Dis</i> · "Long-term safety and effects of tesamorelin on cognitive performance in HIV patients".<br>
+    Stanley TL et al. 2014 · <i>JCEM</i> · Tesamorelin reduce grasa hepática en NAFLD · Massachusetts General Hospital.
+  </div>
+  <div class="page-disclaimer">Producto de uso exclusivo para investigación · Research-grade · For research use only · No aprobado COFEPRIS · No medicamento · No apto para consumo humano · El uso es responsabilidad exclusiva del comprador.</div>
+</div>
+
+<!-- ═══════════════ PAGE 6 · SEMAX ═══════════════ -->
+<div class="page product-page">
+  <div class="page-num">06 · PRODUCTO 03</div>
+  <div class="prod-header">
+    <div>
+      <div class="prod-meta">HEPTAPÉPTIDO NOOTRÓPICO · 10MG · PRIME</div>
+      <h1 class="prod-name">Semax<em>Foco sin la molestia del estimulante</em></h1>
+      <p class="prod-tagline">"Heptapéptido nootrópico ruso. Aprobado en Rusia desde 1982 sin reportes de tolerancia. Concentración sin quemar."</p>
+    </div>
+    <div class="prod-img"><img src="../img/products-v2/semax-studio.png" alt="Semax"></div>
+  </div>
+
+  <div class="prod-body">
+    <div class="benefit-block">
+      <span class="benefit-tag">PARA QUÉ AYUDA</span>
+      <div class="benefit-h">Foco ejecutivo de 8 horas</div>
+      <p class="benefit-p">Reuniones consecutivas. Decisiones complejas. Trabajo cognitivo profundo de 8-10 horas. Todos sabemos qué se siente perder foco a las 3pm. Semax sostiene atención sin la subida-caída de cafeína o nootrópicos sintéticos. No te hace sentir "químicamente alterado" — te hace sentir como tu mejor versión sostenida.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">CÓMO MEJORA</span>
+      <div class="benefit-h">Aumenta BDNF (neuroplasticidad)</div>
+      <p class="benefit-p">Semax incrementa <b>BDNF (Brain-Derived Neurotrophic Factor)</b> — la "comida" que tus neuronas necesitan para crecer y conectarse. Más BDNF = mejor consolidación de memoria, mayor neuroplasticidad, recuperación cognitiva más rápida. Mismo target que ejercicio aerobio, pero por vía intranasal directa.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">POR QUÉ FUNCIONA</span>
+      <div class="benefit-h">Fragmento sintético del ACTH</div>
+      <p class="benefit-p">Semax es heptapéptido derivado de ACTH (4-10) — una hormona endógena humana. Por eso no tiene perfil de "químico extraño" para tu cerebro. Cruza barrera hematoencefálica vía intranasal, llega a hipocampo y corteza prefrontal en minutos. Vida media 30-60 min, efecto cognitivo 4-6 horas.</p>
+    </div>
+    <div class="benefit-block">
+      <span class="benefit-tag">VENTAJA EXTRA</span>
+      <div class="benefit-h">Sin tolerancia documentada</div>
+      <p class="benefit-p">Aprobado en Rusia desde 1982 para stroke recovery, déficit atencional y desórdenes ansiosos. <b>40+ años de uso clínico ruso</b> y la literatura no muestra desarrollo de tolerancia ni síndrome de abstinencia. Por eso es el nootrópico de elección de quienes tienen 5 días de carga laboral por semana, todos los meses del año.</p>
+    </div>
+  </div>
+
+  <div class="science-row">
+    <div class="science-cell"><div class="l">Dosis Research</div><div class="v">200-1000mcg<br>spray nasal</div></div>
+    <div class="science-cell"><div class="l">Vía</div><div class="v">Intranasal<br>matutina o pre-trabajo</div></div>
+    <div class="science-cell"><div class="l">Duración</div><div class="v">2-4 semanas on<br>1 semana off</div></div>
+  </div>
+
+  <div class="testimonial">
+    <p class="testimonial-q">"Semax es uno de los nootrópicos peptídicos con mejor perfil de seguridad documentado, especialmente en uso prolongado. Su mecanismo BDNF lo distingue de cualquier estimulante clásico."</p>
+    <p class="testimonial-a">— Andrew Huberman, PhD · Stanford School of Medicine · Huberman Lab ep. #115 "Tools to enhance cognitive performance", 2023</p>
+  </div>
+
+  <div class="sources">
+    <b>FUENTES CITABLES</b>
+    Ashmarin IP & Kamensky AA · Lomonosov Moscow State University · síntesis original 1982.<br>
+    Eremin KO et al. 2005 · <i>Neurochemical Research</i> · "Semax neuroprotective effects in stroke recovery" · estudios clínicos rusos consolidados.<br>
+    Levitskaya NG et al. 2008 · <i>Neuroscience and Behavioral Physiology</i> · BDNF upregulation y consolidación de memoria con Semax.
+  </div>
+  <div class="page-disclaimer">Producto de uso exclusivo para investigación · Research-grade · For research use only · No aprobado COFEPRIS · No medicamento · No apto para consumo humano · El uso es responsabilidad exclusiva del comprador.</div>
+</div>
+
+<!-- ═══════════════ PAGE 7 · STACK + PRECIOS ═══════════════ -->
+<div class="page price-page">
+  <div class="page-num">07 · STACK + PRECIOS</div>
+  <div class="eyebrow">PROTOCOLO EJECUTIVO 12 SEMANAS</div>
+  <h2>Prime Stack:<br><em>GH endógeno + foco diurno.</em></h2>
+  <p class="lede">12 semanas. Tres péptidos cubriendo los tres frentes del declive ejecutivo post-40: CJC+Ipa restaura pulsos GH nocturnos (composición corporal + sueño profundo), Tesamorelin ataca grasa visceral profunda (body recomp + marcadores metabólicos), Semax sostiene foco cognitivo diurno (8-10 horas sin caída). El protocolo que el C-suite biohacker integra cuando el rendimiento ya no es opcional.</p>
+
+  <div class="pricing-table">
+    <div class="pt-row head">
+      <div>Producto</div>
+      <div style="text-align:right">Precio retail</div>
+      <div style="text-align:right">Por mg</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-name">CJC + Ipamorelin 10mg<small>GH stack · sinergia secretagogo nocturno</small></div>
+      <div class="pt-price">$5,499</div>
+      <div class="pt-tag">$550/mg</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-name">Tesamorelin 10mg<small>GHRH análogo · FDA Egrifta® · grasa visceral</small></div>
+      <div class="pt-price">$7,499</div>
+      <div class="pt-tag">$750/mg</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-name">Semax 10mg<small>Heptapéptido nootrópico · BDNF · foco diurno</small></div>
+      <div class="pt-price">$2,899</div>
+      <div class="pt-tag">$290/mg</div>
+    </div>
+    <div class="pt-row" style="background:#FAFAFA">
+      <div class="pt-name">⚡ Prime GH Stack<small>CJC+Ipa + Tesamorelin · 12 sem · agua bact + jeringas + protocolo</small></div>
+      <div class="pt-price">$11,999</div>
+      <div class="pt-tag">ahorras $999</div>
+    </div>
+    <div class="pt-row" style="background:#FAFAFA">
+      <div class="pt-name">👑 Prime Executive Stack<small>CJC+Ipa + Tesa + Semax + protocolo 1-on-1 · 12 sem</small></div>
+      <div class="pt-price">$14,499</div>
+      <div class="pt-tag">ahorras $1,398</div>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <h3>¿Tu rendimiento dejó de<br><em>ser una variable controlable?</em></h3>
+    <p>Habla con un specialist PEPTIQ. Te ayudamos a hacer el panel hormonal correcto (IGF-1, IGFBP-3, glucosa) antes de empezar — para medir resultados reales pre/post. Sin costo · respuesta WhatsApp en menos de 10 min.</p>
+    <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20info%20Prime%20Stack" class="cta-btn">Iniciar protocolo →</a>
+  </div>
+  <div class="page-disclaimer">Producto de uso exclusivo para investigación · Research-grade · For research use only · No aprobado COFEPRIS · No medicamento · No apto para consumo humano · El uso es responsabilidad exclusiva del comprador.</div>
+</div>
+
+<!-- ═══════════════ PAGE 8 · CÓMO SE USA ═══════════════ -->
+<div class="page how-page">
+  <div class="page-num">08 · CÓMO SE USA</div>
+  <div class="eyebrow">PROTOCOLO EJECUTIVO MEDIBLE</div>
+  <h2>Cuatro pasos.<br><em>IGF-1 pre y post 12 semanas.</em></h2>
+  <p class="lede">Esto es performance ejecutivo, no suplementación casual. El protocolo se mide con biomarcadores: IGF-1 sérico, IGFBP-3, glucosa en ayunas, HbA1c, lípidos, proteína C-reactiva. Antes y después. La diferencia entre Prime y un nootrópico de farmacia es que aquí los números hablan — no la sensación subjetiva.</p>
+
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-num">01</div>
+      <div class="how-h">Panel hormonal basal</div>
+      <p class="how-p">Tu specialist te conecta con lab certificado MX. Panel: IGF-1, IGFBP-3, glucosa ayunas, HbA1c, lípidos, hsCRP. Foto endocrinológica inicial.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">02</div>
+      <div class="how-h">Sem 1-4 ignición nocturna</div>
+      <p class="how-p">CJC+Ipa SC 30 min antes de dormir, 5 noches/semana. Tesa SC matutina. Semax intranasal pre-trabajo. Sueño profundo regresa primero.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">03</div>
+      <div class="how-h">Sem 5-12 consolidación</div>
+      <p class="how-p">Continuidad protocolo. Composición corporal cambia mes 2. Marcadores metabólicos mejoran mes 3. Foco cognitivo sostenido todo el ciclo.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">04</div>
+      <div class="how-h">Sem 12 re-test panel</div>
+      <p class="how-p">Mismo lab, mismos biomarcadores. IGF-1 esperado +50-100% baseline. Si no cambió, revisamos protocolo gratis.</p>
+    </div>
+  </div>
+
+  <div class="warning">
+    <b>⚠️ La verdad sobre los secretagogos GH</b>
+    <p>Si tu IGF-1 ya está alto (>250 ng/mL), no necesitas estos péptidos — los necesitas <b>menos</b>. Si tienes prediabetes (HbA1c >5.7), CJC+Ipa puede empeorar resistencia a insulina; primero arregla metabolismo. Si duermes 5 horas y comes mal, ningún secretagogo va a compensar — los pulsos GH dependen de sueño profundo y déficit calórico nocturno. <b>Los péptidos son el último 20%. El primer 80% es sueño + entrenamiento + nutrición. No saltes el orden.</b></p>
+  </div>
+  <div class="page-disclaimer">Producto de uso exclusivo para investigación · Research-grade · For research use only · No aprobado COFEPRIS · No medicamento · No apto para consumo humano · El uso es responsabilidad exclusiva del comprador.</div>
+</div>
+
+<!-- ═══════════════ PAGE 9 · BACK COVER ═══════════════ -->
+<div class="page back">
+  <h1 class="back-h">El estado en que<br><em>todo se alinea otra vez.</em></h1>
+  <p class="back-p">Tu pituitaria, tu mitocondria, tu corteza prefrontal. Todo lo que tenías a los 25 sigue ahí — solo dejó de oír. PEPTIQ devuelve la señal.</p>
+  <div class="back-contact">
+    <div class="bc-cell"><div class="l">WhatsApp</div><div class="v">+52 444 577 0445</div></div>
+    <div class="bc-cell"><div class="l">Email</div><div class="v">hola@peptiqmx.com</div></div>
+    <div class="bc-cell"><div class="l">Web</div><div class="v">peptiqmx.com</div></div>
+  </div>
+  <div class="page-disclaimer">PEPTIQ MX · TDI Marketing SA de CV · México · Catálogo Prime · Edición abril 2026 · Fuentes: Ionescu & Frohman 2006 · Raun 1998 · Falutz 2010 (JAMA) · Stanley 2014 (JCEM) · Ashmarin & Kamensky 1982 · Levitskaya 2008 · Andrew Huberman (Stanford, Huberman Lab #100/#115) · Peter Attia (Outlive 2023) · Steven Grinspoon (Harvard MGH) · Janoshik Analytical Lab. ⚠️ Producto de uso exclusivo para investigación · Research-grade · No aprobados por COFEPRIS · No medicamentos · No para consumo humano · Venta legal en México como productos de investigación científica · El uso es responsabilidad exclusiva del comprador.</div>
+</div>
+
+</body>
+</html>

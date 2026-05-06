@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <filter id="neon-gold" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a0805"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <circle cx="540" cy="540" r="430" fill="none" stroke="#E5C981" stroke-width="5" filter="url(#neon-gold)" opacity="0.9"/>
+
+  <!-- 3 vials arranged in triangle, gold neon -->
+  <g filter="url(#neon-gold)" stroke="#f0e4c8" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Back left vial -->
+    <g transform="translate(-110 -20)">
+      <rect x="490" y="370" width="100" height="32" rx="6"/>
+      <path d="M 490 402 L 490 720 Q 490 738 508 738 L 572 738 Q 590 738 590 720 L 590 402 Z"/>
+      <line x1="498" y1="620" x2="582" y2="620" stroke="#E5C981" stroke-width="9"/>
+    </g>
+    <!-- Back right vial -->
+    <g transform="translate(110 -20)">
+      <rect x="490" y="370" width="100" height="32" rx="6"/>
+      <path d="M 490 402 L 490 720 Q 490 738 508 738 L 572 738 Q 590 738 590 720 L 590 402 Z"/>
+      <line x1="498" y1="620" x2="582" y2="620" stroke="#E5C981" stroke-width="9"/>
+    </g>
+    <!-- Front center vial (slightly larger) -->
+    <g transform="translate(0 40)">
+      <rect x="475" y="360" width="130" height="38" rx="7"/>
+      <path d="M 475 398 L 475 735 Q 475 755 495 755 L 585 755 Q 605 755 605 735 L 605 398 Z"/>
+      <line x1="485" y1="620" x2="595" y2="620" stroke="#E5C981" stroke-width="11"/>
+    </g>
+  </g>
+</svg>

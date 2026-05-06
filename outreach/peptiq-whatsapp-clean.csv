@@ -1,0 +1,620 @@
+lead_id,whatsapp,name_full,first_name,category,city
+2,5212212210466,"Dra. Susuri Contla, Ginecóloga en Puebla",Dra. Susuri Contla,peptidos,Puebla
+6,5212222405453,"Dr. René Augusto Hernández Morales, Ginecólogo",Dr. René Augusto,peptidos,Puebla
+10,5212224347405,Dr. Fernando García Vargas,Dr. Fernando García Vargas,peptidos,Puebla
+12,5212222907619,"Dr. Jorge García Vargas, Ginecólogo",Dr. Jorge García Vargas,peptidos,Puebla
+14,5215541647819,"Carlos Héctor Bustos morales, Ginecólogo",Carlos Héctor Bustos morales,peptidos,Puebla
+15,5214422249788,Medicina estética Dra. Carla Jaber,Medicina estética Dra.,estetica,Querétaro
+25,5214422247774,Medicina Funcional Dra Stephanie Benítez Riebeling,Medicina Funcional Dra,nutriologos,Querétaro
+35,5214422756531,Clínica Nutrición y Metabolismo - Nutriólogo Querétaro,Clínica Nutrición y,nutriologos,Querétaro
+43,5214421667101,"Lic. Mayra Ibarra Cortés, Nutriólogo clínico",Lic. Mayra Ibarra Cortés,nutriologos,Querétaro
+47,5214423356071,Nutriologa Paulina Novelo Soto,Nutriologa Paulina Novelo Soto,nutriologos,Querétaro
+30,5219993604162,Alteal Médica,Alteal Médica,estetica,Mérida
+46,5219999957433,skin & health center Clínica de Medicina Estética,skin & health,estetica,Mérida
+49,5214429396795,Nutriólogo Clínico Isaac P. Contreras,Nutriólogo Clínico Isaac,nutriologos,Querétaro
+51,5214427212713,"Mtra. Veronica Olivares García, Nutricionista",Mtra. Veronica Olivares García,nutriologos,Querétaro
+53,5214422042289,Clínica de Obesidad Dra. Ruelas,Clínica de Obesidad,peso,Querétaro
+55,5214428726968,Life Centro de Obesidad y Metabolismo - Cirugía Bariátrica,Life Centro de,peso,Querétaro
+59,5214425023091,Bariatría Clínica & Nutrición Funcional en Querétaro,Bariatría Clínica &,peso,Querétaro
+63,5214422168969,Dr. Marcos Ponce de León Espíndola - Gastrocirujano,Dr. Marcos Ponce,peso,Querétaro
+76,5215632790127,"Dr. Fernando Navarro Hernández, Cirujano Bariatra",Dr. Fernando Navarro Hernández,peso,Querétaro
+78,5214422402619,ANTIOBESIDAD MX,ANTIOBESIDAD MX,peso,Querétaro
+73,5219998293998,Nutrióloga Elena Badillo NutriABS,Nutrióloga Elena Badillo,nutriologos,Mérida
+79,5219992160586,V-healthy - Nutriólogo en Mérida,V-healthy - Nutriólogo,nutriologos,Mérida
+81,5219992611598,"LN. Kenia Farías, Nutrióloga en Mérida",LN. Kenia Farías,nutriologos,Mérida
+82,5219901014345,Nutrióloga Lorena Weber,Nutrióloga Lorena Weber,nutriologos,Mérida
+91,5219999911444,"Dra. Vimukti Carrillo, Cirugía Bariátrica en Merida",Dra. Vimukti Carrillo,peso,Mérida
+83,5214424825438,Dra. Ileana Susana Camba Gutiérrez Cirujana Bariátrica Certificada,Dra. Ileana Susana,peso,Querétaro
+85,5214422120202,"Lic. Patricia Reyes Peñaloza, Nutriólogo clínico",Lic. Patricia Reyes Peñaloza,peso,Querétaro
+86,5214425169008,Belleza Organica Spa,Belleza Organica Spa,spa_medico,Querétaro
+88,5214423530865,Silhouette Spa by Xóchitl,Silhouette Spa by Xóchitl,spa_medico,Querétaro
+108,5214422695630,Model Art Spa Álamos,Model Art Spa Álamos,spa_medico,Querétaro
+103,5219992360153,Dr. Omar Quiroz,Dr. Omar Quiroz,peso,Mérida
+105,5219992110321,Genumet,Genumet,peso,Mérida
+109,5219991634749,"Dr. Israel Augusto González González, Cirugía Laparoscópica Avanzada-Cirugía Bariátrica",Dr. Israel Augusto,peso,Mérida
+115,5219999204040,CEM Centro de Especialidades Médicas del Sureste,CEM Centro de,peso,Mérida
+117,5219992516042,Nutrióloga Leddy Gutiérrez Jáber,Nutrióloga Leddy Gutiérrez,peso,Mérida
+121,99952005767962,"Dr. Alejandro Everardo Gasque, Cirujano General",Dr. Alejandro Everardo Gasque,peso,Mérida
+126,5215566111390,Siluets & Prodiet Altabrisa Mérida,Siluets & Prodiet,spa_medico,Mérida
+120,5214461179347,"Dra. Karla Samantha Torres González, Dermatólogo",Dra. Karla Samantha,dermatologia,Querétaro
+122,5214426702749,"Dra. Liliana Zamora Perez, Dermatólogo",Dra. Liliana Zamora Perez,dermatologia,Querétaro
+140,5214421816113,Consultorio Dra María Eugenia Carvajal,Consultorio Dra María,dermatologia,Querétaro
+142,5214428799343,Miestetic Querétaro.,Miestetic Querétaro.,dermatologia,Querétaro
+144,5214461695979,Dra. Mary Ann Weaver Velasco,Dra. Mary Ann Weaver Velasco,dermatologia,Querétaro
+131,5219991428413,Clínica y Spa Le Réve,Clínica y Spa Le Réve,spa_medico,Mérida
+150,5219994428616,MAŌ SPA,MAŌ SPA,spa_medico,Mérida
+152,5219996491665,"Dra. Fredes Guadalupe Amaro Méndez, Dermatóloga en Mérida",Dra. Fredes Guadalupe,dermatologia,Mérida
+156,5219991570488,Dra. María Fernanda Santos Ortiz,Dra. María Fernanda,dermatologia,Mérida
+158,5219999284124,Centro Dermatológico DRVC Dermato & Cosmética,Centro Dermatológico DRVC,dermatologia,Mérida
+160,5219991483190,"Dra. Aline E. Baeza Echeverría, Dermatólogo",Dra. Aline E. Baeza Echeverría,dermatologia,Mérida
+148,5214429396049,"Dr. Jorge Alvarez Orihuela, Dermatólogo",Dr. Jorge Alvarez Orihuela,dermatologia,Querétaro
+155,5214422413410,Clínica Biohormona Queretaro: Hormonas bioidénticas - Menopausia - Andropausia,Clínica Biohormona Queretaro:,peptidos,Querétaro
+157,5215624852811,Centro Engel Querétaro,Centro Engel Querétaro,peptidos,Querétaro
+159,5214422154624,Médica Fértil,Médica Fértil,peptidos,Querétaro
+166,5212222116502,EVOLUTION CLÍNICA DE MEDICINA REGENERATIVA,EVOLUTION CLÍNICA DE,anti_aging,Puebla
+170,5212213494267,Medicina Estética Puebla. Dra. Alicia Anaid Vera Cornejo,Medicina Estética Puebla.,anti_aging,Puebla
+174,5212212078722,"Dra. Dafne Arellano Montalvo, Dermatología Estética Láser",Dra. Dafne Arellano Montalvo,anti_aging,Puebla
+177,5219991263300,Dermatólogos en Mérida Dra. Rosa Isabel Hernández Martínez,Dermatólogos en Mérida,dermatologia,Mérida
+184,5218181876573,Dr. Héctor de la Garza Hormonas Bioidénticas Mérida,Dr. Héctor de,peptidos,Mérida
+186,5219991435287,Dr. Emmanuel Lizama Zaldívar / Endocrinólogo,Dr. Emmanuel Lizama,peptidos,Mérida
+188,5219994549909,DRA. ESTELA GARCÍA PACHECO,DRA. ESTELA GARCÍA PACHECO,peptidos,Mérida
+190,5219996007662,"Dra. María José Chiriboga Zambrano, Ginecólogo",Dra. María José,peptidos,Mérida
+194,5219999801983,"Dr. Félix José Molina Aguiar, Ginecólogo",Dr. Félix José Molina Aguiar,peptidos,Mérida
+196,5219999202989,"Dr. Sergio Ricardo Vargas Diaz Ginecólogo Obstetra Militar, Certificado Consejo Mexicano de Ginecología y Obstetricia AC",Dr. Sergio Ricardo,peptidos,Mérida
+182,5212224378133,"OZONE&HEALTH , CLINICA DE HERIDAS Y PIE DIABETICO",OZONE&HEALTH,anti_aging,Puebla
+191,5212214127244,Idílico,Idílico,estetica,Puebla
+193,15557592445,BodyLink México - Clínica Estética,BodyLink México -,estetica,Puebla
+197,5212211204116,BARIDERM | Dr. Diego Arturo Vázquez Herrera | Clínica de medicina estética y metabolismo,BARIDERM | Dr.,estetica,Puebla
+232,5219985399790,Armonización Facial & Laser CO2 Fraccionado Cancún,Armonización Facial &,estetica,Cancún
+198,5219991307368,Ginecólogo Dr Guido Navedo Faro del Mayab,Ginecólogo Dr Guido,peptidos,Mérida
+201,5219991849103,"Dra. Araceli M Chávez Pérez, Ginecólogo",Dra. Araceli M Chávez Pérez,peptidos,Mérida
+203,5219986160110,Stem Cells | IV Therapy | Regeneris Therapy,Stem Cells |,anti_aging,Cancún
+205,5213025513530,REJUVSTEM,REJUVSTEM,anti_aging,Cancún
+207,5219984058824,"Vive Medical Spa / Criolipolisis, Lipoenzimas, Fillers, Botox",Vive Medical Spa,anti_aging,Cancún
+209,5219982467466,CKM Stem Cells,CKM Stem Cells,anti_aging,Cancún
+211,5218662909722,World Stem Cells Clinic,World Stem Cells Clinic,anti_aging,Cancún
+215,5219984053739,Olympia Medicina Integral del Deporte,Olympia Medicina Integral,anti_aging,Cancún
+217,5219982317304,"Adore MediSpa | Botox, Células Madre y Medicina Estética Regenerativa en Cancún",Adore MediSpa | Botox,anti_aging,Cancún
+218,5219988915200,Hospital Galenia,Hospital Galenia,anti_aging,Cancún
+226,5219988841305,Éternité Cancún medicina estética y anti-age,Éternité Cancún medicina,estetica,Cancún
+230,5219981539938,FACEUP CLINICS,FACEUP CLINICS,estetica,Cancún
+221,5213327985659,Nutrióloga deportiva Lezli Rodríguez / Consultorio de nutrición,Nutrióloga deportiva Lezli,nutriologos,Puebla
+227,5212221514409,"Mtra. Elisa Morales Montes, Nutricionista",Mtra. Elisa Morales Montes,nutriologos,Puebla
+233,5212229572892,"Lic. Cindy Alejandra Romano Munive, Nutriólogo clínico",Lic. Cindy Alejandra,nutriologos,Puebla
+235,5215566964091,Nutrinet by Marine Dominguez,Nutrinet by Marine Dominguez,nutriologos,Puebla
+238,5212226760000,Nutrióloga Clínica Andrea Cabañas,Nutrióloga Clínica Andrea,nutriologos,Puebla
+243,5212214122458,nutriADN Puebla,nutriADN Puebla,nutriologos,Puebla
+247,5212224376679,Nutryvive,Nutryvive,nutriologos,Puebla
+248,5219984057670,ELITE AESTHETICS | Medicina Estética en Cancún,ELITE AESTHETICS |,estetica,Cancún
+254,5219981597940,VD Medicina Estética - Dr. Víctor Hugo Dávila Franco,VD Medicina Estética,estetica,Cancún
+256,5219983305860,Nutrióloga Clínica Integral Cancún,Nutrióloga Clínica Integral,nutriologos,Cancún
+260,5219844706390,Lic. Daniel Camelo | Nutriólogo Clínico Especialista,Lic. Daniel Camelo,nutriologos,Cancún
+263,5219993545315,"Lic. Carlos Andrés Castillo Mezquita, Nutriólogo clínico",Lic. Carlos Andrés,nutriologos,Cancún
+267,5214427270271,Nut. Iván Gerardo Benítez Ruíz,Nut. Iván Gerardo Benítez Ruíz,nutriologos,Cancún
+266,5212222431135,NUTRIMET VOLCANES,NUTRIMET VOLCANES,peso,Puebla
+271,5212213005818,Cirujano Bariatra – Doctores Especialistas,Cirujano Bariatra –,peso,Puebla
+273,5212221843622,"Dr. Omar Espinosa. Cirujano General, Cirujano Bariátra Certificado En Puebla",Dr. Omar Espinosa.,peso,Puebla
+274,5212228624238,"Dra. Iliana González Pezzat, Cirujano general",Dra. Iliana González Pezzat,peso,Puebla
+276,5212212702226,Medican Bariatrics,Medican Bariatrics,peso,Puebla
+278,5212225905658,"Dra. Nayeli Barrientos de Santiago, Nutriólogo clínico",Dra. Nayeli Barrientos,peso,Puebla
+280,5212222643098,Nutrimet San Manuel,Nutrimet San Manuel,peso,Puebla
+285,5219982062136,Newbe Slim Cancún by Dr Vicente López Kavanagh,Newbe Slim Cancún,peso,Cancún
+286,5212222251652,José Luis Rodríguez Villegas Nutricionista Puebla,José Luis Rodríguez,peso,Puebla
+288,5212222419822,"Dra Andrea Torres Jiménez, Internista y Bariatra Clínico",Dra Andrea Torres Jiménez,peso,Puebla
+295,5219982677404,Antiobesity Center,Antiobesity Center,peso,Cancún
+297,5215540840802,"Dr. David Aguero Linares, Médico general",Dr. David Aguero Linares,peso,Cancún
+299,5219983151525,"Dr. Vicente López Kavanagh, Endoscopista",Dr. Vicente López Kavanagh,peso,Cancún
+309,5219981310030,Ultrasvelta Spa Post Quirúrgico,Ultrasvelta Spa Post,spa_medico,Cancún
+325,5219982931133,ETERNAL,ETERNAL,spa_medico,Cancún
+290,5212221203034,Dr. Eduardo Roberto Hernández Escobar Diabetólogo,Dr. Eduardo Roberto,peso,Puebla
+300,5212216542246,Satori Puebla,Satori Puebla,spa_medico,Puebla
+308,5212221285311,ZENDIA Beauty Care & Spa,ZENDIA Beauty Care & Spa,spa_medico,Puebla
+314,5212211791935,TARA SPA PUEBLA,TARA SPA PUEBLA,spa_medico,Puebla
+322,5212226170550,Anahata Spa & Botica,Anahata Spa & Botica,spa_medico,Puebla
+327,5219989051447,Dra. Amalia Videla. Dermatóloga Cancún,Dra. Amalia Videla.,dermatologia,Cancún
+324,5212229209400,"Dra. Cynthia Andrea Mireles Alvarez, Dermatólogo",Dra. Cynthia Andrea,dermatologia,Puebla
+332,5212223038356,Dra. Diana Isabel Morán Maese,Dra. Diana Isabel Morán Maese,dermatologia,Puebla
+342,5212211204006,Miestetic Puebla,Miestetic Puebla,dermatologia,Puebla
+348,5212213893636,"Dra. Guadalupe Leticia Guerrero Ariza, Dermatólogo pediátrico",Dra. Guadalupe Leticia,dermatologia,Puebla
+356,5215541653261,"Dra. Bárbara Gutiérrez Camacho, Dermatólogo",Dra. Bárbara Gutiérrez Camacho,dermatologia,Puebla
+329,5219981903086,Dra. Liliana Echeverría,Dra. Liliana Echeverría,dermatologia,Cancún
+331,5215510760504,Dra. Julia Soruchan,Dra. Julia Soruchan,dermatologia,Cancún
+339,5219983384209,Doctora Idalia Aguilar Domínguez,Doctora Idalia Aguilar,dermatologia,Cancún
+349,5219984767301,"BeGlow (Tratamientos para acné, eliminación de estrías, melasma y control de peso)",BeGlow (Tratamientos para acné,dermatologia,Cancún
+351,5219983871394,"Dra. Loreley Gutiérrez del Río, Dermatólogo",Dra. Loreley Gutiérrez del Río,dermatologia,Cancún
+360,5212201717285,"Dr. Arturo Simont Zeron, Ginecólogo",Dr. Arturo Simont Zeron,peptidos,Puebla
+362,5212225772730,CÍCLICA,CÍCLICA,peptidos,Puebla
+543,5214791412861,Bea | Clínica de medicina estética ambulatoria,Bea | Clínica,spa_medico,León
+555,5214771031919,"Dra. Adriana Guadalupe Peña Romero, Dermatólogo",Dra. Adriana Guadalupe,dermatologia,León
+559,5214778107404,Clínica Dermatologica | uDerma León,Clínica Dermatologica |,dermatologia,León
+563,5214778699801,Centro Dermatológico Dermarik by Dra. Maricarmen Rojas Mena,Centro Dermatológico Dermarik,dermatologia,León
+565,5214776747098,"Dra. María José Velázquez González, Dermatólogo",Dra. María José,dermatologia,León
+364,5219984132581,"Dra. Julissa Rosado Verboonen, Ginecólogo",Dra. Julissa Rosado Verboonen,peptidos,Cancún
+366,5219984411864,Ginecóloga en Cancún Dra. Ana Cristina Mota,Ginecóloga en Cancún,peptidos,Cancún
+369,5219988921618,"Dr. Luis Alfonso Castillo Zapata, Ginecólogo",Dr. Luis Alfonso,peptidos,Cancún
+374,5216632156973,Células Madre en Tijuana | Stem Cells Tijuana | Rilassare,Células Madre en,anti_aging,Tijuana
+375,5216642317220,NOVASTEM,NOVASTEM,anti_aging,Tijuana
+377,5216631991122,Innova Medical Health Center ( medicina regenerativa/sueros vitaminados),Innova Medical Health,anti_aging,Tijuana
+378,5216641374986,Carabella Clinic,Carabella Clinic,anti_aging,Tijuana
+384,5213322092661,Medicina regenerativa - Doctores Especialistas,Medicina regenerativa -,anti_aging,Tijuana
+386,5216197515829,"Horizon Pain, Metabolic and stem cell center",Horizon Pain,anti_aging,Tijuana
+387,5218005606733,Russald Medical,Russald Medical,anti_aging,Tijuana
+392,5216645461572,Dra Karen Sainz,Dra Karen Sainz,estetica,Tijuana
+394,5216631588388,AMUNA Medical Spa,AMUNA Medical Spa,estetica,Tijuana
+403,5216643085682,"Dra. Brenda Moreno, Médico Estético",Dra. Brenda Moreno,estetica,Tijuana
+405,5216649802091,Vive Med SPA / Botox & Fillers Tijuana,Vive Med SPA,estetica,Tijuana
+410,5216643750152,"Dra. Lorena Sáenz Pineda, Nutriólogo clínico",Dra. Lorena Sáenz Pineda,nutriologos,Tijuana
+411,5216645972925,Nutrióloga Michelle Sánchez,Nutrióloga Michelle Sánchez,nutriologos,Tijuana
+415,5216643070672,Nutriólogo Octavio Mass,Nutriólogo Octavio Mass,nutriologos,Tijuana
+416,5216645266271,Nutres,Nutres,nutriologos,Tijuana
+417,5216643687636,"Lic. Susana Velazquez Garcia, Diabetólogo",Lic. Susana Velazquez Garcia,nutriologos,Tijuana
+418,5216632077688,Dra. Nancy Verdín Medicina Estética y Regenerativa,Dra. Nancy Verdín,nutriologos,Tijuana
+419,5216646828769,Salud y Nutrición / Medico Naturista,Salud y Nutrición,nutriologos,Tijuana
+420,5216642768013,NUTRICION TIJUANA,NUTRICION TIJUANA,nutriologos,Tijuana
+422,16198640451,Dr. Rene Armenta - Cirujano Bariatra en Tijuana,Dr. Rene Armenta,peso,Tijuana
+423,5216632060824,Obesity Not 4 Me,Obesity Not 4 Me,peso,Tijuana
+425,5216645956310,Clinica de control de peso,Clinica de control de peso,peso,Tijuana
+426,5218003083607,Tijuana Bariatrics,Tijuana Bariatrics,peso,Tijuana
+427,16199020894,Dr Sergio Verboonen,Dr Sergio Verboonen,peso,Tijuana
+428,5216644286329,Nutrióloga Kenya LG,Nutrióloga Kenya LG,peso,Tijuana
+430,5216193320981,ALO Bariatrics,ALO Bariatrics,peso,Tijuana
+431,5216642111348,"Dr. Gustavo Flores Benitez, Cirujano general",Dr. Gustavo Flores Benitez,peso,Tijuana
+435,5216646510103,Dr. Romeo García | Cirugía de Vesícula y Hernias en Tijuana,Dr. Romeo García,peso,Tijuana
+439,5216197591331,CMB Centro Médico Bariátric,CMB Centro Médico Bariátric,peso,Tijuana
+440,16192924497,Dr. Edwin Guerrero,Dr. Edwin Guerrero,peso,Tijuana
+442,5216193149312,My Sanctuary Med Spa Tijuana & Beauty Center,My Sanctuary Med,spa_medico,Tijuana
+444,5216646342828,Belletza Medica Spa,Belletza Medica Spa,spa_medico,Tijuana
+447,5216642045156,SCelvite Spa – Rejuvenecimiento Facial y Corporal,SCelvite Spa –,spa_medico,Tijuana
+448,5216649007528,Pantoja Aesthetics Río,Pantoja Aesthetics Río,spa_medico,Tijuana
+449,5216643747853,D Medic Spa,D Medic Spa,spa_medico,Tijuana
+450,5216646817532,Aqua Spa Tijuana,Aqua Spa Tijuana,spa_medico,Tijuana
+454,5216648083660,"Dra. Patricia Lucatero Ramos, Dermatólogo, DERMATECH",Dra. Patricia Lucatero Ramos,dermatologia,Tijuana
+455,66498024913027,Dra. Priscila Ibarra,Dra. Priscila Ibarra,dermatologia,Tijuana
+456,5216643461127,"Dra. Virginia Susana Luna Magaña, Dermatólogo",Dra. Virginia Susana,dermatologia,Tijuana
+463,5216646858196,Dra. Gloria M. López Wence,Dra. Gloria M. López Wence,dermatologia,Tijuana
+467,5216646874848,Avanti Derma,Avanti Derma,dermatologia,Tijuana
+468,5216645002802,"Dra. Silvia Cristina Jaramillo Manzur, Dermatólogo",Dra. Silvia Cristina,dermatologia,Tijuana
+469,5216642002296,Dra Virginia Salas Vargas (Dermapiel),Dra Virginia Salas,dermatologia,Tijuana
+472,5216631230603,Dr Javier Piri Ginecólogo Especialista en Fertilidad & Cirugía de mínima invasión en Tijuana,Dr Javier Piri,peptidos,Tijuana
+474,5216197382144,VIDA Wellness & Beauty Center,VIDA Wellness & Beauty Center,peptidos,Tijuana
+499,5214779214955,MENDARA CLINICA Y SPA,MENDARA CLINICA Y SPA,estetica,León
+503,5214772726670,Nutrióloga clínica MNC Magda Ramírez,Nutrióloga clínica MNC,nutriologos,León
+505,5214773147454,"Mtra. Ana Olivia Caballero Lambert, Nutriólogo clínico",Mtra. Ana Olivia,nutriologos,León
+515,5214791017614,N + P Nutrición y Piel,N + P Nutrición y Piel,nutriologos,León
+516,5214775514226,"Lic. Jazmín Cobos López, Nutriólogo clínico",Lic. Jazmín Cobos López,nutriologos,León
+519,50233260627,Dr. Marco Antonio Madrigal Téllez - Cirujano Bariatra en León,Dr. Marco Antonio,peso,León
+522,5218180650288,Cirugía Bariátrica y Obesidad León - Dr. Roberto Alatorre Adame,Cirugía Bariátrica y,peso,León
+527,47762704506961,"Dr. Sebastián Moreno González, Cirugía Bariátrica y Endocrinología Quirúrgica",Dr. Sebastián Moreno González,peso,León
+532,5214772637282,Model Art Spa León,Model Art Spa León,spa_medico,León
+537,5214791512936,Spa Casa Lúa,Spa Casa Lúa,spa_medico,León
+568,5214776481384,"Dra. Paulina Mariel Gay Muñoz, Dermatólogo",Dra. Paulina Mariel Gay Muñoz,dermatologia,León
+570,5214773900206,"Dra. Silvia Ramírez Dovala, Dermatólogo",Dra. Silvia Ramírez Dovala,dermatologia,León
+579,5214773236795,Dermatólogo en León altaDERMA,Dermatólogo en León altaDERMA,dermatologia,León
+593,5214777790505,Médica Campestre,Médica Campestre,peptidos,León
+595,5214777188350,"Dr. Francisco Javier Anaya Torres, Ginecólogo",Dr. Francisco Javier,peptidos,León
+598,5214772111919,"Dr. José Miguel López Zepeda, Médico general",Dr. José Miguel López Zepeda,peptidos,León
+600,5214776471794,"Alejandra Alizbeth Gonzalez Carrillo, Ginecólogo",Alejandra Alizbeth Gonzalez,peptidos,León
+601,5214499168978,HOMEODERMA AESTHETIC MEDICINE,HOMEODERMA AESTHETIC MEDICINE,anti_aging,Aguascalientes
+607,5214493776215,Zelleklinik,Zelleklinik,anti_aging,Aguascalientes
+624,5214491418202,Clínica Bio-Médica,Clínica Bio-Médica,anti_aging,Aguascalientes
+626,5215533329097,Dr. Antonio Bañuelos,Dr. Antonio Bañuelos,anti_aging,Aguascalientes
+629,5214491530127,Casillas Ibarra Carlos Mauricio,Casillas Ibarra Carlos,anti_aging,Aguascalientes
+633,5215541698514,Hospital MAC Aguascalientes Norte,Hospital MAC Aguascalientes,anti_aging,Aguascalientes
+639,5214499121966,"Dra. Delta Cardona Salas, Dermatólogo",Dra. Delta Cardona Salas,anti_aging,Aguascalientes
+645,5214491981027,Clinica D'vigna,Clinica D'vigna,estetica,Aguascalientes
+672,5214491396943,"Lic. Clara Isabel Reza Velázquez, Nutriólogo clínico",Lic. Clara Isabel,nutriologos,Aguascalientes
+674,5214494146125,Lic. Lupita Fernandez - Nutrióloga en Aguascalientes,Lic. Lupita Fernandez,nutriologos,Aguascalientes
+678,5214491133139,Fernando Marzuka - Nutrición Integral,Fernando Marzuka -,nutriologos,Aguascalientes
+688,5214493490663,SCIENCE AND HEALTH,SCIENCE AND HEALTH,nutriologos,Aguascalientes
+699,5214491556920,"Dr. Ivan Alexander Luevano Contreras, Médico general",Dr. Ivan Alexander,nutriologos,Aguascalientes
+701,5214491929577,"Dr. Oscar Eduardo Villamil Pérez, Especialista en Obesidad y Delgadez",Dr. Oscar Eduardo,nutriologos,Aguascalientes
+704,5214493880935,"Mtra. Marcela De La Torre Hernández, Nutricionista",Mtra. Marcela De,nutriologos,Aguascalientes
+715,5214499169164,Dr. Hector Manuel Arteaga Montañez Nutricionista Aguascalientes,Dr. Hector Manuel,peso,Aguascalientes
+717,5214492699642,"Dr. Humberto Alonso Martínez, Cirugía General y Bariátrica",Dr. Humberto Alonso Martínez,peso,Aguascalientes
+719,5214491880746,DR. VICENTE DELGADO LOPEZ,DR. VICENTE DELGADO LOPEZ,peso,Aguascalientes
+721,5214491134742,"Lic. María Fernanda Gallegos Serna, Nutricionista",Lic. María Fernanda,peso,Aguascalientes
+723,5214499208949,"Lic. Mayra Janet Aradillas Herrera, Diabetólogo",Lic. Mayra Janet,peso,Aguascalientes
+725,5214494382222,Gastro. Especialidades Médicas Digestivas,Gastro. Especialidades Médicas,peso,Aguascalientes
+728,5214492659288,Dr. Bernardo Miguel Herrera Beiza,Dr. Bernardo Miguel,peso,Aguascalientes
+734,5213331674208,"Dr. Admín Andrés Luévano Mtz., Nutricionista",Dr. Admín Andrés Luévano Mtz.,peso,Aguascalientes
+735,5214499171770,FUNDACIÓN CARDIOVASCULAR DE AGUASCALIENTES A.C,FUNDACIÓN CARDIOVASCULAR DE,peso,Aguascalientes
+787,5214493781169,"Dr. Víctor Amaury Rangel Avilés, Dermatólogo",Dr. Víctor Amaury,dermatologia,Aguascalientes
+796,5214493616468,"Dra. Talia Lecón Rosales, Dermatólogo",Dra. Talia Lecón Rosales,dermatologia,Aguascalientes
+802,5214499160201,"Dra. Grecia Álvarez Ponce, Ginecólogo",Dra. Grecia Álvarez Ponce,peptidos,Aguascalientes
+806,5214499968320,GynFertil,GynFertil,peptidos,Aguascalientes
+807,5214492730284,Dr. Jesús Espinosa López Ginecólogo Obstetra en Aguascalientes,Dr. Jesús Espinosa,peptidos,Aguascalientes
+813,5214492887737,"Dra. Heidi Trejo Castañeda, Ginecólogo",Dra. Heidi Trejo Castañeda,peptidos,Aguascalientes
+815,5214499781676,"Dra. María del Consuelo Robles Martínez, Ginecologia y Obstetricia",Dra. María del,peptidos,Aguascalientes
+817,5214492114802,"Dra. Rocío Legaspi, Ginecóloga.",Dra. Rocío Legaspi,peptidos,Aguascalientes
+819,5214499123438,"Gyne, Felipe González Serrano, Francisco Ruiloba Madero",Gyne,peptidos,Aguascalientes
+821,5214499781126,"Dr. Guillermo Domínguez Ponce, Ginecólogo",Dr. Guillermo Domínguez Ponce,peptidos,Aguascalientes
+825,5214492443701,"María Lorena Martínez Hernández, Ginecólogo",María Lorena Martínez,peptidos,Aguascalientes
+828,5214499143760,"Dr. Juan Manuel Rubio Rubio, Ginecólogo",Dr. Juan Manuel Rubio Rubio,peptidos,Aguascalientes
+833,5214445442220,Dra. Geraldy Morales Medicina Estética,Dra. Geraldy Morales,anti_aging,San Luis Potosí
+839,5214444212160,"Dermo Organic Center, Skin Care & Medical Spa, DERMATIKO",Dermo Organic Center,anti_aging,San Luis Potosí
+845,5214441021160,Dra. Asereth Guerrero,Dra. Asereth Guerrero,anti_aging,San Luis Potosí
+874,18663803404,Obody spa,Obody spa,estetica,San Luis Potosí
+889,5214444931562,"Lic. Montserrat Torres Barrios, Nutriólogo clínico",Lic. Montserrat Torres Barrios,nutriologos,San Luis Potosí
+893,5214444982689,Nutrióloga Jeny Martínez NUIN,Nutrióloga Jeny Martínez NUIN,nutriologos,San Luis Potosí
+900,5214447157488,Alan Sierra Nutriólogo,Alan Sierra Nutriólogo,nutriologos,San Luis Potosí
+931,5214444930313,"Dra. Noemi Guadalupe Navarro Sandoval, Nutricionista",Dra. Noemi Guadalupe,peso,San Luis Potosí
+941,5214441243528,Antonio Chalita Manzur Cirujano General San Luis Potosí,Antonio Chalita Manzur,peso,San Luis Potosí
+962,5214441100050,Kara & Cuerpo Centro-Spa,Kara & Cuerpo Centro-Spa,spa_medico,San Luis Potosí
+973,5214444538336,Dra. Alexandra De Osio Cortez,Dra. Alexandra De Osio Cortez,dermatologia,San Luis Potosí
+976,5214444240746,"Dr. Ramiro Gómez Villa, Dermatólogo",Dr. Ramiro Gómez Villa,dermatologia,San Luis Potosí
+977,5214448335106,"Dra. Patricia Judith Méndez Cotero, Dermatólogo",Dra. Patricia Judith,dermatologia,San Luis Potosí
+983,5214441515259,Dra. Sara Garcia Castillo,Dra. Sara Garcia Castillo,dermatologia,San Luis Potosí
+987,5214444497140,Dra. Yolanda González Jasso,Dra. Yolanda González Jasso,dermatologia,San Luis Potosí
+993,5214446654016,Dra. Liliana Elizabeth Espinal Pérez,Dra. Liliana Elizabeth,dermatologia,San Luis Potosí
+997,5214448333316,Dermont - Dermatología integral (San Luis Potosí),Dermont - Dermatología,dermatologia,San Luis Potosí
+1002,5214443294909,"Dra. Ana María Gama Méndez, Dermatólogo",Dra. Ana María Gama Méndez,dermatologia,San Luis Potosí
+1015,5214442548655,"Dra. Marbella Flores Castañeda, Ginecólogo",Dra. Marbella Flores Castañeda,peptidos,San Luis Potosí
+1017,5214448336777,"Dra. Susele Lara Rodríguez, Ginecólogo",Dra. Susele Lara Rodríguez,peptidos,San Luis Potosí
+1021,5214441390852,"Dra. Anabella Gpe. Gálvez Bravo, Ginecólogo",Dra. Anabella Gpe.,peptidos,San Luis Potosí
+1024,5214444752312,"Dr. José de Jesús Zermeño Nava, Ginecólogo",Dr. José de Jesús Zermeño Nava,peptidos,San Luis Potosí
+1028,5214448120931,"Dr. Florencio Ibarra Reséndiz, Ginecólogo",Dr. Florencio Ibarra Reséndiz,peptidos,San Luis Potosí
+1030,5214813818985,"Dr. Javier Alejandro Cantú Cruz, Ginecólogo",Dr. Javier Alejandro,peptidos,San Luis Potosí
+1033,5218445308454,Centro Médico Eternal Saltillo,Centro Médico Eternal Saltillo,anti_aging,Saltillo
+1070,5218112286916,Skinklinik Med Spa,Skinklinik Med Spa,estetica,Saltillo
+1075,5218446778835,Casa Mac By Mac Fisio y Spa,Casa Mac By Mac Fisio y Spa,estetica,Saltillo
+1087,5218443941077,"Mtra. Lucía Cantú Vallejo, Nutriólogo clínico",Mtra. Lucía Cantú Vallejo,nutriologos,Saltillo
+1089,5218444648406,Nutrióloga Melissa Hernández - Tu Nutrióloga Bariatra,Nutrióloga Melissa Hernández,nutriologos,Saltillo
+1107,5217292916829,CIANYD Centro Integral Para la Atención Neuropatía y Dolor,CIANYD Centro Integral,anti_aging,Ciudad de México
+1108,5215543360229,Biocenter Células Madre y Terapia Celular,Biocenter Células Madre,anti_aging,Ciudad de México
+1110,5215588975213,Cenegenics Wellness,Cenegenics Wellness,anti_aging,Ciudad de México
+1112,5215516620385,Blue Sky Clinic - Blue Spa. Coyoacán,Blue Sky Clinic,anti_aging,Ciudad de México
+1113,5215579064445,Lonvida Polanco,Lonvida Polanco,anti_aging,Ciudad de México
+1114,5215511483114,Clínica Aurus Polanco,Clínica Aurus Polanco,anti_aging,Ciudad de México
+1115,5215530284783,RegenerAge Elite Clinic,RegenerAge Elite Clinic,anti_aging,Ciudad de México
+1117,5215582565991,DermoHealth,DermoHealth,anti_aging,Ciudad de México
+1122,5215527242100,BCM Clínica de medicina estética Belleza con Certeza Medica,BCM Clínica de,estetica,Ciudad de México
+1124,5215528650586,"Medicina Estética en Narvarte, CDMX - Dra. Sofía López",Medicina Estética en Narvarte,estetica,Ciudad de México
+1125,5215517760040,FACEUP CLINICS,FACEUP CLINICS,estetica,Ciudad de México
+1126,5215521430209,SM Clinica Integral/ Limpiezas faciales CDMX,SM Clinica Integral/,estetica,Ciudad de México
+1128,5215554049467,Eternal Glow CDMX Roma Norte (English speaking team) - Botox | Hilos tensores PDO | Sculptra | PDRN Salmón | Fillers & more,Eternal Glow CDMX,estetica,Ciudad de México
+1134,5215554761183,Dr. Alex Parra Medicina Estética,Dr. Alex Parra,estetica,Ciudad de México
+1136,5215532628761,Clínica Alex Alvarez Dermoestética y Nutrición,Clínica Alex Alvarez,estetica,Ciudad de México
+1138,5215526241688,Dr. Hiram Elizondo - Master en Medicina Estética y Longevidad,Dr. Hiram Elizondo,estetica,Ciudad de México
+1139,5215541939392,M&R Nutrición Funcional.,M&R Nutrición Funcional.,nutriologos,Ciudad de México
+1142,5215611091075,Nutrición Funcional Roma Nutrióloga Montse Bravo,Nutrición Funcional Roma,nutriologos,Ciudad de México
+1143,5215531448584,Lorena Frade. Nutrióloga Funcional,Lorena Frade. Nutrióloga,nutriologos,Ciudad de México
+1146,5215530789443,Yamel Nutrición Medicina Funcional Nutrióloga Lindavista,Yamel Nutrición Medicina,nutriologos,Ciudad de México
+1150,5215539709549,Nutriólogo Deportivo CDMX Fitness Coach Mx Juan Carlos Villeda,Nutriólogo Deportivo CDMX,nutriologos,Ciudad de México
+1153,5215562696664,Dr. Luigi Vilchis Medicina Funcional,Dr. Luigi Vilchis,nutriologos,Ciudad de México
+1156,5215523112909,"Lic. Angélica García Barberi, Nutriólogo clínico",Lic. Angélica García Barberi,nutriologos,Ciudad de México
+1157,5215539577770,Bioq.Elsie Maita Orta,Bioq.Elsie Maita Orta,nutriologos,Ciudad de México
+1162,5215518091775,Slim Body Center - Dr Jesús Emmanuel Rodríguez Silverio - Cirujano Bariatra en CDMX,Slim Body Center,peso,Ciudad de México
+1170,5215555465167,Centro De Bariatria,Centro De Bariatria,peso,Ciudad de México
+1178,5215591949650,"Eternal Spa, Massages, Tratamientos Corporales, Faciales, Roma y Condesa",Eternal Spa,spa_medico,Ciudad de México
+1180,5215555317632,La Belle,La Belle,spa_medico,Ciudad de México
+1182,5215519179266,Xa Spa Medic & Organic Beauty Roma Norte,Xa Spa Medic,spa_medico,Ciudad de México
+1184,5215564253139,Vitalí,Vitalí,spa_medico,Ciudad de México
+1191,5215576218028,"ME AMO. Skin, Body and Massage",ME AMO. Skin,spa_medico,Ciudad de México
+1192,5215534085085,Alta Especialidad Médica Roma CÓRDOBA 23,Alta Especialidad Médica,spa_medico,Ciudad de México
+1193,5215571590964,iik´spa,iik´spa,spa_medico,Ciudad de México
+1194,5215586812964,CSC Wellness Center | Spa Colonia Nápoles,CSC Wellness Center,spa_medico,Ciudad de México
+1197,5215512408764,Dra. Gabriela Castrejón Dermatóloga,Dra. Gabriela Castrejón,dermatologia,Ciudad de México
+1200,5218122075251,Skingroup Coapa - Dermatólogos en CDMX Sur,Skingroup Coapa -,dermatologia,Ciudad de México
+1201,5215549087378,Dra. Rosario Pérez - Dermatóloga,Dra. Rosario Pérez,dermatologia,Ciudad de México
+1202,5215523210995,Skin Institute Clínica Dermatológica,Skin Institute Clínica,dermatologia,Ciudad de México
+1205,5215526589518,"Dra. Adriana Gricel Pérez Uribe, Dermatología / Dermato-Oncología",Dra. Adriana Gricel,dermatologia,Ciudad de México
+1208,5215635342312,"Dra. María del Pilar Aleman Paredes, Dermatólogo",Dra. María del,dermatologia,Ciudad de México
+1209,5215541280180,Juvenalia Brío | CDMX - Botox & Hydrafacial,Juvenalia Brío |,dermatologia,Ciudad de México
+1211,5215643048311,Dermawise Clínica Dermatológica,Dermawise Clínica Dermatológica,dermatologia,Ciudad de México
+1215,5215525433927,Centro Dermatológico Tennyson,Centro Dermatológico Tennyson,dermatologia,Ciudad de México
+1216,5215535150819,Centro De Reemplazo Hormonal,Centro De Reemplazo Hormonal,peptidos,Ciudad de México
+1217,5218005040246,Clínica Biohormona CDMX: Hormonas bioidénticas - Menopausia - Andropausia,Clínica Biohormona CDMX:,peptidos,Ciudad de México
+1221,5215554381933,Dr Rosalío Valderrama Tellez,Dr Rosalío Valderrama Tellez,peptidos,Ciudad de México
+1223,5218181879000,Renovarsce - Medicina Regenerativa,Renovarsce - Medicina,anti_aging,Monterrey
+1225,5214107799785,Aura Regenerative Center,Aura Regenerative Center,anti_aging,Monterrey
+1226,5218132397196,Centro Médico Eternal,Centro Médico Eternal,anti_aging,Monterrey
+1229,5218130716951,Células Madre en Monterrey | EliCells Clínica de Células Madre y Acupuntura,Células Madre en,anti_aging,Monterrey
+1232,5218181801494,Dra. Gina Gonzalez - Medicina Estética en Monterrey,Dra. Gina Gonzalez,anti_aging,Monterrey
+1243,5218113633208,"Dra. Stella Villarreal Garza, Médico estético",Dra. Stella Villarreal Garza,estetica,Monterrey
+1248,5218181130717,Slimskin,Slimskin,estetica,Monterrey
+1249,5218120364049,Dra. Paty Cantú - Medicina Estética,Dra. Paty Cantú,estetica,Monterrey
+1251,5218135272515,Armoné Medicina Estética,Armoné Medicina Estética,estetica,Monterrey
+1253,5218114530625,Botocare,Botocare,estetica,Monterrey
+1262,5218183620841,Medicina Funcional Dra. Nora Rodríguez Bartoluchi,Medicina Funcional Dra.,nutriologos,Monterrey
+1263,5218118952348,Doctor en Medicina Funcional y Alternativa Integr,Doctor en Medicina,nutriologos,Monterrey
+1264,5218111070505,nutriADN San Jerónimo,nutriADN San Jerónimo,nutriologos,Monterrey
+1268,5218261011445,Carolina Arizmendi - Nutrióloga Funcional,Carolina Arizmendi -,nutriologos,Monterrey
+1274,5218121883903,Dr. Guillermo Viesca Ramírez,Dr. Guillermo Viesca Ramírez,nutriologos,Monterrey
+1276,5218110827317,Nutrióloga Celina Guerra de Simental - Nutri ADN - Nutrigenómica,Nutrióloga Celina Guerra,nutriologos,Monterrey
+1280,5218132489072,Cirujano Bariatra en Monterrey | Dr. Quetzalli Limas,Cirujano Bariatra en,peso,Monterrey
+1281,5218182542548,BARIATRIMEDIC,BARIATRIMEDIC,peso,Monterrey
+1283,5218127249761,MTY Bariatrics,MTY Bariatrics,peso,Monterrey
+1289,5218183423451,Ce Nutre,Ce Nutre,peso,Monterrey
+1294,5218110366308,"Dr. Luis Alberto Zavala Salazar, Cirujano Bariatra Certificado",Dr. Luis Alberto,peso,Monterrey
+1295,5218181041890,Forma Saludable | Dra. Emma Macías,Forma Saludable |,peso,Monterrey
+1303,5218127590152,Casa Azul SPA Sucursal Obispado,Casa Azul SPA,spa_medico,Monterrey
+1304,5218119350237,Mantra Mind and Body Spa,Mantra Mind and Body Spa,spa_medico,Monterrey
+1306,5218183353527,"Thann Sanctuary Spa, México",Thann Sanctuary Spa,spa_medico,Monterrey
+1307,5218112552915,Medical Spa - Medical Tourism,Medical Spa - Medical Tourism,spa_medico,Monterrey
+1311,5218120222362,Spalmira,Spalmira,spa_medico,Monterrey
+1312,5218123530560,Azuleno Spa,Azuleno Spa,spa_medico,Monterrey
+1315,5218183356130,Dra. Cristina Cortés - Dermatología y Cirugía Dermatológica | Monterrey,Dra. Cristina Cortés,dermatologia,Monterrey
+1316,5218113633212,Dr. Adrián Martínez Moreno,Dr. Adrián Martínez Moreno,dermatologia,Monterrey
+1318,5218124373722,Dr. José Alberto García Lozano - Dermatología y Cirugía Dermatológica,Dr. José Alberto,dermatologia,Monterrey
+1319,5218120892021,DRA BEATRIZ CALDERON LOZANO,DRA BEATRIZ CALDERON LOZANO,dermatologia,Monterrey
+1322,5218113522548,Cutique The Derma Company,Cutique The Derma Company,dermatologia,Monterrey
+1323,5218131435589,"Dra. Ana Carolina Manzotti Rodríguez, Dermatólogo",Dra. Ana Carolina,dermatologia,Monterrey
+1325,5218183635635,Medipiel,Medipiel,dermatologia,Monterrey
+1328,5218187042125,Dr. Juan Carlos Robles Méndez Dermatólogo,Dr. Juan Carlos,dermatologia,Monterrey
+1338,5218180288777,"Dr. Alejandro Morales Delgado, Ginecólogo",Dr. Alejandro Morales Delgado,peptidos,Monterrey
+1342,5218136046458,Dr. Luis Marcelo Garza Ayala,Dr. Luis Marcelo Garza Ayala,peptidos,Monterrey
+1344,5218127187027,Dra. Edna Celina Gonzalez Villarreal,Dra. Edna Celina,peptidos,Monterrey
+1348,5213322708228,"Dra. Andrea Pintor, Regenerative Medicine Guadalajara",Dra. Andrea Pintor,anti_aging,Guadalajara
+1349,5213311510885,Biotegnology Medical Center,Biotegnology Medical Center,anti_aging,Guadalajara
+1353,5213325371149,CELLSTIME CLINIQUE,CELLSTIME CLINIQUE,anti_aging,Guadalajara
+1354,5213325345624,Vivo Cells Clinic,Vivo Cells Clinic,anti_aging,Guadalajara
+1360,18182701953,StemLife Clinic,StemLife Clinic,anti_aging,Guadalajara
+1362,5213328353697,SPA NATURAL COSMETIC - tratamientos estéticos y medicina regenerativa,SPA NATURAL COSMETIC,anti_aging,Guadalajara
+1363,5213336417389,Instituto Mexicano de Medicina Antienvejecimiento y Estetica,Instituto Mexicano de,anti_aging,Guadalajara
+1365,5213334496917,ATEMPO SMART AGING,ATEMPO SMART AGING,anti_aging,Guadalajara
+1366,5213329330423,"MARE Skincare Expert, Cosmelan tratamiento despigmentante clinica oficial en México",MARE Skincare Expert,anti_aging,Guadalajara
+1370,5215622317946,FACEUP CLINICS,FACEUP CLINICS,estetica,Guadalajara
+1372,5213320404242,TIAM Aesthetic Clinic,TIAM Aesthetic Clinic,estetica,Guadalajara
+1388,5213352090239,"Mtra. Alejandra Villarreal | Nutriólogo clínico en Guadalajara | Nutrición para resistencia a la insulina, diabetes y SOP",Mtra. Alejandra Villarreal,nutriologos,Guadalajara
+1399,5213331295779,Cirujano Bariatra en Guadalajara - Dr. Eduardo Jaramillo de la Torre,Cirujano Bariatra en,peso,Guadalajara
+1404,5213396889961,"Dr. Manuel Goldberg Berdichevsky, Nutricionista",Dr. Manuel Goldberg,peso,Guadalajara
+1406,5213331285394,"Dra. Erica Lizeth Ruiz Velasco Resendiz, Especialista en Obesidad y Delgadez",Dra. Erica Lizeth,peso,Guadalajara
+1409,5213320050105,"Dr. Nelson Rodriguez, Centro Bariátrico Guadalajara",Dr. Nelson Rodriguez,peso,Guadalajara
+1411,5213321069143,Dr. Rodrigo Prieto,Dr. Rodrigo Prieto,peso,Guadalajara
+1413,5213345072399,ELEGANZ SPA MEDICO,ELEGANZ SPA MEDICO,spa_medico,Guadalajara
+1415,5213320361889,Chandan spa,Chandan spa,spa_medico,Guadalajara
+1420,5213338284688,Chalé Spa,Chalé Spa,spa_medico,Guadalajara
+1430,5213311187772,Dreamy Skin - Equipos de Belleza y Servicios SPA,Dreamy Skin -,spa_medico,Guadalajara
+1431,5213336859362,Dra. Nadia Janette Rodríguez Zendejas - Dermatóloga en Guadalajara,Dra. Nadia Janette,dermatologia,Guadalajara
+1432,5213335936135,"Dra In Lu Chen, MD, IFAAD Dermatóloga en Guadalajara",Dra In Lu Chen,dermatologia,Guadalajara
+1433,5213310944570,Dra Elisa Sánchez Moreno Dermatología,Dra Elisa Sánchez,dermatologia,Guadalajara
+1435,5213311151307,Aster Clinic Dermatología Avanzada,Aster Clinic Dermatología,dermatologia,Guadalajara
+1436,5213336401314,Skin One Clinics Dermatología Integrativa,Skin One Clinics,dermatologia,Guadalajara
+1440,5213312951291,Ada Dermatóloga,Ada Dermatóloga,dermatologia,Guadalajara
+1445,5213310469666,"Dra. Elizabeth Morales Ruvalcaba, Dermatólogo",Dra. Elizabeth Morales,dermatologia,Guadalajara
+1450,5213336419227,Clínica BIO Guadalajara: Hormonas Bioidenticas Naturales Y Medicina Antienvejecimiento,Clínica BIO Guadalajara:,peptidos,Guadalajara
+1452,5215534338462,REVITACELL - Medicina Funcional Regenerativa,REVITACELL - Medicina,anti_aging,Querétaro
+1455,5214426459497,"Clínica de Ortopedia, Traumatología, Rehabilitación y Ortopedia Regenerativa CORE REGENERA QRO",Clínica de Ortopedia,anti_aging,Querétaro
+1457,5214421855416,Jocelyn Anaya Dermocosmiatra,Jocelyn Anaya Dermocosmiatra,estetica,Querétaro
+1460,5214426079471,Giulia - Medicina Estética,Giulia - Medicina Estética,estetica,Querétaro
+1462,5214427905249,Sculptors clinic,Sculptors clinic,estetica,Querétaro
+1463,5214424589963,Rejuvenecimiento Facial | Dra. Esmeralda Meza,Rejuvenecimiento Facial |,estetica,Querétaro
+1464,5218441360982,"Lic. Lorena Maryel Treviño Siller, Nutricionista",Lic. Lorena Maryel,nutriologos,Saltillo
+1466,5218443940360,"Lic. Ana Carmen Garcia Narro, Nutricionista",Lic. Ana Carmen Garcia Narro,nutriologos,Saltillo
+1469,5218441300556,Dr. Arturo Valdés Álvarez | Bariatra Certificado y especialista en Cirugía Laparoscópica,Dr. Arturo Valdés,peso,Saltillo
+1470,5218444851966,"Dr. Henry Mansur, Bariatra en Saltillo",Dr. Henry Mansur,peso,Saltillo
+1474,81268205926945,Dra. Ana Patricia García Vives,Dra. Ana Patricia García Vives,peso,Saltillo
+1477,5218443575601,"Dr. Eduardo Rojas Milán, Obesidad / Medicina Interna",Dr. Eduardo Rojas Milán,peso,Saltillo
+1490,5218661855968,Sbeltik SPA,Sbeltik SPA,spa_medico,Saltillo
+1503,5218441398127,"Dr. Rodrigo Cepeda Valdes, Dermatólogo",Dr. Rodrigo Cepeda Valdes,dermatologia,Saltillo
+1504,5218444994005,Dr. García - Dermatólogo Saltillo,Dr. García -,dermatologia,Saltillo
+1506,5218443010486,DRA. RITA LUCIA VALDES WEBSTER,DRA. RITA LUCIA VALDES WEBSTER,dermatologia,Saltillo
+1510,5218443586877,Dr. Oscar Andrés Ron Dermatólogo Saltillo,Dr. Oscar Andrés,dermatologia,Saltillo
+1511,5218444614444,Highderma,Highderma,dermatologia,Saltillo
+1514,5218444164225,Dra. Angeles Madrazo Salazar,Dra. Angeles Madrazo Salazar,dermatologia,Saltillo
+1518,5218444391743,"Dr. Gerardo González Cantú, Ginecólogo",Dr. Gerardo González Cantú,peptidos,Saltillo
+1519,5218444146908,Centro Medico de Saltillo,Centro Medico de Saltillo,peptidos,Saltillo
+1521,5218444152550,"Dr. Oswaldo Hernández Gómez, Ginecólogo",Dr. Oswaldo Hernández Gómez,peptidos,Saltillo
+1522,5218444158390,Dr. Antonio Posada Dominguez,Dr. Antonio Posada Dominguez,peptidos,Saltillo
+1524,5218711903006,Cirugía de Rodilla en Torreón Dr Roberto Medina,Cirugía de Rodilla,anti_aging,Torreón
+1534,5218714910296,Medipiel Torreón,Medipiel Torreón,anti_aging,Torreón
+1535,5218717188099,Clínica Dermatologica,Clínica Dermatologica,anti_aging,Torreón
+1536,5218717931900,"Dr. Carlos Andrés Garza Flores, Ginecólogo",Dr. Carlos Andrés Garza Flores,anti_aging,Torreón
+1549,5218715056962,DERMATLÁN Torreón - Dermatólogo,DERMATLÁN Torreón -,estetica,Torreón
+1552,5218121881530,"Dr. Guillermo Viesca Ramírez, Especialista en Medicina Integrada",Dr. Guillermo Viesca Ramírez,nutriologos,Torreón
+1553,5218714910603,"Dra. Laura Danae Carrillo Ramos, Nutriólogo clínico",Dra. Laura Danae,nutriologos,Torreón
+1556,5218721000779,Nutrición Clínica Y Renal Alejandrina Lopez,Nutrición Clínica Y,nutriologos,Torreón
+1558,5218717312731,Kim Najera Nutrición,Kim Najera Nutrición,nutriologos,Torreón
+1563,5218717470521,Nutriólogo clinico,Nutriólogo clinico,nutriologos,Torreón
+1564,5218717470500,Instituto de Ciencia y Medicina Genómica,Instituto de Ciencia,nutriologos,Torreón
+1568,5218711121706,Integral Obesity Care,Integral Obesity Care,peso,Torreón
+1571,5218712225424,Obesity Care Group - Dr. Daniel Campos,Obesity Care Group,peso,Torreón
+1575,5218717133192,Centro Médico de Torreón,Centro Médico de Torreón,peso,Torreón
+1578,5218711392695,Prevén Spa - Spa en torreón,Prevén Spa - Spa en torreón,spa_medico,Torreón
+1593,5218717936896,"Dra. Rebeca Talamantes Valdivia, Dermatólogo",Dra. Rebeca Talamantes,dermatologia,Torreón
+1594,5218717184014,Clínica Dermatológica Dr. Salvador Morales,Clínica Dermatológica Dr.,dermatologia,Torreón
+1598,5218717377953,"Dr. Israel Antonio Esquivel, Dermatólogo",Dr. Israel Antonio Esquivel,dermatologia,Torreón
+1606,5218711498394,"Dra Ma. Elena Leco Romero, Ginecólogo",Dra Ma. Elena Leco Romero,peptidos,Torreón
+1608,5218711767418,Dr. Raúl Domínguez González,Dr. Raúl Domínguez González,peptidos,Torreón
+1613,5216141383883,Medicina regenerativa - Doctores Especialistas,Medicina regenerativa -,anti_aging,Chihuahua
+1615,5216144620482,CLÍNICA DE BELLEZA CHIHUAHUA,CLÍNICA DE BELLEZA CHIHUAHUA,estetica,Chihuahua
+1636,5216144687670,Dra. Marina Rubio Guerrero,Dra. Marina Rubio Guerrero,nutriologos,Chihuahua
+1640,5216141002935,Nutriologa Alma Montoya,Nutriologa Alma Montoya,nutriologos,Chihuahua
+1641,5216144266137,Nutrióloga Valeria Baeza,Nutrióloga Valeria Baeza,nutriologos,Chihuahua
+1642,5216145416235,Ananda Centro Holístico Para El Bienestar,Ananda Centro Holístico,nutriologos,Chihuahua
+1645,5215511475674,Lic. Adriana Salgado,Lic. Adriana Salgado,nutriologos,Chihuahua
+1646,5216144231753,Dr. Rubén Alvarado Salcedo,Dr. Rubén Alvarado Salcedo,nutriologos,Chihuahua
+1650,5216142592196,Dr. Bernardo Emilio Valenzuela Salazar,Dr. Bernardo Emilio,peso,Chihuahua
+1651,5216145415300,Doctor Héctor Bernal- Clinica ActivaMe - Control de Peso,Doctor Héctor Bernal-,peso,Chihuahua
+1655,5216143758084,"Dra. Ana Fernanda Alvarado Villalobos, Especialista en Obesidad y Delgadez",Dra. Ana Fernanda,peso,Chihuahua
+1663,5216142357775,"Dr. Luis Gómez Sánchez, Especialista en Obesidad y Delgadez",Dr. Luis Gómez Sánchez,peso,Chihuahua
+1664,5216141938586,"Alicia del Carmen López Ríos, Especialista en Obesidad y Delgadez",Alicia del Carmen López Ríos,peso,Chihuahua
+1678,5216142031906,Medical Spa Clinic - Medical Tourism,Medical Spa Clinic,spa_medico,Chihuahua
+1679,5216144900909,"Dra. Melanie Marmolejo Chavira, Dermatólogo",Dra. Melanie Marmolejo Chavira,dermatologia,Chihuahua
+1683,5216144267463,"Dra. Ruth Oralia Parra Cerros, Dermatóloga",Dra. Ruth Oralia Parra Cerros,dermatologia,Chihuahua
+1694,5216144252561,"Dr. Alberto Ávila Lozano, Dermatólogo",Dr. Alberto Ávila Lozano,dermatologia,Chihuahua
+1696,5216144231888,"Dra. Sara Reyes Orozco, Dermatólogo",Dra. Sara Reyes Orozco,dermatologia,Chihuahua
+1699,5216145066155,"Dr. Carlos Abraham Orpinel Gonzalez, Ginecólogo",Dr. Carlos Abraham,peptidos,Chihuahua
+1702,5216144112511,"Dra. Maria Teresa Torres Gurrola, Ginecólogo",Dra. Maria Teresa,peptidos,Chihuahua
+1708,5216622159244,Clinica De Terapias Biologicas,Clinica De Terapias Biologicas,anti_aging,Hermosillo
+1710,5216624106408,Laurean Clínica de Medicina Estética,Laurean Clínica de,anti_aging,Hermosillo
+1711,5216621153402,"Dr. Ronaldo Leyva Barbuzón, Médico estético",Dr. Ronaldo Leyva Barbuzón,anti_aging,Hermosillo
+1714,5216623264847,"Stefany Cruz Robles, Médico estético",Stefany Cruz Robles,anti_aging,Hermosillo
+1717,5216624239039,Clínica Integra Hermosillo,Clínica Integra Hermosillo,anti_aging,Hermosillo
+1730,5216621517198,Medicina Estética & Antienvejecimiento,Medicina Estética &,estetica,Hermosillo
+1735,5216624816008,"Dra. Jeanett Ayala Valenzuela, Nutriólogo clínico",Dra. Jeanett Ayala Valenzuela,nutriologos,Hermosillo
+1737,5216621829868,"Mtra. Glenda Morales Becerra, Nutriólogo clínico",Mtra. Glenda Morales Becerra,nutriologos,Hermosillo
+1743,5216623472085,"MNC. Anaid Eugenia Rodríguez López, Nutricionista",MNC. Anaid Eugenia,nutriologos,Hermosillo
+1747,5216622986018,Nutriologa Bibiana Paz G,Nutriologa Bibiana Paz G,nutriologos,Hermosillo
+1748,5216622023008,"Lic. Rosa Maria Ramos, Nutriólogo clínico",Lic. Rosa Maria Ramos,nutriologos,Hermosillo
+1749,5216622754524,Unidad Metabólica San Diego de Alcalá,Unidad Metabólica San,nutriologos,Hermosillo
+1750,5216623605282,"Clínica de Cirugía, Obesidad y Diabetes",Clínica de Cirugía,peso,Hermosillo
+1766,5216621090500,"Dr. Ivan Ignacio Jiménez Bejarano, Cirujano general",Dr. Ivan Ignacio,peso,Hermosillo
+1767,5216622601120,Hospital EmbryoGen,Hospital EmbryoGen,peso,Hermosillo
+1776,5216623013100,Piela - Spa Dermatológico,Piela - Spa Dermatológico,spa_medico,Hermosillo
+1787,5216621805664,Dra. Alba Cruz Borbón Armenta,Dra. Alba Cruz Borbón Armenta,dermatologia,Hermosillo
+1788,5216622083024,"Dra. Alejandra Palma Palacios, Dermatólogo",Dra. Alejandra Palma Palacios,dermatologia,Hermosillo
+1789,5216622212295,Dr. Isaí del Valle Ruíz - Dermatólogo,Dr. Isaí del,dermatologia,Hermosillo
+1790,5216621511032,"Dra. Brenda Lizeth Bernal Salazar, Dermatólogo",Dra. Brenda Lizeth,dermatologia,Hermosillo
+1793,5216622138553,Dermatologica Laser Cosmetics,Dermatologica Laser Cosmetics,dermatologia,Hermosillo
+1796,5216621070585,"Dra. Mayra Estefania Miranda Flores, Dermatólogo",Dra. Mayra Estefania,dermatologia,Hermosillo
+1799,5216621348418,DRA. ANA I. QUINTOS RAMÍREZ,DRA. ANA I. QUINTOS RAMÍREZ,dermatologia,Hermosillo
+1802,5216621715971,"Dr. Daniel E. Espinoza Cruz, Ginecólogo",Dr. Daniel E. Espinoza Cruz,peptidos,Hermosillo
+1803,5216621482822,"Dra. Ludmilla E. Ore Colio, Ginecólogo",Dra. Ludmilla E. Ore Colio,peptidos,Hermosillo
+1804,5216622125624,Ginecóloga Rosangela Arellano Zavala,Ginecóloga Rosangela Arellano,peptidos,Hermosillo
+1805,5216622125657,"Maria Elizabeth Amaya Sandoval, Ginecólogo",Maria Elizabeth Amaya Sandoval,peptidos,Hermosillo
+1809,5216622122630,"Dr. Arturo Ortiz Ayala, Ginecólogo",Dr. Arturo Ortiz Ayala,peptidos,Hermosillo
+1814,5216671838534,Dra. Adriana Aramburo Medicina Estetica,Dra. Adriana Aramburo,anti_aging,Culiacán
+1821,5216675100591,"Dr. Merced Serrano Serrano, Médico estético",Dr. Merced Serrano Serrano,anti_aging,Culiacán
+1824,5216673601111,Clínica Renacer,Clínica Renacer,anti_aging,Culiacán
+1830,5216677848737,Dr. Less Clinic,Dr. Less Clinic,estetica,Culiacán
+1833,5213325300406,Cirugía y Medicina Estética Dr. Body Artist.,Cirugía y Medicina,estetica,Culiacán
+1836,5216691903087,"Dra. Elena Guadalupe Serna Valdes, Médico estético",Dra. Elena Guadalupe,estetica,Culiacán
+1848,5216671720991,Mtra.Emilia Beltrán Gastélum,Mtra.Emilia Beltrán Gastélum,nutriologos,Culiacán
+1850,5216672685373,Nutrióloga Milagros Sepúlveda,Nutrióloga Milagros Sepúlveda,nutriologos,Culiacán
+1853,5216673241969,"Lic. Martha Vianey López Gastélum, Nutriólogo clínico",Lic. Martha Vianey,nutriologos,Culiacán
+1856,5216671035822,Dr. Francisco Magaña Cirugía Bariatrica y Laparoscopica,Dr. Francisco Magaña,peso,Culiacán
+1862,5216673895277,Ciobes,Ciobes,peso,Culiacán
+1866,66750801157919,Dr. Juan Carlos Ramírez Almaral,Dr. Juan Carlos,peso,Culiacán
+1871,5216675028042,Sublimespa,Sublimespa,spa_medico,Culiacán
+1874,5216677165057,ESMERALDA PALMA Spa | Salón | Consultoría de Imagen,ESMERALDA PALMA Spa,spa_medico,Culiacán
+1888,5216674584783,"Dra. Valeria Álvarez Rivero Dermatóloga, Dermatooncóloga",Dra. Valeria Álvarez,dermatologia,Culiacán
+1890,5216673551801,Dra. Diana Contreras | Dermatóloga,Dra. Diana Contreras,dermatologia,Culiacán
+1894,5216677153100,"Dra. Lorena Gpe. Magallón Zazueta, Dermatólogo",Dra. Lorena Gpe.,dermatologia,Culiacán
+1895,5216677122199,Dra. Gabriela Domínguez Cota - Dermatologa,Dra. Gabriela Domínguez,dermatologia,Culiacán
+1900,5216675757274,"Aurora Berenice Moreno Ahumada, Dermatólogo",Aurora Berenice Moreno Ahumada,dermatologia,Culiacán
+1901,5216677155570,"Dra. Maradi Zumara Rubio Rodríguez, Dermatólogo",Dra. Maradi Zumara,dermatologia,Culiacán
+1903,5216674584896,Dr. Alfonso German,Dr. Alfonso German,dermatologia,Culiacán
+1904,5216675013683,"Dra. Eloiza Lizeth Ylé Arámburo, Dermatólogo",Dra. Eloiza Lizeth,dermatologia,Culiacán
+1905,5216674793490,"Dra. Ana Sylvia Aguilar Sarmiento, Dermatólogo",Dra. Ana Sylvia,dermatologia,Culiacán
+1907,5216674131983,Miestetic Culiacan,Miestetic Culiacan,peptidos,Culiacán
+1908,5216676887605,Ginecóloga en Culiacán • Dra. Iris Bojorquez Gutierrez • Doctora Obstetra,Ginecóloga en Culiacán,peptidos,Culiacán
+1910,5216674702771,Dra. Irma Pintor Sandoval · Ginecóloga en Culiacán,Dra. Irma Pintor,peptidos,Culiacán
+1911,5213314189991,Dra. Elka Araujo Sanchez,Dra. Elka Araujo Sanchez,peptidos,Culiacán
+1913,5212229155645,Medicina Regenerativa y Ozonoterapia,Medicina Regenerativa y,anti_aging,Playa del Carmen
+1914,5219847450294,PlayaDoctor Walk In Clinic & Housecalls,PlayaDoctor Walk In,anti_aging,Playa del Carmen
+1915,5219841653990,Althea Wellness Clinic,Althea Wellness Clinic,anti_aging,Playa del Carmen
+1916,5219842039542,WellBody Elite - Stem Cell Therapy Playa Del Carmen,WellBody Elite -,anti_aging,Playa del Carmen
+1917,5219848766365,Xtabay Medicina Estética,Xtabay Medicina Estética,anti_aging,Playa del Carmen
+1918,5216198666000,Giostar Stem Cell Therapy Playa del Carmen,Giostar Stem Cell,anti_aging,Playa del Carmen
+1920,5219842560671,Age Less Clinic,Age Less Clinic,anti_aging,Playa del Carmen
+1921,5219841409337,Timeless Beauty - Medicina Estética - Aesthetics Doctor,Timeless Beauty -,anti_aging,Playa del Carmen
+1930,5215523106241,botox playa del carmen,botox playa del carmen,anti_aging,Playa del Carmen
+1932,5219842061571,Dermacaribe,Dermacaribe,anti_aging,Playa del Carmen
+1933,5219842566651,Allure Medico,Allure Medico,estetica,Playa del Carmen
+1935,5219842334433,Dr Rangel Aesthetics,Dr Rangel Aesthetics,estetica,Playa del Carmen
+1936,5219985771763,SLIM BODY & FACE AESTHETICS PLAYA DEL CARMEN,SLIM BODY &,estetica,Playa del Carmen
+1940,5219841391777,Urbanskin Playa del Carmen,Urbanskin Playa del Carmen,estetica,Playa del Carmen
+1947,5219845931431,Nutrióloga Gabriela Jiménez,Nutrióloga Gabriela Jiménez,nutriologos,Playa del Carmen
+1951,5219842025003,Centro de Nutrición,Centro de Nutrición,nutriologos,Playa del Carmen
+1952,5219848010226,Nery OM Wellness,Nery OM Wellness,nutriologos,Playa del Carmen
+1959,5219842667200,"Health & Sport’s Med Dr. Hugo Soriano Ramírez, Especialista en Medicina del Deporte",Health & Sport’s,nutriologos,Playa del Carmen
+1962,5219841290441,Santulan Garden,Santulan Garden,nutriologos,Playa del Carmen
+1963,5219841871718,Salud Primal Centro Médico | Especialidades Médicas para ti y tu familia,Salud Primal Centro,nutriologos,Playa del Carmen
+1964,5219848045907,Transpersonal Playa,Transpersonal Playa,nutriologos,Playa del Carmen
+1966,5219842330118,Upper Care Weight Loss Endoscopy,Upper Care Weight,peso,Playa del Carmen
+1967,5219842903157,Dr. Omar Basurto,Dr. Omar Basurto,peso,Playa del Carmen
+1968,5219843125311,LU'UM Mayan SPA Playa del Carmen ❤ [NEW: Hydrafacial],LU'UM Mayan SPA,spa_medico,Playa del Carmen
+1970,5219841772818,Playa Harmony Spa,Playa Harmony Spa,spa_medico,Playa del Carmen
+1975,5219841887615,Skin Balance,Skin Balance,dermatologia,Playa del Carmen
+1976,5219841429155,Cuthanea Dermatológia y Cosmetologia,Cuthanea Dermatológia y,dermatologia,Playa del Carmen
+1977,5219841589417,"Dra. Estefanía Ocampo Verdeja, Dermatólogo",Dra. Estefanía Ocampo Verdeja,dermatologia,Playa del Carmen
+1981,5217702660933,Restaura Health.MX,Restaura Health.MX,peptidos,Playa del Carmen
+1983,5219841872882,Dra. Glensys Xiomara García Pedrique,Dra. Glensys Xiomara,peptidos,Playa del Carmen
+1987,5216241050981,Stem cell forever young,Stem cell forever young,anti_aging,Los Cabos
+1991,5213316028163,Dr Cárdenas Anti-aging & Aesthetics,Dr Cárdenas Anti-aging,anti_aging,Los Cabos
+1992,5216242371594,Longevity Medical Institute®,Longevity Medical Institute®,anti_aging,Los Cabos
+1994,5216243511733,AV Clinique de Beauté,AV Clinique de Beauté,estetica,Los Cabos
+1995,5216242261745,Dr Miguel Cortes - Medicina estética,Dr Miguel Cortes,estetica,Los Cabos
+1996,5216242401422,Dr. Agapito Alvarez - ICONIC Medical Aesthetic and Well Aging,Dr. Agapito Alvarez,estetica,Los Cabos
+2004,5216241350445,Olos Beauty Clinic,Olos Beauty Clinic,estetica,Los Cabos
+2005,5216241051402,FACIAL AESTHETICS,FACIAL AESTHETICS,estetica,Los Cabos
+2009,5216122292532,Cosmiatría Villalobos,Cosmiatría Villalobos,estetica,Los Cabos
+2010,5216242671512,"Mtro. Alan Fernandez Manriquez, Nutriólogo clínico",Mtro. Alan Fernandez Manriquez,nutriologos,Los Cabos
+2021,5216242350000,Gastro&Bariatric Bariatrica | Gastroenterología | Endoscopia,Gastro&Bariatric Bariatrica |,peso,Los Cabos
+2026,5216243551549,"Dr. Jorge I. Cortés Larrinaga, SouthBariatrics: Cirugía Bariátrica y Metabólica / Cirugía General y Gastrointestinal",Dr. Jorge I. Cortés Larrinaga,peso,Los Cabos
+2028,5216241961949,Bariatric Clinic - Medical Tourism,Bariatric Clinic -,peso,Los Cabos
+2029,5216241058550,DR. GERARDO GARCÍA ÁLVAREZ,DR. GERARDO GARCÍA ÁLVAREZ,peso,Los Cabos
+2030,5216241325488,GASTROENTEROLOGO Dr. Luis Enrique Sotelo Solis,GASTROENTEROLOGO Dr. Luis,peso,Los Cabos
+2033,5216241049300,Hospital H+ Los Cabos,Hospital H+ Los Cabos,peso,Los Cabos
+2034,5216241731388,DRA LAUREN KARIN MIRANDA IZQUIERDO,DRA LAUREN KARIN,peso,Los Cabos
+2035,5216242207108,Medano Medical Spa (Marina Plaza),Medano Medical Spa,spa_medico,Los Cabos
+2038,5216242376663,Serenium Wellness Spa,Serenium Wellness Spa,spa_medico,Los Cabos
+2039,5213222169695,The Desert Spa,The Desert Spa,spa_medico,Los Cabos
+2040,5216243583503,Eden´s Spa Los Cabos,Eden´s Spa Los Cabos,spa_medico,Los Cabos
+2041,5216241457595,Sea Spa at Land's End by Solmar Spa Collection,Sea Spa at,spa_medico,Los Cabos
+2042,5213221760228,SE Spa at Grand Velas Los Cabos,SE Spa at,spa_medico,Los Cabos
+2044,5214431378728,SOMMA WineSpa,SOMMA WineSpa,spa_medico,Los Cabos
+2045,5216246884696,Biohack Spa,Biohack Spa,spa_medico,Los Cabos
+2049,5216243550913,"Dra. Estefanía Jiménez Castañeda, Médico estético",Dra. Estefanía Jiménez,dermatologia,Los Cabos
+2050,5216241734911,"Dr. Jorge Márquez Angulo, Dermatólogo",Dr. Jorge Márquez Angulo,dermatologia,Los Cabos
+2054,5216246885975,Dr. Víctor Hugo Ávila López Dermatólogo,Dr. Víctor Hugo,dermatologia,Los Cabos
+2055,5216241456000,Dra. Mabel Nava - Dermatóloga,Dra. Mabel Nava - Dermatóloga,dermatologia,Los Cabos
+2056,5216241693221,"Dr. Marco Antonio Ramírez López, Dermatólogo",Dr. Marco Antonio,dermatologia,Los Cabos
+2057,5216241685449,Farmacia Dermatológica Prosermed,Farmacia Dermatológica Prosermed,dermatologia,Los Cabos
+2059,5213322575967,Dra. Gissela Chávez Lizardi,Dra. Gissela Chávez Lizardi,dermatologia,Los Cabos
+2063,5216242572410,Doctora Laura Báez,Doctora Laura Báez,peptidos,Los Cabos
+2064,5216241232200,"Dr. Javier Payén Padilla, Ginecólogo",Dr. Javier Payén Padilla,peptidos,Los Cabos
+2065,5213222275877,Renaissance Anti Age and Regenerative Center,Renaissance Anti Age,anti_aging,Puerto Vallarta
+2066,5218888636074,Immunotherapy Regenerative Medicine Treatments Vallarta,Immunotherapy Regenerative Medicine,anti_aging,Puerto Vallarta
+2068,5218559260897,Regenamex | Stem Cell Therapy Clinic | Puerto Vallarta,Regenamex | Stem,anti_aging,Puerto Vallarta
+2069,5213222270595,Begin Again by Dra Susana,Begin Again by Dra Susana,anti_aging,Puerto Vallarta
+2071,5213223721987,Alternative Medicine By Bars – Regenerative Stem Cell Therapy in Mexico,Alternative Medicine By,anti_aging,Puerto Vallarta
+2073,5213223291816,Vallarta Vitality,Vallarta Vitality,anti_aging,Puerto Vallarta
+2074,5213223186202,DR. ERNESTO ROMERO LOPEZ,DR. ERNESTO ROMERO LOPEZ,anti_aging,Puerto Vallarta
+2075,5213222453055,Satisana Medicine,Satisana Medicine,anti_aging,Puerto Vallarta
+2076,5213222211607,Holistic Bio Spa,Holistic Bio Spa,anti_aging,Puerto Vallarta
+2078,5213221695917,"Clínica Arte Cuerpo Medicina Estética, Stem Cells,Depilación Láser reductivos y faciales.",Clínica Arte Cuerpo,estetica,Puerto Vallarta
+2081,5213322288200,House of Beauty | Medicina Estética y Antienvejecimiento,House of Beauty,estetica,Puerto Vallarta
+2083,5213223707500,ARTSTHETIK | Atelier de Ingeniería Facial & Longevidad,ARTSTHETIK | Atelier,estetica,Puerto Vallarta
+2087,5213318248481,"Dernna, Clínica Especializada en Dermatología, Medicina Estética y Anti-Envejecimiento",Dernna,estetica,Puerto Vallarta
+2090,5213228889088,MedSpa Vallarta,MedSpa Vallarta,estetica,Puerto Vallarta
+2095,5213221889865,Clínica De Belleza by Luis Huerta,Clínica De Belleza,estetica,Puerto Vallarta
+2097,5213222392961,"Dr. Abraham Cazares Aesthetic Medicine (Botox™, Medical Grade Skincare, Cosmetic Injectables) / Morpheus8™",Dr. Abraham Cazares,estetica,Puerto Vallarta
+2101,5213326792683,Nutrición Clínica y Renal Vallarta | Angélica Castellanos | Nutrición en la enfermedad,Nutrición Clínica y,nutriologos,Puerto Vallarta
+2104,5213222244778,Nutrición Integral Vallarta,Nutrición Integral Vallarta,nutriologos,Puerto Vallarta
+2107,5213222068773,Nutrióloga PV - Estefanía Sánchez - Cambiando hábitos,Nutrióloga PV -,nutriologos,Puerto Vallarta
+2110,5213222451780,Nutrióloga Aylin Santana Ortiz,Nutrióloga Aylin Santana Ortiz,nutriologos,Puerto Vallarta
+2112,5213481350207,SANA CENTRO | Medicina natural alternativa,SANA CENTRO |,nutriologos,Puerto Vallarta
+2117,5213222741647,"Dr. Enrique Rosales Castañeda, Cirujano bariatra",Dr. Enrique Rosales Castañeda,peso,Puerto Vallarta
+2119,5213221812818,Réduit Vallarta,Réduit Vallarta,peso,Puerto Vallarta
+2120,5216196383632,Hidalgo Bariatrics | Bariatric Surgery in Puerto Vallarta,Hidalgo Bariatrics |,peso,Puerto Vallarta
+2121,5213221398246,Dr. Sergio del Hoyo - Gastroenterologo Cirugía,Dr. Sergio del,peso,Puerto Vallarta
+2122,5213334725254,ALO Bariatrics,ALO Bariatrics,peso,Puerto Vallarta
+2124,5213224180620,Dra. Mireya Villalvazo López,Dra. Mireya Villalvazo López,peso,Puerto Vallarta
+2125,5213221783000,Hospital Vallarta Medical Center,Hospital Vallarta Medical,peso,Puerto Vallarta
+2129,5213223067004,ThrIVe IV & MedSpa,ThrIVe IV & MedSpa,spa_medico,Puerto Vallarta
+2140,5213222511040,"Dr. Eduardo Cervantes Gutierrez, Dermatólogo",Dr. Eduardo Cervantes,dermatologia,Puerto Vallarta
+2141,5213221222030,Dra Nashyeli González Dermatóloga,Dra Nashyeli González,dermatologia,Puerto Vallarta
+2142,5213222258205,"Dra. Kenia Lepe Moreno, Dermatólogo",Dra. Kenia Lepe Moreno,dermatologia,Puerto Vallarta
+2146,5213222242128,Dr. JOSE MARTIN ARCE RAMIREZ,Dr. JOSE MARTIN ARCE RAMIREZ,dermatologia,Puerto Vallarta
+2159,5218008372951,"Instituto Superior de Investigación en Estética Médica, Nutrición y Anti-Envejecimiento - CCME, ISIENA",Instituto Superior de,anti_aging,Cuernavaca
+2163,5217772681598,Medivia Medical Spa,Medivia Medical Spa,anti_aging,Cuernavaca
+2164,5217775646263,Vie Clínica Armonización Facial y Odontología Estetica,Vie Clínica Armonización,anti_aging,Cuernavaca
+2166,521017772676286,Clínica de medicina estética Dra. Jessica Alcalá,Clínica de medicina,anti_aging,Cuernavaca
+2167,5217773285291,Medicina Alternativa Cuernavaca,Medicina Alternativa Cuernavaca,anti_aging,Cuernavaca
+2169,5217775005665,Terapia Celular CIRC,Terapia Celular CIRC,anti_aging,Cuernavaca
+2180,5217778100099,Sculpt Med,Sculpt Med,estetica,Cuernavaca
+2181,5217772941418,El Rio Clinica y Spa Wellness Center,El Rio Clinica,estetica,Cuernavaca
+2187,5215523004632,Nutrióloga Clínica y Oncológica Sandra Nidia Moreno González.,Nutrióloga Clínica y,nutriologos,Cuernavaca
+2192,5215640009680,Nutrióloga Diana Galeana,Nutrióloga Diana Galeana,nutriologos,Cuernavaca
+2194,5217775239280,"Lic. Gabriela Jimenez Arribas, Nutriólogo clínico",Lic. Gabriela Jimenez Arribas,nutriologos,Cuernavaca
+2195,5217774950435,"Lic. Danya Paola Martínez Castellanos, Nutriólogo clínico",Lic. Danya Paola,nutriologos,Cuernavaca
+2196,5217771513332,Nutriólogo Miguel Mejía,Nutriólogo Miguel Mejía,nutriologos,Cuernavaca
+2197,5217772441403,Dr. Jorge Alberto Diaz Astudillo,Dr. Jorge Alberto,nutriologos,Cuernavaca
+2202,5217774495933,Clínica para Bajar de Peso en Cuernavaca,Clínica para Bajar,peso,Cuernavaca
+2210,5217773183362,Hospital IMT - Instituto Mexicano de Trasplantes,Hospital IMT -,peso,Cuernavaca
+2212,5217772658616,"Dr. Daniel Rios-Cruz, Cirujano general",Dr. Daniel Rios-Cruz,peso,Cuernavaca
+2216,5217773184008,"Velavi City SPA, Rituales para Parejas, Masajes, Faciales, Terapias Relajantes, Hidromasaje, Sauna, Vapor",Velavi City SPA,spa_medico,Cuernavaca
+2220,5217773187777,The White Spa Cuernavaca,The White Spa Cuernavaca,spa_medico,Cuernavaca
+2225,5217773121528,Dra. Jimena Miguel Hernandez Rodriguez,Dra. Jimena Miguel,dermatologia,Cuernavaca
+2227,5217773113825,Dermaskin Rochin,Dermaskin Rochin,dermatologia,Cuernavaca
+2229,5217773177825,Doctora Leonor Trejo,Doctora Leonor Trejo,dermatologia,Cuernavaca
+2236,5217773251254,"Jazmín Arelli Rochín Vizcarra, Dermatólogo",Jazmín Arelli Rochín Vizcarra,dermatologia,Cuernavaca
+2242,5217771201434,Dr. Jorge Luis Vela Cantoran - Ginecologo en Cuernavaca,Dr. Jorge Luis,peptidos,Cuernavaca
+2246,5217773271801,"Dra. Verónica Morales Nieto, ginecologa y obstetra",Dra. Verónica Morales Nieto,peptidos,Cuernavaca
+2248,5217774950317,"Dra. Alejandra Gómez Licona, Ginecólogo",Dra. Alejandra Gómez Licona,peptidos,Cuernavaca
+2250,5217773130525,"Dra. Monica Elizabeth Ruelas Anzaldo, Ginecólogo",Dra. Monica Elizabeth,peptidos,Cuernavaca
+2251,5217771626353,Dr. Juan Carlos Aranda Neri,Dr. Juan Carlos Aranda Neri,peptidos,Cuernavaca
+2252,5217774950407,"Dr. Fernando Martínez González, Ginecólogo",Dr. Fernando Martínez González,peptidos,Cuernavaca
+2253,5217774510905,"Dra. Susana Soto López, Ginecólogo",Dra. Susana Soto López,peptidos,Cuernavaca

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0e0b07"/><stop offset="100%" stop-color="#000000"/></linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5C981"/><stop offset="100%" stop-color="#8f7a4d"/></linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <line x1="80" y1="100" x2="1000" y2="100" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="142" font-family="'Inter',sans-serif" font-size="20" fill="#C6A969" text-anchor="middle" letter-spacing="10" opacity="0.75">06 · POR QUÉ IMPORTA</text>
+
+  <text x="540" y="280" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Esto va en tu cuerpo.</text>
+
+  <line x1="420" y1="340" x2="660" y2="340" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <text x="540" y="430" font-family="'Playfair Display',Georgia,serif" font-size="38" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Un péptido sin pureza verificada</text>
+  <text x="540" y="480" font-family="'Playfair Display',Georgia,serif" font-size="38" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">puede tener:</text>
+
+  <g transform="translate(180 540)" font-family="'Inter',sans-serif" font-size="22" fill="#f0e4c8">
+    <text x="0" y="50"><tspan fill="#b53d3d">→</tspan> Endotoxinas (LPS) que activan respuesta inflamatoria</text>
+    <text x="0" y="100"><tspan fill="#b53d3d">→</tspan> Solventes residuales (TFA · acetonitrilo) tóxicos</text>
+    <text x="0" y="150"><tspan fill="#b53d3d">→</tspan> Péptidos truncados sin actividad biológica</text>
+    <text x="0" y="200"><tspan fill="#b53d3d">→</tspan> Dosis real ≠ dosis declarada (subdosificado)</text>
+  </g>
+
+  <text x="540" y="880" font-family="'Playfair Display',Georgia,serif" font-size="32" fill="url(#gold)" text-anchor="middle" font-style="italic">El COA no es marketing. Es seguridad.</text>
+
+  <line x1="80" y1="990" x2="1000" y2="990" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1035" font-family="'Inter',sans-serif" font-size="20" fill="#a8987a" text-anchor="middle" letter-spacing="8">07 / 08</text>
+</svg>

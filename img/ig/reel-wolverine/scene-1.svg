@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0b07"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C981"/>
+      <stop offset="50%" stop-color="#C6A969"/>
+      <stop offset="100%" stop-color="#8f7a4d"/>
+    </linearGradient>
+    <linearGradient id="wolvLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7A1C1C"/>
+      <stop offset="50%" stop-color="#c44646"/>
+      <stop offset="100%" stop-color="#7A1C1C"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+
+  <line x1="80" y1="200" x2="1000" y2="200" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="260" font-family="'Inter',sans-serif" font-size="30" fill="#C6A969" text-anchor="middle" letter-spacing="16" opacity="0.75">LA LÍNEA</text>
+
+  <rect x="290" y="740" width="500" height="60" rx="6" fill="none" stroke="url(#wolvLine)" stroke-width="2"/>
+  <text x="540" y="782" font-family="'Inter',sans-serif" font-size="30" fill="#c44646" text-anchor="middle" letter-spacing="10" font-weight="600">RECOVERY</text>
+
+  <text x="540" y="1000" font-family="'Playfair Display',Georgia,serif" font-size="140" font-weight="500" fill="url(#gold)" text-anchor="middle" letter-spacing="6">WOLVERINE</text>
+
+  <line x1="320" y1="1080" x2="760" y2="1080" stroke="#C6A969" stroke-width="1" opacity="0.55"/>
+
+  <text x="540" y="1220" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">Para el que rompe,</text>
+  <text x="540" y="1300" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="400" fill="#f0e4c8" text-anchor="middle" font-style="italic">rompe y vuelve.</text>
+
+  <text x="540" y="1500" font-family="'Inter',sans-serif" font-size="34" fill="#a8987a" text-anchor="middle" letter-spacing="6">4 COMPUESTOS · 1 PROTOCOLO</text>
+
+  <line x1="80" y1="1800" x2="1000" y2="1800" stroke="#C6A969" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="1855" font-family="'Inter',sans-serif" font-size="30" fill="url(#gold)" text-anchor="middle" letter-spacing="14" font-weight="600">PEPTIQMX.COM</text>
+</svg>
