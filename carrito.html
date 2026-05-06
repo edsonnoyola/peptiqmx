@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Carrito · PEPTIQ MX</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="facebook-domain-verification" content="ran91oxu8nnp0gygm9sd4gauhyxhox" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script defer src="/peptiq-age-gate.js?v=2"></script>
+<script defer src="/peptiq-cart.js?v=1"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:#0a0d12;color:#f5f3ee;min-height:100vh}
+.wrap{max-width:780px;margin:0 auto;padding:32px 20px 100px}
+.brand-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.brand{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;color:#988646}
+.back{font-size:11px;color:#a8a39a;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #3a3530;padding-bottom:2px}
+h1{font-family:'Playfair Display',serif;font-size:40px;font-weight:400;margin-bottom:8px;letter-spacing:-0.5px}
+h1 em{font-style:italic;color:#988646}
+.sub{color:#a8a39a;font-size:14px;margin-bottom:36px}
+.empty{text-align:center;padding:80px 20px;border:1px solid #1a2230;border-radius:6px}
+.empty p{color:#a8a39a;margin-bottom:24px}
+.empty a{display:inline-block;padding:14px 32px;background:#988646;color:#0d1520;text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.item{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid #1a2230}
+.item-info{flex:1;min-width:0}
+.item-name{font-family:'Playfair Display',serif;font-size:19px;color:#f5f3ee;margin-bottom:4px}
+.item-price{color:#a8a39a;font-size:13px}
+.qty{display:flex;align-items:center;gap:10px;margin:0 24px}
+.qty button{width:32px;height:32px;background:transparent;border:1px solid #2a3242;color:#988646;cursor:pointer;font-size:16px;line-height:1}
+.qty button:hover{border-color:#988646}
+.qty span{min-width:30px;text-align:center;color:#f5f3ee;font-weight:500}
+.subtotal{font-family:'Playfair Display',serif;font-size:18px;color:#988646;min-width:100px;text-align:right}
+.remove{background:transparent;border:none;color:#5c5852;cursor:pointer;font-size:11px;padding:6px;letter-spacing:1px;text-transform:uppercase;margin-left:14px}
+.remove:hover{color:#a8a39a}
+.summary{margin-top:36px;padding:28px;background:#0d1520;border:1px solid #1a2230;border-radius:6px}
+.s-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;font-size:14px;color:#a8a39a}
+.s-row.total{font-family:'Playfair Display',serif;font-size:28px;color:#f5f3ee;font-weight:400;border-top:1px solid #1a2230;padding-top:18px;margin-top:18px;margin-bottom:24px}
+.s-row.total em{color:#988646;font-style:italic}
+.cta{display:block;width:100%;padding:18px;background:#988646;color:#0d1520;border:none;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:0.2s}
+.cta:hover{background:#b59c52}
+.alt-cta{display:block;width:100%;margin-top:10px;padding:14px;background:transparent;border:1px solid #2a3242;color:#a8a39a;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-align:center;text-decoration:none}
+.alt-cta:hover{border-color:#988646;color:#988646}
+.disclaimer{margin-top:32px;padding:16px;background:rgba(0,0,0,0.4);border:1px solid #1a2230;border-radius:4px;font-size:10px;color:#5c5852;line-height:1.6;text-align:center}
+.contact{margin-top:24px;text-align:center;font-size:12px;color:#a8a39a}
+.contact a{color:#988646}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="brand-row">
+    <a href="/" class="brand">peptiqmx.com</a>
+    <a href="/" class="back">← seguir comprando</a>
+  </div>
+
+  <h1>Tu <em>carrito.</em></h1>
+  <p class="sub">Revisa tu orden antes de pagar.</p>
+
+  <div id="cart-content"></div>
+
+  <div class="contact">
+    Soporte WhatsApp · <a href="https://wa.me/5214445770445">+52 444 577 0445</a>
+  </div>
+
+  <div class="disclaimer">
+    Solo para uso en investigación. No para consumo humano ni uso médico.
+    El uso de este producto es responsabilidad de quien lo usa. Solo +18 años.
+  </div>
+</main>
+
+<script>
+function render() {
+  const container = document.getElementById('cart-content');
+  if (!window.peptiqCart) {
+    setTimeout(render, 100);
+    return;
+  }
+  const items = window.peptiqCart.items();
+
+  if (items.length === 0) {
+    container.innerHTML = `
+      <div class="empty">
+        <p>Tu carrito está vacío.</p>
+        <a href="/#productos">Ver catálogo</a>
+      </div>
+    `;
+    return;
+  }
+
+  let html = '';
+  items.forEach(i => {
+    const subtotal = i.price * (i.qty || 1);
+    html += `
+      <div class="item">
+        <div class="item-info">
+          <div class="item-name">${i.name}</div>
+          <div class="item-price">$${i.price.toLocaleString('es-MX')} MXN c/u</div>
+        </div>
+        <div class="qty">
+          <button onclick="window.peptiqCart.setQty('${i.product_id}', ${(i.qty||1) - 1}); render();">−</button>
+          <span>${i.qty || 1}</span>
+          <button onclick="window.peptiqCart.setQty('${i.product_id}', ${(i.qty||1) + 1}); render();">+</button>
+        </div>
+        <div class="subtotal">$${subtotal.toLocaleString('es-MX')}</div>
+        <button class="remove" onclick="window.peptiqCart.remove('${i.product_id}'); render();">✕</button>
+      </div>
+    `;
+  });
+
+  const total = window.peptiqCart.total();
+  const count = window.peptiqCart.count();
+  html += `
+    <div class="summary">
+      <div class="s-row"><span>${count} ${count === 1 ? 'producto' : 'productos'}</span><span>$${total.toLocaleString('es-MX')} MXN</span></div>
+      <div class="s-row"><span>Envío 24-72h MX</span><span>Incluido</span></div>
+      <div class="s-row total"><span><em>Total</em></span><span>$${total.toLocaleString('es-MX')} MXN</span></div>
+      <button class="cta" onclick="window.peptiqCart.checkout()">Pagar ahora</button>
+      <a class="alt-cta" href="javascript:void(0)" onclick="checkoutWhatsApp()">o pagar vía WhatsApp Concierge</a>
+    </div>
+  `;
+  container.innerHTML = html;
+}
+
+function checkoutWhatsApp() {
+  const items = window.peptiqCart.items();
+  if (items.length === 0) return;
+  const lines = items.map(i => `• ${i.name} × ${i.qty || 1} = $${(i.price * (i.qty || 1)).toLocaleString('es-MX')} MXN`).join('\n');
+  const total = window.peptiqCart.total().toLocaleString('es-MX');
+  const msg = `Hola, quiero comprar este carrito:\n\n${lines}\n\nTotal: $${total} MXN\n\n¿Cómo continuo con el pago?`;
+  window.open(`https://wa.me/5214445770445?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+window.addEventListener('peptiq:cart-updated', render);
+window.addEventListener('DOMContentLoaded', () => setTimeout(render, 200));
+</script>
+</body>
+</html>
