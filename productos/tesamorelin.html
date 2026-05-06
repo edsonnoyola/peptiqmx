@@ -478,6 +478,16 @@
     const price = 6999;
     if (window.fbq) fbq('track', 'InitiateCheckout', { content_ids:[productId], content_name:name, content_type:'product', value:price, currency:'MXN' });
     const utm = (window.__peptiqUTM && window.__peptiqUTM.utm_source) ? ' · fuente: ' + window.__peptiqUTM.utm_source : '';
+    // Try Stripe checkout first
+    try {
+      const res = await fetch('https://sara-backend.edson-633.workers.dev/api/peptiq/web-checkout', {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ product_id: productId, source: 'peptiqmx_web', utm: window.__peptiqUTM || {} })
+      });
+      const d = await res.json();
+      if (d.payment_url){ window.location.href = d.payment_url; return; }
+    } catch(e){}
+    // Fallback to WhatsApp concierge
     const msg = 'Hola, quiero comprar *' + name + '* ($' + price.toLocaleString('es-MX') + ' MXN)' + utm + '. ¿Cómo continuo con el pago?';
     window.open('https://wa.me/5214445770445?text=' + encodeURIComponent(msg), '_blank');
   }
