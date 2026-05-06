@@ -77,6 +77,9 @@
         destinados al consumo humano ni a uso médico.
       </p>
       <p>
+        <strong>El uso de este producto es responsabilidad de quien lo usa.</strong>
+      </p>
+      <p>
         Debes tener <strong>18 años de edad o más</strong> para utilizar este sitio web.
       </p>
       <button class="accept" id="pag-accept">Entiendo · Soy mayor de 18</button>
