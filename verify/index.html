@@ -357,6 +357,32 @@
       },
     };
 
+    // Alias map → resuelve nombres alternativos al slug canónico del CATALOG
+    const ALIASES = {
+      'wolverine': 'heal-stack',
+      'wolverine-pro': 'heal-stack',
+      'bb20': 'heal-stack',
+      'bpc': 'bpc-157',
+      'bp10': 'bpc-157',
+      'tb': 'tb-500',
+      'tb10': 'tb-500',
+      'cu100': 'ghk-cu',
+      'ghk': 'ghk-cu',
+      'ip10': 'ipamorelin',
+      'tsm10': 'tesamorelin',
+      'nj1000': 'nad-plus',
+      'nad': 'nad-plus',
+      'et50': 'epithalon',
+      'sx10': 'semax',
+      'rt30': 'retatrutide',
+      'kpv10': 'kpv',
+      'cp10': 'cjc-ipamorelin',
+      'cjc': 'cjc-ipamorelin',
+      'ba3': 'bac-water',
+      'glow70': 'trinity',
+      'glow': 'trinity',
+    };
+
     function getSlug() {
       // Accept both formats:
       //   /verify/bpc-157  (path-based, used in printed labels)
@@ -372,7 +398,8 @@
     }
 
     function render() {
-      const slug = getSlug();
+      let slug = getSlug();
+      if (ALIASES[slug]) slug = ALIASES[slug];
       const p = CATALOG[slug];
       const el = document.getElementById('content');
 
