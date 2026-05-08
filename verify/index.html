@@ -208,6 +208,40 @@
       color: rgba(255,255,255,0.55);
       line-height: 1.6;
     }
+    .stack-components {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .stack-title {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: rgba(198,169,105,0.8);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .stack-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 12px;
+    }
+    .stack-item:last-child { border-bottom: none; }
+    .stack-item-name { color: rgba(255,255,255,0.85); }
+    .stack-item-link {
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: rgba(198,169,105,0.85);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .stack-item-link:hover { color: rgba(198,169,105,1); }
   </style>
   <script src="/peptiq-legal-banner.js" defer></script>
     <script defer src="/peptiq-age-gate.js?v=2"></script>
@@ -347,6 +381,19 @@
         lot: 'Mfg: Nov 6, 2025', expiry: '2027-11',
         allergen: 'Heptapéptido sintético derivado de ACTH (4-10). Secuencia corta (7 AA) sin homología con alérgenos comunes. Uso clínico extendido en Rusia desde 1982 sin reportes significativos de hipersensibilidad. Riesgo alergénico: mínimo.'
       },
+      'wolverine-pro': {
+        line: 'WOLVERINE', lineColor: '#111111',
+        name: 'WOLVERINE PRO', dose: 'Stack · 3 viales',
+        purity: 'Ver componentes', content: 'BPC-157 + TB-500 + BAC ×2',
+        method: 'Stack verificable por componente',
+        lot: 'Mfg: Nov 6, 2025', expiry: '2027-11',
+        components: [
+          { name: 'BPC-157 10 mg', slug: 'bpc-157' },
+          { name: 'TB-500 10 mg', slug: 'tb-500' },
+          { name: 'BAC Water 3 ml ×2', slug: 'bac-water' },
+        ],
+        allergen: 'Stack de 2 péptidos sintéticos (BPC-157 + TB-500) + 2 viales de agua bacteriostática para reconstitución. Sin epítopos alergénicos identificados en los péptidos. Para detalle alergénico de cada componente, verifica cada vial por separado.'
+      },
       'cjc-ipamorelin': {
         line: 'PRIME', lineColor: '#111111',
         name: 'CJC + IPAMORELIN', dose: '10 mg blend',
@@ -360,7 +407,6 @@
     // Alias map → resuelve nombres alternativos al slug canónico del CATALOG
     const ALIASES = {
       'wolverine': 'heal-stack',
-      'wolverine-pro': 'heal-stack',
       'bb20': 'heal-stack',
       'bpc': 'bpc-157',
       'bp10': 'bpc-157',
@@ -444,6 +490,16 @@
           <a class="janoshik-link" href="https://janoshik.com/verify/${p.janoshikKey || ''}" target="_blank" rel="noopener">
             Independent verification → janoshik.com/verify${p.janoshikKey ? ' · Key: ' + p.janoshikKey : ''}
           </a>
+          ${p.components ? `
+          <div class="stack-components">
+            <div class="stack-title">Componentes del stack</div>
+            ${p.components.map(c => `
+              <div class="stack-item">
+                <span class="stack-item-name">${c.name}</span>
+                <a class="stack-item-link" href="/verify/${c.slug}">Verificar →</a>
+              </div>
+            `).join('')}
+          </div>` : ''}
           ${!p.janoshikKey ? `
           <div class="pending-coa-notice">
             <div class="pending-coa-title">COA Janoshik en proceso</div>
