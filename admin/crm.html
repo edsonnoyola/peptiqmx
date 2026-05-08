@@ -230,14 +230,46 @@
         <div style="background:var(--card);border:1px solid var(--rule);padding:22px">
           <h3 style="font-family:var(--serif);font-size:18px;font-weight:500;margin-bottom:18px">Nueva venta</h3>
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
             <div>
               <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px">Cliente</label>
               <input id="calcCustomer" type="text" placeholder="Nombre" style="width:100%;padding:10px 12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13px">
             </div>
             <div>
+              <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px">Celular</label>
+              <input id="calcPhone" type="tel" placeholder="4445770445" style="width:100%;padding:10px 12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:Monaco,monospace;font-size:13px">
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px">
+            <div>
               <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px">Ciudad</label>
-              <input id="calcCity" type="text" placeholder="Morelia, CDMX..." style="width:100%;padding:10px 12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13px">
+              <input id="calcCity" type="text" placeholder="Morelia" style="width:100%;padding:10px 12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13px">
+            </div>
+            <div>
+              <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px">Fecha</label>
+              <input id="calcDate" type="date" style="width:100%;padding:10px 12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:12px">
+            </div>
+            <div>
+              <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px">Hora</label>
+              <input id="calcTime" type="time" style="width:100%;padding:10px 12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:12px">
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:auto 1fr 1fr;gap:10px;margin-bottom:14px">
+            <div>
+              <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px">Status envío</label>
+              <select id="calcShipStatus" style="padding:10px 12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13px">
+                <option value="pending">⏳ Pendiente</option>
+                <option value="shipped">📦 Enviado</option>
+                <option value="delivered">✓ Entregado</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px">Paquetería</label>
+              <input id="calcCourier" type="text" placeholder="Estafeta, DHL, UPS..." style="width:100%;padding:10px 12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13px">
+            </div>
+            <div>
+              <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px">Guía / tracking</label>
+              <input id="calcTracking" type="text" placeholder="N° guía" style="width:100%;padding:10px 12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:Monaco,monospace;font-size:12px">
             </div>
           </div>
 
@@ -613,6 +645,12 @@ async function calcInit(){
       sel.appendChild(o);
     });
   }
+  // Pre-fill fecha/hora actuales
+  const now = new Date();
+  const dateEl = document.getElementById('calcDate');
+  const timeEl = document.getElementById('calcTime');
+  if (dateEl && !dateEl.value) dateEl.value = now.toISOString().slice(0,10);
+  if (timeEl && !timeEl.value) timeEl.value = now.toTimeString().slice(0,5);
   calcRenderCart();
   calcCompute();
   await calcRenderLog();
@@ -691,10 +729,16 @@ function calcCompute(){
 
 async function calcSaveSale(){
   const customerName = document.getElementById('calcCustomer').value.trim();
+  const customerPhone = document.getElementById('calcPhone').value.trim();
   const customerCity = document.getElementById('calcCity').value.trim();
+  const saleDate = document.getElementById('calcDate').value;
+  const saleTime = document.getElementById('calcTime').value;
   const totalCharged = parseFloat(document.getElementById('calcTotal').value) || 0;
   const shipCharged = parseFloat(document.getElementById('calcShipCharged').value) || 0;
   const shipCost = parseFloat(document.getElementById('calcShipCost').value) || 0;
+  const shippingStatus = document.getElementById('calcShipStatus').value;
+  const trackingNumber = document.getElementById('calcTracking').value.trim();
+  const courier = document.getElementById('calcCourier').value.trim();
   const notes = document.getElementById('calcNotes').value.trim();
   if (!customerName || _calcCart.length === 0 || totalCharged <= 0) {
     alert('Captura al menos: cliente, 1 producto y total cobrado');
@@ -705,11 +749,13 @@ async function calcSaveSale(){
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        customerName, customerCity,
+        customerName, customerPhone, customerCity,
         items: _calcCart,
         shippingCharged: shipCharged,
         shippingCost: shipCost,
         totalCharged,
+        saleDate, saleTime,
+        shippingStatus, trackingNumber, courier,
         notes,
       })
     });
@@ -721,10 +767,17 @@ async function calcSaveSale(){
     // Reset
     _calcCart = [];
     document.getElementById('calcCustomer').value = '';
+    document.getElementById('calcPhone').value = '';
     document.getElementById('calcCity').value = '';
     document.getElementById('calcTotal').value = 0;
+    document.getElementById('calcTracking').value = '';
+    document.getElementById('calcCourier').value = '';
+    document.getElementById('calcShipStatus').value = 'pending';
     document.getElementById('calcNotes').value = '';
-    _calcSalesCache = null; // invalidate cache
+    const now = new Date();
+    document.getElementById('calcDate').value = now.toISOString().slice(0,10);
+    document.getElementById('calcTime').value = now.toTimeString().slice(0,5);
+    _calcSalesCache = null;
     calcRenderCart();
     calcCompute();
     await calcRenderLog();
@@ -767,22 +820,56 @@ async function calcRenderLog(){
       return p ? `${it.qty}× ${p.name}` : it.sku;
     }).join(' · ');
     const profitColor = sale.netProfit >= 0 ? 'var(--ok)' : 'var(--bad)';
+    const phoneFmt = sale.customerPhone ? `<a href="https://wa.me/${sale.customerPhone}" target="_blank" style="color:var(--gold);font-family:Monaco,monospace;font-size:11px">📱 ${sale.customerPhone}</a>` : '';
+    const dateTimeFmt = sale.time ? `${sale.date} · ${sale.time}` : sale.date;
+    const statusBadge = {
+      pending: '<span style="display:inline-block;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;padding:2px 8px;border:1px solid var(--warn);color:var(--warn);background:rgba(255,193,7,.08)">⏳ Pendiente</span>',
+      shipped: '<span style="display:inline-block;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;padding:2px 8px;border:1px solid #3b82f6;color:#3b82f6;background:rgba(59,130,246,.08)">📦 Enviado</span>',
+      delivered: '<span style="display:inline-block;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;padding:2px 8px;border:1px solid var(--ok);color:var(--ok);background:rgba(34,197,94,.08)">✓ Entregado</span>'
+    }[sale.shippingStatus || 'pending'] || '';
+    const trackingFmt = sale.trackingNumber ? `<span style="font-size:11px;color:var(--mute);font-family:Monaco,monospace">${sale.courier ? sale.courier + ' · ' : ''}${sale.trackingNumber}</span>` : '';
     return `<div style="border:1px solid var(--rule);padding:14px;background:var(--ink)">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
         <div>
           <div style="font-weight:600;color:var(--paper)">${sale.customerName}${sale.customerCity?' · '+sale.customerCity:''}</div>
-          <div style="font-size:11px;color:var(--mute)">${sale.date}</div>
+          <div style="font-size:11px;color:var(--mute);margin-top:2px">📅 ${dateTimeFmt}${phoneFmt?' · ' + phoneFmt:''}</div>
         </div>
         <div style="text-align:right">
           <div style="color:var(--gold);font-weight:700;font-family:var(--serif);font-size:18px">${fmtMx(sale.totalCharged)}</div>
           <div style="font-size:11px;color:${profitColor};font-family:Monaco,monospace">gana ${fmtMx(sale.netProfit)} (${sale.margin}%)</div>
         </div>
       </div>
-      <div style="font-size:11px;color:var(--mute);margin-bottom:6px">${itemsTxt}</div>
+      <div style="font-size:11px;color:var(--mute);margin-bottom:8px">${itemsTxt}</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+        ${statusBadge}
+        ${trackingFmt}
+        <select onchange="calcUpdateShipping('${sale.id}', this.value)" style="background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-size:10px;padding:3px 6px">
+          <option value="">— Cambiar status —</option>
+          <option value="pending">⏳ Pendiente</option>
+          <option value="shipped">📦 Enviado</option>
+          <option value="delivered">✓ Entregado</option>
+        </select>
+      </div>
       ${sale.notes ? `<div style="font-size:11px;color:var(--mute);font-style:italic;margin-bottom:6px">${sale.notes}</div>` : ''}
       <button onclick="calcDeleteSale('${sale.id}')" style="background:transparent;border:0;color:var(--bad);font-size:11px;cursor:pointer;padding:0">Eliminar</button>
     </div>`;
   }).join('');
+}
+
+async function calcUpdateShipping(id, newStatus){
+  if (!newStatus) return;
+  try{
+    const r = await fetch('/api/sales-manual?key=' + encodeURIComponent(getAdminKey()), {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, shippingStatus: newStatus })
+    });
+    if (!r.ok) { alert('Error actualizando status'); return; }
+    _calcSalesCache = null;
+    await calcRenderLog();
+  }catch(e){
+    alert('Error: ' + e.message);
+  }
 }
 
 function refresh(){ loadAll(); }

@@ -43,7 +43,7 @@ function checkAuth(event) {
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, X-Peptiq-Key',
 };
 
@@ -103,15 +103,23 @@ exports.handler = async (event) => {
 
     if (event.httpMethod === 'POST') {
       const body = JSON.parse(event.body || '{}');
-      const { customerName, customerCity, items, shippingCharged, shippingCost, totalCharged, notes } = body;
+      const {
+        customerName, customerPhone, customerCity,
+        items, shippingCharged, shippingCost, totalCharged,
+        saleDate, saleTime, shippingStatus, trackingNumber, courier,
+        notes,
+      } = body;
       if (!customerName || !Array.isArray(items) || items.length === 0 || !totalCharged) {
         return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: 'customerName + items + totalCharged required' }) };
       }
       const totals = computeSaleTotals(items, totalCharged, shippingCost || 0);
+      const now = new Date();
       const sale = {
         id: 'sale-' + Date.now(),
-        date: new Date().toISOString().slice(0, 10),
+        date: saleDate || now.toISOString().slice(0, 10),
+        time: saleTime || now.toTimeString().slice(0, 5), // HH:MM
         customerName: String(customerName).slice(0, 100),
+        customerPhone: String(customerPhone || '').replace(/\D/g, '').slice(0, 15),
         customerCity: String(customerCity || '').slice(0, 100),
         items: items.map(it => ({ sku: String(it.sku), qty: parseInt(it.qty) || 1 })).filter(it => CATALOG[it.sku]),
         shippingCharged: parseFloat(shippingCharged) || 0,
@@ -120,11 +128,30 @@ exports.handler = async (event) => {
         productCost: totals.productCost,
         netProfit: totals.netProfit,
         margin: totals.margin,
+        shippingStatus: ['pending','shipped','delivered'].includes(shippingStatus) ? shippingStatus : 'pending',
+        trackingNumber: String(trackingNumber || '').slice(0, 50),
+        courier: String(courier || '').slice(0, 30),
         notes: String(notes || '').slice(0, 500),
         source: 'manual',
+        createdAt: now.toISOString(),
       };
       const data = await loadSales(store);
       data.sales.unshift(sale);
+      await store.setJSON('sales/ALL.json', data);
+      return { statusCode: 200, headers: { ...CORS, 'Content-Type': 'application/json' }, body: JSON.stringify({ ok: true, sale }) };
+    }
+
+    // PATCH · update shipping status / tracking de una venta existente
+    if (event.httpMethod === 'PATCH') {
+      const body = JSON.parse(event.body || '{}');
+      const { id, shippingStatus, trackingNumber, courier } = body;
+      if (!id) return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: 'id required' }) };
+      const data = await loadSales(store);
+      const sale = data.sales.find(s => s.id === id);
+      if (!sale) return { statusCode: 404, headers: CORS, body: JSON.stringify({ error: 'sale not found' }) };
+      if (shippingStatus && ['pending','shipped','delivered'].includes(shippingStatus)) sale.shippingStatus = shippingStatus;
+      if (trackingNumber !== undefined) sale.trackingNumber = String(trackingNumber).slice(0, 50);
+      if (courier !== undefined) sale.courier = String(courier).slice(0, 30);
       await store.setJSON('sales/ALL.json', data);
       return { statusCode: 200, headers: { ...CORS, 'Content-Type': 'application/json' }, body: JSON.stringify({ ok: true, sale }) };
     }
