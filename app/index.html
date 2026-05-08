@@ -16,6 +16,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 <style>
 :root{
   --ink:#0E0E0E;
@@ -940,6 +941,49 @@ input:checked + .slider::before{transform:translateX(18px)}
     </template>
 
     <button x-show="myInventoryLines.length>0" @click="screen='inventory'" class="btn-secondary" style="margin-top:8px">+ Agregar péptido</button>
+
+    <!-- ──── STATS · Adherencia + racha ──── -->
+    <div x-show="myInventoryLines.length>0" style="margin-top:24px;padding-top:20px;border-top:1px solid var(--rule)">
+      <div class="eyebrow gold-text" style="margin-bottom:12px">Tu progreso</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
+        <div class="card" style="padding:14px;text-align:center">
+          <div style="font-size:11px;color:var(--mute);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Racha</div>
+          <div class="serif" style="font-size:26px;font-weight:600;color:var(--gold)" x-text="adherenceStats.streak"></div>
+          <div style="font-size:10px;color:var(--mute);margin-top:2px" x-text="adherenceStats.streak===1?'día':'días'"></div>
+        </div>
+        <div class="card" style="padding:14px;text-align:center">
+          <div style="font-size:11px;color:var(--mute);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Adherencia</div>
+          <div class="serif" style="font-size:26px;font-weight:600" :style="`color:${adherenceStats.pct>=80?'var(--ok)':adherenceStats.pct>=50?'var(--warn)':'var(--bad)'}`" x-text="adherenceStats.pct+'%'"></div>
+          <div style="font-size:10px;color:var(--mute);margin-top:2px">últimos 30d</div>
+        </div>
+        <div class="card" style="padding:14px;text-align:center">
+          <div style="font-size:11px;color:var(--mute);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Dosis</div>
+          <div class="serif" style="font-size:26px;font-weight:600" x-text="adherenceStats.totalDoses"></div>
+          <div style="font-size:10px;color:var(--mute);margin-top:2px">aplicadas</div>
+        </div>
+      </div>
+      <!-- Heatmap calendario últimos 30 días -->
+      <div class="card" style="padding:14px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <div style="font-size:11px;color:var(--mute);letter-spacing:1.5px;text-transform:uppercase">Últimos 30 días</div>
+          <div style="display:flex;gap:6px;align-items:center;font-size:9px;color:var(--mute)">
+            <div style="width:10px;height:10px;background:#1a1a1a;border:1px solid #333"></div>
+            <span>vacío</span>
+            <div style="width:10px;height:10px;background:rgba(152,114,69,.4)"></div>
+            <span>1</span>
+            <div style="width:10px;height:10px;background:var(--gold)"></div>
+            <span>2+</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(15,1fr);gap:3px">
+          <template x-for="(day,i) in adherenceStats.heatmap" :key="i">
+            <div :title="day.date+' · '+day.count+' dosis'" :style="`aspect-ratio:1;background:${day.count===0?'#1a1a1a':day.count===1?'rgba(152,114,69,.4)':'var(--gold)'};border:${day.count===0?'1px solid #333':'0'};border-radius:2px`"></div>
+          </template>
+        </div>
+        <p x-show="adherenceStats.streak>=7" style="margin-top:10px;font-size:11px;color:var(--gold);font-style:italic">🔥 ¡Racha de <span x-text="adherenceStats.streak"></span> días! Sigue así.</p>
+        <p x-show="adherenceStats.streak===0 && adherenceStats.totalDoses>0" style="margin-top:10px;font-size:11px;color:var(--warn)">⚠ Te saltaste hoy. Reactiva la racha aplicando tu dosis.</p>
+      </div>
+    </div>
   </div>
 
   <!-- ──── ASSISTANT · ChatGPT-style ──── -->
@@ -1061,10 +1105,13 @@ input:checked + .slider::before{transform:translateX(18px)}
           </div>
         </div>
         <div class="divider"></div>
-        <div style="display:flex;gap:8px">
+        <div style="display:flex;gap:8px;margin-bottom:8px">
           <button @click="openCalc(pname)" class="btn-secondary" style="font-size:12px;padding:10px;flex:1">📐 Calcular dosis</button>
           <a :href="buyLinkFor(pname)" :class="isLowStockFor(pname)?'btn-gold':'btn-secondary'" style="font-size:12px;padding:10px;flex:1;text-align:center;text-decoration:none;display:block" x-text="isLowStockFor(pname)?'Reabastecer':'+ Otro vial'"></a>
         </div>
+        <a x-show="verifyLinkFor(pname)" :href="verifyLinkFor(pname)" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(152,114,69,.35);text-decoration:none;font-weight:600">
+          🔬 Verificar COA Janoshik del lote
+        </a>
       </div>
     </template>
 
@@ -1116,6 +1163,13 @@ input:checked + .slider::before{transform:translateX(18px)}
           <div style="font-size:11px;color:var(--mute);margin-top:2px">Aviso cuando vial bajo de 10 días</div>
         </div>
         <label class="switch"><input type="checkbox" :checked="autoLowStockAlert!==false" @change="autoLowStockAlert=$event.target.checked;localStorage.setItem('peptiq_auto_low',autoLowStockAlert?'1':'0')"><span class="slider"></span></label>
+      </div>
+      <div x-show="pushSupported" style="padding:16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule)">
+        <div>
+          <div style="font-size:14px;font-weight:500">🔔 Push notifications</div>
+          <div style="font-size:11px;color:var(--mute);margin-top:2px" x-text="pushSubscribed ? 'Activo · recordatorios en este dispositivo' : 'Recibe recordatorios incluso con app cerrada'"></div>
+        </div>
+        <label class="switch"><input type="checkbox" :checked="pushSubscribed" @change="pushSubscribed ? disablePushNotifications() : enablePushNotifications()"><span class="slider"></span></label>
       </div>
       <div style="padding:16px;display:flex;justify-content:space-between;align-items:center">
         <div>
@@ -1357,6 +1411,18 @@ input:checked + .slider::before{transform:translateX(18px)}
       <button @click="addVialOpen=false" style="font-size:20px;color:var(--mute);padding:6px">✕</button>
     </div>
     <div style="padding:20px">
+      <!-- QR scanner del vial -->
+      <button x-show="!qrScanActive" @click="startQrScan()" style="width:100%;background:#0E0E0E;color:#FFF;padding:16px;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;font-weight:600;border:0;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px">
+        📷 <span>Escanear QR del vial</span>
+      </button>
+      <div x-show="qrScanActive" style="margin-bottom:14px">
+        <div id="qr-reader" style="width:100%;border-radius:6px;overflow:hidden;background:#000"></div>
+        <button @click="stopQrScan()" style="width:100%;margin-top:8px;background:transparent;border:1px solid var(--rule);padding:10px;font-size:11px;letter-spacing:1px;text-transform:uppercase">Cancelar escaneo</button>
+        <p style="font-size:11px;color:var(--mute);margin-top:8px;text-align:center">Apunta al QR del vial o caja PEPTIQ</p>
+      </div>
+      <div x-show="qrScanError" style="background:rgba(180,40,40,.1);border-left:3px solid var(--bad);padding:10px 12px;margin-bottom:14px;font-size:11.5px;color:var(--bad)" x-text="qrScanError"></div>
+      <div x-show="!qrScanActive" style="text-align:center;font-size:11px;color:var(--mute);margin:-4px 0 14px">— o registrar manualmente —</div>
+
       <div class="eyebrow" style="margin-bottom:6px">Péptido</div>
       <select x-model="addVialPeptide" class="input" style="margin-bottom:14px;padding:12px;font-size:14px">
         <option value="" disabled>Selecciona…</option>
@@ -1511,6 +1577,9 @@ function app(){
           }).catch(()=>{});
         }catch(e){}
       }
+      // Cloud sync: intenta restaurar state previo de este WA antes de avanzar
+      try{await this.restoreStateFromCloud();}catch(e){}
+      try{await this.syncInventoryFromBackend();}catch(e){}
       // Continue
       this.screen = this.firstTime ? 'tutorial' : 'dashboard';
       this.tutorialStep = 1;
@@ -1520,6 +1589,178 @@ function app(){
       localStorage.setItem('peptiq_wa_optin','0');
       this.screen = this.firstTime ? 'tutorial' : 'dashboard';
       this.tutorialStep = 1;
+    },
+    // ─── Cloud State Sync · backup completo del localStorage ───
+    // Identidad = WhatsApp · token HMAC issued por backend
+    cloudSyncStatus: 'idle', // idle | syncing | synced | error
+    cloudSyncDebounce: null,
+    async restoreStateFromCloud(){
+      const wa = (this.waNumber||'').replace(/\D/g,'');
+      if(!wa || wa.length<10) return false;
+      const waNorm = wa.length===10 ? '521'+wa : wa;
+      try{
+        const r = await fetch(`/api/state-sync?wa=${encodeURIComponent(waNorm)}`,{cache:'no-store'});
+        if(!r.ok) return false;
+        const data = await r.json();
+        if(data.token) localStorage.setItem('peptiq_sync_token', data.token);
+        if(data.state && typeof data.state === 'object'){
+          // Restore localStorage keys (excepto sync token y consent inmutables)
+          const skip = new Set(['peptiq_sync_token','peptiq_consent_record']);
+          for(const [k,v] of Object.entries(data.state)){
+            if(skip.has(k) || k.startsWith('_')) continue;
+            try{
+              localStorage.setItem(k, typeof v === 'string' ? v : JSON.stringify(v));
+            }catch(e){}
+          }
+          console.log('☁️ PEPTIQ state restored from cloud');
+          return true;
+        }
+      }catch(e){console.warn('Cloud restore failed (non-blocking):',e);}
+      return false;
+    },
+    backupStateToCloud(){
+      // Debounced: agrupa cambios en ventana de 4s
+      if(this.cloudSyncDebounce) clearTimeout(this.cloudSyncDebounce);
+      this.cloudSyncDebounce = setTimeout(()=>this._doBackupNow(),4000);
+    },
+    async _doBackupNow(){
+      const wa = (this.waNumber||'').replace(/\D/g,'');
+      if(!wa || wa.length<10) return;
+      const waNorm = wa.length===10 ? '521'+wa : wa;
+      let token = localStorage.getItem('peptiq_sync_token');
+      if(!token){
+        // Issue new token
+        try{
+          const r = await fetch(`/api/state-sync?wa=${encodeURIComponent(waNorm)}`);
+          if(r.ok){const d=await r.json();token=d.token;if(token)localStorage.setItem('peptiq_sync_token',token);}
+        }catch(e){return;}
+      }
+      if(!token) return;
+
+      // Recolectar todo el localStorage de PEPTIQ
+      const state = {};
+      for(let i=0;i<localStorage.length;i++){
+        const k = localStorage.key(i);
+        if(!k || !k.startsWith('peptiq_')) continue;
+        if(k==='peptiq_sync_token') continue;
+        const v = localStorage.getItem(k);
+        // Try parse JSON, else keep string
+        try{state[k]=JSON.parse(v);}catch(e){state[k]=v;}
+      }
+
+      this.cloudSyncStatus = 'syncing';
+      try{
+        const r = await fetch('/api/state-sync',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({wa:waNorm, token, state})
+        });
+        this.cloudSyncStatus = r.ok ? 'synced' : 'error';
+      }catch(e){
+        this.cloudSyncStatus = 'error';
+      }
+    },
+    // ─── Push notifications (Web Push · VAPID) ───
+    pushSupported: 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window,
+    pushPermission: typeof Notification !== 'undefined' ? Notification.permission : 'denied',
+    pushSubscribed: localStorage.getItem('peptiq_push_subscribed')==='1',
+    async enablePushNotifications(){
+      if(!this.pushSupported){
+        alert('Tu navegador no soporta push notifications. Usa Safari iOS 16.4+, Chrome o Firefox.');
+        return false;
+      }
+      try{
+        const perm = await Notification.requestPermission();
+        this.pushPermission = perm;
+        if(perm !== 'granted'){
+          alert('Permiso denegado. Actívalo en ajustes del navegador para recibir recordatorios de dosis.');
+          return false;
+        }
+        const reg = await navigator.serviceWorker.ready;
+        // VAPID public key: debe ser inyectada vía meta tag o env. Por ahora se lee de window.PEPTIQ_VAPID_PUBLIC
+        const vapidPublic = window.PEPTIQ_VAPID_PUBLIC || (document.querySelector('meta[name="vapid-public"]')?.content || '');
+        if(!vapidPublic){
+          console.warn('VAPID public key no configurada. Set window.PEPTIQ_VAPID_PUBLIC o <meta name="vapid-public" content="...">');
+          return false;
+        }
+        // Convert base64url → Uint8Array
+        const padding = '='.repeat((4 - vapidPublic.length % 4) % 4);
+        const base64 = (vapidPublic + padding).replace(/-/g,'+').replace(/_/g,'/');
+        const raw = atob(base64);
+        const arr = new Uint8Array(raw.length);
+        for(let i=0;i<raw.length;i++) arr[i]=raw.charCodeAt(i);
+
+        const sub = await reg.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: arr
+        });
+        const subJson = sub.toJSON();
+        await fetch('/api/push-subscribe',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            endpoint: subJson.endpoint,
+            keys: subJson.keys,
+            wa: this.waNumber || '',
+            email: this.email || '',
+            peptide: (this.firstPeptide&&this.firstPeptide.name) || '',
+            recommendedHour: (this.firstPeptideData&&this.firstPeptideData.recommendedHour) || '08:00',
+            timezone: 'America/Mexico_City'
+          })
+        });
+        this.pushSubscribed = true;
+        localStorage.setItem('peptiq_push_subscribed','1');
+        return true;
+      }catch(e){
+        console.error('Push subscribe error',e);
+        alert('No se pudo activar push notifications: '+e.message);
+        return false;
+      }
+    },
+    async disablePushNotifications(){
+      try{
+        const reg = await navigator.serviceWorker.ready;
+        const sub = await reg.pushManager.getSubscription();
+        if(sub) await sub.unsubscribe();
+      }catch(e){console.warn('Push unsubscribe error',e);}
+      this.pushSubscribed = false;
+      localStorage.setItem('peptiq_push_subscribed','0');
+    },
+    // Sync inventario desde backend (Stripe webhook → Blobs)
+    // Se llama al iniciar app + cuando se actualiza WA o email
+    async syncInventoryFromBackend(){
+      try{
+        const wa = (this.waNumber||'').replace(/\D/g,'');
+        const email = (this.email||'').toLowerCase().trim();
+        if(!wa && !email) return;
+        const qs = wa ? `wa=${encodeURIComponent(wa)}` : `email=${encodeURIComponent(email)}`;
+        const r = await fetch(`/api/inventory?${qs}`,{cache:'no-store'});
+        if(!r.ok) return;
+        const data = await r.json();
+        if(!data || !data.inventory) return;
+        // Merge: backend wins (es la fuente de verdad de compras)
+        // pero solo agrega — no elimina viales que el usuario haya registrado manualmente
+        const localInv = this.vialUsage || {};
+        const lastSyncedOrder = localStorage.getItem('peptiq_last_synced_order') || '';
+        for(const order of (data.orders||[])){
+          if(order.orderId === lastSyncedOrder) continue;
+          for(const item of (order.items||[])){
+            const peptideName = item.peptide;
+            if(!peptideName || peptideName==='BAC Water') continue; // BAC water no es péptido tracked
+            if(!localInv[peptideName]) localInv[peptideName] = {vialsOwned:0, dosesUsed:0, startDate: new Date().toISOString()};
+            localInv[peptideName].vialsOwned = (localInv[peptideName].vialsOwned||0) + (item.vials||1);
+          }
+        }
+        // Guardar último orderId sincronizado para no duplicar
+        if(data.orders && data.orders.length){
+          localStorage.setItem('peptiq_last_synced_order', data.orders[data.orders.length-1].orderId);
+        }
+        this.vialUsage = localInv;
+        localStorage.setItem('peptiq_vial_usage', JSON.stringify(localInv));
+        console.log(`✅ PEPTIQ inventory synced from backend: ${data.orders?.length||0} orders`);
+      }catch(e){
+        console.warn('Inventory sync failed (non-blocking):',e);
+      }
     },
     // Consent / firma electrónica
     consent1:false,consent2:false,consent3:false,consent4:false,
@@ -1750,6 +1991,9 @@ function app(){
     },
     autoLowStockAlert: localStorage.getItem('peptiq_auto_low')!=='0',
     init(){
+      // Sync inventario desde backend (Stripe webhook → Blobs) si el usuario tiene WA o email
+      this.$nextTick(()=>this.syncInventoryFromBackend());
+
       // URL param handler · deeplinks desde WhatsApp template / push notification
       try{
         const params = new URLSearchParams(location.search);
@@ -1849,7 +2093,45 @@ function app(){
     },
     // Vial tracking · persists in localStorage
     vialUsage: JSON.parse(localStorage.getItem('peptiq_vial_usage')||'{}'),
-    saveUsage(){ localStorage.setItem('peptiq_vial_usage', JSON.stringify(this.vialUsage)); },
+    saveUsage(){ localStorage.setItem('peptiq_vial_usage', JSON.stringify(this.vialUsage)); this.backupStateToCloud&&this.backupStateToCloud(); },
+    get adherenceStats(){
+      // Calcula racha actual + % adherencia 30d + heatmap calendario
+      const today = new Date();
+      const todayKey = today.toISOString().slice(0,10);
+      // Total dosis aplicadas (todos los péptidos)
+      let totalDoses = 0;
+      const dailyCount = {}; // {YYYY-MM-DD: count}
+      for(const pname of Object.keys(this.vialUsage||{})){
+        const log = this.vialUsage[pname]?.doseLog || {};
+        for(const [dateKey,count] of Object.entries(log)){
+          const c = typeof count === 'number' ? count : (count && count.count) || 1;
+          dailyCount[dateKey] = (dailyCount[dateKey]||0) + c;
+          totalDoses += c;
+        }
+      }
+      // Heatmap últimos 30 días
+      const heatmap = [];
+      for(let i=29; i>=0; i--){
+        const d = new Date(today);
+        d.setDate(d.getDate()-i);
+        const k = d.toISOString().slice(0,10);
+        heatmap.push({date:k, count: dailyCount[k]||0});
+      }
+      // Racha: días consecutivos con dosis (incluyendo hoy o ayer si hoy aún no se aplica)
+      let streak = 0;
+      const startFrom = dailyCount[todayKey] ? today : new Date(today.getTime() - 86400000);
+      for(let i=0; i<60; i++){
+        const d = new Date(startFrom);
+        d.setDate(d.getDate()-i);
+        const k = d.toISOString().slice(0,10);
+        if((dailyCount[k]||0) > 0) streak++;
+        else break;
+      }
+      // Adherencia 30d: días con dosis / 30
+      const days30Active = heatmap.filter(d=>d.count>0).length;
+      const pct = Math.round((days30Active/30)*100);
+      return {streak, pct, totalDoses, heatmap};
+    },
     initVial(name){
       if(!this.vialUsage[name]){
         // startDate = HOY · inventory tracking starts ahora
@@ -1966,6 +2248,99 @@ function app(){
       const slugs={'BPC-157':'wolverine.html','TB-500':'wolverine.html','GHK-Cu':'glow.html','NAD+':'highlander.html','Retatrutide':'shred.html','Tesamorelin':'prime.html','Ipamorelin':'prime.html','Epithalon':'highlander.html','Semax':'cerebro-foco.html','KPV':'wolverine.html','CJC+Ipa':'prime.html'};
       const slug=slugs[name]||'index.html';
       return `https://peptiqmx.com/${slug}?utm_source=app&utm_medium=lowstock&product=${encodeURIComponent(name)}`;
+    },
+    verifyLinkFor(name){
+      // Maps peptide name → /verify slug en peptiqmx.com
+      const verifySlugs={
+        'BPC-157':'bpc-157','TB-500':'tb-500','KPV':'kpv',
+        'Wolverine Blend':'wolverine','Trinity':'trinity',
+        'NAD+':'nad-plus','Epithalon':'epithalon',
+        'GHK-Cu':'ghk-cu','AHK-Cu':'ahk-cu',
+        'Tesamorelin':'tesamorelin','Ipamorelin':'ipamorelin','CJC+Ipa':'cjc-ipamorelin',
+        'Semax':'semax','Retatrutide':'retatrutide','Tirzepatide':'tirzepatide',
+        'Agua Bacteriostática':'bac-water','BAC Water':'bac-water'
+      };
+      const slug=verifySlugs[name];
+      if(!slug) return null;
+      return `https://peptiqmx.com/verify/${slug}`;
+    },
+    // QR scanner: lee QR del vial → extrae slug de peptiqmx.com/verify/[slug]
+    // → mapea a peptide name → pre-fill addVialPeptide
+    qrScanActive: false,
+    qrScanError: '',
+    _qrInstance: null,
+    async startQrScan(){
+      this.qrScanError='';
+      if(typeof Html5Qrcode==='undefined'){
+        this.qrScanError='Lector QR no disponible. Reinicia la app.';
+        return;
+      }
+      this.qrScanActive=true;
+      // Wait for DOM render
+      await new Promise(r=>setTimeout(r,80));
+      try{
+        this._qrInstance=new Html5Qrcode('qr-reader');
+        await this._qrInstance.start(
+          {facingMode:'environment'},
+          {fps:10,qrbox:{width:250,height:250}},
+          (decodedText)=>this.onQrSuccess(decodedText),
+          ()=>{} // ignore parse errors per frame
+        );
+      }catch(e){
+        console.error('QR start error',e);
+        this.qrScanError='No pude acceder a la cámara. Permite acceso en ajustes del navegador.';
+        this.qrScanActive=false;
+      }
+    },
+    async stopQrScan(){
+      try{
+        if(this._qrInstance){
+          await this._qrInstance.stop();
+          await this._qrInstance.clear();
+        }
+      }catch(e){console.warn('QR stop error',e);}
+      this._qrInstance=null;
+      this.qrScanActive=false;
+    },
+    onQrSuccess(decoded){
+      try{
+        // Soporta: peptiqmx.com/verify/bpc-157, /verify/wolverine, /verify/?id=bpc-157
+        const url=new URL(decoded);
+        let slug='';
+        const qsId=url.searchParams.get('id');
+        if(qsId){slug=qsId.toLowerCase().trim();}
+        else{
+          const parts=url.pathname.replace(/\/$/,'').split('/').filter(Boolean);
+          slug=(parts[parts.length-1]||'').toLowerCase();
+        }
+        // Reverse lookup: slug → peptide name
+        const slugToName={
+          'bpc-157':'BPC-157','tb-500':'TB-500','kpv':'KPV',
+          'wolverine':'Wolverine Blend','heal-stack':'Wolverine Blend','bb20':'Wolverine Blend',
+          'wolverine-pro':'Wolverine Blend','trinity':'Trinity',
+          'nad-plus':'NAD+','epithalon':'Epithalon',
+          'ghk-cu':'GHK-Cu','ahk-cu':'AHK-Cu',
+          'tesamorelin':'Tesamorelin','ipamorelin':'Ipamorelin','cjc-ipamorelin':'CJC+Ipa',
+          'semax':'Semax','retatrutide':'Retatrutide','tirzepatide':'Retatrutide',
+          'bac-water':'BPC-157' // BAC water no es peptide tracked, usar BPC default
+        };
+        const name=slugToName[slug];
+        if(!name){
+          this.qrScanError=`QR válido pero producto "${slug}" no reconocido.`;
+          return;
+        }
+        // Pre-fill formulario
+        this.addVialPeptide=name;
+        this.addVialQty=this.addVialQty||1;
+        if(!this.addVialStartDate)this.addVialStartDate=new Date().toISOString().slice(0,10);
+        // Stop scanner
+        this.stopQrScan();
+        // Feedback
+        if(navigator.vibrate)navigator.vibrate(60);
+      }catch(e){
+        console.error('QR parse error',e);
+        this.qrScanError='QR no es de PEPTIQ. Apunta a un vial o caja PEPTIQ.';
+      }
     },
     waLinkFor(name){
       const msg=`Hola PEPTIQ, mi vial de ${name} se está acabando (~${this.daysRemainingFor(name)} días restantes). Quiero pedir otro con código REPEAT15.`;

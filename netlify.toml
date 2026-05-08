@@ -22,6 +22,26 @@
   to = "/.netlify/functions/peptiq-reminder-optin"
   status = 200
 
+[[redirects]]
+  from = "/api/stripe-webhook"
+  to = "/.netlify/functions/peptiq-stripe-webhook"
+  status = 200
+
+[[redirects]]
+  from = "/api/inventory"
+  to = "/.netlify/functions/peptiq-inventory-get"
+  status = 200
+
+[[redirects]]
+  from = "/api/push-subscribe"
+  to = "/.netlify/functions/peptiq-push-subscribe"
+  status = 200
+
+[[redirects]]
+  from = "/api/state-sync"
+  to = "/.netlify/functions/peptiq-state-sync"
+  status = 200
+
 [functions."peptiq-reminder-cron"]
   schedule = "*/15 * * * *"
 
