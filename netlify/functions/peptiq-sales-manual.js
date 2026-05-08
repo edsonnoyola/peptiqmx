@@ -1,0 +1,146 @@
+// PEPTIQ Sales Manual · CRUD de ventas manuales (no-Stripe)
+// GET    /api/sales-manual                → lista todas las ventas manuales
+// POST   /api/sales-manual                → crea venta { customerName, customerCity, items, shippingCharged, shippingCost, totalCharged, notes }
+// DELETE /api/sales-manual?id=sale-xxx    → elimina venta
+//
+// Auth: requiere x-peptiq-key header con API_KEY de admin
+// Storage: Netlify Blob `peptiq-sales-manual` · key = sales/ALL.json (single doc, append-style)
+
+const { getStore } = require('@netlify/blobs');
+
+const CATALOG = {
+  'BP10':   { name: 'BPC-157 10mg', cost: 150, elite: 2999 },
+  'TB10':   { name: 'TB-500 10mg', cost: 280, elite: 3799 },
+  'BB20':   { name: 'Wolverine BB20', cost: 340, elite: 5499 },
+  'GLOW70': { name: 'Trinity GLOW 70mg', cost: 400, elite: 7499 },
+  'CU100':  { name: 'GHK-Cu 100mg', cost: 100, elite: 3799 },
+  'KPV10':  { name: 'KPV 10mg', cost: 120, elite: 2899 },
+  'IP10':   { name: 'Ipamorelin 10mg', cost: 140, elite: 2899 },
+  'TSM10':  { name: 'Tesamorelin 10mg', cost: 360, elite: 7499 },
+  'NJ1000': { name: 'NAD+ 1000mg', cost: 252, elite: 5499 },
+  'ET50':   { name: 'Epithalon 50mg', cost: 280, elite: 6799 },
+  'SX10':   { name: 'Semax 10mg', cost: 140, elite: 2899 },
+  'RT30':   { name: 'Retatrutide 30mg', cost: 390, elite: 12999 },
+  'CP10':   { name: 'CJC + Ipamorelin 10mg', cost: 200, elite: 5499 },
+  'BA3':    { name: 'Agua Bacteriostática 3ml', cost: 30, elite: 590 },
+};
+
+function getBlobsOpts(name) {
+  const opts = { name, consistency: 'strong' };
+  if (process.env.NETLIFY_BLOBS_SITE_ID && process.env.NETLIFY_BLOBS_TOKEN) {
+    opts.siteID = process.env.NETLIFY_BLOBS_SITE_ID;
+    opts.token = process.env.NETLIFY_BLOBS_TOKEN;
+  }
+  return opts;
+}
+
+function checkAuth(event) {
+  const key = event.headers['x-peptiq-key'] || event.headers['X-Peptiq-Key'] || (event.queryStringParameters || {}).key;
+  const expected = process.env.PEPTIQ_ADMIN_KEY;
+  if (!expected) return true; // dev mode
+  return key === expected;
+}
+
+const CORS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, X-Peptiq-Key',
+};
+
+const SEED_SALE = {
+  id: 'first-rodolfo-morelia',
+  date: '2026-05-08',
+  customerName: 'Rodolfo',
+  customerCity: 'Morelia',
+  items: [
+    { sku: 'BB20', qty: 1 },
+    { sku: 'IP10', qty: 1 },
+    { sku: 'CU100', qty: 1 },
+    { sku: 'BA3', qty: 3 },
+  ],
+  shippingCharged: 650,
+  shippingCost: 650,
+  totalCharged: 5000,
+  productCost: 670,
+  netProfit: 3680,
+  margin: 73.6,
+  notes: 'Primer pedido PEPTIQ · combo recovery + GH + estética',
+  source: 'manual',
+};
+
+async function loadSales(store) {
+  let data = await store.get('sales/ALL.json', { type: 'json' });
+  if (!data) {
+    data = { sales: [SEED_SALE] };
+    await store.setJSON('sales/ALL.json', data);
+  }
+  return data;
+}
+
+function computeSaleTotals(items, totalCharged, shippingCost) {
+  const productCost = (items || []).reduce((s, it) => {
+    const p = CATALOG[it.sku];
+    return s + (p ? p.cost * (it.qty || 1) : 0);
+  }, 0);
+  const netProfit = totalCharged - productCost - (shippingCost || 0);
+  const margin = totalCharged > 0 ? (netProfit / totalCharged) * 100 : 0;
+  return { productCost, netProfit, margin: Math.round(margin * 10) / 10 };
+}
+
+exports.handler = async (event) => {
+  if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers: CORS };
+  if (!checkAuth(event)) {
+    return { statusCode: 401, headers: CORS, body: JSON.stringify({ error: 'unauthorized' }) };
+  }
+
+  const store = getStore(getBlobsOpts('peptiq-sales-manual'));
+
+  try {
+    if (event.httpMethod === 'GET') {
+      const data = await loadSales(store);
+      return { statusCode: 200, headers: { ...CORS, 'Content-Type': 'application/json' }, body: JSON.stringify(data) };
+    }
+
+    if (event.httpMethod === 'POST') {
+      const body = JSON.parse(event.body || '{}');
+      const { customerName, customerCity, items, shippingCharged, shippingCost, totalCharged, notes } = body;
+      if (!customerName || !Array.isArray(items) || items.length === 0 || !totalCharged) {
+        return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: 'customerName + items + totalCharged required' }) };
+      }
+      const totals = computeSaleTotals(items, totalCharged, shippingCost || 0);
+      const sale = {
+        id: 'sale-' + Date.now(),
+        date: new Date().toISOString().slice(0, 10),
+        customerName: String(customerName).slice(0, 100),
+        customerCity: String(customerCity || '').slice(0, 100),
+        items: items.map(it => ({ sku: String(it.sku), qty: parseInt(it.qty) || 1 })).filter(it => CATALOG[it.sku]),
+        shippingCharged: parseFloat(shippingCharged) || 0,
+        shippingCost: parseFloat(shippingCost) || 0,
+        totalCharged: parseFloat(totalCharged) || 0,
+        productCost: totals.productCost,
+        netProfit: totals.netProfit,
+        margin: totals.margin,
+        notes: String(notes || '').slice(0, 500),
+        source: 'manual',
+      };
+      const data = await loadSales(store);
+      data.sales.unshift(sale);
+      await store.setJSON('sales/ALL.json', data);
+      return { statusCode: 200, headers: { ...CORS, 'Content-Type': 'application/json' }, body: JSON.stringify({ ok: true, sale }) };
+    }
+
+    if (event.httpMethod === 'DELETE') {
+      const id = (event.queryStringParameters || {}).id;
+      if (!id) return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: 'id required' }) };
+      const data = await loadSales(store);
+      data.sales = data.sales.filter(s => s.id !== id);
+      await store.setJSON('sales/ALL.json', data);
+      return { statusCode: 200, headers: { ...CORS, 'Content-Type': 'application/json' }, body: JSON.stringify({ ok: true }) };
+    }
+
+    return { statusCode: 405, headers: CORS, body: 'method not allowed' };
+  } catch (e) {
+    console.error('PEPTIQ sales-manual error', e);
+    return { statusCode: 500, headers: CORS, body: JSON.stringify({ error: 'storage failed', detail: e.message }) };
+  }
+};

@@ -42,6 +42,16 @@
   to = "/.netlify/functions/peptiq-state-sync"
   status = 200
 
+[[redirects]]
+  from = "/api/sales-manual"
+  to = "/.netlify/functions/peptiq-sales-manual"
+  status = 200
+
+[[redirects]]
+  from = "/api/sales-master"
+  to = "/.netlify/functions/peptiq-sales-master"
+  status = 200
+
 [functions."peptiq-reminder-cron"]
   schedule = "*/15 * * * *"
 

@@ -164,6 +164,7 @@
       <button class="tab active" data-tab="orders" onclick="switchTab('orders')">Pedidos <span class="tab-count" id="ordersCount">—</span></button>
       <button class="tab" data-tab="leads" onclick="switchTab('leads')">Leads <span class="tab-count" id="leadsCount">—</span></button>
       <button class="tab" data-tab="calc" onclick="switchTab('calc')">📐 Calculadora <span class="tab-count" id="calcCount">—</span></button>
+      <button class="tab" data-tab="inventory" onclick="switchTab('inventory')">📦 Inventario <span class="tab-count" id="inventoryCount">—</span></button>
     </div>
 
     <div id="ordersTab">
@@ -196,6 +197,28 @@
             <th>Status</th>
           </tr></thead>
           <tbody id="leadsBody"><tr><td colspan="6" class="loading">Cargando leads...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ─── Inventario ─── -->
+    <div id="inventoryTab" style="display:none">
+      <div id="invAlerts" style="margin-bottom:18px"></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px" id="invSummary"></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>SKU</th>
+            <th>Producto</th>
+            <th>Línea</th>
+            <th style="text-align:right">Inicial</th>
+            <th style="text-align:right">Vendido</th>
+            <th style="text-align:right">Restante</th>
+            <th style="text-align:right">% Stock</th>
+            <th style="text-align:right">Costo prov.</th>
+            <th style="text-align:right">Valor Elite</th>
+          </tr></thead>
+          <tbody id="invBody"><tr><td colspan="9" class="loading">Cargando inventario...</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -454,7 +477,77 @@ function switchTab(name){
   document.getElementById('ordersTab').style.display = name === 'orders' ? 'block' : 'none';
   document.getElementById('leadsTab').style.display = name === 'leads' ? 'block' : 'none';
   document.getElementById('calcTab').style.display = name === 'calc' ? 'block' : 'none';
+  document.getElementById('inventoryTab').style.display = name === 'inventory' ? 'block' : 'none';
   if (name === 'calc') calcInit();
+  if (name === 'inventory') loadInventory();
+}
+
+// ═══════════════════════════════════════════════════════════
+// INVENTARIO · stock unificado (Stripe + manuales)
+// ═══════════════════════════════════════════════════════════
+async function loadInventory(){
+  try{
+    const r = await fetch('/api/sales-master?key=' + encodeURIComponent(localStorage.getItem('peptiq_admin_key') || ''));
+    if (!r.ok) {
+      const adminKey = prompt('Admin key requerido para acceder a /api/sales-master:');
+      if (adminKey) {
+        localStorage.setItem('peptiq_admin_key', adminKey);
+        return loadInventory();
+      }
+      document.getElementById('invBody').innerHTML = '<tr><td colspan="9" class="empty">No autorizado</td></tr>';
+      return;
+    }
+    const data = await r.json();
+    const stock = data.stock || {};
+    const summary = data.summary || {};
+    const alerts = data.alerts || [];
+    document.getElementById('inventoryCount').textContent = Object.keys(stock).length;
+
+    // Alerts
+    const alertsHtml = alerts.length === 0
+      ? '<div style="background:rgba(34,197,94,.06);border-left:3px solid var(--ok);padding:12px 16px;font-size:13px;color:var(--ok)">✓ Stock saludable · sin alertas</div>'
+      : alerts.map(a => `<div style="background:rgba(255,193,7,.08);border-left:3px solid var(--warn);padding:10px 14px;font-size:12px;margin-bottom:6px">${a}</div>`).join('');
+    document.getElementById('invAlerts').innerHTML = alertsHtml;
+
+    // Summary cards
+    const totalRemaining = Object.values(stock).reduce((s,x)=>s+x.remaining,0);
+    const totalRevenuePotential = Object.values(stock).reduce((s,x)=>s+x.revenuePotentialElite,0);
+    const totalInvested = Object.values(stock).reduce((s,x)=>s+x.costInvested,0);
+    document.getElementById('invSummary').innerHTML = `
+      <div class="stat"><div class="lbl">Viales restantes</div><div class="val">${totalRemaining}</div><div class="sub">de ${Object.values(stock).reduce((s,x)=>s+x.initial,0)} iniciales</div></div>
+      <div class="stat"><div class="lbl">Ingresos hoy</div><div class="val">${fmtMx(summary.revenue||0)}</div><div class="sub">${summary.count} ventas (${summary.countStripe} Stripe + ${summary.countManual} manuales)</div></div>
+      <div class="stat"><div class="lbl">Ganancia hoy</div><div class="val"><em>${fmtMx(summary.profit||0)}</em></div><div class="sub">${(summary.avgMargin||0).toFixed(1)}% margen promedio</div></div>
+      <div class="stat"><div class="lbl">Potencial Elite</div><div class="val">${fmtMx(totalRevenuePotential)}</div><div class="sub">si vendes todo a precio Elite</div></div>
+      <div class="stat"><div class="lbl">Capital invertido</div><div class="val">${fmtMx(totalInvested)}</div><div class="sub">stock actual costo proveedor</div></div>
+    `;
+
+    // Stock table
+    const rows = Object.values(stock)
+      .sort((a,b)=>{
+        // Sort by line, then by sku
+        if (a.line !== b.line) return a.line.localeCompare(b.line);
+        return a.sku.localeCompare(b.sku);
+      })
+      .map(s => {
+        const pctColor = s.pctRemaining <= 20 ? 'var(--bad)' : s.pctRemaining <= 50 ? 'var(--warn)' : 'var(--ok)';
+        const lineLabels = { wolverine:'🐺 Wolverine', highlander:'🕰️ Highlander', glow:'✨ Glow', prime:'⚡ Prime', shred:'🔥 Shred', support:'💧 Support' };
+        return `<tr>
+          <td><strong style="color:var(--gold);font-family:Monaco,monospace">${s.sku}</strong></td>
+          <td>${s.name}</td>
+          <td style="font-size:11px;color:var(--mute)">${lineLabels[s.line] || s.line}</td>
+          <td style="text-align:right;font-family:Monaco,monospace">${s.initial}</td>
+          <td style="text-align:right;font-family:Monaco,monospace;color:var(--mute)">${s.sold}</td>
+          <td style="text-align:right;font-family:Monaco,monospace;font-weight:600;color:${s.remaining<=2?'var(--bad)':'var(--paper)'}">${s.remaining}</td>
+          <td style="text-align:right;font-family:Monaco,monospace;color:${pctColor}">${s.pctRemaining}%</td>
+          <td style="text-align:right;font-family:Monaco,monospace;color:var(--mute)">${fmtMx(s.cost)}</td>
+          <td style="text-align:right;font-family:Monaco,monospace;color:var(--gold)">${fmtMx(s.elite)}</td>
+        </tr>`;
+      }).join('');
+    document.getElementById('invBody').innerHTML = rows;
+  } catch(e){
+    console.error('inventory load error', e);
+    document.getElementById('invBody').innerHTML = `<tr><td colspan="9" class="empty">Error: ${e.message}</td></tr>`;
+  }
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -476,41 +569,40 @@ const CALC_CATALOG = [
   { sku: 'CP10', name: 'CJC + Ipamorelin 10mg', cost: 200, elite: 5499 },
   { sku: 'BA3', name: 'Agua Bacteriostática 3ml', cost: 30, elite: 590 },
 ];
-const CALC_KEY = 'peptiq_sales_log_v1';
 let _calcCart = [];
+let _calcSalesCache = null; // local cache de las ventas backend
 
 function fmtMx(n){ return '$' + (n||0).toLocaleString('es-MX'); }
-function calcLoad(){
-  try{
-    const raw = localStorage.getItem(CALC_KEY);
-    if (raw) return JSON.parse(raw);
-  }catch(e){}
-  // Seed: primer pedido a Rodolfo Morelia
-  const seed = [{
-    id: 'first-rodolfo-morelia',
-    date: new Date().toISOString().slice(0,10),
-    customerName: 'Rodolfo',
-    customerCity: 'Morelia',
-    items: [
-      { sku: 'BB20', qty: 1 },
-      { sku: 'IP10', qty: 1 },
-      { sku: 'CU100', qty: 1 },
-      { sku: 'BA3', qty: 3 }
-    ],
-    shippingCharged: 650,
-    shippingCost: 650,
-    totalCharged: 5000,
-    productCost: 670,
-    netProfit: 3680,
-    margin: 73.6,
-    notes: 'Primer pedido PEPTIQ · combo recovery + GH + estética'
-  }];
-  try{ localStorage.setItem(CALC_KEY, JSON.stringify(seed)); }catch(e){}
-  return seed;
-}
-function calcSave(arr){ try{ localStorage.setItem(CALC_KEY, JSON.stringify(arr)); }catch(e){} }
 
-function calcInit(){
+function getAdminKey(){
+  let key = localStorage.getItem('peptiq_admin_key') || '';
+  if (!key) {
+    key = prompt('Admin key (set una vez · se guarda local):') || '';
+    if (key) localStorage.setItem('peptiq_admin_key', key);
+  }
+  return key;
+}
+
+async function calcLoad(){
+  if (_calcSalesCache) return _calcSalesCache;
+  try{
+    const r = await fetch('/api/sales-manual?key=' + encodeURIComponent(getAdminKey()));
+    if (!r.ok) {
+      console.warn('sales-manual GET failed:', r.status);
+      _calcSalesCache = [];
+      return [];
+    }
+    const data = await r.json();
+    _calcSalesCache = (data && data.sales) || [];
+    return _calcSalesCache;
+  }catch(e){
+    console.error('calcLoad error', e);
+    _calcSalesCache = [];
+    return [];
+  }
+}
+
+async function calcInit(){
   // Populate select once
   const sel = document.getElementById('calcSku');
   if (sel && sel.options.length <= 1) {
@@ -523,7 +615,7 @@ function calcInit(){
   }
   calcRenderCart();
   calcCompute();
-  calcRenderLog();
+  await calcRenderLog();
 }
 
 function calcAddItem(){
@@ -597,7 +689,7 @@ function calcCompute(){
   `;
 }
 
-function calcSaveSale(){
+async function calcSaveSale(){
   const customerName = document.getElementById('calcCustomer').value.trim();
   const customerCity = document.getElementById('calcCity').value.trim();
   const totalCharged = parseFloat(document.getElementById('calcTotal').value) || 0;
@@ -608,45 +700,53 @@ function calcSaveSale(){
     alert('Captura al menos: cliente, 1 producto y total cobrado');
     return;
   }
-  const productCost = _calcCart.reduce((s,it)=>{
-    const p = CALC_CATALOG.find(c=>c.sku===it.sku);
-    return s + (p ? p.cost * it.qty : 0);
-  }, 0);
-  const netProfit = totalCharged - productCost - shipCost;
-  const margin = totalCharged > 0 ? (netProfit / totalCharged) * 100 : 0;
-  const sale = {
-    id: 'sale-' + Date.now(),
-    date: new Date().toISOString().slice(0,10),
-    customerName, customerCity,
-    items: [..._calcCart],
-    shippingCharged: shipCharged, shippingCost: shipCost,
-    totalCharged, productCost,
-    netProfit, margin: Math.round(margin*10)/10,
-    notes
-  };
-  const list = calcLoad();
-  list.unshift(sale);
-  calcSave(list);
-  // Reset form
-  _calcCart = [];
-  document.getElementById('calcCustomer').value = '';
-  document.getElementById('calcCity').value = '';
-  document.getElementById('calcTotal').value = 0;
-  document.getElementById('calcNotes').value = '';
-  calcRenderCart();
-  calcCompute();
-  calcRenderLog();
+  try{
+    const r = await fetch('/api/sales-manual?key=' + encodeURIComponent(getAdminKey()), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        customerName, customerCity,
+        items: _calcCart,
+        shippingCharged: shipCharged,
+        shippingCost: shipCost,
+        totalCharged,
+        notes,
+      })
+    });
+    if (!r.ok) {
+      const err = await r.text();
+      alert('Error guardando: ' + err);
+      return;
+    }
+    // Reset
+    _calcCart = [];
+    document.getElementById('calcCustomer').value = '';
+    document.getElementById('calcCity').value = '';
+    document.getElementById('calcTotal').value = 0;
+    document.getElementById('calcNotes').value = '';
+    _calcSalesCache = null; // invalidate cache
+    calcRenderCart();
+    calcCompute();
+    await calcRenderLog();
+  }catch(e){
+    alert('Error: ' + e.message);
+  }
 }
 
-function calcDeleteSale(id){
+async function calcDeleteSale(id){
   if (!confirm('¿Eliminar registro de venta?')) return;
-  const list = calcLoad().filter(s => s.id !== id);
-  calcSave(list);
-  calcRenderLog();
+  try{
+    const r = await fetch('/api/sales-manual?id=' + encodeURIComponent(id) + '&key=' + encodeURIComponent(getAdminKey()), { method: 'DELETE' });
+    if (!r.ok) { alert('Error eliminando'); return; }
+    _calcSalesCache = null;
+    await calcRenderLog();
+  }catch(e){
+    alert('Error: ' + e.message);
+  }
 }
 
-function calcRenderLog(){
-  const list = calcLoad();
+async function calcRenderLog(){
+  const list = await calcLoad();
   const log = document.getElementById('calcLog');
   const summary = document.getElementById('calcSummary');
   const counter = document.getElementById('calcCount');
