@@ -1,7 +1,42 @@
 # PEPTIQ MX · Go-to-Market Strategy
-**Última actualización:** 2026-05-08 (sesión Edson · rebuild infra completo)
+**Última actualización:** 2026-05-09 (sesión Edson · pivot canales paid)
 **Lanzamiento oficial:** 2026-04-20 (post-launch)
-**Estado:** Funnel quiz → WA → SARA → Stripe operacional · CRM unificado · Meta ads pendiente de creativos
+**Estado:** Funnel quiz → WA → SARA → Stripe operacional · CRM unificado · Meta restricted · Google atrapado en PMax · Pivot a Cold Email B2B + TikTok
+
+---
+
+## 🚦 Estado canales paid (2026-05-09)
+
+| Canal | Estado | Bloqueo / Acción |
+|-------|--------|------------------|
+| Meta Ads | ❌ Restricted (ad account 32874886) | Apelación enviada · esperar 24-72h · NO se puede pautar |
+| Google Ads | ⚠️  Cuenta nueva creada (ID 691-645-7743) · bono $7K MXN asignado · atrapada en wizard Performance Max | Pausar · necesita freelancer experto Google Ads MX para salir del wizard sin quemar lana en placements basura |
+| TikTok Ads | 🟡 Pendiente crear cuenta | Setup limpio sin caja negra · más barato CPM · siguiente paso |
+| Cold email B2B Resend | 🟢 LISTO · 255 clínicas con email confirmado | Disparar sequence 3-step esta semana |
+| WhatsApp templates | ⚠️  Solo 4 leads warm reales (incluido Edson) · 256 cold son B2B sin WhatsApp | Sin volumen para mover aguja por WA |
+
+**Realidad de la base SARA (auditada 9-may):** 261 leads totales · solo 5 con WhatsApp real · 255 son B2B email-only.
+
+**Decisión sesión 9-may:**
+1. Abandonar Google PMax (riesgo de quemar bonus en Display/YouTube basura)
+2. Ejecutar Cold Email B2B 255 clínicas con sequence 3-step (HOY · costo $0)
+3. Crear TikTok Ads cuenta limpia (mañana)
+4. Meta Ads: solo cuando se reactive cuenta (apelación pendiente)
+
+## 🎁 Activos producidos sesión 8-9 may
+
+- **30 ads compliant** (10 originales + 5 masculinos + 10 beneficios B1-B10 + 5 niche C1-C5)
+- **18 ads viejos rechazados** movidos a `/Users/end/Downloads/ads ig /_RECHAZADAS_META/`
+- **10 ads V2 con HACK YOUR ___** generados en ChatGPT y verificados Meta-compliant
+- **Sistema de 17 CTAs** "Hack Your [Hair/Skin/Strength/Sleep/Waist/Energy/Vitality/Mind/Recovery/Hormones/Healing/Comeback/Run/Burnout/Glow/Metabolism/Gut]"
+- **Pixels instalados** en `/evaluacion` (GA4, Google Ads, Meta, TikTok) — placeholders listos para reemplazar
+- **Launch pack** en `peptiqmx-design-review/launch-pack/`:
+  - `01-google-ads-bulk-upload.csv` — 17 keywords + 36 headlines + 12 descriptions
+  - `02-google-ads-negative-keywords.csv` — 30 negativas
+  - `03-tiktok-ads-briefs.md` — 5 reels guionados
+  - `04-meta-ads-mapping.md` — plan de 26 ads cuando se reactive
+  - `05-utm-master-list.csv` — 24 URLs estandarizadas
+- **Doc PIXEL-IDS-PENDIENTES.md** con 4 placeholders a reemplazar
 
 ---
 

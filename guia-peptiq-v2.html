@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Guía PEPTIQ — Beyond Biology · Edición 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 16mm 14mm 18mm 14mm; }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --ink:#111; --stone:#FAFAFA; --paper:#FCFAF6; --cream:#F5EFE4;
+      --beige:#9A8C73; --beige-deep:#776A55; --gold:#A88A4F; --rule:#E9E4D8;
+      --mute:#6B6B6B; --serif:'Playfair Display',Georgia,serif;
+      --sans:'Inter',sans-serif;
+    }
+    html,body{background:var(--paper)}
+    body{font-family:var(--sans);color:var(--ink);font-size:11pt;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .page{page-break-after:always;min-height:265mm;position:relative;background:var(--paper)}
+    .page:last-child{page-break-after:auto}
+    h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15}
+
+    /* SHARED */
+    .eyebrow{font-size:8.5pt;letter-spacing:2.4px;text-transform:uppercase;color:var(--beige-deep);font-weight:500}
+    .header{display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:18px;font-size:8.5pt;letter-spacing:2px;text-transform:uppercase;color:var(--mute)}
+    .header b{color:var(--ink);font-weight:500}
+    .footer-mark{position:absolute;bottom:6mm;left:0;right:0;text-align:center;font-size:7.5pt;letter-spacing:1.6px;text-transform:uppercase;color:var(--mute);font-style:italic}
+    .section-title{font-family:var(--serif);font-size:32pt;line-height:1;margin:6mm 0 8mm;font-weight:400;letter-spacing:-.015em}
+    .section-title em{font-style:italic;color:var(--beige-deep)}
+
+    /* COVER */
+    .cover{padding:0;display:block;height:265mm;position:relative;overflow:hidden;background:#0e0d0b}
+    .cover-img{position:absolute;inset:0;background:url('img/products-v2/boardroom-mujer-3vials.png') center/cover no-repeat;filter:saturate(.9) contrast(1.02)}
+    .cover-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.05) 38%,rgba(0,0,0,.55) 78%,rgba(0,0,0,.85) 100%)}
+    .cover-content{position:absolute;inset:0;padding:18mm 16mm;display:flex;flex-direction:column;justify-content:space-between;color:#F2EBDA;z-index:2}
+    .cover-top{display:flex;justify-content:space-between;font-size:8.5pt;letter-spacing:3px;text-transform:uppercase;border-bottom:1px solid rgba(242,235,218,.25);padding-bottom:14px;color:#E8DFC9}
+    .cover-mid{margin-top:auto;margin-bottom:auto}
+    .cover-mid .kicker{font-size:9.5pt;letter-spacing:3px;text-transform:uppercase;color:#D4C29A;margin-bottom:14mm}
+    .cover-mid h1{font-family:var(--serif);font-size:78pt;line-height:.95;letter-spacing:-.02em;font-weight:400;margin:0}
+    .cover-mid h1 em{font-style:italic;color:#D4C29A;font-weight:500}
+    .cover-mid .sub{margin-top:14mm;font-size:14pt;font-family:var(--serif);font-style:italic;color:#E8DFC9;max-width:160mm;line-height:1.35}
+    .cover-foot{display:flex;justify-content:space-between;font-size:8.5pt;letter-spacing:1.8px;color:#D4C29A;text-transform:uppercase;border-top:1px solid rgba(242,235,218,.25);padding-top:14px}
+    .cover-foot b{color:#FFF6E0;font-weight:500}
+
+    /* EDITORIAL LAYOUTS */
+    .lead-page{padding-top:4mm}
+    .hero-img{width:100%;height:118mm;object-fit:cover;display:block;background:#222}
+    .hero-img.tall{height:155mm}
+    .hero-img.short{height:78mm}
+    .col-2{display:grid;grid-template-columns:1fr 1fr;gap:10mm;margin-top:8mm}
+    .col-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8mm;margin-top:8mm}
+    .col-asym{display:grid;grid-template-columns:1.2fr 1fr;gap:12mm;margin-top:6mm;align-items:start}
+    .col-asym-r{display:grid;grid-template-columns:1fr 1.2fr;gap:12mm;margin-top:6mm;align-items:start}
+    p.body{font-size:10.5pt;line-height:1.65;color:#2c2c2c;margin-bottom:5mm}
+    p.body b{color:#000;font-weight:500}
+    .lede{font-size:13pt;font-family:var(--serif);font-style:italic;line-height:1.45;color:#2a2a2a;max-width:160mm}
+    .pull{font-family:var(--serif);font-style:italic;font-size:22pt;line-height:1.2;color:var(--beige-deep);border-left:2px solid var(--gold);padding:6mm 0 6mm 8mm;margin:8mm 0}
+    .h-block{font-size:11pt;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#000;margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid #000;font-family:var(--sans)}
+    ul.dotted{list-style:none;font-size:10.5pt;line-height:1.7}
+    ul.dotted li{padding-left:14px;position:relative;margin-bottom:4px;color:#2c2c2c}
+    ul.dotted li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:16pt;line-height:1;top:-2px}
+
+    /* TABLE */
+    .dose-table{width:100%;border-collapse:collapse;font-size:9.8pt;margin-top:5mm;background:#fff}
+    .dose-table th{text-align:left;font-size:8.2pt;letter-spacing:1.6px;text-transform:uppercase;color:#000;font-weight:500;padding:8px 8px 8px 10px;border-bottom:1.5px solid #000;background:var(--cream)}
+    .dose-table td{padding:8px 8px 8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;color:#2c2c2c}
+    .dose-table td b{font-weight:600;color:#000}
+
+    /* CALLOUT */
+    .callout{background:var(--cream);border-left:3px solid var(--gold);padding:7mm 9mm;margin:6mm 0;font-size:10.5pt;line-height:1.6;color:#2c2c2c}
+    .callout b{color:#000;font-weight:600}
+    .callout .c-tag{font-size:8pt;letter-spacing:2px;text-transform:uppercase;color:var(--beige-deep);font-weight:500;margin-bottom:4px;display:block}
+    .sources{margin-top:6mm;padding-top:4mm;border-top:1px dashed var(--rule);font-size:8.8pt;color:var(--mute);line-height:1.6}
+    .sources b{color:#000;font-weight:500}
+
+    /* SECTION HEADER (chapter title pages) */
+    .chap-title{font-family:var(--serif);font-size:46pt;line-height:.98;font-weight:400;margin-bottom:6mm;letter-spacing:-.018em}
+    .chap-title em{font-style:italic;color:var(--beige-deep)}
+
+    /* TOC */
+    .toc-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--rule);font-size:11.5pt;align-items:baseline}
+    .toc-row .t-num{font-family:var(--serif);color:var(--beige-deep);width:18mm;font-weight:500;font-size:14pt;font-style:italic}
+    .toc-row .t-lab{flex:1;font-family:var(--serif)}
+    .toc-row .t-lab em{font-style:italic;color:var(--beige-deep)}
+    .toc-row .t-page{color:var(--mute);font-size:9.5pt;letter-spacing:1px}
+
+    /* INDEX VISUAL THUMBNAILS */
+    .thumb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6mm;margin-top:8mm}
+    .thumb{display:flex;flex-direction:column;gap:3mm}
+    .thumb img{width:100%;height:42mm;object-fit:cover;background:#eee}
+    .thumb .t-eyebrow{font-size:7.5pt;letter-spacing:1.6px;text-transform:uppercase;color:var(--beige-deep);font-weight:500}
+    .thumb .t-name{font-family:var(--serif);font-size:13pt;font-style:italic;line-height:1.1;color:#000}
+    .thumb .t-desc{font-size:8.5pt;color:var(--mute);line-height:1.4}
+
+    /* MATRIX */
+    .matrix{width:100%;border-collapse:collapse;font-size:9pt;margin-top:6mm;background:#fff}
+    .matrix th{text-align:left;font-size:7.8pt;letter-spacing:1.4px;text-transform:uppercase;color:#000;font-weight:500;padding:7px 6px;border-bottom:1.5px solid #000;background:var(--cream)}
+    .matrix td{padding:7px 6px;border-bottom:1px solid var(--rule);vertical-align:top;color:#2c2c2c;font-size:9pt}
+    .matrix td b{color:#000;font-weight:600}
+
+    /* CTA / BACK */
+    .back{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24mm 0}
+    .back h2{font-family:var(--serif);font-size:42pt;font-weight:400;line-height:1;margin-bottom:8mm}
+    .back h2 em{font-style:italic;color:var(--beige-deep)}
+    .back p.lead{font-size:13pt;font-family:var(--serif);font-style:italic;max-width:140mm;color:#2c2c2c;margin-bottom:8mm;line-height:1.4}
+    .cta{background:#111;color:#FCFAF6;padding:13px 32px;font-size:9.5pt;letter-spacing:2.4px;text-transform:uppercase;display:inline-block;font-weight:500}
+    .cta.alt{background:transparent;color:#111;border:1px solid #111;margin-left:6mm}
+    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12mm;margin-top:18mm;font-size:9pt;text-align:left;max-width:170mm;width:100%}
+    .footer-grid h4{font-size:8.5pt;letter-spacing:2px;text-transform:uppercase;color:var(--beige-deep);font-weight:500;margin-bottom:6px;font-family:var(--sans)}
+    .footer-grid p{font-size:9.5pt;color:#2c2c2c;line-height:1.55;margin-bottom:0}
+    .footer-grid p b{color:#000;font-weight:500}
+
+    .big-stat{font-family:var(--serif);font-size:78pt;line-height:.92;color:var(--beige-deep);font-style:italic;font-weight:500;margin:6mm 0}
+    .stat-block{padding:8mm 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:8mm 0}
+    .stat-block .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6mm}
+    .stat-block .stat-row > div .num{font-family:var(--serif);font-size:30pt;line-height:1;color:#000;font-weight:500}
+    .stat-block .stat-row > div .num em{font-style:italic;color:var(--beige-deep)}
+    .stat-block .stat-row > div .lbl{font-size:8pt;letter-spacing:1.6px;text-transform:uppercase;color:var(--mute);margin-top:5px}
+
+    /* DARK PAGE */
+    .dark{background:#0e0d0b;color:#E8DFC9}
+    .dark h2,.dark h3{color:#FFF6E0}
+    .dark .eyebrow{color:#C9B585}
+    .dark .h-block{color:#FFF6E0;border-bottom-color:#C9B585}
+    .dark p.body{color:#D4CCB6}
+    .dark .pull{color:#D4C29A;border-left-color:#A88A4F}
+
+    /* DISCLAIMER LEGAL */
+    .legal-box{background:#0e0d0b;color:#E8DFC9;padding:10mm 12mm;font-size:9pt;line-height:1.7;margin-top:10mm}
+    .legal-box h4{color:#D4C29A;font-size:9.5pt;letter-spacing:2.4px;text-transform:uppercase;margin-bottom:8px;font-family:var(--sans);font-weight:500}
+    .legal-box b{color:#FFF6E0;font-weight:500}
+
+    /* PROTOCOL HERO STRIP */
+    .strip{display:grid;grid-template-columns:1.4fr 1fr;gap:0;margin-bottom:8mm;align-items:stretch;border:1px solid var(--rule)}
+    .strip .strip-text{padding:10mm 9mm;background:#fff;display:flex;flex-direction:column;justify-content:center}
+    .strip .strip-img{background-size:cover;background-position:center;min-height:75mm}
+    .strip h2{font-family:var(--serif);font-size:34pt;line-height:.98;font-weight:400;margin:5mm 0;letter-spacing:-.015em}
+    .strip h2 em{font-style:italic;color:var(--beige-deep)}
+    .strip .strip-lede{font-size:11pt;color:#3a3a3a;line-height:1.55;margin-top:3mm}
+
+    /* LARGE BAR / KICKER */
+    .kicker-bar{background:var(--ink);color:#F2EBDA;padding:5mm 8mm;font-size:8.5pt;letter-spacing:2.4px;text-transform:uppercase;display:inline-block;font-weight:500}
+
+    /* NUMBER LIST */
+    ol.steps{list-style:none;counter-reset:s;margin-top:3mm}
+    ol.steps li{counter-increment:s;position:relative;padding-left:14mm;margin-bottom:6mm;font-size:10.5pt;line-height:1.55;color:#2c2c2c}
+    ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:-2px;font-family:var(--serif);font-style:italic;font-size:22pt;color:var(--beige-deep);font-weight:500;line-height:1}
+    ol.steps li b{color:#000;font-weight:600}
+
+    /* IMAGE CAPTION */
+    .caption{font-size:7.8pt;letter-spacing:1.4px;text-transform:uppercase;color:var(--mute);margin-top:4px;font-style:italic;font-family:var(--serif)}
+  </style>
+</head>
+<body>
+
+<!-- =========================================================
+     PAGE 1 · COVER
+========================================================= -->
+<section class="page cover">
+  <div class="cover-img"></div>
+  <div class="cover-content">
+    <div class="cover-top">
+      <span>PEPTIQ MX · Edición 2026</span>
+      <span>Beyond Biology</span>
+    </div>
+    <div class="cover-mid">
+      <div class="kicker">Volumen I · Research-grade · México</div>
+      <h1>Beyond<br>Biology.<br><em>Hack your limits.</em></h1>
+      <div class="sub">La guía editorial de las 14 líneas PEPTIQ. Mecanismos celulares, protocolos reportados en literatura, stacks clínicos y referencias verificables. Cada lote, un COA público de Janoshik Analytical.</div>
+    </div>
+    <div class="cover-foot">
+      <span><b>32 páginas</b> · 14 líneas · 80+ referencias peer-reviewed</span>
+      <span>peptiqmx.com</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PAGE 2 · CARTA DEL FUNDADOR
+========================================================= -->
+<section class="page">
+  <div class="header"><span>Carta abierta</span><span><b>Del fundador</b></span></div>
+  <div class="col-asym">
+    <div>
+      <div class="eyebrow">Prefacio · Por qué existimos</div>
+      <h2 class="chap-title">Pureza que <em>no se declara,<br>se verifica.</em></h2>
+      <p class="body">Empezamos PEPTIQ porque estábamos cansados de comprar péptidos que prometían 99% de pureza en su empaque y entregaban 87% en el cromatograma. Cansados de marcas mexicanas que vendían "research peptides" sin un solo COA público en su sitio. Cansados de pagar premium por commodities reetiquetados.</p>
+      <p class="body">PEPTIQ es una marca editorial de péptidos research-grade construida sobre una sola obsesión: <b>cada lote tiene su Certificado de Análisis publicado en peptiqmx.com antes de salir a venta.</b> El laboratorio es Janoshik Analytical, en Praga, acreditado bajo ISO/IEC 17025 — el mismo que usan las marcas premium de Estados Unidos y Europa Occidental.</p>
+      <p class="body">Esta guía es la documentación técnica de 14 líneas. No es una pieza de marketing. Es el material que dimos primero a las clínicas de medicina estética, longevidad y rendimiento que nos pidieron entender, antes de comprar, qué es lo que estaban pidiendo a sus pacientes — perdón, a sus sujetos de investigación — que se inyectaran.</p>
+      <p class="body">Cada protocolo aquí descrito proviene de literatura peer-reviewed citada al final de cada capítulo. Cada dosis, cada frecuencia, cada duración de ciclo está construida sobre estudios clínicos públicos. Si una afirmación no tiene fuente verificable, no aparece en estas páginas.</p>
+      <p class="body">Lee con calma. Marca lo que te interese. Cuando estés listo, escríbenos por WhatsApp y te mandamos el COA del lote que te interese — antes, no después, de tu compra.</p>
+      <p class="body" style="margin-top:8mm;font-family:var(--serif);font-style:italic;font-size:12pt">— Edson Noyola<br><span style="font-size:9pt;font-style:normal;letter-spacing:1.6px;text-transform:uppercase;color:var(--mute)">Fundador, PEPTIQ MX</span></p>
+    </div>
+    <div>
+      <img src="img/products-v2/lab-janoshik-hplc-monitor.png" class="hero-img tall" alt="Laboratorio Janoshik HPLC">
+      <div class="caption">Janoshik Analytical · HPLC monitor · Praga</div>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Beyond Biology · Material exclusivo para investigación</div>
+</section>
+
+<!-- =========================================================
+     PAGE 3 · ÍNDICE
+========================================================= -->
+<section class="page">
+  <div class="header"><span>Volumen I · 2026</span><span><b>Contenido</b></span></div>
+  <h2 class="section-title">Cómo leer <em>esta guía.</em></h2>
+  <p class="body" style="max-width:160mm">Cada línea PEPTIQ ocupa entre dos y cuatro páginas. Verás, en orden: hero editorial, mecanismo celular, usos reportados en literatura, tabla de protocolo (dosis · frecuencia · vía · duración), stack clínico recomendado, observaciones de seguridad y bibliografía. Las páginas 28 a 32 cubren reconstitución, verificación de COA, programa B2B y aviso regulatorio.</p>
+  <div style="margin-top:12mm">
+    <div class="toc-row"><span class="t-num">I</span><span class="t-lab">Carta del fundador <em>· por qué existimos</em></span><span class="t-page">02</span></div>
+    <div class="toc-row"><span class="t-num">II</span><span class="t-lab">Qué son los péptidos <em>· lenguaje celular</em></span><span class="t-page">04</span></div>
+    <div class="toc-row"><span class="t-num">III</span><span class="t-lab">Por qué la pureza importa <em>· Janoshik · ISO/IEC 17025</em></span><span class="t-page">06</span></div>
+    <div class="toc-row"><span class="t-num">IV</span><span class="t-lab">Las 14 líneas PEPTIQ <em>· índice visual</em></span><span class="t-page">08</span></div>
+    <div class="toc-row"><span class="t-num">01</span><span class="t-lab"><em>Wolverine</em> · BPC-157 + TB-500 · recuperación</span><span class="t-page">09</span></div>
+    <div class="toc-row"><span class="t-num">02</span><span class="t-lab"><em>GLOW Trinity</em> · BPC + GHK-Cu + TB-500 · piel</span><span class="t-page">11</span></div>
+    <div class="toc-row"><span class="t-num">03</span><span class="t-lab"><em>Highlander</em> · NAD+ + Epithalon · longevidad</span><span class="t-page">13</span></div>
+    <div class="toc-row"><span class="t-num">04</span><span class="t-lab"><em>Prime Titan</em> · Tesamorelin + CJC + Ipamorelin</span><span class="t-page">15</span></div>
+    <div class="toc-row"><span class="t-num">05</span><span class="t-lab"><em>Shred</em> · Retatrutide + Semaglutide + Cagrilintide</span><span class="t-page">17</span></div>
+    <div class="toc-row"><span class="t-num">06</span><span class="t-lab"><em>Sleep Reset</em> · Ipamorelin nocturno + Epithalon</span><span class="t-page">19</span></div>
+    <div class="toc-row"><span class="t-num">07</span><span class="t-lab"><em>Vitality</em> · PT-141 + Kisspeptin · libido / eje HPG</span><span class="t-page">20</span></div>
+    <div class="toc-row"><span class="t-num">08</span><span class="t-lab"><em>Neuro</em> · Semax + Cerebrolysin · cognición</span><span class="t-page">21</span></div>
+    <div class="toc-row"><span class="t-num">09</span><span class="t-lab"><em>Visceral Cut</em> · Tesamorelin enfocado en grasa visceral</span><span class="t-page">22</span></div>
+    <div class="toc-row"><span class="t-num">10</span><span class="t-lab"><em>GLOW Cabello</em> · AHK-Cu · folículo piloso</span><span class="t-page">23</span></div>
+    <div class="toc-row"><span class="t-num">11</span><span class="t-lab"><em>Menopause Reset</em> · Kisspeptin + GHK-Cu</span><span class="t-page">24</span></div>
+    <div class="toc-row"><span class="t-num">12</span><span class="t-lab"><em>Gut Reset</em> · BPC-157 + KPV · mucosa intestinal</span><span class="t-page">25</span></div>
+    <div class="toc-row"><span class="t-num">V</span><span class="t-lab">Cómo elegir tu protocolo <em>· matriz objetivo → línea</em></span><span class="t-page">26</span></div>
+    <div class="toc-row"><span class="t-num">VI</span><span class="t-lab">Reconstitución y manejo <em>· paso a paso</em></span><span class="t-page">28</span></div>
+    <div class="toc-row"><span class="t-num">VII</span><span class="t-lab">Verificación de COA <em>· NFC + URL pública</em></span><span class="t-page">30</span></div>
+    <div class="toc-row"><span class="t-num">VIII</span><span class="t-lab">Programa B2B clínicas <em>· margen y soporte</em></span><span class="t-page">31</span></div>
+    <div class="toc-row"><span class="t-num">IX</span><span class="t-lab">Contacto · concierge · WhatsApp</span><span class="t-page">32</span></div>
+    <div class="toc-row"><span class="t-num">X</span><span class="t-lab">Aviso regulatorio · Research Use Only</span><span class="t-page">32</span></div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Beyond Biology · 03</div>
+</section>
+
+<!-- =========================================================
+     PAGE 4 · QUÉ SON LOS PÉPTIDOS · A
+========================================================= -->
+<section class="page">
+  <div class="header"><span>II · Fundamento</span><span><b>Qué son los péptidos</b></span></div>
+  <div class="eyebrow">Capítulo II · 01 de 02</div>
+  <h2 class="chap-title">Cartas de instrucción<br><em>que tu cuerpo ya sabe leer.</em></h2>
+  <p class="lede" style="margin-bottom:8mm">Un péptido es una cadena de entre dos y cincuenta aminoácidos. Tu cuerpo fabrica miles de ellos cada día. Funcionan como mensajeros: una célula los libera, otra los recibe, el mensaje ejecuta una acción muy específica.</p>
+  <img src="img/products-v2/lab-bpc157-tech-hplc.png" class="hero-img" alt="Análisis HPLC BPC-157">
+  <div class="caption" style="margin-bottom:8mm">Cromatografía HPLC de un lote BPC-157 · pico único a 99.4% · Janoshik 2026</div>
+  <div class="col-2">
+    <div>
+      <div class="h-block">Mensajeros, no fármacos</div>
+      <p class="body">A diferencia de un fármaco sintético, un péptido administrado de forma exógena <b>amplifica una señal que tu cuerpo ya emite</b>. No crea una respuesta artificial: refuerza un canal endógeno que con la edad pierde volumen. Esto explica el perfil de seguridad relativamente alto de los péptidos correctamente sintetizados frente a moléculas pequeñas farmacéuticas.</p>
+      <p class="body">Los péptidos terapéuticos modernos abarcan una gama enorme: hormona-secretagogos como la familia GHRH (Tesamorelin, CJC-1295), reguladores de señalización tisular (BPC-157, TB-500), tripéptidos de cobre con afinidad a fibroblastos (GHK-Cu, AHK-Cu), neuropéptidos (Semax, Selank), análogos de incretinas (Semaglutide, Retatrutide) y fragmentos inmunomoduladores (KPV, Thymosin α-1).</p>
+      <p class="body">Cada uno tiene un receptor distinto, una vía de administración óptima y una farmacocinética particular. La diferencia entre un protocolo que funciona y uno que falla casi nunca está en el péptido: está en la pureza, la dosis, la frecuencia y el timing.</p>
+    </div>
+    <div>
+      <div class="h-block">El reloj biológico de la producción</div>
+      <p class="body">A partir de la tercera década de vida, la producción endógena de muchos péptidos clave declina de forma sostenida. La hormona del crecimiento cae aproximadamente 14% por década después de los 30. La producción de NAD+ en músculo esquelético se reduce alrededor de 50% entre los 20 y los 60 años (Verdin, 2015). Los niveles cutáneos de GHK-Cu disminuyen entre 60 y 70% entre los 20 y los 60.</p>
+      <p class="body">Reponer una señal endógena que el cuerpo ya no fabrica al volumen óptimo es la lógica central detrás de todo el espacio "longevity" y "regenerative". No se trata de añadir algo extraño: se trata de devolver al sistema lo que el sistema producía mejor cuando era joven.</p>
+      <p class="body">Esto no equivale a inmortalidad ni a juventud eterna. Equivale, en literatura peer-reviewed, a mejor recuperación post-ejercicio, mejor reparación tisular, mejor respuesta inmune local, mejor calidad de sueño, mejor sensibilidad a insulina, mejor síntesis de colágeno. Cada efecto, cuantificado en estudios independientes citados a lo largo de esta guía.</p>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Beyond Biology · Material exclusivo para investigación · 04</div>
+</section>
+
+<!-- =========================================================
+     PAGE 5 · QUÉ SON LOS PÉPTIDOS · B
+========================================================= -->
+<section class="page">
+  <div class="header"><span>II · Fundamento</span><span><b>Cómo se administran</b></span></div>
+  <div class="eyebrow">Capítulo II · 02 de 02</div>
+  <h2 class="chap-title">Vías, ventanas, <em>moléculas frágiles.</em></h2>
+  <p class="lede" style="margin-bottom:8mm">La vía de administración no es un detalle menor. Un péptido administrado por la vía equivocada simplemente no llega al receptor — y todo lo que cuesta queda inactivo en el torrente.</p>
+  <div class="col-2">
+    <div>
+      <div class="h-block">Subcutánea — el estándar</div>
+      <p class="body">El 80% de los péptidos research-grade se administran por vía subcutánea (SC), generalmente en abdomen, muslo o tríceps. La razón es simple: la mayoría de péptidos son destruidos por las proteasas del estómago, lo que descarta la vía oral salvo péptidos pequeños (KPV, BPC-157 con cubierta entérica). La vía SC permite absorción gradual, vida media adecuada y autoinyección con jeringa de insulina U-100.</p>
+      <p class="body">La inyección se hace con aguja 31G corta (8 mm), pellizcando la piel a 45–90°. La técnica correcta es indolora cuando se domina.</p>
+    </div>
+    <div>
+      <div class="h-block">Topical, intranasal, oral entérico</div>
+      <p class="body">GHK-Cu y AHK-Cu funcionan por vía topical formulados en serum o crema (concentración 0.05–1% según uso). Penetran estrato córneo y llegan al fibroblasto dérmico.</p>
+      <p class="body">Semax y Selank, neuropéptidos rusos clásicos, tienen vía intranasal validada — el bulbo olfatorio ofrece una ruta directa al sistema nervioso central. KPV en cápsula con cubierta entérica resiste pH gástrico y libera el péptido en intestino delgado, ideal para enfermedad inflamatoria intestinal.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Por qué importa la temperatura</span>
+    Los péptidos son <b>moléculas frágiles</b>. La forma liofilizada (polvo seco) es estable durante meses a temperatura ambiente. Una vez reconstituida con agua bacteriostática, la solución es estable aproximadamente <b>28 días refrigerada a 2–8 °C</b>. Congelar la solución reconstituida fragmenta el enlace peptídico por cristalización; agitar violentamente el vial rompe la estructura terciaria. Estas dos malas prácticas explican la mayoría de protocolos "que no funcionaron" en literatura gris.
+  </div>
+  <div class="col-2">
+    <div>
+      <div class="h-block">Cómo se mide un protocolo</div>
+      <p class="body">Cada línea PEPTIQ documenta cuatro variables: <b>dosis</b> en microgramos o miligramos, <b>frecuencia</b> diaria o semanal, <b>vía</b> de administración y <b>duración</b> del ciclo. La quinta variable, menos comentada pero crítica, es el <b>timing circadiano</b> — los secretagogos GH se administran 30 minutos antes de dormir para no interferir con el pulso natural; Tesamorelin se administra en ayunas matinales para evitar el bloqueo por insulina.</p>
+    </div>
+    <div>
+      <div class="h-block">Tracking honesto</div>
+      <p class="body">Recomendamos un cuaderno de protocolo simple: fecha, dosis, vía, hora, foto estandarizada (si aplica), score subjetivo de energía y sueño en escala 1–10, y al menos un marcador objetivo (Oura, Whoop, hsCRP, glucosa en ayunas). Sin este registro, ningún ciclo puede ser evaluado seriamente.</p>
+      <p class="body">El cuerpo cambia despacio. Un protocolo de ocho semanas no se juzga en la semana dos. Cualquier marca que prometa transformación visible en quince días está vendiéndote teatro, no biología.</p>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Beyond Biology · Material exclusivo para investigación · 05</div>
+</section>
+
+<!-- =========================================================
+     PAGE 6 · POR QUÉ LA PUREZA IMPORTA · A
+========================================================= -->
+<section class="page">
+  <div class="header"><span>III · Pureza</span><span><b>Por qué importa</b></span></div>
+  <div class="strip">
+    <div class="strip-text">
+      <div class="eyebrow">Capítulo III · 01 de 02</div>
+      <h2>El 8% que <em>no aparece en la etiqueta.</em></h2>
+      <div class="strip-lede">Un péptido al 92% no es 8% inerte. Ese 8% restante es lo que separa una marca clínica de una marca de impostor. Es donde se esconden los solventes residuales, los metales pesados, las endotoxinas bacterianas y los fragmentos truncados de síntesis.</div>
+    </div>
+    <div class="strip-img" style="background-image:url('img/products-v2/lab-janoshik-hplc-monitor.png')"></div>
+  </div>
+  <div class="col-2">
+    <div>
+      <div class="h-block">Qué se esconde en el 8%</div>
+      <p class="body">Cuando un fabricante chino reporta "≥95% HPLC" en su Certificado de Análisis interno, lo que <b>no</b> reporta suele ser más interesante que lo que reporta. Una síntesis de fase sólida (SPPS) de péptidos largos como Tesamorelin (44 aminoácidos) deja siempre residuos: TFA (ácido trifluoroacético) usado como sal estabilizante, acetonitrilo de la HPLC, DMF como solvente de acoplamiento, y fragmentos truncados — péptidos con uno o dos aminoácidos faltantes que no fueron eliminados en la purificación.</p>
+      <p class="body">A esto se suma la <b>carga endotóxica bacteriana</b>: si el péptido fue manejado en condiciones no estériles, la liofilización atrapa lipopolisacáridos (LPS) que tu sistema inmune interpreta como infección activa. El resultado en literatura gris suele ser eritema, induración, fiebre transitoria — lo que muchos reportan como "alergia al péptido" cuando en realidad es contaminación del lote.</p>
+      <p class="body">La pureza HPLC es una métrica necesaria pero insuficiente. Un COA serio reporta también: identidad por espectrometría de masas, contenido de TFA residual, agua, contaminantes bacterianos y, en péptidos críticos, secuencia confirmada por digestión enzimática.</p>
+    </div>
+    <div>
+      <div class="h-block">Por qué Janoshik</div>
+      <p class="body">Janoshik Analytical es un laboratorio independiente con sede en Praga, República Checa, acreditado bajo <b>ISO/IEC 17025</b> — la norma internacional para laboratorios de ensayo. El mismo laboratorio que utilizan las marcas premium de Estados Unidos (sin nombrarlas) y los principales distribuidores europeos.</p>
+      <p class="body">Ser independiente del fabricante es lo que da credibilidad a la cifra de pureza. Un COA emitido por la fábrica que sintetizó el péptido no tiene incentivo a reportar un resultado por debajo del umbral de venta. Un COA emitido por un laboratorio externo, pagado por lote, sí.</p>
+      <p class="body">Cada lote PEPTIQ se envía a Janoshik antes de salir a venta. El COA resultante se publica en peptiqmx.com con su número de lote. Si recibes un vial cuyo COA no está accesible públicamente, te reembolsamos el lote completo.</p>
+    </div>
+  </div>
+  <div class="sources"><b>Fuentes:</b> ISO/IEC 17025:2017 General requirements for the competence of testing and calibration laboratories · Janoshik Analytical methodology, peptide analysis (publicly available) · Mant CT et al. <i>HPLC of peptides and proteins: methods and protocols</i> Methods Mol Biol 2012.</div>
+  <div class="footer-mark">PEPTIQ · Beyond Biology · Material exclusivo para investigación · 06</div>
+</section>
+
+<!-- =========================================================
+     PAGE 7 · POR QUÉ LA PUREZA IMPORTA · B
+========================================================= -->
+<section class="page">
+  <div class="header"><span>III · Pureza</span><span><b>Cómo verificar un COA</b></span></div>
+  <div class="eyebrow">Capítulo III · 02 de 02</div>
+  <h2 class="chap-title">El COA es <em>público,<br>o no es COA.</em></h2>
+  <div class="col-asym-r">
+    <div>
+      <img src="img/products-v2/iphone-coa-scan-marble.png" class="hero-img tall" alt="Verificación COA en iPhone">
+      <div class="caption">Cada caja PEPTIQ incluye chip NFC · COA accesible en menos de cuatro segundos</div>
+    </div>
+    <div>
+      <p class="body">Cada caja PEPTIQ incluye un chip NFC tipo NTAG213 embebido bajo el sello holográfico. Acercar un teléfono moderno (iPhone XS o posterior, Android compatible) abre directamente la URL pública del lote: <b>peptiqmx.com/coa/[número-de-lote]</b>. Esa página muestra el cromatograma original, la firma del químico responsable, la fecha de análisis y la pureza HPLC y por espectrometría de masas.</p>
+      <p class="body">No usamos códigos QR como única vía: una etiqueta con QR puede ser falsificada en una imprenta. Un chip NFC con UID criptográfico es más difícil de clonar. Al abrir el COA, el sistema registra el primer escaneo y marca cualquier escaneo posterior con un sello de verificación — útil para clínicas que quieren saber si una caja ya fue abierta antes de recibirla.</p>
+      <ol class="steps">
+        <li><b>Acerca tu teléfono al sello holográfico.</b> NFC se activa automáticamente; sin app intermediaria.</li>
+        <li><b>Lee el cromatograma.</b> Pico único, integración &gt;99%, ausencia de picos secundarios.</li>
+        <li><b>Verifica la fecha.</b> COA con más de 18 meses pierde validez por degradación; pídenos uno fresco.</li>
+        <li><b>Cruza el lote con tu vial.</b> El número de lote impreso debe coincidir con el del COA público.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Garantía COA</span>
+    Si recibes un lote PEPTIQ cuyo COA no está accesible en peptiqmx.com en el momento de tu compra, o si la pureza reportada en el COA es inferior a <b>98% HPLC</b> en péptidos individuales o <b>97%</b> en blends multipéptido, te reembolsamos el lote completo y absorbemos costos de envío. Es la única forma honesta de defender una marca que se llama "Beyond Biology".
+  </div>
+  <div class="footer-mark">PEPTIQ · Beyond Biology · Material exclusivo para investigación · 07</div>
+</section>
+
+<!-- =========================================================
+     PAGE 8 · ÍNDICE VISUAL DE LAS 14 LÍNEAS
+========================================================= -->
+<section class="page">
+  <div class="header"><span>IV · Catálogo editorial</span><span><b>Las 14 líneas</b></span></div>
+  <h2 class="section-title">Las 14 líneas <em>PEPTIQ.</em></h2>
+  <p class="body" style="max-width:160mm">Un mapa visual rápido del catálogo. Cada línea es una respuesta a un objetivo concreto — recuperación, piel, longevidad, composición corporal, sueño, libido, cognición, cabello, mucosa intestinal — construida sobre los péptidos que la literatura clínica respalda con mayor cuerpo de evidencia.</p>
+  <div class="thumb-grid">
+    <div class="thumb"><img src="img/products-v2/wolverine-blend-lifestyle.png"><div class="t-eyebrow">01 · Recuperación</div><div class="t-name">Wolverine</div><div class="t-desc">BPC-157 + TB-500</div></div>
+    <div class="thumb"><img src="img/products-v2/trinity-lifestyle.png"><div class="t-eyebrow">02 · Piel</div><div class="t-name">GLOW Trinity</div><div class="t-desc">BPC + GHK-Cu + TB-500</div></div>
+    <div class="thumb"><img src="img/products-v2/nad-plus-lifestyle.png"><div class="t-eyebrow">03 · Longevidad</div><div class="t-name">Highlander</div><div class="t-desc">NAD+ + Epithalon</div></div>
+    <div class="thumb"><img src="img/products-v2/gh-stack-lifestyle.png"><div class="t-eyebrow">04 · Performance</div><div class="t-name">Prime Titan</div><div class="t-desc">Tesamorelin + CJC + Ipa</div></div>
+    <div class="thumb"><img src="img/products-v2/retatrutide-lifestyle.png"><div class="t-eyebrow">05 · Composición</div><div class="t-name">Shred</div><div class="t-desc">Retatrutide · Semaglutide</div></div>
+    <div class="thumb"><img src="img/products-v2/ipamorelin-lifestyle.png"><div class="t-eyebrow">06 · Sueño</div><div class="t-name">Sleep Reset</div><div class="t-desc">Ipamorelin + Epithalon</div></div>
+    <div class="thumb"><img src="img/products-v2/pt-141-lifestyle.png"><div class="t-eyebrow">07 · Vitalidad</div><div class="t-name">Vitality</div><div class="t-desc">PT-141 + Kisspeptin</div></div>
+    <div class="thumb"><img src="img/products-v2/semax-lifestyle.png"><div class="t-eyebrow">08 · Cognición</div><div class="t-name">Neuro</div><div class="t-desc">Semax + Cerebrolysin</div></div>
+    <div class="thumb"><img src="img/products-v2/tesamorelin-lifestyle.png"><div class="t-eyebrow">09 · Visceral</div><div class="t-name">Visceral Cut</div><div class="t-desc">Tesamorelin focalizado</div></div>
+    <div class="thumb"><img src="img/products-v2/ahk-cu-cabello-mujer.png"><div class="t-eyebrow">10 · Cabello</div><div class="t-name">GLOW Cabello</div><div class="t-desc">AHK-Cu</div></div>
+    <div class="thumb"><img src="img/products-v2/dhea-menopausia-silk-night.png"><div class="t-eyebrow">11 · Menopausia</div><div class="t-name">Menopause Reset</div><div class="t-desc">Kisspeptin + GHK-Cu</div></div>
+    <div class="thumb"><img src="img/products-v2/kpv-lifestyle.png"><div class="t-eyebrow">12 · Intestino</div><div class="t-name">Gut Reset</div><div class="t-desc">BPC-157 + KPV</div></div>
+    <div class="thumb"><img src="img/products-v2/mots-c-lifestyle.png"><div class="t-eyebrow">13 · Mitocondria</div><div class="t-name">Mito Boost</div><div class="t-desc">MOTS-c · 5-Amino-1MQ</div></div>
+    <div class="thumb"><img src="img/products-v2/thymosin-alpha-1-lifestyle.png"><div class="t-eyebrow">14 · Inmune</div><div class="t-name">Immune Reset</div><div class="t-desc">Thymosin α-1 · LL-37</div></div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Beyond Biology · 14 líneas verificadas · 08</div>
+</section>
+
+<!-- =========================================================
+     PAGE 9 · WOLVERINE A
+========================================================= -->
+<section class="page">
+  <div class="header"><span>01 · Wolverine</span><span><b>Heal Stack</b></span></div>
+  <img src="img/products-v2/wolverine-blend-lifestyle.png" class="hero-img" alt="Wolverine lifestyle">
+  <div class="caption" style="margin-bottom:6mm">Wolverine · BPC-157 (research-grade compound) + TB-500</div>
+  <div class="eyebrow">Línea 01 · Recuperación &amp; reparación tisular</div>
+  <h2 class="chap-title">Wolverine.<br><em>Tendón, ligamento, mucosa.</em></h2>
+  <p class="lede">Protocolo de referencia para lesión de tejido blando. Combina BPC-157 (péptido gástrico citoprotector, 15 aminoácidos) y TB-500 / Thymosin β-4 (43 aminoácidos, movilizador de actina celular). Tiempo de recuperación reportado en modelos preclínicos: entre 30% y 50% más corto que control no tratado.</p>
+  <div class="col-2" style="margin-top:6mm">
+    <div>
+      <div class="h-block">Mecanismo de acción</div>
+      <p class="body"><b>BPC-157</b> (research-grade compound) regula al alza la vía VEGFR2, induciendo angiogénesis local. Más vasos sanguíneos en la zona lesionada significa más oxígeno, más nutrientes, más células inmunes y más capacidad de eliminación de detritos. Sikiric et al. han documentado durante más de dos décadas el efecto sistémico de BPC-157 en epitelio gastrointestinal, tendón, ligamento y endotelio vascular.</p>
+      <p class="body"><b>TB-500</b> moviliza el citoesqueleto de actina, facilitando la migración de células madre, fibroblastos y queratinocitos hacia el sitio de daño. Goldstein et al. cuantificaron una velocidad de migración celular hasta cuatro veces superior a la basal en cultivos tratados.</p>
+      <p class="body">El efecto combinado no es aditivo, es sinérgico: TB-500 trae la cuadrilla al sitio, BPC-157 le da el suministro vascular para reconstruir.</p>
+    </div>
+    <div>
+      <div class="h-block">Usos reportados en literatura</div>
+      <ul class="dotted">
+        <li>Tendinopatía de Aquiles, rotuliana, epicondilitis</li>
+        <li>Esguinces de ligamento grado I y II</li>
+        <li>Rehabilitación post-cirugía ortopédica</li>
+        <li>Úlcera gástrica (uso histórico de BPC-157)</li>
+        <li>Enfermedad inflamatoria intestinal (Crohn, colitis ulcerosa)</li>
+        <li>Fascitis plantar crónica</li>
+        <li>Síndrome del túnel carpiano</li>
+        <li>Reparación post-rotura muscular</li>
+      </ul>
+      <p class="body" style="margin-top:6mm">Estos usos son <b>reportes en literatura preclínica y clínica preliminar</b>, no indicaciones aprobadas por COFEPRIS o FDA. Material para investigación de laboratorio, no para consumo humano.</p>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Wolverine · Material exclusivo para investigación · 09</div>
+</section>
+
+<!-- =========================================================
+     PAGE 10 · WOLVERINE B
+========================================================= -->
+<section class="page">
+  <div class="header"><span>01 · Wolverine</span><span><b>Protocolo</b></span></div>
+  <div class="col-asym-r">
+    <div>
+      <img src="img/products-v2/wolverine-blend-studio.png" class="hero-img tall" alt="Wolverine studio">
+    </div>
+    <div>
+      <div class="h-block">Protocolo sugerido</div>
+      <table class="dose-table">
+        <tr><th>Péptido</th><th>Dosis</th><th>Frecuencia</th><th>Vía</th><th>Duración</th></tr>
+        <tr><td><b>BPC-157</b></td><td>250–500 µg / día</td><td>1–2× / día</td><td>SC</td><td>4–8 sem</td></tr>
+        <tr><td><b>TB-500</b></td><td>2–5 mg / sem</td><td>2–3× sem 1–4; 1× sem mantenimiento</td><td>SC</td><td>4–6 sem</td></tr>
+        <tr><td><b>Wolverine blend (BB20)</b></td><td>250 µg BPC + 500 µg TB</td><td>1× día</td><td>SC</td><td>6 sem</td></tr>
+      </table>
+      <p class="body" style="margin-top:5mm; font-size:9.5pt; font-style:italic; color:var(--mute)">Para investigación de laboratorio. No para consumo humano.</p>
+      <div class="h-block" style="margin-top:8mm">Stack típico</div>
+      <p class="body">Wolverine se combina típicamente con <b>colágeno hidrolizado oral</b> (10–15 g/día), <b>vitamina C</b> (1–2 g/día como cofactor de prolil hidroxilasa) y, en lesiones articulares, <b>BPC-157 administrado cerca del sitio de lesión</b> según el reporte de Chang et al. 2011, donde la administración local en muslo mostró mejor regeneración de tendón de Aquiles que la distal.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Observaciones de seguridad</span>
+    BPC-157 muestra <b>perfil de seguridad muy favorable</b> en literatura preclínica con dosis hasta 500 µg/kg en modelos animales sin toxicidad observada. TB-500 se ha usado en humanos en ensayos limitados. <b>Embarazo, lactancia y población pediátrica</b> no han sido estudiados; queda fuera del alcance de cualquier protocolo de investigación. <b>Pacientes con cáncer activo o historia oncológica reciente</b> deben evitar péptidos que estimulan angiogénesis (BPC-157) y proliferación celular (TB-500) hasta consultar con su oncólogo tratante.
+  </div>
+  <div class="sources"><b>Fuentes:</b> Chang CH et al. <i>J Appl Physiol</i> 2011 (PubMed 21293447) · Seiwerth S et al. <i>Curr Pharm Des</i> 2018 (29345571) · Goldstein AL et al. <i>Ann NY Acad Sci</i> 2012 (22882274) · Sikiric P et al. <i>J Physiol Paris</i> 2014 (25173697) · Huang T et al. <i>Curr Pharm Des</i> 2019 (30864498).</div>
+  <div class="footer-mark">PEPTIQ · Wolverine · 10</div>
+</section>
+
+<!-- =========================================================
+     PAGE 11 · GLOW TRINITY A
+========================================================= -->
+<section class="page">
+  <div class="header"><span>02 · GLOW Trinity</span><span><b>Piel · 8 semanas</b></span></div>
+  <img src="img/products-v2/trinity-bath-mirror.png" class="hero-img" alt="Trinity lifestyle bath mirror">
+  <div class="caption" style="margin-bottom:6mm">GLOW Trinity · BPC-157 + GHK-Cu + TB-500 · ciclo dérmico de 28 días</div>
+  <div class="eyebrow">Línea 02 · Piel &amp; tejido cutáneo</div>
+  <h2 class="chap-title">GLOW Trinity.<br><em>Ocho semanas para la piel.</em></h2>
+  <p class="lede">Protocolo estético de referencia adoptado por clínicas dermatológicas premium. Combina inflamación sistémica reducida (BPC-157), inducción de colágeno tipo I y III (GHK-Cu, research-grade compound) y migración de células madre dérmicas (TB-500). Ciclo estándar: ocho semanas, fotos comparativas día 0, 28 y 56.</p>
+  <div class="col-2" style="margin-top:6mm">
+    <div>
+      <div class="h-block">GHK-Cu — el mecanismo</div>
+      <p class="body">GHK-Cu es un tripéptido endógeno de cobre (Glicil-Histidil-Lisil-Cu²⁺) presente en plasma humano. En piel, los niveles bajan entre 60% y 70% entre los 20 y los 60 años (Pickart &amp; Margolina, 2018). El péptido se une al receptor DDR2 y activa TGF-β1 en fibroblastos dérmicos, induciendo síntesis de colágeno tipo I y III, elastina y proteoglicanos.</p>
+      <p class="body">En ensayos cutáneos de 12 semanas, se ha reportado reducción de hasta 70% en profundidad de arrugas medidas por análisis de imagen. Mecanísticamente único: pocos péptidos combinan acción reparadora, antioxidante y antiinflamatoria en una sola molécula.</p>
+    </div>
+    <div>
+      <div class="h-block">Por qué el stack Trinity funciona</div>
+      <p class="body"><b>BPC-157 sistémico</b> reduce inflamación de base (TNF-α, IL-6). Sin reducir inflamación crónica de bajo grado, el colágeno nuevo se fragmenta apenas se sintetiza — la matriz extracelular envejecida es proteolítica.</p>
+      <p class="body"><b>GHK-Cu</b> activa síntesis de matriz: colágeno, elastina, proteoglicanos. Es el motor anabólico del stack.</p>
+      <p class="body"><b>TB-500</b> moviliza células madre dérmicas hacia zonas a reparar — sin migración, no hay reemplazo de tejido envejecido.</p>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · GLOW Trinity · Material exclusivo para investigación · 11</div>
+</section>
+
+<!-- =========================================================
+     PAGE 12 · GLOW TRINITY B
+========================================================= -->
+<section class="page">
+  <div class="header"><span>02 · GLOW Trinity</span><span><b>Protocolo</b></span></div>
+  <div class="col-asym">
+    <div>
+      <div class="h-block">Protocolo sugerido</div>
+      <table class="dose-table">
+        <tr><th>Péptido</th><th>Dosis</th><th>Frecuencia</th><th>Vía</th><th>Duración</th></tr>
+        <tr><td><b>Trinity blend (GLOW70)</b></td><td>2–3 mg / día</td><td>Diaria</td><td>SC abdomen</td><td>8 sem</td></tr>
+        <tr><td><b>GHK-Cu topical</b></td><td>1% serum o crema</td><td>2× día</td><td>Topical cara &amp; cuello</td><td>Indefinido</td></tr>
+        <tr><td><b>AHK-Cu</b> (cuero cabelludo)</td><td>0.5–1 mg</td><td>3× sem</td><td>SC mesoterapia</td><td>12 sem</td></tr>
+      </table>
+      <p class="body" style="margin-top:5mm;font-size:9.5pt;font-style:italic;color:var(--mute)">Para investigación de laboratorio. No para consumo humano.</p>
+      <div class="h-block" style="margin-top:7mm">Stack típico</div>
+      <p class="body">Trinity inyectable + GHK-Cu topical 2× día + protector solar mineral (FPS 50, óxido de zinc) + retinol nocturno 0.3% (compatible) + alta hidratación + sueño 7+ h. La fotoprotección es no-negociable: la radiación UV degrada todo colágeno nuevo.</p>
+      <div class="h-block" style="margin-top:7mm">Tracking fotográfico</div>
+      <p class="body">Foto frontal y de perfil, misma luz natural difusa, sin maquillaje, en <b>día 0, día 28 y día 56</b>. El primer ciclo de regeneración cutánea es de aproximadamente 28 días — los cambios estructurales (firmeza, luminosidad, profundidad de poro) se aprecian a partir de la semana 6.</p>
+    </div>
+    <div>
+      <img src="img/products-v2/trinity-studio.png" class="hero-img tall" alt="Trinity studio vials">
+      <div class="caption">GLOW70 · BBG70 · BPC + GHK-Cu + TB-500</div>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Observaciones de seguridad</span>
+    GHK-Cu (research-grade compound) tiene perfil de seguridad robusto incluso a dosis altas. Reportes raros de eritema transitorio en piel sensible (resolución espontánea en 24–48 h). <b>Evitar en personas con enfermedad de Wilson</b> (sobrecarga hepática de cobre). En topical, hacer prueba en zona pequeña 48 h antes del uso facial completo. No combinar con ácido ascórbico (vitamina C) en la misma aplicación: el cobre y el ascorbato compiten redox.
+  </div>
+  <div class="sources"><b>Fuentes:</b> Pickart L, Margolina A. <i>Biomed Res Int</i> 2018 (29854759) · Pyo HK et al. <i>Biol Pharm Bull</i> 2007 (17202654) · Pickart L. <i>J Biomater Sci Polym Ed</i> 2008 (18534080) · Gruchlik A et al. <i>Acta Pol Pharm</i> 2014 (24779203).</div>
+  <div class="footer-mark">PEPTIQ · GLOW Trinity · 12</div>
+</section>
+
+<!-- =========================================================
+     PAGE 13 · HIGHLANDER A
+========================================================= -->
+<section class="page">
+  <div class="header"><span>03 · Highlander</span><span><b>Longevity Pack</b></span></div>
+  <div class="strip">
+    <div class="strip-text">
+      <div class="eyebrow">Línea 03 · Longevidad celular</div>
+      <h2>Highlander.<br><em>Mitocondria &amp; telómeros.</em></h2>
+      <div class="strip-lede">Stack fundacional del programa de longevidad. NAD+ (research-grade compound) restaura la moneda energética celular — el cuerpo pierde aproximadamente 50% entre los 20 y los 60 años en músculo esquelético. Epithalon protege el extremo del cromosoma, el reloj biológico de la división celular.</div>
+    </div>
+    <div class="strip-img" style="background-image:url('img/products-v2/executive-hombre-nad-hongkong.png')"></div>
+  </div>
+  <div class="col-2">
+    <div>
+      <div class="h-block">NAD+ — qué hace</div>
+      <p class="body">NAD+ (nicotinamida adenina dinucleótido) es la <b>molécula que conecta tu dieta con la energía celular</b>. Cada ATP que fabrica tu mitocondria requiere NAD+ como aceptor de electrones en la cadena respiratoria. Es además sustrato obligatorio de las sirtuinas (SIRT1–7) y de PARP, enzimas que regulan reparación de ADN, expresión génica, metabolismo y respuesta al estrés celular.</p>
+      <p class="body">Verdin (Science, 2015) cuantificó la caída: aproximadamente 50% entre los 20 y los 60 años en músculo esquelético humano. Esa caída correlaciona con fatiga crónica, resistencia a insulina, recuperación muscular lenta, deterioro cognitivo subclínico y disfunción mitocondrial.</p>
+      <p class="body">Reponer NAD+ exógeno por vía SC o IM es metodológicamente más limpio que precursores orales (NMN, NR), porque evita los pasos de conversión y la pérdida hepática de primer paso.</p>
+    </div>
+    <div>
+      <div class="h-block">Epithalon — qué hace</div>
+      <p class="body">Epithalon es un péptido tetramérico sintético (Ala-Glu-Asp-Gly) descubierto por Vladimir Khavinson en el Instituto de Bioregulación y Gerontología de San Petersburgo. Khavinson (Bull Exp Biol Med, 2003) reportó que Epithalon <b>induce actividad de telomerasa</b> en fibroblastos humanos cultivados, extendiendo la longitud del telómero y la vida replicativa de la línea celular.</p>
+      <p class="body">Los telómeros son el "capuchón" de tu ADN. Cada vez que una célula se divide, pierde un fragmento. Cuando llegan a un límite crítico (límite de Hayflick), la célula entra en senescencia replicativa y deja de dividirse. Reactivar transitoriamente la telomerasa permite extender ese límite.</p>
+      <p class="body">Anisimov &amp; Khavinson (Biogerontology, 2010) reportaron extensión de vida media en modelos murinos con administración intermitente de Epithalon — uno de los pocos compuestos con datos de longevidad en mamíferos.</p>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Highlander · Material exclusivo para investigación · 13</div>
+</section>
+
+<!-- =========================================================
+     PAGE 14 · HIGHLANDER B
+========================================================= -->
+<section class="page">
+  <div class="header"><span>03 · Highlander</span><span><b>Protocolo</b></span></div>
+  <div class="col-asym-r">
+    <div>
+      <img src="img/products-v2/epithalon-lifestyle.png" class="hero-img tall" alt="Epithalon lifestyle">
+      <div class="caption">Epithalon (research-grade compound) · ciclo intermitente</div>
+    </div>
+    <div>
+      <div class="h-block">Protocolo sugerido</div>
+      <table class="dose-table">
+        <tr><th>Péptido</th><th>Dosis</th><th>Frecuencia</th><th>Vía</th><th>Ciclo</th></tr>
+        <tr><td><b>NAD+ (NJ1000)</b></td><td>50–100 mg / día</td><td>Diaria</td><td>SC o IM</td><td>10 días ON / 20 OFF</td></tr>
+        <tr><td><b>Epithalon (ET50)</b></td><td>5–10 mg / día</td><td>Diaria</td><td>SC</td><td>10 días, 2× al año</td></tr>
+        <tr><td><b>GHK-Cu (CU100)</b></td><td>1–2 mg / día</td><td>Diaria</td><td>SC abdomen</td><td>30 días</td></tr>
+      </table>
+      <p class="body" style="margin-top:5mm;font-size:9.5pt;font-style:italic;color:var(--mute)">Para investigación de laboratorio. No para consumo humano.</p>
+      <div class="h-block" style="margin-top:7mm">Marcadores para tracking</div>
+      <p class="body">Antes y después del ciclo, mide <b>energía subjetiva</b> (escala 1–10 diaria), <b>calidad de sueño</b> (Oura, Whoop), <b>tiempo a recuperación</b> post-ejercicio, y de ser posible: <b>hsCRP</b> (inflamación basal), <b>lactato en ayuno</b> (función mitocondrial), <b>HOMA-IR</b> (sensibilidad a insulina) y, en programas serios, <b>edad biológica epigenética</b> (TruDiagnostic, Horvath clock) cada 6 meses.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Tip clínico — la primera dosis de NAD+</span>
+    La inyección SC de NAD+ a dosis completa (100 mg) es notoriamente <b>incómoda en los primeros 5–10 minutos</b>: sensación de calor, opresión torácica leve, urgencia urinaria. Es transitoria y autolimitada, no es alergia. Estrategia: empezar con <b>25 mg el primer día, escalar a 50 mg, luego a 100 mg</b>, y administrar lentamente (inyección SC tomada en 60 segundos, no 5 segundos).
+  </div>
+  <div class="sources"><b>Fuentes:</b> Rajman L, Chwalek K, Sinclair DA. <i>Cell Metab</i> 2018 (29514064) · Verdin E. <i>Science</i> 2015 (26785480) · Khavinson VK et al. <i>Bull Exp Biol Med</i> 2003 (14523535) · Anisimov VN, Khavinson VK. <i>Biogerontology</i> 2010 (19802582) · Yoshino J et al. <i>Cell Metab</i> 2018 (29249689).</div>
+  <div class="footer-mark">PEPTIQ · Highlander · 14</div>
+</section>
+
+<!-- =========================================================
+     PAGE 15 · PRIME TITAN A
+========================================================= -->
+<section class="page">
+  <div class="header"><span>04 · Prime Titan</span><span><b>Performance &amp; composición</b></span></div>
+  <img src="img/products-v2/gh-stack-lifestyle.png" class="hero-img" alt="GH Stack lifestyle">
+  <div class="caption" style="margin-bottom:6mm">Prime Titan · Tesamorelin + CJC-1295 + Ipamorelin · pulso GH endógeno amplificado</div>
+  <div class="eyebrow">Línea 04 · Performance &amp; recomposición</div>
+  <h2 class="chap-title">Prime Titan.<br><em>Tu propia GH, dos veces.</em></h2>
+  <p class="lede">No inyectamos hormona de crecimiento sintética. Le pedimos a tu hipófisis que libere más de la tuya. CJC-1295 más Ipamorelin amplifican el pulso nocturno endógeno; Tesamorelin (research-grade compound) es el único secretagogo GHRH aprobado por la FDA — actúa específicamente sobre grasa visceral.</p>
+  <div class="col-2" style="margin-top:6mm">
+    <div>
+      <div class="h-block">Por qué pulsátil, no sostenido</div>
+      <p class="body">Tu hipófisis libera GH en <b>pulsos discretos</b> durante las fases de sueño profundo (3 y 4). Inyectarse hormona sintética recombinante (rHGH) satura el receptor 24 horas y dispara mecanismos compensatorios — el cuerpo regula a la baja receptores y produce menos endógena al discontinuar.</p>
+      <p class="body">Los secretagogos como CJC-1295 e Ipamorelin <b>amplifican el pulso natural</b> sin destruir el patrón circadiano. Al discontinuar, el sistema regresa a baseline sin caída adicional. Es la diferencia entre prestarle dinero a un país vs imprimir billetes: lo segundo es más rápido pero genera consecuencias.</p>
+    </div>
+    <div>
+      <div class="h-block">Tesamorelin — el específico</div>
+      <p class="body">Tesamorelin es el único secretagogo GHRH <b>aprobado por la FDA</b>, originalmente para lipodistrofia en pacientes HIV (Falutz et al., NEJM, 2007). Actúa sobre el receptor GHRH amplificando GH endógena, pero su efecto clínico distintivo es la reducción específica de <b>grasa visceral</b> — el tejido adiposo que rodea los órganos abdominales y se asocia a riesgo cardiometabólico.</p>
+      <p class="body">En el ensayo fase III: <b>−15% de grasa visceral en 26 semanas</b>, sin cambio significativo en masa magra. No es un agente para pérdida de peso global; es un agente para recomposición.</p>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Prime Titan · Material exclusivo para investigación · 15</div>
+</section>
+
+<!-- =========================================================
+     PAGE 16 · PRIME TITAN B
+========================================================= -->
+<section class="page">
+  <div class="header"><span>04 · Prime Titan</span><span><b>Protocolo</b></span></div>
+  <div class="col-asym">
+    <div>
+      <div class="h-block">Protocolo sugerido</div>
+      <table class="dose-table">
+        <tr><th>Péptido</th><th>Dosis</th><th>Frecuencia</th><th>Vía</th><th>Timing</th></tr>
+        <tr><td><b>CJC-1295 + Ipamorelin (CP10)</b></td><td>100 µg + 200 µg</td><td>5 noches / sem</td><td>SC abdomen</td><td>30 min pre-sueño</td></tr>
+        <tr><td><b>Tesamorelin (TSM10)</b></td><td>1–2 mg</td><td>Diaria</td><td>SC</td><td>Mañana, ayuno</td></tr>
+        <tr><td><b>Ipamorelin solo (IP10)</b></td><td>200–300 µg</td><td>5 noches / sem</td><td>SC</td><td>Pre-sueño</td></tr>
+      </table>
+      <p class="body" style="margin-top:5mm;font-size:9.5pt;font-style:italic;color:var(--mute)">Para investigación de laboratorio. No para consumo humano.</p>
+      <div class="h-block" style="margin-top:7mm">Stack típico TITAN</div>
+      <p class="body">Tesamorelin AM + CJC/Ipa PM + entrenamiento de fuerza 4× sem + proteína 1.6–2.0 g/kg/día + sueño 7.5+ h. Sin entrenamiento de resistencia mecánica progresiva, los secretagogos GH amplifican un estímulo anabólico que no existe.</p>
+      <div class="h-block" style="margin-top:7mm">Regla de oro — ayuno</div>
+      <p class="body"><b>No comer azúcares ni carbohidratos densos en las 2 horas previas y posteriores a la inyección.</b> La insulina elevada bloquea la liberación de GH inducida por estos secretagogos. Es el punto único más importante del protocolo y el que se ignora en el 80% de los ciclos fallidos.</p>
+    </div>
+    <div>
+      <img src="img/products-v2/tesamorelin-silk-night.png" class="hero-img tall" alt="Tesamorelin silk night">
+      <div class="caption">Tesamorelin (research-grade compound) · vía SC matinal en ayuno</div>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Observaciones de seguridad</span>
+    Los secretagogos GH pueden producir transitoriamente <b>retención de líquidos, hormigueo en manos, somnolencia post-dosis</b> (deseable: indica pulso de GH activo). Vigilar <b>glucosa en ayunas</b> y <b>HbA1c</b>: GH eleva ligeramente la glucemia. <b>Contraindicado en cáncer activo</b>, embarazo, lactancia, retinopatía diabética activa. No combinar con rHGH exógena.
+  </div>
+  <div class="sources"><b>Fuentes:</b> Teichman SL et al. <i>J Clin Endocrinol Metab</i> 2006 (16352683) · Raun K et al. <i>Eur J Endocrinol</i> 1998 (9849822) · Falutz J et al. <i>N Engl J Med</i> 2007 (18032763) · Sinha DK et al. <i>Transl Androl Urol</i> 2020 (32257879) · Stanley TL et al. <i>JAMA</i> 2014 (24449315).</div>
+  <div class="footer-mark">PEPTIQ · Prime Titan · 16</div>
+</section>
+
+<!-- =========================================================
+     PAGE 17 · SHRED A
+========================================================= -->
+<section class="page">
+  <div class="header"><span>05 · Shred</span><span><b>Composición corporal</b></span></div>
+  <img src="img/products-v2/retatrutide-lifestyle.png" class="hero-img" alt="Retatrutide lifestyle">
+  <div class="caption" style="margin-bottom:6mm">Shred · Retatrutide · agonista triple GLP-1 / GIP / glucagón</div>
+  <div class="eyebrow">Línea 05 · Recomposición agresiva</div>
+  <h2 class="chap-title">Shred.<br><em>Apetito, glucosa, gasto.</em></h2>
+  <p class="lede">La generación nueva de análogos de incretinas. Semaglutide (research-grade compound) actúa sobre GLP-1; Cagrilintide combina GLP-1 con análogo de amilina; Retatrutide es el primer agonista triple GLP-1/GIP/glucagón con datos de fase II. Pérdidas reportadas en literatura clínica: hasta 24% de masa corporal en 48 semanas.</p>
+  <div class="col-2" style="margin-top:6mm">
+    <div>
+      <div class="h-block">Mecanismo de acción</div>
+      <p class="body"><b>Semaglutide</b> es un análogo de GLP-1 que retrasa el vaciamiento gástrico, modula la señal de saciedad en hipotálamo y mejora secreción de insulina dependiente de glucosa. Reportes de pérdida de peso del 15% en STEP-1 (Wilding et al., NEJM 2021).</p>
+      <p class="body"><b>Cagrilintide + Semaglutide (CagriSema)</b> añade un análogo de amilina, hormona pancreática que refuerza saciedad por una vía distinta. Sinergia clínica reportada por Frias et al. en Lancet 2023.</p>
+      <p class="body"><b>Retatrutide</b> es el agonista triple — actúa sobre GLP-1, GIP y glucagón simultáneamente. El glucagón aumenta el gasto energético basal, distinguiéndolo de los anteriores. Jastreboff et al. (NEJM 2023) reportaron pérdida de 24% del peso corporal en 48 semanas a dosis altas.</p>
+    </div>
+    <div>
+      <div class="h-block">Diferencias prácticas</div>
+      <ul class="dotted">
+        <li><b>Semaglutide</b> · efecto dominante en apetito · sólido, predecible</li>
+        <li><b>CagriSema</b> · saciedad combinada · mejor adherencia clínica</li>
+        <li><b>Retatrutide</b> · adicionalmente eleva gasto energético · curva de pérdida más empinada</li>
+      </ul>
+      <p class="body" style="margin-top:6mm">La elección depende del perfil del paciente. Resistencia a Semaglutide después de 6 meses (plateau) suele responder a la rotación a Retatrutide. Pacientes con saciedad insuficiente en monoterapia son candidatos para CagriSema.</p>
+      <p class="body">Material para investigación de laboratorio. No es indicación clínica.</p>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Shred · Material exclusivo para investigación · 17</div>
+</section>
+
+<!-- =========================================================
+     PAGE 18 · SHRED B
+========================================================= -->
+<section class="page">
+  <div class="header"><span>05 · Shred</span><span><b>Protocolo &amp; seguridad</b></span></div>
+  <div class="col-asym-r">
+    <div>
+      <img src="img/products-v2/cagrilintide-semaglutide-studio.png" class="hero-img tall" alt="CagriSema studio">
+      <div class="caption">CagriSema · viales research-grade · titulación gradual</div>
+    </div>
+    <div>
+      <div class="h-block">Protocolo sugerido</div>
+      <table class="dose-table">
+        <tr><th>Compuesto</th><th>Dosis inicial</th><th>Titulación</th><th>Vía</th></tr>
+        <tr><td><b>Semaglutide</b></td><td>0.25 mg / sem</td><td>Doblar c/4 sem hasta 2.4 mg</td><td>SC abdomen</td></tr>
+        <tr><td><b>CagriSema</b></td><td>0.25 mg / sem</td><td>Hasta 2.4 mg / 2.4 mg</td><td>SC</td></tr>
+        <tr><td><b>Retatrutide</b></td><td>2 mg / sem</td><td>Hasta 8–12 mg / sem</td><td>SC</td></tr>
+      </table>
+      <p class="body" style="margin-top:5mm;font-size:9.5pt;font-style:italic;color:var(--mute)">Para investigación de laboratorio. No para consumo humano.</p>
+      <div class="h-block" style="margin-top:7mm">Stack típico</div>
+      <p class="body">Análogo de incretina + <b>proteína 1.8–2.2 g/kg/día</b> (proteger masa magra) + <b>entrenamiento de fuerza 3–4× sem</b> + <b>vitaminas B12, D, magnesio</b> + hidratación 35 ml/kg. La pérdida muscular es el riesgo principal de cualquier protocolo de pérdida agresiva.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Observaciones de seguridad — críticas</span>
+    Efectos secundarios frecuentes: <b>náusea, estreñimiento, reflujo</b>, especialmente en titulación rápida. <b>Pancreatitis</b> es el riesgo serio aunque infrecuente — vigilar dolor abdominal alto persistente. <b>Contraindicado</b> en historia personal o familiar de carcinoma medular de tiroides, MEN-2, enfermedad biliar activa, embarazo, lactancia. <b>Riesgo regulatorio en México</b>: Retatrutide aún no está aprobado por COFEPRIS, su uso fuera de investigación queda exclusivamente bajo riesgo del usuario.
+  </div>
+  <div class="sources"><b>Fuentes:</b> Wilding JPH et al. <i>N Engl J Med</i> 2021 (33567185) · Jastreboff AM et al. <i>N Engl J Med</i> 2023 (37354531) · Frias JP et al. <i>Lancet</i> 2023 · Garvey WT et al. <i>Nat Med</i> 2022 · Knudsen LB, Lau J. <i>Front Endocrinol</i> 2019.</div>
+  <div class="footer-mark">PEPTIQ · Shred · 18</div>
+</section>
+
+<!-- =========================================================
+     PAGE 19 · SLEEP RESET
+========================================================= -->
+<section class="page">
+  <div class="header"><span>06 · Sleep Reset</span><span><b>Sueño profundo</b></span></div>
+  <img src="img/products-v2/epitalon-sleep-night.png" class="hero-img short" alt="Epithalon sleep night">
+  <div class="caption" style="margin-bottom:6mm">Sleep Reset · Ipamorelin nocturno + Epithalon · arquitectura del sueño</div>
+  <div class="eyebrow">Línea 06 · Restauración del sueño</div>
+  <h2 class="chap-title">Sleep Reset.<br><em>Arquitectura del sueño.</em></h2>
+  <p class="lede">Ipamorelin (research-grade compound) administrado 30 minutos antes de dormir amplifica el pulso nocturno de GH endógena, profundizando las fases 3 y 4 del sueño. Epithalon, según la literatura rusa de Khavinson, mejora ritmo circadiano y secreción de melatonina.</p>
+  <div class="col-2">
+    <div>
+      <div class="h-block">Mecanismo</div>
+      <p class="body"><b>Ipamorelin</b> activa el receptor de grelina en hipófisis e induce un pulso de GH limpio, sin elevación significativa de cortisol o prolactina (a diferencia de GHRP-6 o hexarelina). Ese pulso ocurre en sincronía con el inicio del sueño profundo, profundizando la fase 3.</p>
+      <p class="body"><b>Epithalon</b> (Ala-Glu-Asp-Gly) actúa sobre la pineal regulando la secreción de melatonina y restaurando ritmo circadiano alterado por edad o desfase. Korkushko et al. reportaron normalización del patrón circadiano en sujetos mayores tras ciclos de Epithalon.</p>
+      <p class="body">El stack es particularmente útil en sujetos con sueño fragmentado, despertares múltiples, sensación de "no haber descansado" pese a 7+ horas en cama, o jet-lag persistente.</p>
+    </div>
+    <div>
+      <div class="h-block">Protocolo sugerido</div>
+      <table class="dose-table">
+        <tr><th>Péptido</th><th>Dosis</th><th>Frecuencia</th><th>Timing</th></tr>
+        <tr><td><b>Ipamorelin</b></td><td>200–300 µg</td><td>5 noches/sem</td><td>30 min pre-sueño</td></tr>
+        <tr><td><b>Epithalon</b></td><td>5 mg</td><td>Diaria</td><td>Tarde, 10 días ciclo</td></tr>
+        <tr><td><b>DSIP</b> (opcional)</td><td>100–200 µg</td><td>Pre-sueño</td><td>Pulsado</td></tr>
+      </table>
+      <p class="body" style="margin-top:5mm;font-size:9.5pt;font-style:italic;color:var(--mute)">Para investigación de laboratorio.</p>
+      <div class="h-block" style="margin-top:5mm">Tracking</div>
+      <p class="body">Oura ring o Whoop comparativos sem 1 vs sem 8: % sueño profundo, HRV nocturno, latencia al sueño. Esperar mejoras evidentes desde la semana 3.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Observaciones de seguridad</span>
+    Ipamorelin tiene perfil de seguridad muy favorable. Vigilar glucosa en ayunas en uso prolongado. Evitar combinación con rHGH exógena. Embarazo y lactancia, contraindicación absoluta.
+  </div>
+  <div class="sources"><b>Fuentes:</b> Raun K et al. <i>Eur J Endocrinol</i> 1998 (9849822) · Khavinson VK, Morozov VG. <i>Mech Ageing Dev</i> 2003 (12714253) · Korkushko OV et al. <i>Bull Exp Biol Med</i> 2007.</div>
+  <div class="footer-mark">PEPTIQ · Sleep Reset · 19</div>
+</section>
+
+<!-- =========================================================
+     PAGE 20 · VITALITY
+========================================================= -->
+<section class="page">
+  <div class="header"><span>07 · Vitality</span><span><b>Eje HPG · libido</b></span></div>
+  <div class="strip">
+    <div class="strip-text">
+      <div class="eyebrow">Línea 07 · Vitalidad &amp; eje hipotálamo-hipófisis-gonadal</div>
+      <h2>Vitality.<br><em>PT-141 &amp; Kisspeptin.</em></h2>
+      <div class="strip-lede">Dos péptidos que actúan sobre dos pisos diferentes del mismo eje. PT-141 (Bremelanotide, research-grade compound) trabaja a nivel central — es agonista de los receptores de melanocortina en SNC. Kisspeptin actúa sobre hipotálamo, induciendo liberación de GnRH y reactivando el eje completo.</div>
+    </div>
+    <div class="strip-img" style="background-image:url('img/products-v2/pt-141-lifestyle.png')"></div>
+  </div>
+  <div class="col-2">
+    <div>
+      <div class="h-block">PT-141 — central, no vascular</div>
+      <p class="body">A diferencia de los inhibidores de PDE5 (sildenafilo, tadalafilo) que actúan periféricamente sobre flujo sanguíneo, PT-141 actúa <b>centralmente</b> sobre los receptores MC3R y MC4R del sistema nervioso central. Su efecto es sobre el deseo sexual, no sobre la mecánica vascular.</p>
+      <p class="body">Aprobado por la FDA bajo el nombre Vyleesi para trastorno del deseo sexual hipoactivo en mujeres premenopáusicas. Uso reportado fuera de etiqueta en hombres con respuesta parcial a PDE5.</p>
+    </div>
+    <div>
+      <div class="h-block">Kisspeptin — el regulador maestro</div>
+      <p class="body">Kisspeptin es el péptido descubierto en 2003 que reescribió el entendimiento del eje HPG. Es el activador upstream de las neuronas GnRH del hipotálamo: sin kisspeptin no hay pulsatilidad de GnRH, sin GnRH no hay LH/FSH, sin LH/FSH no hay producción gonadal.</p>
+      <p class="body">Comins-Boo et al. y Skorupskaite et al. han reportado uso de kisspeptin-10 y kisspeptin-54 en restauración del eje en hombres con hipogonadismo funcional y mujeres con amenorrea hipotalámica.</p>
+    </div>
+  </div>
+  <table class="dose-table">
+    <tr><th>Péptido</th><th>Dosis</th><th>Frecuencia</th><th>Vía</th><th>Notas</th></tr>
+    <tr><td><b>PT-141</b></td><td>1.0–1.75 mg</td><td>PRN, máx 8/mes</td><td>SC</td><td>45 min pre-actividad</td></tr>
+    <tr><td><b>Kisspeptin-10</b></td><td>50–100 µg/kg</td><td>2–3× sem</td><td>SC</td><td>Pulsátil, ciclos 4 sem</td></tr>
+  </table>
+  <div class="callout">
+    <span class="c-tag">Observaciones</span>
+    PT-141: hiperpigmentación transitoria leve, náusea (resolución en 30 min), eritema facial. Cuidado en hipertensión no controlada. Kisspeptin: bien tolerado en literatura. Ambos: para investigación, no consumo humano. Embarazo, lactancia, contraindicado.
+  </div>
+  <div class="sources"><b>Fuentes:</b> Pfaus JG et al. <i>Pharmacol Biochem Behav</i> 2007 · Kingsberg SA et al. <i>Obstet Gynecol</i> 2019 · Skorupskaite K et al. <i>Hum Reprod Update</i> 2014 (24664881) · George JT et al. <i>J Clin Endocrinol Metab</i> 2011.</div>
+  <div class="footer-mark">PEPTIQ · Vitality · 20</div>
+</section>
+
+<!-- =========================================================
+     PAGE 21 · NEURO
+========================================================= -->
+<section class="page">
+  <div class="header"><span>08 · Neuro</span><span><b>Cognición &amp; foco</b></span></div>
+  <img src="img/products-v2/semax-focus-office-night.png" class="hero-img short" alt="Semax focus office">
+  <div class="caption" style="margin-bottom:6mm">Neuro · Semax intranasal · trabajo cognitivo prolongado</div>
+  <div class="eyebrow">Línea 08 · Sistema nervioso central</div>
+  <h2 class="chap-title">Neuro.<br><em>Foco, BDNF, plasticidad.</em></h2>
+  <p class="lede">Dos neuropéptidos clásicos de la escuela rusa. Semax (research-grade compound) es un fragmento de ACTH(4–10) modificado, administrado por vía intranasal, con efecto sobre BDNF y NGF. Cerebrolysin es un hidrolizado de neuropéptidos porcinos con datos clínicos en ictus y deterioro cognitivo.</p>
+  <div class="col-2">
+    <div>
+      <div class="h-block">Semax</div>
+      <p class="body">Aprobado en Rusia para ictus isquémico y déficit cognitivo, Semax actúa elevando expresión de BDNF y NGF en hipocampo y corteza prefrontal. La vía intranasal aprovecha el bulbo olfatorio como ruta directa al SNC, evitando la barrera hematoencefálica.</p>
+      <p class="body">Reportes de mejora en atención sostenida, memoria de trabajo y resistencia al estrés cognitivo prolongado. Ashmarin IP et al. han documentado el perfil neuroprotector durante tres décadas en literatura rusa.</p>
+    </div>
+    <div>
+      <div class="h-block">Cerebrolysin</div>
+      <p class="body">Mezcla de neuropéptidos derivados de cerebro porcino. En meta-análisis Cochrane sobre ictus isquémico agudo, los datos son mixtos pero apuntan a efecto neuroprotector con dosis altas administradas en ventana temprana.</p>
+      <p class="body">Uso fuera de etiqueta en deterioro cognitivo leve, recuperación post-conmoción cerebral, neuropatía diabética. Curso típico: 5–10 ml IM diario por 10–20 días, 2–3 ciclos al año.</p>
+    </div>
+  </div>
+  <table class="dose-table">
+    <tr><th>Péptido</th><th>Dosis</th><th>Vía</th><th>Frecuencia</th><th>Ciclo</th></tr>
+    <tr><td><b>Semax 1%</b></td><td>2–4 gotas (200–400 µg) por fosa</td><td>Intranasal</td><td>2–3× / día</td><td>10–14 días</td></tr>
+    <tr><td><b>Cerebrolysin</b></td><td>5–10 ml</td><td>IM</td><td>Diaria</td><td>10–20 días</td></tr>
+    <tr><td><b>Selank</b> (opcional ansiolítico)</td><td>250–500 µg</td><td>Intranasal</td><td>2× / día</td><td>10–14 días</td></tr>
+  </table>
+  <div class="callout">
+    <span class="c-tag">Observaciones</span>
+    Semax y Selank tienen perfil de seguridad notable, sin reportes de adicción ni síndrome de abstinencia. Cerebrolysin en pacientes con epilepsia o riesgo de crisis convulsivas: precaución, vigilar.
+  </div>
+  <div class="sources"><b>Fuentes:</b> Ashmarin IP et al. <i>Neurochem Res</i> 2005 · Heiss WD et al. <i>Stroke</i> 2012 · Plosker GL, Gauthier S. <i>CNS Drugs</i> 2009 · Kolomin TA et al. <i>Curr Pharm Des</i> 2013.</div>
+  <div class="footer-mark">PEPTIQ · Neuro · 21</div>
+</section>
+
+<!-- =========================================================
+     PAGE 22 · VISCERAL CUT
+========================================================= -->
+<section class="page">
+  <div class="header"><span>09 · Visceral Cut</span><span><b>Tesamorelin focalizado</b></span></div>
+  <div class="col-asym">
+    <div>
+      <div class="eyebrow">Línea 09 · Grasa visceral específicamente</div>
+      <h2 class="chap-title">Visceral Cut.<br><em>El depósito que importa.</em></h2>
+      <p class="lede">No toda la grasa es igual. La grasa subcutánea es relativamente inofensiva. La grasa visceral — la que rodea hígado, páncreas, intestino — es metabólicamente activa, inflamatoria y predictor independiente de enfermedad cardiometabólica.</p>
+      <p class="body" style="margin-top:6mm">Tesamorelin (research-grade compound) es el único secretagogo GHRH con datos de fase III específicamente sobre <b>reducción de grasa visceral</b>. En el ensayo pivotal de Falutz (NEJM 2007), 26 semanas redujeron 15% del depósito visceral medido por TC abdominal, sin cambio significativo en masa magra.</p>
+      <p class="body">El protocolo Visceral Cut es Tesamorelin como monoterapia, en hombres y mujeres con perímetro abdominal elevado pese a peso corporal normal — el fenotipo "skinny fat" o adiposidad visceral asintomática.</p>
+      <div class="h-block" style="margin-top:6mm">Protocolo</div>
+      <table class="dose-table">
+        <tr><th>Dosis</th><th>Frecuencia</th><th>Vía</th><th>Timing</th><th>Duración</th></tr>
+        <tr><td><b>1–2 mg</b></td><td>Diaria</td><td>SC</td><td>Mañana, ayuno</td><td>16–26 sem</td></tr>
+      </table>
+      <div class="h-block" style="margin-top:6mm">Tracking</div>
+      <p class="body">Perímetro abdominal mensual; idealmente <b>DEXA o resonancia</b> con cuantificación de tejido adiposo visceral basal y a las 16 semanas.</p>
+    </div>
+    <div>
+      <img src="img/products-v2/tesamorelin-lifestyle.png" class="hero-img tall" alt="Tesamorelin lifestyle">
+      <div class="caption">Tesamorelin · monoterapia · ayuno matinal estricto</div>
+    </div>
+  </div>
+  <div class="sources"><b>Fuentes:</b> Falutz J et al. <i>N Engl J Med</i> 2007 (18032763) · Stanley TL et al. <i>JAMA</i> 2014 (24449315) · Stanley TL et al. <i>Lancet HIV</i> 2019.</div>
+  <div class="footer-mark">PEPTIQ · Visceral Cut · 22</div>
+</section>
+
+<!-- =========================================================
+     PAGE 23 · GLOW CABELLO (AHK-Cu)
+========================================================= -->
+<section class="page">
+  <div class="header"><span>10 · GLOW Cabello</span><span><b>AHK-Cu</b></span></div>
+  <img src="img/products-v2/ahk-cu-cabello-mujer.png" class="hero-img" alt="AHK-Cu cabello mujer">
+  <div class="caption" style="margin-bottom:6mm">GLOW Cabello · AHK-Cu (research-grade compound) · folículo activo</div>
+  <div class="eyebrow">Línea 10 · Folículo piloso</div>
+  <h2 class="chap-title">GLOW Cabello.<br><em>AHK-Cu, sin rebote.</em></h2>
+  <p class="lede">Tripéptido de cobre específico para folículo piloso (Ala-His-Lys-Cu²⁺). Estimula proliferación de células de la papila dérmica y prolonga la fase anágena del ciclo capilar. Alternativa a minoxidil sin el efecto rebote característico al discontinuar.</p>
+  <div class="col-2">
+    <div>
+      <div class="h-block">Ventajas vs minoxidil</div>
+      <p class="body">Minoxidil acorta artificialmente la fase telógena forzando la entrada acelerada a anágena. Al suspenderlo, los folículos sincronizados regresan a telógena de forma simultánea, produciendo el característico <b>shedding masivo post-discontinuación</b> que pierde lo ganado.</p>
+      <p class="body">AHK-Cu actúa por mecanismo distinto: <b>no sincroniza el ciclo</b>; prolonga anágena por señalización VEGF y por estímulo de proteoglicanos perifoliculares. La discontinuación gradual no produce shedding rebote.</p>
+    </div>
+    <div>
+      <div class="h-block">Limitaciones honestas</div>
+      <p class="body">AHK-Cu funciona <b>únicamente si el folículo aún existe</b>. En alopecia androgenética avanzada (escala Norwood VI–VII en hombres, Ludwig III en mujeres), el folículo ya está miniaturizado o fibrosado y AHK-Cu no puede revivir tejido perdido.</p>
+      <p class="body">Efecto visible: <b>semana 8–12</b> de uso continuo. Plateau típico a las 20 semanas. No esperar resultados antes de la semana 6.</p>
+    </div>
+  </div>
+  <table class="dose-table">
+    <tr><th>Protocolo</th><th>Dosis</th><th>Frecuencia</th><th>Duración</th></tr>
+    <tr><td>SC cuero cabelludo</td><td>0.5–1 mg</td><td>3× semana</td><td>12–20 sem</td></tr>
+    <tr><td>Mesoterapia clínica</td><td>1–2 mg</td><td>1× cada 2 sem</td><td>8 sesiones</td></tr>
+    <tr><td>Topical formulado</td><td>0.01–0.05% serum</td><td>Diario nocturno</td><td>Indefinido</td></tr>
+  </table>
+  <div class="sources"><b>Fuentes:</b> Pyo HK et al. <i>Biol Pharm Bull</i> 2007 (17202654) · Uno H, Kurata S. <i>J Dermatol Sci</i> 1993 · Trüeb RM. <i>Int J Trichology</i> 2009.</div>
+  <div class="footer-mark">PEPTIQ · GLOW Cabello · 23</div>
+</section>
+
+<!-- =========================================================
+     PAGE 24 · MENOPAUSE RESET
+========================================================= -->
+<section class="page">
+  <div class="header"><span>11 · Menopause Reset</span><span><b>Eje HPG femenino</b></span></div>
+  <div class="col-asym-r">
+    <div>
+      <img src="img/products-v2/dhea-menopausia-silk-night.png" class="hero-img tall" alt="Menopausia">
+      <div class="caption">Menopause Reset · Kisspeptin + GHK-Cu · enfoque sistémico</div>
+    </div>
+    <div>
+      <div class="eyebrow">Línea 11 · Transición menopáusica</div>
+      <h2 class="chap-title">Menopause<br>Reset.</h2>
+      <p class="lede" style="margin-top:5mm">Protocolo de soporte para perimenopausia y menopausia que actúa sobre tres ejes: regulación del eje HPG (kisspeptin), restauración de matriz cutánea (GHK-Cu) y soporte de sueño y composición (Ipamorelin).</p>
+      <p class="body" style="margin-top:6mm">La caída estrogénica acelera pérdida de colágeno cutáneo (~30% en los primeros 5 años de menopausia), reduce densidad ósea, fragmenta el sueño y altera composición corporal. Este protocolo no reemplaza terapia hormonal sustitutiva — la complementa o, en pacientes que no son candidatas a TRT, ofrece una vía alternativa de mantenimiento estructural.</p>
+      <div class="h-block" style="margin-top:6mm">Protocolo</div>
+      <table class="dose-table">
+        <tr><th>Péptido</th><th>Dosis</th><th>Frecuencia</th><th>Vía</th></tr>
+        <tr><td><b>Kisspeptin-10</b></td><td>50 µg/kg</td><td>2× sem</td><td>SC</td></tr>
+        <tr><td><b>GHK-Cu</b></td><td>2 mg/día</td><td>Diaria 30 d</td><td>SC</td></tr>
+        <tr><td><b>Ipamorelin</b></td><td>200 µg</td><td>5 noches/sem</td><td>SC pre-sueño</td></tr>
+      </table>
+      <p class="body" style="margin-top:5mm;font-size:9.5pt;font-style:italic;color:var(--mute)">Para investigación de laboratorio. No para consumo humano.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Coordinación clínica</span>
+    Este protocolo está pensado para <b>uso en clínica</b> bajo supervisión ginecológica. La transición menopáusica es un fenómeno multisistémico; la integración con TRT, tamizaje oncológico de rutina, densitometría ósea y perfil cardiometabólico anual es indispensable. PEPTIQ ofrece este material como referencia para la conversación con el especialista, no como sustituto de evaluación clínica.
+  </div>
+  <div class="sources"><b>Fuentes:</b> Skorupskaite K et al. <i>Hum Reprod Update</i> 2014 (24664881) · Pickart L, Margolina A. <i>Biomed Res Int</i> 2018 · Genazzani AR. <i>Climacteric</i> 2020.</div>
+  <div class="footer-mark">PEPTIQ · Menopause Reset · 24</div>
+</section>
+
+<!-- =========================================================
+     PAGE 25 · GUT RESET
+========================================================= -->
+<section class="page">
+  <div class="header"><span>12 · Gut Reset</span><span><b>Mucosa intestinal</b></span></div>
+  <img src="img/products-v2/kpv-lifestyle.png" class="hero-img" alt="KPV lifestyle">
+  <div class="caption" style="margin-bottom:6mm">Gut Reset · BPC-157 oral entérico + KPV · IBD, intestino permeable</div>
+  <div class="eyebrow">Línea 12 · Mucosa GI &amp; inflamación visceral</div>
+  <h2 class="chap-title">Gut Reset.<br><em>Mucosa, inflamación, barrera.</em></h2>
+  <p class="lede">BPC-157 fue descubierto como factor citoprotector gástrico, derivado de jugo gástrico humano. KPV (research-grade compound) es el fragmento C-terminal de α-MSH, antiinflamatorio potente con afinidad selectiva por mucosas. Juntos, el stack de referencia para enfermedad inflamatoria intestinal en literatura preclínica.</p>
+  <div class="col-2">
+    <div>
+      <div class="h-block">Mecanismo conjunto</div>
+      <p class="body"><b>BPC-157</b> oral con cubierta entérica resiste pH gástrico y libera el péptido en intestino delgado, donde restaura tight junctions de epitelio (claudina, ocludina) y reduce permeabilidad intestinal medida por lactulosa-manitol.</p>
+      <p class="body"><b>KPV</b> inhibe la vía NF-κB en células epiteliales y inmunes de mucosa. Reduce expresión de TNF-α, IL-1β, IL-6 sin la inmunosupresión sistémica de los corticoides. En modelo murino de colitis DSS, Kannengiesser et al. reportaron 50% de reducción en score histológico.</p>
+    </div>
+    <div>
+      <div class="h-block">Usos en investigación</div>
+      <ul class="dotted">
+        <li>Colitis ulcerosa en remisión (mantenimiento)</li>
+        <li>Enfermedad de Crohn (brotes leves a moderados)</li>
+        <li>Síndrome de intestino permeable</li>
+        <li>SIBO post-tratamiento (restauración de barrera)</li>
+        <li>Esofagitis eosinofílica</li>
+        <li>Dermatitis atópica con eje gut-skin</li>
+      </ul>
+    </div>
+  </div>
+  <table class="dose-table">
+    <tr><th>Compuesto</th><th>Dosis</th><th>Frecuencia</th><th>Vía</th><th>Duración</th></tr>
+    <tr><td><b>BPC-157 oral entérico</b></td><td>500 µg</td><td>2× día</td><td>Oral</td><td>8–12 sem</td></tr>
+    <tr><td><b>BPC-157 SC</b></td><td>250 µg</td><td>1× día</td><td>SC</td><td>4–8 sem</td></tr>
+    <tr><td><b>KPV oral</b></td><td>200–400 µg</td><td>1–3× día</td><td>Oral entérico</td><td>8–12 sem</td></tr>
+    <tr><td><b>KPV topical</b> (dermat.)</td><td>1% crema</td><td>2× día</td><td>Topical</td><td>Hasta resolución</td></tr>
+  </table>
+  <div class="sources"><b>Fuentes:</b> Sikiric P et al. <i>J Physiol Paris</i> 2014 (25173697) · Kannengiesser K et al. <i>Inflamm Bowel Dis</i> 2008 (18200517) · Luger TA, Brzoska T. <i>Ann NY Acad Sci</i> 2007 (17344549) · Bohm M, Luger T. <i>Curr Opin Investig Drugs</i> 2010.</div>
+  <div class="footer-mark">PEPTIQ · Gut Reset · 25</div>
+</section>
+
+<!-- =========================================================
+     PAGE 26 · MATRIZ OBJETIVO → LÍNEA · A
+========================================================= -->
+<section class="page">
+  <div class="header"><span>V · Cómo elegir</span><span><b>Matriz objetivo → línea</b></span></div>
+  <h2 class="section-title">Cómo elegir <em>tu protocolo.</em></h2>
+  <p class="body" style="max-width:165mm">Esta matriz mapea los doce objetivos más frecuentes en consulta hacia la línea PEPTIQ correspondiente. Es un punto de partida; un protocolo final debe individualizarse considerando edad, perfil hormonal basal, antecedentes oncológicos, medicación crónica y objetivos a 6–12 meses. Para casos compuestos, los stacks listados son los más frecuentes en literatura.</p>
+  <table class="matrix">
+    <tr><th>Objetivo principal</th><th>Línea PEPTIQ</th><th>Componentes</th><th>Ciclo típico</th><th>Ticket aprox.</th></tr>
+    <tr><td>Lesión deportiva · tendón · ligamento</td><td><b>Wolverine</b></td><td>BPC-157 + TB-500</td><td>6–8 sem</td><td>$5,499</td></tr>
+    <tr><td>Piel · arrugas · firmeza</td><td><b>GLOW Trinity</b></td><td>Trinity blend + GHK-Cu topical</td><td>8 sem</td><td>$7,499</td></tr>
+    <tr><td>Energía · longevidad sistémica</td><td><b>Highlander</b></td><td>NAD+ + Epithalon + GHK-Cu</td><td>30 días + intermitente</td><td>$14,999</td></tr>
+    <tr><td>Composición corporal · masa magra · sueño</td><td><b>Prime Titan</b></td><td>Tesamorelin + CJC + Ipa</td><td>16 sem</td><td>$14,999</td></tr>
+    <tr><td>Pérdida de peso significativa</td><td><b>Shred</b></td><td>Retatrutide o Semaglutide</td><td>24–48 sem</td><td>$12,999+</td></tr>
+    <tr><td>Sueño fragmentado · fatiga matinal</td><td><b>Sleep Reset</b></td><td>Ipamorelin + Epithalon</td><td>8 sem</td><td>$5,499</td></tr>
+    <tr><td>Libido · vitalidad sexual</td><td><b>Vitality</b></td><td>PT-141 + Kisspeptin</td><td>PRN + ciclos</td><td>variable</td></tr>
+    <tr><td>Foco · cognición · post-conmoción</td><td><b>Neuro</b></td><td>Semax + Cerebrolysin</td><td>10–14 días</td><td>$8,999</td></tr>
+    <tr><td>Grasa visceral aislada</td><td><b>Visceral Cut</b></td><td>Tesamorelin monoterapia</td><td>16–26 sem</td><td>$7,499/mes</td></tr>
+    <tr><td>Caída de cabello androgenética temprana</td><td><b>GLOW Cabello</b></td><td>AHK-Cu mesoterapia</td><td>12–20 sem</td><td>$3,799/mes</td></tr>
+    <tr><td>Perimenopausia · sueño · piel · libido</td><td><b>Menopause Reset</b></td><td>Kisspeptin + GHK-Cu + Ipa</td><td>3 meses</td><td>consultar</td></tr>
+    <tr><td>Crohn · CU · intestino permeable</td><td><b>Gut Reset</b></td><td>BPC-157 entérico + KPV</td><td>8–12 sem</td><td>$5,999</td></tr>
+  </table>
+  <div class="footer-mark">PEPTIQ · Matriz objetivo → línea · 26</div>
+</section>
+
+<!-- =========================================================
+     PAGE 27 · MATRIZ B / DECISIÓN
+========================================================= -->
+<section class="page">
+  <div class="header"><span>V · Cómo elegir</span><span><b>Decisión clínica</b></span></div>
+  <div class="eyebrow">Capítulo V · 02 de 02</div>
+  <h2 class="chap-title">Tres preguntas <em>antes de empezar.</em></h2>
+  <div class="col-2" style="margin-top:5mm">
+    <div>
+      <div class="h-block">01 · ¿Cuál es tu marcador objetivo?</div>
+      <p class="body">Sin marcador, no hay protocolo serio. Antes de comprar el primer vial, define qué vas a medir y cuándo. Para Wolverine: dolor en escala 0–10, rango articular en grados, fecha estimada de retorno a actividad. Para GLOW Trinity: foto estandarizada día 0–28–56. Para Highlander: edad biológica epigenética, hsCRP, energía subjetiva. Para Shred: peso, perímetro abdominal, DEXA si está al alcance.</p>
+      <p class="body">Un protocolo sin tracking objetivo es indistinguible de placebo bien empacado.</p>
+    </div>
+    <div>
+      <div class="h-block">02 · ¿Tu fisiología basal está lista?</div>
+      <p class="body">Los péptidos amplifican señales endógenas. Si tu sueño está fragmentado, tu nutrición es errática, tu entrenamiento es nulo, tu vitamina D está en 18 ng/mL y tu ferritina sérica en 25 ng/mL — los péptidos no van a compensar nada.</p>
+      <p class="body">Antes de cualquier ciclo: <b>panel hormonal</b> básico (testosterona total y libre, estradiol, TSH, T4 libre, IGF-1, cortisol AM), <b>panel metabólico</b> (HbA1c, HOMA-IR, perfil lipídico), <b>marcadores de inflamación</b> (hsCRP), <b>vitamina D</b>, <b>ferritina</b>, <b>B12</b>. La línea base es indispensable.</p>
+    </div>
+  </div>
+  <div class="col-2">
+    <div>
+      <div class="h-block">03 · ¿Tienes contraindicación absoluta?</div>
+      <p class="body">Antes de cualquier péptido: <b>cáncer activo o historia oncológica reciente</b> contraindica todos los compuestos que estimulan angiogénesis o proliferación celular (BPC-157, TB-500, GHK-Cu, secretagogos GH). <b>Embarazo y lactancia</b> son contraindicación absoluta para todos los péptidos sin excepción. <b>Diabetes no controlada</b>, <b>retinopatía activa</b>, <b>enfermedad biliar activa</b>: precaución específica con secretagogos GH e incretinas. <b>Trastornos de coagulación o anticoagulación crónica</b>: revisar caso a caso.</p>
+    </div>
+    <div>
+      <div class="h-block">Acompañamiento PEPTIQ</div>
+      <p class="body">Si tu compra incluye un stack ≥ $7,500 MXN, recibes una <b>llamada de protocolo de 30 minutos</b> con un investigador formado en este material. Reviewamos línea base, ajustamos dosis y frecuencia a tu caso, definimos marcadores y check-ins. Si necesitas referencia a clínica especializada, mantenemos un directorio en CDMX, MTY y GDL de médicos y dermatólogos que trabajan con péptidos research-grade.</p>
+      <p class="body">El concierge se incluye sin costo adicional. La biología es un terreno técnico — no debería navegarse en solitario.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="c-tag">Aviso editorial</span>
+    Esta guía no constituye consejo médico ni sustituye consulta con profesional de la salud certificado. Toda decisión sobre uso de compuestos research-grade es responsabilidad exclusiva del usuario. PEPTIQ MX comercializa exclusivamente material para investigación de laboratorio.
+  </div>
+  <div class="footer-mark">PEPTIQ · Decisión clínica · 27</div>
+</section>
+
+<!-- =========================================================
+     PAGE 28 · RECONSTITUCIÓN A
+========================================================= -->
+<section class="page">
+  <div class="header"><span>VI · Operación</span><span><b>Reconstitución</b></span></div>
+  <div class="eyebrow">Capítulo VI · 01 de 02</div>
+  <h2 class="chap-title">Reconstitución <em>&amp; conservación.</em></h2>
+  <p class="lede" style="margin-bottom:6mm">Los péptidos llegan en polvo liofilizado para máxima estabilidad de larga duración. Antes de cada ciclo, se reconstituyen con agua bacteriostática. Siguiendo el protocolo correcto, la solución es estable aproximadamente 28 días refrigerada a 2–8 °C.</p>
+  <div class="col-asym">
+    <div>
+      <div class="h-block">Protocolo paso a paso</div>
+      <ol class="steps">
+        <li><b>Lava manos.</b> Desinfecta el septum del vial liofilizado y del vial de agua bacteriostática con alcohol isopropílico al 70%. Espera 30 segundos a que evapore.</li>
+        <li><b>Carga la jeringa con agua bacteriostática.</b> Volumen típico: 2 mL por vial de 10 mg (concentración resultante: 5 mg/mL = 5000 µg/mL). Para concentraciones distintas, consulta la calculadora PEPTIQ.</li>
+        <li><b>Inyecta el agua escurriéndola por la pared interna del vial</b>, no directamente sobre el polvo. Esto previene formación de espuma y agregación.</li>
+        <li><b>Deja reposar 60 segundos. No agites.</b> Rota el vial suavemente entre las palmas hasta disolución completa. Puede tomar 1–3 minutos.</li>
+        <li><b>Etiqueta con fecha de reconstitución</b> usando marcador permanente sobre la tapa. Almacena a 2–8 °C en refrigerador (no congelador, no puerta).</li>
+        <li><b>Carga cada dosis</b> con jeringa de insulina U-100 estéril nueva. Nunca recargues una jeringa usada.</li>
+      </ol>
+    </div>
+    <div>
+      <img src="img/products-v2/peptiq-lab-glass-walking.png" class="hero-img tall" alt="Lab glass">
+      <div class="caption">Manejo aséptico · técnica estéril obligatoria</div>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Reconstitución · 28</div>
+</section>
+
+<!-- =========================================================
+     PAGE 29 · RECONSTITUCIÓN B
+========================================================= -->
+<section class="page">
+  <div class="header"><span>VI · Operación</span><span><b>Errores comunes &amp; cálculo</b></span></div>
+  <div class="col-2">
+    <div>
+      <div class="h-block">Errores frecuentes</div>
+      <p class="body"><b>Agitar violentamente:</b> rompe estructura terciaria del péptido por estrés mecánico. Siempre rotar, jamás vortex ni shaker.</p>
+      <p class="body"><b>Usar agua destilada o purificada simple:</b> sin alcohol bencílico al 0.9% no hay conservador, y la contaminación bacteriana aparece en 48–72 horas con eritema en sitio de inyección.</p>
+      <p class="body"><b>Congelar la solución reconstituida:</b> la cristalización fragmenta el enlace peptídico de manera irreversible. Solo refrigerar entre 2 y 8 °C.</p>
+      <p class="body"><b>Dejar el vial a temperatura ambiente más de una hora:</b> acelera degradación. Regresar a refrigerador entre dosis.</p>
+      <p class="body"><b>Mezclar dos péptidos en la misma jeringa para ahorrar pinchazos:</b> incompatibilidades químicas pueden destruir uno o ambos. Cada péptido en su jeringa.</p>
+      <p class="body"><b>Reutilizar agua bacteriostática:</b> tras múltiples punciones del septum, la esterilidad se compromete. Vial de 3 mL → máximo 10 punciones.</p>
+    </div>
+    <div>
+      <div class="h-block">Cálculo de dosis · ejemplo</div>
+      <p class="body"><b>Vial:</b> BPC-157 10 mg en polvo liofilizado.</p>
+      <p class="body"><b>Reconstitución:</b> 2 mL de agua bacteriostática.</p>
+      <p class="body"><b>Concentración resultante:</b> 10 mg ÷ 2 mL = <b>5 mg/mL = 5000 µg/mL</b>.</p>
+      <p class="body"><b>Jeringa de insulina U-100:</b> 100 unidades = 1 mL. Cada unidad = 0.01 mL = 50 µg.</p>
+      <p class="body"><b>Dosis objetivo: 250 µg.</b><br>250 µg ÷ 50 µg/u = <b>5 unidades</b>.</p>
+      <p class="body"><b>Dosis objetivo: 500 µg</b> = 10 unidades.</p>
+      <div class="callout" style="margin-top:6mm">
+        <span class="c-tag">Calculadora online</span>
+        <b>peptiqmx.com/calculadora</b> · introduce dosis del vial, agua de reconstitución y dosis objetivo. Devuelve unidades exactas en jeringa U-100. Verifica siempre antes de cualquier protocolo.
+      </div>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Reconstitución · 29</div>
+</section>
+
+<!-- =========================================================
+     PAGE 30 · COA VERIFICATION
+========================================================= -->
+<section class="page">
+  <div class="header"><span>VII · Verificación</span><span><b>COA público</b></span></div>
+  <div class="col-asym-r">
+    <div>
+      <img src="img/products-v2/iphone-bpc157-coa-marble.png" class="hero-img tall" alt="iPhone COA scan">
+      <div class="caption">Cada lote · NFC integrado · COA público en peptiqmx.com</div>
+    </div>
+    <div>
+      <div class="eyebrow">Capítulo VII</div>
+      <h2 class="chap-title">Verificación <em>de lote.</em></h2>
+      <p class="lede" style="margin-top:5mm">Cada caja PEPTIQ incluye un chip NFC bajo el sello holográfico que abre directamente el COA público del lote. Sin app intermediaria, sin proceso de registro.</p>
+      <ol class="steps" style="margin-top:6mm">
+        <li><b>Acerca tu teléfono al sello holográfico.</b> iPhone XS o posterior, Android moderno con NFC habilitado. La URL del COA se abre en navegador.</li>
+        <li><b>Verifica número de lote.</b> El lote en pantalla debe coincidir exactamente con el impreso en la caja y en cada vial.</li>
+        <li><b>Lee el cromatograma HPLC.</b> Pico único limpio &gt; 99% de área integrada (péptidos individuales) o &gt; 97% (blends multipéptido).</li>
+        <li><b>Verifica fecha de análisis.</b> COA emitido en los últimos 12–18 meses. Lotes más antiguos: solicítanos COA fresco antes de uso.</li>
+        <li><b>Cruza con espectrometría de masas.</b> El peso molecular reportado debe coincidir con el peso teórico del péptido (±0.5 Da).</li>
+      </ol>
+      <p class="body" style="margin-top:6mm">Si recibes un lote cuyo COA no carga, no coincide o cuya pureza es inferior al umbral: <b>peptiqmx.com/garantia-coa</b> reembolsa el lote completo sin discusión.</p>
+    </div>
+  </div>
+  <div class="footer-mark">PEPTIQ · Verificación COA · 30</div>
+</section>
+
+<!-- =========================================================
+     PAGE 31 · B2B CLÍNICAS
+========================================================= -->
+<section class="page dark">
+  <div class="header" style="border-color:#3a3530;color:#C9B585"><span>VIII · Programa B2B</span><span style="color:#fff6e0"><b>Clínicas partner</b></span></div>
+  <div class="eyebrow">Capítulo VIII · Para profesionales</div>
+  <h2 class="chap-title" style="color:#FFF6E0">Programa B2B <em style="color:#D4C29A">clínicas.</em></h2>
+  <p class="lede" style="color:#D4CCB6;margin-bottom:8mm">PEPTIQ trabaja con clínicas de medicina estética, longevidad, hormonal y deportiva en CDMX, MTY, GDL, Querétaro, Cancún y Tijuana. Programa transparente, márgenes definidos, soporte clínico real.</p>
+  <div class="col-3">
+    <div>
+      <div class="h-block" style="color:#FFF6E0;border-bottom-color:#D4C29A">Margen partner</div>
+      <p class="body" style="color:#D4CCB6">Pricing mayoreo con descuentos del 15% al 35% según volumen mensual. Margen final clínica entre 40% y 60% sobre tarifa concierge al paciente. Factura con IVA, plazos de pago a 30 días sobre catálogo aprobado.</p>
+    </div>
+    <div>
+      <div class="h-block" style="color:#FFF6E0;border-bottom-color:#D4C29A">Soporte clínico</div>
+      <p class="body" style="color:#D4CCB6">Material editorial de marca blanca. Llamadas de protocolo con tu equipo médico cada vez que entra una nueva línea. Templates de consentimiento informado y de tracking objetivo. Acceso a investigador dedicado por WhatsApp en horario laboral extendido.</p>
+    </div>
+    <div>
+      <div class="h-block" style="color:#FFF6E0;border-bottom-color:#D4C29A">White-label opcional</div>
+      <p class="body" style="color:#D4CCB6">Para clínicas con volumen ≥ 200 viales/mes, ofrecemos línea white-label con tu marca, manteniendo COA Janoshik público bajo el lote correspondiente. Empaque negro mate, holográfico anti-falsificación, NFC integrado.</p>
+    </div>
+  </div>
+  <div class="stat-block" style="border-color:#3a3530">
+    <div class="stat-row">
+      <div><div class="num">14</div><div class="lbl" style="color:#A89A7A">líneas activas</div></div>
+      <div><div class="num">95%<em>+</em></div><div class="lbl" style="color:#A89A7A">pureza HPLC garantizada</div></div>
+      <div><div class="num">24h</div><div class="lbl" style="color:#A89A7A">CDMX · MTY · GDL</div></div>
+      <div><div class="num">100%</div><div class="lbl" style="color:#A89A7A">COA público por lote</div></div>
+    </div>
+  </div>
+  <p class="body" style="color:#D4CCB6;margin-top:6mm">Para iniciar conversación con el equipo de partnerships: <b style="color:#FFF6E0">peptiqmx.com/b2b-clinicas</b> · onboarding de clínica completo en menos de siete días hábiles, incluyendo training inicial al equipo médico, primer pedido demo y configuración de sistema de tracking.</p>
+  <div class="footer-mark" style="color:#A89A7A">PEPTIQ · B2B clínicas · 31</div>
+</section>
+
+<!-- =========================================================
+     PAGE 32 · CONTACTO + DISCLAIMER LEGAL
+========================================================= -->
+<section class="page">
+  <div class="header"><span>IX · Contacto</span><span><b>Concierge</b></span></div>
+  <div class="back" style="padding-top:8mm">
+    <div class="eyebrow" style="margin-bottom:8mm">Gracias por leer · Hack your limits</div>
+    <h2>Pureza que no<br>se declara.<br><em>Se verifica.</em></h2>
+    <p class="lead">Esta guía documenta los protocolos que usan nuestras clínicas partner y nuestros sujetos de investigación. Si llegaste hasta aquí y quieres seguir la conversación, escríbenos por WhatsApp y te mandamos el COA Janoshik del lote vigente que te interese — antes, no después, de tu compra.</p>
+    <div>
+      <a href="https://wa.me/5214445770445" class="cta">Asesoría WhatsApp →</a>
+      <a href="https://peptiqmx.com" class="cta alt">peptiqmx.com</a>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <h4>Catálogo</h4>
+        <p>14 líneas research-grade. Cada lote, COA Janoshik público con verificación NFC.<br><b>peptiqmx.com</b></p>
+      </div>
+      <div>
+        <h4>Clínicas B2B</h4>
+        <p>Programa partner con descuentos 15–35%. Factura con IVA, soporte clínico, white-label desde 200 viales/mes.<br><b>peptiqmx.com/b2b-clinicas</b></p>
+      </div>
+      <div>
+        <h4>Concierge</h4>
+        <p>+52 1 444 577 0445<br>hola@peptiqmx.com<br>Instagram · @peptiqmx<br>Entrega 24h CDMX, MTY, GDL.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-box">
+    <h4>Aviso regulatorio · Research Use Only</h4>
+    <b>Los productos PEPTIQ MX son péptidos de investigación científica (research-grade compounds)</b> destinados exclusivamente a uso profesional en laboratorios, investigación académica y estudios clínicos autorizados. <b>No están aprobados por COFEPRIS ni por la FDA para uso humano.</b> No deben ser administrados ni consumidos por personas. Toda la documentación en esta guía describe dosis, frecuencias y protocolos reportados en literatura peer-reviewed con fines exclusivamente informativos para la comunidad de investigación.
+    <br><br>
+    <b>El uso de estos productos es responsabilidad única y exclusiva de la persona que los adquiere y/o utiliza.</b> PEPTIQ MX, sus representantes, empleados y afiliados no asumen responsabilidad alguna por el uso que el comprador o terceros den a los productos después de la entrega. Cualquier aplicación fuera del contexto de investigación científica queda bajo el criterio y riesgo exclusivo del usuario final.
+    <br><br>
+    <b>Acreditación analítica:</b> Cada lote PEPTIQ es analizado por Janoshik Analytical (Praga, República Checa), laboratorio independiente acreditado bajo norma <b>ISO/IEC 17025:2017</b>. Los certificados de análisis (COA) se publican íntegros en peptiqmx.com con su número de lote correspondiente.
+    <br><br>
+    Al leer esta guía, el lector declara <b>ser mayor de edad (18+)</b>, profesional de la investigación, médico, dermatólogo, investigador o adulto informado que actúa bajo su propia responsabilidad. Se recomienda enfáticamente consultar con un profesional de la salud certificado antes de ejecutar cualquier protocolo aquí descrito. Los protocolos citados provienen de literatura peer-reviewed identificada al final de cada capítulo y no constituyen recomendación de tratamiento.
+    <br><br>
+    <b>PEPTIQ MX</b> · Material exclusivo para investigación · Edición 2026 · Volumen I.
+  </div>
+  <div class="footer-mark">PEPTIQ · Beyond Biology · 32</div>
+</section>
+
+</body>
+</html>
