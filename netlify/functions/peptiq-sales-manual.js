@@ -50,7 +50,9 @@ const CORS = {
 const SEED_SALE = {
   id: 'first-rodolfo-morelia',
   date: '2026-05-08',
+  time: '14:00',
   customerName: 'Rodolfo',
+  customerPhone: '5213328388675',
   customerCity: 'Morelia',
   items: [
     { sku: 'BB20', qty: 1 },
@@ -64,14 +66,32 @@ const SEED_SALE = {
   productCost: 670,
   netProfit: 3680,
   margin: 73.6,
+  shippingStatus: 'shipped',
+  trackingNumber: '',
+  courier: '',
   notes: 'Primer pedido PEPTIQ · combo recovery + GH + estética',
   source: 'manual',
+  createdAt: '2026-05-08T14:00:00.000Z',
 };
 
 async function loadSales(store) {
   let data = await store.get('sales/ALL.json', { type: 'json' });
   if (!data) {
     data = { sales: [SEED_SALE] };
+    await store.setJSON('sales/ALL.json', data);
+    return data;
+  }
+  // Migration: si el seed Rodolfo existe sin phone, actualizar
+  const seed = (data.sales || []).find(s => s.id === 'first-rodolfo-morelia');
+  if (seed && !seed.customerPhone) {
+    Object.assign(seed, {
+      customerPhone: '5213328388675',
+      time: '14:00',
+      shippingStatus: 'shipped',
+      trackingNumber: '',
+      courier: '',
+      createdAt: '2026-05-08T14:00:00.000Z',
+    });
     await store.setJSON('sales/ALL.json', data);
   }
   return data;
