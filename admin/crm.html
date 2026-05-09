@@ -611,15 +611,23 @@ function renderRetargeting(data){
   document.getElementById('retContent').innerHTML = sections || '<div style="text-align:center;color:var(--mute);padding:40px">No hay leads en segmentos accionables aún.</div>';
 }
 
+// Templates aprobadas en Meta para PEPTIQ (agrega aquí cuando aprueben más)
+const PEPTIQ_TEMPLATES = [
+  { name: 'reactivar_equipo', lang: 'es_MX', label: 'Reactivar conversación (genérico)', params: ['nombre'], desc: 'Hola {nombre}, te escribo de PEPTIQ. ¿Sigue en pie tu interés?' },
+  // Agrega más cuando estén aprobadas:
+  // { name: 'peptiq_followup_oferta', lang: 'es_MX', label: 'Follow-up con oferta', params: ['nombre','oferta'], desc: '...' },
+  // { name: 'peptiq_lanzamiento_lanza20', lang: 'es_MX', label: 'Lanzamiento LANZA20', params: ['nombre'], desc: '...' },
+];
+
 function openBroadcastModal(segment){
   const m = SEGMENT_META[segment];
   const count = (_retCache?.segments?.[segment] || []).length;
   const tmpl = SEGMENT_TEMPLATES[segment] || '';
   const overlay = document.createElement('div');
   overlay.id = 'broadcastModal';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);overflow-y:auto';
   overlay.innerHTML = `
-    <div style="background:var(--card);max-width:540px;width:100%;border:1px solid var(--rule);border-top:3px solid ${m.color};padding:28px">
+    <div style="background:var(--card);max-width:580px;width:100%;border:1px solid var(--rule);border-top:3px solid ${m.color};padding:28px;max-height:90vh;overflow-y:auto">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
         <div>
           <div style="font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:${m.color};margin-bottom:4px">Campaña a ${m.label}</div>
@@ -627,36 +635,132 @@ function openBroadcastModal(segment){
         </div>
         <button onclick="document.getElementById('broadcastModal').remove()" style="background:transparent;border:0;color:var(--mute);font-size:24px;cursor:pointer">✕</button>
       </div>
-      <p style="font-size:12px;color:var(--mute);margin-bottom:14px;line-height:1.6">Usa <code style="color:${m.color}">{nombre}</code> para personalizar con el primer nombre. Puedes incluir links · sin emojis raros que rompan WhatsApp.</p>
-      <textarea id="broadcastMsg" style="width:100%;min-height:160px;padding:14px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13.5px;line-height:1.6;resize:vertical">${tmpl}</textarea>
+
+      <!-- Toggle modo -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:16px;padding:4px;background:var(--ink);border:1px solid var(--rule)">
+        <button id="modeText" onclick="switchBroadcastMode('text')" style="padding:10px;background:${m.color};color:#000;border:0;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;cursor:pointer">📝 Texto libre</button>
+        <button id="modeTemplate" onclick="switchBroadcastMode('template')" style="padding:10px;background:transparent;color:var(--paper);border:0;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer">📨 Template (paga · llega siempre)</button>
+      </div>
+
+      <!-- Modo texto -->
+      <div id="modeTextPanel">
+        <div style="background:rgba(34,197,94,.06);border-left:3px solid var(--ok);padding:10px 14px;margin-bottom:12px;font-size:11.5px;color:var(--ok)">✓ GRATIS · solo leads con ventana 24h activa (que respondieron en últimas 24h)</div>
+        <p style="font-size:12px;color:var(--mute);margin-bottom:8px">Usa <code style="color:${m.color}">{nombre}</code> para personalizar con el primer nombre.</p>
+        <textarea id="broadcastMsg" style="width:100%;min-height:140px;padding:14px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13.5px;line-height:1.6;resize:vertical">${tmpl}</textarea>
+      </div>
+
+      <!-- Modo template -->
+      <div id="modeTemplatePanel" style="display:none">
+        <div style="background:rgba(255,193,7,.08);border-left:3px solid var(--warn);padding:10px 14px;margin-bottom:12px;font-size:11.5px;color:var(--warn)">💰 PAGA por mensaje (~$0.05 USD c/u) · llega a TODOS sin importar ventana 24h</div>
+        <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:6px">Template aprobado por Meta</label>
+        <select id="templateName" onchange="updateTemplateParams()" style="width:100%;padding:12px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13px;margin-bottom:12px">
+          ${PEPTIQ_TEMPLATES.map(t => `<option value="${t.name}" data-lang="${t.lang}" data-params='${JSON.stringify(t.params)}'>${t.label} (${t.name})</option>`).join('')}
+        </select>
+        <div id="templateParamsBlock"></div>
+        <div id="templatePreview" style="background:var(--ink);border:1px dashed var(--rule);padding:12px;margin-top:12px;font-size:12px;color:var(--mute);line-height:1.6;font-style:italic;min-height:40px"></div>
+      </div>
+
       <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
-        <button onclick="executeBroadcast('${segment}', true)" style="flex:1;padding:14px;background:transparent;border:1px solid var(--rule);color:var(--paper);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer">🧪 Vista previa (sin enviar)</button>
+        <button onclick="executeBroadcast('${segment}', true)" style="flex:1;padding:14px;background:transparent;border:1px solid var(--rule);color:var(--paper);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer">🧪 Vista previa</button>
         <button onclick="executeBroadcast('${segment}', false)" style="flex:1.4;padding:14px;background:${m.color};color:#000;border:0;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;cursor:pointer">📨 Enviar a ${count} ahora</button>
       </div>
-      <p style="font-size:10.5px;color:var(--mute);margin-top:14px;line-height:1.6">⚠️ Solo a leads con ventana 24h activa de WhatsApp. Los que no respondieron en 24h no recibirán este mensaje (Meta lo bloquea automáticamente).</p>
     </div>
   `;
   document.body.appendChild(overlay);
+  window._currentBroadcastMode = 'text';
   document.getElementById('broadcastMsg').focus();
 }
 
+function switchBroadcastMode(mode){
+  window._currentBroadcastMode = mode;
+  document.getElementById('modeTextPanel').style.display = mode === 'text' ? 'block' : 'none';
+  document.getElementById('modeTemplatePanel').style.display = mode === 'template' ? 'block' : 'none';
+  const sel = mode === 'text' ? 'modeText' : 'modeTemplate';
+  const other = mode === 'text' ? 'modeTemplate' : 'modeText';
+  document.getElementById(sel).style.background = '#C6A969';
+  document.getElementById(sel).style.color = '#000';
+  document.getElementById(other).style.background = 'transparent';
+  document.getElementById(other).style.color = 'var(--paper)';
+  if (mode === 'template') updateTemplateParams();
+}
+
+function updateTemplateParams(){
+  const sel = document.getElementById('templateName');
+  const params = JSON.parse(sel.options[sel.selectedIndex].dataset.params || '[]');
+  const tmplName = sel.value;
+  const tmplData = PEPTIQ_TEMPLATES.find(t => t.name === tmplName);
+  const block = document.getElementById('templateParamsBlock');
+  if (params.length === 0) {
+    block.innerHTML = '<p style="font-size:11px;color:var(--mute);font-style:italic">Este template no requiere variables.</p>';
+  } else {
+    block.innerHTML = params.map((p, i) => `
+      <label style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px">{{${i+1}}} · ${p}</label>
+      <input type="text" id="tmplParam${i}" placeholder="Valor del parámetro · usa {nombre} para auto-personalizar"
+        value="${p === 'nombre' ? '{nombre}' : ''}"
+        oninput="renderTemplatePreview()"
+        style="width:100%;padding:10px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13px;margin-bottom:10px">
+    `).join('');
+  }
+  if (tmplData?.desc) {
+    document.getElementById('templatePreview').innerHTML = `<strong style="color:var(--gold);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:6px">Preview:</strong>${tmplData.desc}`;
+  }
+  renderTemplatePreview();
+}
+
+function renderTemplatePreview(){
+  const sel = document.getElementById('templateName');
+  const tmplName = sel.value;
+  const tmplData = PEPTIQ_TEMPLATES.find(t => t.name === tmplName);
+  if (!tmplData) return;
+  const params = JSON.parse(sel.options[sel.selectedIndex].dataset.params || '[]');
+  let preview = tmplData.desc;
+  for (let i = 0; i < params.length; i++) {
+    const inp = document.getElementById(`tmplParam${i}`);
+    if (inp) {
+      const val = inp.value.replace(/{nombre}/gi, '<em style="color:var(--gold)">[primer nombre]</em>');
+      preview = preview.replace(`{${params[i]}}`, val);
+    }
+  }
+  document.getElementById('templatePreview').innerHTML = `<strong style="color:var(--gold);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:6px">Preview:</strong>${preview}`;
+}
+
 async function executeBroadcast(segment, dryRun){
-  const message = document.getElementById('broadcastMsg').value.trim();
-  if (message.length < 10) { alert('Mensaje muy corto (mín 10 caracteres)'); return; }
-  if (!dryRun && !confirm(`¿Enviar a TODOS los ${(_retCache?.segments?.[segment]||[]).length} leads del segmento? Esta acción no se puede deshacer.`)) return;
+  const mode = window._currentBroadcastMode || 'text';
+  const count = (_retCache?.segments?.[segment]||[]).length;
+  let payload = { segment, mode, dryRun, limit: 100 };
+
+  if (mode === 'text') {
+    const message = document.getElementById('broadcastMsg').value.trim();
+    if (message.length < 10) { alert('Mensaje muy corto (mín 10 caracteres)'); return; }
+    payload.message = message;
+  } else {
+    const sel = document.getElementById('templateName');
+    const templateName = sel.value;
+    const templateLang = sel.options[sel.selectedIndex].dataset.lang || 'es_MX';
+    const params = JSON.parse(sel.options[sel.selectedIndex].dataset.params || '[]');
+    const templateParams = params.map((p, i) => document.getElementById(`tmplParam${i}`)?.value || '');
+    payload.templateName = templateName;
+    payload.templateLang = templateLang;
+    payload.templateParams = templateParams;
+  }
+
+  if (!dryRun) {
+    const cost = mode === 'template' ? `\n💰 Costo estimado: ~$${(count * 0.05).toFixed(2)} USD (${count} × $0.05)` : '';
+    if (!confirm(`¿Enviar a TODOS los ${count} leads del segmento?${cost}\n\nEsta acción no se puede deshacer.`)) return;
+  }
 
   try{
     const r = await fetch(`https://sara-backend.edson-633.workers.dev/api/peptiq/leads-broadcast?api_key=${encodeURIComponent(localStorage.getItem('peptiq_crm_apikey')||'')}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ segment, message, dryRun, limit: 100 })
+      body: JSON.stringify(payload)
     });
     const data = await r.json();
     if (!r.ok) { alert('Error: ' + (data.error || r.status)); return; }
     if (dryRun) {
-      alert(`Vista previa · ${data.targetCount} destinatarios.\n\nMuestra:\n${(data.sample||[]).map(s => `· ${s.name} (${s.phone}) · score ${s.score}`).join('\n')}`);
+      alert(`Vista previa · ${data.targetCount} destinatarios\nModo: ${mode === 'template' ? 'TEMPLATE (paga)' : 'TEXTO (gratis)'}\n\nMuestra:\n${(data.sample||[]).map(s => `· ${s.name} (${s.phone}) · score ${s.score}`).join('\n')}`);
     } else {
-      alert(`✅ Campaña enviada\n\nEnviados: ${data.sent}\nFallaron: ${data.failed}\nTotal: ${data.total}`);
+      alert(`✅ Campaña enviada\n\nModo: ${mode === 'template' ? 'TEMPLATE' : 'TEXTO'}\nEnviados: ${data.sent}\nFallaron: ${data.failed}\nTotal: ${data.total}`);
       document.getElementById('broadcastModal').remove();
       loadRetargeting();
     }
