@@ -22,18 +22,18 @@ const CORS = {
 };
 
 const RESULT_BUNDLES = {
-  longevidad:     { line: 'Highlander', stack: 'Highlander Longevity Stack', price: '$14,999', moleculas: 'NAD+ + Epithalon + GHK-Cu', catalog_trigger: 'longevidad' },
-  recovery:       { line: 'Wolverine PRO', stack: 'Wolverine PRO', price: '$6,999', moleculas: 'BPC-157 + TB-500 + agua bact', catalog_trigger: 'recuperación' },
-  estetica:       { line: 'GLOW', stack: 'GLOW PRO', price: '$9,999', moleculas: 'Trinity + GHK-Cu', catalog_trigger: 'piel' },
-  cabello:        { line: 'GLOW Cabello', stack: 'Hair Reset Stack', price: '$7,098', moleculas: 'AHK-Cu + GHK-Cu', catalog_trigger: 'cabello' },
-  bajar_peso:     { line: 'Shred (off-menu)', stack: 'Shred Stack', price: '$12,999', moleculas: 'Retatrutide + agua bact', catalog_trigger: 'bajar de peso' },
-  grasa_visceral: { line: 'Visceral Cut', stack: 'Visceral Cut Protocol', price: '$10,398', moleculas: 'Tesamorelin + Ipamorelin', catalog_trigger: 'grasa visceral' },
-  hipertrofia:    { line: 'TITAN', stack: 'TITAN Performance', price: '$14,999', moleculas: 'Tesamorelin + Ipamorelin + NAD+', catalog_trigger: 'masa muscular' },
-  libido:         { line: 'Vitality', stack: 'Vitality Stack', price: '$5,499', moleculas: 'PT-141 + Kisspeptin', catalog_trigger: 'función sexual' },
-  sueno:          { line: 'Sleep Reset', stack: 'Sleep Reset', price: '$8,999', moleculas: 'Ipamorelin + Epithalon', catalog_trigger: 'no puedo dormir' },
-  cognicion:      { line: 'Neuro Focus', stack: 'Neuro Focus', price: '$8,999', moleculas: 'Semax + Epithalon', catalog_trigger: 'foco' },
-  menopausia:     { line: 'Menopausia', stack: 'Menopause Reset', price: 'Consulta', moleculas: 'Kisspeptin + GHK-Cu + Epithalon', catalog_trigger: 'menopausia' },
-  gut:            { line: 'Gut Reset', stack: 'Gut Reset', price: '$5,999', moleculas: 'BPC-157 + KPV', catalog_trigger: 'inflamación intestinal' },
+  longevidad:     { line: 'Highlander', stack: 'Highlander Longevity Stack', price: '$14,999', moleculas: 'NAD+ + Epithalon + GHK-Cu', catalog_url: 'https://peptiqmx.com/catalogos/PEPTIQ-HIGHLANDER-Catalogo.pdf', catalog_filename: 'PEPTIQ-Highlander-Longevidad.pdf', catalog_label: 'Highlander · Longevidad' },
+  recovery:       { line: 'Wolverine PRO', stack: 'Wolverine PRO', price: '$6,999', moleculas: 'BPC-157 + TB-500 + agua bact', catalog_url: 'https://peptiqmx.com/catalogos/PEPTIQ-WOLVERINE-Catalogo.pdf', catalog_filename: 'PEPTIQ-Wolverine-Recuperacion.pdf', catalog_label: 'Wolverine · Recuperación' },
+  estetica:       { line: 'GLOW', stack: 'GLOW PRO', price: '$9,999', moleculas: 'Trinity + GHK-Cu', catalog_url: 'https://peptiqmx.com/catalogos/PEPTIQ-GLOW-Catalogo.pdf', catalog_filename: 'PEPTIQ-Glow-Estetica.pdf', catalog_label: 'Glow · Regeneración dérmica' },
+  cabello:        { line: 'GLOW Cabello', stack: 'Hair Reset Stack', price: '$7,098', moleculas: 'AHK-Cu + GHK-Cu', catalog_url: 'https://peptiqmx.com/catalogos-b2c/PEPTIQ-CABELLO-B2C-V2.pdf', catalog_filename: 'PEPTIQ-Cabello-Reactivacion.pdf', catalog_label: 'Cabello · Reactivación folicular' },
+  bajar_peso:     { line: 'Shred (off-menu)', stack: 'Shred Stack', price: '$12,999', moleculas: 'Retatrutide + agua bact', catalog_url: 'https://peptiqmx.com/catalogos/PEPTIQ-SHRED-Catalogo.pdf', catalog_filename: 'PEPTIQ-Shred-Peso.pdf', catalog_label: 'Shred · Pérdida de peso' },
+  grasa_visceral: { line: 'Visceral Cut', stack: 'Visceral Cut Protocol', price: '$10,398', moleculas: 'Tesamorelin + Ipamorelin', catalog_url: 'https://peptiqmx.com/catalogos-b2c/PEPTIQ-GRASA-VISCERAL-B2C-V2.pdf', catalog_filename: 'PEPTIQ-Grasa-Visceral.pdf', catalog_label: 'Grasa Visceral · El compartimento que mata' },
+  hipertrofia:    { line: 'TITAN', stack: 'TITAN Performance', price: '$14,999', moleculas: 'Tesamorelin + Ipamorelin + NAD+', catalog_url: 'https://peptiqmx.com/catalogos/PEPTIQ-PRIME-Catalogo.pdf', catalog_filename: 'PEPTIQ-Prime-Performance.pdf', catalog_label: 'Prime · Performance & GH' },
+  libido:         { line: 'Vitality', stack: 'Vitality Stack', price: '$5,499', moleculas: 'PT-141 + Kisspeptin', catalog_url: 'https://peptiqmx.com/catalogos-b2c/PEPTIQ-FUNCION-SEXUAL-B2C-V2.pdf', catalog_filename: 'PEPTIQ-Funcion-Sexual.pdf', catalog_label: 'Función Sexual · Deseo central' },
+  sueno:          { line: 'Sleep Reset', stack: 'Sleep Reset', price: '$8,999', moleculas: 'Ipamorelin + Epithalon', catalog_url: 'https://peptiqmx.com/catalogos-b2c/PEPTIQ-SUENO-B2C-V2.pdf', catalog_filename: 'PEPTIQ-Sueno-Profundo.pdf', catalog_label: 'Sueño Profundo · Restauración nocturna' },
+  cognicion:      { line: 'Neuro Focus', stack: 'Neuro Focus', price: '$8,999', moleculas: 'Semax + Epithalon', catalog_url: 'https://peptiqmx.com/catalogos-b2c/PEPTIQ-CEREBRO-B2C-V2.pdf', catalog_filename: 'PEPTIQ-Cerebro-Foco.pdf', catalog_label: 'Cerebro · Foco · Cognición' },
+  menopausia:     { line: 'Menopausia', stack: 'Menopause Reset', price: 'Consulta', moleculas: 'Kisspeptin + GHK-Cu + Epithalon', catalog_url: 'https://peptiqmx.com/catalogos-b2c/PEPTIQ-MENOPAUSIA-B2C-V2.pdf', catalog_filename: 'PEPTIQ-Menopausia-Equilibrio.pdf', catalog_label: 'Menopausia · Equilibrio sin TRH' },
+  gut:            { line: 'Gut Reset', stack: 'Gut Reset', price: '$5,999', moleculas: 'BPC-157 + KPV', catalog_url: 'https://peptiqmx.com/catalogos/PEPTIQ-WOLVERINE-Catalogo.pdf', catalog_filename: 'PEPTIQ-Wolverine-Gut.pdf', catalog_label: 'Wolverine · Gut Reset' },
 };
 
 function normalizeWa(raw) {
@@ -97,6 +97,30 @@ async function sendWhatsAppDirect(payload, bundle) {
     return { ok: r.ok, status: r.status, wamid: data?.messages?.[0]?.id, error: data?.error };
   } catch (e) {
     console.error('Meta WA send error', e);
+    return { ok: false, error: e.message };
+  }
+}
+
+async function sendWhatsAppCatalogPdf(payload, bundle) {
+  if (!META_TOKEN || !META_PHONE_ID) return { ok: false, reason: 'no meta credentials' };
+  try {
+    const r = await fetch(`https://graph.facebook.com/v21.0/${META_PHONE_ID}/messages`, {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${META_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messaging_product: 'whatsapp',
+        to: payload.phone,
+        type: 'document',
+        document: {
+          link: bundle.catalog_url,
+          filename: bundle.catalog_filename,
+          caption: `📕 *${bundle.catalog_label}*\n\nIncluye: qué hace cada compuesto, mecanismo de acción, dosis research, fuentes científicas y precios.\n\n¿Tienes alguna duda específica? Escríbeme directo aquí.`,
+        },
+      }),
+    });
+    const data = await r.json();
+    return { ok: r.ok, status: r.status, wamid: data?.messages?.[0]?.id, error: data?.error };
+  } catch (e) {
     return { ok: false, error: e.message };
   }
 }
@@ -207,9 +231,14 @@ exports.handler = async (event) => {
     console.error('blob save failed', e);
   }
 
-  // 2) Direct WhatsApp + 3) SARA push + 4) Email — todo en paralelo
-  const [waResult, saraResult, emailResult] = await Promise.all([
-    sendWhatsAppDirect({ ...lead }, bundle),
+  // 2) WhatsApp texto · luego catálogo PDF (secuencial para que llegue ordenado)
+  const waResult = await sendWhatsAppDirect({ ...lead }, bundle);
+  // Pequeño delay para que se vea natural (texto primero, luego PDF)
+  await new Promise(r => setTimeout(r, 1500));
+  const catalogResult = await sendWhatsAppCatalogPdf({ ...lead }, bundle);
+
+  // 3) SARA push + 4) Email en paralelo (no bloquea WA)
+  const [saraResult, emailResult] = await Promise.all([
     pushLeadToSara(lead, score, bundle),
     sendResendEmail(lead, bundle),
   ]);
@@ -220,7 +249,8 @@ exports.handler = async (event) => {
     body: JSON.stringify({
       ok: true,
       leadId: lead.id,
-      whatsapp: waResult,
+      whatsapp_text: waResult,
+      whatsapp_catalog: catalogResult,
       sara: saraResult,
       email: emailResult,
     }),
