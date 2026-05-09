@@ -1,7 +1,140 @@
 # PEPTIQ MX · Go-to-Market Strategy
-**Última actualización:** 2026-04-28
-**Lanzamiento oficial:** 2026-04-20 (ya pasó — fase post-launch)
-**Estado:** Brand live · 8+ posts · 5 carruseles · 9 historias listas · 386 leads B2B · 2,254 leads Nova
+**Última actualización:** 2026-05-08 (sesión Edson · rebuild infra completo)
+**Lanzamiento oficial:** 2026-04-20 (post-launch)
+**Estado:** Funnel quiz → WA → SARA → Stripe operacional · CRM unificado · Meta ads pendiente de creativos
+
+---
+
+## ✅ Construido en sesión 8-may (lo que YA funciona en producción)
+
+### Funnel de captura
+- **`peptiqmx.com/evaluacion`** — quiz 7 preguntas, 12 objetivos (longevidad, recovery, estética, cabello, bajar peso, grasa visceral, hipertrofia, libido, sueño, cognición, menopausia, gut). Single + multi-select + slider + back nav
+- Backend `peptiq-quiz-submit` manda en paralelo:
+  - WhatsApp texto personalizado (Meta API directo, no depende de SARA)
+  - Catálogo PDF correcto según objetivo
+  - Email Resend con HTML editorial
+  - Lead push a SARA (cuando `SARA_API_KEY` esté en Netlify)
+- **Verificado end-to-end** con número Edson 5610016226 — todo llega ✅
+
+### CRM (`peptiqmx.com/admin/crm.html`) — 5 tabs
+1. **Pedidos** (Stripe + manuales) — 29 órdenes test purgadas, queda solo Rodolfo Morelia
+2. **Leads** — listado SARA tenant PEPTIQ
+3. **📐 Calculadora** — backend Netlify Blob (no localStorage), con celular, fecha/hora, status envío, tracking, paquetería
+4. **📦 Inventario** — stock unificado con alertas críticas, márgenes, capital invertido, potencial Elite
+5. **🎯 Retargeting** — 6 segmentos automáticos (ready_to_buy / hot / warm / cold / test / buyers) + broadcast WhatsApp dual-mode (texto gratis 24h | template paga ~$0.05/msg)
+
+### SARA AI mejoras (deploy en Cloudflare Worker)
+- Comando `leads` (+ `leads hoy/semana/hot/sin responder`) para CEO/admin PEPTIQ
+- Detección conversacional de catálogos como admin (igual que leads)
+- Patrón ANSWER → BRIDGE → PITCH en prompt
+- 6 objeciones con scripts (precio, miedo aguja, "lo pienso", autenticidad, garantía, COFEPRIS)
+- Cierre fuerte obligatorio en última frase
+- Verify links auto-inyectados peptiqmx.com/verify/[slug]
+- Reorder detector ("se me acabó" → Stripe link directo)
+- Upsell automático pre-pago (BPC → Wolverine PRO con savings concretos)
+- Fotos editoriales del producto + audio en objeciones críticas
+- Videos contextuales (reconstitución, brand, B2B)
+
+### Endpoints SARA backend nuevos
+- `POST /api/peptiq/register-admin` — registrar phones como CEO PEPTIQ
+- `POST /api/peptiq/register-customer` — crear lead delivered + NPS automático
+- `POST /api/peptiq/purge-test-orders` — limpieza de Web Customer / E2E
+- `GET /api/peptiq/leads-segments` — 6 segmentos calculados
+- `POST /api/peptiq/leads-broadcast` — broadcast texto/template con dryRun
+- Edson registrado como CEO PEPTIQ (5610016226 + 2224558475)
+
+### Página `/verify` (COA)
+- 17 productos en catálogo + alias (wolverine, bb20, wolverine-pro, BP10, TB10, CU100, etc.)
+- BB20 renombrado de "HEAL STACK" a "WOLVERINE"
+- WOLVERINE PRO como stack independiente con links a 3 componentes
+- Contraste corregido (vars `--green` y `--beige` arregladas)
+
+### App PWA `/app`
+- QR scanner del vial → autopopula inventario
+- Botón "Verificar COA" en cada vial
+- Cloud sync state via `/api/state-sync` (HMAC token con `PEPTIQ_STATE_SECRET`)
+- Push notifications (VAPID — pendiente generar keys)
+- Stats dashboard: racha, adherencia 30d, heatmap calendario
+- Webhook Stripe → auto-popula inventario del cliente
+- Functions Netlify: `peptiq-stripe-webhook`, `peptiq-inventory-get`, `peptiq-push-subscribe`, `peptiq-state-sync`, `peptiq-sales-manual`, `peptiq-sales-master`, `peptiq-quiz-submit`
+
+### NFC card
+- URL para la cajita (re-pedido directo): `https://wa.me/5214445770445?text=Quiero%20repedir%20mi%20protocolo%20PEPTIQ`
+- QR HD generado: `~/Desktop/peptiq-wa-repedido-qr-HD.png`
+- Foto perfil WhatsApp Business 640x640: `~/Desktop/peptiq-wa-profile-640.png`
+
+### Documentos creados (carpeta repo)
+- `META-ADS-COMPLIANT-2026.md` — 10 creativos con copy/prompts/checklist anti-rechazo
+- `PEPTIQ-META-ADS-HIGGSFIELD.md` — 10 imágenes + 5 reels para Higgsfield
+- `PEPTIQ-WA-TEMPLATES-APROBACION.md` — 4 templates listos para Meta (peptiq_followup_warm, peptiq_lanzamiento_oferta, peptiq_reengagement_cold, peptiq_post_evaluacion)
+- `generate-meta-ads-2026.js` — script Replicate Flux con rate limiting
+
+---
+
+## ⚠️ Bloqueos / pendientes accionables (orden por ROI)
+
+### 🔴 HOY (sin esto no entra ningún peso)
+
+1. **Setear env vars Netlify** → https://app.netlify.com/projects/peptiqmx/configuration/env
+   - `SARA_API_KEY = 06b7a620de2d15e496f076f1151005eaa9e2371561ee3fafe52a653a82fe7d40` (sin esto leads quiz no entran a CRM)
+   - `STRIPE_WEBHOOK_SECRET = whsec_...` (de Stripe Dashboard → Developers → Webhooks)
+   - `PEPTIQ_STATE_SECRET = openssl rand -hex 32` (cloud sync app)
+   - VAPID keys (`VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT`) — generar con `npx web-push generate-vapid-keys`
+
+2. **Status cuenta Meta Business** — verificar si está restricted/banned en `business.facebook.com/settings/account-quality`. Sin esto no se puede pautar.
+
+3. **Pixel ID Meta** — `business.facebook.com → Events Manager → Pixel ID` (16 dígitos). Inyectar en `/evaluacion` para tracking conversiones.
+
+4. **Submit 4 templates WA** a Meta Business Manager (texts en `PEPTIQ-WA-TEMPLATES-APROBACION.md`). Aprobación 24-48h. Categoría MARKETING / es_MX. Sin esto retargeting cold no se puede.
+
+### 🟡 ESTA SEMANA (creativos para campaña)
+
+5. **Generar las 30 imágenes editoriales** — opciones:
+   - **Higgsfield (recomendado)** — manual web, pegar 10 prompts del MD `PEPTIQ-META-ADS-HIGGSFIELD.md`. ~1h trabajo.
+   - **ImageFX gratis** (`labs.google/fx/tools/image-fx`) — login Google, pegar prompts.
+   - **Replicate** — necesita tarjeta agregada en `replicate.com/account/billing` (~$2-3 USD las 30). Script listo en `generate-meta-ads-2026.js`.
+   - Solo se generaron 2/30 hasta ahora: `01-profesionales_1080x1350.png` y `10-logo-tagline_1080x1920.png`
+
+6. **Producir 3 reels Higgsfield Video** (5seg cada uno × 3 clips) — para Reels/Stories Meta. Prompts listos en MD.
+
+### 🟢 ARRANQUE CAMPAÑA META
+
+7. **Audiencias Meta Ads:**
+   - Top Funnel: 38-60 MX, intereses wellness/longevity/biohacking
+   - Lead Gen: Lookalike 1% de quiz completers (cuando haya 100+)
+   - Retargeting: visitas web 30d sin quiz
+
+8. **Estructura sugerida** ($300/día arranque, ramp a $550/día):
+   - Conjunto Awareness: $200 → top funnel, 4 imágenes statics
+   - Conjunto Lead Gen: $250 → lead form Meta, 4 imágenes + 1 reel
+   - Conjunto Retargeting: $100 → traffic, 2 imágenes story
+
+9. **Objetivo de campaña: Lead Generation (NO Sales)** — apunta a `peptiqmx.com/evaluacion?utm_source=meta&utm_campaign=longevidad`
+
+---
+
+## 📊 KPIs · qué medir cada lunes
+- CPL (target <$150 MXN) · Quiz completion >40% · Lead→sale 10% · AOV $7K+ · Re-order 60d 30%
+
+## 📈 Proyección honesta
+- **Mes 1:** $16K spend · 150 leads · 12 sales · $90K revenue · ROAS 5.6x
+- **Mes 3:** $30K spend · 400 leads · 50 sales · $450K revenue · ROAS 15x
+
+---
+
+## ⚙️ Cómo arrancar mañana (60 min)
+1. (10 min) Setear las 4 env vars Netlify críticas
+2. (5 min) Submit 4 templates WA en Meta Business Manager
+3. (45 min) Generar 5 imágenes Higgsfield prioritarias (01, 02, 04, 05, 10)
+4. Lunes: lanzar conjunto Awareness $200/día con 4 imágenes
+5. Martes: medir CPL · si <$200 → escalar a Lead Gen $250/día
+
+---
+---
+*Sección original abril 2026 abajo (referencia histórica)*
+---
+
+**Estado original:** Brand live · 8+ posts · 5 carruseles · 9 historias listas · 386 leads B2B · 2,254 leads Nova
 
 ---
 
