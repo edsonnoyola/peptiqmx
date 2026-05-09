@@ -9,6 +9,43 @@
 <meta property="og:description" content="2 minutos · reporte gratuito · sin compromiso · sin spam">
 <meta property="og:image" content="https://peptiqmx.com/img/products-v2/bpc-157-studio.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- TRACKING PIXELS · listos para activar cuando tengas IDs            -->
+<!-- Pasos: reemplaza GA_MEASUREMENT_ID, AW_CONVERSION_ID, FB_PIXEL_ID, -->
+<!--        TIKTOK_PIXEL_ID con los reales y queda activo               -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<!-- Google Tag (gtag) · GA4 + Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // GA4
+  gtag('config', 'GA_MEASUREMENT_ID', { 'send_page_view': true });
+  // Google Ads · reemplaza con tu Conversion ID (formato AW-XXXXXXXXXX)
+  gtag('config', 'AW-CONVERSION_ID');
+</script>
+
+<!-- Meta Pixel (Facebook + Instagram) · listo cuando reactives Meta -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+// Reemplaza FB_PIXEL_ID con tu Pixel ID (16 dígitos)
+fbq('init', 'FB_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=FB_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<!-- TikTok Pixel · listo cuando crees cuenta TikTok Ads -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var i=document.createElement("script");i.type="text/javascript",i.async=!0,i.src=r+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(i,a)};
+  // Reemplaza TIKTOK_PIXEL_ID con tu Pixel ID
+  ttq.load('TIKTOK_PIXEL_ID');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -463,7 +500,37 @@ async function submitQuiz(){
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
-    if (window.fbq) fbq('track', 'Lead', { content_name: 'PEPTIQ Evaluation', value: 0, currency: 'MXN' });
+    // ═══ Track Lead conversion en TODOS los canales ═══
+    try {
+      // Meta Pixel
+      if (window.fbq) fbq('track', 'Lead', {
+        content_name: 'PEPTIQ Evaluation',
+        content_category: payload.answers?.objetivo || 'longevity',
+        value: 500.0,
+        currency: 'MXN'
+      });
+      // Google Ads conversion · reemplaza AW-CONVERSION_ID/CONVERSION_LABEL con valores reales
+      if (window.gtag) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
+          'value': 500.0,
+          'currency': 'MXN',
+          'transaction_id': payload.id || ''
+        });
+        // GA4 evento custom también
+        gtag('event', 'generate_lead', {
+          'currency': 'MXN',
+          'value': 500.0,
+          'objetivo': payload.answers?.objetivo || 'unknown'
+        });
+      }
+      // TikTok Pixel
+      if (window.ttq) ttq.track('SubmitForm', {
+        content_name: 'PEPTIQ Evaluation',
+        value: 500.0,
+        currency: 'MXN'
+      });
+    } catch(e) { console.warn('Pixel tracking error:', e); }
     next();
   }catch(e){
     btn.disabled = false; btn.textContent = 'Recibir mi reporte personalizado →';
