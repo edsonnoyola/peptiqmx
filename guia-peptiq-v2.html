@@ -5,7 +5,7 @@
   <title>Guía PEPTIQ — Beyond Biology · Edición 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    @page { size: A4; margin: 16mm 14mm 18mm 14mm; }
+    @page { size: A4; margin: 0; }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{
       --ink:#111; --stone:#FAFAFA; --paper:#FCFAF6; --cream:#F5EFE4;
@@ -14,8 +14,10 @@
       --sans:'Inter',sans-serif;
     }
     html,body{background:var(--paper)}
-    body{font-family:var(--sans);color:var(--ink);font-size:11pt;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .page{page-break-after:always;min-height:265mm;position:relative;background:var(--paper)}
+    body{font-family:var(--sans);color:var(--ink);font-size:9.5pt;line-height:1.42;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .page{page-break-after:always;break-after:page;break-inside:avoid;position:relative;background:var(--paper);overflow:hidden;width:210mm;height:297mm;padding:16mm 14mm 18mm 14mm;box-sizing:border-box}
+    .page-hero{height:42mm;background-size:cover;background-position:center;margin:0 0 6mm;border-radius:0;}
+    .page-hero-tall{height:60mm;background-size:cover;background-position:center;margin:0 0 6mm;}
     .page:last-child{page-break-after:auto}
     h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15}
 
@@ -203,6 +205,7 @@
 ========================================================= -->
 <section class="page">
   <div class="header"><span>Volumen I · 2026</span><span><b>Contenido</b></span></div>
+  <div class="page-hero" style="background-image:url('img/products-v2/consultation-premium.png')"></div>
   <h2 class="section-title">Cómo leer <em>esta guía.</em></h2>
   <p class="body" style="max-width:160mm">Cada línea PEPTIQ ocupa entre dos y cuatro páginas. Verás, en orden: hero editorial, mecanismo celular, usos reportados en literatura, tabla de protocolo (dosis · frecuencia · vía · duración), stack clínico recomendado, observaciones de seguridad y bibliografía. Las páginas 28 a 32 cubren reconstitución, verificación de COA, programa B2B y aviso regulatorio.</p>
   <div style="margin-top:12mm">
@@ -264,6 +267,7 @@
 ========================================================= -->
 <section class="page">
   <div class="header"><span>II · Fundamento</span><span><b>Cómo se administran</b></span></div>
+  <div class="page-hero" style="background-image:url('img/products-v2/lab-bpc157-tech-hplc.png')"></div>
   <div class="eyebrow">Capítulo II · 02 de 02</div>
   <h2 class="chap-title">Vías, ventanas, <em>moléculas frágiles.</em></h2>
   <p class="lede" style="margin-bottom:8mm">La vía de administración no es un detalle menor. Un péptido administrado por la vía equivocada simplemente no llega al receptor — y todo lo que cuesta queda inactivo en el torrente.</p>
@@ -939,6 +943,7 @@
 ========================================================= -->
 <section class="page">
   <div class="header"><span>V · Cómo elegir</span><span><b>Matriz objetivo → línea</b></span></div>
+  <div class="page-hero" style="background-image:url('img/products-v2/consultation-derma-trinity.png')"></div>
   <h2 class="section-title">Cómo elegir <em>tu protocolo.</em></h2>
   <p class="body" style="max-width:165mm">Esta matriz mapea los doce objetivos más frecuentes en consulta hacia la línea PEPTIQ correspondiente. Es un punto de partida; un protocolo final debe individualizarse considerando edad, perfil hormonal basal, antecedentes oncológicos, medicación crónica y objetivos a 6–12 meses. Para casos compuestos, los stacks listados son los más frecuentes en literatura.</p>
   <table class="matrix">
@@ -964,6 +969,7 @@
 ========================================================= -->
 <section class="page">
   <div class="header"><span>V · Cómo elegir</span><span><b>Decisión clínica</b></span></div>
+  <div class="page-hero" style="background-image:url('img/products-v2/executive-hombre-suit-ghstack.png')"></div>
   <div class="eyebrow">Capítulo V · 02 de 02</div>
   <h2 class="chap-title">Tres preguntas <em>antes de empezar.</em></h2>
   <div class="col-2" style="margin-top:5mm">
@@ -1029,6 +1035,7 @@
 ========================================================= -->
 <section class="page">
   <div class="header"><span>VI · Operación</span><span><b>Errores comunes &amp; cálculo</b></span></div>
+  <div class="page-hero" style="background-image:url('img/products-v2/lab-janoshik-hplc-monitor.png')"></div>
   <div class="col-2">
     <div>
       <div class="h-block">Errores frecuentes</div>
@@ -1088,6 +1095,7 @@
 ========================================================= -->
 <section class="page dark">
   <div class="header" style="border-color:#3a3530;color:#C9B585"><span>VIII · Programa B2B</span><span style="color:#fff6e0"><b>Clínicas partner</b></span></div>
+  <div class="page-hero" style="background-image:url('img/products-v2/consultation-derma-trinity.png')"></div>
   <div class="eyebrow">Capítulo VIII · Para profesionales</div>
   <h2 class="chap-title" style="color:#FFF6E0">Programa B2B <em style="color:#D4C29A">clínicas.</em></h2>
   <p class="lede" style="color:#D4CCB6;margin-bottom:8mm">PEPTIQ trabaja con clínicas de medicina estética, longevidad, hormonal y deportiva en CDMX, MTY, GDL, Querétaro, Cancún y Tijuana. Programa transparente, márgenes definidos, soporte clínico real.</p>
@@ -1122,6 +1130,7 @@
 ========================================================= -->
 <section class="page">
   <div class="header"><span>IX · Contacto</span><span><b>Concierge</b></span></div>
+  <div class="page-hero" style="background-image:url('img/products-v2/peptiq-lab-glass-walking.png')"></div>
   <div class="back" style="padding-top:8mm">
     <div class="eyebrow" style="margin-bottom:8mm">Gracias por leer · Hack your limits</div>
     <h2>Pureza que no<br>se declara.<br><em>Se verifica.</em></h2>
