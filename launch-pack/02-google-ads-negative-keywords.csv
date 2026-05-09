@@ -1,0 +1,35 @@
+Keyword,Match Type
+gratis,Broad
+free,Broad
+fake,Broad
+estafa,Broad
+scam,Broad
+amazon,Broad
+mercadolibre,Broad
+walmart,Broad
+soriana,Broad
+chedraui,Broad
+prescription,Broad
+recipe,Broad
+veterinary,Broad
+veterinario,Broad
+canino,Broad
+para perros,Phrase
+homeopatia,Broad
+homeopatico,Broad
+suplementos vitaminas,Phrase
+empleo,Broad
+trabajo,Broad
+sueldo,Broad
+salario,Broad
+"como hacer peptidos",Phrase
+"como sintetizar",Phrase
+chino,Broad
+china,Broad
+genuino,Broad
+clones,Broad
+falsificado,Broad
+ebay,Broad
+aliexpress,Broad
+shein,Broad
+temu,Broad

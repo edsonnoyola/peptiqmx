@@ -1,0 +1,25 @@
+Channel,Ad/Campaign Name,Final URL with UTMs,Notes
+Google Ads,G1 Marca BPC,https://peptiqmx.com/evaluacion?utm_source=google&utm_medium=cpc&utm_campaign=marca&utm_term=bpc157,Search exact match
+Google Ads,G1 Marca Tesamorelin,https://peptiqmx.com/evaluacion?utm_source=google&utm_medium=cpc&utm_campaign=marca&utm_term=tesamorelin,Search exact match
+Google Ads,G1 Marca Ipamorelin,https://peptiqmx.com/evaluacion?utm_source=google&utm_medium=cpc&utm_campaign=marca&utm_term=ipamorelin,Search exact match
+Google Ads,G1 Marca GHK-Cu,https://peptiqmx.com/evaluacion?utm_source=google&utm_medium=cpc&utm_campaign=marca&utm_term=ghkcu,Search exact match
+Google Ads,G2 Educacional General,https://peptiqmx.com/evaluacion?utm_source=google&utm_medium=cpc&utm_campaign=educa,Phrase match group
+Google Ads,G3 Competencia,https://peptiqmx.com/evaluacion?utm_source=google&utm_medium=cpc&utm_campaign=comp,Phrase match group
+TikTok Ads,T1 POV Doctor,https://peptiqmx.com/evaluacion?utm_source=tiktok&utm_medium=cpc&utm_campaign=t1_pov_doctor,Spark Ad
+TikTok Ads,T2 Compare,https://peptiqmx.com/evaluacion?utm_source=tiktok&utm_medium=cpc&utm_campaign=t2_compare,Spark Ad
+TikTok Ads,T3 Education,https://peptiqmx.com/evaluacion?utm_source=tiktok&utm_medium=cpc&utm_campaign=t3_education,Spark Ad
+TikTok Ads,T4 After 40,https://peptiqmx.com/evaluacion?utm_source=tiktok&utm_medium=cpc&utm_campaign=t4_after40,Spark Ad
+TikTok Ads,T5 Lab,https://peptiqmx.com/evaluacion?utm_source=tiktok&utm_medium=cpc&utm_campaign=t5_lab,Spark Ad
+Meta Ads,A1 Hero Mujer Cabello,https://peptiqmx.com/evaluacion?utm_source=meta&utm_medium=cpc&utm_campaign=awareness&utm_content=a1_hero_mujer,Awareness
+Meta Ads,A2 Hero Hombre 52,https://peptiqmx.com/evaluacion?utm_source=meta&utm_medium=cpc&utm_campaign=awareness&utm_content=a2_hombre_52,Awareness
+Meta Ads,R5 GLOW Mujer 50,https://peptiqmx.com/evaluacion?utm_source=meta&utm_medium=cpc&utm_campaign=leadgen&utm_content=r5_glow,Lead Gen
+Meta Ads,R7 Metabolism,https://peptiqmx.com/evaluacion?utm_source=meta&utm_medium=cpc&utm_campaign=leadgen&utm_content=r7_metabolism,Lead Gen
+Meta Ads,R6 NFC Trust,https://peptiqmx.com/evaluacion?utm_source=meta&utm_medium=cpc&utm_campaign=retarget&utm_content=r6_nfc,Retargeting
+Meta Ads,A10 Folder,https://peptiqmx.com/evaluacion?utm_source=meta&utm_medium=cpc&utm_campaign=retarget&utm_content=a10_folder,Retargeting
+WhatsApp,Hot Leads Blast,https://peptiqmx.com/evaluacion?utm_source=whatsapp&utm_medium=template&utm_campaign=hot_lanza20,Existing leads hot
+WhatsApp,Warm Leads Blast,https://peptiqmx.com/evaluacion?utm_source=whatsapp&utm_medium=template&utm_campaign=warm_followup,Existing leads warm
+WhatsApp,Cold Leads Blast,https://peptiqmx.com/evaluacion?utm_source=whatsapp&utm_medium=template&utm_campaign=cold_reengagement,Existing leads cold
+Email Resend,B2B Cold 386,https://peptiqmx.com/evaluacion?utm_source=email&utm_medium=newsletter&utm_campaign=b2b_clinicas,Cold B2B clinicas
+Instagram Organic,Bio Link,https://peptiqmx.com/evaluacion?utm_source=instagram&utm_medium=organic&utm_campaign=bio_link,IG bio link
+TikTok Organic,Bio Link,https://peptiqmx.com/evaluacion?utm_source=tiktok&utm_medium=organic&utm_campaign=bio_link,TikTok bio link
+Direct/QR,NFC Card Repedido,https://wa.me/5214445770445?text=Quiero%20repedir%20mi%20protocolo%20PEPTIQ,Re-order NFC sticker
