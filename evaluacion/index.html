@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>PEPTIQ · Evaluación de longevidad personalizada</title>
+<meta name="description" content="Evaluación rápida de 90 segundos. Recibe un reporte personalizado de un especialista PEPTIQ MX sobre compuestos research-grade para tu objetivo.">
+<meta property="og:title" content="PEPTIQ · Evaluación de longevidad personalizada">
+<meta property="og:description" content="90 segundos · reporte gratuito · sin compromiso">
+<meta property="og:image" content="https://peptiqmx.com/img/products-v2/bpc-157-studio.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0E0E0E;
+  --ink-2:#1A1A1A;
+  --paper:#F6F3EE;
+  --gold:#C6A969;
+  --gold-deep:#9C8D7F;
+  --rule:rgba(255,255,255,.1);
+  --mute:#8a8274;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+}
+body{font-family:var(--sans);background:var(--ink);color:var(--paper);min-height:100vh;line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased}
+.wrap{max-width:560px;margin:0 auto;padding:0 24px;min-height:100vh;display:flex;flex-direction:column}
+.brand{padding:28px 0 18px;display:flex;align-items:center;justify-content:center;gap:14px;border-bottom:1px solid var(--rule)}
+.brand h1{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:1px}
+.brand-pill{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);padding:3px 10px;border:1px solid var(--gold)}
+.progress-bar{height:2px;background:var(--rule);position:relative;overflow:hidden}
+.progress-fill{height:100%;background:var(--gold);transition:width .5s ease;width:0%}
+.step-counter{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mute);text-align:center;padding:14px 0}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:24px 0 60px}
+.intro{text-align:center}
+.intro h2{font-family:var(--serif);font-size:36px;line-height:1.15;font-weight:500;margin-bottom:14px}
+.intro h2 em{font-style:italic;color:var(--gold)}
+.intro p{font-size:15px;color:var(--paper);opacity:.75;margin-bottom:32px;line-height:1.6}
+.benefits{display:flex;flex-direction:column;gap:14px;text-align:left;max-width:420px;margin:0 auto 32px}
+.benefit{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--paper);opacity:.8;line-height:1.5}
+.benefit-icon{flex-shrink:0;width:22px;height:22px;border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;border-radius:50%;margin-top:2px}
+.btn-gold{display:block;width:100%;padding:18px;background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:13px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;border:0;cursor:pointer;transition:background .2s}
+.btn-gold:hover{background:#E5C981}
+.btn-gold:disabled{background:#444;color:#888;cursor:not-allowed}
+.btn-secondary{display:block;width:100%;padding:14px;background:transparent;color:var(--paper);border:1px solid var(--rule);font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;margin-top:10px}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.q-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;text-align:center}
+.q-title{font-family:var(--serif);font-size:30px;line-height:1.18;font-weight:500;text-align:center;margin-bottom:8px}
+.q-sub{font-size:13px;color:var(--mute);text-align:center;margin-bottom:32px;line-height:1.55}
+.options{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.option{padding:18px 20px;background:var(--ink-2);border:1px solid var(--rule);color:var(--paper);font-size:14.5px;cursor:pointer;text-align:left;transition:all .2s;font-family:var(--sans);line-height:1.45}
+.option:hover{border-color:var(--gold);background:#222}
+.option.selected{border-color:var(--gold);background:rgba(198,169,105,.08);color:var(--gold)}
+.option-emoji{font-size:18px;margin-right:10px;display:inline-block;width:24px}
+.option-desc{display:block;font-size:11.5px;color:var(--mute);margin-top:4px;line-height:1.4;font-style:italic}
+.input{width:100%;padding:16px 18px;background:var(--ink-2);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:15px;margin-bottom:12px;transition:border .2s}
+.input:focus{outline:none;border-color:var(--gold)}
+.input::placeholder{color:var(--mute)}
+.input-row{display:grid;grid-template-columns:80px 1fr;gap:8px;margin-bottom:12px}
+.input-prefix{padding:16px 14px;background:var(--ink-2);border:1px solid var(--rule);color:var(--gold);font-family:'Monaco',monospace;font-size:14px;text-align:center}
+.legal{font-size:10.5px;color:var(--mute);line-height:1.6;margin-top:18px;text-align:center}
+.legal a{color:var(--gold);text-decoration:underline}
+.result{text-align:center}
+.result-icon{font-size:48px;margin-bottom:18px}
+.result h2{font-family:var(--serif);font-size:30px;line-height:1.2;font-weight:500;margin-bottom:14px}
+.result h2 em{color:var(--gold);font-style:italic}
+.result-card{background:var(--ink-2);border:1px solid var(--gold);border-left:3px solid var(--gold);padding:22px;margin:24px 0;text-align:left}
+.result-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.result-title{font-family:var(--serif);font-size:18px;font-weight:600;margin-bottom:8px}
+.result-body{font-size:14px;color:var(--paper);opacity:.85;line-height:1.6}
+.result-list{list-style:none;padding:0;margin:14px 0 0}
+.result-list li{font-size:13px;color:var(--paper);opacity:.8;padding:7px 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:14px}
+.result-list li:last-child{border-bottom:0}
+.result-list li strong{color:var(--gold);font-weight:500}
+footer{padding:30px 0;text-align:center;font-size:10.5px;color:var(--mute);border-top:1px solid var(--rule);margin-top:auto;line-height:1.7}
+footer a{color:var(--gold);text-decoration:underline}
+.disclaimer{font-size:9.5px;color:var(--mute);line-height:1.6;margin-top:14px;font-style:italic}
+@media(max-width:480px){
+  .wrap{padding:0 18px}
+  .intro h2,.q-title,.result h2{font-size:28px}
+  .option{padding:16px 18px;font-size:14px}
+}
+</style>
+<!-- Meta Pixel · descomentar y poner PIXEL_ID -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'TU_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+-->
+</head>
+<body>
+<div class="wrap" id="app">
+
+  <header class="brand">
+    <h1>PEPTIQ</h1>
+    <span class="brand-pill">Evaluación 2026</span>
+  </header>
+
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="step-counter" id="stepCounter">Paso 1 de 7</div>
+
+  <main id="content"></main>
+
+  <footer>
+    PEPTIQ MX · Investigación · Longevidad · México<br>
+    <span class="disclaimer">Compuestos exclusivos para investigación. No es producto médico ni sustituto de consulta médica. El uso es responsabilidad del investigador. <a href="https://peptiqmx.com/privacidad">Aviso de privacidad</a></span>
+  </footer>
+
+</div>
+
+<script>
+const QUIZ = {
+  steps: [
+    { type: 'intro' },
+    { type: 'option', key: 'objetivo', eyebrow: 'Pregunta 1 de 6', title: '¿Cuál es tu objetivo principal?', sub: 'Selecciona el área donde quieres profundizar.', options: [
+      { value: 'longevidad', emoji: '🕰️', label: 'Longevidad y energía celular', desc: 'NAD+, telómeros, mitocondria' },
+      { value: 'recovery', emoji: '🐺', label: 'Recuperación física y movilidad', desc: 'Tendones, articulaciones, músculo' },
+      { value: 'estetica', emoji: '✨', label: 'Estética y piel', desc: 'Colágeno, regeneración dérmica' },
+      { value: 'metabolismo', emoji: '🔥', label: 'Metabolismo y composición corporal', desc: 'Grasa visceral, recomposición' },
+      { value: 'cognicion', emoji: '🧠', label: 'Cognición y enfoque', desc: 'BDNF, memoria, claridad mental' },
+      { value: 'sueno', emoji: '🌙', label: 'Sueño profundo y descanso', desc: 'Ritmo circadiano, GH endógeno' },
+    ]},
+    { type: 'option', key: 'experiencia', eyebrow: 'Pregunta 2 de 6', title: '¿Cuál es tu experiencia con compuestos research-grade?', options: [
+      { value: 'novato', emoji: '🌱', label: 'Es la primera vez que investigo', desc: 'Quiero entender lo básico antes de elegir' },
+      { value: 'investigando', emoji: '📚', label: 'Estoy en fase de investigación', desc: 'He leído artículos pero no he probado' },
+      { value: 'usuario', emoji: '🧪', label: 'Ya he usado compuestos research-grade', desc: 'Busco mejor calidad y verificación' },
+      { value: 'profesional', emoji: '🩺', label: 'Profesional de salud o clínica', desc: 'Médico, naturópata, nutriólogo, biohacker pro' },
+    ]},
+    { type: 'option', key: 'apoyo_clinico', eyebrow: 'Pregunta 3 de 6', title: '¿Trabajas con un profesional de salud?', options: [
+      { value: 'si_actual', emoji: '✅', label: 'Sí, ya consulto regularmente con uno' },
+      { value: 'no_pero_quiero', emoji: '🔍', label: 'No, pero me gustaría que me recomienden uno' },
+      { value: 'autodirigido', emoji: '📖', label: 'Prefiero investigar por mi cuenta' },
+    ]},
+    { type: 'option', key: 'edad', eyebrow: 'Pregunta 4 de 6', title: '¿En qué rango de edad estás?', sub: 'Esto ajusta el reporte a protocolos típicos para tu etapa.', options: [
+      { value: '35-44', emoji: '·', label: '35 - 44 años' },
+      { value: '45-54', emoji: '·', label: '45 - 54 años' },
+      { value: '55-64', emoji: '·', label: '55 - 64 años' },
+      { value: '65+', emoji: '·', label: '65 años o más' },
+      { value: '<35', emoji: '·', label: 'Menor de 35 años' },
+    ]},
+    { type: 'option', key: 'genero', eyebrow: 'Pregunta 5 de 6', title: '¿Con qué género te identificas?', sub: 'Algunos protocolos son específicos por género (ej. menopausia, TRT).', options: [
+      { value: 'mujer', emoji: '·', label: 'Mujer' },
+      { value: 'hombre', emoji: '·', label: 'Hombre' },
+      { value: 'no_responder', emoji: '·', label: 'Prefiero no responder' },
+    ]},
+    { type: 'option', key: 'presupuesto', eyebrow: 'Pregunta 6 de 6', title: '¿Cuál es tu presupuesto mensual estimado?', sub: 'Esto define el tipo de protocolo recomendado. Sin compromiso.', options: [
+      { value: 'menos_5k', emoji: '·', label: 'Menos de $5,000 MXN', desc: 'Protocolo básico individual' },
+      { value: '5k_10k', emoji: '·', label: '$5,000 - $10,000 MXN', desc: 'Stack intermedio' },
+      { value: '10k_20k', emoji: '·', label: '$10,000 - $20,000 MXN', desc: 'Protocolo completo Elite' },
+      { value: 'mas_20k', emoji: '·', label: 'Más de $20,000 MXN', desc: 'Protocolo APEX / clínica privada' },
+      { value: 'evaluando', emoji: '·', label: 'Aún evaluando', desc: 'Solo quiero información' },
+    ]},
+    { type: 'contact' },
+    { type: 'result' },
+  ]
+};
+
+const state = {
+  currentStep: 0,
+  answers: {},
+  contact: { name: '', phone: '', email: '' },
+};
+
+function renderProgress(){
+  const totalReal = QUIZ.steps.length - 2; // excluye intro y result
+  const current = Math.max(0, Math.min(state.currentStep, totalReal));
+  const pct = (current / totalReal) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  if (state.currentStep === 0) document.getElementById('stepCounter').style.display = 'none';
+  else if (QUIZ.steps[state.currentStep].type === 'result') document.getElementById('stepCounter').style.display = 'none';
+  else {
+    document.getElementById('stepCounter').style.display = 'block';
+    const stepLabel = QUIZ.steps[state.currentStep].type === 'contact' ? 'Datos de contacto' : `Paso ${state.currentStep} de ${totalReal}`;
+    document.getElementById('stepCounter').textContent = stepLabel;
+  }
+}
+
+function next(){ state.currentStep = Math.min(state.currentStep + 1, QUIZ.steps.length - 1); render(); }
+
+function selectOption(key, value){
+  state.answers[key] = value;
+  setTimeout(next, 240); // pequeño delay para feedback visual
+}
+
+function renderIntro(){
+  return `
+    <div class="intro">
+      <div class="q-eyebrow" style="margin-bottom:18px">90 segundos · gratis · sin spam</div>
+      <h2>Una evaluación rápida.<br><em>Un reporte personalizado.</em></h2>
+      <p>Responde 6 preguntas y recibe una guía técnica adaptada a tu objetivo, edad y experiencia. Un especialista PEPTIQ revisa tu reporte y te contacta por WhatsApp con material de referencia.</p>
+      <div class="benefits">
+        <div class="benefit"><span class="benefit-icon">1</span><span>Recibe el catálogo técnico de la línea más relevante para tu objetivo (Wolverine, Highlander, Glow, Prime…)</span></div>
+        <div class="benefit"><span class="benefit-icon">2</span><span>Acceso a los Certificados de Análisis (COA) Janoshik del lote vigente</span></div>
+        <div class="benefit"><span class="benefit-icon">3</span><span>Recomendación de stack personalizada según presupuesto · sin compromiso de compra</span></div>
+      </div>
+      <button class="btn-gold" onclick="next()">Comenzar evaluación →</button>
+      <p class="legal">Al continuar aceptas nuestro <a href="https://peptiqmx.com/privacidad">aviso de privacidad</a>. Compuestos exclusivos para investigación.</p>
+    </div>`;
+}
+
+function renderOption(step){
+  const sel = state.answers[step.key];
+  return `
+    <div class="q-eyebrow">${step.eyebrow}</div>
+    <h2 class="q-title">${step.title}</h2>
+    ${step.sub ? `<p class="q-sub">${step.sub}</p>` : ''}
+    <div class="options">
+      ${step.options.map(o => `
+        <button class="option ${sel===o.value?'selected':''}" onclick="selectOption('${step.key}','${o.value}')">
+          <span class="option-emoji">${o.emoji||'·'}</span>${o.label}
+          ${o.desc ? `<span class="option-desc">${o.desc}</span>` : ''}
+        </button>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderContact(){
+  return `
+    <div class="q-eyebrow">Último paso · 30 segundos</div>
+    <h2 class="q-title">¿A dónde mando tu reporte?</h2>
+    <p class="q-sub">Te enviamos por email la guía técnica + un especialista PEPTIQ te contacta por WhatsApp con el catálogo y los COAs.</p>
+    <input type="text" id="qName" class="input" placeholder="Nombre completo" autocomplete="name" value="${state.contact.name}">
+    <div class="input-row">
+      <div class="input-prefix">+52</div>
+      <input type="tel" id="qPhone" class="input" placeholder="WhatsApp · 10 dígitos" autocomplete="tel" value="${state.contact.phone}" style="margin-bottom:0">
+    </div>
+    <input type="email" id="qEmail" class="input" placeholder="Email" autocomplete="email" value="${state.contact.email}">
+    <button class="btn-gold" id="submitBtn" onclick="submitQuiz()">Recibir mi reporte personalizado →</button>
+    <p class="legal">Sin spam. Sin venta agresiva. Material exclusivo para investigación.</p>
+  `;
+}
+
+const RESULT_BUNDLES = {
+  longevidad:  { line:'highlander', label:'Highlander · Longevidad', desc:'NAD+, Epithalon, GHK-Cu y compuestos para activación de sirtuinas y telómeros.', bundle:'Highlander Longevity Stack', moleculas:['NAD+ 1000mg','Epithalon 50mg','GHK-Cu 100mg'] },
+  recovery:    { line:'wolverine', label:'Wolverine · Recuperación', desc:'BPC-157, TB-500 y KPV para regeneración de tejido conectivo, articulaciones y mucosa.', bundle:'Wolverine PRO', moleculas:['BPC-157 10mg','TB-500 10mg','KPV 10mg'] },
+  estetica:    { line:'glow', label:'GLOW · Regeneración dérmica', desc:'GHK-Cu, AHK-Cu y Trinity para colágeno, elastina y reactivación folicular.', bundle:'GLOW PRO', moleculas:['Trinity 70mg blend','GHK-Cu 100mg adicional','BAC water'] },
+  metabolismo: { line:'prime',  label:'Prime / Shred · Metabolismo', desc:'Tesamorelin, Ipamorelin y soporte mitocondrial NAD+ para recomposición.', bundle:'TITAN Performance', moleculas:['Tesamorelin 10mg','Ipamorelin 10mg','NAD+ 1000mg'] },
+  cognicion:   { line:'cerebro', label:'Cerebro · Foco', desc:'Semax, Epithalon y compuestos nootrópicos research-grade.', bundle:'Neuro Focus', moleculas:['Semax 10mg','Epithalon 50mg','BAC water'] },
+  sueno:       { line:'sueno', label:'Sueño Profundo', desc:'Ipamorelin nocturno + Epithalon para fase delta y restauración pineal.', bundle:'Sleep Reset Stack', moleculas:['Ipamorelin 10mg','Epithalon 50mg','BAC water'] },
+};
+
+function renderResult(){
+  const obj = state.answers.objetivo || 'longevidad';
+  const bundle = RESULT_BUNDLES[obj] || RESULT_BUNDLES.longevidad;
+  return `
+    <div class="result">
+      <div class="result-icon">✓</div>
+      <h2>Listo, ${state.contact.name.split(' ')[0] || 'investigador'}.<br><em>Tu reporte va en camino.</em></h2>
+      <p style="font-size:14px;color:var(--mute);margin:14px 0 0">Recibirás el catálogo y los COAs en los próximos minutos por email y WhatsApp.</p>
+      <div class="result-card">
+        <div class="result-eyebrow">Línea recomendada según tu evaluación</div>
+        <div class="result-title">${bundle.label}</div>
+        <div class="result-body">${bundle.desc}</div>
+        <ul class="result-list">
+          ${bundle.moleculas.map(m => `<li>${m}<strong>incluido</strong></li>`).join('')}
+        </ul>
+      </div>
+      <p style="font-size:13px;color:var(--mute);margin-top:14px;line-height:1.6">Un especialista PEPTIQ revisa tu evaluación y te contacta hoy mismo por WhatsApp con el catálogo técnico, los COAs Janoshik del lote actual y un protocolo sugerido para tu objetivo.</p>
+      <button class="btn-secondary" onclick="window.location.href='https://wa.me/5214445770445?text=Hola%2C%20acabo%20de%20completar%20la%20evaluaci%C3%B3n%20PEPTIQ%20y%20quiero%20info'">Hablar con specialist ahora →</button>
+      <button class="btn-secondary" onclick="window.location.href='https://peptiqmx.com'">Ver web PEPTIQ →</button>
+    </div>
+  `;
+}
+
+function render(){
+  const step = QUIZ.steps[state.currentStep];
+  const root = document.getElementById('content');
+  if (step.type === 'intro') root.innerHTML = renderIntro();
+  else if (step.type === 'option') root.innerHTML = renderOption(step);
+  else if (step.type === 'contact') root.innerHTML = renderContact();
+  else if (step.type === 'result') root.innerHTML = renderResult();
+  renderProgress();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+async function submitQuiz(){
+  const name = document.getElementById('qName').value.trim();
+  const phone = document.getElementById('qPhone').value.replace(/\D/g,'').trim();
+  const email = document.getElementById('qEmail').value.trim();
+  const btn = document.getElementById('submitBtn');
+  if (!name || phone.length < 10 || !email.includes('@')) {
+    alert('Completa nombre, WhatsApp (10 dígitos) y email válido.');
+    return;
+  }
+  state.contact = { name, phone, email };
+  btn.disabled = true; btn.textContent = 'Enviando...';
+  try{
+    const payload = {
+      name, phone, email,
+      answers: state.answers,
+      utm: {
+        source: new URLSearchParams(location.search).get('utm_source') || '',
+        medium: new URLSearchParams(location.search).get('utm_medium') || '',
+        campaign: new URLSearchParams(location.search).get('utm_campaign') || '',
+      },
+      submittedAt: new Date().toISOString(),
+    };
+    await fetch('/api/quiz-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    // Track conversion (Meta Pixel)
+    if (window.fbq) fbq('track', 'Lead', { content_name: 'PEPTIQ Evaluation', value: 0, currency: 'MXN' });
+    next(); // → render result
+  }catch(e){
+    btn.disabled = false; btn.textContent = 'Recibir mi reporte personalizado →';
+    alert('Error de red. Intenta de nuevo.');
+  }
+}
+
+render();
+</script>
+</body>
+</html>

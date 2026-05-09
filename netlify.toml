@@ -52,6 +52,11 @@
   to = "/.netlify/functions/peptiq-sales-master"
   status = 200
 
+[[redirects]]
+  from = "/api/quiz-submit"
+  to = "/.netlify/functions/peptiq-quiz-submit"
+  status = 200
+
 [functions."peptiq-reminder-cron"]
   schedule = "*/15 * * * *"
 
