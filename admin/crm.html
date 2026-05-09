@@ -165,6 +165,7 @@
       <button class="tab" data-tab="leads" onclick="switchTab('leads')">Leads <span class="tab-count" id="leadsCount">—</span></button>
       <button class="tab" data-tab="calc" onclick="switchTab('calc')">📐 Calculadora <span class="tab-count" id="calcCount">—</span></button>
       <button class="tab" data-tab="inventory" onclick="switchTab('inventory')">📦 Inventario <span class="tab-count" id="inventoryCount">—</span></button>
+      <button class="tab" data-tab="retargeting" onclick="switchTab('retargeting')">🎯 Retargeting <span class="tab-count" id="retargetingCount">—</span></button>
     </div>
 
     <div id="ordersTab">
@@ -220,6 +221,14 @@
           </tr></thead>
           <tbody id="invBody"><tr><td colspan="9" class="loading">Cargando inventario...</td></tr></tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- ─── Retargeting ─── -->
+    <div id="retargetingTab" style="display:none">
+      <div id="retSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:24px"></div>
+      <div id="retContent">
+        <div class="loading" style="color:var(--mute);text-align:center;padding:30px">Cargando segmentos...</div>
       </div>
     </div>
 
@@ -510,8 +519,150 @@ function switchTab(name){
   document.getElementById('leadsTab').style.display = name === 'leads' ? 'block' : 'none';
   document.getElementById('calcTab').style.display = name === 'calc' ? 'block' : 'none';
   document.getElementById('inventoryTab').style.display = name === 'inventory' ? 'block' : 'none';
+  document.getElementById('retargetingTab').style.display = name === 'retargeting' ? 'block' : 'none';
   if (name === 'calc') calcInit();
   if (name === 'inventory') loadInventory();
+  if (name === 'retargeting') loadRetargeting();
+}
+
+// ═══════════════════════════════════════════════════════════
+// RETARGETING · segmentos de leads + broadcast WhatsApp
+// ═══════════════════════════════════════════════════════════
+const SEGMENT_TEMPLATES = {
+  ready_to_buy: `{nombre}, ¿seguimos con tu protocolo PEPTIQ? Tengo el catálogo y los COAs listos. Confírmame y te paso el link de pago con descuento Member -10%. ¿Vamos?`,
+  hot: `{nombre}, te escribí hace unos días sobre tu protocolo PEPTIQ. Esta semana cierro con LANZA20 (-20% primer pedido). Si te late, te aparto el stack 48h sin pago. ¿Lo vemos?`,
+  warm: `{nombre}, ¿cómo va tu investigación sobre péptidos? Te dejo verify de los COAs Janoshik del lote vigente: peptiqmx.com/verify · cualquier duda técnica te respondo aquí.`,
+  cold: `{nombre}, hace tiempo no platicamos. Acabamos de actualizar el inventario PEPTIQ con lotes nuevos · COAs públicos verificables. ¿Te paso el catálogo?`,
+};
+
+const SEGMENT_META = {
+  ready_to_buy: { label: '🔥 Listos para comprar', color: '#22c55e', desc: 'Buyer readiness alto · estos cierran HOY si los empujas' },
+  hot:          { label: '🔥 Calientes',           color: '#FFC107', desc: 'Score ≥60 · contactaron en 7d · pendientes de cierre' },
+  warm:         { label: '🟡 Tibios',              color: '#C6A969', desc: 'Score 30-59 · conversación abierta · educar + nutrir' },
+  cold:         { label: '🟢 Fríos',               color: '#3b82f6', desc: '+30 días sin contacto · re-engagement con oferta' },
+  test:         { label: '⛔ Test/Spam',           color: '#777',    desc: 'Detectados como tests · ignorar' },
+  buyers:       { label: '✅ Compradores',         color: '#C6A969', desc: 'Ya cerraron · post-venta y referidos' },
+};
+
+let _retCache = null;
+
+async function loadRetargeting(){
+  try{
+    const adminKey = localStorage.getItem('peptiq_admin_key') || '';
+    const r = await fetch('/api/sales-master?key=' + encodeURIComponent(adminKey)); // warm cache
+    const r2 = await fetch(`https://sara-backend.edson-633.workers.dev/api/peptiq/leads-segments?api_key=${encodeURIComponent(localStorage.getItem('peptiq_crm_apikey') || '')}`);
+    if (!r2.ok) {
+      document.getElementById('retContent').innerHTML = `<div class="empty" style="text-align:center;padding:40px;color:var(--mute)">No autorizado · ${r2.status}. Re-loguea con tu PIN.</div>`;
+      return;
+    }
+    const data = await r2.json();
+    _retCache = data;
+    renderRetargeting(data);
+  } catch(e){
+    document.getElementById('retContent').innerHTML = `<div class="empty" style="color:var(--bad);padding:30px;text-align:center">Error: ${e.message}</div>`;
+  }
+}
+
+function renderRetargeting(data){
+  const summary = data.summary || {};
+  const segments = data.segments || {};
+  document.getElementById('retargetingCount').textContent = data.total || 0;
+
+  // Summary cards
+  const summaryHtml = ['ready_to_buy','hot','warm','cold','buyers'].map(k => {
+    const m = SEGMENT_META[k];
+    return `<div class="stat" style="border-left-color:${m.color}">
+      <div class="lbl">${m.label}</div>
+      <div class="val" style="color:${m.color}">${summary[k] || 0}</div>
+      <div class="sub" style="font-size:10px">${m.desc}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('retSummary').innerHTML = summaryHtml;
+
+  // Segments
+  const sections = ['ready_to_buy','hot','warm','cold'].map(key => {
+    const m = SEGMENT_META[key];
+    const leads = segments[key] || [];
+    if (leads.length === 0) return '';
+    return `<div style="background:var(--card);border:1px solid var(--rule);border-left:3px solid ${m.color};padding:20px;margin-bottom:18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+        <div>
+          <h3 style="font-family:var(--serif);font-size:18px;font-weight:500">${m.label} · ${leads.length} leads</h3>
+          <p style="font-size:11.5px;color:var(--mute);margin-top:4px">${m.desc}</p>
+        </div>
+        <button onclick="openBroadcastModal('${key}')" style="padding:10px 18px;background:${m.color};color:#000;border:0;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;cursor:pointer">📨 Mandar campaña</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;max-height:360px;overflow-y:auto">
+        ${leads.slice(0, 50).map(l => `
+          <div style="background:var(--ink);padding:10px 12px;border:1px solid var(--rule);font-size:12px">
+            <div style="display:flex;justify-content:space-between;gap:8px">
+              <strong style="color:var(--paper)">${l.name || 'Sin nombre'}</strong>
+              <span style="color:${m.color};font-family:Monaco,monospace;font-size:11px">${l.score || 0}</span>
+            </div>
+            <div style="color:var(--mute);font-family:Monaco,monospace;font-size:10.5px;margin-top:2px">${(l.phone||'').slice(-10)} · ${l.last_message_at ? new Date(l.last_message_at).toLocaleDateString('es-MX',{day:'2-digit',month:'short'}) : '?'}</div>
+            ${l.last_message ? `<div style="color:var(--mute);font-size:10.5px;margin-top:4px;font-style:italic">"${l.last_message.slice(0,60)}${l.last_message.length>60?'...':''}"</div>` : ''}
+          </div>
+        `).join('')}
+        ${leads.length > 50 ? `<div style="padding:10px;color:var(--mute);font-size:11px;font-style:italic">... y ${leads.length - 50} más</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('retContent').innerHTML = sections || '<div style="text-align:center;color:var(--mute);padding:40px">No hay leads en segmentos accionables aún.</div>';
+}
+
+function openBroadcastModal(segment){
+  const m = SEGMENT_META[segment];
+  const count = (_retCache?.segments?.[segment] || []).length;
+  const tmpl = SEGMENT_TEMPLATES[segment] || '';
+  const overlay = document.createElement('div');
+  overlay.id = 'broadcastModal';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)';
+  overlay.innerHTML = `
+    <div style="background:var(--card);max-width:540px;width:100%;border:1px solid var(--rule);border-top:3px solid ${m.color};padding:28px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
+        <div>
+          <div style="font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:${m.color};margin-bottom:4px">Campaña a ${m.label}</div>
+          <h3 style="font-family:var(--serif);font-size:22px;font-weight:500">${count} destinatarios</h3>
+        </div>
+        <button onclick="document.getElementById('broadcastModal').remove()" style="background:transparent;border:0;color:var(--mute);font-size:24px;cursor:pointer">✕</button>
+      </div>
+      <p style="font-size:12px;color:var(--mute);margin-bottom:14px;line-height:1.6">Usa <code style="color:${m.color}">{nombre}</code> para personalizar con el primer nombre. Puedes incluir links · sin emojis raros que rompan WhatsApp.</p>
+      <textarea id="broadcastMsg" style="width:100%;min-height:160px;padding:14px;background:var(--ink);border:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-size:13.5px;line-height:1.6;resize:vertical">${tmpl}</textarea>
+      <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+        <button onclick="executeBroadcast('${segment}', true)" style="flex:1;padding:14px;background:transparent;border:1px solid var(--rule);color:var(--paper);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer">🧪 Vista previa (sin enviar)</button>
+        <button onclick="executeBroadcast('${segment}', false)" style="flex:1.4;padding:14px;background:${m.color};color:#000;border:0;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;cursor:pointer">📨 Enviar a ${count} ahora</button>
+      </div>
+      <p style="font-size:10.5px;color:var(--mute);margin-top:14px;line-height:1.6">⚠️ Solo a leads con ventana 24h activa de WhatsApp. Los que no respondieron en 24h no recibirán este mensaje (Meta lo bloquea automáticamente).</p>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  document.getElementById('broadcastMsg').focus();
+}
+
+async function executeBroadcast(segment, dryRun){
+  const message = document.getElementById('broadcastMsg').value.trim();
+  if (message.length < 10) { alert('Mensaje muy corto (mín 10 caracteres)'); return; }
+  if (!dryRun && !confirm(`¿Enviar a TODOS los ${(_retCache?.segments?.[segment]||[]).length} leads del segmento? Esta acción no se puede deshacer.`)) return;
+
+  try{
+    const r = await fetch(`https://sara-backend.edson-633.workers.dev/api/peptiq/leads-broadcast?api_key=${encodeURIComponent(localStorage.getItem('peptiq_crm_apikey')||'')}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ segment, message, dryRun, limit: 100 })
+    });
+    const data = await r.json();
+    if (!r.ok) { alert('Error: ' + (data.error || r.status)); return; }
+    if (dryRun) {
+      alert(`Vista previa · ${data.targetCount} destinatarios.\n\nMuestra:\n${(data.sample||[]).map(s => `· ${s.name} (${s.phone}) · score ${s.score}`).join('\n')}`);
+    } else {
+      alert(`✅ Campaña enviada\n\nEnviados: ${data.sent}\nFallaron: ${data.failed}\nTotal: ${data.total}`);
+      document.getElementById('broadcastModal').remove();
+      loadRetargeting();
+    }
+  }catch(e){
+    alert('Error: ' + e.message);
+  }
 }
 
 // ═══════════════════════════════════════════════════════════
