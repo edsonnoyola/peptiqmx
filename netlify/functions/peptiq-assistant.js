@@ -108,7 +108,7 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-6',
-        max_tokens: 800,
+        max_tokens: 1500,
         system: [
           {
             type: 'text',
@@ -126,7 +126,12 @@ exports.handler = async (event) => {
       return { statusCode: 502, headers: cors(), body: JSON.stringify({ error: 'AI service error', detail: data.error?.message }) };
     }
 
-    const text = data.content?.[0]?.text || 'Sin respuesta';
+    let text = data.content?.[0]?.text || 'Sin respuesta';
+
+    // ─── DISCLAIMER OBLIGATORIO · post-process garantiza 100% que aparezca ───
+    const DISCLAIMER = `\n\n---\n\n*Información educativa research-grade · No reemplaza consulta médica · El uso del producto es responsabilidad de quien lo aplique · Solo para uso de laboratorio (Research Use Only · RUO).*`;
+    const hasDisclaimer = /responsabilidad de quien|Research Use Only|RUO\b/i.test(text);
+    if (!hasDisclaimer) text = text.trim() + DISCLAIMER;
     const cacheMetrics = {
       cache_creation: data.usage?.cache_creation_input_tokens || 0,
       cache_read: data.usage?.cache_read_input_tokens || 0,
