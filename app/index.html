@@ -1550,7 +1550,7 @@ function app(){
     disclaimerDismissed:false,
     waNumber: localStorage.getItem('peptiq_wa_number')||'',
     waOptIn: localStorage.getItem('peptiq_wa_optin')==='1',
-    submitWaOptIn(){
+    async submitWaOptIn(){
       const clean=(this.waNumber||'').replace(/\D/g,'');
       if(clean.length<10) return;
       const wa = clean.length===10 ? '521'+clean : clean;
