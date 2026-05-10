@@ -760,6 +760,24 @@ input:checked + .slider::before{transform:translateX(18px)}
       </div>
     </div>
 
+    <!-- ═══ MI STACK · scroll horizontal cards mini ═══ -->
+    <div x-show="myInventoryLines.length > 1" style="margin-bottom:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div class="eyebrow" style="color:var(--mute)">Mi stack <span x-text="'· '+myInventoryLines.length+' péptidos'"></span></div>
+        <button @click="screen='inventory'" style="font-size:11px;color:var(--gold-deep);font-weight:600;letter-spacing:1px;background:transparent;border:0;padding:4px">+ Agregar</button>
+      </div>
+      <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch">
+        <template x-for="pn in myInventoryLines" :key="pn">
+          <button @click="setActivePeptide(pn)" :style="`flex-shrink:0;min-width:120px;padding:10px 12px;background:${pname===pn?'var(--ink)':'#FFF'};color:${pname===pn?'var(--paper)':'var(--ink)'};border:1.5px solid ${pname===pn?'var(--ink)':'var(--rule)'};text-align:left;cursor:pointer`">
+            <div :style="`font-size:9.5px;letter-spacing:1.5px;color:${pname===pn?'var(--gold-soft)':'var(--mute)'};text-transform:uppercase;font-weight:600`" x-text="(peptides.find(x=>x.name===pn)?.line)||'STACK'"></div>
+            <div class="serif" :style="`font-size:14px;font-weight:600;margin-top:2px;color:${pname===pn?'var(--gold)':'var(--ink)'};line-height:1.15`" x-text="pn"></div>
+            <div :style="`font-size:9.5px;color:${pname===pn?'var(--gold-soft)':'var(--mute)'};margin-top:3px;letter-spacing:.3px`" x-text="appliedToday(pn)?'✓ aplicado hoy':'pendiente'"></div>
+          </button>
+        </template>
+        <button @click="screen='inventory'" style="flex-shrink:0;min-width:80px;padding:10px;background:transparent;color:var(--gold-deep);border:1.5px dashed var(--rule);text-align:center;font-size:11px;font-weight:600;letter-spacing:1px">+ AGREGAR</button>
+      </div>
+    </div>
+
     <!-- HERO · Vial gigante centro de la pantalla -->
     <div style="margin-bottom:14px;padding:24px 18px;background:linear-gradient(180deg,#F8F4ED 0%,#F1ECDF 100%);border:1px solid #E8DFCA;border-radius:8px;text-align:center;position:relative;overflow:hidden">
       <!-- Eyebrow -->
@@ -2060,8 +2078,21 @@ function app(){
       this.calcDose=p.defaultDose;
     },
     todayLabel:new Date().toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long'}),
-    get pname(){ return (this.firstPeptide&&this.firstPeptide.name)||'BPC-157'; },
-    get pline(){ return (this.firstPeptide&&this.firstPeptide.line)||'PEPTIDE'; },
+    activePeptideName:null, // selected peptide on dashboard · si null usa firstPeptide
+    get activePeptide(){
+      const lines = this.myInventoryLines;
+      // Si hay multiple, usar el seleccionado activamente o el primero
+      if (this.activePeptideName && lines.includes(this.activePeptideName)) {
+        return this.peptides.find(p => p.name === this.activePeptideName) || this.firstPeptide;
+      }
+      // Si no hay activePeptideName, usar firstPeptide si está en lines, o el primero del stack
+      if (this.firstPeptide && lines.includes(this.firstPeptide.name)) return this.firstPeptide;
+      if (lines.length > 0) return this.peptides.find(p => p.name === lines[0]) || this.firstPeptide;
+      return this.firstPeptide;
+    },
+    get pname(){ return (this.activePeptide&&this.activePeptide.name)||'BPC-157'; },
+    get pline(){ return (this.activePeptide&&this.activePeptide.line)||'PEPTIDE'; },
+    setActivePeptide(name){ this.activePeptideName = name; },
     get userName(){
       const sig=(this.consentRecord&&this.consentRecord.signature)||'';
       if(sig) return sig.trim().split(' ').slice(0,2).join(' ');
