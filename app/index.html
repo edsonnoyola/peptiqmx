@@ -1330,11 +1330,14 @@ input:checked + .slider::before{transform:translateX(18px)}
           </select>
         </div>
         <div>
-          <div class="eyebrow" style="margin-bottom:5px">Agua bact</div>
+          <div class="eyebrow" :style="`margin-bottom:5px;${currentPeptide?.waterType==='SWFI'?'color:var(--bad);font-weight:700':''}`" x-text="currentPeptide?.waterType==='SWFI' ? '⚠️ Agua estéril destilada (SWFI · NO bact)' : 'Agua bacteriostática (BAC)'"></div>
           <div style="display:flex;gap:5px">
-            <template x-for="ml in [1,2,3,5]">
+            <template x-for="ml in [1,2,3,5,10]">
               <button @click="calcWater=ml" :style="`flex:1;padding:10px;border:1px solid ${calcWater===ml?'var(--ink)':'var(--rule)'};background:${calcWater===ml?'var(--ink)':'transparent'};color:${calcWater===ml?'var(--paper)':'var(--ink)'};font-size:13px;font-weight:500`" x-text="ml+'ml'"></button>
             </template>
+          </div>
+          <div x-show="currentPeptide?.waterType==='SWFI'" style="font-size:10.5px;color:var(--bad);margin-top:6px;line-height:1.45;font-weight:600">
+            ⚠️ Tesamorelin forma gel con agua bacteriostática · usa SOLO agua estéril sin preservativos.
           </div>
         </div>
         <div>
