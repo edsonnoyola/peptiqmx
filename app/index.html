@@ -1294,29 +1294,60 @@ input:checked + .slider::before{transform:translateX(18px)}
         <div style="font-size:11.5px;line-height:1.5">Tu perfil de salud puede tener contraindicación. <b>Consulta médico antes de continuar.</b></div>
       </div>
 
-      <!-- HERO · jeringa visual + resultado upfront -->
-      <div style="text-align:center;margin-bottom:8px">
-        <div class="eyebrow" style="margin-bottom:6px">Llena la jeringa hasta</div>
-      </div>
-      <div class="syringe-wrap">
-        <div class="syringe">
-          <div class="syringe-plunger"></div>
-          <div class="syringe-body">
-            <div class="syringe-fill" :style="`width:${Math.min(syringeFillPercent,100)}%`"></div>
-          </div>
-          <div class="syringe-ticks">
-            <template x-for="i in 11"><span></span></template>
-          </div>
-          <div class="syringe-ticks-bot">
-            <span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span>
-          </div>
-          <div class="syringe-needle"></div>
+      <!-- ═══ PASO 1 · LLENAR EL VIAL ═══ -->
+      <div :style="`background:${currentPeptide?.waterType==='SWFI'?'#FFF4F0':'#FAF6EE'};border:1.5px solid ${currentPeptide?.waterType==='SWFI'?'var(--bad)':'var(--gold)'};padding:14px;margin-bottom:14px`">
+        <div class="eyebrow" :style="`color:${currentPeptide?.waterType==='SWFI'?'var(--bad)':'var(--gold)'};font-weight:700;margin-bottom:6px`">Paso 1 · Llenar el vial (1 sola vez)</div>
+        <div style="font-size:14.5px;font-weight:600;line-height:1.45;color:var(--ink);margin-bottom:10px">
+          Inyecta <span class="serif" style="font-size:20px;font-weight:700;color:var(--ink)" x-text="calcWater+' ml'"></span>
+          de <span class="serif" :style="`font-size:16px;font-weight:700;color:${currentPeptide?.waterType==='SWFI'?'var(--bad)':'var(--gold)'}`" x-text="currentPeptide?.waterType==='SWFI'?'agua estéril destilada (SWFI)':'agua bacteriostática (BAC)'"></span>
+          al vial de <span x-text="(currentPeptide?.vial||10)+'mg'"></span>.
+        </div>
+        <div style="font-size:11.5px;color:var(--mute);line-height:1.55;background:#fff;padding:9px 11px;border:1px solid var(--rule)">
+          <b style="color:var(--ink)">⚙️ Jeringa para este paso:</b> usa una <b>jeringa común de 3ml o 5ml con aguja larga</b> (no de insulina). Inyecta el agua apuntando a la pared del vial · gira suavemente · NO agites · refrigera 2-8°C.
         </div>
       </div>
-      <div class="calc-result">
-        <div class="calc-result-num" x-text="syringeUnits"></div>
-        <div class="calc-result-unit">unidades · jeringa insulina U-100</div>
-        <div class="calc-result-help" x-text="`= ${calcVolumeMl.toFixed(3)} ml`"></div>
+
+      <!-- ═══ PASO 2 · CARGA TU DOSIS ═══ -->
+      <div style="background:#0e0d0b;color:#FFF6E0;padding:14px;margin-bottom:14px">
+        <div class="eyebrow" style="color:var(--gold);font-weight:700;margin-bottom:8px">Paso 2 · Carga tu dosis (cada inyección)</div>
+        <div style="text-align:center;margin-bottom:6px">
+          <div style="font-size:10.5px;letter-spacing:2px;color:var(--gold-soft);text-transform:uppercase">LLENA LA JERINGA HASTA</div>
+        </div>
+        <div class="syringe-wrap" style="filter:invert(1);opacity:.92">
+          <div class="syringe">
+            <div class="syringe-plunger"></div>
+            <div class="syringe-body">
+              <div class="syringe-fill" :style="`width:${Math.min(syringeFillPercent,100)}%`"></div>
+            </div>
+            <div class="syringe-ticks">
+              <template x-for="i in 11"><span></span></template>
+            </div>
+            <div class="syringe-ticks-bot">
+              <span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span>
+            </div>
+            <div class="syringe-needle"></div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:10px">
+          <div style="font-family:var(--serif);font-size:48px;font-weight:700;color:var(--gold);line-height:1" x-text="syringeUnits"></div>
+          <div style="font-size:10.5px;letter-spacing:1.6px;color:var(--gold-soft);text-transform:uppercase;margin-top:3px">unidades</div>
+          <div style="font-size:14px;color:#FFF6E0;margin-top:8px" x-text="`= ${calcVolumeMl.toFixed(3)} ml = ${calcDose>=1000?(calcDose/1000)+' mg':calcDose+' mcg'}`"></div>
+        </div>
+        <div style="font-size:11.5px;color:#D4CCB6;line-height:1.55;background:#1a1815;padding:9px 11px;margin-top:10px">
+          <b style="color:var(--gold)">⚙️ Jeringa para este paso:</b> usa <b>jeringa de insulina U-100</b>. Hay 3 tamaños:
+          <br>· <b>1 ml = 100 u</b> (la más común · escala 0-100)
+          <br>· <b>0.5 ml = 50 u</b> (escala 0-50 · si tu dosis es ≤50u, cabe perfecto)
+          <br>· <b>0.3 ml = 30 u</b> (microdosis · escala 0-30)
+        </div>
+        <div x-show="syringeUnits > 50" style="font-size:11px;color:var(--gold-soft);margin-top:8px;font-weight:600;text-align:center">
+          Tu dosis (<span x-text="syringeUnits+' u'"></span>) requiere jeringa de <b>1 ml (U-100, escala 0-100)</b>.
+        </div>
+        <div x-show="syringeUnits <= 30" style="font-size:11px;color:var(--gold-soft);margin-top:8px;font-weight:600;text-align:center">
+          Tu dosis (<span x-text="syringeUnits+' u'"></span>) cabe en jeringa de <b>0.3 ml (microdosis)</b> · más precisa.
+        </div>
+        <div x-show="syringeUnits > 30 && syringeUnits <= 50" style="font-size:11px;color:var(--gold-soft);margin-top:8px;font-weight:600;text-align:center">
+          Tu dosis (<span x-text="syringeUnits+' u'"></span>) cabe en jeringa de <b>0.5 ml (escala 0-50)</b>.
+        </div>
       </div>
 
       <!-- INPUTS compactos (3 fields) -->
