@@ -1,9 +1,82 @@
-# PEPTIQ MX · Go-to-Market Strategy
-**Última actualización:** 2026-05-09 (sesión Edson · pivot canales paid)
+# PEPTIQ MX · Go-to-Market Strategy + Master Index
+**Última actualización:** 2026-05-09 PM (sesión Edson · NotebookLM KB integrado)
 **Lanzamiento oficial:** 2026-04-20 (post-launch)
-**Estado:** Funnel quiz → WA → SARA → Stripe operacional · CRM unificado · Meta restricted · Google atrapado en PMax · Pivot a Cold Email B2B + TikTok
+**Estado:** Funnel completo operacional · 94 clínicas con cold email B2B · Knowledge base VIP integrado desde NotebookLM · App PWA fixed (3 bugs reparados hoy)
 
 ---
+
+## 📍 MASTER INDEX · dónde está cada cosa
+
+### 📚 Knowledge bases / Research
+| Archivo | Tamaño | Contenido | Uso |
+|---------|--------|-----------|-----|
+| `docs/peptiq-kb/notebooklm-peptidos.md` (en sara-backend repo) | 114K | Raw extract de NotebookLM | Backup |
+| `docs/peptiq-kb/peptiq-kb-vip.md` | 108K | 20 secciones limpias por categoría | Para integrar a SARA AI |
+| `INVENTARIO-PEPTIQ.md` | — | Pricing Elite + costos proveedor | Referencia interna |
+
+### 🌐 Live URLs
+| URL | Status | Uso |
+|-----|--------|-----|
+| `peptiqmx.com` | ✅ Live | Home · productos · checkout |
+| `peptiqmx.com/evaluacion` | ✅ Live | Quiz 7 preguntas · 12 objetivos |
+| `peptiqmx.com/checkout?stack=X` | ✅ Live | Stripe payment links · 13 stacks |
+| `peptiqmx.com/verify/{slug}` | ✅ Live | COA Janoshik por lote |
+| `peptiqmx.com/app/` | ✅ Live | PWA tracker · install ready |
+| `peptiqmx.com/admin/crm.html` | ✅ Live | CRM · 261 leads · 5 tabs |
+| `peptiqmx.com/b2b-clinicas` | ✅ Live | Landing B2B partner program |
+| `peptiqmx.com/guia-peptiq.pdf` | ✅ Live (3.8MB · 18 págs) | Catálogo maroon/gold |
+| `peptiqmx.com/tabla-margenes-b2b.pdf` | ✅ Live (273KB · 1 pág) | Pricing distribuidor |
+| `sara-backend.edson-633.workers.dev/api/...` | ✅ Live | SARA Cloudflare Worker |
+
+### 📋 Documentos / Launch pack (`launch-pack/`)
+| Archivo | Para |
+|---------|------|
+| `B2B-RESPONSE-KIT.md` | Respuestas inmediatas + script call 15 min + FAQ |
+| `META-APELACION.md` | Texto legal listo para apelación |
+| `META-ADS-COMPLIANT-2026.md` + `PEPTIQ-META-ADS-HIGGSFIELD.md` | 30 ads compliant + prompts |
+| `PEPTIQ-WA-TEMPLATES-APROBACION.md` | 4 templates Meta WA |
+| `01-google-ads-bulk-upload.csv` | 17 keywords + 36 headlines |
+| `02-google-ads-negative-keywords.csv` | 30 negativas |
+| `03-tiktok-ads-briefs.md` | 5 reels guionados |
+| `04-meta-ads-mapping.md` | Plan 26 ads cuando reactive Meta |
+| `05-utm-master-list.csv` | 24 URLs UTM estandarizadas |
+| `IG-CALENDAR-30-DIAS.md` | 30 posts + 90 stories @peptiqmx |
+
+### ⚙️ Backend SARA endpoints (api-core)
+| Endpoint | Método | Función |
+|----------|--------|---------|
+| `/api/peptiq/leads-segments` | GET | 6 segmentos auto-clasificados |
+| `/api/peptiq/leads-broadcast` | POST | Broadcast WA texto/template |
+| `/api/peptiq/b2b-blast` | POST | Cold email B2B 3-step blast |
+| `/api/peptiq/b2b-test` | POST | Preview email a destino arbitrario |
+| `/api/peptiq/b2b-retry` | POST | Re-disparar leadIds específicos |
+| `/api/peptiq/b2b-fix-truncated` | POST | Reparar emails .c → .com |
+| `/api/peptiq/b2b-mark-replied` | POST | Marcar lead replied · skip Email 2/3 |
+| `/api/peptiq/b2b-debug-lead` | GET | Inspeccionar phone field raw |
+| `/api/peptiq/kb-import` | POST/GET | Bridge KV para import contenido |
+| `/api/peptiq/register-admin` | POST | Crear admin tenant PEPTIQ |
+| `/api/peptiq/register-customer` | POST | Crear lead delivered + NPS |
+| `/api/peptiq/purge-test-orders` | POST | Limpieza Web Customer / E2E |
+
+### 🔧 Servicios SARA backend (`src/services/`)
+| Servicio | Líneas | Función |
+|----------|--------|---------|
+| `peptiqB2BSequence.ts` | ~390 | 3-step cold email · Resend · throttle 1/seg |
+| `peptiqEmailSequence.ts` | 372 | B2C welcome 5 emails (no tocado) |
+| `aiConversationService.ts` | ~8740 | SARA AI conversational + prompts |
+| `slotSchedulingService.ts` | 307 | Citas con slots interactivos WA |
+| `calendarService.ts` (legacy `calendar.ts`) | 435 | Google Calendar API |
+
+### 🎨 Templates email B2B
+| Template | Día | Subject | CTA |
+|----------|-----|---------|-----|
+| Email 1 | D+0 | "Para [clínica]: el único laboratorio en MX con COA público por lote" | Descargar catálogo PDF |
+| Email 2 | D+3 | "[clínica]: lo que sus colegas en CDMX ya están comprando" | Agendar 15 min WA |
+| Email 3 | D+7 | "[clínica]: les dejo el catálogo y los suelto" | Catálogo + márgenes |
+
+---
+
+## 📊 Status canales paid (2026-05-09)
 
 ## 🚦 Estado canales paid (2026-05-09)
 
