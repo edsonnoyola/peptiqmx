@@ -763,7 +763,7 @@ input:checked + .slider::before{transform:translateX(18px)}
     <!-- HERO · Vial gigante centro de la pantalla -->
     <div style="margin-bottom:14px;padding:24px 18px;background:linear-gradient(180deg,#F8F4ED 0%,#F1ECDF 100%);border:1px solid #E8DFCA;border-radius:8px;text-align:center;position:relative;overflow:hidden">
       <!-- Eyebrow -->
-      <div style="font-size:10px;letter-spacing:3px;color:var(--gold-deep);font-weight:700;text-transform:uppercase;margin-bottom:6px">PRÓXIMA DOSIS · <span x-text="nextDoseTime"></span></div>
+      <div style="font-size:10px;letter-spacing:2.4px;color:var(--gold-deep);font-weight:700;text-transform:uppercase;margin-bottom:6px;line-height:1.6"><div>PRÓXIMA DOSIS</div><div style="font-size:11px;letter-spacing:1.6px;margin-top:2px" x-text="nextDoseTime"></div></div>
 
       <!-- VIAL GIGANTE -->
       <div style="position:relative;width:140px;height:240px;margin:14px auto 12px">
@@ -2436,15 +2436,45 @@ function app(){
       return 'Buenas noches';
     },
     get nextDoseTime(){
-      const h=new Date().getHours();
-      // If past 7am, next dose is tomorrow 7:30am · else today 7:30am
-      // For tesa/ipa/cjc nighttime peptides → 10:00 PM
-      const p=this.firstPeptide;
-      const nightOnes=['Tesamorelin','Ipamorelin','CJC+Ipa','Epithalon','GHK-Cu','DSIP'];
-      if(p && nightOnes.includes(p.name)){
-        return h<22 ? '10:00 PM' : 'mañana 10:00 PM';
+      const now = new Date();
+      const h = now.getHours();
+      const p = this.firstPeptide;
+      const nightOnes = ['Tesamorelin','Ipamorelin','CJC+Ipa','Epithalon','GHK-Cu','DSIP'];
+      const isNight = p && nightOnes.includes(p.name);
+      const targetHour = isNight ? 22 : 7;
+      const targetMin = isNight ? 0 : 30;
+      // Si ya pasó la hora hoy → mañana
+      const target = new Date(now);
+      target.setHours(targetHour, targetMin, 0, 0);
+      if (now > target) target.setDate(target.getDate() + 1);
+      // Saltar fines de semana si daysOn = 'lun-vie'
+      const data = p ? this.peptideData.find(x => x.name === p.name) : null;
+      const skipsWeekend = data && data.daysOn === 'lun-vie';
+      if (skipsWeekend) {
+        while (target.getDay() === 0 || target.getDay() === 6) {
+          target.setDate(target.getDate() + 1);
+        }
       }
-      return h<7 ? '7:30 AM' : 'mañana 7:30 AM';
+      // Format: "Lunes 11 may · 10:00 PM"
+      const dias = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+      const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+      const dia = dias[target.getDay()];
+      const fecha = target.getDate() + ' ' + meses[target.getMonth()];
+      const hora = target.getHours();
+      const min = target.getMinutes();
+      const ampm = hora >= 12 ? 'PM' : 'AM';
+      const h12 = hora % 12 === 0 ? 12 : hora % 12;
+      const mm = min < 10 ? '0' + min : min;
+      // Detectar "hoy" / "mañana"
+      const todayDate = new Date();
+      todayDate.setHours(0,0,0,0);
+      const targetDateOnly = new Date(target);
+      targetDateOnly.setHours(0,0,0,0);
+      const diffDays = Math.round((targetDateOnly - todayDate) / 86400000);
+      let prefix = '';
+      if (diffDays === 0) prefix = 'Hoy ';
+      else if (diffDays === 1) prefix = 'Mañana · ';
+      return `${prefix}${dia} ${fecha} · ${h12}:${mm} ${ampm}`;
     },
     get currentDoseLabel(){
       const p=this.firstPeptide;
