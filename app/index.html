@@ -2562,13 +2562,13 @@ function app(){
   }
 }
 
-// Service Worker registration for PWA
+// Service Worker registration for PWA · register inmediato si load ya pasó
 if('serviceWorker' in navigator){
-  window.addEventListener('load',()=>{
-    navigator.serviceWorker.register('/app/sw.js',{scope:'/app/'})
-      .then(reg=>console.log('SW registered',reg.scope))
-      .catch(err=>console.warn('SW failed',err));
-  });
+  const __doRegSW = () => navigator.serviceWorker.register('/app/sw.js',{scope:'/app/'})
+    .then(reg=>console.log('SW registered',reg.scope))
+    .catch(err=>console.warn('SW failed',err));
+  if (document.readyState === 'complete') __doRegSW();
+  else window.addEventListener('load', __doRegSW);
 }
 
 // Install prompt capture (shows custom button later)
