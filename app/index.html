@@ -1569,6 +1569,30 @@ function app(){
     disclaimerDismissed:false,
     waNumber: localStorage.getItem('peptiq_wa_number')||'',
     waOptIn: localStorage.getItem('peptiq_wa_optin')==='1',
+
+    // ─── REGISTRATION GUARD · si ya está registrado, NUNCA volver a welcome/auth ───
+    get isRegistered(){
+      try {
+        const c = JSON.parse(localStorage.getItem('peptiq_consent')||'null');
+        const s = JSON.parse(localStorage.getItem('peptiq_setup')||'null');
+        return !!(c && c.signature && s && s.firstPeptide);
+      } catch(e){ return false; }
+    },
+    init(){
+      // Watch: si screen va a pantallas de registro pero ya está registrado → force dashboard
+      const REG_SCREENS = ['welcome','auth','consent','onboard1','onboard3','wa-optin'];
+      this.$watch('screen', (val) => {
+        if (this.isRegistered && REG_SCREENS.includes(val)) {
+          console.log('[PEPTIQ] already registered · forcing dashboard (was trying:', val, ')');
+          this.screen = 'dashboard';
+        }
+      });
+      // Verificación inicial: si está registrado y la screen detección falló, force dashboard
+      if (this.isRegistered && REG_SCREENS.includes(this.screen)) {
+        this.screen = 'dashboard';
+      }
+    },
+
     async submitWaOptIn(){
       const clean=(this.waNumber||'').replace(/\D/g,'');
       if(clean.length<10) return;
