@@ -797,8 +797,30 @@ input:checked + .slider::before{transform:translateX(18px)}
       <div style="font-size:13px;color:var(--mute);margin-bottom:6px"><span x-text="currentDoseLabel"></span></div>
       <div x-show="firstPeptideData && firstPeptideData.fastingRule!=='cualquier momento' && firstPeptideData.fastingRule!=='no aplica'" style="font-size:11px;color:var(--gold-deep);background:rgba(152,114,69,.1);display:inline-block;padding:5px 12px;border-radius:14px;margin-bottom:14px">🍽️ <span x-text="firstPeptideData?firstPeptideData.fastingRule:''"></span></div>
 
+      <!-- ═══ INYECTAR HOY · BIG ═══ -->
+      <div style="background:#0e0d0b;color:#FFF6E0;padding:16px 18px;margin-top:8px;border-left:3px solid var(--gold)">
+        <div style="font-size:9.5px;letter-spacing:3px;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:8px">Inyectar hoy</div>
+        <div style="display:flex;align-items:baseline;gap:14px">
+          <div>
+            <span class="serif" style="font-size:52px;font-weight:700;color:var(--gold);line-height:1" x-text="syringeUnits"></span>
+            <span style="font-size:14px;letter-spacing:1.5px;color:var(--gold-soft);text-transform:uppercase;margin-left:4px">unidades</span>
+          </div>
+          <div style="flex:1;border-left:1px solid #3a3530;padding-left:14px">
+            <div style="font-size:12px;color:#FFF6E0;line-height:1.5">
+              <span class="serif" style="font-size:18px;font-weight:600" x-text="calcVolumeMl?.toFixed(2)+' ml'"></span>
+            </div>
+            <div style="font-size:10.5px;color:var(--gold-soft);letter-spacing:.5px;line-height:1.5;margin-top:2px">
+              Jeringa insulina U-100<br>
+              <span x-show="syringeUnits<=30"><b style="color:var(--gold)">0.3 ml</b> (microdosis)</span>
+              <span x-show="syringeUnits>30 && syringeUnits<=50"><b style="color:var(--gold)">0.5 ml</b> (escala 0-50)</span>
+              <span x-show="syringeUnits>50"><b style="color:var(--gold)">1 ml</b> (escala 0-100)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Action buttons primary -->
-      <div style="display:flex;gap:8px;margin-top:14px">
+      <div style="display:flex;gap:8px;margin-top:12px">
         <button @click="openCalc(pname)" class="btn-secondary" style="flex:1;padding:13px;font-size:12px;letter-spacing:1.4px;font-weight:600;text-transform:uppercase">📐 Calcular</button>
         <button @click="markDailyDoseTaken()" :disabled="appliedToday(pname)" :style="`flex:1.4;padding:13px;background:${appliedToday(pname)?'#D4D2CB':'var(--ink)'};color:${appliedToday(pname)?'#888':'#FFF'};font-size:12px;letter-spacing:1.4px;font-weight:600;text-transform:uppercase;border:none`" x-text="appliedToday(pname)?'✓ Aplicada hoy':'✓ Aplicar dosis'"></button>
       </div>
@@ -821,18 +843,6 @@ input:checked + .slider::before{transform:translateX(18px)}
         </div>
       </div>
 
-      <!-- Mini syringe -->
-      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid #E5DFCD">
-        <div style="position:relative;width:90px;height:14px;flex:0 0 90px">
-          <div style="position:absolute;left:8px;right:14px;top:3px;bottom:3px;background:#FFF;border:1px solid #888;border-radius:1px;overflow:hidden">
-            <div :style="`position:absolute;left:0;top:0;bottom:0;width:${Math.min(syringeFillPercent,100)}%;background:linear-gradient(90deg,rgba(152,114,69,.5),rgba(152,114,69,.85));transition:width .6s`"></div>
-          </div>
-          <div :style="`position:absolute;top:0;width:8px;height:14px;background:#666;border-radius:1px;left:${Math.min(syringeFillPercent*0.65,65)}px;transition:left .6s`"></div>
-          <div style="position:absolute;right:0;top:6px;width:12px;height:1.5px;background:#666"></div>
-          <div style="position:absolute;left:0;top:1px;bottom:1px;width:4px;background:#444"></div>
-        </div>
-        <div style="font-size:11px;color:var(--mute)">por dosis: <b style="color:var(--ink);font-size:13px;font-family:'Playfair Display'"><span x-text="syringeUnits"></span> u</b></div>
-      </div>
     </div>
 
     <!-- Adherencia + Ciclo (real data) -->
