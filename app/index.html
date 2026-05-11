@@ -165,6 +165,10 @@ input:checked + .slider::before{transform:translateX(18px)}
     <p style="color:#aaa;font-size:14px;line-height:1.6;max-width:300px;margin:0 auto">Recordatorios, dosis, reconstitución, inventario. Y un asistente que responde tus dudas grounded en literatura clínica.</p>
   </div>
   <div style="display:flex;flex-direction:column;gap:10px">
+    <button @click="reopenPwaInstall()" x-show="!isInstalledPWA" class="btn-primary" style="background:linear-gradient(135deg,#C9AE6B 0%,#988646 100%);color:#0A0908;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;box-shadow:0 4px 20px rgba(201,174,107,.3)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Descargar App
+    </button>
     <button @click="screen='auth';mode='signup'" class="btn-primary" style="background:var(--paper);color:var(--ink)">Crear cuenta</button>
     <button @click="screen='auth';mode='login'" class="btn-secondary" style="border-color:#444;color:#fff;background:transparent">Ya tengo cuenta</button>
     <p style="color:#666;font-size:11px;text-align:center;margin-top:8px;letter-spacing:.5px">Research products · No para consumo humano</p>

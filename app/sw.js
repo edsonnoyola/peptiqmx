@@ -1,5 +1,5 @@
-// PEPTIQ Tracker Service Worker · v2.6.1 · Fix double-init bug que rompía registration guard
-const CACHE = 'peptiq-tracker-v31';
+// PEPTIQ Tracker Service Worker · v2.6.2 · Botón Descargar App visible en welcome
+const CACHE = 'peptiq-tracker-v32';
 const ASSETS = [
   '/app/',
   '/app/index.html',
