@@ -1,5 +1,5 @@
-// PEPTIQ Tracker Service Worker · v2.6.6 · QR locked-in: péptido fijo desde QR, no editable
-const CACHE = 'peptiq-tracker-v36';
+// PEPTIQ Tracker Service Worker · v2.6.7 · QR smart: activa si ya tiene · prefill si tiene stack · lock si nuevo
+const CACHE = 'peptiq-tracker-v37';
 const ASSETS = [
   '/app/',
   '/app/index.html',

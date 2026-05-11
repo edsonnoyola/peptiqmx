@@ -1970,6 +1970,9 @@ function app(){
     showIOSTutorial: false,
     qrLocked: false,
     qrLockedPeptide: '',
+    qrPrefillSlug: '',
+    qrPrefillPeptide: '',
+    qrPrefillLot: '',
     deferredPrompt: null,
     isIOS: false,
     isInstalledPWA: false,
@@ -2489,17 +2492,32 @@ function app(){
             const pData = this.peptideData?.find(p => p.name === pepName);
             if (pData) {
               localStorage.setItem('peptiq_qr_prefill', JSON.stringify({ peptide: pepName, lot: lotParam || '', scannedAt: new Date().toISOString() }));
-              // Lock-in: el QR escoge el péptido · usuario NO puede cambiarlo en setup
-              this.qrLocked = true;
-              this.qrLockedPeptide = pepName;
-              this.firstPeptideName = pepName;
-              this.firstPeptide = { ...pData };
-              if (lotParam) this.firstPeptide.lot = lotParam;
-              this.selectedHour = pData.recommendedHour || '07:30';
               this.$nextTick(()=>{
-                if (this.screen === 'dashboard' && this.peptides?.length) {
-                  // Ya logueado → ir a add-to-stack con el péptido
-                  this.screen = 'add-peptide';
+                const alreadyInStack = this.myInventoryLines?.includes(pepName);
+                if (alreadyInStack) {
+                  // Ya lo tiene en su stack → activarlo y abrir dashboard
+                  this.setActivePeptide(pepName);
+                  this.screen = 'dashboard';
+                  // mini toast/banner
+                  this.qrLocked = false;
+                  alert('Cambiando a ' + pepName + ' · ya está en tu stack');
+                } else if (this.myInventoryLines?.length > 0) {
+                  // Tiene otros pero NO este → llevarlo a inventario con prefill
+                  this.qrPrefillSlug = peptideSlug.toLowerCase();
+                  this.qrPrefillPeptide = pepName;
+                  this.qrPrefillLot = lotParam || '';
+                  this.screen = 'inventory';
+                  setTimeout(()=>{
+                    if (typeof this.openAddPeptideModal === 'function') this.openAddPeptideModal(pepName);
+                  }, 200);
+                } else {
+                  // Usuario nuevo · sin stack · lock-in onboarding flow
+                  this.qrLocked = true;
+                  this.qrLockedPeptide = pepName;
+                  this.firstPeptideName = pepName;
+                  this.firstPeptide = { ...pData };
+                  if (lotParam) this.firstPeptide.lot = lotParam;
+                  this.selectedHour = pData.recommendedHour || '07:30';
                 }
               });
             }
