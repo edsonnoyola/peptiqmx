@@ -3,9 +3,10 @@
 (function () {
   'use strict';
 
-  // Check cookie · skip if already accepted (30 day expiry)
+  // Check cookie/localStorage · skip if already accepted (30 day expiry) OR if PEPTIQ user already signed consent
   const KEY = 'peptiq_age_research_ack';
-  const COOKIE_DAYS = 30;
+  const COOKIE_DAYS = 365;
+  const LS_KEY = 'peptiq_age_research_ack_ls';
 
   function readCookie(name) {
     return document.cookie.split('; ').find(r => r.startsWith(name + '='))?.split('=')[1];
@@ -15,8 +16,26 @@
     d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
     document.cookie = `${name}=${val}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
   }
+  function getLS(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+  function setLS(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
 
-  if (readCookie(KEY) === '1') return;
+  // BYPASS: si ya está registrado en PEPTIQ (consent firmado), no mostrar age gate
+  try {
+    const consent = JSON.parse(localStorage.getItem('peptiq_consent') || 'null');
+    if (consent && consent.signature) {
+      setLS(LS_KEY, '1');
+      setCookie(KEY, '1', COOKIE_DAYS);
+      return;
+    }
+  } catch(e){}
+
+  // BYPASS: si la cookie OR localStorage tienen ack → skip
+  if (readCookie(KEY) === '1' || getLS(LS_KEY) === '1') {
+    // Si solo uno tiene, sincroniza el otro
+    if (readCookie(KEY) !== '1') setCookie(KEY, '1', COOKIE_DAYS);
+    if (getLS(LS_KEY) !== '1') setLS(LS_KEY, '1');
+    return;
+  }
 
   // Build modal
   const overlay = document.createElement('div');
@@ -96,6 +115,7 @@
 
   document.getElementById('pag-accept').addEventListener('click', () => {
     setCookie(KEY, '1', COOKIE_DAYS);
+    setLS(LS_KEY, '1');
     overlay.remove();
     document.body.style.overflow = '';
   });

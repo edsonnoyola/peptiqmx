@@ -1,5 +1,5 @@
-// PEPTIQ Tracker Service Worker · v2.6.7 · QR smart: activa si ya tiene · prefill si tiene stack · lock si nuevo
-const CACHE = 'peptiq-tracker-v37';
+// PEPTIQ Tracker Service Worker · v2.6.8 · UX: usuario registrado no ve age gate ni onboarding · 1 año cookie
+const CACHE = 'peptiq-tracker-v38';
 const ASSETS = [
   '/app/',
   '/app/index.html',
