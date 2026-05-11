@@ -286,7 +286,18 @@ input:checked + .slider::before{transform:translateX(18px)}
 
     <!-- Sección 2 · Péptido -->
     <div class="eyebrow gold-text" style="margin-bottom:10px">TU PÉPTIDO PRINCIPAL</div>
-    <select x-model="firstPeptideName" @change="firstPeptide=peptides.find(p=>p.name===firstPeptideName)||{name:firstPeptideName,purpose:''};selectedHour=(firstPeptideData&&firstPeptideData.recommendedHour)||'07:30'" class="input" style="background:#1a1a1a;border:1px solid #333;color:white;padding:16px;font-size:15px;margin-bottom:8px;width:100%;font-family:'Inter'">
+    <!-- QR LOCKED: usuario llegó vía /verify/[slug] · péptido fijo, no editable -->
+    <template x-if="qrLocked">
+      <div style="background:linear-gradient(135deg,rgba(201,174,107,.18) 0%,rgba(152,134,70,.08) 100%);border:1px solid var(--gold);padding:16px 18px;margin-bottom:8px;display:flex;align-items:center;gap:12px">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9AE6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <div style="flex:1">
+          <div style="font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:700;margin-bottom:3px">DETECTADO POR QR · CONFIRMADO</div>
+          <div style="font-size:16px;color:#fff;font-weight:600" x-text="qrLockedPeptide"></div>
+          <div x-show="firstPeptideData" style="font-size:11px;color:#aaa;margin-top:2px" x-text="firstPeptideData?firstPeptideData.purpose:''"></div>
+        </div>
+      </div>
+    </template>
+    <select x-show="!qrLocked" x-model="firstPeptideName" @change="firstPeptide=peptides.find(p=>p.name===firstPeptideName)||{name:firstPeptideName,purpose:''};selectedHour=(firstPeptideData&&firstPeptideData.recommendedHour)||'07:30'" class="input" style="background:#1a1a1a;border:1px solid #333;color:white;padding:16px;font-size:15px;margin-bottom:8px;width:100%;font-family:'Inter'">
       <option value="" disabled selected>Selecciona…</option>
       <template x-for="p in peptides" :key="p.name">
         <option :value="p.name" x-text="p.name + ' · ' + p.purpose"></option>
@@ -1957,6 +1968,8 @@ function app(){
     // ─── PWA Install Prompt ───
     showInstallBanner: false,
     showIOSTutorial: false,
+    qrLocked: false,
+    qrLockedPeptide: '',
     deferredPrompt: null,
     isIOS: false,
     isInstalledPWA: false,
@@ -2476,13 +2489,17 @@ function app(){
             const pData = this.peptideData?.find(p => p.name === pepName);
             if (pData) {
               localStorage.setItem('peptiq_qr_prefill', JSON.stringify({ peptide: pepName, lot: lotParam || '', scannedAt: new Date().toISOString() }));
+              // Lock-in: el QR escoge el péptido · usuario NO puede cambiarlo en setup
+              this.qrLocked = true;
+              this.qrLockedPeptide = pepName;
+              this.firstPeptideName = pepName;
+              this.firstPeptide = { ...pData };
+              if (lotParam) this.firstPeptide.lot = lotParam;
+              this.selectedHour = pData.recommendedHour || '07:30';
               this.$nextTick(()=>{
-                // Si ya tiene cuenta y dashboard, agrega al stack. Sino, prefill setup.
-                if (this.firstPeptide && this.screen === 'dashboard') {
+                if (this.screen === 'dashboard' && this.peptides?.length) {
+                  // Ya logueado → ir a add-to-stack con el péptido
                   this.screen = 'add-peptide';
-                } else if (!this.firstPeptide) {
-                  this.firstPeptide = { ...pData };
-                  if (lotParam) this.firstPeptide.lot = lotParam;
                 }
               });
             }

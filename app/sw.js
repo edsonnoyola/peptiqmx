@@ -1,5 +1,5 @@
-// PEPTIQ Tracker Service Worker · v2.6.5 · QR deeplink ?peptide= prefill + Selank en verify
-const CACHE = 'peptiq-tracker-v35';
+// PEPTIQ Tracker Service Worker · v2.6.6 · QR locked-in: péptido fijo desde QR, no editable
+const CACHE = 'peptiq-tracker-v36';
 const ASSETS = [
   '/app/',
   '/app/index.html',
