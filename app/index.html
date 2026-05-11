@@ -2558,14 +2558,23 @@ function app(){
       this.showInstallBanner = false;
     },
     reopenPwaInstall(){
-      // Botón manual desde Profile — ignora dismissed flag
-      if (this.isInstalledPWA) { alert('PEPTIQ ya está instalado en tu dispositivo'); return; }
+      console.log('[PEPTIQ] reopenPwaInstall called · isIOS=', this.isIOS, 'deferredPrompt=', !!this.deferredPrompt, 'installed=', this.isInstalledPWA);
+      if (this.isInstalledPWA) { alert('PEPTIQ ya está instalado en tu dispositivo · ábrelo desde tu pantalla de inicio'); return; }
       localStorage.removeItem('peptiq_pwa_dismissed');
-      if (this.isIOS || !this.deferredPrompt) {
-        this.showIOSTutorial = true;
-      } else {
-        this.showInstallBanner = true;
+      // Android con prompt nativo disponible → dispararlo directo
+      if (!this.isIOS && this.deferredPrompt) {
+        this.deferredPrompt.prompt();
+        this.deferredPrompt.userChoice.then((res) => {
+          if (res && res.outcome === 'accepted') {
+            localStorage.setItem('peptiq_pwa_installed', '1');
+            this.isInstalledPWA = true;
+          }
+          this.deferredPrompt = null;
+        }).catch(()=>{ this.showIOSTutorial = true; });
+        return;
       }
+      // Fallback universal · mostrar tutorial paso a paso (Android o iOS)
+      this.showIOSTutorial = true;
     },
 
     saveSetup(){
@@ -3171,7 +3180,7 @@ window.peptiqInstall=()=>{
      ═══════════════════════════════════════════════ -->
 <div x-data x-show="$root.showInstallBanner" x-cloak x-transition
      style="position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,#0A0908 0%,#1F1B16 100%);border-top:1px solid var(--gold);padding:14px 18px 16px;box-shadow:0 -8px 24px rgba(0,0,0,.4)">
-  <button @click="$root.dismissPwaBanner()" aria-label="Cerrar"
+  <button @click="dismissPwaBanner()" aria-label="Cerrar"
           style="position:absolute;top:6px;right:8px;background:transparent;border:0;color:var(--mute);font-size:11px;padding:6px 8px;cursor:pointer">✕</button>
   <div style="display:flex;align-items:center;gap:12px;max-width:600px;margin:0 auto">
     <img src="/app/icons/icon-192.png" alt="PEPTIQ" style="width:48px;height:48px;border-radius:10px;flex-shrink:0;background:#000" onerror="this.style.display='none'">
@@ -3187,15 +3196,16 @@ window.peptiqInstall=()=>{
 <!-- ═══════════════════════════════════════════════
      iOS INSTALL TUTORIAL MODAL
      ═══════════════════════════════════════════════ -->
-<div x-data x-show="$root.showIOSTutorial" x-cloak x-transition
-     style="position:fixed;inset:0;z-index:300;background:rgba(10,9,8,.92);display:flex;align-items:center;justify-content:center;padding:20px">
+<div x-show="showIOSTutorial" x-cloak x-transition
+     @click.self="showIOSTutorial=false"
+     style="position:fixed;inset:0;z-index:999999;background:rgba(10,9,8,.95);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)">
   <div style="background:#1F1B16;border:1px solid var(--gold);border-radius:14px;padding:24px 22px;max-width:380px;width:100%;text-align:center;position:relative">
-    <button @click="$root.showIOSTutorial=false" aria-label="Cerrar"
+    <button @click="showIOSTutorial=false" aria-label="Cerrar"
             style="position:absolute;top:8px;right:10px;background:transparent;border:0;color:var(--mute);font-size:14px;padding:6px 8px;cursor:pointer">✕</button>
-    <div class="serif" style="font-size:18px;font-weight:600;color:var(--gold);margin-bottom:16px" x-text="$root.isIOS ? 'Instalar PEPTIQ en iPhone' : 'Instalar PEPTIQ en Android'"></div>
+    <div class="serif" style="font-size:18px;font-weight:600;color:var(--gold);margin-bottom:16px" x-text="isIOS ? 'Instalar PEPTIQ en iPhone' : 'Instalar PEPTIQ en Android'"></div>
 
     <!-- iOS STEPS -->
-    <template x-if="$root.isIOS">
+    <template x-if="isIOS">
       <div>
         <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:10px;text-align:left">
           <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">1</div>
@@ -3229,7 +3239,7 @@ window.peptiqInstall=()=>{
     </template>
 
     <!-- ANDROID STEPS -->
-    <template x-if="!$root.isIOS">
+    <template x-if="!isIOS">
       <div>
         <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:10px;text-align:left">
           <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">1</div>
@@ -3255,7 +3265,7 @@ window.peptiqInstall=()=>{
       </div>
     </template>
 
-    <button @click="$root.showIOSTutorial=false;$root.dismissPwaBanner()"
+    <button @click="showIOSTutorial=false;dismissPwaBanner()"
             style="background:var(--gold);color:#000;border:0;padding:11px 22px;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-radius:6px;width:100%;cursor:pointer">Entendido ✓</button>
   </div>
 </div>
