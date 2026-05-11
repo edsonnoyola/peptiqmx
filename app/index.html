@@ -165,12 +165,24 @@ input:checked + .slider::before{transform:translateX(18px)}
     <p style="color:#aaa;font-size:14px;line-height:1.6;max-width:300px;margin:0 auto">Recordatorios, dosis, reconstitución, inventario. Y un asistente que responde tus dudas grounded en literatura clínica.</p>
   </div>
   <div style="display:flex;flex-direction:column;gap:10px">
-    <button @click="reopenPwaInstall()" x-show="!isInstalledPWA" class="btn-primary" style="background:linear-gradient(135deg,#C9AE6B 0%,#988646 100%);color:#0A0908;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;box-shadow:0 4px 20px rgba(201,174,107,.3)">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-      Descargar App
-    </button>
-    <button @click="screen='auth';mode='signup'" class="btn-primary" style="background:var(--paper);color:var(--ink)">Crear cuenta</button>
-    <button @click="screen='auth';mode='login'" class="btn-secondary" style="border-color:#444;color:#fff;background:transparent">Ya tengo cuenta</button>
+    <!-- ANTES DE INSTALAR · solo botón descargar -->
+    <template x-if="!isInstalledPWA">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <button @click="reopenPwaInstall()" class="btn-primary" style="background:linear-gradient(135deg,#C9AE6B 0%,#988646 100%);color:#0A0908;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;padding:18px;box-shadow:0 4px 20px rgba(201,174,107,.3);font-size:15px;letter-spacing:.5px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Descargar App
+        </button>
+        <p style="color:#888;font-size:12px;text-align:center;line-height:1.5;margin-top:6px">Instala PEPTIQ en tu pantalla de inicio para acceder<br>como app nativa · notificaciones · offline</p>
+        <button @click="screen='auth';mode='login'" style="color:#666;background:transparent;border:0;font-size:12px;padding:14px;letter-spacing:.5px;text-decoration:underline">Continuar sin instalar</button>
+      </div>
+    </template>
+    <!-- DESPUÉS DE INSTALAR · login/signup -->
+    <template x-if="isInstalledPWA">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <button @click="screen='auth';mode='signup'" class="btn-primary" style="background:var(--paper);color:var(--ink)">Crear cuenta</button>
+        <button @click="screen='auth';mode='login'" class="btn-secondary" style="border-color:#444;color:#fff;background:transparent">Ya tengo cuenta</button>
+      </div>
+    </template>
     <p style="color:#666;font-size:11px;text-align:center;margin-top:8px;letter-spacing:.5px">Research products · No para consumo humano</p>
   </div>
 </div>
@@ -3180,34 +3192,68 @@ window.peptiqInstall=()=>{
   <div style="background:#1F1B16;border:1px solid var(--gold);border-radius:14px;padding:24px 22px;max-width:380px;width:100%;text-align:center;position:relative">
     <button @click="$root.showIOSTutorial=false" aria-label="Cerrar"
             style="position:absolute;top:8px;right:10px;background:transparent;border:0;color:var(--mute);font-size:14px;padding:6px 8px;cursor:pointer">✕</button>
-    <div class="serif" style="font-size:18px;font-weight:600;color:var(--gold);margin-bottom:16px">Instalar PEPTIQ en iPhone</div>
+    <div class="serif" style="font-size:18px;font-weight:600;color:var(--gold);margin-bottom:16px" x-text="$root.isIOS ? 'Instalar PEPTIQ en iPhone' : 'Instalar PEPTIQ en Android'"></div>
 
-    <!-- PASO 1 -->
-    <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:10px;text-align:left">
-      <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">1</div>
-      <div style="flex:1">
-        <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">Toca el botón compartir</div>
-        <div style="font-size:11px;color:var(--mute);line-height:1.4">El icono <svg width="13" height="14" viewBox="0 0 16 18" style="vertical-align:middle"><path d="M8 12V2M8 2l-3 3M8 2l3 3M3 9v6a1 1 0 001 1h8a1 1 0 001-1V9" stroke="#988646" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> en la barra inferior de Safari</div>
+    <!-- iOS STEPS -->
+    <template x-if="$root.isIOS">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:10px;text-align:left">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">1</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">Abre esta página en Safari</div>
+            <div style="font-size:11px;color:var(--mute);line-height:1.4">NO Chrome ni Firefox · debe ser Safari para que funcione</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:10px;text-align:left">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">2</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">Toca el botón compartir <svg width="13" height="14" viewBox="0 0 16 18" style="vertical-align:middle"><path d="M8 12V2M8 2l-3 3M8 2l3 3M3 9v6a1 1 0 001 1h8a1 1 0 001-1V9" stroke="#988646" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div style="font-size:11px;color:var(--mute);line-height:1.4">Está en la barra inferior de Safari · centro</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:10px;text-align:left">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">3</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">"Añadir a pantalla de inicio"</div>
+            <div style="font-size:11px;color:var(--mute);line-height:1.4">Desliza el menú · busca esa opción · toca Añadir</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:18px;text-align:left">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">4</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">¡Listo!</div>
+            <div style="font-size:11px;color:var(--mute);line-height:1.4">Abre PEPTIQ desde el ícono nuevo en tu home</div>
+          </div>
+        </div>
       </div>
-    </div>
+    </template>
 
-    <!-- PASO 2 -->
-    <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:10px;text-align:left">
-      <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">2</div>
-      <div style="flex:1">
-        <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">"Agregar a Pantalla de inicio"</div>
-        <div style="font-size:11px;color:var(--mute);line-height:1.4">Desliza el menú y selecciona la opción</div>
+    <!-- ANDROID STEPS -->
+    <template x-if="!$root.isIOS">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:10px;text-align:left">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">1</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">Toca el menú ⋮</div>
+            <div style="font-size:11px;color:var(--mute);line-height:1.4">Los 3 puntos · arriba a la derecha de Chrome</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:10px;text-align:left">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">2</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">"Instalar app" o "Agregar a inicio"</div>
+            <div style="font-size:11px;color:var(--mute);line-height:1.4">Selecciona la opción que aparezca</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:18px;text-align:left">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">3</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">Confirma "Instalar"</div>
+            <div style="font-size:11px;color:var(--mute);line-height:1.4">El ícono PEPTIQ aparece en tu home · ábrelo desde ahí</div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- PASO 3 -->
-    <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(152,134,70,.08);border-radius:10px;margin-bottom:18px;text-align:left">
-      <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">3</div>
-      <div style="flex:1">
-        <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">¡Listo!</div>
-        <div style="font-size:11px;color:var(--mute);line-height:1.4">PEPTIQ aparecerá como app en tu home</div>
-      </div>
-    </div>
+    </template>
 
     <button @click="$root.showIOSTutorial=false;$root.dismissPwaBanner()"
             style="background:var(--gold);color:#000;border:0;padding:11px 22px;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-radius:6px;width:100%;cursor:pointer">Entendido ✓</button>

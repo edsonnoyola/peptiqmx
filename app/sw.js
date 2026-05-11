@@ -1,5 +1,5 @@
-// PEPTIQ Tracker Service Worker · v2.6.2 · Botón Descargar App visible en welcome
-const CACHE = 'peptiq-tracker-v32';
+// PEPTIQ Tracker Service Worker · v2.6.3 · Welcome solo Descargar App + modal Android/iOS dinámico
+const CACHE = 'peptiq-tracker-v33';
 const ASSETS = [
   '/app/',
   '/app/index.html',
