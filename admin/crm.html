@@ -614,9 +614,7 @@ function renderRetargeting(data){
 // Templates aprobadas en Meta para PEPTIQ (agrega aquí cuando aprueben más)
 const PEPTIQ_TEMPLATES = [
   { name: 'reactivar_equipo', lang: 'es_MX', label: 'Reactivar conversación (genérico)', params: ['nombre'], desc: 'Hola {nombre}, te escribo de PEPTIQ. ¿Sigue en pie tu interés?' },
-  // Agrega más cuando estén aprobadas:
-  // { name: 'peptiq_followup_oferta', lang: 'es_MX', label: 'Follow-up con oferta', params: ['nombre','oferta'], desc: '...' },
-  // { name: 'peptiq_lanzamiento_lanza20', lang: 'es_MX', label: 'Lanzamiento LANZA20', params: ['nombre'], desc: '...' },
+  { name: 'peptiq_encuesta_calidad_v1', lang: 'es_MX', label: 'Encuesta calidad post-entrega (3 preguntas)', params: ['nombre'], desc: '{nombre}, ya recibiste tu paquete · 3 preguntas rápidas · botones quick reply' },
 ];
 
 function openBroadcastModal(segment){

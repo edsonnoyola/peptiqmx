@@ -1,5 +1,5 @@
-// PEPTIQ Tracker Service Worker · v2.6.0 · Add Vial modal real (registrar péptidos al inventario)
-const CACHE = 'peptiq-tracker-v25';
+// PEPTIQ Tracker Service Worker · v2.6.1 · Fix double-init bug que rompía registration guard
+const CACHE = 'peptiq-tracker-v31';
 const ASSETS = [
   '/app/',
   '/app/index.html',

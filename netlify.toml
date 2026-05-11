@@ -73,6 +73,10 @@
 [functions."peptiq-ads-daily-report"]
   schedule = "0 15 * * *"
 
+# Auto-encuesta calidad post-entrega · cada hora (16-23 UTC = 10am-5pm MX)
+[functions."peptiq-encuesta-cron"]
+  schedule = "0 16-23 * * *"
+
 [[headers]]
   for = "/img/*"
   [headers.values]

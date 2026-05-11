@@ -152,5 +152,51 @@ exports.handler = async (event) => {
     return { statusCode: 500, body: JSON.stringify({ error: 'storage failed' }) };
   }
 
+  // ALSO write to sales/ALL.json (admin CRM) so order shows up in Pedidos tab
+  try {
+    const salesStore = getStore(getBlobsOpts('peptiq-sales'));
+    const salesData = (await salesStore.get('sales/ALL.json', { type: 'json' })) || { sales: [] };
+    const customerName = session.customer_details?.name || customerEmail.split('@')[0] || 'Cliente';
+    const city = session.customer_details?.address?.city || '';
+    const now = new Date();
+    const totalProductCost = (product.items || []).reduce((sum, it) => {
+      const costMap = { 'BPC-157': 75, 'TB-500': 85, 'Trinity': 250, 'GHK-Cu': 60, 'NAD+': 126, 'Tesamorelin': 120, 'Ipamorelin': 45, 'CJC+Ipa': 65, 'Epithalon': 80, 'Semax': 70, 'KPV': 55, 'Wolverine Blend': 95, 'BAC Water': 5 };
+      return sum + ((costMap[it.peptide] || 50) * (it.vials || 1));
+    }, 0);
+    const shippingCharged = 650;
+    const shippingCost = 650;
+    const totalCharged = amount + shippingCharged;
+    const netProfit = totalCharged - totalProductCost - shippingCost;
+    const margin = totalCharged > 0 ? +(netProfit / totalCharged * 100).toFixed(1) : 0;
+    salesData.sales.push({
+      id: session.id,
+      date: now.toISOString().slice(0, 10),
+      time: now.toTimeString().slice(0, 5),
+      customerName,
+      customerPhone: wa,
+      customerEmail,
+      customerCity: city,
+      items: product.items,
+      productName: product.name,
+      shippingCharged,
+      shippingCost,
+      totalCharged,
+      productCost: totalProductCost,
+      netProfit,
+      margin,
+      shippingStatus: 'pending',
+      trackingNumber: '',
+      courier: '',
+      notes: `Pedido Stripe · ${product.name}`,
+      source: 'stripe-webhook',
+      stripeSessionId: session.id,
+      createdAt: now.toISOString(),
+    });
+    await salesStore.setJSON('sales/ALL.json', salesData);
+    console.log(`PEPTIQ stripe webhook · ALSO recorded in sales/ALL.json`);
+  } catch (e) {
+    console.error('PEPTIQ stripe webhook · sales blob write failed (non-fatal)', e);
+  }
+
   return { statusCode: 200, body: JSON.stringify({ ok: true, product: product.name, user: userKey }) };
 };
