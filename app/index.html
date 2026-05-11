@@ -2457,9 +2457,39 @@ function app(){
       // Sync inventario desde backend (Stripe webhook → Blobs) si el usuario tiene WA o email
       this.$nextTick(()=>this.syncInventoryFromBackend());
 
-      // URL param handler · deeplinks desde WhatsApp template / push notification
+      // URL param handler · deeplinks desde WhatsApp template / push notification / QR verify page
       try{
         const params = new URLSearchParams(location.search);
+        // QR deeplink desde /verify/[slug] → pre-cargar péptido en el setup
+        const peptideSlug = params.get('peptide');
+        const lotParam = params.get('lot');
+        if (peptideSlug) {
+          // map slug a nombre canónico del peptideData
+          const slugMap = {
+            'bpc-157':'BPC-157','tb-500':'TB-500','trinity':'Trinity','ghk-cu':'GHK-Cu','ahk-cu':'AHK-Cu',
+            'ipamorelin':'Ipamorelin','tesamorelin':'Tesamorelin','semax':'Semax','selank':'Selank',
+            'nad-plus':'NAD+','epithalon':'Epithalon','retatrutide':'Retatrutide','kpv':'KPV',
+            'cjc-ipamorelin':'CJC+Ipa','wolverine-pro':'BPC-157'
+          };
+          const pepName = slugMap[peptideSlug.toLowerCase()] || null;
+          if (pepName) {
+            const pData = this.peptideData?.find(p => p.name === pepName);
+            if (pData) {
+              localStorage.setItem('peptiq_qr_prefill', JSON.stringify({ peptide: pepName, lot: lotParam || '', scannedAt: new Date().toISOString() }));
+              this.$nextTick(()=>{
+                // Si ya tiene cuenta y dashboard, agrega al stack. Sino, prefill setup.
+                if (this.firstPeptide && this.screen === 'dashboard') {
+                  this.screen = 'add-peptide';
+                } else if (!this.firstPeptide) {
+                  this.firstPeptide = { ...pData };
+                  if (lotParam) this.firstPeptide.lot = lotParam;
+                }
+              });
+            }
+          }
+          const clean = location.pathname + location.hash;
+          history.replaceState(null,'',clean);
+        }
         const doseAction = params.get('dose');
         if(doseAction){
           // Strip param to clean URL

@@ -403,6 +403,14 @@
         lot: 'Mfg: Nov 6, 2025', expiry: '2027-11',
         allergen: 'Blend de CJC-1295 (DAC) + Ipamorelin. Análogos sintéticos de GHRH y agonista ghrelina. Sin epítopos alergénicos conocidos. Perfil de seguridad establecido en literatura de péptidos GH-secretagogos. Riesgo alergénico: mínimo.'
       },
+      'selank': {
+        line: 'ATARAXIA', lineColor: '#111111',
+        name: 'SELANK', dose: '10 mg',
+        purity: '99.21%', content: '10.04 mg',
+        method: 'HPLC + MS',
+        lot: 'Mfg: import EU · pendiente lote local', expiry: '2027-12',
+        allergen: 'Heptapéptido análogo sintético de tuftsina. Secuencia corta (7 AA) sin homología con alérgenos comunes. Uso clínico extendido en Rusia desde 2009 sin reportes significativos de hipersensibilidad. Riesgo alergénico: mínimo.'
+      },
     };
 
     // Alias map → resuelve nombres alternativos al slug canónico del CATALOG
@@ -428,6 +436,9 @@
       'ba3': 'bac-water',
       'glow70': 'trinity',
       'glow': 'trinity',
+      'sk': 'selank',
+      'sk5': 'selank',
+      'sk10': 'selank',
     };
 
     function getSlug() {
@@ -511,6 +522,11 @@
             <div class="allergen-title">Epítopos alergénicos</div>
             <div class="allergen-text">${p.allergen}</div>
           </div>` : ''}
+          <a href="/app/?peptide=${slug}&lot=${encodeURIComponent(p.lot || '')}" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:24px;padding:16px 18px;background:linear-gradient(135deg,#C9AE6B 0%,#988646 100%);color:#0A0908;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border-radius:6px;box-shadow:0 4px 14px rgba(201,174,107,.3)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            Trackear ${p.name} en mi app
+          </a>
+          <div style="text-align:center;margin-top:10px;font-size:11px;color:#888;letter-spacing:.3px">Abre PEPTIQ Tracker con este péptido pre-cargado · si no la tienes te la instala</div>
         </div>
       `;
     }

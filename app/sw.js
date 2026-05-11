@@ -1,5 +1,5 @@
-// PEPTIQ Tracker Service Worker · v2.6.4 · Fix botón Descargar App · modal z-index + scope
-const CACHE = 'peptiq-tracker-v34';
+// PEPTIQ Tracker Service Worker · v2.6.5 · QR deeplink ?peptide= prefill + Selank en verify
+const CACHE = 'peptiq-tracker-v35';
 const ASSETS = [
   '/app/',
   '/app/index.html',
