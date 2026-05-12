@@ -13,7 +13,7 @@
 | Problema | Search MX/mes | Péptido recomendado | Stack | Angle de venta | Ticket |
 |---|---:|---|---|---|---|
 | Ansiedad / estrés crónico | 80k | **BPC-157 + KPV** | Gut-brain axis · serotonin support | "Tu cerebro está en tu intestino · péptidos que reparan ambos" | $5,899 |
-| Insomnio (no duermo) | 40k | **Ipamorelin** | Solo · 200-300mcg pre-sueño | "El secreto de los CEOs que duermen 8 horas profundas" | $2,899 |
+| Insomnio (no duermo) | 40k | **Ipamorelin** | Solo · 200-300mcg pre-sueño | "El secreto de los CEOs que duermen 8 horas profundas" | $3,099 |
 | Acné inflamatorio severo | 25k | **KPV + GHK-Cu** | Anti-inflamatorio + tópico/intradérmico | "Cuando hidroquinona y antibióticos ya no funcionan" | $6,698 |
 | Caída cabello early-onset | 30k | **AHK-Cu** | Mesoterapia capilar 8-12 sem | "Si tu papá fue calvo · empieza ya a los 30, no a los 50" | $3,799 |
 | Energía / siempre cansado | 60k | **NAD+ oral / SC** | Mitocondrial cognitive | "El multi-vitamínico de tus papás no funciona ya · mitocondrial sí" | $5,499 |

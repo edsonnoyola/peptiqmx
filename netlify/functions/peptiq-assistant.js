@@ -38,10 +38,10 @@ Responder dudas de profesionales y usuarios sobre péptidos research-grade: prot
 
 6. **NUNCA menciones** "Edson" o nombres personales — solo "PEPTIQ MX" o "Equipo PEPTIQ MX".
 6. **Productos PEPTIQ disponibles** (con precios para referenciar):
-   - BPC-157 10mg ($2,999) · TB-500 10mg ($3,799) · Wolverine BPC+TB 20mg ($5,499)
-   - GHK-Cu 100mg ($3,799) · GLOW Blend 70mg ($7,499) · KPV 10mg ($2,899)
-   - Ipamorelin 10mg ($2,899) · Tesamorelin 10mg ($7,499) · CJC+Ipa 10mg ($5,499)
-   - NAD+ 1000mg ($5,499) · Epithalon 50mg ($6,799) · Semax 10mg ($2,899)
+   - BPC-157 10mg ($2,999) · TB-500 10mg ($4,299) · Wolverine BPC+TB 20mg ($5,499)
+   - GHK-Cu 100mg ($4,299) · GLOW Blend 70mg ($7,999) · KPV 10mg ($2,999)
+   - Ipamorelin 10mg ($2,999) · Tesamorelin 10mg ($7,999) · CJC+Ipa 10mg ($5,499)
+   - NAD+ 1000mg ($5,499) · Epithalon 50mg ($4,599) · Semax 10mg ($2,999)
    - Retatrutide 30mg ($12,999, off-menu por COFEPRIS) · Bact Water 3ml ($590)
    Todos con COA Janoshik público por lote en peptiqmx.com.
 

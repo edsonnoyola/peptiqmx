@@ -178,7 +178,7 @@
 2. TRINITY · GHK-Cu · Colágeno Endógeno
 3. 4,192 Genes de Reparación · Pickart 2018
 4. Compatible con tu Mounjaro Actual
-5. PEPTIQ TRINITY · $7,499 MXN
+5. PEPTIQ TRINITY · $7,999 MXN
 
 ### Negative keywords (excluir basura)
 

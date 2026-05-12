@@ -11,7 +11,7 @@ Audit de los precios actuales en site (`checkout.html`), Stripe Payment Links y 
 | Wolverine (BPC+TB) | Recuperación | $5,499 | $340 | $5,159 | **94%** |
 | Wolverine PRO (BPC+TB+2×BA) | Recuperación | $6,999 | $490 | $6,509 | **93%** |
 | GH Boost (CJC+IPA+BA) | Prime | $5,499 | $230 | $5,269 | **96%** |
-| GLOW Essential (TRINITY+BA) | Glow | $7,499 | $430 | $7,069 | **94%** |
+| GLOW Essential (TRINITY+BA) | Glow | $7,999 | $430 | $7,069 | **94%** |
 | GLOW PRO (TRINITY+CU+2×BA) | Glow | $9,999 | $560 | $9,439 | **94%** |
 | Gut Reset (BPC+KPV+2×BA) | Recuperación | $5,999 | $330 | $5,669 | **94%** |
 | Neuro Focus (SX+ET+2×BA) | Neuro | $8,999 | $480 | $8,519 | **95%** |
@@ -31,11 +31,11 @@ Audit de los precios actuales en site (`checkout.html`), Stripe Payment Links y 
 | Péptido | PEPTIQ Elite | Singular | Aesthetic Pharma | XT Labs | TheFitWeekend | PremiumLabs | **PEPTIQ vs media** |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | BPC-157 10mg | **$2,999** | $899 (5mg) | $1,250 | $1,050 | $1,200 | $1,250 | **+154% arriba** |
-| TB-500 10mg | **$3,799** | — | $1,350 | $1,300 | $1,350 | $1,400 | **+182%** |
-| GHK-Cu 100mg | **$3,799** | — | $1,350 | — | $1,350 | $1,400 | **+177%** |
+| TB-500 10mg | **$4,299** | — | $1,350 | $1,300 | $1,350 | $1,400 | **+182%** |
+| GHK-Cu 100mg | **$4,299** | — | $1,350 | — | $1,350 | $1,400 | **+177%** |
 | CJC+Ipa 10mg | **$5,499** | — | $1,800 | — | $1,800 | — | **+205%** |
 | NAD+ 1000mg | **$5,499** | — | ~$2,200 | — | ~$2,400 | — | **+139%** |
-| Epithalon 50mg | **$6,799** | — | ~$2,500 | — | ~$2,800 | — | **+155%** |
+| Epithalon 50mg | **$4,599** | — | ~$2,500 | — | ~$2,800 | — | **+155%** |
 
 **Lectura:** PEPTIQ vende a **2.5x-3x** la competencia MX. Esto es EXTREMO premium. Comparable a Louis Vuitton vs Nike en relojes.
 

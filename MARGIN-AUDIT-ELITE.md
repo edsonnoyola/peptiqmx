@@ -10,16 +10,16 @@ B2B descuento sobre PVP: Tier 1 -10% · Tier 2 -20% · Tier 3 -25%
 | Producto | PVP Elite | COGS | Margen PVP | T1 (-10%) | Margen T1 | T2 (-20%) | Margen T2 | T3 (-25%) | Margen T3 | 🚩 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|:---:|
 | BPC-157 10mg | $2,999 | $150 | **95%** | $2,699 | 94% | $2,399 | 94% | $2,249 | 93% | ✅ |
-| TB-500 10mg | $3,799 | $280 | 93% | $3,419 | 92% | $3,039 | 91% | $2,849 | 90% | ✅ |
+| TB-500 10mg | $4,299 | $280 | 93% | $3,419 | 92% | $3,039 | 91% | $2,849 | 90% | ✅ |
 | Wolverine 20mg | $5,499 | $340 | 94% | $4,949 | 93% | $4,399 | 92% | $4,124 | 92% | ✅ |
-| GLOW 70mg (Trinity) | $7,499 | $400 | 95% | $6,749 | 94% | $5,999 | 93% | $5,624 | 93% | ✅ |
-| GHK-Cu 100mg | $3,799 | $100 | **97%** | $3,419 | 97% | $3,039 | 97% | $2,849 | 96% | ✅ |
-| KPV 10mg | $2,899 | $120 | 96% | $2,609 | 95% | $2,319 | 95% | $2,174 | 94% | ✅ |
-| Ipamorelin 10mg | $2,899 | $140 | 95% | $2,609 | 95% | $2,319 | 94% | $2,174 | 94% | ✅ |
-| Tesamorelin 10mg | $7,499 | $360 | 95% | $6,749 | 95% | $5,999 | 94% | $5,624 | 94% | ✅ |
+| GLOW 70mg (Trinity) | $7,999 | $400 | 95% | $6,749 | 94% | $5,999 | 93% | $5,624 | 93% | ✅ |
+| GHK-Cu 100mg | $3,299 | $100 | **97%** | $3,419 | 97% | $3,039 | 97% | $2,849 | 96% | ✅ |
+| KPV 10mg | $3,099 | $120 | 96% | $2,609 | 95% | $2,319 | 95% | $2,174 | 94% | ✅ |
+| Ipamorelin 10mg | $3,099 | $140 | 95% | $2,609 | 95% | $2,319 | 94% | $2,174 | 94% | ✅ |
+| Tesamorelin 10mg | $6,999 | $360 | 95% | $6,749 | 95% | $5,999 | 94% | $5,624 | 94% | ✅ |
 | NAD+ 1000mg | $5,499 | $252 | 95% | $4,949 | 95% | $4,399 | 94% | $4,124 | 94% | ✅ |
-| Epithalon 50mg | $6,799 | $280 | 96% | $6,119 | 95% | $5,439 | 95% | $5,099 | 95% | ✅ |
-| Semax 10mg | $2,899 | $140 | 95% | $2,609 | 95% | $2,319 | 94% | $2,174 | 94% | ✅ |
+| Epithalon 50mg | $4,599 | $280 | 96% | $6,119 | 95% | $5,439 | 95% | $5,099 | 95% | ✅ |
+| Semax 10mg | $2,999 | $140 | 95% | $2,609 | 95% | $2,319 | 94% | $2,174 | 94% | ✅ |
 | **Retatrutide 30mg** | $12,999 | $390 | **97%** | $11,699 | 97% | $10,399 | 96% | $9,749 | 96% | ✅ |
 | CJC+IPA 10mg | $5,499 | $200 | 96% | $4,949 | 96% | $4,399 | 95% | $4,124 | 95% | ✅ |
 | Agua Bact. 3ml | $590 | $30 | 95% | $531 | 94% | $472 | 94% | $443 | 93% | ✅ |
@@ -35,7 +35,7 @@ B2B descuento sobre PVP: Tier 1 -10% · Tier 2 -20% · Tier 3 -25%
 | 🐺 Wolverine (BB20+BA) | $370 | $5,499 | $370 | $5,129 | 93% | ✅ |
 | 🐺 Wolverine PRO | $490 | $6,999 | $490 | $6,509 | 93% | ✅ |
 | 💪 GH Boost (CJC+IPA+BA) | $230 | $5,499 | $230 | $5,269 | 96% | ✅ |
-| ✨ GLOW Essential | $430 | $7,499 | $430 | $7,069 | 94% | ✅ |
+| ✨ GLOW Essential | $430 | $7,999 | $430 | $7,069 | 94% | ✅ |
 | ✨ GLOW PRO | $560 | $9,999 | $560 | $9,439 | 94% | ✅ |
 | 🌿 Gut Reset (BPC+KPV+2BA) | $330 | $5,999 | $330 | $5,669 | 94% | ✅ |
 | 🧠 Neuro Focus (SX+ET+2BA) | $480 | $8,999 | $480 | $8,519 | 95% | ✅ |
@@ -107,7 +107,7 @@ Con ROAS 2x (conservador):
 | ¿Producto más barato (BPC-157 individual) aguanta opex + Stripe? | ✅ SÍ | Neto 75% |
 | ¿APEX y TITAN justifican opex extra (concierge VIP)? | ✅ SÍ | $22k+ neto |
 | ¿Retatrutide margen soporta riesgo legal COFEPRIS? | ✅ SÍ | $12,549 neto · suficiente para defensa legal si surge |
-| ¿GHK-Cu monoterapia ($3,799, COGS $100) es punto de entrada atractivo? | ⚠️ **Sí pero** | 97% margen es altísimo · considera AHK-Cu sub-$3k como loss-leader para acquisition |
+| ¿GHK-Cu monoterapia ($3,299, COGS $100) es punto de entrada atractivo? | ⚠️ **Sí pero** | 97% margen es altísimo · considera AHK-Cu sub-$3k como loss-leader para acquisition |
 | ¿Agua bact. ($590) aguanta standalone o es add-on? | ⚠️ **Solo add-on** | $590 con opex $200 = $390 neto · no vale hacer marketing dedicado |
 
 ---
@@ -126,7 +126,7 @@ Con ROAS 2x (conservador):
 
 ### Única optimización sugerida
 
-Crear "AHK-Cu Light" a $2,499 como **loss-leader acquisition** (punto de entrada <$2,500 para capturar shoppers price-sensitive · luego upsell a Trinity $7,499 o GLOW PRO $9,999). Margen ~$2,200 aún aceptable.
+Crear "AHK-Cu Light" a $2,499 como **loss-leader acquisition** (punto de entrada <$2,500 para capturar shoppers price-sensitive · luego upsell a Trinity $7,999 o GLOW PRO $9,999). Margen ~$2,200 aún aceptable.
 
 **Ganancia esperada:** +30-40% lead volume sin canibalizar ticket Elite.
 

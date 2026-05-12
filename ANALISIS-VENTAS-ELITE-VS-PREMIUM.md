@@ -33,7 +33,7 @@ Conversión típica DTC MX para productos $2,000+:
 |---|---:|---:|
 | BPC solo | 28% | $2,999 |
 | Wolverine Stack | 22% | $5,499 |
-| GLOW Essential | 18% | $7,499 |
+| GLOW Essential | 18% | $7,999 |
 | Highlander | 14% | $14,999 |
 | TITAN | 10% | $14,999 |
 | APEX | 5% | $24,999 |

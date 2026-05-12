@@ -372,7 +372,7 @@ Cómo:
 ✓ Specialist 1:1 protocolo + ciclo
 ✓ Cadena de frío · envío 24-72h MX
 
-📦 TRINITY 70mg liofilizado · $7,499 MXN · protocolo 8 semanas
+📦 TRINITY 70mg liofilizado · $7,999 MXN · protocolo 8 semanas
 📲 wa.me/5214445770445
 🔬 peptiqmx.com/verify
 

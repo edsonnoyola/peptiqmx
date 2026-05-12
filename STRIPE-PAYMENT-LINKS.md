@@ -42,14 +42,14 @@ SKU / ref:        PQ-WV-5499
 
 ```
 Product name:     PEPTIQ GLOW Essential — Anti-Aging Piel
-Price:            $7,499.00 MXN
+Price:            $7,999.00 MXN
 Description:      GLOW blend 70mg (BPC-157 + GHK-Cu + TB-500) + 
                   agua bacteriostática. Protocolo piel/anti-aging 
                   6 semanas. Research-use only. El uso de este 
                   producto es responsabilidad de quien lo use, 
                   solo para investigación.
 Image:            img/ig/lineup-05-glow.png
-SKU / ref:        PQ-GLW-7499
+SKU / ref:        PQ-GLW-7999
 ```
 
 ---

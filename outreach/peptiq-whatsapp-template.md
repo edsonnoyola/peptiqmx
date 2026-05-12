@@ -25,7 +25,7 @@ Soy del equipo PEPTIQ MX. Distribuimos péptidos research-grade con COA Janoshik
 Varias clínicas de {{2}} en {{3}} ya los integran en sus protocolos:
 
 • BPC-157 10mg — $2,999
-• GHK-Cu 100mg — $3,799
+• GHK-Cu 100mg — $3,299
 • Wolverine Stack (BPC+TB) — $5,499
 
 🎁 Código LANZA20 = -20% en primer pedido (válido 7 días).
@@ -108,7 +108,7 @@ Varias clínicas de Medicina Estética en CDMX ya los integran
 en sus protocolos:
 
 • BPC-157 10mg — $2,999
-• GHK-Cu 100mg — $3,799
+• GHK-Cu 100mg — $3,299
 • Wolverine Stack (BPC+TB) — $5,499
 
 🎁 Código LANZA20 = -20% en primer pedido (válido 7 días).

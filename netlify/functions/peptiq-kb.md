@@ -310,7 +310,7 @@ Knowledge base completo para el asistente AI. Cubre 22 péptidos con mecanismo, 
 - **Indicaciones**: protocolo estético post-procedimiento, regeneración facial, cicatrización quirúrgica
 - **Dosis**: 0.1-0.2 ml de blend reconstituido
 - **Ciclo**: 4-6 semanas
-- **PEPTIQ**: GLOW Blend 70mg ($7,499)
+- **PEPTIQ**: GLOW Blend 70mg ($7,999)
 
 ## GH Frag 176-191 (AOD-like)
 - Ver AOD-9604 (es prácticamente lo mismo)

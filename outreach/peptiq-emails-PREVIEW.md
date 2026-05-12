@@ -26,7 +26,7 @@ PEPTIQ MX distribuye los péptidos research-grade que están detrás de esta con
 
 🎯 Retatrutide 30mg · $12,999 MXN · -24% peso en 1 año (vs Ozempic -15%)
 🎯 BPC-157 10mg · $2,999 MXN · preservación muscular en ciclo GLP-1
-🎯 Tesamorelin 10mg · $7,499 MXN · lean mass + grasa visceral
+🎯 Tesamorelin 10mg · $6,999 MXN · lean mass + grasa visceral
 
 Todos con COA Janoshik por lote · research-grade verificado.
 
@@ -135,8 +135,8 @@ L'Oréal ya pivotó: Lancôme × Timeline ahora se vende como "mitochondrial ski
 
 PEPTIQ MX distribuye los péptidos research-grade que están detrás de esta conversión:
 
-🎯 GHK-Cu 100mg · $3,799 MXN · copper peptide premium
-🎯 TRINITY Blend 70mg · $7,499 MXN · cascada regenerativa  
+🎯 GHK-Cu 100mg · $3,299 MXN · copper peptide premium
+🎯 TRINITY Blend 70mg · $7,999 MXN · cascada regenerativa  
 🎯 NAD+ 1000mg · $5,499 MXN · mitocondrial longevity
 
 Todos con COA Janoshik por lote · único en México.
@@ -248,7 +248,7 @@ PEPTIQ MX distribuye los péptidos research-grade que están detrás de esta con
 
 🎯 Retatrutide 30mg · $12,999 MXN · -24% peso en 1 año (vs Ozempic -15%)
 🎯 BPC-157 10mg · $2,999 MXN · preservación muscular en ciclo GLP-1
-🎯 Tesamorelin 10mg · $7,499 MXN · lean mass + grasa visceral
+🎯 Tesamorelin 10mg · $6,999 MXN · lean mass + grasa visceral
 
 Todos con COA Janoshik por lote · research-grade verificado.
 
@@ -357,8 +357,8 @@ El spa médico está migrando de "tratamiento único" a "protocolo personalizado
 
 PEPTIQ MX distribuye los péptidos research-grade que están detrás de esta conversión:
 
-🎯 TRINITY Blend 70mg · $7,499 MXN · protocolo estético 8 semanas
-🎯 GHK-Cu 100mg · $3,799 MXN · post-tratamiento láser
+🎯 TRINITY Blend 70mg · $7,999 MXN · protocolo estético 8 semanas
+🎯 GHK-Cu 100mg · $4,299 MXN · post-tratamiento láser
 🎯 BPC-157 + TB-500 · $5,499 MXN · reparación tisular
 
 Ideal para elevar ticket promedio del spa · protocolos 12 semanas.
@@ -446,8 +446,8 @@ NAD+ supplements crecen +6% CAGR · ingrediente #4 más solicitado · Euromonito
 
 PEPTIQ MX distribuye los péptidos research-grade que están detrás de esta conversión:
 
-🎯 GHK-Cu 100mg · $3,799 MXN · copper peptide premium
-🎯 TRINITY Blend 70mg · $7,499 MXN · cascada regenerativa  
+🎯 GHK-Cu 100mg · $3,299 MXN · copper peptide premium
+🎯 TRINITY Blend 70mg · $7,999 MXN · cascada regenerativa  
 🎯 NAD+ 1000mg · $5,499 MXN · mitocondrial longevity
 
 Todos con COA Janoshik por lote · único en México.
@@ -557,8 +557,8 @@ Collagen peptides crecen 23.2% anual · copper peptides 16.9%. El pre-aging y el
 
 PEPTIQ MX distribuye los péptidos research-grade que están detrás de esta conversión:
 
-🎯 GHK-Cu 100mg · $3,799 MXN · copper peptide premium
-🎯 TRINITY Blend 70mg · $7,499 MXN · cascada regenerativa  
+🎯 GHK-Cu 100mg · $3,299 MXN · copper peptide premium
+🎯 TRINITY Blend 70mg · $7,999 MXN · cascada regenerativa  
 🎯 NAD+ 1000mg · $5,499 MXN · mitocondrial longevity
 
 Todos con COA Janoshik por lote · único en México.

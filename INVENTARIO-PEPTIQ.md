@@ -18,16 +18,16 @@ Proveedor: Zhi Peptide (Lucy). Precios proveedor en USD por kit (10 viales).
 | # | Código | Producto | Función | Stock | Nova (orig) | Lanzamiento | **Elite (vigente)** | Costo prov. | Margen Elite |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|
 | 1 | BP10 | BPC-157 10mg | Cicatrización, intestino, tendones | 10 | $1,299 | $1,699 | **$2,999** | $150 | 95% |
-| 2 | TB10 | TB-500 10mg | Recuperación muscular/tendón | 10 | $1,549 | $2,199 | **$3,799** | $280 | 93% |
+| 2 | TB10 | TB-500 10mg | Recuperación muscular/tendón | 10 | $1,549 | $2,199 | **$4,299** | $280 | 93% |
 | 3 | BB20 | Wolverine (BPC+TB) 20mg | Stack recuperación | 10 | $2,899 | $3,299 | **$5,499** | $340 | 94% |
-| 4 | GLOW70 | GLOW blend 70mg | Piel + anti-aging + cicatrización | 10 | $3,899 | $4,499 | **$7,499** | $400 | 95% |
-| 5 | CU100 (×2) | GHK-Cu 100mg | Colágeno, piel, cabello | 20 | $1,569 | $2,199 | **$3,799** | $100 | 97% |
-| 6 | KPV10 | KPV 10mg | Anti-inflamatorio, intestino | 10 | $1,299 | $1,699 | **$2,899** | $120 | 96% |
-| 7 | IP10 | Ipamorelin 10mg | GH suave, sueño, recuperación | 10 | $1,379 | $1,699 | **$2,899** | $140 | 95% |
-| 8 | TSM10 (×2) | Tesamorelin 10mg | Grasa visceral, GH, cognición | 20 | $4,499 | $4,499 | **$7,499** | $360 | 95% |
+| 4 | GLOW70 | GLOW blend 70mg | Piel + anti-aging + cicatrización | 10 | $3,899 | $4,499 | **$7,999** | $400 | 95% |
+| 5 | CU100 (×2) | GHK-Cu 100mg | Colágeno, piel, cabello | 20 | $1,569 | $2,199 | **$3,299** | $100 | 97% |
+| 6 | KPV10 | KPV 10mg | Anti-inflamatorio, intestino | 10 | $1,299 | $1,699 | **$3,099** | $120 | 96% |
+| 7 | IP10 | Ipamorelin 10mg | GH suave, sueño, recuperación | 10 | $1,379 | $1,699 | **$3,099** | $140 | 95% |
+| 8 | TSM10 (×2) | Tesamorelin 10mg | Grasa visceral, GH, cognición | 20 | $4,499 | $4,499 | **$6,999** | $360 | 95% |
 | 9 | NJ1000 | NAD+ 1000mg | Energía celular, longevidad | 10 | $2,299 | $3,299 | **$5,499** | $252 | 95% |
-| 10 | ET50 | Epithalon 50mg | Anti-aging, telómeros | 10 | $2,899 | $3,999 | **$6,799** | $280 | 96% |
-| 11 | SX10 | Semax 10mg (verificar) | Nootrópico, foco | 10 | $1,299 | $1,699 | **$2,899** | $140 | 95% |
+| 10 | ET50 | Epithalon 50mg | Anti-aging, telómeros | 10 | $2,999 | $3,999 | **$4,599** | $280 | 96% |
+| 11 | SX10 | Semax 10mg (verificar) | Nootrópico, foco | 10 | $1,299 | $1,699 | **$2,999** | $140 | 95% |
 | 12 | RT30 | Retatrutide 30mg ⚠️ off-menu | Pérdida de peso | 10 | $7,499 | $7,999 | **$12,999** | $390 | 97% |
 | + | CP10 | CJC-1295 + IPA 10mg | GH release + performance | — | $2,069 | $3,299 | **$5,499** | $200 | 96% |
 | + | BA3 | Agua Bacteriostática 3ml | Reconstitución | pendiente | $249 | $390 | **$590** | $30 | 95% |
@@ -39,7 +39,7 @@ Proveedor: Zhi Peptide (Lucy). Precios proveedor en USD por kit (10 viales).
 | 🐺 Wolverine | BB20 + BA3 | $6,089 | **$5,499** | $590 | $5,129 |
 | 🐺 Wolverine PRO | BP10+TB10+BA3×2 | $7,978 | **$6,999** | $979 | $6,509 |
 | 💪 GH Boost | CP10 + BA3 | $6,089 | **$5,499** | $590 | $5,269 |
-| ✨ GLOW Essential | GLOW70 + BA3 | $8,089 | **$7,499** | $590 | $7,069 |
+| ✨ GLOW Essential | GLOW70 + BA3 | $8,089 | **$7,999** | $590 | $7,069 |
 | ✨ GLOW PRO | GLOW70+CU100+BA3×2 | $12,478 | **$9,999** | $2,479 | $9,439 |
 | 🌿 Gut Reset | BP10+KPV10+BA3×2 | $7,078 | **$5,999** | $1,079 | $5,669 |
 | 🧠 Neuro Focus | SX10+ET50+BA3×2 | $10,878 | **$8,999** | $1,879 | $8,519 |

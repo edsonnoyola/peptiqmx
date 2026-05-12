@@ -111,7 +111,7 @@ Por qué PEPTIQ:
 ✓ Compatible con tu Mounjaro · Ozempic · TRT actual · sin interacción documentada
 
 TRINITY · 70mg · GLOW · IN STOCK
-$7,499 MXN · protocolo 8 semanas
+$7,999 MXN · protocolo 8 semanas
 6 MSI · SPEI · BTC -10% · Tarjeta
 
 Te mandamos el COA Janoshik del lote actual ANTES de pagar. Cero riesgo.
@@ -253,7 +253,7 @@ UCLA · JAMA Network Open 2023:
 53% de los péptidos online NO contienen el compuesto declarado. PEPTIQ es la excepción.
 
 TRINITY · 70mg · GLOW · IN STOCK
-$7,499 MXN · protocolo 8 semanas
+$7,999 MXN · protocolo 8 semanas
 6 MSI · SPEI · BTC -10% · Tarjeta
 
 Te mandamos el COA Janoshik del lote actual ANTES de pagar. Cero riesgo.

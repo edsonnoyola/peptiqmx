@@ -90,7 +90,7 @@ Precio óptimo = Tier C × 1.65 (65% premium promedio justificable)
 | 🐺 **Wolverine** | BPC + TB + BA | $4,298 | **$3,499** | -$799 (19%) | 92.4% |
 | 🐺 **Wolverine PRO** | BPC + TB + 2×BA | $4,888 | **$3,999** | -$889 (18%) | 90.9% |
 | 💪 **GH Boost** | CJC+IPA + BA | $3,589 | **$2,999** | -$590 (16%) | 92.3% |
-| ✨ **GLOW Essential** | TRINITY 70mg + BA | $7,499 + 590 | **$5,999** | -$2,090 (26%) | 92.8% |
+| ✨ **GLOW Essential** | TRINITY 70mg + BA | $7,999 + 590 | **$5,999** | -$2,090 (26%) | 92.8% |
 | ✨ **GLOW PRO** | TRINITY + GHK-Cu + 2×BA | $11,178 | **$8,999** | -$2,179 (19%) | 93.8% |
 | 🌿 **Gut Reset** | BPC + KPV + 2×BA | $5,078 | **$3,999** | -$1,079 (21%) | 91.7% |
 | 🧠 **Neuro Focus** | Semax + Epithalon + 2×BA | $7,678 | **$5,999** | -$1,679 (22%) | 92% |
@@ -114,7 +114,7 @@ Precio óptimo = Tier C × 1.65 (65% premium promedio justificable)
 |---|---:|---:|---:|
 | BPC-157 | $2,999 | **$1,999** | -33% |
 | Wolverine | $5,499 | **$3,499** | -36% |
-| GLOW Essential | $7,499 | **$5,999** | -20% |
+| GLOW Essential | $7,999 | **$5,999** | -20% |
 | Highlander | $14,999 | **$9,999** | -33% |
 | TITAN | $14,999 | **$9,999** | -33% |
 | APEX TOTAL | $24,999 | **$17,999** | -28% |
