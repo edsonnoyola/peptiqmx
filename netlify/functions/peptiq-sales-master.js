@@ -35,7 +35,7 @@ const STRIPE_LINK_TO_ITEMS = {
   'dRmaEY4AL2Jycmd6Bqds400': { name: 'Wolverine', items: [{ sku: 'BB20', qty: 1 }, { sku: 'BA3', qty: 1 }], amount: 5499 },
   'bJedRa4ALgAo5XP4tids401': { name: 'Wolverine PRO', items: [{ sku: 'BP10', qty: 1 }, { sku: 'TB10', qty: 1 }, { sku: 'BA3', qty: 2 }], amount: 6999 },
   'fZu3cwebl0Bqae52lads402': { name: 'GH Boost', items: [{ sku: 'CP10', qty: 1 }, { sku: 'BA3', qty: 1 }], amount: 5499 },
-  'dRmcN62sDfwk3PH2lads403': { name: 'GLOW Essential', items: [{ sku: 'GLOW70', qty: 1 }, { sku: 'BA3', qty: 1 }], amount: 7999 },
+  'cNifZi2sD2Jy1Hzf7Wds40m': { name: 'GLOW Essential', items: [{ sku: 'GLOW70', qty: 1 }, { sku: 'BA3', qty: 1 }], amount: 7999 },
   '3cI5kEgjt5VK5XPaRGds404': { name: 'GLOW PRO', items: [{ sku: 'GLOW70', qty: 1 }, { sku: 'CU100', qty: 1 }, { sku: 'BA3', qty: 2 }], amount: 9999 },
   '5kQ3cw4ALesg2LD3peds405': { name: 'Gut Reset', items: [{ sku: 'BP10', qty: 1 }, { sku: 'KPV10', qty: 1 }, { sku: 'BA3', qty: 2 }], amount: 5999 },
   '00w9AUd7h0Bq2LDf7Wds406': { name: 'Neuro Focus', items: [{ sku: 'SX10', qty: 1 }, { sku: 'ET50', qty: 1 }, { sku: 'BA3', qty: 2 }], amount: 8999 },
