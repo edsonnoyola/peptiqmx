@@ -21,7 +21,7 @@ const STRIPE_LINK_TO_PRODUCT = {
   'dRmaEY4AL2Jycmd6Bqds400': { name: 'Wolverine', items: [{ peptide: 'Wolverine Blend', vials: 1 }, { peptide: 'BAC Water', vials: 1 }], amount: 5499 },
   'bJedRa4ALgAo5XP4tids401': { name: 'Wolverine PRO', items: [{ peptide: 'BPC-157', vials: 1 }, { peptide: 'TB-500', vials: 1 }, { peptide: 'BAC Water', vials: 2 }], amount: 6999 },
   'fZu3cwebl0Bqae52lads402': { name: 'GH Boost', items: [{ peptide: 'CJC+Ipa', vials: 1 }, { peptide: 'BAC Water', vials: 1 }], amount: 5499 },
-  'dRmcN62sDfwk3PH2lads403': { name: 'GLOW Essential', items: [{ peptide: 'Trinity', vials: 1 }, { peptide: 'BAC Water', vials: 1 }], amount: 7499 },
+  'dRmcN62sDfwk3PH2lads403': { name: 'GLOW Essential', items: [{ peptide: 'Trinity', vials: 1 }, { peptide: 'BAC Water', vials: 1 }], amount: 7999 },
   '3cI5kEgjt5VK5XPaRGds404': { name: 'GLOW PRO', items: [{ peptide: 'Trinity', vials: 1 }, { peptide: 'GHK-Cu', vials: 1 }, { peptide: 'BAC Water', vials: 2 }], amount: 9999 },
   '5kQ3cw4ALesg2LD3peds405': { name: 'Gut Reset', items: [{ peptide: 'BPC-157', vials: 1 }, { peptide: 'KPV', vials: 1 }, { peptide: 'BAC Water', vials: 2 }], amount: 5999 },
   '00w9AUd7h0Bq2LDf7Wds406': { name: 'Neuro Focus', items: [{ peptide: 'Semax', vials: 1 }, { peptide: 'Epithalon', vials: 1 }, { peptide: 'BAC Water', vials: 2 }], amount: 8999 },
