@@ -2,6 +2,22 @@
   directory = "netlify/functions"
   included_files = ["netlify/functions/peptiq-kb.md"]
 
+# Legal consolidation redirects (2026-05-13)
+[[redirects]]
+  from = "/legal.html"
+  to = "/terminos.html"
+  status = 301
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/terminos.html"
+  status = 301
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacidad.html"
+  status = 301
+
 [[redirects]]
   from = "/verify/*"
   to = "/verify/index.html"
