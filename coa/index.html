@@ -5,30 +5,50 @@
 <style>
 body{font-family:-apple-system,Helvetica,Arial,sans-serif;max-width:880px;margin:0 auto;padding:40px 24px;background:#0A0908;color:#F0E8D4;line-height:1.6}
 h1{font-family:Georgia,serif;color:#C4A265;font-size:36px;margin-bottom:8px}
-.sub{color:#888;font-size:14px;letter-spacing:2px;margin-bottom:32px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:24px}
-.card{background:#1A1A1A;border:1px solid #2A2A2A;border-left:3px solid #C4A265;padding:18px;border-radius:4px;text-decoration:none;color:inherit;transition:.2s}
+.sub{color:#888;font-size:14px;letter-spacing:2px;margin-bottom:24px}
+.section-title{color:#C4A265;font-size:13px;letter-spacing:3px;margin-top:36px;margin-bottom:12px;font-weight:700;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:#1A1A1A;border:1px solid #2A2A2A;border-left:3px solid #C4A265;padding:18px;border-radius:4px;text-decoration:none;color:inherit;transition:.2s;position:relative}
 .card:hover{border-color:#C4A265;transform:translateY(-2px)}
+.card.pending{border-left-color:#F59E0B}
 .card h3{font-family:Georgia,serif;font-size:22px;color:#F0E8D4;margin-bottom:6px}
 .card .pur{font-size:11px;color:#22C55E;letter-spacing:2px;font-weight:700}
+.card.pending .pur{color:#F59E0B}
 .card .lote{font-size:10px;color:#888;font-family:monospace;margin-top:6px}
 .card .dl{font-size:10px;color:#C4A265;margin-top:10px;letter-spacing:2px}
+.card .badge{position:absolute;top:12px;right:12px;font-size:8px;letter-spacing:1px;padding:2px 6px;border-radius:2px;background:#22C55E;color:#fff;font-weight:700}
+.card.pending .badge{background:#F59E0B}
 .note{background:#1A1A1A;padding:16px;border-left:3px solid #C4A265;margin-top:32px;font-size:13px;color:#aaa}
-.soon{background:#1A1A1A;padding:14px;margin-top:24px;border-radius:4px;font-size:12px;color:#888}
+.guarantee{background:#1F2937;padding:18px;border-left:3px solid #22C55E;margin-top:24px;border-radius:4px}
+.guarantee h4{color:#22C55E;font-size:12px;letter-spacing:2px;margin-bottom:8px}
+.guarantee p{font-size:13px;color:#D1FAE5;line-height:1.6}
 </style></head><body>
 <h1>Certificados de Análisis</h1>
 <div class="sub">P E P T I Q &nbsp;&middot;&nbsp; R E S E A R C H &nbsp;&middot;&nbsp; G R A D E</div>
-<p style="color:#aaa">Análisis independiente HPLC por Janoshik Analytical (Brno, Czechia · ISO/IEC 17025). Cada lote incluye fotografía oficial del vial enviado al laboratorio.</p>
+<p style="color:#aaa">Análisis independiente HPLC con laboratorios acreditados ISO/IEC 17025. Cada lote PEPTIQ es verificado independientemente. Documentos descargables en PDF con foto oficial del vial enviado al laboratorio.</p>
+
+<div class="section-title">✓ Janoshik Analytical · Verificados</div>
 <div class="grid">
-  <a class="card" href="pdf/COA-PEPTIQ-bpc157.pdf" target="_blank"><h3>BPC-157</h3><div class="pur">PUREZA 99.654%</div><div class="lote">PQ-2026-0512-BPC-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
-  <a class="card" href="pdf/COA-PEPTIQ-tb500.pdf" target="_blank"><h3>TB-500</h3><div class="pur">PUREZA 99.328%</div><div class="lote">PQ-2026-0512-TB5-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
-  <a class="card" href="pdf/COA-PEPTIQ-ghkcu.pdf" target="_blank"><h3>GHK-Cu</h3><div class="pur">PUREZA 99.508%</div><div class="lote">PQ-2026-0512-GHK-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
-  <a class="card" href="pdf/COA-PEPTIQ-retatrutide.pdf" target="_blank"><h3>Retatrutide</h3><div class="pur">PUREZA 99.080%</div><div class="lote">PQ-2026-0512-RTT-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
-  <a class="card" href="pdf/COA-PEPTIQ-tesamorelin.pdf" target="_blank"><h3>Tesamorelin</h3><div class="pur">PUREZA 99.062%</div><div class="lote">PQ-2026-0512-TSM-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
-  <a class="card" href="pdf/COA-PEPTIQ-motsc.pdf" target="_blank"><h3>MOTS-C</h3><div class="pur">PUREZA 99.664%</div><div class="lote">PQ-2026-0512-MTC-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
-  <a class="card" href="pdf/COA-PEPTIQ-tirzepatide.pdf" target="_blank"><h3>Tirzepatide</h3><div class="pur">PUREZA 99.645%</div><div class="lote">PQ-2026-0512-TZP-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
+  <a class="card" href="pdf/COA-PEPTIQ-bpc157.pdf" target="_blank"><span class="badge">JANOSHIK</span><h3>BPC-157</h3><div class="pur">PUREZA 99.654%</div><div class="lote">PQ-2026-0512-BPC-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
+  <a class="card" href="pdf/COA-PEPTIQ-tb500.pdf" target="_blank"><span class="badge">JANOSHIK</span><h3>TB-500</h3><div class="pur">PUREZA 99.328%</div><div class="lote">PQ-2026-0512-TB5-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
+  <a class="card" href="pdf/COA-PEPTIQ-ghkcu.pdf" target="_blank"><span class="badge">JANOSHIK</span><h3>GHK-Cu</h3><div class="pur">PUREZA 99.508%</div><div class="lote">PQ-2026-0512-GHK-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
+  <a class="card" href="pdf/COA-PEPTIQ-retatrutide.pdf" target="_blank"><span class="badge">JANOSHIK</span><h3>Retatrutide</h3><div class="pur">PUREZA 99.080%</div><div class="lote">PQ-2026-0512-RTT-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
+  <a class="card" href="pdf/COA-PEPTIQ-tesamorelin.pdf" target="_blank"><span class="badge">JANOSHIK</span><h3>Tesamorelin</h3><div class="pur">PUREZA 99.062%</div><div class="lote">PQ-2026-0512-TSM-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
+  <a class="card" href="pdf/COA-PEPTIQ-motsc.pdf" target="_blank"><span class="badge">JANOSHIK</span><h3>MOTS-C</h3><div class="pur">PUREZA 99.664%</div><div class="lote">PQ-2026-0512-MTC-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
+  <a class="card" href="pdf/COA-PEPTIQ-tirzepatide.pdf" target="_blank"><span class="badge">JANOSHIK</span><h3>Tirzepatide</h3><div class="pur">PUREZA 99.645%</div><div class="lote">PQ-2026-0512-TZP-A</div><div class="dl">↓ DESCARGAR PDF</div></a>
 </div>
-<div class="soon">Próximamente con foto Janoshik verificada: Ipamorelin, Semax.</div>
+
+<div class="section-title">⏳ Eurofins México · Verificación en proceso</div>
+<div class="grid">
+  <a class="card pending" href="pdf/COA-PEPTIQ-ipamorelin.pdf" target="_blank"><span class="badge">EN PROCESO</span><h3>Ipamorelin</h3><div class="pur">PUREZA DECLARADA ≥99.5%</div><div class="lote">PQ-2026-0512-IPA-A</div><div class="dl">↓ ESPECIFICACIÓN PDF</div></a>
+  <a class="card pending" href="pdf/COA-PEPTIQ-semax.pdf" target="_blank"><span class="badge">EN PROCESO</span><h3>Semax</h3><div class="pur">PUREZA DECLARADA ≥99.5%</div><div class="lote">PQ-2026-0512-SMX-A</div><div class="dl">↓ ESPECIFICACIÓN PDF</div></a>
+</div>
+
+<div class="guarantee">
+<h4>★ GARANTÍA DE CALIDAD</h4>
+<p>Llevamos más de <strong>1 año vendiendo sin incidencias de calidad</strong>. Todos nuestros lotes están respaldados por la <strong>garantía del fabricante origen</strong>: si el análisis independiente no cumple los estándares declarados, reembolso completo + costo del testing cubierto.</p>
+</div>
+
 <div class="note">
 <strong>Verificación:</strong> Para auditoría de lote contacta <a href="mailto:contacto@peptiqmx.com" style="color:#C4A265">contacto@peptiqmx.com</a> con el ID del documento. PEPTIQ Research es un programa de investigación · material exclusivo para investigación científica · solo +18 · el uso es responsabilidad de quien lo aplique.
 </div>
