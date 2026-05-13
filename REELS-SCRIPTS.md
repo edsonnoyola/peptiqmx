@@ -68,7 +68,7 @@ Cada reel ~60 seg · 5 escenas · estructura consistente:
 > "Tu piel perdió 30% de grosor post-menopausia. El colágeno tipo I/III cae. Estradiol cayó 80%. Bótox cada 4 meses no resuelve causa."
 
 **Pivot (15-25s)** — Slide "4,192 genes"
-> "GHK-Cu es un tripéptido cobre que TU plasma produce naturalmente. Pickart 2018 demostró que regula 4,192 genes de reparación dérmica."
+> "GHK-Cu es un tripéptido cobre que TU plasma produce naturalmente. Pickart & Margolina (Cosmetics 2008–2015) demostró que regula 4,192 genes de reparación dérmica."
 
 **Solution (25-45s)** — Lancôme bottle + Kérastase + GHK-Cu vial editorial
 > "Lancôme Génifique usa derivados peptidil-cobre desde 2009. Kérastase Genesis. Hailey Bieber lo discute en Vogue. Lo que ofrecemos es la molécula pura, no la versión cosmética diluida."
@@ -206,7 +206,7 @@ Cada reel ~60 seg · 5 escenas · estructura consistente:
 > "Finasterida bloquea DHT pero documenta Post-Finasteride Syndrome. Disfunción sexual persistente. Depresión. Minoxidil dilata vasos pero genera caída rebote."
 
 **Pivot (15-25s)** — Wnt/β-catenin pathway animation
-> "GHK-Cu reactiva señalización Wnt/β-catenin en papila dérmica — sin tocar DHT, sin tocar libido. 4,192 genes (Pickart 2018)."
+> "GHK-Cu reactiva señalización Wnt/β-catenin en papila dérmica — sin tocar DHT, sin tocar libido. 4,192 genes (Pickart & Margolina (Cosmetics 2008–2015))."
 
 **Solution (25-45s)** — Lancôme + Kérastase + AHK-Cu
 > "Lancôme Génifique 2009+. Kérastase Genesis. Patentes peptidil-cobre desde 2008. AHK-Cu específico folicular, 30-40% más potente (Pyo 2007)."

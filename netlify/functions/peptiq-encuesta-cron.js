@@ -12,7 +12,7 @@
 
 const { getStore } = require('@netlify/blobs');
 
-const SARA_BACKEND = 'https://sara-backend.edson-633.workers.dev';
+const SARA_BACKEND = 'https://api.peptiqmx.com';
 const SURVEY_TEMPLATE = 'peptiq_encuesta_calidad_v1';
 const MIN_HOURS_AFTER_DELIVERY = 24;
 

@@ -23,7 +23,7 @@
 > Editorial portrait of a 50-year-old Mexican woman with long dark wavy hair, wearing a cream cashmere turtleneck, sitting in a sunlit home library reading a book, white peonies in vase blurred foreground, warm natural lighting through window, contemplative expression, professional photography, magazine editorial style, shallow depth of field, soft golden hour light
 
 **Headline:** La marca en la que confían los profesionales del bienestar.
-**Body:** Compuestos research-grade · Janoshik Analytical (Eslovaquia · UE) · COA público por lote.
+**Body:** Compuestos research-grade · Janoshik Analytical · Brno, República Checa · COA público por lote.
 **CTA:** Solicitar catálogo técnico →
 
 ---

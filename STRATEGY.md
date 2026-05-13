@@ -26,7 +26,7 @@
 | `peptiqmx.com/b2b-clinicas` | ✅ Live | Landing B2B partner program |
 | `peptiqmx.com/guia-peptiq.pdf` | ✅ Live (3.8MB · 18 págs) | Catálogo maroon/gold |
 | `peptiqmx.com/tabla-margenes-b2b.pdf` | ✅ Live (273KB · 1 pág) | Pricing distribuidor |
-| `sara-backend.edson-633.workers.dev/api/...` | ✅ Live | SARA Cloudflare Worker |
+| `api.peptiqmx.com/api/...` | ✅ Live | SARA Cloudflare Worker |
 
 ### 📋 Documentos / Launch pack (`launch-pack/`)
 | Archivo | Para |

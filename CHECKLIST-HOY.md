@@ -95,7 +95,7 @@
 - [ ] **Post 4: Qué es un COA Janoshik**
   - Infografía simple
   - "¿Qué significa COA Janoshik?"
-  - "= Certificado de análisis de Janoshik Analytical (Praga)"
+  - "= Certificado de análisis de Janoshik Analytical · Brno, República Checa"
   - "Verifica pureza real con HPLC"
   - "Código único verificable en janoshik.com"
   - Descargar como PNG

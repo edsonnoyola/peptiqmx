@@ -24,7 +24,7 @@ Cumplimos las políticas de Meta para wellness y research:
 2. Cero promesas de outcome físico (peso, edad, apariencia)
 3. Disclaimer obligatorio "Research Use Only — material para investigación
    de laboratorio" visible en todos los anuncios
-4. Verificación independiente vía Janoshik Analytical (Praga, República
+4. Verificación independiente vía Janoshik Analytical (Brno, República
    Checa · acreditado ISO/IEC 17025:2017) · Certificate of Analysis
    público y verificable por lote en peptiqmx.com/verify
 5. Targeting solo a audiencia adulta 25+ con interés explícito en
@@ -44,7 +44,7 @@ Solicito revisión humana específica considerando:
 
 Gracias por su tiempo.
 
-Edson Noyola
+Equipo PEPTIQ Research
 Founder · PEPTIQ MX
 peptiqmx.com
 ```

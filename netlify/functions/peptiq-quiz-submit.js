@@ -9,7 +9,7 @@
 
 const { getStore } = require('@netlify/blobs');
 
-const SARA_BACKEND = process.env.SARA_BACKEND_URL || 'https://sara-backend.edson-633.workers.dev';
+const SARA_BACKEND = process.env.SARA_BACKEND_URL || 'https://api.peptiqmx.com';
 const SARA_API_KEY = process.env.SARA_API_KEY || process.env.PEPTIQ_API_KEY || '';
 const RESEND_KEY = process.env.RESEND_API_KEY || '';
 const META_TOKEN = process.env.PEPTIQ_WA_TOKEN || process.env.META_ACCESS_TOKEN || '';

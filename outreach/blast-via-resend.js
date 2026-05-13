@@ -15,7 +15,8 @@ const path = require('path');
 
 const RESEND_API = 'https://api.resend.com';
 const SUPABASE_URL = 'https://hwyrxlnycrlgohrecbpx.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh3eXJ4bG55Y3JsZ29ocmVjYnB4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MjcwMjkzOSwiZXhwIjoyMDc4Mjc4OTM5fQ.FxKRjNfC8cJCDDaIDhlVvI6llxK-UVe-WHetiAGKFm4';
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
+if (!SUPABASE_KEY) { console.error('Missing SUPABASE_SERVICE_KEY env var'); process.exit(1); }
 const PEPTIQ_TENANT = '00000000-0000-0000-0000-000000000002';
 const FROM = 'PEPTIQ MX <hola@peptiqmx.com>';
 const REPLY_TO = 'hola@peptiqmx.com';

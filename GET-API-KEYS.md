@@ -143,7 +143,7 @@ Clip MX ofrece Link de Pago estilo Stripe/MP pero con soporte a terminales físi
 Para cada procesador integrado, yo seteo automáticamente:
 
 ```
-✅ Endpoint webhook en el backend (sara-backend.edson-633.workers.dev)
+✅ Endpoint webhook en el backend (api.peptiqmx.com)
 ✅ Evento "payment.succeeded" → guarda pedido en Supabase + manda WA
 ✅ Evento "payment.failed" → notifica al concierge
 ✅ Evento "refund.created" → actualiza estado pedido

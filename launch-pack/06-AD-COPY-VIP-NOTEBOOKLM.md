@@ -25,7 +25,7 @@ Headline 2: -28.7% peso · 68 semanas · Fase 3 Eli Lilly
 Headline 3: -80% reducción hígado graso · COA Janoshik público
 Headline 4: PEPTIQ MX · ISO/IEC 17025
 Description 1: Triple agonista GLP-1/GIP/Glucagón. La generación nueva de incretinas con activación AMPK directa.
-Description 2: Pureza ≥99% verificada por Janoshik (Praga, UE). COA público por lote en peptiqmx.com/verify
+Description 2: Pureza ≥99% verificada por Janoshik (Brno, República Checa). COA público por lote en peptiqmx.com/verify
 ```
 
 ---
@@ -49,7 +49,7 @@ Headline 2: Restaura sirtuinas + telómeros + mitocondria
 Headline 3: COA Janoshik público por lote · Pureza ≥99%
 Headline 4: PEPTIQ MX · Investigación · México
 Description 1: NAD+ cae 50% en músculo entre 20-60 años (Verdin Science 2015). Restaura sirtuinas SIRT1-7, repara ADN mitocondrial.
-Description 2: Stack completo: NAD+ + Epithalon (telomerasa, Khavinson) + GHK-Cu (4192 genes Pickart 2018).
+Description 2: Stack completo: NAD+ + Epithalon (telomerasa, Khavinson) + GHK-Cu (4192 genes Pickart & Margolina (Cosmetics 2008–2015)).
 ```
 
 ---
@@ -90,7 +90,7 @@ Description 2: CJC-1295 sin DAC (acelerador GHRH) + Ipamorelin (amplificador GHS
 ### Google Ads
 
 ```
-Headline 1: GHK-Cu research-grade · 4192 genes (Pickart 2018)
+Headline 1: GHK-Cu research-grade · 4192 genes (Pickart & Margolina (Cosmetics 2008–2015))
 Headline 2: Master regulator dérmico · Colágeno I/III · Elastina
 Headline 3: -70% profundidad arrugas en 12 sem (estudios)
 Headline 4: COA Janoshik público · ISO/IEC 17025

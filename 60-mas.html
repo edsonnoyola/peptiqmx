@@ -348,15 +348,10 @@ async function submitLead(){
   const btn=document.querySelector('#leadForm button');
   btn.textContent='Enviando...';btn.disabled=true;
   try{
-    await fetch('https://hwyrxlnycrlgohrecbpx.supabase.co/rest/v1/leads',{
+    await fetch('https://api.peptiqmx.com/api/leads/capture',{
       method:'POST',
-      headers:{
-        'apikey':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh3eXJ4bG55Y3JsZ29ocmVjYnB4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3MDI5MzksImV4cCI6MjA3ODI3ODkzOX0.kUYqK_jFvVA0g5p43hzRozr8d4bPcGxFGGl3t4QF1RY',
-        'Content-Type':'application/json',
-        'Prefer':'return=representation'
-      },
+      headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
-        tenant_id:'00000000-0000-0000-0000-000000000002',
         phone:'web:'+data.email.substring(0,24),
         name:data.name,
         email:data.email,

@@ -19,11 +19,9 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '187738085479345');
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=187738085479345&ev=PageView&noscript=1"/></noscript>
 
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -313,7 +311,7 @@
         <div class="stat-metrics">
           <div><div class="stat-metric-lbl">Pureza mínima</div><div class="stat-metric-val">99.0%</div></div>
           <div><div class="stat-metric-lbl">Lotes liberados</div><div class="stat-metric-val">42 · 2026</div></div>
-          <div><div class="stat-metric-lbl">Laboratorio</div><div class="stat-metric-val">Janoshik SK</div></div>
+          <div><div class="stat-metric-lbl">Laboratorio</div><div class="stat-metric-val">Janoshik (Brno, CZ)</div></div>
           <div><div class="stat-metric-lbl">Método</div><div class="stat-metric-val">HPLC + MS</div></div>
         </div>
       </div>
@@ -420,7 +418,7 @@
       <div class="coa-body">
         <div class="eyebrow">COA Janoshik · Lote público</div>
         <h2>La prueba<br>que nadie<br><em>te enseña.</em></h2>
-        <p>Cada lote PEPTIQ se envía al laboratorio Janoshik en Eslovaquia para análisis HPLC + espectrometría de masas. Publicamos el COA completo antes de liberar el lote al mercado.</p>
+        <p>Cada lote PEPTIQ se envía al laboratorio Janoshik · Brno, República Checa para análisis HPLC + espectrometría de masas. Publicamos el COA completo antes de liberar el lote al mercado.</p>
         <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20ver%20los%20COA" target="_blank" rel="noopener" class="btn-ink" style="background:#FFFFFF;color:#111111;border:1px solid #111111">Solicitar COA →</a>
       </div>
       <div class="coa-panel">
@@ -431,7 +429,7 @@
         <div class="coa-row"><div class="k">Mass (ESI)</div><div class="v">1419.53 Da</div></div>
         <div class="coa-row"><div class="k">Endotoxin</div><div class="v">&lt;0.5 EU/mg</div></div>
         <div class="coa-row"><div class="k">Released</div><div class="v">2026-04-12</div></div>
-        <div class="coa-row"><div class="k">Lab</div><div class="v">Janoshik Analytical, SK</div></div>
+        <div class="coa-row"><div class="k">Lab</div><div class="v">Janoshik Analytical · Brno, República Checa</div></div>
       </div>
     </div>
   </div>
@@ -544,7 +542,7 @@
       <div class="foot-col">
         <h4>Contacto</h4>
         <a href="https://wa.me/5214445770445" target="_blank">+52 1 444 577 0445</a>
-        <a href="mailto:hola@peptiqmx.com">hola@peptiqmx.com</a>
+        <a href="mailto:contacto@peptiqmx.com">contacto@peptiqmx.com</a>
         <a href="https://instagram.com/peptiqmx" target="_blank">@peptiqmx</a>
       </div>
     </div>
@@ -638,7 +636,7 @@
     srcEl.style.display = info.sources ? '' : 'none';
   }
 
-  const API_BASE = 'https://sara-backend.edson-633.workers.dev';
+  const API_BASE = 'https://api.peptiqmx.com';
   async function buyNow(productId){
     try{
       const res = await fetch(`${API_BASE}/api/peptiq/web-checkout`,{
@@ -679,7 +677,7 @@
       btn.disabled = true; btn.textContent = 'Enviando…';
       const fd = new FormData(form);
       fetch('/', { method:'POST', body:new URLSearchParams(fd).toString(), headers:{'Content-Type':'application/x-www-form-urlencoded'} }).catch(()=>{});
-      fetch('https://sara-backend.edson-633.workers.dev/webhook/peptiq-email-capture', {
+      fetch('https://api.peptiqmx.com/webhook/peptiq-email-capture', {
         method:'POST', headers:{'Content-Type':'application/json'},
         body: JSON.stringify({ email: email, source:'peptiqmx_popup' })
       }).then(r=>r.json()).then(res=>{

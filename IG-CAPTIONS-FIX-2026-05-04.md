@@ -363,7 +363,7 @@ TRINITY · BPC-157 + GHK-Cu + TB-500 stack ·
 ↳ TB-500 · migración células reparadoras a piel
 ↳ Sinergia: tu piel recuerda cómo regenerarse
 
-📊 Pickart Int J Mol Sci 2018 · Chang 2011 · Goldstein 2012
+📊 Hong, Pickart, Margolina 2015 (Cosmetics) · Chang 2011 · Goldstein 2012
 🔬 Mary Claire Haver lo cita post-Ozempic en "The New Menopause"
 
 Cómo:

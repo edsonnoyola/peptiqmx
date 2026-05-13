@@ -93,12 +93,10 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '187738085479345');
     fbq('track', 'PageView');
     fbq('track', 'ViewContent', { content_name: 'B2B Clinicas Landing', content_category: 'B2B' });
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=187738085479345&ev=PageView&noscript=1"/></noscript>
 
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -766,7 +764,7 @@
       <div class="foot-col">
         <h4>Contacto</h4>
         <a href="https://wa.me/5214445770445" target="_blank" rel="noopener">+52 1 444 577 0445</a>
-        <a href="mailto:hola@peptiqmx.com">hola@peptiqmx.com</a>
+        <a href="mailto:contacto@peptiqmx.com">contacto@peptiqmx.com</a>
         <a href="https://instagram.com/peptiqmx" target="_blank" rel="noopener">@peptiqmx</a>
       </div>
     </div>
@@ -855,7 +853,7 @@
       msg.className = 'form-msg';
       msg.textContent = 'Enviando aplicación…';
 
-      fetch('https://sara-backend.edson-633.workers.dev/webhook/peptiq-email-capture', {
+      fetch('https://api.peptiqmx.com/webhook/peptiq-email-capture', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(data)

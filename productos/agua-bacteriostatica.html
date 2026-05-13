@@ -61,11 +61,9 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '187738085479345');
     fbq('track', 'PageView');
     fbq('track', 'ViewContent', { content_ids:['agua'], content_name:'Agua Bacteriostática 3ml', content_type:'product', value:599, currency:'MXN' });
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=187738085479345&ev=PageView&noscript=1"/></noscript>
 
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -449,7 +447,7 @@
       <div class="foot-col">
         <h4>Contacto</h4>
         <a href="https://wa.me/5214445770445" target="_blank">+52 1 444 577 0445</a>
-        <a href="mailto:hola@peptiqmx.com">hola@peptiqmx.com</a>
+        <a href="mailto:contacto@peptiqmx.com">contacto@peptiqmx.com</a>
         <a href="https://instagram.com/peptiqmx" target="_blank">@peptiqmx</a>
       </div>
     </div>
@@ -473,7 +471,7 @@
 </a>
 
 <script>
-  const API_BASE = 'https://sara-backend.edson-633.workers.dev';
+  const API_BASE = 'https://api.peptiqmx.com';
   async function buyNow(productId){
     const name = 'Agua Bacteriostática 3ml';
     const price = 599;
@@ -481,7 +479,7 @@
     const utm = (window.__peptiqUTM && window.__peptiqUTM.utm_source) ? ' · fuente: ' + window.__peptiqUTM.utm_source : '';
     // Try Stripe checkout first
     try {
-      const res = await fetch('https://sara-backend.edson-633.workers.dev/api/peptiq/web-checkout', {
+      const res = await fetch('https://api.peptiqmx.com/api/peptiq/web-checkout', {
         method: 'POST', headers: {'Content-Type':'application/json'},
         body: JSON.stringify({ product_id: productId, source: 'peptiqmx_web', utm: window.__peptiqUTM || {} })
       });

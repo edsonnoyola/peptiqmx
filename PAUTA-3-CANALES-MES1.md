@@ -176,7 +176,7 @@
 **Headlines:**
 1. Bajaste con Ozempic · Tu Piel No
 2. TRINITY · GHK-Cu · Colágeno Endógeno
-3. 4,192 Genes de Reparación · Pickart 2018
+3. 4,192 Genes de Reparación · Pickart & Margolina (Cosmetics 2008–2015)
 4. Compatible con tu Mounjaro Actual
 5. PEPTIQ TRINITY · $7,999 MXN
 

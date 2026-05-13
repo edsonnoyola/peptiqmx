@@ -68,7 +68,7 @@ Link en bio · evaluación 2 min.
 **Caption (250-400 chars):**
 Cada vial tiene historia.
 
-Lote, fecha, pureza, laboratorio. Todo público. Todo verificable. Janoshik Praga (ISO/IEC 17025) audita cada lote antes de salir. Tú escaneas, tú lees, tú decides.
+Lote, fecha, pureza, laboratorio. Todo público. Todo verificable. Janoshik · Brno (CZ) (ISO/IEC 17025) audita cada lote antes de salir. Tú escaneas, tú lees, tú decides.
 
 La transparencia no es marketing. Es protocolo.
 
@@ -257,7 +257,7 @@ Lee antes de creer.
 
 En wellness premium, la única prueba real es el papel: certificado de análisis, lote, laboratorio independiente. Lo que no se puede verificar, no se debería consumir.
 
-Cada lote PEPTIQ tiene COA público. Janoshik Praga, ISO/IEC 17025.
+Cada lote PEPTIQ tiene COA público. Janoshik · Brno (CZ), ISO/IEC 17025.
 
 Verifica en peptiqmx.com/verify
 
@@ -444,7 +444,7 @@ Link en bio · evaluación 2 min.
 **Caption (250-400 chars):**
 Lote, fecha, pureza. Públicos.
 
-Lo que no está en la etiqueta debería estar en el COA. Lo que no está en el COA, no debería estar en tu casa. Janoshik Praga audita cada lote bajo ISO/IEC 17025 — el mismo estándar que laboratorios farmacéuticos serios.
+Lo que no está en la etiqueta debería estar en el COA. Lo que no está en el COA, no debería estar en tu casa. Janoshik · Brno (CZ) audita cada lote bajo ISO/IEC 17025 — el mismo estándar que laboratorios farmacéuticos serios.
 
 Verifica antes de confiar.
 

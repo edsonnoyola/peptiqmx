@@ -1,7 +1,7 @@
 # PRESS RELEASE — PEPTIQ MX
 
 **FECHA:** Embargo hasta 2026-05-05 06:00 CT
-**CONTACTO:** Equipo PEPTIQ MX · hola@peptiqmx.com · +52 444 577 0445
+**CONTACTO:** Equipo PEPTIQ MX · contacto@peptiqmx.com · +52 444 577 0445
 
 ---
 
@@ -23,7 +23,7 @@ El mercado mexicano de péptidos research-grade ha estado dominado por vendedore
 PEPTIQ MX es el único proveedor en México que ofrece simultáneamente:
 
 1. **30 SKUs en 7 líneas** organizadas por objetivo (Wolverine, Highlander, Shred, Glow, Prime, Shield, Apex)
-2. **COA Janoshik Analytical (Eslovaquia) público por lote** — accesible 24/7 vía número de serie
+2. **COA Janoshik Analytical · Brno, República Checa público por lote** — accesible 24/7 vía número de serie
 3. **Pureza HPLC ≥99% verificable** antes de abrir el vial
 4. **Etiqueta branded de fábrica** con trademark por línea y número de serie
 5. **Programa B2B con tres tiers** (15-35% descuento mayoreo) para clínicas estéticas, medicina deportiva, longevity y nutriología clínica

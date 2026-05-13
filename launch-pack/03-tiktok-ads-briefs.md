@@ -93,7 +93,7 @@ Investigación research-grade. Verificada en laboratorio europeo.
 | Tiempo | Visual | Texto |
 |---|---|---|
 | 0-3s | Cristalería de laboratorio · zoom dramático | "El estándar científico que no se ve" |
-| 4-10s | Manos en lab, balanza analítica, pipetas, cromatógrafo | "ISO/IEC 17025 · Janoshik Praga" |
+| 4-10s | Manos en lab, balanza analítica, pipetas, cromatógrafo | "ISO/IEC 17025 · Janoshik · Brno (CZ)" |
 | 11-15s | Persona escanea NFC del vial → COA aparece en pantalla | "El primero en México con COA público por lote" |
 | 16-18s | Brand visual con vial + datos Janoshik | "Verificas tú · antes de comprar" |
 | 19-20s | CTA | "peptiqmx.com/verify" |

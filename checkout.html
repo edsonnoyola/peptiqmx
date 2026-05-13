@@ -302,9 +302,8 @@
   @keyframes fadeIn{from{opacity:0}to{opacity:1}}
   @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 </style>
-<div class="rc-overlay" id="researchConsentOverlay" onclick="if(event.target===this)closeResearchConsent();">
+<div class="rc-overlay" id="researchConsentOverlay">
   <div class="rc-card">
-    <button class="rc-close" onclick="closeResearchConsent()" aria-label="Cerrar">×</button>
     <div class="rc-tag">⚠ Aviso Research-use</div>
     <h3>Antes de proceder,<br><em>confirma que entiendes.</em></h3>
     <p>Los productos PEPTIQ son <b>péptidos research-grade</b> destinados exclusivamente a investigación científica. No son medicamentos ni están aprobados por COFEPRIS/FDA para uso humano.</p>
@@ -482,7 +481,13 @@
       fetch('/.netlify/functions/peptiq-legal-record', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: 'research_consent_v2', log: consentLog })
+        body: JSON.stringify({
+          record_type: 'consent',
+          email: '',
+          signature: 'checkout-v2-' + consentLog.ts,
+          agreement_version: 'checkout-3check-v2',
+          payload: consentLog
+        })
       }).catch(()=>{});
     } catch(e){}
     if (window.fbq) fbq('trackCustom','ResearchUseAccepted_v2');

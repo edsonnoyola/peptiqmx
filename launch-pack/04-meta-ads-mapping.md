@@ -105,7 +105,7 @@ Hay una nueva conversación científica para quienes ya leyeron suficiente.
 
 PEPTIQ MX · Beyond Biology
 Compuestos research-grade verificados por laboratorio europeo independiente
-(Janoshik Analytical · ISO/IEC 17025 · Praga).
+(Janoshik Analytical · ISO/IEC 17025 · Brno (CZ)).
 
 Único en México con Certificado de Análisis público por lote.
 
@@ -122,7 +122,7 @@ peptiqmx.com/evaluacion
 Material educativo de PEPTIQ MX para profesionales de salud, biohackers
 e investigadores curiosos.
 
-ISO/IEC 17025 · Janoshik Praga · COA público por lote.
+ISO/IEC 17025 · Janoshik · Brno (CZ) · COA público por lote.
 Sin spam · sin compromiso · solo investigación seria.
 
 Material para investigación · uso responsabilidad del investigador.

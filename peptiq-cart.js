@@ -4,7 +4,7 @@
   'use strict';
 
   const KEY = 'peptiq_cart';
-  const API = 'https://sara-backend.edson-633.workers.dev';
+  const API = 'https://api.peptiqmx.com';
 
   function getCart() {
     try { return JSON.parse(localStorage.getItem(KEY)) || []; }

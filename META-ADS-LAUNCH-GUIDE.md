@@ -101,7 +101,7 @@ La papada que no estaba. Las marionetas. El cuello.
 Tu cuerpo cambió. Tu piel también puede.
 
 TRINITY · BPC-157 + GHK-Cu + TB-500 research-grade.
-4,192 genes de reparación cutánea (Pickart 2018).
+4,192 genes de reparación cutánea (Pickart & Margolina (Cosmetics 2008–2015)).
 
 ✓ Compatible con tu Mounjaro/Ozempic actual
 ✓ COA Janoshik por lote · pureza 99%+
@@ -163,7 +163,7 @@ El 53% de los péptidos online NO contiene el compuesto declarado.
 
 PEPTIQ es la excepción. Únicos con inventario Janoshik en México.
 
-Janoshik Analytical · Eslovaquia · UE:
+Janoshik Analytical · Brno, República Checa:
 ✓ Acreditación ISO/IEC 17025
 ✓ HPLC + ESI-MS + LAL por cada lote
 ✓ COA público vía QR en cada vial

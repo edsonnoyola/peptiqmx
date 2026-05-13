@@ -31,7 +31,7 @@
 La mayoría de marcas dice pureza.
 PEPTIQ la verifica.
 
-Cada lote pasa por Janoshik Analytical (Eslovaquia).
+Cada lote pasa por Janoshik Analytical · Brno, República Checa.
 COA público · HPLC 99%+ · masa molecular · endotoxinas.
 
 Pídelo por número de lote antes de abrir el vial.

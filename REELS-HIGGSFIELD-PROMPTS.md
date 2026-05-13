@@ -67,7 +67,7 @@ Higgsfield tier: **Lite o Pro · Vertical 9:16 · 1080x1920**.
 > Two PEPTIQ vials (GHK-Cu, AHK-Cu) on cream linen background beside a Lancôme Génifique bottle. Camera tilts up slowly revealing vials. Soft champagne lighting. Beauty commercial editorial. Final frame text "4,192 genes activados".
 
 **Voiceover (ES-MX warm female)**:
-> "Bótox paraliza. Hialurónico rellena. Ninguno regenera. GHK-Cu es un tripéptido cobre que tu plasma ya produce — Pickart 2018, cuatro mil ciento noventa y dos genes. Glow Stack: once mil novecientos noventa y nueve pesos. peptiqmx.com/glow."
+> "Bótox paraliza. Hialurónico rellena. Ninguno regenera. GHK-Cu es un tripéptido cobre que tu plasma ya produce — Pickart & Margolina (Cosmetics 2008–2015), cuatro mil ciento noventa y dos genes. Glow Stack: once mil novecientos noventa y nueve pesos. peptiqmx.com/glow."
 
 **Text overlays**: "4,192 genes activados" · "Lancôme R&D 2009+" · "$11,999 MXN"
 **Hashtags**: #glow #ghkcu #peptiqmx #lancome #beauty

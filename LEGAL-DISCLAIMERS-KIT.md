@@ -107,10 +107,10 @@ peptiqresearch.org
 
 ## 6. Email signatures (todo el equipo)
 
-**Edson / Owner:**
+**Equipo PEPTIQ Research:**
 ```
 —
-Edson · PEPTIQ Research
+Equipo PEPTIQ Research
 contacto@peptiqmx.com · +52 1 444 577 0445
 peptiqmx.com · peptiqresearch.org
 
@@ -177,7 +177,7 @@ PEPTIQ Research · solo +18 · RUO
 ✅ "la investigación reporta..."
 ✅ "compuesto research-grade"
 ✅ "material para investigación"
-✅ "Pickart 2018 publicó..."
+✅ "Pickart & Margolina (Cosmetics 2008–2015) publicó..."
 ✅ "modelos preclínicos sugieren..."
 ✅ "pureza HPLC verificada por laboratorio independiente"
 ✅ "COA Janoshik público"

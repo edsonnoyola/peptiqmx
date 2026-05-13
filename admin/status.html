@@ -165,7 +165,7 @@
       <div class="health-item">
         <div>
           <div class="hi-name" id="hSaraName">sara-backend /health <span class="dot" id="hSaraDot" style="margin-left:6px;padding:2px 0"></span></div>
-          <div class="hi-url">sara-backend.edson-633.workers.dev/health</div>
+          <div class="hi-url">api.peptiqmx.com/health</div>
         </div>
       </div>
     </div>
@@ -247,7 +247,7 @@
   // Security-by-obscurity: no auth. Do not link publicly.
   // ==================================================================
 
-  const SARA_BASE = 'https://sara-backend.edson-633.workers.dev';
+  const SARA_BASE = 'https://api.peptiqmx.com';
   // PLACEHOLDER: replace with real API key once backend endpoint is live
   const SARA_API_KEY = 'PLACEHOLDER';
 
@@ -262,7 +262,7 @@
 
   // ====== SUBSCRIBERS TODAY ======
   // NOTE: Endpoint may not exist yet. If it returns non-JSON or 404, dashboard
-  // falls back to showing a placeholder. Backend task for Edson:
+  // falls back to showing a placeholder. Backend task:
   //   GET /api/peptiq/subscribers/today?api_key=XXX
   //   → { count: <int>, last20: [{ email, utm_source, created_at }] }
   async function fetchSubscribers(){

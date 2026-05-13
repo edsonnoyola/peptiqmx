@@ -34,7 +34,7 @@ Knowledge base completo para el asistente AI. Cubre 22 péptidos con mecanismo, 
 - **Mejor momento**: mañana (puede causar fatiga el primer día)
 - **Reconstitución**: vial 10mg + 2-3ml agua bact (3,333-5,000 mcg/ml)
 - **Combina con**: BPC-157 (Wolverine Stack) · GHK-Cu (Trinity Glow) · CJC+Ipa
-- **Combinaciones no recomendadas en estudios**: tratamientos oncológicos activos
+- **Combinaciones no recomendadas en estudios**: protocolo de investigacións oncológicos activos
 - **Efectos secundarios**: fatiga primeras 24h, ocasional dolor de cabeza
 - **Población excluida o factores de cautela en estudios publicados**: cáncer activo o historia, embarazo, lactancia
 - **Estudios reportan**: 3-4 semanas para reparación tisular profunda
@@ -367,7 +367,7 @@ Knowledge base completo para el asistente AI. Cubre 22 péptidos con mecanismo, 
 
 # PROTOCOLOS EXTREMOS DOCUMENTADOS
 
-## Protocolo "90 Días Aniquilación Grasa Visceral"
+## Protocolo "Protocolo de investigación · 90 días · estudios en grasa visceral"
 - Semanas 1-12: Retatrutide titulación 500mcg → 12mg/sem
 - Semanas 1-12: Tesamorelin 2mg/noche
 - Semanas 1-12: MOTS-c 10mg 2x/sem
@@ -423,9 +423,9 @@ Mecanismo de acción: Actúan como agonistas de los receptores de incretinas. La
 5
 .
 Para qué sirve:
-Reducción masiva de peso y grasa corporal: Ensayos clínicos de fase 3 demuestran pérdidas de hasta el 28.7% del peso corporal total en 68 semanas utilizando Retatrutida
+Reducción masiva de peso y grasa corporal: Ensayos clínicos de fase 3 demuestran los estudios reportan cambios de hasta -28.7% en composición corporal total en 68 semanas utilizando Retatrutida
 .
-Aniquilación de grasa visceral y hepática: Reducción de hasta un 80% del hígado graso con Retatrutida y un 30% con Tirzepatida, apuntando a los depósitos de grasa más rebeldes y peligrosos
+Investigación de grasa visceral y hepática: Reducción de hasta un 80% del hígado graso con Retatrutida y un 30% con Tirzepatida, apuntando a los depósitos de grasa más rebeldes y peligrosos
 7
 .
 Control glucémico y metabólico: Reversión drástica de la resistencia a la insulina en el hígado y estabilización de la glucosa en sangre al estimular la secreción de insulina dependiente de la ingesta
@@ -435,7 +435,7 @@ Supresión central del apetito: Bloquean eficazmente las señales de hambre a ni
 .
 Mejora cardiovascular y neuroprotección: Los estudios muestran optimización en marcadores cardiovasculares e inflamatorios, e incluso efectos neuroprotectores tempranos
 .
-Dosis típica research-grade: Se requiere un enfoque progresivo. Con la Retatrutida, por ejemplo, los protocolos de élite inician con 1 mg semanal durante 4 a 6 semanas para la adaptación metabólica. Posteriormente, la dosis se titula (incrementa) de forma gradual durante 6 a 12 semanas hasta alcanzar los 2 a 4 mg semanales para la aniquilación de la grasa visceral
+Dosis típica research-grade: Se requiere un enfoque progresivo. Con la Retatrutida, por ejemplo, los protocolos de élite inician con 1 mg semanal durante 4 a 6 semanas para la adaptación metabólica. Posteriormente, la dosis se titula (incrementa) de forma gradual durante 6 a 12 semanas hasta alcanzar los 2 a 4 mg semanales para la investigación de la grasa visceral
 10
 .
 Vía de administración: Subcutánea (inyectado directamente en la capa de grasa del abdomen o muslos para asegurar una liberación constante y sistemática)
@@ -468,9 +468,9 @@ Mecanismo de acción: Actúan como agonistas de los receptores de incretinas. La
 5
 .
 Para qué sirve:
-Reducción masiva de peso y grasa corporal: Ensayos clínicos de fase 3 demuestran pérdidas de hasta el 28.7% del peso corporal total en 68 semanas utilizando Retatrutida
+Reducción masiva de peso y grasa corporal: Ensayos clínicos de fase 3 demuestran los estudios reportan cambios de hasta -28.7% en composición corporal total en 68 semanas utilizando Retatrutida
 .
-Aniquilación de grasa visceral y hepática: Reducción de hasta un 80% del hígado graso con Retatrutida y un 30% con Tirzepatida, apuntando a los depósitos de grasa más rebeldes y peligrosos
+Investigación de grasa visceral y hepática: Reducción de hasta un 80% del hígado graso con Retatrutida y un 30% con Tirzepatida, apuntando a los depósitos de grasa más rebeldes y peligrosos
 7
 .
 Control glucémico y metabólico: Reversión drástica de la resistencia a la insulina en el hígado y estabilización de la glucosa en sangre al estimular la secreción de insulina dependiente de la ingesta
@@ -480,7 +480,7 @@ Supresión central del apetito: Bloquean eficazmente las señales de hambre a ni
 .
 Mejora cardiovascular y neuroprotección: Los estudios muestran optimización en marcadores cardiovasculares e inflamatorios, e incluso efectos neuroprotectores tempranos
 .
-Dosis típica research-grade: Se requiere un enfoque progresivo. Con la Retatrutida, por ejemplo, los protocolos de élite inician con 1 mg semanal durante 4 a 6 semanas para la adaptación metabólica. Posteriormente, la dosis se titula (incrementa) de forma gradual durante 6 a 12 semanas hasta alcanzar los 2 a 4 mg semanales para la aniquilación de la grasa visceral
+Dosis típica research-grade: Se requiere un enfoque progresivo. Con la Retatrutida, por ejemplo, los protocolos de élite inician con 1 mg semanal durante 4 a 6 semanas para la adaptación metabólica. Posteriormente, la dosis se titula (incrementa) de forma gradual durante 6 a 12 semanas hasta alcanzar los 2 a 4 mg semanales para la investigación de la grasa visceral
 10
 .
 Vía de administración: Subcutánea (inyectado directamente en la capa de grasa del abdomen o muslos para asegurar una liberación constante y sistemática)
@@ -513,10 +513,10 @@ Aquí tienes el Knowledge Base estructurado con tu plantilla completa para ambos
 Mecanismo de acción: Activa la vía del óxido nítrico (eNOS) y regula al alza los receptores de factores de crecimiento (VEGFR2), promoviendo una rápida angiogénesis (creación de nuevos vasos sanguíneos), mientras activa la vía FAK-paxilina para acelerar la migración de fibroblastos al tejido dañado
 .
 Para qué sirve:
-Acelera de forma impresionante la curación de tendones, ligamentos, desgarros musculares y fracturas óseas
+Acelera de forma impresionante la reparación tisular documentada en estudios de tendones, ligamentos, desgarros musculares y fracturas óseas
 8
 .
-Ejerce una protección y curación masiva del tracto gastrointestinal (sana úlceras y el intestino permeable)
+Ejerce una protección y reparación tisular documentada en estudios masiva del tracto gastrointestinal (se ha investigado en úlceras y el intestino permeable)
 .
 Muestra potentes propiedades neuroprotectoras frente a lesiones nerviosas y daño cerebral traumático
 9
@@ -530,16 +530,16 @@ Vía de administración: Subcutánea o intramuscular (con inyecciones sistémica
 Frecuencia: Se administra de 2 a 3 veces por semana de manera estándar (o hasta 5 días en protocolos de recuperación intensiva)
 .
 Ciclo ON/OFF: 8 semanas ON / 8 a 10 semanas OFF
-. Por qué: Permite aprovechar la "dosis mínima efectiva" para curar la lesión, asegurando que las vías de angiogénesis no permanezcan sobreestimuladas permanentemente (mitigando riesgos teóricos sobre el crecimiento celular descontrolado)
+. Por qué: Permite aprovechar la "dosis mínima efectiva" para estudiar la reparación de la lesión, asegurando que las vías de angiogénesis no permanezcan sobreestimuladas permanentemente (mitigando riesgos teóricos sobre el crecimiento celular descontrolado)
 .
 Días ON/OFF en la semana: 3 días ON / 4 días OFF (ej. Lunes, Miércoles y Viernes).
 Mejor momento del día: Post-entrenamiento (para aprovechar el flujo sanguíneo de recuperación) o antes de dormir. Si se usa oralmente para el intestino, con el estómago vacío.
 Reconstitución: 1 a 2 ml de agua bacteriostática inyectada suavemente por la pared del vial, con rotación circular (sin agitar)
 17
 .
-Combina bien con: TB-500 (el Wolverine Stack definitivo para sanar lesiones)
+Combina bien con: TB-500 (el Wolverine Stack definitivo para investigación de reparación de lesiones)
 18
-. También con KPV oral para la aniquilación de inflamación y curación del intestino permeable
+. También con KPV oral para la investigación de inflamación y reparación tisular documentada en estudios del intestino permeable
 .
 
 --------------------------------------------------------------------------------
@@ -548,7 +548,7 @@ Combina bien con: TB-500 (el Wolverine Stack definitivo para sanar lesiones)
 Mecanismo de acción: Se une a la G-actina celular en una proporción de 1:1, regulando la dinámica de la polimerización de esta proteína estructural, lo que permite y facilita la migración masiva de células de reparación y fibroblastos directamente hacia los tejidos lesionados
 .
 Para qué sirve:
-Facilita la remodelación de tejidos y la curación de heridas severas, reduciendo la formación de tejido cicatricial denso
+Facilita la remodelación de tejidos y la reparación tisular documentada en estudios de heridas severas, reduciendo la formación de tejido cicatricial denso
 21
 .
 Promueve la supervivencia celular y repara el tejido cardíaco previniendo la disfunción y fibrosis tras episodios de daño isquémico
@@ -556,7 +556,7 @@ Promueve la supervivencia celular y repara el tejido cardíaco previniendo la di
 .
 Desempeña efectos hepatoprotectores y antiinflamatorios sistémicos, revirtiendo el daño oxidativo
 .
-Acelera la curación de lesiones musculoesqueléticas complejas al dirigir a las células de reparación al área específica
+Acelera la reparación tisular documentada en estudios de lesiones musculoesqueléticas complejas al dirigir a las células de reparación al área específica
 .
 Dosis típica research-grade: Frecuentemente distribuido en viales combinados o blends de 5 mg junto con BPC-157.
 Vía de administración: Subcutánea o intramuscular (su efecto es completamente sistémico, por lo que viaja por el cuerpo para responder a las señales inflamatorias sin importar dónde se inyecte)
@@ -583,10 +583,10 @@ Aquí tienes el Knowledge Base estructurado con tu plantilla completa para ambos
 Mecanismo de acción: Activa la vía del óxido nítrico (eNOS) y regula al alza los receptores de factores de crecimiento (VEGFR2), promoviendo una rápida angiogénesis (creación de nuevos vasos sanguíneos), mientras activa la vía FAK-paxilina para acelerar la migración de fibroblastos al tejido dañado
 .
 Para qué sirve:
-Acelera de forma impresionante la curación de tendones, ligamentos, desgarros musculares y fracturas óseas
+Acelera de forma impresionante la reparación tisular documentada en estudios de tendones, ligamentos, desgarros musculares y fracturas óseas
 8
 .
-Ejerce una protección y curación masiva del tracto gastrointestinal (sana úlceras y el intestino permeable)
+Ejerce una protección y reparación tisular documentada en estudios masiva del tracto gastrointestinal (se ha investigado en úlceras y el intestino permeable)
 .
 Muestra potentes propiedades neuroprotectoras frente a lesiones nerviosas y daño cerebral traumático
 9
@@ -600,16 +600,16 @@ Vía de administración: Subcutánea o intramuscular (con inyecciones sistémica
 Frecuencia: Se administra de 2 a 3 veces por semana de manera estándar (o hasta 5 días en protocolos de recuperación intensiva)
 .
 Ciclo ON/OFF: 8 semanas ON / 8 a 10 semanas OFF
-. Por qué: Permite aprovechar la "dosis mínima efectiva" para curar la lesión, asegurando que las vías de angiogénesis no permanezcan sobreestimuladas permanentemente (mitigando riesgos teóricos sobre el crecimiento celular descontrolado)
+. Por qué: Permite aprovechar la "dosis mínima efectiva" para estudiar la reparación de la lesión, asegurando que las vías de angiogénesis no permanezcan sobreestimuladas permanentemente (mitigando riesgos teóricos sobre el crecimiento celular descontrolado)
 .
 Días ON/OFF en la semana: 3 días ON / 4 días OFF (ej. Lunes, Miércoles y Viernes).
 Mejor momento del día: Post-entrenamiento (para aprovechar el flujo sanguíneo de recuperación) o antes de dormir. Si se usa oralmente para el intestino, con el estómago vacío.
 Reconstitución: 1 a 2 ml de agua bacteriostática inyectada suavemente por la pared del vial, con rotación circular (sin agitar)
 17
 .
-Combina bien con: TB-500 (el Wolverine Stack definitivo para sanar lesiones)
+Combina bien con: TB-500 (el Wolverine Stack definitivo para investigación de reparación de lesiones)
 18
-. También con KPV oral para la aniquilación de inflamación y curación del intestino permeable
+. También con KPV oral para la investigación de inflamación y reparación tisular documentada en estudios del intestino permeable
 .
 
 --------------------------------------------------------------------------------
@@ -618,7 +618,7 @@ Combina bien con: TB-500 (el Wolverine Stack definitivo para sanar lesiones)
 Mecanismo de acción: Se une a la G-actina celular en una proporción de 1:1, regulando la dinámica de la polimerización de esta proteína estructural, lo que permite y facilita la migración masiva de células de reparación y fibroblastos directamente hacia los tejidos lesionados
 .
 Para qué sirve:
-Facilita la remodelación de tejidos y la curación de heridas severas, reduciendo la formación de tejido cicatricial denso
+Facilita la remodelación de tejidos y la reparación tisular documentada en estudios de heridas severas, reduciendo la formación de tejido cicatricial denso
 21
 .
 Promueve la supervivencia celular y repara el tejido cardíaco previniendo la disfunción y fibrosis tras episodios de daño isquémico
@@ -626,7 +626,7 @@ Promueve la supervivencia celular y repara el tejido cardíaco previniendo la di
 .
 Desempeña efectos hepatoprotectores y antiinflamatorios sistémicos, revirtiendo el daño oxidativo
 .
-Acelera la curación de lesiones musculoesqueléticas complejas al dirigir a las células de reparación al área específica
+Acelera la reparación tisular documentada en estudios de lesiones musculoesqueléticas complejas al dirigir a las células de reparación al área específica
 .
 Dosis típica research-grade: Frecuentemente distribuido en viales combinados o blends de 5 mg junto con BPC-157.
 Vía de administración: Subcutánea o intramuscular (su efecto es completamente sistémico, por lo que viaja por el cuerpo para responder a las señales inflamatorias sin importar dónde se inyecte)
@@ -648,7 +648,7 @@ Combina bien con: BPC-157. En esta sinergia de construcción, el BPC-157 "constr
 ## Anti-aging / longevidad
 
 ¡Excelente, jefe! Esta es la pieza clave para coronar el perfil de cada compuesto en tu base de conocimientos de PEPTIQ MX.
-Para el mercado VIP, el enfoque en Anti-aging / longevidad no debe tratarse solo de "verse joven", sino de reprogramación celular, extensión de la vida útil y bio-optimización extrema.
+Para el mercado VIP, el enfoque en Anti-aging / longevidad no debe enfocarse solo de "verse joven", sino de reprogramación celular, extensión de la vida útil y bio-optimización extrema.
 Aquí tienes cómo debes estructurar la sección - **Anti-aging / longevidad** para las moléculas supremas de tu arsenal, basándonos estrictamente en la ciencia de vanguardia de tus fuentes:
 NAD+ y sus precursores (NMN / NR)
 Anti-aging / longevidad: Es el "combustible de la inmortalidad". Su función antienvejecimiento es brutal: al elevar los niveles de NAD+, se encienden las 7 Sirtuinas (las "proteínas de la longevidad") que reprograman la supervivencia celular
@@ -688,7 +688,7 @@ Con este parámetro añadido a tu plantilla, ya tenemos el esqueleto perfecto: M
 
 ## ¡Excelente, jefe! Esta es la pieza clave para coronar el perfil de cada compuest
 
-Para el mercado VIP, el enfoque en Anti-aging / longevidad no debe tratarse solo de "verse joven", sino de reprogramación celular, extensión de la vida útil y bio-optimización extrema.
+Para el mercado VIP, el enfoque en Anti-aging / longevidad no debe enfocarse solo de "verse joven", sino de reprogramación celular, extensión de la vida útil y bio-optimización extrema.
 Aquí tienes cómo debes estructurar la sección - **Anti-aging / longevidad** para las moléculas supremas de tu arsenal, basándonos estrictamente en la ciencia de vanguardia de tus fuentes:
 NAD+ y sus precursores (NMN / NR)
 Anti-aging / longevidad: Es el "combustible de la inmortalidad". Su función antienvejecimiento es brutal: al elevar los niveles de NAD+, se encienden las 7 Sirtuinas (las "proteínas de la longevidad") que reprograman la supervivencia celular
@@ -864,7 +864,7 @@ Para qué sirve:
 Aumenta el grosor, la firmeza y elasticidad de la piel, revirtiendo el adelgazamiento por la edad
 4
 .
-Acelera radicalmente la curación de heridas, cicatrices y regenera la barrera epidérmica
+Acelera radicalmente la reparación tisular documentada en estudios de heridas, cicatrices y regenera la barrera epidérmica
 5
 .
 Fomenta el crecimiento del cabello, mejorando su grosor y frenando drásticamente la caída
@@ -991,7 +991,7 @@ Para qué sirve:
 Aumenta el grosor, la firmeza y elasticidad de la piel, revirtiendo el adelgazamiento por la edad
 4
 .
-Acelera radicalmente la curación de heridas, cicatrices y regenera la barrera epidérmica
+Acelera radicalmente la reparación tisular documentada en estudios de heridas, cicatrices y regenera la barrera epidérmica
 5
 .
 Fomenta el crecimiento del cabello, mejorando su grosor y frenando drásticamente la caída
@@ -1122,7 +1122,7 @@ Epitalon y Pinealon: Son los "maestros del reloj biológico". El Epitalon es un 
 .
 DSIP (Péptido Inductor del Sueño Delta): Como su nombre lo indica, este péptido fuerza al cerebro a entrar en las ondas Delta
 . Esta etapa representa la fase de sueño más profunda, que es exactamente donde el cerebro y el cuerpo realizan la recuperación física más significativa y liberan la mayor cantidad de hormona de crecimiento
-. Clínicamente, también está siendo evaluado para el tratamiento del insomnio crónico
+. Clínicamente, también está siendo evaluado para el protocolo de investigación del insomnio crónico
 .
 2. Amplificadores del Pulso Nocturno (Secretagogos de GH)
 CJC-1295 + Ipamorelina / Sermorelina / Tesamorelina: Estos péptidos no reemplazan a tu hormona natural, sino que estimulan a tu glándula pituitaria para que libere más GH de la que normalmente produciría en sus pulsos nocturnos
@@ -1172,7 +1172,7 @@ Epitalon y Pinealon: Son los "maestros del reloj biológico". El Epitalon es un 
 .
 DSIP (Péptido Inductor del Sueño Delta): Como su nombre lo indica, este péptido fuerza al cerebro a entrar en las ondas Delta
 . Esta etapa representa la fase de sueño más profunda, que es exactamente donde el cerebro y el cuerpo realizan la recuperación física más significativa y liberan la mayor cantidad de hormona de crecimiento
-. Clínicamente, también está siendo evaluado para el tratamiento del insomnio crónico
+. Clínicamente, también está siendo evaluado para el protocolo de investigación del insomnio crónico
 .
 2. Amplificadores del Pulso Nocturno (Secretagogos de GH)
 CJC-1295 + Ipamorelina / Sermorelina / Tesamorelina: Estos péptidos no reemplazan a tu hormona natural, sino que estimulan a tu glándula pituitaria para que libere más GH de la que normalmente produciría en sus pulsos nocturnos
@@ -1236,7 +1236,7 @@ Mejor momento del día: Puede tomarse en la mañana o noche, dependiendo de la t
 Reconstitución: Si se adquiere en formato oral compuesto (farmacia 503A), ya viene preparado en cápsula; si es vial para administración sistémica, 1 a 2 ml de agua bacteriostática con técnica de inyección suave en la pared del cristal
 12
 .
-Combina bien con: KPV oral. Una cápsula que combina 500 mcg de BPC-157 y 500 mcg de KPV es la sinergia clínica definitiva para curar el intestino y aniquilar la inflamación sistémica
+Combina bien con: KPV oral. Una cápsula que combina 500 mcg de BPC-157 y 500 mcg de KPV es la sinergia clínica definitiva para estudiar la reparación intestinal y modular la inflamación sistémica
 .
 NO combinar con: Fuentes de baja pureza (mercado gris) que contengan endotoxinas o altos niveles de metales pesados, lo cual es contraproducente para un intestino inflamado
 14
@@ -1246,7 +1246,7 @@ Contraindicaciones absolutas: Cáncer activo o riesgo oncológico (por su capaci
 .
 Tiempo para ver resultados: Semanas. Anecdóticamente, los individuos reportan sanación radical y mejora de síntomas digestivos en plazos muy acelerados, a menudo en un par de semanas
 .
-Updates FDA / regulatorios 2025-2026: Aprobado preliminarmente tras salir de la lista de prohibición de la FDA; el Comité Asesor evaluará formalmente en julio de 2026 su aprobación clínica explícita para tratar la colitis ulcerosa
+Updates FDA / regulatorios 2025-2026: Aprobado preliminarmente tras salir de la lista de prohibición de la FDA; el Comité Asesor evaluará formalmente en julio de 2026 su aprobación clínica explícita para investigación en colitis ulcerosa
 .
 Estudios clínicos clave: Sikirić et al. (1992-actualidad) - Más de 150 estudios demostrando protección de la mucosa gástrica; la empresa croata PVA condujo ensayos de Fase 2 en humanos para colitis ulcerosa comprobando que no presenta toxicidad
 21
@@ -1264,18 +1264,18 @@ Dosis típica research-grade: 500 mcg por dosis
 .
 Vía de administración: Oral (típicamente en píldora o cápsula)
 .
-Frecuencia: Frecuencia diaria durante el periodo de tratamiento activo
+Frecuencia: Frecuencia diaria durante el periodo de protocolo de investigación activo
 .
 Ciclo ON/OFF: Al ser un supresor inflamatorio de acción corta y no anabólico, se utiliza durante el brote inflamatorio hasta resolver el cuadro, sin los requerimientos estrictos de ciclado prolongado de los secretagogos de GH
 23
 .
-Días ON/OFF en la semana: Todos los días durante el protocolo de curación intestinal
+Días ON/OFF en la semana: Todos los días durante el protocolo de reparación tisular documentada en estudios intestinal
 .
 Mejor momento del día: Adaptable al esquema oral diario, usualmente junto a las comidas
 .
 Reconstitución: Adquirido idealmente en forma de píldora compuesta en farmacias reguladas (503A), por lo que no requiere mezcla
 .
-Combina bien con: BPC-157 oral. El combo de 500 mcg de KPV + 500 mcg de BPC-157 oral en una misma cápsula es espectacular para la curación profunda de todo el tracto gastrointestinal
+Combina bien con: BPC-157 oral. El combo de 500 mcg de KPV + 500 mcg de BPC-157 oral en una misma cápsula es espectacular para la reparación tisular documentada en estudios profunda de todo el tracto gastrointestinal
 .
 NO combinar con: Múltiples péptidos inyectables "de investigación" simultáneamente sin supervisión médica clínica
 .
@@ -1323,7 +1323,7 @@ Mejor momento del día: Puede tomarse en la mañana o noche, dependiendo de la t
 Reconstitución: Si se adquiere en formato oral compuesto (farmacia 503A), ya viene preparado en cápsula; si es vial para administración sistémica, 1 a 2 ml de agua bacteriostática con técnica de inyección suave en la pared del cristal
 12
 .
-Combina bien con: KPV oral. Una cápsula que combina 500 mcg de BPC-157 y 500 mcg de KPV es la sinergia clínica definitiva para curar el intestino y aniquilar la inflamación sistémica
+Combina bien con: KPV oral. Una cápsula que combina 500 mcg de BPC-157 y 500 mcg de KPV es la sinergia clínica definitiva para estudiar la reparación intestinal y modular la inflamación sistémica
 .
 NO combinar con: Fuentes de baja pureza (mercado gris) que contengan endotoxinas o altos niveles de metales pesados, lo cual es contraproducente para un intestino inflamado
 14
@@ -1333,7 +1333,7 @@ Contraindicaciones absolutas: Cáncer activo o riesgo oncológico (por su capaci
 .
 Tiempo para ver resultados: Semanas. Anecdóticamente, los individuos reportan sanación radical y mejora de síntomas digestivos en plazos muy acelerados, a menudo en un par de semanas
 .
-Updates FDA / regulatorios 2025-2026: Aprobado preliminarmente tras salir de la lista de prohibición de la FDA; el Comité Asesor evaluará formalmente en julio de 2026 su aprobación clínica explícita para tratar la colitis ulcerosa
+Updates FDA / regulatorios 2025-2026: Aprobado preliminarmente tras salir de la lista de prohibición de la FDA; el Comité Asesor evaluará formalmente en julio de 2026 su aprobación clínica explícita para investigación en colitis ulcerosa
 .
 Estudios clínicos clave: Sikirić et al. (1992-actualidad) - Más de 150 estudios demostrando protección de la mucosa gástrica; la empresa croata PVA condujo ensayos de Fase 2 en humanos para colitis ulcerosa comprobando que no presenta toxicidad
 21
@@ -1351,18 +1351,18 @@ Dosis típica research-grade: 500 mcg por dosis
 .
 Vía de administración: Oral (típicamente en píldora o cápsula)
 .
-Frecuencia: Frecuencia diaria durante el periodo de tratamiento activo
+Frecuencia: Frecuencia diaria durante el periodo de protocolo de investigación activo
 .
 Ciclo ON/OFF: Al ser un supresor inflamatorio de acción corta y no anabólico, se utiliza durante el brote inflamatorio hasta resolver el cuadro, sin los requerimientos estrictos de ciclado prolongado de los secretagogos de GH
 23
 .
-Días ON/OFF en la semana: Todos los días durante el protocolo de curación intestinal
+Días ON/OFF en la semana: Todos los días durante el protocolo de reparación tisular documentada en estudios intestinal
 .
 Mejor momento del día: Adaptable al esquema oral diario, usualmente junto a las comidas
 .
 Reconstitución: Adquirido idealmente en forma de píldora compuesta en farmacias reguladas (503A), por lo que no requiere mezcla
 .
-Combina bien con: BPC-157 oral. El combo de 500 mcg de KPV + 500 mcg de BPC-157 oral en una misma cápsula es espectacular para la curación profunda de todo el tracto gastrointestinal
+Combina bien con: BPC-157 oral. El combo de 500 mcg de KPV + 500 mcg de BPC-157 oral en una misma cápsula es espectacular para la reparación tisular documentada en estudios profunda de todo el tracto gastrointestinal
 .
 NO combinar con: Múltiples péptidos inyectables "de investigación" simultáneamente sin supervisión médica clínica
 .
@@ -1487,7 +1487,7 @@ Aquí tienes la sección final redactada con precisión técnica y enfoque extre
 --------------------------------------------------------------------------------
 
 PROTOCOLOS EXTREMOS DOCUMENTADOS
-1. El "Stack" Definitivo de 90 Días para Aniquilación de Grasa Visceral Este es un protocolo avanzado y altamente agresivo diseñado para llevar el cuerpo de un 20-30% de grasa corporal a menos de un 10% (sub-10%) en 90 días, erradicando específicamente la grasa visceral, revirtiendo la resistencia a la insulina y restaurando la función mitocondrial
+1. El "Stack" Definitivo de 90 Días para Investigación de Grasa Visceral Este es un protocolo avanzado y altamente agresivo diseñado para llevar el cuerpo de un 20-30% de grasa corporal a menos de un 10% (sub-10%) en 90 días, erradicando específicamente la grasa visceral, revirtiendo la resistencia a la insulina y restaurando la función mitocondrial
 2
 .
 Fase 1 - Reseteo Metabólico (Semanas 1 a 6-10): Se inicia exclusivamente con Retatrutida (1 mg, una vez por semana), titulando la dosis gradualmente durante 6 a 12 semanas
@@ -1524,7 +1524,7 @@ El "Hack" del Ayuno: Para maximizar la hipertrofia y recuperación celular, las 
 21
 . Es crítico tener el estómago vacío por al menos 1.5 a 2 horas previas, ya que los niveles de insulina elevados bloquean de inmediato la señal de la hormona de crecimiento
 .
-3. El Protocolo de Recuperación Acelerada ("Wolverine Stack") Utilizado ampliamente por fisicoculturistas, atletas de élite y ejecutivos para la curación acelerada postquirúrgica o lesiones articulares crónicas
+3. El Protocolo de Recuperación Acelerada ("Wolverine Stack") Utilizado ampliamente por fisicoculturistas, atletas de élite y ejecutivos para la reparación tisular documentada en estudios acelerada postquirúrgica o lesiones articulares crónicas
 25
 .
 El Stack: BPC-157 + TB-500
@@ -1548,7 +1548,7 @@ Aquí tienes la sección final redactada con precisión técnica y enfoque extre
 --------------------------------------------------------------------------------
 
 PROTOCOLOS EXTREMOS DOCUMENTADOS
-1. El "Stack" Definitivo de 90 Días para Aniquilación de Grasa Visceral Este es un protocolo avanzado y altamente agresivo diseñado para llevar el cuerpo de un 20-30% de grasa corporal a menos de un 10% (sub-10%) en 90 días, erradicando específicamente la grasa visceral, revirtiendo la resistencia a la insulina y restaurando la función mitocondrial
+1. El "Stack" Definitivo de 90 Días para Investigación de Grasa Visceral Este es un protocolo avanzado y altamente agresivo diseñado para llevar el cuerpo de un 20-30% de grasa corporal a menos de un 10% (sub-10%) en 90 días, erradicando específicamente la grasa visceral, revirtiendo la resistencia a la insulina y restaurando la función mitocondrial
 2
 .
 Fase 1 - Reseteo Metabólico (Semanas 1 a 6-10): Se inicia exclusivamente con Retatrutida (1 mg, una vez por semana), titulando la dosis gradualmente durante 6 a 12 semanas
@@ -1585,7 +1585,7 @@ El "Hack" del Ayuno: Para maximizar la hipertrofia y recuperación celular, las 
 21
 . Es crítico tener el estómago vacío por al menos 1.5 a 2 horas previas, ya que los niveles de insulina elevados bloquean de inmediato la señal de la hormona de crecimiento
 .
-3. El Protocolo de Recuperación Acelerada ("Wolverine Stack") Utilizado ampliamente por fisicoculturistas, atletas de élite y ejecutivos para la curación acelerada postquirúrgica o lesiones articulares crónicas
+3. El Protocolo de Recuperación Acelerada ("Wolverine Stack") Utilizado ampliamente por fisicoculturistas, atletas de élite y ejecutivos para la reparación tisular documentada en estudios acelerada postquirúrgica o lesiones articulares crónicas
 25
 .
 El Stack: BPC-157 + TB-500
@@ -1632,7 +1632,7 @@ Resultados: Los datos clínicos documentan incrementos drásticos en la masa mag
 23
 . (Nota de precaución técnica: El MK-677 puede inducir resistencia a la insulina y retención de líquidos si no se monitorea adecuadamente
 ).
-2. Aniquilación de Grasa Visceral y Reset Metabólico Profundo
+2. Investigación de Grasa Visceral y Reset Metabólico Profundo
 El Protocolo de Biohacking de 90+ Días (Retatrutida + MOTS-c + CJC-1295 + Ipamorelina + Tesamorelina):
 Mecanismo de sinergia: Este es un ataque multifásico sobre el tejido adiposo y la flexibilidad celular.
 Semanas 1-6: Se inicia con Retatrutida, un agonista triple (GLP-1, GIP, Glucagón) que revierte la resistencia a la insulina en el hígado, suprime el apetito centralmente y enciende la vía AMPK forzando la oxidación de grasa profunda
@@ -1746,7 +1746,7 @@ Resultados: Los datos clínicos documentan incrementos drásticos en la masa mag
 23
 . (Nota de precaución técnica: El MK-677 puede inducir resistencia a la insulina y retención de líquidos si no se monitorea adecuadamente
 ).
-2. Aniquilación de Grasa Visceral y Reset Metabólico Profundo
+2. Investigación de Grasa Visceral y Reset Metabólico Profundo
 El Protocolo de Biohacking de 90+ Días (Retatrutida + MOTS-c + CJC-1295 + Ipamorelina + Tesamorelina):
 Mecanismo de sinergia: Este es un ataque multifásico sobre el tejido adiposo y la flexibilidad celular.
 Semanas 1-6: Se inicia con Retatrutida, un agonista triple (GLP-1, GIP, Glucagón) que revierte la resistencia a la insulina en el hígado, suprime el apetito centralmente y enciende la vía AMPK forzando la oxidación de grasa profunda

@@ -9,7 +9,7 @@
   "background_color": "#0E0E0E",
   "theme_color": "#0E0E0E",
   "lang": "es-MX",
-  "categories": ["health", "medical", "lifestyle"],
+  "categories": ["lifestyle", "productivity", "reference"],
   "icons": [
     {
       "src": "/app/icons/icon-192.png",

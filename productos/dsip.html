@@ -61,11 +61,9 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '187738085479345');
     fbq('track', 'PageView');
     fbq('track', 'ViewContent', { content_ids:['dsip'], content_name:'DSIP 5mg', content_type:'product', value:2999, currency:'MXN' });
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=187738085479345&ev=PageView&noscript=1"/></noscript>
 
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -356,7 +354,7 @@
       <div class="coa-body">
         <span class="eyebrow">COA Janoshik · Lote vigente</span>
         <h2>La prueba que<br><em>se puede verificar.</em></h2>
-        <p>Cada lote PEPTIQ se envía a Janoshik Analytical (Eslovaquia) para análisis HPLC-UV + espectrometría de masas + endotoxinas. Solicita el PDF oficial del lote que está por enviarse a tu domicilio.</p>
+        <p>Cada lote PEPTIQ se envía a Janoshik Analytical · Brno, República Checa para análisis HPLC-UV + espectrometría de masas + endotoxinas. Solicita el PDF oficial del lote que está por enviarse a tu domicilio.</p>
         <a href="https://wa.me/5214445770445?text=Hola%2C%20quiero%20el%20COA%20de%20MORPHEUS%20DSIP%20lote%20vigente" target="_blank" rel="noopener" class="coa-btn">Solicitar COA por WhatsApp →</a>
       </div>
       <div class="coa-panel">
@@ -367,7 +365,7 @@
         <div class="coa-row"><div class="k">Mass (ESI)</div><div class="v">848.81 Da</div></div>
         <div class="coa-row"><div class="k">Endotoxin</div><div class="v">&lt;0.5 EU/mg</div></div>
         <div class="coa-row"><div class="k">Released</div><div class="v">2026-04-12</div></div>
-        <div class="coa-row"><div class="k">Lab</div><div class="v">Janoshik Analytical, SK</div></div>
+        <div class="coa-row"><div class="k">Lab</div><div class="v">Janoshik Analytical · Brno, República Checa</div></div>
       </div>
     </div>
   </div>
@@ -454,7 +452,7 @@
       <div class="foot-col">
         <h4>Contacto</h4>
         <a href="https://wa.me/5214445770445" target="_blank">+52 1 444 577 0445</a>
-        <a href="mailto:hola@peptiqmx.com">hola@peptiqmx.com</a>
+        <a href="mailto:contacto@peptiqmx.com">contacto@peptiqmx.com</a>
         <a href="https://instagram.com/peptiqmx" target="_blank">@peptiqmx</a>
       </div>
     </div>
@@ -478,7 +476,7 @@
 </a>
 
 <script>
-  const API_BASE = 'https://sara-backend.edson-633.workers.dev';
+  const API_BASE = 'https://api.peptiqmx.com';
   async function buyNow(productId){
     const name = 'MORPHEUS · DSIP 5mg';
     const price = 2999;
@@ -486,7 +484,7 @@
     const utm = (window.__peptiqUTM && window.__peptiqUTM.utm_source) ? ' · fuente: ' + window.__peptiqUTM.utm_source : '';
     // Try Stripe checkout first
     try {
-      const res = await fetch('https://sara-backend.edson-633.workers.dev/api/peptiq/web-checkout', {
+      const res = await fetch('https://api.peptiqmx.com/api/peptiq/web-checkout', {
         method: 'POST', headers: {'Content-Type':'application/json'},
         body: JSON.stringify({ product_id: productId, source: 'peptiqmx_web', utm: window.__peptiqUTM || {} })
       });
@@ -529,7 +527,7 @@
     <div class="ppt-row4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;font-size:12.5px;color:#333;line-height:1.55">
       <div style="background:#fff;border:1px solid #F5F5F5;padding:18px 16px">
         <div style="font-size:9px;letter-spacing:2px;color:#888;font-weight:600;margin-bottom:8px">01 · LAB</div>
-        <div><b>Janoshik Analytical</b> (Eslovaquia) corre HPLC-UV + masas + endotoxinas en cada lote.</div>
+        <div><b>Janoshik Analytical</b> (Brno, República Checa) corre HPLC-UV + masas + endotoxinas en cada lote.</div>
       </div>
       <div style="background:#fff;border:1px solid #F5F5F5;padding:18px 16px">
         <div style="font-size:9px;letter-spacing:2px;color:#888;font-weight:600;margin-bottom:8px">02 · BRANDED</div>

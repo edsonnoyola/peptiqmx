@@ -1,6 +1,6 @@
 # 📨 PEPTIQ B2B · Response Kit
 
-**Para Edson · uso rápido cuando una clínica responde al cold email B2B.**
+**Para equipo PEPTIQ · uso rápido cuando una clínica responde al cold email B2B.**
 
 > Regla #1: responder en **<2 horas** durante hábil, **<12 horas** fuera de hábil. Velocidad = cierre.
 
@@ -27,18 +27,18 @@ https://peptiqmx.com/tabla-margenes-b2b.pdf
 🔬 Cómo funciona el COA Janoshik en consulta:
    - Cada vial trae código NFC tras el sello holográfico
    - El paciente acerca su iPhone al sello → COA del lote se abre
-   - HPLC ≥99% pureza · firmado y fechado por Janoshik (Praga, ISO/IEC 17025)
+   - HPLC ≥99% pureza · firmado y fechado por Janoshik (Brno, CZ · ISO/IEC 17025)
    - Único en México con esto público · les muestro demo en la call
 
 ¿15 minutos esta semana para resolverte dudas y cerrar primer pedido sample?
 
 Mi calendario directo (WhatsApp · me eliges hora):
-https://wa.me/5214445770445?text=Hola+Edson%2C+vi+catálogo+PEPTIQ%2C+quiero+agendar+15+min
+https://wa.me/5214445770445?text=Hola+equipo%2C+vi+catálogo+PEPTIQ%2C+quiero+agendar+15+min
 
 O si prefieres mañana mismo, dame 2 horarios y mando confirmación.
 
 Saludos,
-Edson Noyola
+Equipo PEPTIQ Research
 Founder · PEPTIQ MX
 +52 1 444 577 0445
 ```
@@ -65,7 +65,7 @@ Founder · PEPTIQ MX
 
 ### Demo COA (2-5 min)
 
-> "Compartiendo pantalla rápido — esto es lo que ningún competidor en MX tiene. Te muestro peptiqmx.com/verify... cada lote PEPTIQ tiene este reporte público de Janoshik en Praga, acreditado ISO/IEC 17025. Tu paciente puede escanear el sello NFC del vial con su iPhone y ver el HPLC del lote en pantalla. Esto cierra ventas porque el paciente no tiene que confiar en ti — confía en un laboratorio europeo independiente."
+> "Compartiendo pantalla rápido — esto es lo que ningún competidor en MX tiene. Te muestro peptiqmx.com/verify... cada lote PEPTIQ tiene este reporte público de Janoshik en Brno (CZ), acreditado ISO/IEC 17025. Tu paciente puede escanear el sello NFC del vial con su iPhone y ver el HPLC del lote en pantalla. Esto cierra ventas porque el paciente no tiene que confiar en ti — confía en un laboratorio europeo independiente."
 
 **Si pregunta "¿y si Janoshik se cae?":** "Los COAs los tenemos también en CDN propio · backup completo. Y el sello NFC siempre apunta al hash del documento. Inmutable."
 
@@ -147,7 +147,7 @@ COA Janoshik público por lote:
 🔬 https://peptiqmx.com/verify
    (necesitas escanear NFC de un vial · te mando demo en call)
 
-Lab: Janoshik Analytical · Praga · ISO/IEC 17025:2017.
+Lab: Janoshik Analytical · Brno (CZ) · ISO/IEC 17025:2017.
 HPLC ≥99% pureza · firmado por lote.
 ```
 
@@ -197,12 +197,12 @@ Cuando alguien responda · márcalo como `replied` para que NO le mande Email 2 
 
 ```bash
 # Por leadId (lo ves en el email tag o en CRM):
-curl -X POST "https://sara-backend.edson-633.workers.dev/api/peptiq/b2b-mark-replied?api_key=API_KEY" \
+curl -X POST "https://api.peptiqmx.com/api/peptiq/b2b-mark-replied?api_key=API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"leadId":"5175b50a-cf76-43b1-986e-b6469a952536"}'
 
 # O por email:
-curl -X POST "https://sara-backend.edson-633.workers.dev/api/peptiq/b2b-mark-replied?api_key=API_KEY" \
+curl -X POST "https://api.peptiqmx.com/api/peptiq/b2b-mark-replied?api_key=API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"leadEmail":"clinica.gl@hotmail.com"}'
 ```

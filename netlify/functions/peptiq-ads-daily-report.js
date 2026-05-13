@@ -8,7 +8,7 @@ exports.handler = async () => {
   const TOKEN = process.env.META_ADS_TOKEN;
   const CAMPAIGN = process.env.META_CAMPAIGN_ID || '52502657928372';
   const WA_NUMBER = process.env.ALERT_WA_NUMBER || '5214445770445';
-  const SARA = process.env.SARA_BACKEND_URL || 'https://sara-backend.edson-633.workers.dev';
+  const SARA = process.env.SARA_BACKEND_URL || 'https://api.peptiqmx.com';
 
   if (!TOKEN) return { statusCode: 200, body: JSON.stringify({skip:'no token'}) };
 

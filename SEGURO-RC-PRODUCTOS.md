@@ -153,7 +153,7 @@ Una vez activo el seguro:
 
 1. Agregar badge "Asegurado RC Productos" en el footer de peptiqmx.com (confianza para B2B)
 2. Mencionarlo en el pitch a clínicas (gran ventaja competitiva)
-3. Archivar póliza en Drive de TDI · cc a `legal@peptiqmx.com`
+3. Archivar póliza en Drive de TDI · cc a `contacto@peptiqmx.com`
 4. Calendarizar renovación 60 días antes del vencimiento
 
 ---

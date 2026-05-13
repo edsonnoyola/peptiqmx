@@ -87,7 +87,7 @@ El dato que tu derma no menciona · Endocrine Reviews 2024:
 
 Qué hace TRINITY · 3 mecanismos sinérgicos:
 
-01 · GHK-Cu regula 4,192 genes de reparación cutánea (Pickart 2018, Int J Mol Sci). Es el regulador maestro · síntesis colágeno I/III endógena · elastina · ácido hialurónico que tu piel vuelve a fabricar.
+01 · GHK-Cu regula 4,192 genes de reparación cutánea (Pickart & Margolina (Cosmetics 2008–2015), Int J Mol Sci). Es el regulador maestro · síntesis colágeno I/III endógena · elastina · ácido hialurónico que tu piel vuelve a fabricar.
 
 02 · BPC-157 acelera angiogénesis · aumenta vascularización tisular · regeneración sistémica documentada en gut · tendón · piel.
 
@@ -219,7 +219,7 @@ Mary Claire Haver · NYT bestseller "The New Menopause" lo cita en The Pause Lif
 
 Qué hace · 3 mecanismos sinérgicos:
 
-01 · GHK-Cu regula 4,192 genes de reparación cutánea (Pickart 2018, Int J Mol Sci). Es el regulador maestro · síntesis colágeno I/III endógena · elastina · ácido hialurónico que tu piel vuelve a fabricar.
+01 · GHK-Cu regula 4,192 genes de reparación cutánea (Pickart & Margolina (Cosmetics 2008–2015), Int J Mol Sci). Es el regulador maestro · síntesis colágeno I/III endógena · elastina · ácido hialurónico que tu piel vuelve a fabricar.
 
 02 · BPC-157 acelera angiogénesis · aumenta vascularización · regeneración sistémica documentada en gut · piel · tejido conectivo.
 
@@ -232,7 +232,7 @@ TRINITY · NO toca hormonas · activa señales de reparación tisular que tu pro
 Compatible con TRH · estrógeno · progesterona · sin interacción documentada.
 
 Cita científica:
-✓ Pickart 2018 · Int J Mol Sci · GHK-Cu remodelado cutáneo
+✓ Pickart & Margolina (Cosmetics 2008–2015) · Int J Mol Sci · GHK-Cu remodelado cutáneo
 ✓ Chang 2011 · J Appl Physiol · BPC-157 reparación tisular
 ✓ Goldstein 2012 · Ann NY Acad Sci · TB-4 péptido regenerativo
 
@@ -283,7 +283,7 @@ PEPTIQ es la excepción. Únicos con inventario Janoshik en México.
 
 Te explicamos qué es Janoshik:
 
-Janoshik Analytical es un laboratorio independiente acreditado en Eslovaquia · Unión Europea · bajo norma ISO/IEC 17025. Es el mismo laboratorio que usan farmacéuticas suizas, biohackers globales y marcas premium USA como Limitless Life y Modern Aging.
+Janoshik Analytical es un laboratorio independiente acreditado en Eslovaquia · Unión Europea · bajo norma ISO/IEC 17025. Es el mismo laboratorio que usan farmacéuticas suizas, biohackers globales y marcas premium USA tradicionales.
 
 Cada lote PEPTIQ se envía a Janoshik antes de liberarse al mercado.
 
@@ -306,7 +306,7 @@ Qué recibes con tu PEPTIQ:
 Quién más usa Janoshik:
 ✓ Andrew Huberman · Stanford · "Always check Janoshik or Aspen Bioscience COA"
 ✓ Bryan Johnson · Project Blueprint · "Sin COA verificable · no entra al protocolo"
-✓ Limitless Life · Modern Aging · USA premium peptide brands · standard for transparency
+✓ Marcas premium USA tradicionales · standard for transparency
 ✓ Farmacéuticas EU · Suiza · Alemania · método estándar industrial
 
 Por qué importa:

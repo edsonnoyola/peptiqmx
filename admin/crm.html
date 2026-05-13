@@ -126,7 +126,7 @@
     <div class="login-err" id="loginErr"></div>
     <details style="margin-top:18px;font-size:11px;color:#777"><summary style="cursor:pointer">Acceso con API_SECRET (avanzado)</summary>
       <input type="password" id="apiKey" placeholder="API_SECRET (wrangler)" autocomplete="off" style="margin-top:8px">
-      <input type="url" id="apiBase" placeholder="Backend URL" value="https://sara-backend.edson-633.workers.dev">
+      <input type="url" id="apiBase" placeholder="Backend URL" value="https://api.peptiqmx.com">
       <button onclick="login()" style="margin-top:6px;background:#444">Entrar con API_SECRET</button>
     </details>
   </div>
@@ -334,7 +334,7 @@
 <script>
 const TENANT_ID = '00000000-0000-0000-0000-000000000002';
 let API_KEY = localStorage.getItem('peptiq_crm_apikey') || '';
-let API_BASE = localStorage.getItem('peptiq_crm_apibase') || 'https://sara-backend.edson-633.workers.dev';
+let API_BASE = localStorage.getItem('peptiq_crm_apibase') || 'https://api.peptiqmx.com';
 
 if (API_KEY) {
   document.getElementById('loginWrap').style.display='none';
@@ -346,7 +346,7 @@ async function loginPin(){
   const pin = (document.getElementById('pinInput').value||'').trim();
   const errEl = document.getElementById('loginErr');
   if (!pin) { errEl.textContent = 'Introduce tu PIN'; return; }
-  const base = 'https://sara-backend.edson-633.workers.dev';
+  const base = 'https://api.peptiqmx.com';
   try {
     const r = await fetch(`${base}/api/peptiq/pin-login`, {
       method:'POST', headers:{'Content-Type':'application/json'},
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 function login(){
   const k = document.getElementById('apiKey').value.trim();
-  const b = document.getElementById('apiBase').value.trim() || 'https://sara-backend.edson-633.workers.dev';
+  const b = document.getElementById('apiBase').value.trim() || 'https://api.peptiqmx.com';
   if (!k){ err('Introduce tu API_SECRET'); return; }
   API_KEY = k;
   API_BASE = b;
@@ -550,7 +550,7 @@ async function loadRetargeting(){
   try{
     const adminKey = localStorage.getItem('peptiq_admin_key') || '';
     const r = await fetch('/api/sales-master?key=' + encodeURIComponent(adminKey)); // warm cache
-    const r2 = await fetch(`https://sara-backend.edson-633.workers.dev/api/peptiq/leads-segments?api_key=${encodeURIComponent(localStorage.getItem('peptiq_crm_apikey') || '')}`);
+    const r2 = await fetch(`https://api.peptiqmx.com/api/peptiq/leads-segments?api_key=${encodeURIComponent(localStorage.getItem('peptiq_crm_apikey') || '')}`);
     if (!r2.ok) {
       document.getElementById('retContent').innerHTML = `<div class="empty" style="text-align:center;padding:40px;color:var(--mute)">No autorizado · ${r2.status}. Re-loguea con tu PIN.</div>`;
       return;
@@ -748,7 +748,7 @@ async function executeBroadcast(segment, dryRun){
   }
 
   try{
-    const r = await fetch(`https://sara-backend.edson-633.workers.dev/api/peptiq/leads-broadcast?api_key=${encodeURIComponent(localStorage.getItem('peptiq_crm_apikey')||'')}`, {
+    const r = await fetch(`https://api.peptiqmx.com/api/peptiq/leads-broadcast?api_key=${encodeURIComponent(localStorage.getItem('peptiq_crm_apikey')||'')}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)

@@ -124,14 +124,38 @@ exports.handler = async (event) => {
 
     // ─── MEDICAL QUESTION HARD-GUARD · before reaching Claude ───
     const MED_PATTERNS = [
-      /puedo (usar|aplicar|tomar|inyectar)/i,
-      /(es seguro|es bueno|me sirve|me funciona) (para|si tengo|con)/i,
-      /tengo (diabetes|cancer|c\u00e1ncer|hipotiroid|embaraz|presi\u00f3n alta|hipertensi[oó]n)/i,
-      /mi (esposa|esposo|hijo|hija|mam[áa]|pap[áa]|abuel)/i,
-      /(qu[eé] dosis|cu[aá]nto me )/i,
-      /(curar|tratar|eliminar) (la |el |mi )?(enfermedad|c[aá]ncer|diabetes|obesidad)/i,
-      /(me|le|nos) ayuda(r[aá])? con/i,
-      /(me|nos) lo (puedo|podemos) aplicar/i,
+      // Personal use questions (espa\u00f1ol)
+      /\bpuedo\s+(usar|aplicar|tomar|inyectar|consumir)/i,
+      /\b(me|nos|le|les)\s+puedo?\s+(aplicar|inyectar|tomar)/i,
+      /\b(es seguro|es bueno|me sirve|me funciona|funciona)\s+(para|si tengo|con|en mi|en m\u00ed)/i,
+
+      // Conditions (espa\u00f1ol)
+      /\btengo\s+(diabetes|cancer|c\u00e1ncer|hipotiroid|embaraz|presi[o\u00f3]n alta|hipertensi[o\u00f3]n|colesterol|art[i\u00ed]ritis|fibromialgia|tiroides|Crohn|colitis)/i,
+      /\b(mi|nuestro|nuestra)\s+(esposa|esposo|hijo|hija|mam[\u00e1a]|pap[\u00e1a]|abuel|pareja|novio|novia|familiar)/i,
+
+      // Third-person hypothetical
+      /\bpara\s+(alguien|una persona|un amigo|hipot[e\u00e9]tic|alguno|alguna)/i,
+      /\bun(a)?\s+persona\s+(que tiene|con|con la condici[o\u00f3]n)/i,
+      /\bsi\s+(una|un|alguna|alguno|tuviera|tuviese)/i,
+      /\bhipot\u00e9tica?m?ent?e?\b/i,
+
+      // Dosing requests
+      /\b(qu[e\u00e9]\s+dosis|cu[a\u00e1]nto\s+(me|mi|nos|le|de\s+esto))/i,
+      /\bdame\s+(la|una)?\s*dosis/i,
+      /\b(qu[e\u00e9]|cual)\s+es?\s+(la|mi)?\s*dosis\s+(\u00f3ptima|recomendad|ideal|para)/i,
+      /\bpara\s+(un\s+adulto|una\s+persona)\s+de\s+\d+\s*(kg|a\u00f1os|kilos)/i,
+
+      // Treatment/cure claims
+      /\b(curar|tratar|eliminar|sanar)\s+(la|el|mi|tu|este|nuestra)?\s*(enfermedad|c[a\u00e1]ncer|diabetes|obesidad|dolor|inflamaci[o\u00f3]n|alergia|sintoma|s\u00edntoma)/i,
+      /\bsirve\s+para\s+(curar|tratar|sanar|aliviar)/i,
+      /\b(me|nos|le)\s+(ayuda|ayudar[\u00e1a])?\s+con/i,
+
+      // English variants
+      /\b(can|may|should|could)\s+i\s+(use|take|inject|apply)/i,
+      /\b(is|are)\s+(it|they|this|these)\s+safe\s+(for|to)/i,
+      /\bi\s+have\s+(diabetes|cancer|hypertension|pregnancy)/i,
+      /\bfor\s+(someone|a\s+person|my\s+\w+)\s+(who|with|having)/i,
+      /\bwhat\s+dose\s+(should|do\s+i)/i,
     ];
     const isMedical = MED_PATTERNS.some(p => p.test(question));
     if (isMedical) {
@@ -199,9 +223,11 @@ Para tu caso espec\u00edfico o consideraciones de salud individuales, te recomen
   }
 };
 
-function cors() {
+function cors(origin) {
+  const allowed = ['https://peptiqmx.com', 'https://peptiqresearch.org', 'https://app.peptiqmx.com', 'http://localhost:8888'];
+  const validOrigin = allowed.includes(origin) ? origin : 'https://peptiqmx.com';
   return {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': validOrigin,
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Content-Type': 'application/json'

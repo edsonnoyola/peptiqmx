@@ -17,7 +17,7 @@ const crypto = require('crypto');
 // Stripe link → product mapping (sincroniza con catálogo)
 // Si agregas/cambias links de stripe, actualiza este mapeo
 const STRIPE_LINK_TO_PRODUCT = {
-  // Stacks
+  // Stacks (sincronizado con STRIPE_LINKS en checkout.html · 13 productos)
   'dRmaEY4AL2Jycmd6Bqds400': { name: 'Wolverine', items: [{ peptide: 'Wolverine Blend', vials: 1 }, { peptide: 'BAC Water', vials: 1 }], amount: 5499 },
   'bJedRa4ALgAo5XP4tids401': { name: 'Wolverine PRO', items: [{ peptide: 'BPC-157', vials: 1 }, { peptide: 'TB-500', vials: 1 }, { peptide: 'BAC Water', vials: 2 }], amount: 6999 },
   'fZu3cwebl0Bqae52lads402': { name: 'GH Boost', items: [{ peptide: 'CJC+Ipa', vials: 1 }, { peptide: 'BAC Water', vials: 1 }], amount: 5499 },
@@ -26,7 +26,11 @@ const STRIPE_LINK_TO_PRODUCT = {
   '5kQ3cw4ALesg2LD3peds405': { name: 'Gut Reset', items: [{ peptide: 'BPC-157', vials: 1 }, { peptide: 'KPV', vials: 1 }, { peptide: 'BAC Water', vials: 2 }], amount: 5999 },
   '00w9AUd7h0Bq2LDf7Wds406': { name: 'Neuro Focus', items: [{ peptide: 'Semax', vials: 1 }, { peptide: 'Epithalon', vials: 1 }, { peptide: 'BAC Water', vials: 2 }], amount: 8999 },
   '6oU3cwd7hbg4gCt7Fuds407': { name: 'Highlander Longevity', items: [{ peptide: 'NAD+', vials: 1 }, { peptide: 'Epithalon', vials: 1 }, { peptide: 'GHK-Cu', vials: 1 }, { peptide: 'BAC Water', vials: 3 }], amount: 14999 },
-  '4gM00E5aB2DN10Ydqi8wQ02': { name: 'TITAN Performance', items: [{ peptide: 'Tesamorelin', vials: 1 }, { peptide: 'Ipamorelin', vials: 1 }, { peptide: 'NAD+', vials: 1 }, { peptide: 'BAC Water', vials: 3 }], amount: 14999 },
+  'eVqaEYd7h4RG4TL3peds408': { name: 'TITAN Stack', items: [{ peptide: 'Tesamorelin', vials: 1 }, { peptide: 'Ipamorelin', vials: 1 }, { peptide: 'NAD+', vials: 1 }, { peptide: 'BAC Water', vials: 3 }], amount: 14999 },
+  '14A9AUc3dck82LDgc0ds409': { name: 'APEX TOTAL', items: [{ peptide: 'Retatrutide', vials: 1 }, { peptide: 'Tesamorelin', vials: 1 }, { peptide: 'NAD+', vials: 1 }, { peptide: 'BPC-157', vials: 1 }, { peptide: 'BAC Water', vials: 4 }], amount: 24999 },
+  'eVq3cw0kvdocbi96Bqds40a': { name: 'Heal Mensual', items: [{ peptide: 'Wolverine Blend', vials: 1 }, { peptide: 'BAC Water', vials: 1 }], amount: 5099 },
+  '9B6fZiffp4RGbi9f7Wds40b': { name: 'Trinity Mensual', items: [{ peptide: 'Trinity', vials: 1 }, { peptide: 'GHK-Cu', vials: 1 }, { peptide: 'BAC Water', vials: 2 }], amount: 8499 },
+  '7sY14o3wH3NCae5aRGds40c': { name: 'Longevity Mensual', items: [{ peptide: 'NAD+', vials: 1 }, { peptide: 'Epithalon', vials: 1 }, { peptide: 'BAC Water', vials: 2 }], amount: 8099 },
 };
 
 function verifyStripeSig(payload, sig, secret) {
@@ -72,15 +76,20 @@ exports.handler = async (event) => {
   const sig = event.headers['stripe-signature'] || event.headers['Stripe-Signature'];
   const secret = process.env.STRIPE_WEBHOOK_SECRET;
 
-  // Verify signature (skip if no secret set — dev mode)
-  if (secret) {
+  // Verify signature (MANDATORY · webhook disabled if no secret)
+  if (!secret) {
+    console.error('SECURITY: STRIPE_WEBHOOK_SECRET no configurado · rechazando request');
+    return { statusCode: 503, body: JSON.stringify({ error: 'webhook secret not configured · webhook disabled for security' }) };
+  }
+  try {
     const valid = verifyStripeSig(event.body, sig, secret);
     if (!valid) {
       console.warn('PEPTIQ stripe webhook · invalid signature');
       return { statusCode: 400, body: 'invalid signature' };
     }
-  } else {
-    console.warn('PEPTIQ stripe webhook · STRIPE_WEBHOOK_SECRET no configurado · skipping verification');
+  } catch (e) {
+    console.error('PEPTIQ stripe webhook · signature verification error', e);
+    return { statusCode: 400, body: 'invalid signature' };
   }
 
   let payload;
@@ -101,15 +110,11 @@ exports.handler = async (event) => {
   const amount = (session.amount_total || 0) / 100;
   const stripePaymentLinkId = session.payment_link || '';
 
-  // Identify product from payment_link or amount
-  let product = STRIPE_LINK_TO_PRODUCT[stripePaymentLinkId];
+  // Identify product STRICTLY by payment_link (no amount fallback · evita colisiones)
+  const product = STRIPE_LINK_TO_PRODUCT[stripePaymentLinkId];
   if (!product) {
-    // Fallback: match by amount
-    product = Object.values(STRIPE_LINK_TO_PRODUCT).find((p) => p.amount === amount) || null;
-  }
-  if (!product) {
-    console.warn(`PEPTIQ stripe webhook · producto no identificado · payment_link=${stripePaymentLinkId} amount=${amount}`);
-    return { statusCode: 200, body: JSON.stringify({ skipped: 'product unknown' }) };
+    console.error(`PEPTIQ stripe webhook · ALERTA payment_link desconocido · payment_link=${stripePaymentLinkId} amount=${amount} · agregar a STRIPE_LINK_TO_PRODUCT`);
+    return { statusCode: 400, body: JSON.stringify({ error: 'unknown payment_link', payment_link: stripePaymentLinkId }) };
   }
 
   if (!wa && !customerEmail) {
