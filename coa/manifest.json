@@ -1,0 +1,65 @@
+[
+  {
+    "id": "bpc157",
+    "name": "BPC-157",
+    "lote": "PQ-2026-0512-BPC-A",
+    "purity": "99.654",
+    "pdf": "/coa/pdf/COA-PEPTIQ-bpc157.pdf"
+  },
+  {
+    "id": "tb500",
+    "name": "TB-500",
+    "lote": "PQ-2026-0512-TB5-A",
+    "purity": "99.328",
+    "pdf": "/coa/pdf/COA-PEPTIQ-tb500.pdf"
+  },
+  {
+    "id": "ghkcu",
+    "name": "GHK-Cu",
+    "lote": "PQ-2026-0512-GHK-A",
+    "purity": "99.508",
+    "pdf": "/coa/pdf/COA-PEPTIQ-ghkcu.pdf"
+  },
+  {
+    "id": "ipamorelin",
+    "name": "Ipamorelin",
+    "lote": "PQ-2026-0512-IPA-A",
+    "purity": "99.450",
+    "pdf": "/coa/pdf/COA-PEPTIQ-ipamorelin.pdf"
+  },
+  {
+    "id": "retatrutide",
+    "name": "Retatrutide",
+    "lote": "PQ-2026-0512-RTT-A",
+    "purity": "99.080",
+    "pdf": "/coa/pdf/COA-PEPTIQ-retatrutide.pdf"
+  },
+  {
+    "id": "tesamorelin",
+    "name": "Tesamorelin",
+    "lote": "PQ-2026-0512-TSM-A",
+    "purity": "99.062",
+    "pdf": "/coa/pdf/COA-PEPTIQ-tesamorelin.pdf"
+  },
+  {
+    "id": "motsc",
+    "name": "MOTS-C",
+    "lote": "PQ-2026-0512-MTC-A",
+    "purity": "99.664",
+    "pdf": "/coa/pdf/COA-PEPTIQ-motsc.pdf"
+  },
+  {
+    "id": "tirzepatide",
+    "name": "Tirzepatide",
+    "lote": "PQ-2026-0512-TZP-A",
+    "purity": "99.645",
+    "pdf": "/coa/pdf/COA-PEPTIQ-tirzepatide.pdf"
+  },
+  {
+    "id": "semax",
+    "name": "Semax",
+    "lote": "PQ-2026-0512-SMX-A",
+    "purity": "99.520",
+    "pdf": "/coa/pdf/COA-PEPTIQ-semax.pdf"
+  }
+]
