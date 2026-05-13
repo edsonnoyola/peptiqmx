@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Especificación KPV</title><style>
+@page{size:A4;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;color:#1A1A1A;background:#fff}
+.page{width:210mm;height:297mm;padding:11mm 13mm;overflow:hidden}
+.header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:8px;border-bottom:2px solid #C4A265;margin-bottom:12px}
+.logo{font-family:Georgia,serif;font-size:32px;font-weight:700;letter-spacing:1px}
+.logo sup{font-size:13px;color:#C4A265}
+.logo-sub{font-size:9px;letter-spacing:4px;color:#999;margin-top:2px;font-weight:600}
+.doc-title{text-align:right}
+.doc-title h1{font-size:13px;letter-spacing:3px;color:#C4A265;font-weight:600}
+.doc-title p{font-size:10px;color:#888;margin-top:3px}
+.doc-title .docid{font-size:9px;color:#bbb;margin-top:6px;font-family:monospace}
+.product-row{display:flex;gap:20px;margin-bottom:12px;align-items:stretch}
+.product-img{width:160px;background:#0A0908;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.product-img img{width:100%;height:100%;object-fit:cover}
+.product-img .tag{position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.96);padding:3px 8px;font-size:8px;letter-spacing:2px;font-weight:700;color:#1A1A1A;border-radius:2px}
+.product-img .tag::before{content:'';display:inline-block;width:6px;height:6px;background:#F59E0B;border-radius:50%;margin-right:5px;vertical-align:middle}
+.product-info{flex:1}
+.product-info h2{font-family:Georgia,serif;font-size:26px;font-weight:700;margin-bottom:4px}
+.product-info .form{font-size:11px;letter-spacing:2px;color:#999;text-transform:uppercase;margin-bottom:12px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.info-box{background:#F9F8F6;padding:7px 10px;border-left:3px solid #C4A265}
+.info-label{font-size:8px;letter-spacing:2px;color:#999;text-transform:uppercase;margin-bottom:2px}
+.info-value{font-size:12px;font-weight:600}
+.notice{background:#FEF3C7;border-left:4px solid #F59E0B;padding:10px 12px;margin-bottom:8px;border-radius:4px}
+.notice h4{color:#92400E;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:4px}
+.notice p{font-size:10.5px;color:#78350F;line-height:1.55}
+.results h3{font-size:11px;letter-spacing:2px;color:#C4A265;margin-bottom:8px;text-transform:uppercase}
+table{width:100%;border-collapse:collapse;margin-bottom:8px}
+table th{text-align:left;font-size:9px;letter-spacing:1px;color:#999;text-transform:uppercase;padding:6px 10px;border-bottom:1px solid #E8E4E0}
+table td{padding:6px 10px;font-size:11.5px;border-bottom:1px solid #F0EDE8}
+.highlight{font-size:21px;font-weight:700;color:#22C55E;font-family:Georgia,serif}
+.trust-section{background:#0A0908;color:#F0E8D4;padding:9px 12px;margin-bottom:8px;border-radius:4px}
+.trust-section h4{color:#C4A265;font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+.trust-row{display:flex;gap:14px}
+.trust-item{flex:1}
+.trust-item .val{font-family:Georgia,serif;font-size:18px;color:#C4A265;font-weight:700}
+.trust-item .lbl{font-size:8.5px;color:#aaa;letter-spacing:1px}
+.guarantee{background:#F0FDF4;border-left:4px solid #22C55E;padding:9px 12px;margin-bottom:8px;border-radius:4px}
+.guarantee h5{color:#14532D;font-size:10.5px;font-weight:700;margin-bottom:3px}
+.guarantee p{font-size:10px;color:#166534;line-height:1.55;font-style:italic}
+.alert-banner{background:#1A1A1A;color:#F0E8D4;padding:8px 12px;margin:8px 0 6px 0;border-radius:3px;border:1px solid #C4A265;text-align:center;font-size:9.5px;line-height:1.5}
+.alert-banner .gold{color:#C4A265;font-weight:700;letter-spacing:1px}
+.footer{display:flex;justify-content:space-between;align-items:center;margin-top:6px;padding-top:8px;border-top:2px solid #C4A265}
+.footer-left{font-size:9px;color:#999}
+.footer-right{font-family:Georgia,serif;font-size:14px;color:#C4A265}
+.disclaimer{font-size:8.5px;color:#888;line-height:1.55;padding-top:8px;border-top:1px solid #E8E4E0;margin-top:6px}
+</style></head><body><div class="page">
+<div class="header"><div><div class="logo">PEPTIQ<sup>MX</sup></div><div class="logo-sub">R E S E A R C H &nbsp;&middot;&nbsp; G R A D E</div></div>
+<div class="doc-title"><h1>ESPECIFICACIÓN DE PRODUCTO</h1><p>Verificación independiente en proceso</p><div class="docid">DOC ID · PQ-2026-0512-KPV-A</div></div></div>
+
+<div class="product-row">
+<div class="product-img"><span class="tag">VERIF. EN PROCESO</span><img src="../../img/products-v2/kpv-studio.png" alt="KPV"></div>
+<div class="product-info"><h2>KPV</h2><div class="form">Tripéptido anti-inflamatorio · Vial PEPTIQ estéril</div>
+<div class="info-grid">
+<div class="info-box"><div class="info-label">Cantidad por vial</div><div class="info-value">10mg</div></div>
+<div class="info-box"><div class="info-label">Pureza declarada</div><div class="info-value">≥99.5%</div></div>
+<div class="info-box"><div class="info-label">Lote PEPTIQ</div><div class="info-value">PQ-2026-0512-KPV-A</div></div>
+<div class="info-box"><div class="info-label">Forma</div><div class="info-value">Polvo liofilizado</div></div>
+</div></div></div>
+
+<div class="notice">
+<h4>⚠️ VERIFICACIÓN INDEPENDIENTE EN PROCESO</h4>
+<p>Lote en análisis HPLC con Eurofins Scientific México (ISO/IEC 17025). COA público se publicará en peptiqresearch.org al recibir resultados. Parámetros mostrados corresponden a especificaciones del fabricante origen.</p>
+</div>
+
+<div class="results"><h3>Especificaciones del fabricante</h3><table>
+<tr><th>Parámetro</th><th>Método</th><th>Especificación</th></tr>
+<tr><td>Identificación</td><td>HPLC / MS</td><td>KPV (Lys-Pro-Val)</td></tr>
+<tr><td>Apariencia</td><td>Visual</td><td>Polvo blanco a off-white</td></tr>
+<tr><td>Contenido</td><td>HPLC</td><td>±5% del etiquetado</td></tr>
+<tr><td><strong>Pureza declarada</strong></td><td>HPLC (C18, 220nm)</td><td class="highlight">≥99.5%</td></tr>
+<tr><td>Endotoxinas</td><td>LAL Gel Clot</td><td>&lt;5 EU/mg</td></tr>
+<tr><td>Agua (Karl Fischer)</td><td>KF</td><td>≤8.0%</td></tr>
+</table></div>
+
+<div class="trust-section">
+<h4>RESPALDO DE CALIDAD · PEPTIQ Research</h4>
+<div class="trust-row">
+<div class="trust-item"><div class="val">+1 año</div><div class="lbl">SIN INCIDENCIAS DE CALIDAD</div></div>
+<div class="trust-item"><div class="val">Eurofins</div><div class="lbl">LAB INDEP MX · EN PROCESO</div></div>
+<div class="trust-item"><div class="val">100%</div><div class="lbl">GARANTÍA REEMBOLSO SI FALLA</div></div>
+</div>
+</div>
+
+<div class="guarantee">
+<h5>GARANTÍA DEL FABRICANTE ORIGEN</h5>
+<p>"If the product quality doesn't meet standards, I'll refund you and cover the testing costs." — Fabricante origen, política de respaldo en testing independiente. PEPTIQ Research transfiere íntegramente esta garantía al usuario final.</p>
+</div>
+
+<div class="alert-banner"><span class="gold">★ AVISO ·</span> <strong>El uso y aplicación es responsabilidad exclusiva de quien lo usa</strong> · Material de investigación · solo +18 · no apto consumo humano ni animal</div>
+
+<div class="disclaimer">Esta especificación refleja los parámetros declarados por el fabricante origen y será actualizada con resultados de análisis independiente al cierre del proceso. PEPTIQ Research no es un laboratorio de análisis. <strong>Material exclusivo para investigación científica · NO apto para uso humano ni animal · solo mayores de 18 años · el uso es responsabilidad de quien lo aplique.</strong></div>
+
+<div class="footer"><div class="footer-left">peptiqresearch.org · peptiqmx.com · contacto@peptiqmx.com</div><div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div></div>
+</div></body></html>
