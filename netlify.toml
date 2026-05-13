@@ -97,3 +97,8 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://sara-backend.edson-633.workers.dev https://hwyrxlnycrlgohrecbpx.supabase.co; img-src 'self' data: https:; frame-ancestors 'none'"
     Cache-Control = "no-store, no-cache, must-revalidate, private"
+
+[[redirects]]
+  from = "/api/consent-log"
+  to = "/.netlify/functions/peptiq-consent-log"
+  status = 200

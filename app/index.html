@@ -2656,6 +2656,30 @@ function app(){
         }));
         // Fallback timestamp: marca registro completo · usado como señal redundante
         try { localStorage.setItem('peptiq_registered_at', new Date().toISOString()); } catch(e){}
+        // ─── Server-side legal consent log · trail jurídico ───
+        try {
+          fetch('/api/consent-log', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              type: 'consent_app_v1',
+              source: 'pwa-onboarding',
+              email: this.email || '',
+              whatsapp: this.phone || '',
+              name: this.userName || '',
+              accepted: true,
+              version: '1.5',
+              checkboxes: {
+                terms_acuerdo_marco: true,
+                mayor_18: true,
+                no_embarazo_lactancia: true,
+                no_cancer_activo: true,
+                responsabilidad_personal: true,
+                research_use_only: true
+              }
+            })
+          }).catch(()=>{});
+        } catch(e){}
       }catch(e){ console.warn('[PEPTIQ] saveSetup error:', e); }
     },
     get adherencePct(){
