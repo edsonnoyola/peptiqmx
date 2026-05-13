@@ -1829,3 +1829,89 @@ Mecanismo de sinergia: El Epitalon (tetrapéptido Khavinson) ingresa directament
 .
 Resultados: Permite un sueño profundo inmediato, una depuración masiva de residuos neurotóxicos y la restauración perfecta de los patrones circadianos críticos para la longevidad sistémica
 .
+
+---
+
+## STORAGE RESEARCH · Almacenamiento de péptidos research-grade
+
+> Marco: información técnica de estabilidad química documentada en literatura research. NO constituye consejo médico ni de aplicación.
+
+### Polvo liofilizado (vial sellado · sin reconstituir)
+
+| Temperatura | Estabilidad documentada |
+|---|---|
+| -20°C (congelador) | 3-5 años · máxima estabilidad |
+| 2-8°C (refrigerador) | 2-3 años · óptimo para uso ordinario |
+| Temperatura ambiente sellado, seco, sin luz | 6 meses máximo |
+
+**Notas técnicas:**
+- Cadena de frío estricta NO es requerida durante envío corto (24-72h) si el polvo está liofilizado y sellado
+- Stickers de cadena de frío en empaques de péptidos son principalmente marketing · la literatura research documenta tolerancia de polvo seco a TA durante días
+- Cualquier vial con humedad visible, cristales colapsados, o cambio de color desde su estado original blanco-off-white (excepto GHK-Cu que es azul cristalino) debe descartarse
+
+### Vehículo de reconstitución por molécula
+
+**Agua Bacteriostática (BAC water · 0.9% alcohol bencílico):**
+- BPC-157, TB-500, GHK-Cu, NAD+, Ipamorelin, CJC-1295, Epithalon, Retatrutide, KPV, MOTS-c, AOD-9604, Sermorelin
+- Multi-dosis · preservador antimicrobiano integrado
+- Vida útil reconstituido: 28-30 días refrigerado
+
+**Agua Inyectable Estéril (SWFI · sterile water for injection):**
+- Tesamorelin, Selank, Semax, Cerebrolysin
+- Razón: el alcohol bencílico de BAC degrada estas moléculas específicas
+- Vida útil reconstituido: 24-48 horas (sin preservador) · uso single-day
+
+### Post-reconstitución · estabilidad documentada
+
+| Condición | Vida útil reportada |
+|---|---|
+| 2-8°C (refrigerador) en BAC water | 28-30 días |
+| 2-8°C en SWFI | 24-48 horas |
+| Temperatura ambiente | NO recomendado (degradación acelerada) |
+| Congelación reconstituido | **NUNCA** · cristales de hielo rompen enlaces peptídicos |
+
+### Protocolo de reconstitución research
+
+1. Vial liofilizado a temperatura ambiente (5-10 min antes)
+2. Limpiar tope con alcohol al 70%
+3. Inyectar BAC/SWFI lentamente por las paredes del vial (NO directo al polvo)
+4. **NO agitar** · girar suave en posición horizontal (tilt + roll) hasta disolución completa
+5. Reposar 2-5 minutos
+6. Inspeccionar: solución debe ser clara, sin partículas, sin turbidez
+
+### Indicadores de degradación · cuándo descartar
+
+- Color amarillento (excepto GHK-Cu que es azul desde origen)
+- Partículas flotantes o sedimentadas
+- Olor distinto al neutro original
+- Solución turbia post-reposo
+- Vial reconstituido excediendo vida útil documentada
+- Exposición prolongada a luz directa
+- Cualquier ciclo de congelación accidental
+
+### Combinaciones · mezclar péptidos en mismo vial
+
+**Literatura research documenta compatibilidad química limitada:**
+- BPC-157 + TB-500 (Wolverine Blend): estable en mismo vial reconstituido
+- BPC-157 + GHK-Cu: estable (pero pH ligeramente distinto)
+- CJC-1295 + Ipamorelin: estable · combinación clásica documentada
+- NAD+ + cualquier otro: NO mezclar · pH ácido degrada otros péptidos
+- Retatrutide + GLP-1 analogos: NO mezclar
+- Default: reconstituir y aplicar péptidos por separado salvo blends pre-fabricados
+
+### Excepciones por molécula
+
+- **GHK-Cu**: solución azul cristalina natural · NO es signo de degradación · el cobre da el color característico
+- **Tesamorelin**: HIPERSENSIBLE a alcohol bencílico · SOLO SWFI, vida útil 24-48h, refrigerar inmediatamente
+- **Retatrutide**: alta concentración (30mg) requiere mayor volumen de reconstitución (3-5 ml típico) para concentración usable
+- **NAD+**: alta concentración (1000mg) usualmente se reconstituye en BAC + adicionalmente diluye en SWFI antes de aplicar
+- **Epithalon**: extremadamente estable · puede tolerar TA post-reconstitución 1-2 días
+
+### Notas de envío y recepción
+
+- Vial recibido a temperatura ambiente: válido si tiempo de tránsito <72h
+- Vial recibido caliente (>30°C sostenido) o con polvo colapsado: contactar PEPTIQ para reemplazo
+- Inspeccionar empaque sellado · ruptura de seal indica posible contaminación
+
+*Información educativa research-grade · No reemplaza consulta médica · El uso del producto es responsabilidad de quien lo aplique · Solo para uso de laboratorio (Research Use Only · RUO).*
+
