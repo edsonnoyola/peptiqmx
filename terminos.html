@@ -1,299 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PEPTIQ MX — Términos, Privacidad y Aviso Legal</title>
-  <meta name="description" content="Términos y Condiciones, Aviso de Privacidad y Aviso Legal de PEPTIQ MX. Productos research-grade · uso exclusivo para investigación.">
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://peptiqmx.com/legal.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{
-      --sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
-      --serif:"Playfair Display",Georgia,serif;
-      --ink:#111111;
-      --stone:#FAFAFA;
-      --paper:#FFFFFF;
-      --beige:#777777;
-      --beige-deep:#777777;
-      --gold:#111111;
-      --rule:#F5F5F5;
-      --mute:#6B6B6B;
-    }
-    html{scroll-behavior:smooth}
-    body{font-family:var(--sans);background:var(--stone);color:var(--ink);line-height:1.7;font-weight:400}
-    a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--beige);transition:.2s}
-    a:hover{color:var(--beige-deep);border-color:var(--beige-deep)}
-    .container{max-width:860px;margin:0 auto;padding:0 28px}
-    .eyebrow{font-size:10px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--mute)}
-
-    .nav{position:sticky;top:0;z-index:60;background:rgba(246,243,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:18px 0}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 28px}
-    .nav .brand img{height:28px;display:block}
-    .nav a{border:0}
-    .nav .back{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink);font-weight:500}
-
-    .hero{padding:80px 0 48px;text-align:center}
-    .hero .eyebrow{display:inline-block;margin-bottom:18px}
-    .hero h1{font-family:var(--serif);font-size:clamp(40px,6vw,64px);line-height:1.08;font-weight:500;letter-spacing:-1.2px;color:var(--ink);margin-bottom:18px}
-    .hero h1 em{font-style:italic;color:var(--beige-deep)}
-    .hero p{color:var(--mute);font-size:15px;max-width:600px;margin:0 auto}
-
-    .toc{background:var(--paper);border:1px solid var(--rule);padding:28px 32px;margin:32px auto 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .toc a{border:0;display:block;padding:12px 16px;background:var(--stone);border-left:2px solid var(--gold);font-size:13px;letter-spacing:.4px;color:var(--ink);transition:.2s}
-    .toc a:hover{background:var(--ink);color:var(--paper);border-color:var(--gold)}
-    .toc a small{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--beige-deep);margin-bottom:4px}
-    .toc a:hover small{color:var(--gold)}
-
-    .doc{background:var(--paper);border:1px solid var(--rule);padding:56px 56px;margin-bottom:32px}
-    .doc:target{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
-    .doc h2{font-family:var(--serif);font-size:34px;font-weight:500;color:var(--ink);margin-bottom:6px;letter-spacing:-.6px}
-    .doc h2 em{font-style:italic;color:var(--beige-deep)}
-    .doc .meta{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mute);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
-    .doc h3{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin:32px 0 12px;letter-spacing:-.3px}
-    .doc h4{font-size:14px;font-weight:600;color:var(--ink);margin:20px 0 8px;letter-spacing:.2px}
-    .doc p{font-size:14.5px;color:#2a2a2a;margin-bottom:14px}
-    .doc p b{color:var(--ink);font-weight:600}
-    .doc ul,.doc ol{margin:8px 0 18px 22px;color:#2a2a2a}
-    .doc li{font-size:14.5px;margin-bottom:8px}
-    .doc .callout{background:#fffbe8;border-left:3px solid var(--gold);padding:18px 22px;margin:24px 0;font-size:14px}
-    .doc .callout b{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--beige-deep);margin-bottom:8px}
-    .doc .critical{background:#1a1a1a;color:#f0e4c8;border-left:3px solid #FFC107;padding:20px 24px;margin:24px 0;font-size:14px}
-    .doc .critical b{color:#FFC107;display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-
-    .back-top{text-align:center;padding:40px 0}
-    .back-top a{display:inline-block;padding:14px 32px;background:var(--ink);color:var(--paper);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;border:0}
-    .back-top a:hover{background:#000}
-
-    footer{background:var(--ink);color:#777777;padding:48px 0 28px;text-align:center;font-size:12px;line-height:1.8}
-    footer a{color:var(--beige);border:0}
-
-    @media(max-width:760px){
-      .hero{padding:48px 0 32px}
-      .toc{grid-template-columns:1fr;padding:20px}
-      .doc{padding:36px 28px}
-      .doc h2{font-size:26px}
-    }
-  </style>
-  <script src="/peptiq-legal-banner.js" defer></script>
-    <script defer src="/peptiq-age-gate.js?v=2"></script>
-  <script defer src="/peptiq-cart.js?v=1"></script>
+<meta charset="UTF-8">
+<title>Términos y Condiciones · PEPTIQ Research</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:40px auto;padding:30px 28px;color:#1A1A1A;line-height:1.75;background:#fff}
+h1{color:#988646;font-size:32px;margin-bottom:6px}
+.sub{color:#888;font-size:13px;letter-spacing:2px;margin-bottom:30px;border-bottom:2px solid #C4A265;padding-bottom:16px}
+h2{color:#1A1A1A;font-size:18px;margin-top:36px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #E8E4E0}
+h3{color:#1A1A1A;font-size:14px;margin-top:20px;margin-bottom:8px;font-weight:700}
+p{margin-bottom:12px;color:#333;font-size:14.5px}
+ul,ol{margin:10px 0 14px 24px}
+li{margin-bottom:6px;font-size:14.5px;color:#333}
+strong{color:#1A1A1A}
+.box-critical{background:#FEF2F2;border-left:4px solid #DC2626;padding:14px 18px;margin:18px 0;border-radius:4px}
+.box-critical h3{color:#991B1B;margin-top:0}
+.box-critical p{color:#7F1D1D;font-size:13.5px}
+.box-info{background:#F9F8F6;border-left:4px solid #C4A265;padding:14px 18px;margin:18px 0;border-radius:4px}
+.box-info p{color:#555;font-size:13.5px}
+.signature{margin-top:50px;padding-top:24px;border-top:2px solid #C4A265;font-size:12px;color:#888}
+.signature strong{color:#1A1A1A}
+a{color:#988646;border-bottom:1px solid #988646}
+</style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="/" class="brand">
-      <img src="img/logo-peptiqmx.svg" alt="PEPTIQ">
-    </a>
-    <a href="/" class="back">← Regresar al sitio</a>
-  </div>
-</nav>
+<h1>Términos y Condiciones del Servicio</h1>
+<div class="sub">PEPTIQ Research · Última actualización: 12 de mayo 2026</div>
 
-<header class="hero">
-  <div class="container">
-    <div class="eyebrow">Marco legal · PEPTIQ MX</div>
-    <h1>Términos, privacidad<br><em>y aviso legal.</em></h1>
-    <p>Documentación completa de las condiciones bajo las cuales PEPTIQ MX comercializa péptidos research-grade en México.</p>
-  </div>
-</header>
-
-<div class="container">
-  <nav class="toc">
-    <a href="#terminos"><small>01 · Contrato</small>Términos y Condiciones</a>
-    <a href="#privacidad"><small>02 · Datos</small>Aviso de Privacidad</a>
-    <a href="#aviso"><small>03 · Research-use</small>Aviso Legal de Uso</a>
-  </nav>
-
-  <!-- ============ 01 TÉRMINOS Y CONDICIONES ============ -->
-  <article id="terminos" class="doc">
-    <h2>Términos <em>y condiciones.</em></h2>
-    <div class="meta">Vigente desde 23 abril 2026 · Última actualización 23 abril 2026</div>
-
-    <div class="critical">
-      <b>⚠ Antes de continuar</b>
-      Al navegar, contactar a PEPTIQ MX o realizar una compra, usted declara ser mayor de 18 años, entender que los productos PEPTIQ son péptidos research-grade destinados <b>exclusivamente a investigación</b>, y liberar a PEPTIQ MX de cualquier reclamación derivada del uso de los productos.
-    </div>
-
-    <h3>1. Definiciones</h3>
-    <p><b>"PEPTIQ" o "Nosotros":</b> la marca comercial PEPTIQ MX, operada bajo <b>TDI Marketing SA de CV</b> (México) o la entidad corporativa sucesora, con domicilio fiscal en el Estado de San Luis Potosí, México.</p>
-    <p><b>"Usuario", "Cliente" o "Usted":</b> toda persona física o moral que accede al sitio peptiqmx.com, contacta a PEPTIQ por cualquier canal (WhatsApp, email, redes sociales) o realiza una compra de productos.</p>
-    <p><b>"Productos":</b> péptidos liofilizados research-grade, agua bacteriostática, jeringas estériles, kits de reconstitución y accesorios asociados, todos destinados <b>exclusivamente a uso en investigación científica</b>.</p>
-    <p><b>"Research-grade":</b> grado de investigación · el producto se fabrica, analiza y comercializa para uso en laboratorios, investigación académica y estudios científicos autorizados. No está aprobado por COFEPRIS, FDA, EMA ni ninguna otra autoridad sanitaria para uso en humanos.</p>
-
-    <h3>2. Naturaleza de los productos</h3>
-    <p>Los productos PEPTIQ son <b>reactivos de investigación</b>. No son medicamentos, no son suplementos alimenticios, no son cosméticos y no están indicados para diagnóstico, tratamiento, cura o prevención de ninguna enfermedad o condición humana o animal.</p>
-    <p>Los productos se comercializan al amparo de las disposiciones mexicanas aplicables a <b>reactivos químicos de investigación</b>, en tanto no constituyen medicamentos bajo los términos del artículo 221 de la Ley General de Salud.</p>
-    <div class="callout">
-      <b>Posicionamiento regulatorio</b>
-      PEPTIQ no promueve, recomienda ni sugiere el uso humano de sus productos. Toda comunicación, copy publicitario, protocolo de uso o dosis mencionada en el sitio debe entenderse como información académica con fines de investigación, no como recomendación médica.
-    </div>
-
-    <h3>3. Elegibilidad del comprador</h3>
-    <p>Solo pueden adquirir productos PEPTIQ personas que cumplan <b>todas</b> las siguientes condiciones:</p>
-    <ul>
-      <li>Ser mayor de 18 años</li>
-      <li>Tener capacidad legal plena para contratar</li>
-      <li>Declarar que adquiere los productos para fines de investigación, estudio académico, o uso como reactivo de laboratorio</li>
-      <li>Aceptar íntegramente estos Términos, el Aviso de Privacidad y el Aviso Legal de Uso</li>
-    </ul>
-
-    <h3>4. Proceso de compra</h3>
-    <p>Las compras se gestionan vía <b>atención concierge privada por WhatsApp</b> (+52 1 444 577 0445). Al contactar a PEPTIQ, su specialist confirmará disponibilidad, número de lote vigente, dirección de envío y método de pago. Métodos disponibles: transferencia SPEI, Bitcoin (10% descuento), tarjeta de crédito/débito vía link privado Stripe/Mercado Pago.</p>
-    <p>Un pedido solo se considera aceptado cuando PEPTIQ confirma por escrito la recepción del pago y genera la orden de envío. Antes de esa confirmación, PEPTIQ se reserva el derecho de rechazar cualquier pedido sin expresión de causa.</p>
-
-    <h3>5. Precios, impuestos y facturación</h3>
-    <p>Todos los precios publicados en el sitio están expresados en <b>Pesos Mexicanos (MXN) e incluyen IVA</b> salvo que se indique lo contrario. PEPTIQ emite factura CFDI vigente conforme a la legislación fiscal mexicana cuando el cliente lo solicite y provea su RFC y datos fiscales completos dentro del mismo mes calendario de la compra.</p>
-
-    <h3>6. Envío y cadena de frío</h3>
-    <p>El envío se realiza mediante paqueterías aliadas (DHL, Estafeta, 99Minutos, FedEx). Los productos viajan en empaque discreto, con cadena de frío cuando el péptido lo requiere. Los plazos estimados son 24-72 horas hábiles en destinos principales (CDMX, MTY, GDL, Puebla, Querétaro, SLP) y 3-5 días hábiles en resto del país.</p>
-    <p>El riesgo de pérdida o daño se transfiere al cliente al momento de la entrega por la paquetería. En caso de daño en tránsito visible al recibir, el cliente debe documentar con foto y enviarla por WhatsApp el mismo día; PEPTIQ ofrece <b>reposición express sin costo</b> para daños atribuibles a tránsito.</p>
-
-    <h3>7. Política de devoluciones</h3>
-    <p><b>Los péptidos no son retornables ni reembolsables</b> una vez despachados. Esta política es estándar en la industria de reactivos de investigación, ya que no es posible garantizar la integridad, temperatura y cadena de custodia una vez que el producto sale de nuestras instalaciones.</p>
-    <p>PEPTIQ ofrece las siguientes garantías sustitutas al reembolso:</p>
-    <ul>
-      <li><b>Reposición express</b> sin costo por daño visible en tránsito (reportado el mismo día)</li>
-      <li><b>Garantía de pureza:</b> si un COA Janoshik del lote entregado reporta pureza HPLC menor al 97%, PEPTIQ repone el producto sin costo</li>
-      <li><b>Garantía de identidad:</b> si el péptido entregado no corresponde al ordenado, PEPTIQ envía reposición correcta y recoge el producto erróneo</li>
-    </ul>
-
-    <h3>8. Limitación de responsabilidad</h3>
-    <div class="critical">
-      <b>Liberación de responsabilidad</b>
-      PEPTIQ MX, sus representantes legales, empleados, contratistas, proveedores y afiliados <b>NO asumen responsabilidad alguna</b> por el uso que el comprador o terceros den a los productos después de la entrega. Cualquier aplicación fuera del contexto de investigación científica es exclusiva responsabilidad de quien la realiza.
-    </div>
-    <p>En la máxima medida permitida por la ley aplicable, la responsabilidad total acumulada de PEPTIQ frente al cliente por cualquier reclamo relacionado con un producto se limita al <b>precio efectivamente pagado por ese producto específico</b>. PEPTIQ no será responsable por daños indirectos, incidentales, consecuenciales, pérdida de ingresos, daño moral, ni daño emergente o lucro cesante.</p>
-
-    <h3>9. Propiedad intelectual</h3>
-    <p>Todos los contenidos del sitio peptiqmx.com (textos, logos, marca, imágenes, fotografías, videos, diseños, documentos) son propiedad de PEPTIQ MX o de sus licenciantes, protegidos por la Ley Federal del Derecho de Autor y la Ley Federal de Protección a la Propiedad Industrial. Queda prohibida la reproducción total o parcial sin autorización escrita.</p>
-
-    <h3>10. Modificaciones a los Términos</h3>
-    <p>PEPTIQ se reserva el derecho de modificar estos Términos en cualquier momento. Los cambios entran en vigor desde su publicación en esta página. El uso continuado del sitio o nuevas compras posteriores a una modificación implican la aceptación de los términos actualizados.</p>
-
-    <h3>11. Jurisdicción y ley aplicable</h3>
-    <p>Estos Términos se rigen por las <b>leyes de los Estados Unidos Mexicanos</b>. Para la interpretación, cumplimiento y ejecución de lo dispuesto en estos Términos, las partes se someten expresamente a la jurisdicción de los <b>tribunales competentes de la Ciudad de San Luis Potosí, SLP, México</b>, renunciando a cualquier otro fuero que pudiera corresponderles por razón de sus domicilios presentes o futuros.</p>
-
-    <h3>12. Contacto</h3>
-    <p>Cualquier duda, solicitud o notificación relacionada con estos Términos puede dirigirse a:</p>
-    <ul>
-      <li>Email: <a href="mailto:legal@peptiqmx.com">legal@peptiqmx.com</a></li>
-      <li>WhatsApp: <a href="https://wa.me/5214445770445" target="_blank" rel="noopener">+52 1 444 577 0445</a></li>
-    </ul>
-  </article>
-
-  <!-- ============ 02 AVISO DE PRIVACIDAD ============ -->
-  <article id="privacidad" class="doc">
-    <h2>Aviso <em>de privacidad.</em></h2>
-    <div class="meta">Vigente desde 23 abril 2026 · LFPDPPP México</div>
-
-    <p>En cumplimiento con lo dispuesto por la <b>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</b> (LFPDPPP) y su Reglamento, <b>TDI Marketing SA de CV</b> operando bajo la marca <b>PEPTIQ MX</b> pone a su disposición el presente Aviso de Privacidad.</p>
-
-    <h3>Responsable del tratamiento</h3>
-    <p><b>TDI Marketing SA de CV</b> · Domicilio fiscal: Estado de San Luis Potosí, México · Email: <a href="mailto:privacidad@peptiqmx.com">privacidad@peptiqmx.com</a></p>
-
-    <h3>Datos personales que recabamos</h3>
-    <ul>
-      <li><b>Identificación:</b> nombre completo, RFC (en caso de facturación)</li>
-      <li><b>Contacto:</b> número de WhatsApp, email, domicilio de envío</li>
-      <li><b>Transaccionales:</b> historial de pedidos, método de pago seleccionado, fecha de compra, productos adquiridos</li>
-      <li><b>Navegación:</b> dirección IP, tipo de dispositivo, páginas visitadas (vía cookies y analíticos)</li>
-    </ul>
-    <p>No recabamos información de salud, diagnósticos médicos, análisis clínicos ni datos sensibles de ningún tipo. Si el usuario comparte voluntariamente información de salud en una conversación de WhatsApp, PEPTIQ la elimina sin archivarla.</p>
-
-    <h3>Finalidades del tratamiento</h3>
-    <p><b>Primarias</b> (sin las cuales no podemos prestar el servicio):</p>
-    <ul>
-      <li>Procesar, coordinar y dar seguimiento a su pedido</li>
-      <li>Emitir factura CFDI cuando sea solicitada</li>
-      <li>Atender solicitudes de soporte post-venta, reposición o consulta</li>
-      <li>Cumplir con obligaciones fiscales y legales</li>
-    </ul>
-    <p><b>Secundarias</b> (puede oponerse sin afectar la relación comercial):</p>
-    <ul>
-      <li>Envío de comunicaciones sobre nuevos productos, protocolos, contenido educativo</li>
-      <li>Invitaciones a programas de lealtad, referidos o eventos privados</li>
-      <li>Análisis estadístico agregado para mejora de servicio</li>
-    </ul>
-
-    <h3>Transferencias de datos</h3>
-    <p>PEPTIQ <b>no vende, renta ni comercializa</b> datos personales con terceros. Únicamente transferimos datos cuando es estrictamente necesario para prestar el servicio:</p>
-    <ul>
-      <li><b>Paqueterías</b> (DHL, Estafeta, 99Minutos, FedEx): nombre, dirección y teléfono para entrega</li>
-      <li><b>Procesadores de pago</b> (Stripe, Mercado Pago, bancos SPEI): datos mínimos para liquidación de pagos</li>
-      <li><b>Autoridades fiscales</b> (SAT): datos requeridos por ley en facturación CFDI</li>
-    </ul>
-
-    <h3>Derechos ARCO y revocación</h3>
-    <p>Usted tiene derecho de <b>acceder, rectificar, cancelar u oponerse</b> al tratamiento de sus datos personales (derechos ARCO), así como revocar el consentimiento otorgado. Para ejercer estos derechos envíe solicitud a <a href="mailto:privacidad@peptiqmx.com">privacidad@peptiqmx.com</a> indicando: nombre completo, medio para recibir respuesta, descripción clara del derecho que ejerce, y copia de identificación.</p>
-    <p>PEPTIQ responderá en un plazo máximo de 20 días hábiles.</p>
-
-    <h3>Conservación de datos</h3>
-    <p>Conservamos datos transaccionales por 5 años según obligaciones fiscales (Código Fiscal de la Federación, art. 30). Datos de marketing se conservan mientras no revoque su consentimiento. Datos de navegación (cookies) se eliminan a los 30 días salvo cookies de sesión.</p>
-
-    <h3>Cookies y tecnologías similares</h3>
-    <p>El sitio utiliza cookies propias y de terceros (Google Analytics, Meta Pixel) para medir tráfico, optimizar experiencia y personalizar anuncios. Puede gestionar sus preferencias desde la configuración de su navegador.</p>
-
-    <h3>Modificaciones al Aviso de Privacidad</h3>
-    <p>PEPTIQ puede actualizar este Aviso de Privacidad. Los cambios se publican en esta página con la fecha de actualización. En caso de modificaciones sustanciales se notificará por email a clientes registrados.</p>
-  </article>
-
-  <!-- ============ 03 AVISO LEGAL DE USO ============ -->
-  <article id="aviso" class="doc">
-    <h2>Aviso legal <em>de uso.</em></h2>
-    <div class="meta">Research-use declaration · critical notice</div>
-
-    <div class="critical">
-      <b>Declaración obligatoria research-use</b>
-      Al comprar cualquier producto PEPTIQ MX, usted declara bajo protesta de decir verdad:
-    </div>
-
-    <ol>
-      <li><b>Ser mayor de 18 años</b> con plena capacidad legal para contratar y responsabilizarse de sus actos.</li>
-      <li><b>Adquirir los productos exclusivamente con fines de investigación científica</b>, estudio académico, uso como reactivo de laboratorio, o uso análogo que no implique consumo humano.</li>
-      <li><b>Comprender plenamente</b> que los productos son péptidos research-grade, no medicamentos, no están aprobados por COFEPRIS/FDA/EMA ni autoridad sanitaria, y no están indicados para diagnóstico, tratamiento, cura o prevención de enfermedad alguna.</li>
-      <li><b>Liberar a PEPTIQ MX</b>, sus representantes, empleados, contratistas, proveedores, afiliados y sucesores, de toda responsabilidad directa o indirecta por daños o perjuicios derivados del uso que usted o cualquier tercero den a los productos después de la entrega.</li>
-      <li><b>Asumir en su totalidad</b> los riesgos asociados al manejo, almacenamiento, reconstitución, transporte y uso de los productos.</li>
-      <li><b>No reclamará ni demandará</b> a PEPTIQ MX por ninguna consecuencia derivada del uso de los productos fuera del contexto de investigación.</li>
-    </ol>
-
-    <h3>Uso recomendado</h3>
-    <p>PEPTIQ recomienda enfáticamente:</p>
-    <ul>
-      <li>Consultar con un <b>profesional de la salud, médico o investigador certificado</b> antes de emprender cualquier protocolo</li>
-      <li>Leer los COA Janoshik públicos del lote que adquiera</li>
-      <li>Mantener los viales sellados y refrigerados (2-8 °C) hasta su reconstitución</li>
-      <li>Reconstituir únicamente con agua bacteriostática estéril</li>
-      <li>No usar productos con signos visibles de daño, contaminación o vencimiento</li>
-    </ul>
-
-    <h3>No aplicaciones humanas</h3>
-    <p>El copy publicitario, información educativa, protocolos, dosis sugeridas y cualquier contenido del sitio peptiqmx.com o comunicaciones de marca deben entenderse como <b>información académica con fines de investigación</b>. PEPTIQ no sugiere, recomienda, promueve ni autoriza el uso de estos productos en humanos.</p>
-    <p>Si usted es paciente, no es el público objetivo de PEPTIQ. Si busca tratamiento médico, acuda a un profesional de la salud certificado en su área.</p>
-
-    <div class="callout">
-      <b>Frase legal estándar PEPTIQ</b>
-      "El uso de este producto es responsabilidad de quien lo use, solo para investigación."
-    </div>
-
-    <h3>Cumplimiento regulatorio</h3>
-    <p>PEPTIQ opera al amparo de las leyes mexicanas aplicables a reactivos de investigación, que no requieren registro sanitario COFEPRIS en tanto no constituyen medicamentos. Esta misma postura regulatoria aplica a todas las marcas de péptidos research-grade a nivel mundial (EE.UU., Europa, Asia).</p>
-    <p>PEPTIQ no exporta productos a países donde su venta requiera registro o licencia específica que no posea.</p>
-  </article>
-
-  <div class="back-top">
-    <a href="/">← Regresar a peptiqmx.com</a>
-  </div>
+<div class="box-critical">
+<h3>★ AVISO LEGAL CRÍTICO · LEE ANTES DE COMPRAR</h3>
+<p><strong>Los productos comercializados por PEPTIQ Research son péptidos sintéticos research-grade destinados EXCLUSIVAMENTE a investigación científica de laboratorio (Research Use Only · RUO).</strong></p>
+<p><strong>NO son medicamentos. NO están aprobados por COFEPRIS, FDA, EMA ni ninguna agencia regulatoria para uso humano o animal. NO se venden, suministran ni recomiendan para consumo humano, aplicación corporal, uso terapéutico, diagnóstico, prevención o tratamiento de enfermedad alguna.</strong></p>
+<p><strong>El uso y aplicación de estos productos es responsabilidad exclusiva del comprador. PEPTIQ Research se libera de toda responsabilidad por consecuencias derivadas del uso o aplicación.</strong></p>
 </div>
 
-<footer>
-  <div class="container">
-    © 2026 PEPTIQ MX · TDI Marketing SA de CV · <a href="mailto:legal@peptiqmx.com">legal@peptiqmx.com</a><br>
-    Research products · Not for human consumption
-  </div>
+<h2>1. Definiciones</h2>
+<p>Para los efectos de los presentes Términos y Condiciones (en adelante, "Términos"):</p>
+<ul>
+<li><strong>"PEPTIQ"</strong>: Programa comercial de comercialización de péptidos research-grade operado bajo la marca PEPTIQ Research, con domicilio en Bracho (Lomas de Bracho), Zacatecas, México.</li>
+<li><strong>"Sitio Web"</strong>: Los dominios <a href="https://peptiqmx.com">peptiqmx.com</a> y <a href="https://peptiqresearch.org">peptiqresearch.org</a> y sus subdominios.</li>
+<li><strong>"Usuario" o "Comprador"</strong>: Cualquier persona física o moral mayor de 18 años con capacidad legal plena que acceda al Sitio Web o adquiera productos PEPTIQ.</li>
+<li><strong>"Producto"</strong>: Péptido sintético research-grade comercializado para uso exclusivo de investigación científica.</li>
+<li><strong>"RUO" (Research Use Only)</strong>: Marco regulatorio internacional que designa materiales destinados exclusivamente a investigación científica de laboratorio.</li>
+</ul>
+
+<h2>2. Aceptación de los Términos</h2>
+<p>El acceso al Sitio Web y la adquisición de Productos implican la aceptación plena, expresa e incondicional de los presentes Términos. Si no estás de acuerdo con alguna de las disposiciones aquí establecidas, debes abstenerte de usar el Sitio Web y de adquirir Productos.</p>
+<p>Al completar una compra, declaras bajo protesta de decir verdad que: (i) has leído, comprendido y aceptado estos Términos; (ii) eres mayor de 18 años; (iii) adquieres los Productos exclusivamente para fines de investigación científica; (iv) asumes plena responsabilidad por el uso posterior del Producto.</p>
+
+<h2>3. Naturaleza del Producto y Marco RUO</h2>
+<h3>3.1 Designación Research Use Only</h3>
+<p>Todos los Productos PEPTIQ son <strong>materiales de investigación científica</strong> bajo el marco "Research Use Only" (RUO) reconocido internacionalmente. Los Productos:</p>
+<ul>
+<li><strong>NO son medicamentos</strong> ni productos farmacéuticos terminados.</li>
+<li><strong>NO están aprobados</strong> por la Comisión Federal para la Protección contra Riesgos Sanitarios (COFEPRIS), la Food and Drug Administration (FDA), la European Medicines Agency (EMA) ni ninguna otra agencia regulatoria nacional o internacional para uso humano o veterinario.</li>
+<li><strong>NO se comercializan</strong> con indicaciones terapéuticas, diagnósticas, preventivas, curativas, paliativas, estéticas ni de mejora corporal.</li>
+<li><strong>NO se suministran</strong> para su consumo, aplicación, inyección, ingestión o uso de ninguna naturaleza sobre seres humanos o animales.</li>
+</ul>
+
+<h3>3.2 Análisis Independiente</h3>
+<p>PEPTIQ Research no opera como laboratorio de análisis. Los Certificados de Análisis (COA) publicados en el Sitio Web provienen de laboratorios independientes acreditados (Janoshik Analytical · Brno, República Checa · ISO/IEC 17025; Eurofins Scientific México) y reflejan los parámetros de la muestra al momento del análisis. PEPTIQ Research no garantiza la equivalencia exacta entre los parámetros reportados y cada vial individual, pero se compromete a comercializar productos del mismo lote analizado.</p>
+
+<h2>4. Elegibilidad del Comprador</h2>
+<p>Para adquirir Productos PEPTIQ, el Comprador debe:</p>
+<ul>
+<li>Ser persona física mayor de 18 años con capacidad legal plena, o persona moral debidamente constituida.</li>
+<li>Adquirir los Productos exclusivamente con fines de investigación científica.</li>
+<li>Aceptar bajo protesta de decir verdad las declaraciones contenidas en el formulario de consentimiento del Sitio Web.</li>
+<li>No tener intención de utilizar, redistribuir, comercializar o aplicar los Productos para consumo humano o animal.</li>
+</ul>
+<p><strong>PEPTIQ Research se reserva el derecho de rechazar, cancelar o limitar cualquier pedido cuando existan indicios razonables de incumplimiento de estos requisitos.</strong></p>
+
+<h2>5. Uso Permitido y Uso Prohibido</h2>
+<h3>5.1 Uso Permitido</h3>
+<p>Investigación científica de laboratorio, estudios in vitro, caracterización fisicoquímica, validación analítica y aplicaciones académicas/educativas en contexto de investigación.</p>
+
+<h3>5.2 Uso Prohibido</h3>
+<ul>
+<li>Consumo humano por cualquier vía (oral, parenteral, tópica, inhalada, etc.).</li>
+<li>Aplicación, administración o uso en animales.</li>
+<li>Reventa o distribución a terceros que destinen el Producto a consumo humano o animal.</li>
+<li>Promoción del Producto como medicamento, suplemento, cosmético o sustancia con efectos terapéuticos.</li>
+<li>Uso en menores de 18 años, mujeres embarazadas o personas en lactancia.</li>
+<li>Cualquier uso contrario a la legislación mexicana aplicable.</li>
+</ul>
+
+<div class="box-critical">
+<p><strong>El incumplimiento de estos usos prohibidos transfiere íntegramente la responsabilidad legal, civil, administrativa y penal al Comprador. PEPTIQ Research se libera de toda responsabilidad derivada del uso indebido del Producto.</strong></p>
+</div>
+
+<h2>6. Garantías y Descargos</h2>
+<h3>6.1 Garantía Limitada</h3>
+<p>PEPTIQ Research garantiza que el Producto entregado corresponde al descrito en su empaque (identidad, cantidad declarada, presentación). Esta garantía está respaldada por la política del fabricante origen: <em>"If the product quality doesn't meet standards, refund and cover the testing costs"</em>, la cual PEPTIQ transfiere íntegramente al Comprador en los términos de la sección 7.</p>
+
+<h3>6.2 Descargo de Garantías</h3>
+<p>Salvo por la garantía expresamente establecida en 6.1, los Productos se comercializan <strong>"TAL CUAL" (AS-IS)</strong>, sin garantías expresas o implícitas de comerciabilidad, idoneidad para un propósito particular, seguridad para uso humano, eficacia terapéutica, bioseguridad o cualquier otra garantía no expresamente declarada por escrito.</p>
+
+<h2>7. Limitación de Responsabilidad</h2>
+<div class="box-critical">
+<p><strong>EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY APLICABLE:</strong></p>
+<p>La responsabilidad total de PEPTIQ Research, sus operadores, empleados, agentes y proveedores frente al Comprador y/o terceros, por cualquier causa de acción derivada o relacionada con los presentes Términos o con la adquisición/uso del Producto, <strong>NO EXCEDERÁ DEL MONTO EFECTIVAMENTE PAGADO POR EL COMPRADOR POR EL PRODUCTO QUE DE LUGAR A LA RECLAMACIÓN</strong>.</p>
+<p>PEPTIQ Research <strong>NO SERÁ RESPONSABLE</strong>, bajo ninguna teoría legal (contractual, extracontractual, responsabilidad objetiva o cualquier otra), por:</p>
+<ul style="color:#7F1D1D">
+<li>Daños indirectos, incidentales, consecuenciales, especiales, punitivos o ejemplares.</li>
+<li>Lucro cesante, pérdida de oportunidad, pérdida de datos o pérdida de uso.</li>
+<li>Daños a la salud derivados del uso indebido del Producto.</li>
+<li>Reclamaciones de terceros derivadas del uso, redistribución o aplicación del Producto por el Comprador.</li>
+<li>Consecuencias regulatorias, sanitarias, fiscales o penales derivadas del uso del Producto fuera del marco RUO.</li>
+</ul>
+</div>
+
+<h2>8. Política de Reembolso</h2>
+<h3>8.1 Garantía de Calidad</h3>
+<p>El Comprador puede solicitar análisis independiente del Producto adquirido por su cuenta. Si el análisis demuestra que el Producto no cumple las especificaciones declaradas (identidad o pureza ≥98%), PEPTIQ Research <strong>reembolsará el monto total del Producto más el costo razonable del análisis</strong>, sujeto a presentación del COA del laboratorio independiente y verificación.</p>
+
+<h3>8.2 Devoluciones</h3>
+<p>Por la naturaleza del Producto (material biotecnológico estéril, cadena de frío), no se aceptan devoluciones por arrepentimiento. Solo se aceptan devoluciones por:</p>
+<ul>
+<li>Defecto manifiesto al momento de entrega (vial roto, contaminación visible, etiquetado incorrecto). Plazo: 48 horas desde recepción.</li>
+<li>Incumplimiento de especificaciones según 8.1.</li>
+</ul>
+
+<h2>9. Propiedad Intelectual</h2>
+<p>La marca PEPTIQ, logos, diseños, contenido del Sitio Web, fotografías, textos científicos curados, base de conocimientos de SARA AI y documentación técnica son propiedad de PEPTIQ Research y están protegidos por las leyes mexicanas e internacionales de propiedad intelectual. Queda prohibida su reproducción total o parcial sin autorización expresa por escrito.</p>
+
+<h2>10. Privacidad y Protección de Datos</h2>
+<p>El tratamiento de datos personales se rige por la <a href="/privacidad.html">Política de Privacidad</a>, que forma parte integral de estos Términos. PEPTIQ Research cumple con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).</p>
+
+<h2>11. Comunicaciones Comerciales</h2>
+<p>Al proporcionar tu correo electrónico o número de WhatsApp, autorizas a PEPTIQ Research a enviarte comunicaciones relacionadas con tu cuenta, pedidos, contenido educativo research y promociones. Puedes darte de baja en cualquier momento respondiendo "STOP" o escribiendo a <a href="mailto:contacto@peptiqmx.com">contacto@peptiqmx.com</a>.</p>
+
+<h2>12. Modificaciones a los Términos</h2>
+<p>PEPTIQ Research se reserva el derecho de modificar estos Términos en cualquier momento. Las modificaciones serán efectivas al ser publicadas en el Sitio Web. El uso continuado del Sitio Web o la realización de nuevos pedidos posteriores a la publicación implica aceptación de los Términos modificados.</p>
+
+<h2>13. Indemnización</h2>
+<p>El Comprador acepta indemnizar, defender y mantener libre de daño a PEPTIQ Research, sus operadores, empleados, agentes y proveedores frente a cualquier reclamación, demanda, pérdida, responsabilidad, daño, costo o gasto (incluyendo honorarios razonables de abogado) que surja de: (i) el uso, aplicación o redistribución del Producto por el Comprador; (ii) el incumplimiento por parte del Comprador de los presentes Términos; (iii) la violación por parte del Comprador de cualquier ley aplicable o derecho de terceros.</p>
+
+<h2>14. Caso Fortuito y Fuerza Mayor</h2>
+<p>PEPTIQ Research no será responsable por incumplimientos derivados de caso fortuito, fuerza mayor, restricciones gubernamentales, conflictos laborales, fallas logísticas globales, pandemias, desastres naturales o cualquier causa fuera de su control razonable.</p>
+
+<h2>15. Independencia de las Cláusulas</h2>
+<p>Si alguna disposición de estos Términos es declarada inválida o inejecutable por autoridad competente, dicha invalidez no afectará la validez del resto de disposiciones, las cuales permanecerán vigentes en su totalidad.</p>
+
+<h2>16. Cesión</h2>
+<p>El Comprador no puede ceder sus derechos u obligaciones bajo estos Términos sin consentimiento previo y por escrito de PEPTIQ Research. PEPTIQ Research puede ceder sus derechos y obligaciones libremente.</p>
+
+<h2>17. Ley Aplicable y Jurisdicción</h2>
+<div class="box-info">
+<p>Los presentes Términos se rigen e interpretan conforme a las <strong>leyes de los Estados Unidos Mexicanos</strong>, con específica aplicación supletoria de las leyes del <strong>Estado de Zacatecas</strong>.</p>
+<p>Para la resolución de cualquier controversia derivada de o relacionada con estos Términos, las partes se someten expresamente a la jurisdicción de los <strong>tribunales competentes de la ciudad de Zacatecas, Zacatecas, México</strong>, renunciando expresamente a cualquier otro fuero que pudiera corresponderles por razón de sus domicilios presentes o futuros.</p>
+</div>
+
+<h2>18. Resolución Alternativa de Disputas</h2>
+<p>Las partes acuerdan intentar resolver cualquier controversia de buena fe mediante negociación directa durante un periodo mínimo de 30 días naturales antes de iniciar cualquier procedimiento judicial. PEPTIQ Research designa como vía de contacto formal: <a href="mailto:contacto@peptiqmx.com">contacto@peptiqmx.com</a>.</p>
+
+<h2>19. Aceptación Electrónica</h2>
+<p>De conformidad con el Código de Comercio (Art. 89 bis al 114) y la Ley Federal de Protección al Consumidor, las partes reconocen plena validez y efectos legales al consentimiento otorgado por medios electrónicos, incluyendo el marcado de casillas de aceptación en el flujo de compra del Sitio Web.</p>
+
+<h2>20. Contacto</h2>
+<p>Para cualquier comunicación relacionada con estos Términos:</p>
+<ul>
+<li>Correo: <a href="mailto:contacto@peptiqmx.com">contacto@peptiqmx.com</a></li>
+<li>WhatsApp: +52 1 444 577 0445</li>
+<li>Domicilio: Bracho (Lomas de Bracho), Zacatecas, México · CP 98000</li>
+</ul>
+
+<div class="box-critical">
+<h3>★ DECLARACIÓN FINAL DE RESPONSABILIDAD</h3>
+<p><strong>El uso, aplicación, redistribución, consumo, inyección, ingestión o cualquier otro destino que el Comprador o terceros den al Producto adquirido es RESPONSABILIDAD EXCLUSIVA del Comprador. PEPTIQ Research comercializa estos materiales únicamente bajo el marco Research Use Only (RUO) para investigación científica de laboratorio. Cualquier uso distinto al expresamente permitido en estos Términos exime y libera a PEPTIQ Research de toda responsabilidad legal, civil, administrativa, sanitaria, fiscal o penal derivada de dicho uso.</strong></p>
+</div>
+
+<div class="signature">
+<p><strong>PEPTIQ Research</strong> · Bracho (Lomas de Bracho), Zacatecas, México</p>
+<p>Documento vigente desde el 12 de mayo de 2026. <a href="/privacidad.html">Política de Privacidad</a> · <a href="/eliminar-datos.html">Eliminación de Datos</a></p>
+</div>
+
 </body>
 </html>
