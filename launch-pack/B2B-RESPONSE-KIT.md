@@ -110,7 +110,7 @@ Comparte `https://peptiqmx.com/tabla-margenes-b2b.pdf`. Muestra:
 |----------|-----------|
 | ¿Es legal? | Research-grade · uso de laboratorio · cada vial trae disclaimer + responsabilidad de quien aplique |
 | ¿COFEPRIS? | No · son compuestos de investigación · igual que en US son research-grade · decisión clínica del médico |
-| ¿De dónde vienen? | Sintetizados en planta farmacéutica research-grade asiática · validados en Praga (Janoshik) por HPLC |
+| ¿De dónde vienen? | Sintetizados en planta farmacéutica research-grade asiática · validados por Janoshik Analytical (Brno, República Checa) vía HPLC en péptidos certificables (BPC-157, TB-500, GHK-Cu, Retatrutide, Tesamorelin, MOTS-C, Tirzepatide); el resto en proceso de validación con Eurofins MX |
 | ¿Cuánto duran refrigerados? | Liofilizados: 24 meses 4°C · reconstituidos: 21-28 días según péptido |
 | ¿Pueden vender directo a pacientes? | Sí · tu eres el médico · responsabilidad del aplicador |
 | ¿Hay exclusividad por zona? | Después de 3er pedido recurrente · sí · reserva de zona postal |

@@ -44,7 +44,7 @@ Investigación research-grade. Verificada en laboratorio europeo.
 | Tiempo | Visual | Texto overlay |
 |---|---|---|
 | 0-3s | Split screen: izq botellitas chinas amazon, der vial PEPTIQ premium | "Lo que pagas vs lo que verificas" |
-| 4-8s | Zoom al COA Janoshik en pantalla iPhone con NFC | "ISO/IEC 17025 · Praga UE" |
+| 4-8s | Zoom al COA Janoshik en pantalla iPhone con NFC | "ISO/IEC 17025 · Brno, República Checa" |
 | 9-12s | Mujer sostiene vial PEPTIQ con luz dorada lateral | "Investigación seria · México 2026" |
 | 13-15s | CTA + brand line | "Beyond Biology · peptiqmx.com" |
 

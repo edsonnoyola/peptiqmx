@@ -18,8 +18,8 @@ const SUPABASE_URL = 'https://hwyrxlnycrlgohrecbpx.supabase.co';
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
 if (!SUPABASE_KEY) { console.error('Missing SUPABASE_SERVICE_KEY env var'); process.exit(1); }
 const PEPTIQ_TENANT = '00000000-0000-0000-0000-000000000002';
-const FROM = 'PEPTIQ MX <hola@peptiqmx.com>';
-const REPLY_TO = 'hola@peptiqmx.com';
+const FROM = 'PEPTIQ MX <contacto@peptiqmx.com>';
+const REPLY_TO = 'contacto@peptiqmx.com';
 const DRY = process.argv.includes('--dry-run');
 const BATCH = (process.argv.find(a => a.startsWith('--batch=')) || '').split('=')[1];
 const LIMIT = BATCH ? parseInt(BATCH) : Infinity;
