@@ -10,8 +10,8 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;color:#1A1A1A;b
 .doc-title h1{font-size:13px;letter-spacing:3px;color:#C4A265;font-weight:600}
 .doc-title p{font-size:10px;color:#888;margin-top:3px}
 .doc-title .docid{font-size:9px;color:#bbb;margin-top:6px;font-family:monospace}
-.product-row{display:flex;gap:20px;margin-bottom:20px;align-items:stretch}
-.product-img{width:170px;background:#0A0908;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.product-row{display:flex;gap:20px;margin-bottom:18px;align-items:stretch}
+.product-img{width:160px;background:#0A0908;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
 .product-img img{width:100%;height:100%;object-fit:cover}
 .product-img .tag{position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.96);padding:3px 8px;font-size:8px;letter-spacing:2px;font-weight:700;color:#1A1A1A;border-radius:2px}
 .product-img .tag::before{content:'';display:inline-block;width:6px;height:6px;background:#22C55E;border-radius:50%;margin-right:5px;vertical-align:middle}
@@ -28,13 +28,13 @@ table{width:100%;border-collapse:collapse}
 table th{text-align:left;font-size:9px;letter-spacing:1px;color:#999;text-transform:uppercase;padding:6px 10px;border-bottom:1px solid #E8E4E0}
 table td{padding:8px 10px;font-size:11.5px;border-bottom:1px solid #F0EDE8}
 .highlight{font-size:21px;font-weight:700;color:#22C55E;font-family:Georgia,serif}
-.sample-row{display:flex;gap:14px;align-items:center;background:#F9F8F6;padding:12px;margin-bottom:12px;border-left:3px solid #1A1A1A;border-radius:4px}
-.sample-img{width:90px;height:110px;background:#0A0908;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sample-row{display:flex;gap:14px;align-items:stretch;background:#F9F8F6;padding:12px;margin-bottom:12px;border-left:3px solid #1A1A1A;border-radius:4px}
+.sample-img{width:160px;height:200px;background:#fff;border:1px solid #E8E4E0;border-radius:4px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .sample-img img{width:100%;height:100%;object-fit:cover}
-.sample-info{flex:1}
-.sample-info h5{font-size:11px;font-weight:700;margin-bottom:3px}
-.sample-info p{font-size:10px;color:#666;line-height:1.5}
-.sample-info .mono{font-family:monospace;color:#1A1A1A;font-size:10px}
+.sample-info{flex:1;display:flex;flex-direction:column;justify-content:center}
+.sample-info h5{font-size:12px;font-weight:700;margin-bottom:5px;color:#1A1A1A}
+.sample-info p{font-size:10px;color:#666;line-height:1.6;margin-bottom:3px}
+.sample-info .mono{font-family:monospace;color:#1A1A1A;font-size:10.5px;font-weight:700}
 .lab-section{background:#1A1A1A;color:#F0E8D4;padding:12px 14px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;border-radius:4px}
 .lab-info h4{font-size:11px;font-weight:700;margin-bottom:2px;color:#C4A265}
 .lab-info p{font-size:9.5px;color:#aaa;line-height:1.5}
@@ -58,11 +58,13 @@ table td{padding:8px 10px;font-size:11.5px;border-bottom:1px solid #F0EDE8}
 </div></div></div>
 
 <div class="sample-row">
-<div class="sample-img"><img src="../../img/products-v2/ghk-cu-studio.png" alt="muestra"></div>
+<div class="sample-img"><img src="../../coa/vials-janoshik/ghkcu-janoshik-vial.jpg" alt="muestra analizada"></div>
 <div class="sample-info">
-<h5>Muestra enviada para análisis</h5>
-<p>Vial PEPTIQ sellado · Identificación de lote: <span class="mono">PQ-2026-0512-GHK-A</span></p>
-<p>Recibido por laboratorio: 8 mayo 2026 · Análisis: 12 mayo 2026</p>
+<h5>Muestra enviada a Janoshik Analytical</h5>
+<p>Fotografía oficial del vial recibido por el laboratorio</p>
+<p>Identificación de lote: <span class="mono">PQ-2026-0512-GHK-A</span></p>
+<p>Recibido por laboratorio: 17 DIC 2025</p>
+<p>Análisis conducido: 18 DIC 2025</p>
 </div>
 </div>
 
