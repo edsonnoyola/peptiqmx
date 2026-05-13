@@ -198,5 +198,53 @@ exports.handler = async (event) => {
     console.error('PEPTIQ stripe webhook · sales blob write failed (non-fatal)', e);
   }
 
+  // ─── EMAIL TRANSACCIONAL POST-COMPRA con disclaimer legal RUO ───
+  try {
+    if (customerEmail && process.env.RESEND_API_KEY) {
+      const orderShort = session.id.slice(-8).toUpperCase();
+      const customerName = session.customer_details?.name || customerEmail.split('@')[0] || 'Investigador/a';
+      const emailHtml = `
+<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;padding:24px;color:#1A1A1A;line-height:1.6">
+<div style="text-align:center;border-bottom:2px solid #C4A265;padding-bottom:16px;margin-bottom:20px">
+<div style="font-size:28px;font-weight:700;letter-spacing:1px">PEPTIQ<sup style="font-size:12px;color:#C4A265">MX</sup></div>
+<div style="font-size:10px;letter-spacing:3px;color:#888">R E S E A R C H · G R A D E</div>
+</div>
+<h2 style="color:#988646;font-size:20px">Hola ${customerName},</h2>
+<p>Confirmamos recepción de tu pedido <strong>#${orderShort}</strong>.</p>
+<div style="background:#F9F8F6;padding:16px;border-left:3px solid #C4A265;margin:18px 0">
+<div style="font-size:11px;letter-spacing:2px;color:#988646;font-weight:700;margin-bottom:6px">PEDIDO</div>
+<div style="font-size:16px;font-weight:700">${product.name}</div>
+<div style="font-size:13px;color:#666;margin-top:4px">$${amount.toLocaleString('es-MX')} MXN · Envío 24-72h MX</div>
+</div>
+<div style="background:#FEF3C7;border-left:4px solid #F59E0B;padding:14px;margin:18px 0;border-radius:4px">
+<div style="font-size:11px;letter-spacing:2px;color:#92400E;font-weight:700;margin-bottom:6px">★ RECORDATORIO LEGAL</div>
+<div style="font-size:13px;color:#78350F;line-height:1.7">Al confirmar esta compra aceptaste que los productos PEPTIQ son material <strong>research-grade exclusivamente para investigación científica</strong>, <strong>NO son medicamentos</strong>, <strong>NO están aprobados</strong> por COFEPRIS/FDA para uso humano o animal, y que <strong>el uso y aplicación es responsabilidad exclusiva tuya</strong>.</div>
+</div>
+<p><strong>COAs de tu pedido:</strong> <a href="https://peptiqmx.com/coa/" style="color:#988646">peptiqmx.com/coa/</a></p>
+<p><strong>Dudas research:</strong><br>WhatsApp: <a href="https://wa.me/5214445770445" style="color:#988646">+52 1 444 577 0445</a><br>Email: <a href="mailto:contacto@peptiqmx.com" style="color:#988646">contacto@peptiqmx.com</a></p>
+<div style="margin-top:24px;padding-top:16px;border-top:1px solid #E8E4E0;font-size:11px;color:#888;line-height:1.6">
+<strong>PEPTIQ Research</strong> · Material exclusivo para investigación científica · solo +18 · NO apto para consumo humano ni animal · El uso es responsabilidad de quien lo aplique · RUO.<br><br>
+<a href="https://peptiqmx.com/terminos.html" style="color:#988646">Términos</a> · <a href="https://peptiqmx.com/privacidad.html" style="color:#988646">Privacidad</a> · <a href="https://peptiqmx.com/eliminar-datos.html" style="color:#988646">Eliminación de Datos</a>
+</div>
+</div>`;
+      const emailRes = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: 'PEPTIQ Research <contacto@peptiqmx.com>',
+          to: [customerEmail],
+          subject: `Pedido confirmado #${orderShort} · PEPTIQ Research`,
+          html: emailHtml,
+        }),
+      });
+      console.log(`PEPTIQ webhook · email transaccional sent to ${customerEmail} · ${emailRes.status}`);
+    }
+  } catch (e) {
+    console.error('PEPTIQ webhook · email send failed (non-fatal)', e);
+  }
+
   return { statusCode: 200, body: JSON.stringify({ ok: true, product: product.name, user: userKey }) };
 };

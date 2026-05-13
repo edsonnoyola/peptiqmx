@@ -121,6 +121,33 @@ exports.handler = async (event) => {
       { role: 'user', content: question }
     ];
 
+
+    // ─── MEDICAL QUESTION HARD-GUARD · before reaching Claude ───
+    const MED_PATTERNS = [
+      /puedo (usar|aplicar|tomar|inyectar)/i,
+      /(es seguro|es bueno|me sirve|me funciona) (para|si tengo|con)/i,
+      /tengo (diabetes|cancer|c\u00e1ncer|hipotiroid|embaraz|presi\u00f3n alta|hipertensi[oó]n)/i,
+      /mi (esposa|esposo|hijo|hija|mam[áa]|pap[áa]|abuel)/i,
+      /(qu[eé] dosis|cu[aá]nto me )/i,
+      /(curar|tratar|eliminar) (la |el |mi )?(enfermedad|c[aá]ncer|diabetes|obesidad)/i,
+      /(me|le|nos) ayuda(r[aá])? con/i,
+      /(me|nos) lo (puedo|podemos) aplicar/i,
+    ];
+    const isMedical = MED_PATTERNS.some(p => p.test(question));
+    if (isMedical) {
+      const guardResponse = `Hola, gracias por escribir. PEPTIQ Research no provee asesor\u00eda m\u00e9dica personalizada — la informaci\u00f3n que compartimos es estrictamente educativa sobre literatura cient\u00edfica publicada en contexto de **investigaci\u00f3n research-grade (RUO · Research Use Only)**.
+
+Para tu caso espec\u00edfico o consideraciones de salud individuales, te recomendamos consultar con un profesional de salud calificado. Si tienes preguntas sobre el producto en su contexto research (composici\u00f3n, pureza HPLC, COA Janoshik, mecanismo en literatura), escr\u00edbenos al WhatsApp **+52 1 444 577 0445**.
+
+*Informaci\u00f3n educativa research-grade · No reemplaza consulta m\u00e9dica · El uso del producto es responsabilidad de quien lo aplique · Solo para uso de laboratorio (Research Use Only · RUO).*`;
+      return {
+        statusCode: 200,
+        headers: cors(),
+        body: JSON.stringify({ text: guardResponse, usage: { input: 0, output: 0, cache_read: 0, cache_creation: 0 }, source: 'medical-guard' })
+      };
+    }
+
+
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
