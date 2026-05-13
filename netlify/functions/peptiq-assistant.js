@@ -90,18 +90,19 @@ Usa **negritas** para datos clave. Sé breve.`;
 const SYSTEM_PROMPT = RULES_PROMPT + '\n\n# KNOWLEDGE BASE\n\n' + loadKB();
 
 exports.handler = async (event) => {
+  const reqOrigin = (event.headers && (event.headers.origin || event.headers.Origin)) || '';
   if (event.httpMethod === 'OPTIONS') {
-    return { statusCode: 204, headers: cors() };
+    return { statusCode: 204, headers: cors(reqOrigin) };
   }
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, headers: cors(), body: 'Method not allowed' };
+    return { statusCode: 405, headers: cors(reqOrigin), body: 'Method not allowed' };
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     return {
       statusCode: 503,
-      headers: cors(),
+      headers: cors(reqOrigin),
       body: JSON.stringify({
         error: 'ANTHROPIC_API_KEY not configured',
         text: 'El asistente AI todavía no está conectado. Mientras tanto, escríbenos al WhatsApp +52 1 444 577 0445 para tu duda.',
@@ -113,7 +114,7 @@ exports.handler = async (event) => {
   try {
     const { question, history = [] } = JSON.parse(event.body || '{}');
     if (!question || question.length > 1000) {
-      return { statusCode: 400, headers: cors(), body: JSON.stringify({ error: 'invalid question' }) };
+      return { statusCode: 400, headers: cors(reqOrigin), body: JSON.stringify({ error: 'invalid question' }) };
     }
 
     const messages = [
@@ -166,7 +167,7 @@ Para tu caso espec\u00edfico o consideraciones de salud individuales, te recomen
 *Informaci\u00f3n educativa research-grade · No reemplaza consulta m\u00e9dica · El uso del producto es responsabilidad de quien lo aplique · Solo para uso de laboratorio (Research Use Only · RUO).*`;
       return {
         statusCode: 200,
-        headers: cors(),
+        headers: cors(reqOrigin),
         body: JSON.stringify({ text: guardResponse, usage: { input: 0, output: 0, cache_read: 0, cache_creation: 0 }, source: 'medical-guard' })
       };
     }
@@ -196,7 +197,7 @@ Para tu caso espec\u00edfico o consideraciones de salud individuales, te recomen
     const data = await response.json();
     if (!response.ok) {
       console.error('Claude API error:', data);
-      return { statusCode: 502, headers: cors(), body: JSON.stringify({ error: 'AI service error', detail: data.error?.message }) };
+      return { statusCode: 502, headers: cors(reqOrigin), body: JSON.stringify({ error: 'AI service error', detail: data.error?.message }) };
     }
 
     let text = data.content?.[0]?.text || 'Sin respuesta';
@@ -214,12 +215,12 @@ Para tu caso espec\u00edfico o consideraciones de salud individuales, te recomen
 
     return {
       statusCode: 200,
-      headers: cors(),
+      headers: cors(reqOrigin),
       body: JSON.stringify({ text, usage: cacheMetrics })
     };
   } catch (err) {
     console.error('Handler error:', err);
-    return { statusCode: 500, headers: cors(), body: JSON.stringify({ error: err.message }) };
+    return { statusCode: 500, headers: cors(reqOrigin), body: JSON.stringify({ error: err.message }) };
   }
 };
 

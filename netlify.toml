@@ -118,3 +118,8 @@
   from = "/api/consent-log"
   to = "/.netlify/functions/peptiq-consent-log"
   status = 200
+
+[[redirects]]
+  from = "/api/consent-check"
+  to = "/.netlify/functions/peptiq-consent-check"
+  status = 200
