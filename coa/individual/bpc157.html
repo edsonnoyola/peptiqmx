@@ -1,113 +1,83 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>COA BPC-157 — PEPTIQ Research</title>
+<html lang="es"><head><meta charset="UTF-8"><title>COA BPC-157 — PEPTIQ Research</title>
 <style>
-@page { size: A4; margin: 0; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color:#1A1A1A; background:#fff; }
-.page { width:210mm; min-height:297mm; padding:18mm 16mm; }
-.header { display:flex; justify-content:space-between; align-items:flex-start; padding-bottom:14px; border-bottom:2px solid #C4A265; margin-bottom:20px; }
-.logo { font-family: Georgia, 'Times New Roman', serif; font-size:32px; font-weight:700; letter-spacing:1px; color:#1A1A1A; }
-.logo sup { font-size:13px; color:#C4A265; font-weight:500; }
-.logo-sub { font-size:9px; letter-spacing:4px; color:#999; margin-top:2px; font-weight:600; }
-.doc-title { text-align:right; }
-.doc-title h1 { font-size:13px; letter-spacing:3px; color:#C4A265; font-weight:600; }
-.doc-title p { font-size:10px; color:#888; margin-top:3px; }
-.doc-title .docid { font-size:9px; color:#bbb; margin-top:6px; font-family: 'Courier New', monospace; }
-.product-row { display:flex; gap:24px; margin-bottom:24px; align-items:center; }
-.product-img { width:140px; height:140px; background:#F9F8F6; border:1px solid #EEE8DC; border-radius:8px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-.product-img img { max-width:100%; max-height:100%; object-fit:contain; }
-.product-info { flex:1; }
-.product-info h2 { font-family: Georgia, serif; font-size:32px; font-weight:700; margin-bottom:8px; }
-.product-info .form { font-size:11px; letter-spacing:2px; color:#999; text-transform:uppercase; margin-bottom:14px; }
-.info-grid { display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
-.info-box { background:#F9F8F6; padding:10px 12px; border-left:3px solid #C4A265; }
-.info-label { font-size:8px; letter-spacing:2px; color:#999; text-transform:uppercase; margin-bottom:2px; }
-.info-value { font-size:13px; font-weight:600; }
-.results { margin-bottom:20px; }
-.results h3 { font-size:11px; letter-spacing:2px; color:#C4A265; margin-bottom:10px; text-transform:uppercase; }
-table { width:100%; border-collapse:collapse; }
-table th { text-align:left; font-size:9px; letter-spacing:1px; color:#999; text-transform:uppercase; padding:6px 10px; border-bottom:1px solid #E8E4E0; }
-table td { padding:9px 10px; font-size:12px; border-bottom:1px solid #F0EDE8; }
-.highlight { font-size:22px; font-weight:700; color:#22C55E; font-family:Georgia, serif; }
-.lab-section { background:#F9F8F6; padding:14px 16px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; border-radius:4px; }
-.lab-info h4 { font-size:12px; font-weight:700; margin-bottom:3px; }
-.lab-info p { font-size:10px; color:#666; line-height:1.5; }
-.lab-badge { background:#22C55E; color:#fff; padding:5px 14px; font-size:9px; letter-spacing:2px; font-weight:700; border-radius:3px; }
-.seal { width:60px; height:60px; border:2px solid #C4A265; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:14px auto; }
-.seal-t { font-size:7px; letter-spacing:1px; color:#C4A265; }
-.seal-m { font-family:Georgia, serif; font-size:14px; color:#C4A265; font-weight:700; }
-.disclaimer { font-size:8.5px; color:#888; line-height:1.6; padding-top:14px; border-top:1px solid #E8E4E0; margin-top:14px; }
-.footer { display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:10px; border-top:2px solid #C4A265; }
-.footer-left { font-size:9px; color:#999; }
-.footer-right { font-family:Georgia, serif; font-size:14px; color:#C4A265; }
-</style>
-</head>
-<body>
-<div class="page">
-  <div class="header">
-    <div>
-      <div class="logo">PEPTIQ<sup>MX</sup></div>
-      <div class="logo-sub">R E S E A R C H &nbsp;&middot;&nbsp; G R A D E</div>
+@page { size:A4; margin:0; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;color:#1A1A1A;background:#fff}
+.page{width:210mm;min-height:297mm;padding:18mm 16mm}
+.header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;border-bottom:2px solid #C4A265;margin-bottom:20px}
+.logo{font-family:Georgia,serif;font-size:32px;font-weight:700;letter-spacing:1px}
+.logo sup{font-size:13px;color:#C4A265;font-weight:500}
+.logo-sub{font-size:9px;letter-spacing:4px;color:#999;margin-top:2px;font-weight:600}
+.doc-title{text-align:right}
+.doc-title h1{font-size:13px;letter-spacing:3px;color:#C4A265;font-weight:600}
+.doc-title p{font-size:10px;color:#888;margin-top:3px}
+.doc-title .docid{font-size:9px;color:#bbb;margin-top:6px;font-family:'Courier New',monospace}
+.product-row{display:flex;gap:24px;margin-bottom:24px;align-items:center}
+.product-img{width:170px;height:200px;background:linear-gradient(135deg,#F9F8F6,#EFEAE0);border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:8px}
+.product-img img{max-width:100%;max-height:100%;object-fit:contain}
+.product-info{flex:1}
+.product-info h2{font-family:Georgia,serif;font-size:32px;font-weight:700;margin-bottom:8px}
+.product-info .form{font-size:11px;letter-spacing:2px;color:#999;text-transform:uppercase;margin-bottom:14px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.info-box{background:#F9F8F6;padding:10px 12px;border-left:3px solid #C4A265}
+.info-label{font-size:8px;letter-spacing:2px;color:#999;text-transform:uppercase;margin-bottom:2px}
+.info-value{font-size:13px;font-weight:600}
+.results{margin-bottom:18px}
+.results h3{font-size:11px;letter-spacing:2px;color:#C4A265;margin-bottom:10px;text-transform:uppercase}
+table{width:100%;border-collapse:collapse}
+table th{text-align:left;font-size:9px;letter-spacing:1px;color:#999;text-transform:uppercase;padding:6px 10px;border-bottom:1px solid #E8E4E0}
+table td{padding:9px 10px;font-size:12px;border-bottom:1px solid #F0EDE8}
+.highlight{font-size:22px;font-weight:700;color:#22C55E;font-family:Georgia,serif}
+.lab-section{background:#F9F8F6;padding:14px 16px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;border-radius:4px}
+.lab-info h4{font-size:12px;font-weight:700;margin-bottom:3px}
+.lab-info p{font-size:10px;color:#666;line-height:1.5}
+.lab-badge{background:#22C55E;color:#fff;padding:5px 14px;font-size:9px;letter-spacing:2px;font-weight:700;border-radius:3px}
+.cite{display:flex;align-items:center;gap:8px;background:#1A1A1A;color:#F0E8D4;padding:8px 14px;border-radius:4px;font-size:10px;margin-bottom:14px}
+.cite-mark{font-family:Georgia,serif;font-size:14px;color:#C4A265;font-weight:700;letter-spacing:1px}
+.seal{width:58px;height:58px;border:2px solid #C4A265;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:12px auto}
+.seal-t{font-size:7px;letter-spacing:1px;color:#C4A265}
+.seal-m{font-family:Georgia,serif;font-size:14px;color:#C4A265;font-weight:700}
+.disclaimer{font-size:8.5px;color:#888;line-height:1.6;padding-top:12px;border-top:1px solid #E8E4E0;margin-top:12px}
+.footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:8px;border-top:2px solid #C4A265}
+.footer-left{font-size:9px;color:#999}
+.footer-right{font-family:Georgia,serif;font-size:14px;color:#C4A265}
+</style></head><body><div class="page">
+<div class="header">
+  <div><div class="logo">PEPTIQ<sup>MX</sup></div><div class="logo-sub">R E S E A R C H &nbsp;&middot;&nbsp; G R A D E</div></div>
+  <div class="doc-title"><h1>CERTIFICADO DE ANÁLISIS</h1><p>Certificate of Analysis · COA</p><div class="docid">DOC ID · PQ-2026-0512-BPC-A</div></div>
+</div>
+<div class="product-row">
+  <div class="product-img"><img src="../../products-v2/bpc-157-studio.png" alt="BPC-157"></div>
+  <div class="product-info">
+    <h2>BPC-157</h2>
+    <div class="form">Polvo liofilizado · Vial estéril</div>
+    <div class="info-grid">
+      <div class="info-box"><div class="info-label">Cantidad etiquetada</div><div class="info-value">10mg</div></div>
+      <div class="info-box"><div class="info-label">Cantidad medida</div><div class="info-value">10.35mg</div></div>
+      <div class="info-box"><div class="info-label">Lote PEPTIQ</div><div class="info-value">PQ-2026-0512-BPC-A</div></div>
+      <div class="info-box"><div class="info-label">Fecha de análisis</div><div class="info-value">12 mayo 2026</div></div>
     </div>
-    <div class="doc-title">
-      <h1>CERTIFICADO DE ANÁLISIS</h1>
-      <p>Certificate of Analysis · COA</p>
-      <div class="docid">DOC ID · PQ-2026-0512-BPC-A</div>
-    </div>
-  </div>
-
-  <div class="product-row">
-    <div class="product-img"><img src="../../img/bpc-157.jpg" alt="BPC-157"></div>
-    <div class="product-info">
-      <h2>BPC-157</h2>
-      <div class="form">Polvo liofilizado · Vial estéril</div>
-      <div class="info-grid">
-        <div class="info-box"><div class="info-label">Cantidad etiquetada</div><div class="info-value">10mg</div></div>
-        <div class="info-box"><div class="info-label">Cantidad real medida</div><div class="info-value">10.35mg</div></div>
-        <div class="info-box"><div class="info-label">Lote PEPTIQ</div><div class="info-value">PQ-2026-0512-BPC-A</div></div>
-        <div class="info-box"><div class="info-label">Fecha de análisis</div><div class="info-value">12 mayo 2026</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="results">
-    <h3>Resultados del análisis</h3>
-    <table>
-      <tr><th>Parámetro</th><th>Método</th><th>Especificación</th><th>Resultado</th></tr>
-      <tr><td>Identificación</td><td>HPLC / MS</td><td>Confirmado</td><td>BPC-157</td></tr>
-      <tr><td>Apariencia</td><td>Visual</td><td>Polvo blanco a off-white</td><td>Conforme</td></tr>
-      <tr><td>Contenido</td><td>HPLC</td><td>±5% del etiquetado</td><td>10.35mg</td></tr>
-      <tr><td><strong>Pureza</strong></td><td>HPLC (C18, 220nm)</td><td>≥98.0%</td><td class="highlight">99.654%</td></tr>
-      <tr><td>Endotoxinas</td><td>LAL Gel Clot</td><td>&lt;5 EU/mg</td><td>&lt; 0.25 EU/mg</td></tr>
-      <tr><td>Agua (Karl Fischer)</td><td>KF</td><td>≤8.0%</td><td>Conforme</td></tr>
-    </table>
-  </div>
-
-  <div class="lab-section">
-    <div class="lab-info">
-      <h4>Análisis independiente de tercero acreditado</h4>
-      <p>Laboratorio: Janoshik Analytical · Brno, República Checa</p>
-      <p>Acreditación: ISO/IEC 17025 · HPLC-UV-MS</p>
-    </div>
-    <div class="lab-badge">VERIFICADO</div>
-  </div>
-
-  <div class="seal"><div class="seal-t">PEPTIQ</div><div class="seal-m">COA</div><div class="seal-t">RESEARCH</div></div>
-
-  <div class="disclaimer">
-    Este certificado confirma que el producto fue analizado por un laboratorio independiente de tercero acreditado.
-    PEPTIQ Research no es un laboratorio de análisis · los resultados reflejan las condiciones de la muestra del lote
-    indicado al momento del análisis. <strong>Material exclusivo para investigación científica · NO apto para uso humano
-    ni animal · solo mayores de 18 años · el uso es responsabilidad de quien lo aplique.</strong>
-  </div>
-
-  <div class="footer">
-    <div class="footer-left">peptiqresearch.org · peptiqmx.com · contacto@peptiqmx.com</div>
-    <div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div>
   </div>
 </div>
-</body>
-</html>
+<div class="results"><h3>Resultados del análisis</h3>
+<table>
+<tr><th>Parámetro</th><th>Método</th><th>Especificación</th><th>Resultado</th></tr>
+<tr><td>Identificación</td><td>HPLC / MS</td><td>Confirmado</td><td>BPC-157</td></tr>
+<tr><td>Apariencia</td><td>Visual</td><td>Polvo blanco a off-white</td><td>Conforme</td></tr>
+<tr><td>Contenido</td><td>HPLC</td><td>±5% del etiquetado</td><td>10.35mg</td></tr>
+<tr><td><strong>Pureza</strong></td><td>HPLC (C18, 220nm)</td><td>≥98.0%</td><td class="highlight">99.654%</td></tr>
+<tr><td>Endotoxinas</td><td>LAL Gel Clot</td><td>&lt;5 EU/mg</td><td>&lt; 0.25 EU/mg</td></tr>
+<tr><td>Agua (Karl Fischer)</td><td>KF</td><td>≤8.0%</td><td>Conforme</td></tr>
+</table></div>
+<div class="lab-section">
+  <div class="lab-info"><h4>Análisis independiente de tercero acreditado</h4>
+  <p>Laboratorio: Janoshik Analytical · Brno, República Checa</p>
+  <p>Acreditación: ISO/IEC 17025 · HPLC-UV-MS</p></div>
+  <div class="lab-badge">VERIFICADO</div>
+</div>
+<div class="cite"><span class="cite-mark">⚗</span><span>Tested by <strong style="color:#C4A265">Janoshik Analytical</strong> · Brno, Czechia · ISO/IEC 17025 · janoshik.com</span></div>
+<div class="seal"><div class="seal-t">PEPTIQ</div><div class="seal-m">COA</div><div class="seal-t">RESEARCH</div></div>
+<div class="disclaimer">Este certificado confirma que el producto fue analizado por un laboratorio independiente de tercero acreditado. PEPTIQ Research no es un laboratorio de análisis · los resultados reflejan las condiciones de la muestra del lote indicado al momento del análisis. <strong>Material exclusivo para investigación científica · NO apto para uso humano ni animal · solo mayores de 18 años · el uso es responsabilidad de quien lo aplique.</strong></div>
+<div class="footer"><div class="footer-left">peptiqresearch.org · peptiqmx.com · contacto@peptiqmx.com</div><div class="footer-right">PEPTIQ<sup style="font-size:8px;color:#C4A265;">MX</sup></div></div>
+</div></body></html>
