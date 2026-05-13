@@ -316,9 +316,17 @@
         <li>Liberas a PEPTIQ MX de <b>reclamaciones futuras</b></li>
       </ul>
     </div>
-    <label class="rc-consent" for="researchConsentCheck">
-      <input type="checkbox" id="researchConsentCheck">
-      <span>He leído y acepto el <a href="legal.html#aviso" target="_blank" style="border-bottom:1px solid var(--gold)">Aviso Legal de Uso</a>. Declaro bajo protesta de decir verdad que soy mayor de edad y adquiero los productos exclusivamente con fines de investigación.</span>
+    <label class="rc-consent" for="rcCheck1" style="margin-bottom:8px">
+      <input type="checkbox" id="rcCheck1" class="rcCheck">
+      <span><b>Soy mayor de 18 años</b> y declaro bajo protesta de decir verdad mi mayoría de edad.</span>
+    </label>
+    <label class="rc-consent" for="rcCheck2" style="margin-bottom:8px">
+      <input type="checkbox" id="rcCheck2" class="rcCheck">
+      <span>Adquiero estos productos <b>exclusivamente para investigación científica</b>. NO los destinaré a consumo humano ni animal.</span>
+    </label>
+    <label class="rc-consent" for="rcCheck3">
+      <input type="checkbox" id="rcCheck3" class="rcCheck">
+      <span>Acepto que <b>el uso y aplicación es mi responsabilidad exclusiva</b>. Libero a PEPTIQ MX de reclamaciones futuras. He leído los <a href="legal.html#terminos" target="_blank" style="border-bottom:1px solid var(--gold)">Términos</a>, <a href="legal.html#privacidad" target="_blank" style="border-bottom:1px solid var(--gold)">Privacidad</a> y <a href="legal.html#aviso" target="_blank" style="border-bottom:1px solid var(--gold)">Aviso Legal</a>.</span>
     </label>
     <button class="rc-btn" id="researchConsentBtn" onclick="acceptResearchConsent()">Aceptar y continuar →</button>
     <p class="rc-fine">"El uso de este producto es responsabilidad de quien lo use, solo para investigación."<br>Ver <a href="legal.html#terminos">Términos</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#aviso">Aviso Legal</a></p>
@@ -420,7 +428,7 @@
 
       // Consent gate
       const STORAGE_KEY = 'peptiq_research_use_accepted_v1';
-      if (localStorage.getItem(STORAGE_KEY) !== 'true') {
+      if (localStorage.getItem(STORAGE_KEY) !== 'true' && !localStorage.getItem('peptiq_research_use_accepted_v2')) {
         window._pendingPurchaseHref = targetUrl;
         document.getElementById('researchConsentOverlay').classList.add('open');
         document.body.style.overflow = 'hidden';
@@ -445,16 +453,39 @@
     document.body.style.overflow='';
   }
   function acceptResearchConsent(){
-    const chk = document.getElementById('researchConsentCheck');
+    const checks = document.querySelectorAll('.rcCheck');
     const btn = document.getElementById('researchConsentBtn');
-    if (!chk.checked){
+    const allChecked = Array.from(checks).every(c => c.checked);
+    if (!allChecked){
       btn.classList.add('shake');
+      // Highlight unchecked items
+      checks.forEach(c => {
+        if (!c.checked) c.parentElement.style.color = '#E11D48';
+        else c.parentElement.style.color = '';
+      });
       setTimeout(()=>btn.classList.remove('shake'), 400);
       return;
     }
-    localStorage.setItem('peptiq_research_use_accepted_v1','true');
-    localStorage.setItem('peptiq_research_use_accepted_v1_ts', new Date().toISOString());
-    if (window.fbq) fbq('trackCustom','ResearchUseAccepted');
+    // Save log of consent (all 3 boxes confirmed)
+    const consentLog = {
+      v: 2,
+      accepted: true,
+      ts: new Date().toISOString(),
+      checks: { mayor18: true, investigacion: true, responsabilidad: true },
+      ua: navigator.userAgent.slice(0,120)
+    };
+    localStorage.setItem('peptiq_research_use_accepted_v2', JSON.stringify(consentLog));
+    localStorage.setItem('peptiq_research_use_accepted_v1','true'); // backward compat
+    localStorage.setItem('peptiq_research_use_accepted_v1_ts', consentLog.ts);
+    // Optional: log to backend for legal trail
+    try {
+      fetch('/.netlify/functions/peptiq-legal-record', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'research_consent_v2', log: consentLog })
+      }).catch(()=>{});
+    } catch(e){}
+    if (window.fbq) fbq('trackCustom','ResearchUseAccepted_v2');
     closeResearchConsent();
     if (window._pendingPurchaseHref){
       window.open(window._pendingPurchaseHref, '_blank', 'noopener');
