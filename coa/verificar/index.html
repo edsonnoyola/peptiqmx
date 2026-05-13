@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Verificar Lote · PEPTIQ Research</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Verifica autenticidad y estado de tu lote PEPTIQ · pureza HPLC · COA Janoshik">
+<style>
+body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;max-width:720px;margin:0 auto;padding:40px 24px;background:#0A0908;color:#F0E8D4;line-height:1.6;min-height:100vh}
+h1{font-family:Georgia,serif;color:#C4A265;font-size:36px;margin-bottom:8px}
+.sub{color:#888;font-size:13px;letter-spacing:2px;margin-bottom:32px;text-transform:uppercase}
+.search-box{background:#1A1A1A;border:1px solid #2A2A2A;border-left:3px solid #C4A265;padding:24px;border-radius:4px;margin-bottom:24px}
+.search-box label{display:block;font-size:11px;letter-spacing:2px;color:#999;text-transform:uppercase;margin-bottom:8px}
+.search-box input{width:100%;padding:14px 16px;background:#0A0908;border:1px solid #2A2A2A;color:#F0E8D4;font-family:'Courier New',monospace;font-size:16px;border-radius:4px;letter-spacing:1px}
+.search-box input:focus{outline:none;border-color:#C4A265}
+.search-box button{margin-top:14px;width:100%;padding:14px;background:#C4A265;color:#0A0908;border:none;font-weight:700;letter-spacing:2px;font-size:13px;cursor:pointer;border-radius:4px;text-transform:uppercase}
+.search-box button:hover{background:#D4B575}
+.result{background:#1A1A1A;border:1px solid #2A2A2A;padding:24px;border-radius:4px;margin-bottom:16px;display:none}
+.result.show{display:block}
+.result.verified{border-left:3px solid #22C55E}
+.result.pending{border-left:3px solid #F59E0B}
+.result.notfound{border-left:3px solid #DC2626}
+.result h3{font-family:Georgia,serif;font-size:24px;margin-bottom:6px}
+.result .badge{display:inline-block;font-size:10px;letter-spacing:2px;font-weight:700;padding:3px 10px;border-radius:2px;text-transform:uppercase;margin-bottom:14px}
+.badge.verified{background:#22C55E;color:#fff}
+.badge.pending{background:#F59E0B;color:#0A0908}
+.badge.notfound{background:#DC2626;color:#fff}
+.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #2A2A2A;font-size:13px}
+.row:last-child{border-bottom:0}
+.row .k{color:#888}
+.row .v{color:#F0E8D4;font-family:'Courier New',monospace}
+.row .v.pur{color:#22C55E;font-weight:700;font-size:18px;font-family:Georgia,serif}
+.link{display:inline-block;margin-top:14px;padding:10px 16px;background:#0A0908;color:#C4A265;text-decoration:none;font-size:11px;letter-spacing:1px;border:1px solid #C4A265;border-radius:3px}
+.examples{margin-top:24px;padding:16px;background:#1A1A1A;border-radius:4px;font-size:12px;color:#888;line-height:1.8}
+.examples code{background:#0A0908;padding:2px 8px;border-radius:2px;color:#C4A265;font-family:'Courier New',monospace}
+.note{margin-top:32px;padding:14px;background:#1A1A1A;border-left:3px solid #C4A265;font-size:11px;color:#aaa;line-height:1.7}
+.aviso{background:#1A1A1A;color:#F0E8D4;padding:12px;margin-top:20px;border-radius:4px;border:2px solid #C4A265;text-align:center;font-size:11px;line-height:1.6}
+.aviso .gold{color:#C4A265;font-weight:700;letter-spacing:2px}
+</style>
+</head>
+<body>
+
+<h1>Verificar Lote</h1>
+<div class="sub">P E P T I Q &middot; R E S E A R C H</div>
+
+<p style="color:#aaa;margin-bottom:24px">Ingresa el número de lote impreso en tu vial o COA para verificar autenticidad, pureza HPLC y datos de análisis Janoshik.</p>
+
+<div class="search-box">
+<label for="lote">Número de lote PEPTIQ</label>
+<input type="text" id="lote" placeholder="PQ-JNS-94490-BPC" autocomplete="off">
+<button onclick="verify()">Verificar lote</button>
+</div>
+
+<div id="result" class="result"></div>
+
+<div class="examples">
+<strong style="color:#C4A265">Ejemplos de lotes válidos:</strong><br>
+<code>PQ-JNS-94490-BPC</code> · BPC-157<br>
+<code>PQ-JNS-94488-TB5</code> · TB-500<br>
+<code>PQ-JNS-94645-GHK</code> · GHK-Cu<br>
+<code>PQ-JNS-94422-RTT</code> · Retatrutide<br>
+<code>PQ-JNS-94486-TSM</code> · Tesamorelin<br>
+<code>PQ-JNS-94492-MTC</code> · MOTS-C<br>
+<code>PQ-JNS-94420-TZP</code> · Tirzepatide<br>
+<code>PQ-IPA-2026-A</code> · Ipamorelin (Eurofins en proceso)<br>
+<code>PQ-SMX-2026-A</code> · Semax (Eurofins en proceso)
+</div>
+
+<div class="aviso">
+<span class="gold">★ AVISO ·</span> <strong>El uso y aplicación es responsabilidad exclusiva de quien lo usa</strong><br>
+Material de investigación · solo +18 · no apto consumo humano ni animal
+</div>
+
+<div class="note">
+<strong>¿No encuentras tu lote?</strong> Contáctanos en <a href="mailto:contacto@peptiqmx.com" style="color:#C4A265">contacto@peptiqmx.com</a> con el número de pedido. Para auditoría adicional de un lote específico, podemos compartir el reporte completo del laboratorio Janoshik Analytical (Brno, Czechia).
+</div>
+
+<script>
+const LOTES = {
+  'PQ-JNS-94490-BPC': {name:'BPC-157', mg:'10mg', measured:'10.35mg', purity:'99.654%', task:'94490', dateRecv:'17 DIC 2025', dateAnalysis:'18 DIC 2025', lab:'Janoshik Analytical · Brno, Czechia', status:'verified', coaUrl:'/coa/pdf/COA-PEPTIQ-bpc157.pdf'},
+  'PQ-JNS-94488-TB5': {name:'TB-500', mg:'10mg', measured:'10.67mg', purity:'99.328%', task:'94488', dateRecv:'17 DIC 2025', dateAnalysis:'18 DIC 2025', lab:'Janoshik Analytical · Brno, Czechia', status:'verified', coaUrl:'/coa/pdf/COA-PEPTIQ-tb500.pdf'},
+  'PQ-JNS-94645-GHK': {name:'GHK-Cu', mg:'100mg', measured:'95.02mg', purity:'99.508%', task:'94645', dateRecv:'17 DIC 2025', dateAnalysis:'18 DIC 2025', lab:'Janoshik Analytical · Brno, Czechia', status:'verified', coaUrl:'/coa/pdf/COA-PEPTIQ-ghkcu.pdf'},
+  'PQ-JNS-94422-RTT': {name:'Retatrutide', mg:'30mg', measured:'31.82mg', purity:'99.080%', task:'94422', dateRecv:'17 DIC 2025', dateAnalysis:'18 DIC 2025', lab:'Janoshik Analytical · Brno, Czechia', status:'verified', coaUrl:'/coa/pdf/COA-PEPTIQ-retatrutide.pdf'},
+  'PQ-JNS-94486-TSM': {name:'Tesamorelin', mg:'10mg', measured:'10.55mg', purity:'99.062%', task:'94486', dateRecv:'17 DIC 2025', dateAnalysis:'18 DIC 2025', lab:'Janoshik Analytical · Brno, Czechia', status:'verified', coaUrl:'/coa/pdf/COA-PEPTIQ-tesamorelin.pdf'},
+  'PQ-JNS-94492-MTC': {name:'MOTS-C', mg:'40mg', measured:'44.13mg', purity:'99.664%', task:'94492', dateRecv:'17 DIC 2025', dateAnalysis:'18 DIC 2025', lab:'Janoshik Analytical · Brno, Czechia', status:'verified', coaUrl:'/coa/pdf/COA-PEPTIQ-motsc.pdf'},
+  'PQ-JNS-94420-TZP': {name:'Tirzepatide', mg:'30mg', measured:'33.25mg', purity:'99.645%', task:'94420', dateRecv:'17 DIC 2025', dateAnalysis:'18 DIC 2025', lab:'Janoshik Analytical · Brno, Czechia', status:'verified', coaUrl:'/coa/pdf/COA-PEPTIQ-tirzepatide.pdf'},
+  'PQ-IPA-2026-A': {name:'Ipamorelin', mg:'10mg', measured:'pendiente', purity:'≥99.5% declarada', task:'pendiente', dateRecv:'pendiente', dateAnalysis:'pendiente', lab:'Eurofins México · Verificación en proceso', status:'pending', coaUrl:'/coa/pdf/COA-PEPTIQ-ipamorelin.pdf'},
+  'PQ-SMX-2026-A': {name:'Semax', mg:'10mg', measured:'pendiente', purity:'≥99.5% declarada', task:'pendiente', dateRecv:'pendiente', dateAnalysis:'pendiente', lab:'Eurofins México · Verificación en proceso', status:'pending', coaUrl:'/coa/pdf/COA-PEPTIQ-semax.pdf'},
+  'PQ-KPV-2026-A': {name:'KPV', mg:'10mg', measured:'pendiente', purity:'≥99.5% declarada', task:'pendiente', dateRecv:'pendiente', dateAnalysis:'pendiente', lab:'Eurofins México · Verificación en proceso', status:'pending', coaUrl:'/coa/pdf/COA-PEPTIQ-kpv.pdf'},
+  'PQ-NAD-2026-A': {name:'NAD+', mg:'1000mg', measured:'pendiente', purity:'≥99.0% declarada', task:'pendiente', dateRecv:'pendiente', dateAnalysis:'pendiente', lab:'Eurofins México · Verificación en proceso', status:'pending', coaUrl:'/coa/pdf/COA-PEPTIQ-nadplus.pdf'},
+  'PQ-EPI-2026-A': {name:'Epithalon', mg:'50mg', measured:'pendiente', purity:'≥99.5% declarada', task:'pendiente', dateRecv:'pendiente', dateAnalysis:'pendiente', lab:'Eurofins México · Verificación en proceso', status:'pending', coaUrl:'/coa/pdf/COA-PEPTIQ-epithalon.pdf'},
+  'PQ-SEL-2026-A': {name:'Selank', mg:'10mg', measured:'pendiente', purity:'≥99.5% declarada', task:'pendiente', dateRecv:'pendiente', dateAnalysis:'pendiente', lab:'Eurofins México · Verificación en proceso', status:'pending', coaUrl:'/coa/pdf/COA-PEPTIQ-selank.pdf'},
+  'PQ-CJC-2026-A': {name:'CJC+Ipamorelin', mg:'10mg', measured:'pendiente', purity:'≥99.5% declarada', task:'pendiente', dateRecv:'pendiente', dateAnalysis:'pendiente', lab:'Eurofins México · Verificación en proceso', status:'pending', coaUrl:'/coa/pdf/COA-PEPTIQ-cjcipa.pdf'},
+  'PQ-GLO-2026-A': {name:'Trinity GLOW', mg:'70mg', measured:'pendiente', purity:'≥99.5% declarada', task:'pendiente', dateRecv:'pendiente', dateAnalysis:'pendiente', lab:'Eurofins México · Verificación en proceso', status:'pending', coaUrl:'/coa/pdf/COA-PEPTIQ-glow70.pdf'},
+};
+
+function verify() {
+  const input = document.getElementById('lote').value.trim().toUpperCase();
+  const result = document.getElementById('result');
+  result.className = 'result';
+  if (!input) return;
+  const data = LOTES[input];
+  if (data) {
+    const isPending = data.status === 'pending';
+    result.className = 'result show ' + (isPending ? 'pending' : 'verified');
+    result.innerHTML = `
+      <span class="badge ${isPending ? 'pending' : 'verified'}">${isPending ? '⏳ Verificación en proceso' : '✓ Verificado'}</span>
+      <h3>${data.name} · ${data.mg}</h3>
+      <div class="row"><span class="k">Lote PEPTIQ</span><span class="v">${input}</span></div>
+      <div class="row"><span class="k">Cantidad medida HPLC</span><span class="v">${data.measured}</span></div>
+      <div class="row"><span class="k">Pureza HPLC</span><span class="v pur">${data.purity}</span></div>
+      <div class="row"><span class="k">Task # análisis</span><span class="v">${data.task}</span></div>
+      <div class="row"><span class="k">Recibido en lab</span><span class="v">${data.dateRecv}</span></div>
+      <div class="row"><span class="k">Análisis conducido</span><span class="v">${data.dateAnalysis}</span></div>
+      <div class="row"><span class="k">Laboratorio</span><span class="v">${data.lab}</span></div>
+      <a class="link" href="${data.coaUrl}" target="_blank">↓ Descargar COA completo</a>
+    `;
+  } else {
+    result.className = 'result show notfound';
+    result.innerHTML = `
+      <span class="badge notfound">✗ Lote no encontrado</span>
+      <h3>Lote no reconocido</h3>
+      <p style="color:#aaa;font-size:13px;margin-top:8px">El número <code style="background:#0A0908;padding:2px 8px;color:#C4A265;font-family:monospace">${input}</code> no aparece en nuestra base de lotes activos. Posibles razones:</p>
+      <ul style="color:#aaa;font-size:13px;margin-top:8px;padding-left:20px;line-height:1.8">
+        <li>Error de tipeo · verifica el formato exacto (sin espacios)</li>
+        <li>Lote retirado del mercado</li>
+        <li>Producto adquirido fuera de PEPTIQ Research</li>
+      </ul>
+      <p style="color:#aaa;font-size:13px;margin-top:12px">Contáctanos: <a href="mailto:contacto@peptiqmx.com" style="color:#C4A265">contacto@peptiqmx.com</a></p>
+    `;
+  }
+}
+
+document.getElementById('lote').addEventListener('keydown', e => {
+  if (e.key === 'Enter') verify();
+});
+
+// Pre-fill from URL ?lote=XXX
+const urlLote = new URLSearchParams(location.search).get('lote');
+if (urlLote) {
+  document.getElementById('lote').value = urlLote.toUpperCase();
+  setTimeout(verify, 100);
+}
+</script>
+</body>
+</html>
